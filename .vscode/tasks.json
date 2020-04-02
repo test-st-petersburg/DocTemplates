@@ -8,8 +8,8 @@
 		"reveal": "always",
 		"focus": false,
 		"echo": true,
-		"panel": "dedicated",
-		"clear": true,
+		"panel": "shared",
+		"clear": false,
 	},
 	"problemMatcher": {
 		"owner": "custom",
@@ -33,6 +33,9 @@
 		{
 			"label": "Clean",
 			"command": " if ( Test-Path -Path 'src' ) { Remove-Item -Path 'src' -Recurse -Force }",
+			"presentation": {
+				"clear": true,
+			},
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
@@ -42,6 +45,7 @@
 				"template\\Записка ФБУ Тест-С.-Петербург.ott",
 				"-DestinationPath",
 				"src\\template",
+				"-Indented",
 				"-Verbose"
 			],
 			"dependsOn": [
