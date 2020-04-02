@@ -40,3 +40,7 @@ charset = utf-8
 indent_style = tab
 indent_size = 4
 charset = utf-8
+
+[*.{json}]
+indent_style = tab
+indent_size = 2
