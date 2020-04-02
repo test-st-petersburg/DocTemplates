@@ -52,16 +52,21 @@
 				"Clean"
 			]
 		},
-		//		{
-		//			"label": "second task",
-		//			"group": {
-		//				"kind": "build",
-		//				"isDefault": true
-		//			},
-		//			"command": "\\tools\\ConvertTo-PlainXML.ps1",
-		//			"args": [
-		//				"Folder With Spaces"
-		//			],
-		//		},
+		{
+			"label": "Create Open Office files from plain XML",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"command": ".\\tools\\ConvertFrom-PlainXML.ps1",
+			"args": [
+				"-DestinationPath",
+				"template\\Записка ФБУ Тест-С.-Петербург.ott",
+				"-Path",
+				"src\\template\\Записка ФБУ Тест-С.-Петербург.ott",
+				"-Force",
+				"-Verbose"
+			],
+		},
 	],
 }

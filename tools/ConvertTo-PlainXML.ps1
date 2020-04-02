@@ -8,7 +8,7 @@
 
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
-	#
+	# путь к Open Office файлу
 	[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $false )]
 	[Alias( "ODT_File" )]
 	[Alias( "ODTFile" )]
@@ -17,6 +17,7 @@ param(
 	[System.String]
 	$FilePath,
 
+	# путь к папке, в которой будут созданы xml файлы
 	[Parameter( Mandatory = $True, Position = 1, ValueFromPipeline = $false )]
 	[Alias( "Directory" )]
 	[System.String]
