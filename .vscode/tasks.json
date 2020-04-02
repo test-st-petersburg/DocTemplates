@@ -31,6 +31,10 @@
 	},
 	"tasks": [
 		{
+			"label": "Clean",
+			"command": " if ( Test-Path -Path 'src' ) { Remove-Item -Path 'src' -Recurse -Force }",
+		},
+		{
 			"label": "Convert Open Office files to plain XML",
 			"command": ".\\tools\\ConvertTo-PlainXML.ps1",
 			"args": [
@@ -40,6 +44,9 @@
 				"src\\template",
 				"-Verbose"
 			],
+			"dependsOn": [
+				"Clean"
+			]
 		},
 		//		{
 		//			"label": "second task",
