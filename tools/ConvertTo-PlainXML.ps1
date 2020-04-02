@@ -61,7 +61,7 @@ if ( $PSCmdlet.ShouldProcess( $FilePath, "Convert Open Office document to plain 
 				Write-Debug "Read xml file $($_.FullName)";
 				[System.Xml.XmlDocument] $xml = New-Object System.Xml.XmlDocument;
 				[System.Xml.XmlReader] $xmlReader = [System.Xml.XmlReader]::Create( $_.FullName, $readerSettings );
-				$xml.PreserveWhitespace = true;
+				$xml.PreserveWhitespace = $true;
 				$xml.XmlResolver = $null;
 				$xml.Load( $xmlReader );
 				$xmlReader.Close();
