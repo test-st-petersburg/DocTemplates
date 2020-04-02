@@ -1,0 +1,15 @@
+{
+  "name": "doc-templates",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:test-st-petersburg/DocTemplates.git"
+  },
+  "author": "Sergei S. Betke",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "cz-customizable": "^6.0.0",
+    "husky": "^2.2.0"
+  }
+}
