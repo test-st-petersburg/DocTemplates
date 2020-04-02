@@ -48,5 +48,10 @@ configuration ITGNetworkManagementWindowsPC
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
+		cChocoPackageInstaller LibreOffice {
+			Name      = 'libreoffice-fresh'
+			DependsOn = @('[cChocoInstaller]choco')
+		}
+
 	}
 }
