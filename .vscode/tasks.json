@@ -37,7 +37,8 @@
 				"-FilePath",
 				"template\\Записка ФБУ Тест-С.-Петербург.ott",
 				"-DestinationPath",
-				"src\\template"
+				"src\\template",
+				"-Verbose"
 			],
 		},
 		//		{
