@@ -59,7 +59,7 @@ module.exports = {
   },
 
   // Разрешим собственную ОБЛАСТЬ
-  allowCustomScopes: true,
+  // allowCustomScopes: false,
 
   // Запрет на Breaking Changes
   allowBreakingChanges: false,
