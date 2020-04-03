@@ -48,7 +48,7 @@ function Use-Object {
 	try	{
 		. $ScriptBlock;
 	}
- finally {
+	finally {
 		if ($null -ne $InputObject -and $InputObject -is [System.IDisposable]) {
 			$InputObject.Dispose();
 		};
@@ -70,7 +70,7 @@ if ( $PSCmdlet.ShouldProcess( $DestinationPath, "Create Open Office document fro
 			# по требованиям Open Office первым добавляем **без сжатия** файл mimetype
 			@( Get-Item -Path 'mimetype' ) +
 			@( Get-ChildItem -Path . -File -Recurse -Exclude 'mimetype' ) `
-				| ForEach-Object {
+			| ForEach-Object {
 				$entryPath = ( Resolve-Path -Path $_ -Relative ).Substring( 2 );
 				if ( $entryPath -in , 'mimetype' ) {
 					$compressionLevel = [System.IO.Compression.CompressionLevel]::NoCompression;
