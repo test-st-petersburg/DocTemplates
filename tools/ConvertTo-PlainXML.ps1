@@ -31,10 +31,37 @@ param(
 
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
+	[System.Xml.XmlReaderSettings] $readerSettings = New-Object System.Xml.XmlReaderSettings;
+	$readerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
+	$readerSettings.DtdProcessing = [System.Xml.DtdProcessing]::Parse;
+	# не обрабатывать DTD в XML документах
+	$readerSettings.XmlResolver = $null;
+	$readerSettings.IgnoreComments = $false;
+	$readerSettings.IgnoreProcessingInstructions = $false;
+	$readerSettings.IgnoreWhitespace = $false;
+	$readerSettings.CloseInput = $true;
+
+	[System.Xml.XmlWriterSettings] $writerSettings = New-Object System.Xml.XmlWriterSettings;
+	$writerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
+	$writerSettings.DoNotEscapeUriAttributes = $false;
+	$writerSettings.Encoding = [System.Text.Encoding]::UTF8;
+	$writerSettings.Indent = $true;
+	$writerSettings.IndentChars = "`t";
+	$writerSettings.NewLineOnAttributes = $false;
+	$writerSettings.NewLineChars = "`r`n";
+	$writerSettings.NewLineHandling = [System.Xml.NewLineHandling]::None;
+	$writerSettings.OmitXmlDeclaration = $false;
+	# $writerSettings.XmlOutputMethod = [System.Xml.XmlOutputMethod]::Xml;
+	$writerSettings.WriteEndDocumentOnClose = $true;
+	$writerSettings.CloseOutput = $true;
 }
 process {
 	if ( $PSCmdlet.ShouldProcess( $FilePath, "Convert Open Office document to plain XML directory" ) ) {
-		$TempZIPFileName = [System.IO.Path]::GetTempFileName() + '.zip';
+		$TempZIPFileName = Join-Path `
+			-Path ( [System.IO.Path]::GetTempPath() ) `
+			-ChildPath ( [System.IO.Path]::GetRandomFileName() );
+		$TempZIPFileName = $TempZIPFileName + '.zip';
 		Copy-Item -Path $FilePath -Destination $TempZIPFileName `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -49,32 +76,21 @@ process {
 
 		if ( $Indented ) {
 			if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Format all xml files in Open Office document plain XML directory" ) ) {
-				[System.Xml.XmlReaderSettings] $readerSettings = New-Object System.Xml.XmlReaderSettings;
-				$readerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
-				$readerSettings.DtdProcessing = [System.Xml.DtdProcessing]::Parse;
-				# не обрабатывать DTD в XML документах
-				$readerSettings.XmlResolver = $null;
-				$readerSettings.IgnoreComments = $false;
-				$readerSettings.IgnoreProcessingInstructions = $false;
-				$readerSettings.IgnoreWhitespace = $false;
-				$readerSettings.CloseInput = $true;
 				Get-ChildItem -Path $DestinationPathForFile -Filter '*.xml' -Recurse `
 				| Where-Object { $_.Length -gt 0 } `
 				| ForEach-Object {
-					Write-Debug "Read xml file $($_.FullName)";
-					[System.Xml.XmlDocument] $xml = New-Object System.Xml.XmlDocument;
-					[System.Xml.XmlReader] $xmlReader = [System.Xml.XmlReader]::Create( $_.FullName, $readerSettings );
-					$xml.PreserveWhitespace = $true;
-					$xml.XmlResolver = $null;
-					$xml.Load( $xmlReader );
-					$xmlReader.Close();
-					Write-Verbose "Rewrite (format) xml file $($_.FullName)";
-					[System.Xml.XmlTextWriter] $xmlWriter = New-Object System.Xml.XmlTextWriter( $_.FullName, $Null );
-					$xmlWriter.Formatting = [System.Xml.Formatting]::Indented;
-					$xmlWriter.Indentation = 1;
-					$xmlWriter.IndentChar = "`t";
-					$xml.WriteContentTo( $xmlWriter );
-					$xmlWriter.Flush();
+					if ( $PSCmdlet.ShouldProcess( $_, "Format xml file" ) ) {
+						$xml = New-Object System.Xml.XmlDocument;
+						$xmlReader = [System.Xml.XmlReader]::Create( $_.FullName, $readerSettings );
+						# $xml.PreserveWhitespace = $true;
+						# $xml.XmlResolver = $null;
+						$xml.Load( $xmlReader );
+						$xmlReader.Close();
+						$xmlWriter = [System.Xml.XmlTextWriter]::Create( $_.FullName, $writerSettings );
+						$xml.WriteContentTo( $xmlWriter );
+						$xmlWriter.Flush();
+						$xmlWriter.Close();
+					};
 				};
 			};
 		};
