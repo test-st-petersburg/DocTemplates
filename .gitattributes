@@ -1,2 +1,3 @@
 *.xml  text  merge=text diff=text eol=crlf
+*.xsl  text  merge=text diff=text eol=crlf
 *.md   text  merge=text diff=text eol=crlf
