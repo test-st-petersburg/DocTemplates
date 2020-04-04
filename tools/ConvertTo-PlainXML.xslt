@@ -117,6 +117,14 @@
 		</xsl:apply-templates>
 	</xsl:template>
 
+	<!-- правило для элементов, которые следует всегда "форматировать" -->
+	<xsl:template match="office:annotation" mode="noindent">
+		<xsl:param name="indent"/>
+		<xsl:apply-templates select="." mode="indent">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
 	<xsl:template match="text:span" mode="indent">
 		<xsl:param name="indent"/>
 		<xsl:apply-templates select="." mode="noindent">
