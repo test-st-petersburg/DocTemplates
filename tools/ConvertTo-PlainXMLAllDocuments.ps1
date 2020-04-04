@@ -33,4 +33,5 @@ Get-ChildItem -Path $Path -Filter '*.ott' `
 	-DestinationPath $DestinationPath `
 	-Indented:( $PSCmdlet.MyInvocation.BoundParameters.Indented.IsPresent -eq $true ) `
 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+	-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true );
