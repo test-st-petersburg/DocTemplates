@@ -39,10 +39,10 @@
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
-			"command": ".\\tools\\ConvertTo-PlainXML.ps1",
+			"command": ".\\tools\\ConvertTo-PlainXMLAllDocuments.ps1",
 			"args": [
-				"-FilePath",
-				"template\\Записка ФБУ Тест-С.-Петербург.ott",
+				"-Path",
+				"template",
 				"-DestinationPath",
 				"src\\template",
 				"-Indented",
