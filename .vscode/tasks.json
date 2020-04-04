@@ -58,15 +58,18 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": ".\\tools\\ConvertFrom-PlainXML.ps1",
+			"command": ".\\tools\\ConvertFrom-PlainXMLAllDocuments.ps1",
 			"args": [
 				"-DestinationPath",
-				"template\\Записка ФБУ Тест-С.-Петербург.ott",
+				"template",
 				"-Path",
-				"src\\template\\Записка ФБУ Тест-С.-Петербург.ott",
+				"src\\template",
 				"-Force",
 				"-Verbose"
 			],
+			"presentation": {
+				"clear": true,
+			},
 		},
 	],
 }
