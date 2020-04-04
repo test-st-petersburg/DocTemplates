@@ -4,6 +4,11 @@
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+[Net.ServicePointManager]::SecurityProtocol =
+[Net.SecurityProtocolType]::Tls12 -bor `
+	[Net.SecurityProtocolType]::Tls11 -bor `
+	[Net.SecurityProtocolType]::Tls;
+
 $PSDefaultParameterValues = @{
 	'*:ErrorAction'                      = [System.Management.Automation.ActionPreference]::Stop;
 	'Start-DscConfiguration:Wait'        = $true;
@@ -34,5 +39,5 @@ Start-DscConfiguration -Path $DSCConfigDir;
 
 . (Join-Path -Path $PSScriptRoot -ChildPath 'xITGODTDevWindowsPC.ps1');
 $ConfigDir = (Join-Path -Path $PSScriptRoot -ChildPath 'config');
-$null = ITGNetworkManagementWindowsPC -OutputPath $ConfigDir;
+$null = xITGODTDevWindowsPC -OutputPath $ConfigDir;
 Start-DscConfiguration -Path $ConfigDir;

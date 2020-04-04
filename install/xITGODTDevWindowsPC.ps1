@@ -6,7 +6,7 @@
 #Requires -Modules xPendingReboot
 #Requires -Modules xDownloadFile
 
-configuration ITGNetworkManagementWindowsPC
+configuration xITGODTDevWindowsPC
 {
 	param
 	(
@@ -19,6 +19,7 @@ configuration ITGNetworkManagementWindowsPC
 	Import-DSCResource -ModuleName xPendingReboot
 	Import-DSCResource -ModuleName xDownloadFile
 	Import-DSCResource -ModuleName ComputerManagementDsc
+	Import-DscResource -ModuleName PowerShellModule -Name PSModuleResource
 
 	Node $ComputerName
 	{
@@ -51,6 +52,10 @@ configuration ITGNetworkManagementWindowsPC
 		cChocoPackageInstaller LibreOffice {
 			Name      = 'libreoffice-fresh'
 			DependsOn = @('[cChocoInstaller]choco')
+		}
+
+		PSModuleResource 7Zip4Powershell {
+			Module_Name = '7Zip4Powershell'
 		}
 
 	}
