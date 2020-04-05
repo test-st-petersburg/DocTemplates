@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<library:library library:name="Standard" library:readonly="false" library:passwordprotected="false" xmlns:library="http://openoffice.org/2000/library">
+ 
+	<library:element library:name="Common" />
+ 
+	<library:element library:name="WorkWithLetterheads" />
+ 
+	<library:element library:name="WorkWithStyles" />
+
+</library:library>

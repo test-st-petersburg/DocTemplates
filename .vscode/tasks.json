@@ -5,7 +5,7 @@
 	"type": "shell",
 	"request": "launch",
 	"presentation": {
-		"reveal": "always",
+		"reveal": "silent",
 		"focus": false,
 		"echo": true,
 		"panel": "shared",
