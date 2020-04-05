@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<script:module script:name="WorkWithLetterheads" script:language="StarBasic" script:moduleType="normal" xmlns:script="http://openoffice.org/2000/script">REM  *****  BASIC  *****
+﻿<?xml version="1.0" encoding="utf-8"?><script:module script:name="WorkWithLetterheads" script:language="StarBasic" script:moduleType="normal" xmlns:script="http://openoffice.org/2000/script">REM  *****  BASIC  *****
 
 rem ----------------------------------------------------------------------
 rem Подготовка документа к печати на бумаге
