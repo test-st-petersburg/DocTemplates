@@ -1940,13 +1940,13 @@
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
 		</style:style>
 		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties officeooo:paragraph-rsid="01109f79" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="0168588a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP4" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="01333ba2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP5" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
@@ -1954,19 +1954,19 @@
 					<style:tab-stop style:position="14cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:rsid="0038bc50" officeooo:paragraph-rsid="0038bc50" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP6" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="0168588a" officeooo:paragraph-rsid="0168588a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP7" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP8" style:family="paragraph" style:parent-style-name="В_20_дело">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP9" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP10" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
@@ -1974,33 +1974,33 @@
 					<style:tab-stop style:position="14cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:rsid="0038bc50" officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP11" style:family="paragraph" style:parent-style-name="Standard">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP12" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP13" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:rsid="00a964e3" officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP14" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP15" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="016f082d" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP16" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="01779c4a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MT1" style:family="text">
 			<style:text-properties fo:language="en" fo:country="US" />
 		</style:style>
 		<style:style style:name="MT2" style:family="text" />
 		<style:style style:name="MT3" style:family="text">
-			<style:text-properties officeooo:rsid="013113b2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties fo:background-color="transparent" style:editable="false">

@@ -166,7 +166,7 @@
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
 		</style:style>
 		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Standard">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P3" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties>
@@ -174,22 +174,22 @@
 					<style:tab-stop style:position="8.969cm" style:type="center" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties officeooo:paragraph-rsid="01109f79" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P6" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="0168588a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="01333ba2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P8" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P9" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
@@ -197,7 +197,7 @@
 					<style:tab-stop style:position="14cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:rsid="0038bc50" officeooo:paragraph-rsid="0038bc50" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P10" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
@@ -205,43 +205,43 @@
 					<style:tab-stop style:position="14cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:rsid="0038bc50" officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P11" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="0168588a" officeooo:paragraph-rsid="0168588a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P12" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="017faaf2" officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P13" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="00b446f4" officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="00b446f4" officeooo:paragraph-rsid="01857435" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P15" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties officeooo:rsid="01857435" officeooo:paragraph-rsid="01857435" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P16" style:family="paragraph" style:parent-style-name="В_20_дело">
-			<style:text-properties officeooo:paragraph-rsid="00b141d9" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P17" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:rsid="00a964e3" officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P18" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:rsid="00a964e3" officeooo:paragraph-rsid="013f471f" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P19" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P20" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="016f082d" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P21" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="01779c4a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P22" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties officeooo:paragraph-rsid="013f471f" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P23" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
@@ -252,7 +252,7 @@
 					<style:tab-stop style:position="7.451cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P24" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
@@ -263,154 +263,154 @@
 					<style:tab-stop style:position="7.451cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="01857435" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P25" style:family="paragraph" style:parent-style-name="Signature">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" />
-			<style:text-properties fo:language="en" fo:country="US" officeooo:paragraph-rsid="00af54cc" />
+			<style:text-properties fo:language="en" fo:country="US" />
 		</style:style>
 		<style:style style:name="P26" style:family="paragraph" style:parent-style-name="Signature">
-			<style:text-properties officeooo:paragraph-rsid="00af54cc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P27" style:family="paragraph" style:parent-style-name="Вступительное_20_обращение">
-			<style:text-properties officeooo:paragraph-rsid="00af54cc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P28" style:family="paragraph" style:parent-style-name="Заголовок_20_документа">
-			<style:text-properties officeooo:paragraph-rsid="009a2ced" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P29" style:family="paragraph" style:parent-style-name="Addressee">
-			<style:text-properties officeooo:paragraph-rsid="009bbe3a" text:display="true" />
+			<style:text-properties text:display="true" />
 		</style:style>
 		<style:style style:name="P30" style:family="paragraph" style:parent-style-name="Гриф_20_ограничения_20_доступа">
-			<style:text-properties officeooo:rsid="003c5cdf" officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P31" style:family="paragraph" style:parent-style-name="Код_20_формы_20_документа">
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P32" style:family="paragraph" style:parent-style-name="Наименование_20_вида_20_документа">
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P33" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P34" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="01857435" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P35" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P36" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties officeooo:paragraph-rsid="01857435" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P37" style:family="paragraph" style:parent-style-name="Штрихкод">
-			<style:text-properties officeooo:paragraph-rsid="017faaf2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P38" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="start" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman1" fo:font-size="12pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="01a6fb0a" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman1" fo:font-size="12pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="P39" style:family="paragraph" style:parent-style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:text-properties officeooo:paragraph-rsid="01a6fb0a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P40" style:family="paragraph" style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:text-properties officeooo:paragraph-rsid="01b489fe" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P41" style:family="paragraph" style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:text-properties officeooo:paragraph-rsid="01b4aa4b" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P42" style:family="paragraph" style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:paragraph-properties fo:break-before="column" />
-			<style:text-properties officeooo:rsid="01a642b4" officeooo:paragraph-rsid="01b489fe" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P43" style:family="paragraph" style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:paragraph-properties fo:break-before="column" />
-			<style:text-properties officeooo:paragraph-rsid="01b489fe" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P44" style:family="paragraph" style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" />
 		</style:style>
 		<style:style style:name="P45" style:family="paragraph" style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="PT Sans" fo:font-size="13pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" officeooo:rsid="01f3ef25" officeooo:paragraph-rsid="01f3ef25" style:text-scale="110%" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="PT Sans" fo:font-size="13pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:text-scale="110%" />
 		</style:style>
 		<style:style style:name="P46" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties officeooo:rsid="0092e0e9" officeooo:paragraph-rsid="01f469c1" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P47" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties officeooo:paragraph-rsid="014c26bc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P48" style:family="paragraph" style:parent-style-name="Основной">
-			<style:text-properties officeooo:paragraph-rsid="014c26bc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P49" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties officeooo:rsid="014c26bc" officeooo:paragraph-rsid="014c26bc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P50" style:family="paragraph" style:parent-style-name="Основной">
-			<style:text-properties officeooo:rsid="014c26bc" officeooo:paragraph-rsid="014c26bc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P51" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties officeooo:rsid="0121f11e" officeooo:paragraph-rsid="0121f11e" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P52" style:family="paragraph" style:parent-style-name="Основной">
-			<style:text-properties officeooo:rsid="0121f11e" officeooo:paragraph-rsid="0121f11e" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P53" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Титульный_20_лист">
 			<style:paragraph-properties style:page-number="auto" />
 		</style:style>
 		<style:style style:name="P54" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties officeooo:paragraph-rsid="013a6221" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P55" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties officeooo:paragraph-rsid="013f471f" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T1" style:family="text">
 			<style:text-properties fo:language="en" fo:country="US" />
 		</style:style>
 		<style:style style:name="T2" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" officeooo:rsid="01a642b4" />
+			<style:text-properties fo:language="en" fo:country="US" />
 		</style:style>
 		<style:style style:name="T3" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" officeooo:rsid="01b489fe" />
+			<style:text-properties fo:language="en" fo:country="US" />
 		</style:style>
 		<style:style style:name="T4" style:family="text">
-			<style:text-properties officeooo:rsid="013113b2" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T5" style:family="text">
-			<style:text-properties officeooo:rsid="0020196e" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T6" style:family="text">
-			<style:text-properties officeooo:rsid="001f4bc1" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T7" style:family="text">
 			<style:text-properties fo:font-size="6pt" />
 		</style:style>
 		<style:style style:name="T8" style:family="text">
-			<style:text-properties officeooo:rsid="014ad35a" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T9" style:family="text">
-			<style:text-properties officeooo:rsid="014c26bc" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T10" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:rsid="01b489fe" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T11" style:family="text">
-			<style:text-properties officeooo:rsid="01a642b4" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T12" style:family="text">
-			<style:text-properties officeooo:rsid="01cb7d8d" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T13" style:family="text" />
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Frame">
