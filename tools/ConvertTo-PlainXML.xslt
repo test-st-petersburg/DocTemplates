@@ -36,6 +36,8 @@
 	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:officeooo="http://openoffice.org/2009/office"
+
+	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 >
 	<xsl:output
 		version="1.0"
@@ -187,6 +189,22 @@
 	</xsl:template>
 
 	<!-- правила для обработки "особых" элементов -->
+
+	<xsl:template match="/manifest:manifest">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:copy>
+			<xsl:apply-templates select="attribute::*" mode="indent">
+				<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+			</xsl:apply-templates>
+			<xsl:for-each select="manifest:file-entry">
+				<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
+				<xsl:apply-templates select="." mode="preindent">
+					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+				</xsl:apply-templates>
+			</xsl:for-each>
+			<xsl:value-of select="$indent"/>
+		</xsl:copy>
+	</xsl:template>
 
 	<!-- правила для атрибутов -->
 
