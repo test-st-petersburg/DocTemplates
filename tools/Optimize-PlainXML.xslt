@@ -94,7 +94,7 @@
 	<xsl:template match="attribute::style:font-weight-complex" />
 	<xsl:template match="attribute::style:font-style-complex" />
 
-	<!-- officeooo:paragraph-rsid -->
-	<!-- officeooo:rsid -->
+	<xsl:template match="attribute::officeooo:paragraph-rsid[parent::style:text-properties]" />
+	<xsl:template match="attribute::officeooo:rsid[parent::style:text-properties]" />
 
 </xsl:stylesheet>
