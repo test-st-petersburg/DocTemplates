@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<image:imagescontainer xmlns:image="http://openoffice.org/2001/image" xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+	<image:images xlink:type="simple" xlink:href="Bitmaps/lc_userimages.png" image:maskcolor="#0" image:maskmode="maskcolor">
+  
+		<image:entry image:bitmap-index="0" image:command=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles" />
+  
+		<image:entry image:bitmap-index="1" image:command=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles" />
+ 
+	</image:images>
+
+</image:imagescontainer>
