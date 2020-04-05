@@ -1,13 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<office:document-meta office:version="1.2" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+﻿<?xml version="1.0" encoding="utf-8"?><office:document-meta office:version="1.2" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<office:meta>
 		<meta:creation-date>2015-07-20T14:53:34.980000000</meta:creation-date>
-		<dc:date>2020-04-04T20:17:11.658000000</dc:date>
+		<dc:date>2020-04-06T01:12:57.452000000</dc:date>
 		<meta:print-date>2019-12-11T20:36:49.531000000</meta:print-date>
-		<meta:editing-cycles>624</meta:editing-cycles>
-		<meta:editing-duration>P13DT8H51M12S</meta:editing-duration>
+		<meta:editing-cycles>629</meta:editing-cycles>
+		<meta:editing-duration>P13DT8H54M5S</meta:editing-duration>
 		<meta:generator>LibreOffice/6.3.4.2$Windows_X86_64 LibreOffice_project/60da17e045e08f1793c57c00ba83cdfce946d0aa</meta:generator>
-		<meta:document-statistic meta:table-count="11" meta:image-count="1" meta:object-count="0" meta:page-count="16" meta:paragraph-count="467" meta:word-count="2556" meta:character-count="20476" meta:non-whitespace-character-count="18370" />
+		<meta:document-statistic meta:table-count="11" meta:image-count="1" meta:object-count="0" meta:page-count="16" meta:paragraph-count="467" meta:word-count="2556" meta:character-count="20475" meta:non-whitespace-character-count="18369" />
 		<meta:user-defined meta:name="DocumentEncoding">utf-8</meta:user-defined>
 		<meta:user-defined meta:name="HTML" meta:value-type="boolean">true</meta:user-defined>
 	</office:meta>

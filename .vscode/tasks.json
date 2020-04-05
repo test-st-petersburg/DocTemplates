@@ -54,6 +54,15 @@
 			]
 		},
 		{
+			"label": "Clean Open Office content.xml",
+			"command": ".\\tools\\Optimize-PlainXMLAllDocuments.ps1",
+			"args": [
+				"-Path",
+				"src\\template",
+				"-Verbose"
+			],
+		},
+		{
 			"label": "Create Open Office files from plain XML",
 			"group": {
 				"kind": "build",
