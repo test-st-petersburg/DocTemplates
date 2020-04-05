@@ -4,3 +4,5 @@ ReleaseNotes.md
 node_modules
 package-lock.json
 Thumbs.db
+*.odt
+*.ott
