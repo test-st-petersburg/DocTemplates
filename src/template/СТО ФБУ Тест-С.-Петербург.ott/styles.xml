@@ -1,26 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><office:document-styles office:version="1.2" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office">
 	<office:font-face-decls>
-		<style:font-face style:name="Arial" svg:font-family="Arial" style:font-family-generic="system" style:font-pitch="variable" />
-		<style:font-face style:name="Arial1" svg:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" />
+		<style:font-face style:name="Arial" svg:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" />
 		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-family-generic="modern" />
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" />
 		<style:font-face style:name="Liberation Serif" svg:font-family="'Liberation Serif'" style:font-family-generic="roman" style:font-pitch="variable" />
-		<style:font-face style:name="Mangal" svg:font-family="Mangal" style:font-pitch="variable" />
-		<style:font-face style:name="Mangal1" svg:font-family="Mangal" />
-		<style:font-face style:name="Microsoft YaHei" svg:font-family="'Microsoft YaHei'" style:font-pitch="variable" />
-		<style:font-face style:name="NSimSun" svg:font-family="NSimSun" style:font-family-generic="modern" style:font-pitch="fixed" />
 		<style:font-face style:name="OpenSymbol" svg:font-family="OpenSymbol, 'Arial Unicode MS'" />
-		<style:font-face style:name="SimSun" svg:font-family="SimSun" style:font-family-generic="system" style:font-pitch="variable" />
-		<style:font-face style:name="SimSun1" svg:font-family="SimSun" style:font-pitch="variable" />
-		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" />
+		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable" />
+		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable" />
+		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" />
 		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-family-generic="roman" style:font-pitch="variable" />
-		<style:font-face style:name="Times New Roman2" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" />
-		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Times New Roman2" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" />
 	</office:font-face-decls>
 	<office:styles>
 		<style:default-style style:family="graphic">
 			<style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false" />
-			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
+			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
 				<style:tab-stops />
 			</style:paragraph-properties>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true" />
@@ -41,7 +36,7 @@
 		</style:style>
 		<style:style style:name="Heading" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="text" style:master-page-name="">
 			<style:paragraph-properties fo:margin-top="0.4cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always" style:page-number="auto" fo:keep-with-next="always" />
-			<style:text-properties style:font-name="Times New Roman2" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:font-weight="bold" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard" style:class="text" style:master-page-name="">
 			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:page-number="auto" />
@@ -49,7 +44,6 @@
 		</style:style>
 		<style:style style:name="List" style:family="paragraph" style:parent-style-name="First_20_line_20_indent" style:class="list" style:master-page-name="">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties />
 		</style:style>
 		<style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.212cm" fo:margin-bottom="0.212cm" loext:contextual-spacing="false" text:number-lines="false" text:line-number="0" />
@@ -57,11 +51,10 @@
 		</style:style>
 		<style:style style:name="Index" style:family="paragraph" style:parent-style-name="Standard" style:class="index">
 			<style:paragraph-properties text:number-lines="false" text:line-number="0" />
-			<style:text-properties />
 		</style:style>
 		<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Text_20_body" style:default-outline-level="1" style:list-style-name="Пункты_20_документа" style:class="text" style:master-page-name="">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" style:page-number="auto" fo:break-before="page" text:number-lines="true" text:line-number="0" style:writing-mode="lr-tb" />
-			<style:text-properties fo:text-transform="uppercase" style:font-name="Times New Roman2" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="14pt" fo:font-weight="bold" />
+			<style:text-properties fo:text-transform="uppercase" style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="14pt" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph" style:parent-style-name="Заголовок_20_в_20_тексте" style:next-style-name="Основной_20_текст_20_документа" style:default-outline-level="2" style:class="text">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.4cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-indent="1cm" style:auto-text-indent="false" />
@@ -129,7 +122,7 @@
 			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:line-height="100%">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties style:font-name="Times New Roman3" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" />
+			<style:text-properties style:font-name="Times New Roman2" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="Contents_20_2" style:display-name="Contents 2" style:family="paragraph" style:parent-style-name="Index" style:class="index" />
 		<style:style style:name="Heading_20_10" style:display-name="Heading 10" style:family="paragraph" style:parent-style-name="Заголовок_20_в_20_тексте" style:next-style-name="Основной_20_текст_20_документа" style:default-outline-level="10" style:list-style-name="Пункты_20_документа" style:class="text" />
@@ -474,7 +467,7 @@
 			<style:text-properties style:font-name="OpenSymbol" fo:font-family="OpenSymbol, 'Arial Unicode MS'" />
 		</style:style>
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" style:hidden="true">
-			<style:text-properties style:font-name="Arial1" fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="12pt" />
+			<style:text-properties style:font-name="Arial" fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="Index_20_Link" style:display-name="Index Link" style:family="text" />
 		<style:style style:name="Footnote_20_Symbol" style:display-name="Footnote Symbol" style:family="text">
@@ -1233,61 +1226,61 @@
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="2" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="3" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="4" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="5" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="6" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="7" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="8" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="9" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="10" text:bullet-char="⁃">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1cm" />
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman" />
+				<style:text-properties style:font-name="Times New Roman3" />
 			</text:list-level-style-bullet>
 		</text:list-style>
 		<text:list-style style:name="Пункты_20_предисловия" style:display-name="Пункты предисловия">
@@ -1483,45 +1476,8 @@
 		<style:style style:name="MP8" style:family="paragraph" style:parent-style-name="Обозначение_20_документа_20_в_20_колонтитулах">
 			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
-		<style:style style:name="MP9" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="MP10" style:family="paragraph" style:parent-style-name="Header">
+		<style:style style:name="MP9" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
 			<style:text-properties fo:language="ru" fo:country="RU" />
-		</style:style>
-		<style:style style:name="MP11" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties fo:language="ru" fo:country="RU" />
-		</style:style>
-		<style:style style:name="MP12" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties style:snap-to-layout-grid="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" />
-		</style:style>
-		<style:style style:name="MP13" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:language="ru" fo:country="RU" />
-		</style:style>
-		<style:style style:name="MP14" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="MP15" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="MP16" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:language="ru" fo:country="RU" />
-		</style:style>
-		<style:style style:name="MT1" style:family="text">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MT2" style:family="text">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MT3" style:family="text">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MT4" style:family="text">
-			<style:text-properties />
 		</style:style>
 		<style:page-layout style:name="Mpm1">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0cm" fo:margin-bottom="0.078cm" fo:margin-left="0cm" fo:margin-right="0.026cm" style:writing-mode="lr-tb" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="53" style:layout-grid-base-height="0.55cm" style:layout-grid-ruby-height="0cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:layout-grid-base-width="0.367cm" style:layout-grid-snap-to="true" style:footnote-max-height="0cm">
@@ -1661,14 +1617,14 @@
 							<text:p text:style-name="MP8"><text:bookmark-ref text:reference-format="text" text:ref-name="ОбозначениеДокумента">СК 02-11-19</text:bookmark-ref></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица12.A3" office:value-type="string">
-							<text:p text:style-name="MP9" />
+							<text:p text:style-name="MP7" />
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица12.A3" office:value-type="string">
-							<text:p text:style-name="MP10"><text:span text:style-name="MT1">Лист </text:span><text:span text:style-name="MT1"><text:page-number text:select-page="current">12</text:page-number></text:span><text:span text:style-name="MT1"> </text:span><text:span text:style-name="MT2">из </text:span><text:span text:style-name="MT3"><text:bookmark-ref text:reference-format="page" text:ref-name="КонецДокумента">12</text:bookmark-ref></text:span></text:p>
+							<text:p text:style-name="MP5">Лист <text:page-number text:select-page="current">12</text:page-number> из <text:bookmark-ref text:reference-format="page" text:ref-name="КонецДокумента">12</text:bookmark-ref></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
-				<text:p text:style-name="MP11" />
+				<text:p text:style-name="MP9" />
 			</style:header>
 		</style:master-page>
 		<style:master-page style:name="Листы_20_пролога" style:display-name="Листы пролога" style:page-layout-name="Mpm10">
@@ -1682,10 +1638,10 @@
 							<text:p text:style-name="MP3">ФБУ «Тест‑С. – Петербург»</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
-							<text:p text:style-name="MP12" />
+							<text:p text:style-name="MP4" />
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
-							<text:p text:style-name="MP13">Издание: <text:bookmark-start text:name="ИзданиеДокумента" />2019‑<text:span text:style-name="MT4">11</text:span><text:bookmark-end text:name="ИзданиеДокумента" /></text:p>
+							<text:p text:style-name="MP5">Издание: <text:bookmark-start text:name="ИзданиеДокумента" />2019‑11<text:bookmark-end text:name="ИзданиеДокумента" /></text:p>
 						</table:table-cell>
 					</table:table-row>
 					<table:table-row table:style-name="Таблица13.2">
@@ -1693,10 +1649,10 @@
 							<text:p text:style-name="MP6"><text:bookmark-ref text:reference-format="text" text:ref-name="ВидДокумента">Стандарт организации</text:bookmark-ref></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
-							<text:p text:style-name="MP14" />
+							<text:p text:style-name="MP7" />
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
-							<text:p text:style-name="MP13">Изменение:</text:p>
+							<text:p text:style-name="MP5">Изменение:</text:p>
 						</table:table-cell>
 					</table:table-row>
 					<table:table-row table:style-name="Таблица13.3">
@@ -1704,14 +1660,14 @@
 							<text:p text:style-name="MP8"><text:bookmark-ref text:reference-format="text" text:ref-name="ОбозначениеДокумента">СК 02-11-19</text:bookmark-ref></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A3" office:value-type="string">
-							<text:p text:style-name="MP15" />
+							<text:p text:style-name="MP7" />
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A3" office:value-type="string">
-							<text:p text:style-name="MP16"><text:span text:style-name="MT1">Лист </text:span><text:span text:style-name="MT1"><text:page-number text:select-page="current">III</text:page-number></text:span></text:p>
+							<text:p text:style-name="MP5">Лист <text:page-number text:select-page="current">III</text:page-number></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
-				<text:p text:style-name="MP11" />
+				<text:p text:style-name="MP9" />
 			</style:header>
 		</style:master-page>
 	</office:master-styles>
