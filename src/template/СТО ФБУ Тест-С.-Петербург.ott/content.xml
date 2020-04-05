@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<office:document-content office:version="1.2" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office">
+﻿<?xml version="1.0" encoding="utf-8"?><office:document-content office:version="1.2" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office">
 	<office:scripts />
 	<office:font-face-decls>
 		<style:font-face style:name="Symbol" svg:font-family="Symbol" style:font-family-generic="roman" style:font-pitch="variable" style:font-charset="x-symbol" />
@@ -335,33 +334,33 @@
 		</style:style>
 		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties style:snap-to-layout-grid="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="00947d60" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="00947d60" />
 		</style:style>
 		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties style:snap-to-layout-grid="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="009e1ba3" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="009e1ba3" />
 		</style:style>
 		<style:style style:name="P6" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="00947d60" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="00947d60" />
 		</style:style>
 		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="009e1ba3" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="009e1ba3" />
 		</style:style>
 		<style:style style:name="P8" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="00947d60" style:font-weight-asian="bold" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="00947d60" />
 		</style:style>
 		<style:style style:name="P9" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="009e1ba3" style:font-weight-asian="bold" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="009e1ba3" />
 		</style:style>
 		<style:style style:name="P10" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="00947d60" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="00947d60" />
 		</style:style>
 		<style:style style:name="P11" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="009e1ba3" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="009e1ba3" />
 		</style:style>
 		<style:style style:name="P12" style:family="paragraph" style:parent-style-name="Header">
 			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="0179b6d9" />
@@ -380,23 +379,23 @@
 		</style:style>
 		<style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P18" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Times New Roman" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:language-complex="ar" style:country-complex="SA" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P19" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P20" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P21" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P22" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -404,27 +403,27 @@
 					<style:tab-stop style:position="0.026cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P23" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P24" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P25" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="0046a7c9" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="0046a7c9" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P26" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P27" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P28" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -433,7 +432,7 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P29" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -442,7 +441,7 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P30" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -451,56 +450,56 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="0046a7c9" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="0046a7c9" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P31" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P32" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P33" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P34" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="01b752ea" officeooo:paragraph-rsid="01b752ea" fo:background-color="transparent" style:font-size-asian="11pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="11pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="01b752ea" officeooo:paragraph-rsid="01b752ea" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P35" style:family="paragraph" style:parent-style-name="Standard">
 			<loext:graphic-properties draw:fill="none" />
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" fo:background-color="transparent" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="003fbd57" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="003fbd57" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P36" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P37" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P38" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P39" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Calibri" style:font-size-asian="10pt" style:language-asian="en" style:country-asian="US" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P40" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P41" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P42" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P43" style:family="paragraph" style:parent-style-name="Text_20_body">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -508,11 +507,11 @@
 					<style:tab-stop style:position="0.026cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P44" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P45" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false">
@@ -521,7 +520,7 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:language-complex="ar" style:country-complex="SA" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P46" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false">
@@ -530,35 +529,35 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-name-asian="Times New Roman" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:language-complex="ar" style:country-complex="SA" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P47" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:rsid="003fbd57" officeooo:paragraph-rsid="003fbd57" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:rsid="003fbd57" officeooo:paragraph-rsid="003fbd57" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P48" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P49" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P50" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P51" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P52" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P53" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P54" style:family="paragraph" style:parent-style-name="Standard">
 			<loext:graphic-properties draw:fill="none" />
@@ -568,23 +567,23 @@
 		<style:style style:name="P55" style:family="paragraph" style:parent-style-name="Standard" style:master-page-name="">
 			<loext:graphic-properties draw:fill="none" />
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="007543fc" officeooo:paragraph-rsid="006ce084" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="007543fc" officeooo:paragraph-rsid="006ce084" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P56" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P57" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="0054e5d4" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="004346a7" officeooo:paragraph-rsid="0054e5d4" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P58" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P59" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="11pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="11pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P60" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb">
@@ -592,7 +591,7 @@
 					<style:tab-stop style:position="5.408cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:rsid="01b752ea" officeooo:paragraph-rsid="01b752ea" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" officeooo:rsid="01b752ea" officeooo:paragraph-rsid="01b752ea" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P61" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
@@ -600,83 +599,83 @@
 					<style:tab-stop style:position="1.896cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P62" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="003000eb" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="bold" style:font-size-complex="8pt" style:font-weight-complex="bold" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="003000eb" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P63" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="bold" style:font-size-complex="8pt" style:font-weight-complex="bold" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P64" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="00278b89" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="bold" style:font-size-complex="8pt" style:font-weight-complex="bold" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="00278b89" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P65" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0014efa2" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0014efa2" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P66" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0012bb53" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0012bb53" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P67" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P68" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P69" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P70" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P71" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P72" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P73" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="003000eb" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="003000eb" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P74" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="003571ef" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="003571ef" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P75" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="0033806e" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="0033806e" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P76" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="0025cf34" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P77" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="00131c5a" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P78" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" />
 		</style:style>
 		<style:style style:name="P79" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-weight-asian="bold" style:font-size-complex="8pt" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P80" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P81" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" style:writing-mode="lr-tb">
@@ -685,39 +684,39 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-name-asian="Times New Roman" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman CYR" style:font-size-complex="12pt" style:language-complex="ar" style:country-complex="SA" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P82" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P83" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P84" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P85" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Times New Roman" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="10pt" style:language-complex="ar" style:country-complex="SA" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P86" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-name-asian="Symbol" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:language="ru" fo:country="RU" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P87" style:family="paragraph" style:parent-style-name="Text_20_body">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-size-complex="10pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P88" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P89" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P90" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false">
@@ -725,11 +724,11 @@
 					<style:tab-stop style:position="10.61cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P91" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P92" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false">
@@ -738,11 +737,11 @@
 					<style:tab-stop style:position="1.752cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P93" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -750,7 +749,7 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001df43d" officeooo:paragraph-rsid="0054fe1f" fo:background-color="transparent" style:font-name-asian="Times New Roman4" style:font-size-asian="8pt" style:language-asian="ru" style:country-asian="RU" style:font-size-complex="8pt" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001df43d" officeooo:paragraph-rsid="0054fe1f" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P95" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -758,7 +757,7 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" style:font-name-asian="Times New Roman4" style:font-size-asian="8pt" style:language-asian="ru" style:country-asian="RU" style:font-size-complex="8pt" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P96" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -766,7 +765,7 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0008a2df" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" style:font-name-asian="Times New Roman4" style:font-size-asian="8pt" style:language-asian="ru" style:country-asian="RU" style:font-size-complex="8pt" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0008a2df" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P97" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -774,7 +773,7 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P98" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -782,7 +781,7 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" style:font-name-asian="Times New Roman4" style:font-size-asian="8pt" style:language-asian="ru" style:country-asian="RU" style:font-style-asian="italic" style:font-size-complex="8pt" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P99" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0">
@@ -790,39 +789,39 @@
 					<style:tab-stop style:position="0.501cm" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:rsid="0008a2df" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" style:font-name-asian="Times New Roman4" style:font-size-asian="8pt" style:language-asian="ru" style:country-asian="RU" style:font-style-asian="italic" style:font-size-complex="8pt" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:rsid="0008a2df" officeooo:paragraph-rsid="0008a2df" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P100" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" style:font-size-asian="10pt" style:font-weight-asian="bold" style:font-size-complex="10pt" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="10pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:paragraph-rsid="005427c4" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P101" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001df43d" officeooo:paragraph-rsid="001df43d" fo:background-color="transparent" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001df43d" officeooo:paragraph-rsid="001df43d" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P102" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001fd790" officeooo:paragraph-rsid="001fd790" fo:background-color="transparent" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="001fd790" officeooo:paragraph-rsid="001fd790" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P103" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0020fc85" officeooo:paragraph-rsid="0020fc85" fo:background-color="transparent" style:font-size-asian="8pt" style:font-size-complex="8pt" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" officeooo:rsid="0020fc85" officeooo:paragraph-rsid="0020fc85" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P104" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:rsid="0022007d" officeooo:paragraph-rsid="0022007d" fo:background-color="transparent" style:font-size-asian="8pt" style:font-style-asian="italic" style:font-size-complex="8pt" style:font-style-complex="italic" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="italic" officeooo:rsid="0022007d" officeooo:paragraph-rsid="0022007d" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P105" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="start" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="P106" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:color="#000000" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties fo:color="#000000" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="P107" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:paragraph-properties fo:text-align="start" style:justify-single-word="false" />
-			<style:text-properties fo:color="#000000" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="009062e4" style:font-size-asian="8pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties fo:color="#000000" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Times New Roman" fo:font-size="8pt" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" officeooo:paragraph-rsid="009062e4" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="P108" style:family="paragraph" style:parent-style-name="Table_20_Contents">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -863,7 +862,7 @@
 			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="P117" style:family="paragraph" style:parent-style-name="Contents_20_Heading">
-			<style:text-properties fo:language="ru" fo:country="RU" officeooo:rsid="01b0cd3e" officeooo:paragraph-rsid="01e4fc46" style:font-weight-complex="bold" />
+			<style:text-properties fo:language="ru" fo:country="RU" officeooo:rsid="01b0cd3e" officeooo:paragraph-rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="P118" style:family="paragraph" style:parent-style-name="Footnote">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -873,27 +872,27 @@
 		</style:style>
 		<style:style style:name="P120" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="-0.101cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P121" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P122" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P123" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P124" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P125" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P126" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
@@ -905,16 +904,16 @@
 		</style:style>
 		<style:style style:name="P128" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P129" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P130" style:family="paragraph" style:parent-style-name="Standard" style:master-page-name="">
 			<loext:graphic-properties draw:fill="none" />
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" style:justify-single-word="false" fo:text-indent="4.5cm" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent" />
-			<style:text-properties style:text-position="super 58%" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" style:font-size-asian="10pt" style:font-size-complex="10pt" />
+			<style:text-properties style:text-position="super 58%" style:font-name="Times New Roman" fo:font-size="10pt" fo:language="ru" fo:country="RU" officeooo:rsid="001d99ad" officeooo:paragraph-rsid="009062e4" />
 		</style:style>
 		<style:style style:name="P131" style:family="paragraph" style:parent-style-name="Standard">
 			<loext:graphic-properties draw:fill="none" />
@@ -933,15 +932,15 @@
 		</style:style>
 		<style:style style:name="P135" style:family="paragraph" style:parent-style-name="Text_20_body">
 			<style:paragraph-properties fo:text-align="start" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" />
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="P136" style:family="paragraph" style:parent-style-name="Text_20_body">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="-0.072cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P137" style:family="paragraph" style:parent-style-name="Text_20_body">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.353cm" loext:contextual-spacing="false" fo:line-height="115%" fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" fo:background-color="transparent" style:font-name-asian="Calibri" style:font-size-asian="14pt" style:language-asian="en" style:country-asian="US" style:font-weight-asian="bold" style:font-size-complex="14pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="P138" style:family="paragraph" style:parent-style-name="Дата_20_подписи_20_в_20_подписи_20_и_20_грифе">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -980,7 +979,7 @@
 			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="01efa5a8" />
 		</style:style>
 		<style:style style:name="P150" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="normal" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="P151" style:family="paragraph" style:parent-style-name="Текст_20_предисловия">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -989,16 +988,16 @@
 			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="020d263a" />
 		</style:style>
 		<style:style style:name="P153" style:family="paragraph" style:parent-style-name="Heading_20_3" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="14pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="14pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P154" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="14pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="14pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P155" style:family="paragraph" style:parent-style-name="Heading_20_2" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="16pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="16pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P156" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="16pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="16pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P157" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога">
 			<style:paragraph-properties style:page-number="auto" />
@@ -1015,7 +1014,7 @@
 			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="020d263a" />
 		</style:style>
 		<style:style style:name="P161" style:family="paragraph" style:parent-style-name="List_20_1">
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" style:font-size-asian="12pt" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="P162" style:family="paragraph" style:parent-style-name="Standard">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -1048,10 +1047,10 @@
 			<style:text-properties fo:language="ru" fo:country="RU" officeooo:paragraph-rsid="016d6d31" />
 		</style:style>
 		<style:style style:name="P171" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
-			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="Microsoft YaHei" style:font-size-asian="18pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="18pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P172" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="Microsoft YaHei" style:font-size-asian="18pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="bold" style:font-name-complex="Mangal" style:font-size-complex="18pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="bold" />
+			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P173" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
 			<style:paragraph-properties style:page-number="1" />
@@ -1079,7 +1078,7 @@
 			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="P180" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="normal" style:font-name-complex="Mangal" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="normal" officeooo:rsid="020d263a" officeooo:paragraph-rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="P181" style:family="paragraph" style:parent-style-name="Текст_20_предисловия" style:list-style-name="Пункты_20_предисловия">
 			<style:text-properties fo:language="ru" fo:country="RU" />
@@ -1091,13 +1090,13 @@
 			<style:text-properties fo:hyphenate="false" />
 		</style:style>
 		<style:style style:name="T1" style:family="text">
-			<style:text-properties style:font-name-complex="Times New Roman" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T2" style:family="text">
-			<style:text-properties officeooo:rsid="01792aa1" style:font-name-complex="Times New Roman" />
+			<style:text-properties officeooo:rsid="01792aa1" />
 		</style:style>
 		<style:style style:name="T3" style:family="text">
-			<style:text-properties officeooo:rsid="01e619ff" style:font-name-complex="Times New Roman" />
+			<style:text-properties officeooo:rsid="01e619ff" />
 		</style:style>
 		<style:style style:name="T4" style:family="text">
 			<style:text-properties officeooo:rsid="009132cc" />
@@ -1106,46 +1105,46 @@
 			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T6" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" style:font-weight-asian="bold" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T7" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" style:font-weight-asian="bold" style:font-size-complex="12pt" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T8" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T9" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:font-size-complex="12pt" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T10" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T11" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:font-weight-asian="bold" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T12" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T13" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:font-weight-asian="bold" style:font-style-complex="italic" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T14" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T15" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-style="italic" style:font-style-asian="italic" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:language="ru" fo:country="RU" fo:font-style="italic" />
 		</style:style>
 		<style:style style:name="T16" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" style:language-asian="zh" style:country-asian="CN" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T17" style:family="text">
 			<style:text-properties style:font-name="Times New Roman" />
 		</style:style>
 		<style:style style:name="T18" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T19" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T20" style:family="text">
 			<style:text-properties style:font-name="Times New Roman" officeooo:rsid="002136a5" />
@@ -1160,154 +1159,154 @@
 			<style:text-properties style:font-name="Times New Roman" officeooo:rsid="001064bc" />
 		</style:style>
 		<style:style style:name="T24" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:language="ru" fo:country="RU" fo:font-style="normal" style:font-style-asian="normal" style:font-name-complex="Times New Roman" style:font-style-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:language="ru" fo:country="RU" fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T25" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:font-style="normal" style:font-style-asian="normal" style:font-name-complex="Times New Roman" style:font-style-complex="normal" />
+			<style:text-properties style:font-name="Times New Roman" fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T26" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T27" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T28" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T29" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T30" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-size-complex="12pt" style:font-weight-complex="bold" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T31" style:family="text">
-			<style:text-properties fo:font-size="12pt" officeooo:rsid="020d263a" style:font-size-asian="12pt" style:font-size-complex="12pt" style:font-weight-complex="bold" />
+			<style:text-properties fo:font-size="12pt" officeooo:rsid="020d263a" />
 		</style:style>
 		<style:style style:name="T32" style:family="text">
-			<style:text-properties fo:font-size="12pt" officeooo:rsid="001a9c52" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-size="12pt" officeooo:rsid="001a9c52" />
 		</style:style>
 		<style:style style:name="T33" style:family="text">
-			<style:text-properties fo:font-size="12pt" officeooo:rsid="016d34ab" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-size="12pt" officeooo:rsid="016d34ab" />
 		</style:style>
 		<style:style style:name="T34" style:family="text">
-			<style:text-properties fo:font-size="12pt" officeooo:rsid="009f90bc" style:font-size-asian="12pt" />
+			<style:text-properties fo:font-size="12pt" officeooo:rsid="009f90bc" />
 		</style:style>
 		<style:style style:name="T35" style:family="text">
-			<style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
 		<style:style style:name="T36" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T37" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" officeooo:rsid="009f90bc" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" officeooo:rsid="009f90bc" />
 		</style:style>
 		<style:style style:name="T38" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="bold" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T39" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" style:font-size-asian="12pt" style:language-asian="en" style:country-asian="US" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T40" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T41" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T42" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="bold" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T43" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T44" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" />
 		</style:style>
 		<style:style style:name="T45" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="bold" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="italic" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T46" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-weight="normal" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T47" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-weight-asian="normal" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-size="12pt" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T48" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T49" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" style:font-size-asian="12pt" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" />
 		</style:style>
 		<style:style style:name="T50" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T51" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-name-complex="Times New Roman" style:font-style-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T52" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-weight="bold" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" />
+			<style:text-properties fo:font-size="12pt" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T53" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-style="normal" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-name-complex="Times New Roman" style:font-style-complex="normal" />
+			<style:text-properties fo:font-size="12pt" fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T54" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" loext:char-shading-value="0" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:background-color="transparent" loext:char-shading-value="0" />
 		</style:style>
 		<style:style style:name="T55" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" loext:char-shading-value="0" style:font-size-asian="12pt" style:font-size-complex="12pt" />
+			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" loext:char-shading-value="0" />
 		</style:style>
 		<style:style style:name="T56" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" officeooo:rsid="020d263a" style:letter-kerning="true" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="normal" style:font-name-complex="Symbol" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" style:font-weight-complex="normal" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" officeooo:rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="T57" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" officeooo:rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="12pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Mangal" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" officeooo:rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="T58" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" officeooo:rsid="020d263a" style:letter-kerning="true" style:font-name-asian="SimSun1" style:font-size-asian="12pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Mangal1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" officeooo:rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="T59" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="normal" officeooo:rsid="020d263a" style:letter-kerning="true" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:language-asian="zh" style:country-asian="CN" style:font-weight-asian="normal" style:font-name-complex="Mangal" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="normal" officeooo:rsid="020d263a" style:letter-kerning="true" />
 		</style:style>
 		<style:style style:name="T60" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" style:font-weight-asian="bold" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" />
 		</style:style>
 		<style:style style:name="T61" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-weight="bold" officeooo:rsid="005427c4" fo:background-color="transparent" loext:char-shading-value="0" style:font-weight-asian="bold" style:font-weight-complex="bold" />
+			<style:text-properties style:use-window-font-color="true" fo:font-weight="bold" officeooo:rsid="005427c4" fo:background-color="transparent" loext:char-shading-value="0" />
 		</style:style>
 		<style:style style:name="T62" style:family="text">
-			<style:text-properties fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T63" style:family="text">
-			<style:text-properties fo:font-weight="normal" officeooo:rsid="00171291" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" officeooo:rsid="00171291" />
 		</style:style>
 		<style:style style:name="T64" style:family="text">
-			<style:text-properties fo:font-weight="normal" officeooo:rsid="0028a4ba" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" officeooo:rsid="0028a4ba" />
 		</style:style>
 		<style:style style:name="T65" style:family="text">
-			<style:text-properties fo:font-weight="normal" officeooo:rsid="003000eb" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" officeooo:rsid="003000eb" />
 		</style:style>
 		<style:style style:name="T66" style:family="text">
-			<style:text-properties fo:font-weight="normal" officeooo:rsid="0033806e" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" officeooo:rsid="0033806e" />
 		</style:style>
 		<style:style style:name="T67" style:family="text">
-			<style:text-properties fo:font-weight="normal" officeooo:rsid="003752fb" style:font-weight-asian="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-weight="normal" officeooo:rsid="003752fb" />
 		</style:style>
 		<style:style style:name="T68" style:family="text">
-			<style:text-properties fo:letter-spacing="-0.004cm" style:font-name-asian="Symbol" style:font-name-complex="Symbol" />
+			<style:text-properties fo:letter-spacing="-0.004cm" />
 		</style:style>
 		<style:style style:name="T69" style:family="text">
-			<style:text-properties fo:letter-spacing="-0.004cm" style:font-name-asian="Symbol" style:font-name-complex="Symbol" style:font-size-complex="12pt" />
+			<style:text-properties fo:letter-spacing="-0.004cm" />
 		</style:style>
 		<style:style style:name="T70" style:family="text">
-			<style:text-properties fo:letter-spacing="-0.004cm" style:font-name-asian="Symbol" style:font-name-complex="Symbol" style:font-size-complex="12pt" style:font-weight-complex="bold" />
+			<style:text-properties fo:letter-spacing="-0.004cm" />
 		</style:style>
 		<style:style style:name="T71" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" style:font-name-asian="Calibri" style:font-size-asian="14pt" style:language-asian="en" style:country-asian="US" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-name-complex="Times New Roman" style:font-size-complex="14pt" style:font-weight-complex="bold" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" />
 		</style:style>
 		<style:style style:name="T72" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T73" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" style:font-name-asian="Symbol" style:font-size-asian="12pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Times New Roman" style:font-size-complex="12pt" style:font-style-complex="normal" style:font-weight-complex="normal" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" />
 		</style:style>
 		<style:style style:name="T74" style:family="text">
 			<style:text-properties officeooo:rsid="001a9c52" />
@@ -1334,10 +1333,10 @@
 			<style:text-properties officeooo:rsid="005427c4" />
 		</style:style>
 		<style:style style:name="T82" style:family="text">
-			<style:text-properties style:font-name-asian="Times New Roman4" style:language-asian="ru" style:country-asian="RU" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T83" style:family="text">
-			<style:text-properties officeooo:rsid="0008a2df" style:font-name-asian="Times New Roman4" style:language-asian="ru" style:country-asian="RU" style:font-style-complex="italic" style:font-weight-complex="bold" />
+			<style:text-properties officeooo:rsid="0008a2df" />
 		</style:style>
 		<style:style style:name="T84" style:family="text">
 			<style:text-properties officeooo:rsid="001e250d" />
@@ -1346,16 +1345,16 @@
 			<style:text-properties officeooo:rsid="0054fe1f" />
 		</style:style>
 		<style:style style:name="T86" style:family="text">
-			<style:text-properties style:font-weight-complex="bold" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T87" style:family="text">
-			<style:text-properties officeooo:rsid="005427c4" style:font-weight-complex="bold" />
+			<style:text-properties officeooo:rsid="005427c4" />
 		</style:style>
 		<style:style style:name="T88" style:family="text">
-			<style:text-properties officeooo:rsid="01a5cae8" style:font-weight-complex="bold" />
+			<style:text-properties officeooo:rsid="01a5cae8" />
 		</style:style>
 		<style:style style:name="T89" style:family="text">
-			<style:text-properties officeooo:rsid="01e4fc46" style:font-weight-complex="bold" />
+			<style:text-properties officeooo:rsid="01e4fc46" />
 		</style:style>
 		<style:style style:name="T90" style:family="text">
 			<style:text-properties officeooo:rsid="0020204f" />
@@ -1436,43 +1435,43 @@
 			<style:text-properties officeooo:rsid="020d263a" />
 		</style:style>
 		<style:style style:name="T116" style:family="text">
-			<style:text-properties style:language-asian="zh" style:country-asian="CN" style:language-complex="hi" style:country-complex="IN" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T117" style:family="text">
-			<style:text-properties fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" />
+			<style:text-properties fo:font-style="normal" />
 		</style:style>
 		<style:style style:name="T118" style:family="text">
-			<style:text-properties style:font-weight-asian="bold" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T119" style:family="text">
-			<style:text-properties style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T120" style:family="text">
-			<style:text-properties style:font-weight-asian="bold" style:font-style-complex="italic" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T121" style:family="text">
-			<style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" />
+			<style:text-properties fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T122" style:family="text">
-			<style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-size-complex="12pt" />
+			<style:text-properties fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T123" style:family="text">
-			<style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="T124" style:family="text">
-			<style:text-properties style:font-size-complex="12pt" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T125" style:family="text">
-			<style:text-properties style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T126" style:family="text">
-			<style:text-properties fo:font-style="italic" style:font-style-asian="italic" style:font-size-complex="12pt" style:font-style-complex="italic" />
+			<style:text-properties fo:font-style="italic" />
 		</style:style>
 		<style:style style:name="T127" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Liberation Serif" fo:font-size="10pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" fo:background-color="transparent" style:font-name-asian="SimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Arial1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Liberation Serif" fo:font-size="10pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" fo:background-color="transparent" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="T128" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Liberation Serif" fo:font-size="10pt" fo:letter-spacing="normal" fo:language="en" fo:country="US" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" fo:background-color="transparent" style:font-name-asian="SimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Arial1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" />
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Liberation Serif" fo:font-size="10pt" fo:letter-spacing="normal" fo:language="en" fo:country="US" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" fo:background-color="transparent" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" />
 		</style:style>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Год_20_издания_20_на_20_титульном_20_листе">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page-content" loext:rel-width-rel="paragraph" />
