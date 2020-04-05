@@ -188,12 +188,6 @@
 
 	<!-- правила для обработки "особых" элементов -->
 
-	<xsl:template match="text:line-break" mode="noindent">
-		<xsl:param name="indent"/>
-		<xsl:copy />
-		<xsl:value-of select="$indent-line"/>
-	</xsl:template>
-
 	<!-- правила для атрибутов -->
 
 	<xsl:template match="attribute::*" mode="indent">
