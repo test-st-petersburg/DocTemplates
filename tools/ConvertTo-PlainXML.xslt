@@ -206,6 +206,22 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template match="office:font-face-decls" mode="indent">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:copy>
+			<xsl:apply-templates select="attribute::*" mode="indent">
+				<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+			</xsl:apply-templates>
+			<xsl:for-each select="style:font-face">
+				<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
+				<xsl:apply-templates select="." mode="preindent">
+					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+				</xsl:apply-templates>
+			</xsl:for-each>
+			<xsl:value-of select="$indent"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<!-- правила для атрибутов -->
 
 	<xsl:template match="attribute::*" mode="indent">
