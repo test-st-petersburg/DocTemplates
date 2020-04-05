@@ -1527,34 +1527,33 @@
 			<draw:frame draw:style-name="fr2" draw:name="Врезка1" text:anchor-type="page" text:anchor-page-number="1" svg:width="18cm" style:rel-width="100%" draw:z-index="1">
 				<draw:text-box fo:min-height="1cm">
 					<text:p text:style-name="P165"><text:bookmark-start text:name="ВидДокумента" />Стандарт организации<text:bookmark-end text:name="ВидДокумента" /></text:p>
-					<text:p text:style-name="P164">
-						<office:annotation office:name="__Annotation__6135_3610614920">
-							<dc:creator>Сергеевич </dc:creator>
-							<dc:date>2020-01-10T21:40:06.035000000</dc:date>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Вид документа</text:span></text:p>
-						</office:annotation>Руководство по качеству<office:annotation-end office:name="__Annotation__6135_3610614920" /></text:p>
-					<text:p text:style-name="P163">
-						<office:annotation office:name="__Annotation__6136_3610614920">
-							<dc:creator>Сергеевич </dc:creator>
-							<dc:date>2020-01-10T21:40:15.700000000</dc:date>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Подразделение учреждения</text:span></text:p>
-						</office:annotation><text:span text:style-name="T116">испытательной лаборатории<text:line-break />сектора специальной оценки условий труда<text:line-break />Новгородского филиала ФБУ «Тест‑С. – Петербург»</text:span><office:annotation-end office:name="__Annotation__6136_3610614920" /></text:p>
-					<text:p text:style-name="P177"><text:bookmark-start text:name="ОбозначениеДокумента" />
-						<office:annotation office:name="__Annotation__6134_3610614920">
-							<dc:creator>Сергеевич </dc:creator>
-							<dc:date>2020-01-10T21:39:25.390000000</dc:date>
-							<text:p text:style-name="P182"><text:span text:style-name="T128">Введите обозначение документа. Осторожно! Необходимо сохранить закладку «Обозначение документа»!</text:span></text:p>
-						</office:annotation>СК 02‑11‑19<text:bookmark-end text:name="ОбозначениеДокумента" /><office:annotation-end office:name="__Annotation__6134_3610614920" /></text:p>
-					<text:p text:style-name="P178"><text:bookmark-start text:name="ОбозначениеДокументаДляВнешнихСсылок" />
-						<office:annotation office:name="__Annotation__31573_1173144730">
-							<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-							<dc:date>2020-01-15T21:28:27.003000000</dc:date>
-							<loext:sender-initials>С.С.</loext:sender-initials>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Оставлять только для документированных процедур (инструкций)</text:span></text:p>
-						</office:annotation><text:span text:style-name="T116">СК 30428528‑01.01‑02‑2020/ред.5</text:span><text:bookmark-end text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation-end office:name="__Annotation__31573_1173144730" /></text:p>
+					<text:p text:style-name="P164"><office:annotation office:name="__Annotation__6135_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:40:06.035000000</dc:date>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Вид документа</text:span></text:p>
+					</office:annotation>Руководство по качеству<office:annotation-end office:name="__Annotation__6135_3610614920" /></text:p>
+					<text:p text:style-name="P163"><office:annotation office:name="__Annotation__6136_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:40:15.700000000</dc:date>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Подразделение учреждения</text:span></text:p>
+					</office:annotation><text:span text:style-name="T116">испытательной лаборатории<text:line-break />сектора специальной оценки условий труда<text:line-break />Новгородского филиала ФБУ «Тест‑С. – Петербург»</text:span><office:annotation-end office:name="__Annotation__6136_3610614920" /></text:p>
+					<text:p text:style-name="P177"><text:bookmark-start text:name="ОбозначениеДокумента" /><office:annotation office:name="__Annotation__6134_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:39:25.390000000</dc:date>
+						<text:p text:style-name="P182"><text:span text:style-name="T128">Введите обозначение документа. Осторожно! Необходимо сохранить закладку «Обозначение документа»!</text:span></text:p>
+					</office:annotation>СК 02‑11‑19<text:bookmark-end text:name="ОбозначениеДокумента" /><office:annotation-end office:name="__Annotation__6134_3610614920" /></text:p>
+					<text:p text:style-name="P178"><text:bookmark-start text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation office:name="__Annotation__31573_1173144730">
+						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+						<dc:date>2020-01-15T21:28:27.003000000</dc:date>
+						<loext:sender-initials>С.С.</loext:sender-initials>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Оставлять только для документированных процедур (инструкций)</text:span></text:p>
+					</office:annotation><text:span text:style-name="T116">СК 30428528‑01.01‑02‑2020/ред.5</text:span><text:bookmark-end text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation-end office:name="__Annotation__31573_1173144730" /></text:p>
 				</draw:text-box>
 			</draw:frame>
-			<text:p text:style-name="P158"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="2.14cm" svg:height="1.293cm" draw:z-index="0"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf" /><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png" /></draw:frame></text:p>
+			<text:p text:style-name="P158"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="2.14cm" svg:height="1.293cm" draw:z-index="0">
+				<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf" />
+				<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png" />
+			</draw:frame></text:p>
 			<text:p text:style-name="P144">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break />«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР<text:line-break />СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ<text:line-break />В Г. САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»</text:p>
 			<text:section text:style-name="Sect1" text:name="ГрифыСогласованияИУтверждения">
 				<text:p text:style-name="P59" />
@@ -1566,12 +1565,11 @@
 			<text:p text:style-name="P34" />
 			<text:section text:style-name="Sect1" text:name="РазделПодписей">
 				<text:p text:style-name="P60" />
-				<text:p text:style-name="P115">
-					<office:annotation>
-						<dc:creator>Сергеевич </dc:creator>
-						<dc:date>2020-01-10T21:40:48.234000000</dc:date>
-						<text:p text:style-name="P182"><text:span text:style-name="T127">Подпись разработчика / разработчиков, в том числе — руководителя подразделения.</text:span></text:p>
-					</office:annotation>Начальник <text:span text:style-name="T100">испытательной лаборатории</text:span> сектора СОУТ<text:line-break /><text:span text:style-name="T100">Новгородского филиала</text:span></text:p>
+				<text:p text:style-name="P115"><office:annotation>
+					<dc:creator>Сергеевич </dc:creator>
+					<dc:date>2020-01-10T21:40:48.234000000</dc:date>
+					<text:p text:style-name="P182"><text:span text:style-name="T127">Подпись разработчика / разработчиков, в том числе — руководителя подразделения.</text:span></text:p>
+				</office:annotation>Начальник <text:span text:style-name="T100">испытательной лаборатории</text:span> сектора СОУТ<text:line-break /><text:span text:style-name="T100">Новгородского филиала</text:span></text:p>
 				<text:p text:style-name="P119"><text:span text:style-name="T101"><text:tab /></text:span><text:span text:style-name="T102">В</text:span>.<text:span text:style-name="T100">С</text:span>. <text:span text:style-name="T100">Себелева</text:span></text:p>
 				<text:p text:style-name="P138">«<text:span text:style-name="T98"><text:tab /></text:span><text:span text:style-name="T99">11</text:span><text:span text:style-name="T103"><text:tab /></text:span>»<text:span text:style-name="T98"><text:tab /></text:span><text:span text:style-name="T99">ноября<text:tab /></text:span>2019 г.</text:p>
 			</text:section>
@@ -1993,13 +1991,12 @@
 			</table:table>
 			<text:list xml:id="list201713018668816" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
-					<text:h text:style-name="P171" text:cond-style-name="P172" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc34993_4032533758" />
-						<office:annotation office:name="__Annotation__6146_2954163101">
-							<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-							<dc:date>2020-01-15T20:51:15.397000000</dc:date>
-							<loext:sender-initials>С.С.</loext:sender-initials>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Для заголовков используйте стиль «Заголовок условный». Фактическое оформление будет изменяться в зависимости от уровня нумерации.</text:span></text:p>
-						</office:annotation>Следующие разделы<office:annotation-end office:name="__Annotation__6146_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc34993_4032533758" /></text:h>
+					<text:h text:style-name="P171" text:cond-style-name="P172" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc34993_4032533758" /><office:annotation office:name="__Annotation__6146_2954163101">
+						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+						<dc:date>2020-01-15T20:51:15.397000000</dc:date>
+						<loext:sender-initials>С.С.</loext:sender-initials>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Для заголовков используйте стиль «Заголовок условный». Фактическое оформление будет изменяться в зависимости от уровня нумерации.</text:span></text:p>
+					</office:annotation>Следующие разделы<office:annotation-end office:name="__Annotation__6146_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc34993_4032533758" /></text:h>
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="P147"><text:span text:style-name="T57">Текст</text:span><text:span text:style-name="T115"> (</text:span><text:bookmark-ref text:reference-format="number" text:ref-name="__RefNumPara__5312_317182545">Приложение А</text:bookmark-ref><text:span text:style-name="T114">)</text:span>.</text:p>
@@ -2017,13 +2014,12 @@
 					</text:list>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P147">
-				<office:annotation office:name="__Annotation__6147_2954163101">
-					<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-					<dc:date>2020-01-15T20:52:25.134000000</dc:date>
-					<loext:sender-initials>С.С.</loext:sender-initials>
-					<text:p text:style-name="P182"><text:span text:style-name="T127">Для текста документа используйте стиль «Основной текст документа». </text:span></text:p>
-				</office:annotation><text:span text:style-name="T31">Текст...</text:span><office:annotation-end office:name="__Annotation__6147_2954163101" /></text:p>
+			<text:p text:style-name="P147"><office:annotation office:name="__Annotation__6147_2954163101">
+				<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+				<dc:date>2020-01-15T20:52:25.134000000</dc:date>
+				<loext:sender-initials>С.С.</loext:sender-initials>
+				<text:p text:style-name="P182"><text:span text:style-name="T127">Для текста документа используйте стиль «Основной текст документа». </text:span></text:p>
+			</office:annotation><text:span text:style-name="T31">Текст...</text:span><office:annotation-end office:name="__Annotation__6147_2954163101" /></text:p>
 			<text:list xml:id="list201712515137408" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
 					<text:list>
@@ -2033,13 +2029,12 @@
 									<text:h text:style-name="P153" text:cond-style-name="P154" text:outline-level="3">Ещё подраздел</text:h>
 									<text:list>
 										<text:list-item>
-											<text:p text:style-name="P179"><text:span text:style-name="T56">Пример абзаца с нумерацией</text:span><text:span text:style-name="T47">.</text:span><text:span text:style-name="T47">
-													<office:annotation>
-														<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-														<dc:date>2020-01-15T20:53:10.547000000</dc:date>
-														<loext:sender-initials>С.С.</loext:sender-initials>
-														<text:p text:style-name="P182"><text:span text:style-name="T127">При необходимости нумерации пунктов документа используйте список из контекстного меню или с панели инструментов. Стиль нумерации - «Пункты документа».</text:span></text:p>
-													</office:annotation></text:span></text:p>
+											<text:p text:style-name="P179"><text:span text:style-name="T56">Пример абзаца с нумерацией</text:span><text:span text:style-name="T47">.</text:span><text:span text:style-name="T47"><office:annotation>
+												<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+												<dc:date>2020-01-15T20:53:10.547000000</dc:date>
+												<loext:sender-initials>С.С.</loext:sender-initials>
+												<text:p text:style-name="P182"><text:span text:style-name="T127">При необходимости нумерации пунктов документа используйте список из контекстного меню или с панели инструментов. Стиль нумерации - «Пункты документа».</text:span></text:p>
+											</office:annotation></text:span></text:p>
 										</text:list-item>
 									</text:list>
 								</text:list-item>
@@ -2068,13 +2063,12 @@
 			</text:list>
 			<text:list xml:id="list201713971217673" text:continue-list="list290179627" text:style-name="Перечисление">
 				<text:list-item>
-					<text:p text:style-name="P159">
-						<office:annotation office:name="__Annotation__6149_2954163101">
-							<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-							<dc:date>2020-01-15T20:54:42.609000000</dc:date>
-							<loext:sender-initials>С.С.</loext:sender-initials>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Для перечисления используйте команду перечисления из контекстного меню либо с панели задач. Стиль нумерации - «Перечисление».</text:span></text:p>
-						</office:annotation><text:span text:style-name="T58">пример перечисления</text:span>;</text:p>
+					<text:p text:style-name="P159"><office:annotation office:name="__Annotation__6149_2954163101">
+						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+						<dc:date>2020-01-15T20:54:42.609000000</dc:date>
+						<loext:sender-initials>С.С.</loext:sender-initials>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Для перечисления используйте команду перечисления из контекстного меню либо с панели задач. Стиль нумерации - «Перечисление».</text:span></text:p>
+					</office:annotation><text:span text:style-name="T58">пример перечисления</text:span>;</text:p>
 				</text:list-item>
 				<text:list-item>
 					<text:p text:style-name="P160"><text:span text:style-name="T58">пример перечисления</text:span>;</text:p>
@@ -2085,13 +2079,12 @@
 			</text:list>
 			<text:list xml:id="list1453550071" text:style-name="Пункты_20_приложений">
 				<text:list-item>
-					<text:h text:style-name="P169" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-start text:name="__RefNumPara__5312_317182545" /><text:line-break />
-						<office:annotation office:name="__Annotation__6150_2954163101">
-							<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-							<dc:date>2020-01-15T20:58:51.945000000</dc:date>
-							<loext:sender-initials>С.С.</loext:sender-initials>
-							<text:p text:style-name="P182"><text:span text:style-name="T127">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:span></text:p>
-						</office:annotation>(обязательное)<text:line-break />Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-end text:name="__RefNumPara__5312_317182545" /></text:h>
+					<text:h text:style-name="P169" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-start text:name="__RefNumPara__5312_317182545" /><text:line-break /><office:annotation office:name="__Annotation__6150_2954163101">
+						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+						<dc:date>2020-01-15T20:58:51.945000000</dc:date>
+						<loext:sender-initials>С.С.</loext:sender-initials>
+						<text:p text:style-name="P182"><text:span text:style-name="T127">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:span></text:p>
+					</office:annotation>(обязательное)<text:line-break />Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-end text:name="__RefNumPara__5312_317182545" /></text:h>
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="P141">Главная цель:</text:p>

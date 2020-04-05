@@ -31,5 +31,4 @@ args2(5).Name = "Separator"
 args2(5).Value = "."
 dispatcher.executeDispatch(document, ".uno:InsertField", "", 0, args2())
 End Sub
-
 </script:module>

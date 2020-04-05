@@ -20,5 +20,4 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 	document.getTextFields().refresh()
 
 end sub
-
 </script:module>

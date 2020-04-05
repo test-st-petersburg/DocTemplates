@@ -2136,13 +2136,10 @@
 					<table:table-column table:style-name="Таблица5.C" />
 					<table:table-row table:style-name="Таблица5.1">
 						<table:table-cell table:style-name="Таблица5.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="MP7">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break />
-<text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1"><text:line-break />
-</text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+							<text:p text:style-name="MP7">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1"><text:line-break /></text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица5.A1" office:value-type="string">
-							<text:p text:style-name="MP8">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />
-за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
+							<text:p text:style-name="MP8">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица5.C1" table:number-rows-spanned="2" office:value-type="string">
 							<text:p text:style-name="MP9">№________________</text:p>
@@ -2166,13 +2163,10 @@
 					<table:table-column table:style-name="Таблица2.C" />
 					<table:table-row table:style-name="Таблица2.1">
 						<table:table-cell table:style-name="Таблица2.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="MP2">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break />
-<text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1">,<text:line-break />
-</text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка" /></text:p>
+							<text:p text:style-name="MP2">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1">,<text:line-break /></text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка" /></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица2.A1" office:value-type="string">
-							<text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />
-за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
+							<text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица2.A1" table:number-rows-spanned="2" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Регистрационные данные (в переписке в Центр)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
