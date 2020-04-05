@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script:module script:name="WorkWithLetterheads" script:language="StarBasic" script:moduleType="normal" xmlns:script="http://openoffice.org/2000/script">REM  *****  BASIC  *****
+
+rem ----------------------------------------------------------------------
+rem Подготовка документа к печати на бумаге
+rem ----------------------------------------------------------------------
+sub prepareForPrintingOnPaper
+	dim document as object
+	dim textFrame as object
+	dim frameId as string
+	
+	document = ThisComponent
+	
+	Common.setDocVariableValue("ПечататьНаБланке", false)
+
+	rem перебираем все врезки (фреймы), наименование которые начинается
+	rem с Бланк:, и включаем для них печать
+	for each textFrame in document.TextFrames
+		if InStr(textFrame.Name, "Бланк:") = 1 then
+			textFrame.Print = true
+		end if
+	next
+end sub
+
+rem ----------------------------------------------------------------------
+rem Подготовка документа к печати на бланке
+rem ----------------------------------------------------------------------
+sub prepareForPrintingOnLetterhead
+	dim document as object
+	dim textFrame as object
+	dim frameId as string
+	
+	document = ThisComponent
+	
+	Common.setDocVariableValue("ПечататьНаБланке", true)
+
+	rem перебираем все врезки (фреймы), наименование которые начинается
+	rem с Бланк:, и отключаем для них печать
+	for each textFrame in document.TextFrames
+		if InStr(textFrame.Name, "Бланк:") = 1 then
+			textFrame.Print = false
+		end if
+	next
+end sub
+
+rem ----------------------------------------------------------------------
+rem Устанавливаем форму бланка ГОСТ Р 7.0.97-2016
+rem ----------------------------------------------------------------------
+sub setLetterheadVariantGOST2016
+	Common.setDocVariableValue("ФормаБланка", "ГОСТ Р 7.0.97-2016")
+end sub
+
+rem ----------------------------------------------------------------------
+rem Устанавливаем форму бланка по ПРИКАЗУ ФБУ "ТЕСТ-С.-ПЕТЕРБУРГ"
+rem от 17.10.2019 №132/АХД 
+rem ----------------------------------------------------------------------
+sub setLetterheadVariantOrder132_17_10_2019
+	Common.setDocVariableValue("ФормаБланка", "ПРИКАЗ от 17.10.2019 №132/АХД")
+end sub
+
+
+</script:module>
