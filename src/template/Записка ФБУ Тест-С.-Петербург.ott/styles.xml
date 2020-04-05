@@ -2,23 +2,18 @@
 	<office:font-face-decls>
 		<style:font-face style:name="Arial" svg:font-family="Arial" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable" />
 		<style:font-face style:name="Arial Black" svg:font-family="'Arial Black'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable" />
-		<style:font-face style:name="Arial1" svg:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" />
-		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" />
-		<style:font-face style:name="Courier New1" svg:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Courier New1" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" />
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" />
 		<style:font-face style:name="Liberation Serif" svg:font-family="'Liberation Serif'" style:font-family-generic="roman" style:font-pitch="variable" />
-		<style:font-face style:name="Mangal" svg:font-family="Mangal" style:font-family-generic="system" style:font-pitch="variable" />
-		<style:font-face style:name="Mangal1" svg:font-family="Mangal" style:font-pitch="variable" />
-		<style:font-face style:name="Mangal2" svg:font-family="Mangal" />
-		<style:font-face style:name="Microsoft YaHei" svg:font-family="'Microsoft YaHei'" style:font-pitch="variable" />
-		<style:font-face style:name="NSimSun" svg:font-family="NSimSun" style:font-family-generic="modern" style:font-pitch="fixed" />
 		<style:font-face style:name="OpenSymbol" svg:font-family="OpenSymbol" style:font-charset="x-symbol" />
 		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable" />
 		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable" />
-		<style:font-face style:name="SimSun" svg:font-family="SimSun" style:font-family-generic="system" style:font-pitch="variable" />
+		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable" />
 		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="swiss" style:font-pitch="variable" />
-		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" />
-		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Tahoma1" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable" />
+		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable" />
+		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" />
 		<style:font-face style:name="Times New Roman2" svg:font-family="'Times New Roman'" style:font-family-generic="roman" style:font-pitch="variable" />
 		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" />
 	</office:font-face-decls>
@@ -26,7 +21,7 @@
 		<draw:fill-image draw:name="Логотип_20_Тест" draw:display-name="Логотип Тест" xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" />
 		<style:default-style style:family="graphic">
 			<style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false" />
-			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
+			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
 				<style:tab-stops />
 			</style:paragraph-properties>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true" />
@@ -45,14 +40,14 @@
 			<style:paragraph-properties fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" />
 		</style:style>
 		<style:style style:name="Heading" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="text" style:master-page-name="">
 			<loext:graphic-properties draw:fill-image-width="0cm" draw:fill-image-height="0cm" />
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" style:page-number="auto" style:shadow="none" fo:keep-with-next="always" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="13pt" fo:font-weight="bold" fo:background-color="transparent" />
+			<style:text-properties style:font-name="Times New Roman1" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="13pt" fo:font-weight="bold" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard" style:class="text" style:master-page-name="">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="150%" fo:hyphenation-ladder-count="no-limit" style:page-number="auto">
@@ -62,7 +57,6 @@
 		</style:style>
 		<style:style style:name="List" style:family="paragraph" style:parent-style-name="Text_20_body_20_indent" style:class="list">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="true" fo:text-align="justify" style:justify-single-word="false" style:writing-mode="lr-tb" />
-			<style:text-properties />
 		</style:style>
 		<style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.212cm" fo:margin-bottom="0.212cm" loext:contextual-spacing="false" text:number-lines="false" text:line-number="0" />
@@ -70,13 +64,12 @@
 		</style:style>
 		<style:style style:name="Index" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="index">
 			<style:paragraph-properties text:number-lines="false" text:line-number="0" />
-			<style:text-properties />
 		</style:style>
 		<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Heading" style:default-outline-level="1" style:class="text" style:master-page-name="">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="150%" fo:text-align="start" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" fo:text-indent="1.251cm" style:auto-text-indent="false" style:page-number="auto" fo:keep-with-next="always" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="13pt" fo:font-style="normal" fo:font-weight="bold" fo:background-color="transparent" />
+			<style:text-properties style:font-name="Times New Roman1" fo:font-family="'Times New Roman'" style:font-style-name="Полужирный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="13pt" fo:font-style="normal" fo:font-weight="bold" fo:background-color="transparent" />
 		</style:style>
 		<style:style style:name="Header_20_and_20_Footer" style:display-name="Header and Footer" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties text:number-lines="false" text:line-number="0">
@@ -581,7 +574,7 @@
 			<style:paragraph-properties style:page-number="auto" fo:background-color="transparent" style:shadow="none" text:number-lines="false" text:line-number="0" style:snap-to-layout-grid="false" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="9pt" text:display="true" />
+			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="9pt" text:display="true" />
 		</style:style>
 		<style:style style:name="Footnote" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-left="0.598cm" fo:margin-right="0cm" fo:text-indent="-0.598cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0" />
@@ -806,7 +799,7 @@
 		</style:style>
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" />
 		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text">
-			<style:text-properties style:font-name="OpenSymbol" fo:font-family="OpenSymbol" style:font-charset="x-symbol" style:font-charset-asian="x-symbol" style:font-charset-complex="x-symbol" />
+			<style:text-properties style:font-name="OpenSymbol" fo:font-family="OpenSymbol" style:font-charset="x-symbol" />
 		</style:style>
 		<style:style style:name="Регистрационный_20_номер" style:display-name="Регистрационный номер" style:family="text">
 			<style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" style:text-scale="60%" />
@@ -823,9 +816,7 @@
 		<style:style style:name="Индекс_20_дела" style:display-name="Индекс дела" style:family="text">
 			<style:text-properties style:text-scale="80%" />
 		</style:style>
-		<style:style style:name="Место_20_составление_20_документа" style:display-name="Место составление документа" style:family="text">
-			<style:text-properties />
-		</style:style>
+		<style:style style:name="Место_20_составление_20_документа" style:display-name="Место составление документа" style:family="text" />
 		<style:style style:name="Footnote_20_Symbol" style:display-name="Footnote Symbol" style:family="text">
 			<style:text-properties style:text-position="0% 100%" />
 		</style:style>
@@ -840,22 +831,22 @@
 			<style:text-properties fo:font-style="italic" />
 		</style:style>
 		<style:style style:name="CODE" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" />
+			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" />
 		</style:style>
 		<style:style style:name="FollowedHyperlink" style:family="text">
 			<style:text-properties fo:color="#800080" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
 		</style:style>
 		<style:style style:name="Keyboard" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" fo:font-weight="bold" />
+			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="Sample" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" />
+			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" />
 		</style:style>
 		<style:style style:name="Strong" style:family="text">
 			<style:text-properties fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="Typewriter" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" />
+			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" />
 		</style:style>
 		<style:style style:name="HTML_20_Markup" style:display-name="HTML Markup" style:family="text">
 			<style:text-properties fo:color="#ff0000" text:display="none" />
@@ -1939,69 +1930,17 @@
 		<style:style style:name="MP1" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
 		</style:style>
-		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP4" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP5" style:family="paragraph" style:parent-style-name="Подстрочник">
+		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
 				<style:tab-stops>
 					<style:tab-stop style:position="14cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="MP6" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP7" style:family="paragraph" style:parent-style-name="Исполнитель">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP8" style:family="paragraph" style:parent-style-name="В_20_дело">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP9" style:family="paragraph" style:parent-style-name="Отметка_20_о_20_поступлении">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP10" style:family="paragraph" style:parent-style-name="Подстрочник">
-			<style:paragraph-properties>
-				<style:tab-stops>
-					<style:tab-stop style:position="14cm" style:type="right" />
-				</style:tab-stops>
-			</style:paragraph-properties>
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP11" style:family="paragraph" style:parent-style-name="Standard">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP12" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
+		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="MP13" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP14" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP15" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MP16" style:family="paragraph" style:parent-style-name="Служебный">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MT1" style:family="text">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="MT2" style:family="text" />
-		<style:style style:name="MT3" style:family="text">
-			<style:text-properties />
-		</style:style>
+		<style:style style:name="MT1" style:family="text" />
 		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties fo:background-color="transparent" style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm" />
@@ -2136,25 +2075,25 @@
 					<table:table-column table:style-name="Таблица5.C" />
 					<table:table-row table:style-name="Таблица5.1">
 						<table:table-cell table:style-name="Таблица5.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="MP7">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1"><text:line-break /></text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+							<text:p text:style-name="Исполнитель">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица5.A1" office:value-type="string">
-							<text:p text:style-name="MP8">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
+							<text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица5.C1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="MP9">№________________</text:p>
-							<text:p text:style-name="MP9">от________________</text:p>
+							<text:p text:style-name="Отметка_20_о_20_поступлении">№________________</text:p>
+							<text:p text:style-name="Отметка_20_о_20_поступлении">от________________</text:p>
 						</table:table-cell>
 					</table:table-row>
 					<table:table-row table:style-name="Таблица5.2">
 						<table:covered-table-cell />
 						<table:table-cell table:style-name="Таблица5.C1" office:value-type="string">
-							<text:p text:style-name="MP10">подпись<text:tab />дата</text:p>
+							<text:p text:style-name="MP2">подпись<text:tab />дата</text:p>
 						</table:table-cell>
 						<table:covered-table-cell />
 					</table:table-row>
 				</table:table>
-				<text:p text:style-name="MP11" />
+				<text:p text:style-name="Standard" />
 			</style:footer-left>
 			<loext:footer-first>
 				<table:table table:name="Таблица2" table:style-name="Таблица2">
@@ -2163,18 +2102,18 @@
 					<table:table-column table:style-name="Таблица2.C" />
 					<table:table-row table:style-name="Таблица2.1">
 						<table:table-cell table:style-name="Таблица2.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="MP2">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:span text:style-name="MT1"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:span><text:span text:style-name="MT1">,<text:line-break /></text:span><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка" /></text:p>
+							<text:p text:style-name="Исполнитель">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break /><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set>,<text:line-break /><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка" /></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица2.A1" office:value-type="string">
 							<text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break />за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица2.A1" table:number-rows-spanned="2" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Регистрационные данные (в переписке в Центр)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
-								<text:p text:style-name="MP3"><text:span text:style-name="MT3"><text:tab />Исх №</text:span><text:span text:style-name="Регистрационный_20_номер"><text:span text:style-name="MT3"><text:tab /></text:span></text:span><text:span text:style-name="Регистрационный_20_номер"><text:span text:style-name="MT3"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span></text:span><text:span text:style-name="Регистрационный_20_номер"><text:span text:style-name="MT3"><text:tab /></text:span></text:span></text:p>
-								<text:p text:style-name="MP3"><text:tab />от<text:span text:style-name="Дата_20_регистрации"><text:tab /></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab /></text:span></text:p>
+								<text:p text:style-name="Отметка_20_о_20_поступлении"><text:tab />Исх №<text:span text:style-name="Регистрационный_20_номер"><text:tab /></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab /></text:span></text:p>
+								<text:p text:style-name="Отметка_20_о_20_поступлении"><text:tab />от<text:span text:style-name="Дата_20_регистрации"><text:tab /></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab /></text:span></text:p>
 							</text:section>
 							<text:section text:style-name="MSect2" text:name="Регистрационные данные (входящих документов)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND NOT ЭтоВнутреннийДокумент)" text:display="condition">
-								<text:p text:style-name="MP4" />
+								<text:p text:style-name="Отметка_20_о_20_поступлении" />
 							</text:section>
 							<text:p text:style-name="Пустой_20_абзац" />
 						</table:table-cell>
@@ -2182,12 +2121,12 @@
 					<table:table-row table:style-name="Таблица2.2">
 						<table:covered-table-cell />
 						<table:table-cell table:style-name="Таблица2.B2" office:value-type="string">
-							<text:p text:style-name="MP5">подпись<text:tab />дата</text:p>
+							<text:p text:style-name="MP2">подпись<text:tab />дата</text:p>
 						</table:table-cell>
 						<table:covered-table-cell />
 					</table:table-row>
 				</table:table>
-				<text:p text:style-name="MP6" />
+				<text:p text:style-name="Пустой_20_абзац" />
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="Последующие_20_листы" style:display-name="Последующие листы" style:page-layout-name="Mpm4">
@@ -2214,20 +2153,20 @@
 					<text:variable-decl office:value-type="boolean" text:name="ЭтоИсходящийДокумент" />
 					<text:variable-decl office:value-type="boolean" text:name="ЭтоПереписка" />
 				</text:variable-decls>
-				<text:p text:style-name="MP12"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
-				<text:p text:style-name="MP13"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="MP13"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="MP13"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="MP13"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="MP13"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="MP14"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="MP15"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="MP16"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
+				<text:p text:style-name="MP3"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 			</style:footer>
 		</style:master-page>
 		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm7" />
