@@ -267,7 +267,7 @@
 		</style:style>
 		<style:style style:name="P25" style:family="paragraph" style:parent-style-name="Signature">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" />
-			<style:text-properties fo:language="en" fo:country="US" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="P26" style:family="paragraph" style:parent-style-name="Signature">
 			<style:text-properties />
@@ -377,13 +377,13 @@
 			<style:text-properties />
 		</style:style>
 		<style:style style:name="T1" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T2" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T3" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T4" style:family="text">
 			<style:text-properties />
@@ -404,7 +404,7 @@
 			<style:text-properties />
 		</style:style>
 		<style:style style:name="T10" style:family="text">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="T11" style:family="text">
 			<style:text-properties />

@@ -1996,7 +1996,7 @@
 			<style:text-properties />
 		</style:style>
 		<style:style style:name="MT1" style:family="text">
-			<style:text-properties fo:language="en" fo:country="US" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MT2" style:family="text" />
 		<style:style style:name="MT3" style:family="text">

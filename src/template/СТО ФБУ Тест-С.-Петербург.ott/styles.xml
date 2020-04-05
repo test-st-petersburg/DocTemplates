@@ -1451,33 +1451,33 @@
 		</style:style>
 		<style:style style:name="MP1" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="1.265cm" fo:text-align="end" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb" />
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Footer">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Наименование_20_организации_20_в_20_колонтитулах">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP4" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties style:snap-to-layout-grid="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP5" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP6" style:family="paragraph" style:parent-style-name="Вид_20_документа_20_в_20_колонтитулах">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP7" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" />
-			<style:text-properties fo:language="ru" fo:country="RU" fo:font-weight="bold" />
+			<style:text-properties fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="MP8" style:family="paragraph" style:parent-style-name="Обозначение_20_документа_20_в_20_колонтитулах">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:style style:name="MP9" style:family="paragraph" style:parent-style-name="Пустой_20_абзац">
-			<style:text-properties fo:language="ru" fo:country="RU" />
+			<style:text-properties />
 		</style:style>
 		<style:page-layout style:name="Mpm1">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0cm" fo:margin-bottom="0.078cm" fo:margin-left="0cm" fo:margin-right="0.026cm" style:writing-mode="lr-tb" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="53" style:layout-grid-base-height="0.55cm" style:layout-grid-ruby-height="0cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:layout-grid-base-width="0.367cm" style:layout-grid-snap-to="true" style:footnote-max-height="0cm">

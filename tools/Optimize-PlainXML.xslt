@@ -97,4 +97,7 @@
 	<xsl:template match="attribute::officeooo:paragraph-rsid[parent::style:text-properties]" />
 	<xsl:template match="attribute::officeooo:rsid[parent::style:text-properties]" />
 
+	<xsl:template match="attribute::fo:language[ parent::style:text-properties/parent::style:style/@style:name and string-length( parent::style:text-properties/parent::style:style/@style:name ) &lt; 4 ]" />
+	<xsl:template match="attribute::fo:country[ parent::style:text-properties/parent::style:style/@style:name and string-length( parent::style:text-properties/parent::style:style/@style:name ) &lt; 4 ]" />
+
 </xsl:stylesheet>
