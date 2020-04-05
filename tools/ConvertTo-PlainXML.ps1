@@ -45,14 +45,6 @@ begin {
 	[System.Xml.XmlWriterSettings] $writerSettings = New-Object System.Xml.XmlWriterSettings;
 	$writerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
 	$writerSettings.DoNotEscapeUriAttributes = $false;
-	$writerSettings.Encoding = [System.Text.Encoding]::UTF8;
-	$writerSettings.Indent = $true;
-	$writerSettings.IndentChars = "`t";
-	$writerSettings.NewLineOnAttributes = $false;
-	$writerSettings.NewLineChars = "`r`n";
-	$writerSettings.NewLineHandling = [System.Xml.NewLineHandling]::None;
-	$writerSettings.OmitXmlDeclaration = $false;
-	# $writerSettings.XmlOutputMethod = [System.Xml.XmlOutputMethod]::Xml;
 	$writerSettings.WriteEndDocumentOnClose = $true;
 	$writerSettings.CloseOutput = $true;
 
