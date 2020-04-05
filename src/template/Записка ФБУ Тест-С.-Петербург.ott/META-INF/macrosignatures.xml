@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<document-signatures xmlns="urn:oasis:names:tc:opendocument:xmlns:digitalsignature:1.0">
+﻿<?xml version="1.0" encoding="utf-8"?><document-signatures xmlns="urn:oasis:names:tc:opendocument:xmlns:digitalsignature:1.0">
 	<Signature Id="ID_0019005400ee0055007900520047000c008b00b300c50093008b005800cf00b3" xmlns="http://www.w3.org/2000/09/xmldsig#">
 		<SignedInfo>
 			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
