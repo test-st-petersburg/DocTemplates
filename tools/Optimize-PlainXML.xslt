@@ -47,12 +47,12 @@
 
 	<xsl:template match="node()">
 		<xsl:copy>
-			<xsl:apply-templates select="@*" />
+			<xsl:apply-templates select="attribute::*" />
 			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()" />
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="@*">
+	<xsl:template match="attribute::*">
 		<xsl:copy />
 	</xsl:template>
 
@@ -62,12 +62,32 @@
 
 	<xsl:template match="processing-instruction()">
 		<xsl:copy>
-			<xsl:copy-of select="@*" />
+			<xsl:copy-of select="attribute::*" />
 		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template match="comment()">
 		<xsl:copy />
 	</xsl:template>
+
+	<!-- удаляем лишние аттрибуты -->
+
+	<xsl:template match="attribute::style:language-asian" />
+	<xsl:template match="attribute::style:language-complex" />
+
+	<xsl:template match="attribute::style:country-asian" />
+	<xsl:template match="attribute::style:country-complex" />
+
+	<xsl:template match="attribute::style:font-name-asian" />
+	<xsl:template match="attribute::style:font-size-asian" />
+	<xsl:template match="attribute::style:font-weight-asian" />
+	<xsl:template match="attribute::style:font-style-asian" />
+
+	<xsl:template match="attribute::style:font-name-complex" />
+	<xsl:template match="attribute::style:font-size-complex" />
+	<xsl:template match="attribute::style:font-weight-complex" />
+
+	<!-- officeooo:paragraph-rsid -->
+	<!-- officeooo:rsid -->
 
 </xsl:stylesheet>
