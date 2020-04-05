@@ -17,7 +17,8 @@ $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 Get-ChildItem -Path $Path -Directory `
 | Resolve-Path -Relative `
-| Get-ChildItem -Filter 'content.xml' `
+| Get-ChildItem -Filter '*.xml' -Recurse `
+| Where-Object { $_.Length -gt 0 } `
 | Resolve-Path -Relative `
 | . ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.ps1' ) `
 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `

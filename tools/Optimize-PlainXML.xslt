@@ -79,11 +79,17 @@
 	<xsl:template match="attribute::style:country-complex" />
 
 	<xsl:template match="attribute::style:font-name-asian" />
+	<xsl:template match="attribute::style:font-family-asian" />
+	<xsl:template match="attribute::style:font-pitch-asian" />
+	<xsl:template match="attribute::style:font-family-generic-asian" />
 	<xsl:template match="attribute::style:font-size-asian" />
 	<xsl:template match="attribute::style:font-weight-asian" />
 	<xsl:template match="attribute::style:font-style-asian" />
 
 	<xsl:template match="attribute::style:font-name-complex" />
+	<xsl:template match="attribute::style:font-family-complex" />
+	<xsl:template match="attribute::style:font-family-generic-complex" />
+	<xsl:template match="attribute::style:font-pitch-complex" />
 	<xsl:template match="attribute::style:font-size-complex" />
 	<xsl:template match="attribute::style:font-weight-complex" />
 	<xsl:template match="attribute::style:font-style-complex" />
