@@ -86,6 +86,7 @@
 	<xsl:template match="attribute::style:font-name-complex" />
 	<xsl:template match="attribute::style:font-size-complex" />
 	<xsl:template match="attribute::style:font-weight-complex" />
+	<xsl:template match="attribute::style:font-style-complex" />
 
 	<!-- officeooo:paragraph-rsid -->
 	<!-- officeooo:rsid -->
