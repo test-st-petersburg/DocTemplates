@@ -725,225 +725,75 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.353cm" loext:contextual-spacing="false" fo:line-height="115%" fo:text-align="center" style:justify-single-word="false" />
 			<style:text-properties style:use-window-font-color="true" fo:font-size="14pt" fo:font-weight="bold" fo:background-color="transparent" />
 		</style:style>
-		<style:style style:name="P88" style:family="paragraph" style:parent-style-name="Дата_20_подписи_20_в_20_подписи_20_и_20_грифе">
-			<style:text-properties />
+		<style:style style:name="P88" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
+			<style:text-properties fo:font-size="12pt" />
 		</style:style>
-		<style:style style:name="P89" style:family="paragraph" style:parent-style-name="Должность_20_в_20_подписи_20_и_20_грифе">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P90" style:family="paragraph" style:parent-style-name="Заголовок_20_вне_20_оглавления">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P91" style:family="paragraph" style:parent-style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P92" style:family="paragraph" style:parent-style-name="Заголовок_20_формы">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P93" style:family="paragraph" style:parent-style-name="Обозначение_20_формы">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P95" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
+		<style:style style:name="P89" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
 			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
 		</style:style>
-		<style:style style:name="P96" style:family="paragraph" style:parent-style-name="Текст_20_предисловия">
-			<style:text-properties />
+		<style:style style:name="P90" style:family="paragraph" style:parent-style-name="Heading_20_2" style:list-style-name="Пункты_20_документа">
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P97" style:family="paragraph" style:parent-style-name="Subtitle">
-			<style:text-properties />
+		<style:style style:name="P91" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P98" style:family="paragraph" style:parent-style-name="Title">
-			<style:text-properties />
+		<style:style style:name="P92" style:family="paragraph" style:parent-style-name="Heading_20_3" style:list-style-name="Пункты_20_документа">
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P99" style:family="paragraph" style:parent-style-name="Вид_20_документа_20_на_20_титульном_20_листе">
-			<style:text-properties />
+		<style:style style:name="P93" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P100" style:family="paragraph" style:parent-style-name="Обозначение_20_документа">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P101" style:family="paragraph" style:parent-style-name="Обозначение_20_документа_20_для_20_внешних_20_ссылок">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P102" style:family="paragraph" style:parent-style-name="Информация_20_об_20_организации_20_на_20_титульном_20_листе">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P103" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0.101cm" fo:margin-top="0.101cm" fo:margin-bottom="0.101cm" loext:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" />
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" />
-		</style:style>
-		<style:style style:name="P104" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" />
-		</style:style>
-		<style:style style:name="P105" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:snap-to-layout-grid="false" />
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="8pt" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="P106" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога">
+		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога">
 			<style:paragraph-properties style:page-number="auto" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P107" style:family="paragraph" style:parent-style-name="Heading_20_2" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="P108" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="P109" style:family="paragraph" style:parent-style-name="Heading_20_3" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="P110" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="P111" style:family="paragraph" style:parent-style-name="Логотип_20_на_20_титульном_20_листе" style:master-page-name="Титульный_20_лист">
+		<style:style style:name="P95" style:family="paragraph" style:parent-style-name="Логотип_20_на_20_титульном_20_листе" style:master-page-name="Титульный_20_лист">
 			<style:paragraph-properties style:page-number="1" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P112" style:family="paragraph" style:parent-style-name="List_20_1">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P113" style:family="paragraph" style:parent-style-name="List_20_1" style:list-style-name="Перечисление">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P114" style:family="paragraph" style:parent-style-name="List_20_1">
+		<style:style style:name="P96" style:family="paragraph" style:parent-style-name="List_20_1">
 			<style:text-properties fo:font-size="12pt" />
 		</style:style>
-		<style:style style:name="P115" style:family="paragraph" style:parent-style-name="Заголовок_20_приложения" style:list-style-name="Пункты_20_приложений">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P116" style:family="paragraph" style:parent-style-name="Заголовок_20_приложения" style:list-style-name="Пункты_20_приложений">
+		<style:style style:name="P97" style:family="paragraph" style:parent-style-name="List_20_1" style:list-style-name="Перечисление" />
+		<style:style style:name="P98" style:family="paragraph" style:parent-style-name="Заголовок_20_приложения" style:list-style-name="Пункты_20_приложений" />
+		<style:style style:name="P99" style:family="paragraph" style:parent-style-name="Заголовок_20_приложения" style:list-style-name="Пункты_20_приложений">
 			<style:paragraph-properties fo:break-before="page" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P117" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P100" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
 			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P118" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P101" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
 			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P119" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
+		<style:style style:name="P102" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
 			<style:paragraph-properties style:page-number="1" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P120" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
+		<style:style style:name="P103" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
 			<style:paragraph-properties style:page-number="1" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P121" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P104" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
 			<style:paragraph-properties fo:break-before="page" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P122" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P105" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
 			<style:paragraph-properties fo:break-before="page" />
-			<style:text-properties />
 		</style:style>
-		<style:style style:name="P123" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="P124" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
-			<style:text-properties fo:font-size="12pt" />
-		</style:style>
-		<style:style style:name="P125" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P106" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа" />
+		<style:style style:name="P107" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
 			<style:text-properties fo:letter-spacing="-0.004cm" />
 		</style:style>
-		<style:style style:name="P126" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P127" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
+		<style:style style:name="P108" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="normal" style:letter-kerning="true" />
 		</style:style>
-		<style:style style:name="P128" style:family="paragraph" style:parent-style-name="Текст_20_предисловия" style:list-style-name="Пункты_20_предисловия">
-			<style:text-properties />
-		</style:style>
-		<style:style style:name="P129" style:family="paragraph">
+		<style:style style:name="P109" style:family="paragraph" style:parent-style-name="Текст_20_предисловия" style:list-style-name="Пункты_20_предисловия" />
+		<style:style style:name="P110" style:family="paragraph">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
 				<style:tab-stops />
 			</style:paragraph-properties>
 			<style:text-properties fo:hyphenate="false" />
 		</style:style>
-		<style:style style:name="T1" style:family="text">
-			<style:text-properties fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="T2" style:family="text">
-			<style:text-properties fo:font-style="normal" />
-		</style:style>
-		<style:style style:name="T3" style:family="text">
-			<style:text-properties fo:font-style="italic" />
-		</style:style>
-		<style:style style:name="T4" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="T5" style:family="text">
-			<style:text-properties style:font-name="Times New Roman" fo:font-style="normal" />
-		</style:style>
-		<style:style style:name="T6" style:family="text">
-			<style:text-properties fo:font-size="12pt" />
-		</style:style>
-		<style:style style:name="T7" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" />
-		</style:style>
-		<style:style style:name="T8" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="T9" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="T10" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="T11" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-weight="bold" />
-		</style:style>
-		<style:style style:name="T12" style:family="text">
-			<style:text-properties fo:font-size="12pt" fo:font-style="normal" />
-		</style:style>
-		<style:style style:name="T13" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" loext:char-shading-value="0" />
-		</style:style>
-		<style:style style:name="T14" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="-0.004cm" fo:font-weight="normal" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="T15" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="T16" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="normal" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="T17" style:family="text">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true" />
-		</style:style>
-		<style:style style:name="T18" style:family="text">
-			<style:text-properties style:use-window-font-color="true" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" />
-		</style:style>
-		<style:style style:name="T19" style:family="text">
-			<style:text-properties fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="T20" style:family="text">
-			<style:text-properties fo:letter-spacing="-0.004cm" />
-		</style:style>
-		<style:style style:name="T21" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="bold" fo:background-color="transparent" loext:char-shading-value="0" />
-		</style:style>
-		<style:style style:name="T22" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="Times New Roman" fo:font-size="12pt" fo:letter-spacing="normal" fo:font-style="normal" fo:font-weight="normal" />
-		</style:style>
-		<style:style style:name="T23" style:family="text">
-			<style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
-		</style:style>
-		<style:style style:name="T24" style:family="text">
-			<style:text-properties style:text-underline-style="none" />
-		</style:style>
-		<style:style style:name="T25" style:family="text">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Liberation Serif" fo:font-size="10pt" fo:letter-spacing="normal" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" fo:background-color="transparent" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" />
-		</style:style>
-		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Заголовок_20_на_20_титульном_20_листе">
-			<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page-content" loext:rel-width-rel="paragraph" />
-		</style:style>
-		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="Год_20_издания_20_на_20_титульном_20_листе">
+		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Год_20_издания_20_на_20_титульном_20_листе">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page-content" loext:rel-width-rel="paragraph" />
+		</style:style>
+		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="Заголовок_20_на_20_титульном_20_листе">
+			<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page-content" loext:rel-width-rel="paragraph" />
 		</style:style>
 		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="Graphics">
 			<style:graphic-properties fo:margin-left="0cm" fo:margin-right="0cm" style:vertical-pos="top" style:vertical-rel="baseline" fo:padding="0.002cm" fo:border="none" style:mirror="none" fo:clip="rect(-0.005cm, -0.005cm, -0.005cm, -0.005cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard" />
@@ -985,48 +835,48 @@
 				<text:user-field-decl office:value-type="string" office:string-value="66666" text:name="BC_COMP_ZIP" />
 				<text:user-field-decl office:value-type="string" office:string-value="sample@fexample-acme.egl" text:name="BC_COMP_WWW" />
 			</text:user-field-decls>
-			<draw:frame draw:style-name="fr1" draw:name="Врезка1" text:anchor-type="page" text:anchor-page-number="1" svg:width="18cm" style:rel-width="100%" draw:z-index="1">
-				<draw:text-box fo:min-height="1cm">
-					<text:p text:style-name="P99"><text:bookmark-start text:name="ВидДокумента" />Стандарт организации<text:bookmark-end text:name="ВидДокумента" /></text:p>
-					<text:p text:style-name="P98"><office:annotation office:name="__Annotation__6135_3610614920">
-						<dc:creator>Сергеевич </dc:creator>
-						<dc:date>2020-01-10T21:40:06.035000000</dc:date>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Вид документа</text:span></text:p>
-					</office:annotation>Руководство по качеству<office:annotation-end office:name="__Annotation__6135_3610614920" /></text:p>
-					<text:p text:style-name="P97"><office:annotation office:name="__Annotation__6136_3610614920">
-						<dc:creator>Сергеевич </dc:creator>
-						<dc:date>2020-01-10T21:40:15.700000000</dc:date>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Подразделение учреждения</text:span></text:p>
-					</office:annotation>испытательной лаборатории<text:line-break />сектора специальной оценки условий труда<text:line-break />Новгородского филиала ФБУ «Тест‑С. – Петербург»<office:annotation-end office:name="__Annotation__6136_3610614920" /></text:p>
-					<text:p text:style-name="P100"><text:bookmark-start text:name="ОбозначениеДокумента" /><office:annotation office:name="__Annotation__6134_3610614920">
-						<dc:creator>Сергеевич </dc:creator>
-						<dc:date>2020-01-10T21:39:25.390000000</dc:date>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Введите обозначение документа. Осторожно! Необходимо сохранить закладку «Обозначение документа»!</text:span></text:p>
-					</office:annotation>СК 02‑11‑19<text:bookmark-end text:name="ОбозначениеДокумента" /><office:annotation-end office:name="__Annotation__6134_3610614920" /></text:p>
-					<text:p text:style-name="P101"><text:bookmark-start text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation office:name="__Annotation__31573_1173144730">
-						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-						<dc:date>2020-01-15T21:28:27.003000000</dc:date>
-						<loext:sender-initials>С.С.</loext:sender-initials>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Оставлять только для документированных процедур (инструкций)</text:span></text:p>
-					</office:annotation>СК 30428528‑01.01‑02‑2020/ред.5<text:bookmark-end text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation-end office:name="__Annotation__31573_1173144730" /></text:p>
-				</draw:text-box>
-			</draw:frame>
-			<draw:frame draw:style-name="fr2" draw:name="Врезка2" text:anchor-type="page" text:anchor-page-number="1" svg:width="18cm" style:rel-width="100%" draw:z-index="2">
+			<draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="page" text:anchor-page-number="1" svg:width="18cm" style:rel-width="100%" draw:z-index="2">
 				<draw:text-box fo:min-height="0.499cm">
 					<text:p text:style-name="P51">2019</text:p>
 				</draw:text-box>
 			</draw:frame>
-			<text:p text:style-name="P111"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="2.14cm" svg:height="1.293cm" draw:z-index="0">
+			<draw:frame draw:style-name="fr2" draw:name="Врезка1" text:anchor-type="page" text:anchor-page-number="1" svg:width="18cm" style:rel-width="100%" draw:z-index="1">
+				<draw:text-box fo:min-height="1cm">
+					<text:p text:style-name="Вид_20_документа_20_на_20_титульном_20_листе"><text:bookmark-start text:name="ВидДокумента" />Стандарт организации<text:bookmark-end text:name="ВидДокумента" /></text:p>
+					<text:p text:style-name="Title"><office:annotation office:name="__Annotation__6135_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:40:06.035000000</dc:date>
+						<text:p text:style-name="P110">Вид документа</text:p>
+					</office:annotation>Руководство по качеству<office:annotation-end office:name="__Annotation__6135_3610614920" /></text:p>
+					<text:p text:style-name="Subtitle"><office:annotation office:name="__Annotation__6136_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:40:15.700000000</dc:date>
+						<text:p text:style-name="P110">Подразделение учреждения</text:p>
+					</office:annotation>испытательной лаборатории<text:line-break />сектора специальной оценки условий труда<text:line-break />Новгородского филиала ФБУ «Тест‑С. – Петербург»<office:annotation-end office:name="__Annotation__6136_3610614920" /></text:p>
+					<text:p text:style-name="Обозначение_20_документа"><text:bookmark-start text:name="ОбозначениеДокумента" /><office:annotation office:name="__Annotation__6134_3610614920">
+						<dc:creator>Сергеевич </dc:creator>
+						<dc:date>2020-01-10T21:39:25.390000000</dc:date>
+						<text:p text:style-name="P110">Введите обозначение документа. Осторожно! Необходимо сохранить закладку «Обозначение документа»!</text:p>
+					</office:annotation>СК 02‑11‑19<text:bookmark-end text:name="ОбозначениеДокумента" /><office:annotation-end office:name="__Annotation__6134_3610614920" /></text:p>
+					<text:p text:style-name="Обозначение_20_документа_20_для_20_внешних_20_ссылок"><text:bookmark-start text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation office:name="__Annotation__31573_1173144730">
+						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+						<dc:date>2020-01-15T21:28:27.003000000</dc:date>
+						<loext:sender-initials>С.С.</loext:sender-initials>
+						<text:p text:style-name="P110">Оставлять только для документированных процедур (инструкций)</text:p>
+					</office:annotation>СК 30428528‑01.01‑02‑2020/ред.5<text:bookmark-end text:name="ОбозначениеДокументаДляВнешнихСсылок" /><office:annotation-end office:name="__Annotation__31573_1173144730" /></text:p>
+				</draw:text-box>
+			</draw:frame>
+			<text:p text:style-name="P95"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="2.14cm" svg:height="1.293cm" draw:z-index="0">
 				<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf" />
 				<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png" />
 			</draw:frame></text:p>
-			<text:p text:style-name="P102">Федеральное бюджетное учреждение<text:line-break />«<text:span text:style-name="T17">Г</text:span>осударственный региональный центр<text:line-break />стандартизации, метрологии и испытаний<text:line-break />в г. <text:span text:style-name="T17">Санкт</text:span>-<text:span text:style-name="T17">П</text:span>етербурге и <text:span text:style-name="T17">Л</text:span>енинградской области»</text:p>
+			<text:p text:style-name="Информация_20_об_20_организации_20_на_20_титульном_20_листе">Федеральное бюджетное учреждение<text:line-break />«Государственный региональный центр<text:line-break />стандартизации, метрологии и испытаний<text:line-break />в г. Санкт-Петербурге и Ленинградской области»</text:p>
 			<text:section text:style-name="Sect1" text:name="ГрифыСогласованияИУтверждения">
 				<text:p text:style-name="P38" />
 				<text:p text:style-name="P73">Утверждаю</text:p>
-				<text:p text:style-name="P89">Генеральный директор<text:line-break />ФБУ «Тест‑С. – Петербург»</text:p>
-				<text:p text:style-name="Signature"><text:span text:style-name="T24"><text:tab /></text:span>Д.И. Кудрявцев</text:p>
-				<text:p text:style-name="P88">«<text:span text:style-name="T23"><text:tab />11<text:tab /></text:span>»<text:span text:style-name="T23"><text:tab />ноября<text:tab /></text:span>2019 г.</text:p>
+				<text:p text:style-name="Должность_20_в_20_подписи_20_и_20_грифе">Генеральный директор<text:line-break />ФБУ «Тест‑С. – Петербург»</text:p>
+				<text:p text:style-name="Signature"><text:tab />Д.И. Кудрявцев</text:p>
+				<text:p text:style-name="Дата_20_подписи_20_в_20_подписи_20_и_20_грифе">«<text:tab />11<text:tab />»<text:tab />ноября<text:tab />2019 г.</text:p>
 			</text:section>
 			<text:p text:style-name="P15" />
 			<text:section text:style-name="Sect1" text:name="РазделПодписей">
@@ -1034,28 +884,28 @@
 				<text:p text:style-name="P74"><office:annotation>
 					<dc:creator>Сергеевич </dc:creator>
 					<dc:date>2020-01-10T21:40:48.234000000</dc:date>
-					<text:p text:style-name="P129"><text:span text:style-name="T25">Подпись разработчика / разработчиков, в том числе — руководителя подразделения.</text:span></text:p>
+					<text:p text:style-name="P110">Подпись разработчика / разработчиков, в том числе — руководителя подразделения.</text:p>
 				</office:annotation>Начальник испытательной лаборатории сектора СОУТ<text:line-break />Новгородского филиала</text:p>
-				<text:p text:style-name="Signature"><text:span text:style-name="T24"><text:tab />В</text:span>.С. Себелева</text:p>
-				<text:p text:style-name="P88">«<text:span text:style-name="T23"><text:tab />11</text:span><text:span text:style-name="T24"><text:tab /></text:span>»<text:span text:style-name="T23"><text:tab />ноября<text:tab /></text:span>2019 г.</text:p>
+				<text:p text:style-name="Signature"><text:tab />В.С. Себелева</text:p>
+				<text:p text:style-name="Дата_20_подписи_20_в_20_подписи_20_и_20_грифе">«<text:tab />11<text:tab />»<text:tab />ноября<text:tab />2019 г.</text:p>
 			</text:section>
-			<text:p text:style-name="P106"><text:bookmark-start text:name="__RefHeading___Toc27081_1015746957" />Предисловие<text:bookmark-end text:name="__RefHeading___Toc27081_1015746957" /></text:p>
-			<text:list xml:id="list2932486643" text:style-name="Пункты_20_предисловия">
+			<text:p text:style-name="P94"><text:bookmark-start text:name="__RefHeading___Toc27081_1015746957" />Предисловие<text:bookmark-end text:name="__RefHeading___Toc27081_1015746957" /></text:p>
+			<text:list xml:id="list3705345075" text:style-name="Пункты_20_предисловия">
 				<text:list-item>
-					<text:p text:style-name="P128">РАЗРАБОТАНО: в Новгородском филиале ФБУ «Тест‑С. – Петербург».</text:p>
+					<text:p text:style-name="P109">РАЗРАБОТАНО: в Новгородском филиале ФБУ «Тест‑С. – Петербург».</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P128">ВВОДИТСЯ В ДЕЙСТВИЕ: 2019 год (третья редакция).</text:p>
-				</text:list-item>
-			</text:list>
-			<text:p text:style-name="P96">ВЗАМЕН: Руководства по качеству испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» СК 02‑11‑19 редакция 2, утвержденного 30.10.2019.</text:p>
-			<text:list xml:id="list11259298855552" text:continue-numbering="true" text:style-name="Пункты_20_предисловия">
-				<text:list-item>
-					<text:p text:style-name="P128">ПРЕДУПРЕЖДЕНИЕ</text:p>
+					<text:p text:style-name="P109">ВВОДИТСЯ В ДЕЙСТВИЕ: 2019 год (третья редакция).</text:p>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P96">Руководство по качеству является конфиденциальным документом.</text:p>
-			<text:p text:style-name="P96">Размножение (в т.ч. частичное) запрещается без разрешения ФБУ «Тест‑С. – Петербург».</text:p>
+			<text:p text:style-name="Текст_20_предисловия">ВЗАМЕН: Руководства по качеству испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» СК 02‑11‑19 редакция 2, утвержденного 30.10.2019.</text:p>
+			<text:list xml:id="list132052397307471" text:continue-numbering="true" text:style-name="Пункты_20_предисловия">
+				<text:list-item>
+					<text:p text:style-name="P109">ПРЕДУПРЕЖДЕНИЕ</text:p>
+				</text:list-item>
+			</text:list>
+			<text:p text:style-name="Текст_20_предисловия">Руководство по качеству является конфиденциальным документом.</text:p>
+			<text:p text:style-name="Текст_20_предисловия">Размножение (в т.ч. частичное) запрещается без разрешения ФБУ «Тест‑С. – Петербург».</text:p>
 			<text:table-of-content text:style-name="Sect2" text:protected="true" text:name="Оглавление2">
 				<text:table-of-content-source text:outline-level="2" text:use-index-marks="false">
 					<text:index-title-template text:style-name="Contents_20_Heading">Содержание</text:index-title-template>
@@ -1111,33 +961,33 @@
 					<text:p text:style-name="P70"><text:a xlink:type="simple" xlink:href="#__RefHeading___Toc6126_3842456518" text:style-name="Index_20_Link" text:visited-style-name="Index_20_Link">Приложение Д <text:s />(рекомендуемое) Форма журнала учета несоответствий, корректирующих и предупреждающих действий и пример заполнения<text:tab />46</text:a></text:p>
 				</text:index-body>
 			</text:table-of-content>
-			<text:p text:style-name="P96" />
-			<text:list xml:id="list1065681693" text:style-name="Пункты_20_документа">
+			<text:p text:style-name="Текст_20_предисловия" />
+			<text:list xml:id="list1532909717" text:style-name="Пункты_20_документа">
 				<text:list-item>
-					<text:h text:style-name="P119" text:cond-style-name="P120" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16174_402693920" />Область применения<text:bookmark-end text:name="__RefHeading___Toc16174_402693920" /></text:h>
+					<text:h text:style-name="P102" text:cond-style-name="P103" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16174_402693920" />Область применения<text:bookmark-end text:name="__RefHeading___Toc16174_402693920" /></text:h>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P95">Настоящее руководство по качеству является внутренним документом испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» (далее — РК) разработано и действует в испытательной лаборатории (далее — ИЛ) сектора специальной оценки условий труда Новгородского филиала (далее — НФ) ФБУ «Тест‑С. – Петербург» (далее — Центр), подтверждающим наличие системы менеджмента качества (СМК), и в совокупности с документами СМК, разработанными наравне, а также в его развитие, устанавливает основные требования к обеспечению соответствия ИЛ заявленной Политике в области качества.</text:p>
-			<text:p text:style-name="P94">Система менеджмента качества, установленная в руководстве по качеству, распространяется на деятельность всех сотрудников испытательной лаборатории, обеспечивающих проведение исследований (испытаний) и измерений в заявленной области аккредитации на всех местах осуществления деятельности в области аккредитации, а также на местах осуществления временных работ.</text:p>
-			<text:p text:style-name="P94">РК служит постоянной основой реализации и поддержания качества измерений в надлежащем состоянии.</text:p>
-			<text:p text:style-name="P94">Назначением РК является общее описание системы менеджмента и условий поддержания ее в рабочем состоянии, с целью обеспечения полноты и правильности проведения измерений, достоверности, объективности, точности их результатов.</text:p>
-			<text:p text:style-name="P94">Задачей РК является координация функций управления качеством, их согласование, распределение полномочий и ответственности в вопросах качества, создание условий функционирования системы менеджмента, выработка и реализация управляющих воздействий для обеспечения уверенности в том, что заданное качество будет достигнуто.</text:p>
+			<text:p text:style-name="P89">Настоящее руководство по качеству является внутренним документом испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» (далее — РК) разработано и действует в испытательной лаборатории (далее — ИЛ) сектора специальной оценки условий труда Новгородского филиала (далее — НФ) ФБУ «Тест‑С. – Петербург» (далее — Центр), подтверждающим наличие системы менеджмента качества (СМК), и в совокупности с документами СМК, разработанными наравне, а также в его развитие, устанавливает основные требования к обеспечению соответствия ИЛ заявленной Политике в области качества.</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа">Система менеджмента качества, установленная в руководстве по качеству, распространяется на деятельность всех сотрудников испытательной лаборатории, обеспечивающих проведение исследований (испытаний) и измерений в заявленной области аккредитации на всех местах осуществления деятельности в области аккредитации, а также на местах осуществления временных работ.</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа">РК служит постоянной основой реализации и поддержания качества измерений в надлежащем состоянии.</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа">Назначением РК является общее описание системы менеджмента и условий поддержания ее в рабочем состоянии, с целью обеспечения полноты и правильности проведения измерений, достоверности, объективности, точности их результатов.</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа">Задачей РК является координация функций управления качеством, их согласование, распределение полномочий и ответственности в вопросах качества, создание условий функционирования системы менеджмента, выработка и реализация управляющих воздействий для обеспечения уверенности в том, что заданное качество будет достигнуто.</text:p>
 			<text:p text:style-name="P72">РК включает:</text:p>
-			<text:list xml:id="list3012966140" text:style-name="Перечисление">
+			<text:list xml:id="list963222203" text:style-name="Перечисление">
 				<text:list-item>
-					<text:p text:style-name="P112"><text:span text:style-name="T6">заявление о политике в области качества. Заявление генерального директора </text:span><text:span text:style-name="T8">ФБУ «Тест‑С.‑Петербург»</text:span><text:span text:style-name="T6"> о политике в области качества является обязательством, в соответствии с которым ИЛ должна обеспечивать и поддерживать высокий уровень качества проводимых работ (приложение А);</text:span></text:p>
+					<text:p text:style-name="List_20_1">заявление о политике в области качества. Заявление генерального директора ФБУ «Тест‑С.‑Петербург» о политике в области качества является обязательством, в соответствии с которым ИЛ должна обеспечивать и поддерживать высокий уровень качества проводимых работ (приложение А);</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P114">организационные и административные процедуры, включающие распределение организационной и административной ответственности и полномочий между различными ответственными исполнителями;</text:p>
+					<text:p text:style-name="P96">организационные и административные процедуры, включающие распределение организационной и административной ответственности и полномочий между различными ответственными исполнителями;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112"><text:span text:style-name="T6">ссылки на детализированные административные и технические инструкции, которые могут быть необходимы при выполнении рабочего задания и проведения измерений</text:span><text:span text:style-name="T10">.</text:span></text:p>
+					<text:p text:style-name="List_20_1">ссылки на детализированные административные и технические инструкции, которые могут быть необходимы при выполнении рабочего задания и проведения измерений.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P95">РК разработано в соответствии с требованиями ГОСТ ИСО/МЭК 17025 «Общие требования к компетентности испытательных и калибровочных лабораторий» (МС ISO 17025), МС ISO 9001 «Системы менеджмента качества. Требования», Приказом Минэкономразвития РФ от 30 мая 2014 г. № 326 «Об утверждении критериев аккредитации органов по сертификации и испытательных лабораторий (центров) и требований к ним» в соответствии с приложением 1 (Критерии аккредитации).</text:p>
-			<text:list xml:id="list11259220949131" text:continue-list="list1065681693" text:style-name="Пункты_20_документа">
+			<text:p text:style-name="P89">РК разработано в соответствии с требованиями ГОСТ ИСО/МЭК 17025 «Общие требования к компетентности испытательных и калибровочных лабораторий» (МС ISO 17025), МС ISO 9001 «Системы менеджмента качества. Требования», Приказом Минэкономразвития РФ от 30 мая 2014 г. № 326 «Об утверждении критериев аккредитации органов по сертификации и испытательных лабораторий (центров) и требований к ним» в соответствии с приложением 1 (Критерии аккредитации).</text:p>
+			<text:list xml:id="list132053650915356" text:continue-list="list1532909717" text:style-name="Пункты_20_документа">
 				<text:list-item>
-					<text:h text:style-name="P121" text:cond-style-name="P122" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16176_402693920" />Нормативные ссылки<text:bookmark-end text:name="__RefHeading___Toc16176_402693920" /></text:h>
+					<text:h text:style-name="P104" text:cond-style-name="P105" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16176_402693920" />Нормативные ссылки<text:bookmark-end text:name="__RefHeading___Toc16176_402693920" /></text:h>
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="P72">В настоящем РК и в документах ИЛ, разработанных в его развитие, использованы ссылки на следующие на нормативные документы<text:note text:id="ftn1" text:note-class="footnote"><text:note-citation>1</text:note-citation><text:note-body><text:p text:style-name="Footnote">Для датированных ссылок применяют только ту версию, которая упомянута в тексте. Для недатированных ссылок необходимо использовать самое последнее издание документа, включая любые поправки.</text:p></text:note-body></text:note>:</text:p>
@@ -1242,33 +1092,33 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:list xml:id="list11258704522321" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+			<text:list xml:id="list132052905576923" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
-					<text:h text:style-name="P121" text:cond-style-name="P122" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16178_402693920" />Термины и определения<text:bookmark-end text:name="__RefHeading___Toc16178_402693920" /></text:h>
+					<text:h text:style-name="P104" text:cond-style-name="P105" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc16178_402693920" />Термины и определения<text:bookmark-end text:name="__RefHeading___Toc16178_402693920" /></text:h>
 					<text:list>
 						<text:list-item>
-							<text:p text:style-name="P125">В настоящем Руководстве по качеству и в документах ИЛ, разработанных в его развитие, используют следующие термины и определения:</text:p>
+							<text:p text:style-name="P107">В настоящем Руководстве по качеству и в документах ИЛ, разработанных в его развитие, используют следующие термины и определения:</text:p>
 						</text:list-item>
 					</text:list>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин"><text:span text:style-name="T6">Руководство по качеству</text:span></text:span><text:span text:style-name="T11">:</text:span><text:span text:style-name="T6"> </text:span><text:span text:style-name="T12">с</text:span><text:span text:style-name="T2">пецификация на систему менеджмента качества организации </text:span><text:span text:style-name="T12"><text:s />(ГОСТ ISO 9000).</text:span></text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Система менеджмента</text:span>: <text:span text:style-name="T5">Совокупность взаимосвязанных или взаимодействующих элементов организации для разработки политик, целей и процессов для достижения этих целей</text:span> (ГОСТ ISO 9000). </text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Руководство по качеству</text:span>: спецификация на систему менеджмента качества организации <text:s />(ГОСТ ISO 9000).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Система менеджмента</text:span>: Совокупность взаимосвязанных или взаимодействующих элементов организации для разработки политик, целей и процессов для достижения этих целей (ГОСТ ISO 9000). </text:p>
 			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Система менеджмента качества</text:span>: Часть системы менеджмента применительно к качеству (ГОСТ ISO 9000).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин"><text:span text:style-name="T7">Политика в области качества</text:span></text:span><text:span text:style-name="T9">:</text:span><text:span text:style-name="T8"> </text:span><text:span text:style-name="T22">Намерения и направление </text:span><text:span text:style-name="T4">организации</text:span><text:span text:style-name="T22"> официально сформулированные ее </text:span><text:span text:style-name="T4">высшим руководством</text:span><text:span text:style-name="T22">, относящиеся к качеству</text:span><text:span text:style-name="T8"> (ГОСТ ISO 9000)</text:span></text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Методика измерений</text:span><text:span text:style-name="T1">:</text:span> Совокупность конкретно описанных операций, выполнение которых обеспечивает получение результатов измерений с установленными показателями точности (ГОСТ Р 8.563).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Точность</text:span><text:span text:style-name="T1">:</text:span> Степень близости результата измерений к истинному (или в его отсутствии принятому опорному) значению (ГОСТ Р ИСО 5725-1).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Правильность</text:span><text:span text:style-name="T1">:</text:span><text:span text:style-name="T3"> </text:span>Степень близости среднего значения, полученного на основании большой серии результатов измерений к истинному (или в его отсутствии принятому опорному) значению (ГОСТ Р ИСО 5725-1).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Прецизионность</text:span><text:span text:style-name="T1">:</text:span> Степень близости друг к другу независимых результатов измерений, полученных в конкретных регламентированных условиях (ГОСТ Р ИСО 5725-1).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Повторяемость анализа</text:span><text:span text:style-name="T1">:</text:span> Прецизионность анализа в условиях повторяемости (ГОСТ Р ИСО 5725‑1).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Условия повторяемости</text:span><text:span text:style-name="T1">:</text:span> Условия, при которых результаты получают по одной и той же методике на одних и тех же пробах в одинаковых условиях и практически одновременно (результаты параллельных определений) (ГОСТ Р ИСО 5725-1).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Погрешность результата анализа</text:span><text:span text:style-name="T1">:</text:span> Отклонение результата анализа, полученного по аттестованной методике, от истинного (или в его отсутствии принятого опорного) значения измеряемой характеристики (РМГ 76).</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Стандартный образец</text:span><text:span text:style-name="T1">:</text:span> образец вещества (материала) с установленными по результатам испытаний значениями одной и более величин, характеризующих состав или свойство этого вещества (материала).</text:p>
-			<text:list xml:id="list11259618552572" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Политика в области качества</text:span>: Намерения и направление организации официально сформулированные ее высшим руководством, относящиеся к качеству (ГОСТ ISO 9000)</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Методика измерений</text:span>: Совокупность конкретно описанных операций, выполнение которых обеспечивает получение результатов измерений с установленными показателями точности (ГОСТ Р 8.563).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Точность</text:span>: Степень близости результата измерений к истинному (или в его отсутствии принятому опорному) значению (ГОСТ Р ИСО 5725-1).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Правильность</text:span>: Степень близости среднего значения, полученного на основании большой серии результатов измерений к истинному (или в его отсутствии принятому опорному) значению (ГОСТ Р ИСО 5725-1).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Прецизионность</text:span>: Степень близости друг к другу независимых результатов измерений, полученных в конкретных регламентированных условиях (ГОСТ Р ИСО 5725-1).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Повторяемость анализа</text:span>: Прецизионность анализа в условиях повторяемости (ГОСТ Р ИСО 5725‑1).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Условия повторяемости</text:span>: Условия, при которых результаты получают по одной и той же методике на одних и тех же пробах в одинаковых условиях и практически одновременно (результаты параллельных определений) (ГОСТ Р ИСО 5725-1).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Погрешность результата анализа</text:span>: Отклонение результата анализа, полученного по аттестованной методике, от истинного (или в его отсутствии принятого опорного) значения измеряемой характеристики (РМГ 76).</text:p>
+			<text:p text:style-name="Основной_20_текст_20_документа"><text:span text:style-name="Термин">Стандартный образец</text:span>: образец вещества (материала) с установленными по результатам испытаний значениями одной и более величин, характеризующих состав или свойство этого вещества (материала).</text:p>
+			<text:list xml:id="list132053712223515" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
 					<text:list>
 						<text:list-item>
-							<text:p text:style-name="P126"><text:span text:style-name="T20">В настоящем Руководстве использованы следующие с</text:span>окращения:</text:p>
+							<text:p text:style-name="P106">В настоящем Руководстве использованы следующие сокращения:</text:p>
 						</text:list-item>
 					</text:list>
 				</text:list-item>
@@ -1455,52 +1305,52 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:list xml:id="list11258069306697" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+			<text:list xml:id="list132052899893365" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
-					<text:h text:style-name="P117" text:cond-style-name="P118" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc34993_4032533758" /><office:annotation office:name="__Annotation__6146_2954163101">
+					<text:h text:style-name="P100" text:cond-style-name="P101" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc34993_4032533758" /><office:annotation office:name="__Annotation__6146_2954163101">
 						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 						<dc:date>2020-01-15T20:51:15.397000000</dc:date>
 						<loext:sender-initials>С.С.</loext:sender-initials>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Для заголовков используйте стиль «Заголовок условный». Фактическое оформление будет изменяться в зависимости от уровня нумерации.</text:span></text:p>
+						<text:p text:style-name="P110">Для заголовков используйте стиль «Заголовок условный». Фактическое оформление будет изменяться в зависимости от уровня нумерации.</text:p>
 					</office:annotation>Следующие разделы<office:annotation-end office:name="__Annotation__6146_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc34993_4032533758" /></text:h>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P94"><text:span text:style-name="T15">Текст</text:span> (<text:bookmark-ref text:reference-format="number" text:ref-name="__RefNumPara__5312_317182545">Приложение А</text:bookmark-ref>).</text:p>
-			<text:list xml:id="list11258206591670" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+			<text:p text:style-name="Основной_20_текст_20_документа">Текст (<text:bookmark-ref text:reference-format="number" text:ref-name="__RefNumPara__5312_317182545">Приложение А</text:bookmark-ref>).</text:p>
+			<text:list xml:id="list132052982564662" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
 					<text:list>
 						<text:list-item>
-							<text:h text:style-name="P107" text:cond-style-name="P108" text:outline-level="2"><text:bookmark-start text:name="__RefHeading___Toc7848_274642985" />Пример заголовка подраздела<text:bookmark-end text:name="__RefHeading___Toc7848_274642985" /></text:h>
+							<text:h text:style-name="P90" text:cond-style-name="P91" text:outline-level="2"><text:bookmark-start text:name="__RefHeading___Toc7848_274642985" />Пример заголовка подраздела<text:bookmark-end text:name="__RefHeading___Toc7848_274642985" /></text:h>
 							<text:list>
 								<text:list-item>
-									<text:h text:style-name="P109" text:cond-style-name="P110" text:outline-level="3">Пример заголовка подраздела</text:h>
+									<text:h text:style-name="P92" text:cond-style-name="P93" text:outline-level="3">Пример заголовка подраздела</text:h>
 								</text:list-item>
 							</text:list>
 						</text:list-item>
 					</text:list>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P94"><office:annotation office:name="__Annotation__6147_2954163101">
+			<text:p text:style-name="Основной_20_текст_20_документа"><office:annotation office:name="__Annotation__6147_2954163101">
 				<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 				<dc:date>2020-01-15T20:52:25.134000000</dc:date>
 				<loext:sender-initials>С.С.</loext:sender-initials>
-				<text:p text:style-name="P129"><text:span text:style-name="T25">Для текста документа используйте стиль «Основной текст документа». </text:span></text:p>
-			</office:annotation><text:span text:style-name="T6">Текст...</text:span><office:annotation-end office:name="__Annotation__6147_2954163101" /></text:p>
-			<text:list xml:id="list11259813684587" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+				<text:p text:style-name="P110">Для текста документа используйте стиль «Основной текст документа». </text:p>
+			</office:annotation>Текст...<office:annotation-end office:name="__Annotation__6147_2954163101" /></text:p>
+			<text:list xml:id="list132053726634978" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
 					<text:list>
 						<text:list-item>
 							<text:list>
 								<text:list-item>
-									<text:h text:style-name="P109" text:cond-style-name="P110" text:outline-level="3">Ещё подраздел</text:h>
+									<text:h text:style-name="P92" text:cond-style-name="P93" text:outline-level="3">Ещё подраздел</text:h>
 									<text:list>
 										<text:list-item>
-											<text:p text:style-name="P126"><text:span text:style-name="T14">Пример абзаца с нумерацией</text:span><text:span text:style-name="T10">.</text:span><text:span text:style-name="T10"><office:annotation>
+											<text:p text:style-name="P106">Пример абзаца с нумерацией.<office:annotation>
 												<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 												<dc:date>2020-01-15T20:53:10.547000000</dc:date>
 												<loext:sender-initials>С.С.</loext:sender-initials>
-												<text:p text:style-name="P129"><text:span text:style-name="T25">При необходимости нумерации пунктов документа используйте список из контекстного меню или с панели инструментов. Стиль нумерации - «Пункты документа».</text:span></text:p>
-											</office:annotation></text:span></text:p>
+												<text:p text:style-name="P110">При необходимости нумерации пунктов документа используйте список из контекстного меню или с панели инструментов. Стиль нумерации - «Пункты документа».</text:p>
+											</office:annotation></text:p>
 										</text:list-item>
 									</text:list>
 								</text:list-item>
@@ -1509,8 +1359,8 @@
 					</text:list>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P94"><text:span text:style-name="T16">Пример абзаца без нумерации</text:span><text:span text:style-name="T10">.</text:span></text:p>
-			<text:list xml:id="list11258674730437" text:continue-numbering="true" text:style-name="Пункты_20_документа">
+			<text:p text:style-name="Основной_20_текст_20_документа">Пример абзаца без нумерации.</text:p>
+			<text:list xml:id="list132052445195601" text:continue-numbering="true" text:style-name="Пункты_20_документа">
 				<text:list-item>
 					<text:list>
 						<text:list-item>
@@ -1518,7 +1368,7 @@
 								<text:list-item>
 									<text:list>
 										<text:list-item>
-											<text:p text:style-name="P127">И продолжаем нумерацию:</text:p>
+											<text:p text:style-name="P108">И продолжаем нумерацию:</text:p>
 										</text:list-item>
 									</text:list>
 								</text:list-item>
@@ -1527,107 +1377,107 @@
 					</text:list>
 				</text:list-item>
 			</text:list>
-			<text:list xml:id="list11259481415200" text:continue-list="list3012966140" text:style-name="Перечисление">
+			<text:list xml:id="list132053891287095" text:continue-list="list963222203" text:style-name="Перечисление">
 				<text:list-item>
-					<text:p text:style-name="P112"><office:annotation office:name="__Annotation__6149_2954163101">
+					<text:p text:style-name="List_20_1"><office:annotation office:name="__Annotation__6149_2954163101">
 						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 						<dc:date>2020-01-15T20:54:42.609000000</dc:date>
 						<loext:sender-initials>С.С.</loext:sender-initials>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Для перечисления используйте команду перечисления из контекстного меню либо с панели задач. Стиль нумерации - «Перечисление».</text:span></text:p>
-					</office:annotation><text:span text:style-name="T15">пример перечисления</text:span>;</text:p>
+						<text:p text:style-name="P110">Для перечисления используйте команду перечисления из контекстного меню либо с панели задач. Стиль нумерации - «Перечисление».</text:p>
+					</office:annotation>пример перечисления;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P113"><text:span text:style-name="T15">пример перечисления</text:span>;</text:p>
+					<text:p text:style-name="P97">пример перечисления;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P113"><text:span text:style-name="T15">пример перечисления</text:span>.<office:annotation-end office:name="__Annotation__6149_2954163101" /></text:p>
+					<text:p text:style-name="P97">пример перечисления.<office:annotation-end office:name="__Annotation__6149_2954163101" /></text:p>
 				</text:list-item>
 			</text:list>
-			<text:list xml:id="list3326753135" text:style-name="Пункты_20_приложений">
+			<text:list xml:id="list3991541855" text:style-name="Пункты_20_приложений">
 				<text:list-item>
-					<text:h text:style-name="P116" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__5312_317182545" /><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957" /><text:line-break /><office:annotation office:name="__Annotation__6150_2954163101">
+					<text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-start text:name="__RefNumPara__5312_317182545" /><text:line-break /><office:annotation office:name="__Annotation__6150_2954163101">
 						<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 						<dc:date>2020-01-15T20:58:51.945000000</dc:date>
 						<loext:sender-initials>С.С.</loext:sender-initials>
-						<text:p text:style-name="P129"><text:span text:style-name="T25">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:span></text:p>
-					</office:annotation>(обязательное)<text:line-break />Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101" /><text:bookmark-end text:name="__RefNumPara__5312_317182545" /><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957" /></text:h>
+						<text:p text:style-name="P110">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:p>
+					</office:annotation>(обязательное)<text:line-break />Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101" /><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957" /><text:bookmark-end text:name="__RefNumPara__5312_317182545" /></text:h>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P91">Главная цель:</text:p>
-			<text:p text:style-name="P124">достижение и поддержание высокого уровня выполнения проводимых измерений, достоверности выводов и заключений по результатам выполненных измерений и оценок, путем реализации принципов, норм, правил обеспечения единства измерений, а также квалифицированное проведение и получение достоверных и объективных результатов измерений путем реализации требований критериев аккредитации и ГОСТ ИСО/МЭК 17025.</text:p>
-			<text:p text:style-name="P91">Наши задачи в области качества:</text:p>
-			<text:list xml:id="list11258865139928" text:continue-list="list11259481415200" text:style-name="Перечисление">
+			<text:p text:style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">Главная цель:</text:p>
+			<text:p text:style-name="P88">достижение и поддержание высокого уровня выполнения проводимых измерений, достоверности выводов и заключений по результатам выполненных измерений и оценок, путем реализации принципов, норм, правил обеспечения единства измерений, а также квалифицированное проведение и получение достоверных и объективных результатов измерений путем реализации требований критериев аккредитации и ГОСТ ИСО/МЭК 17025.</text:p>
+			<text:p text:style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">Наши задачи в области качества:</text:p>
+			<text:list xml:id="list132053608090318" text:continue-list="list132053891287095" text:style-name="Перечисление">
 				<text:list-item>
-					<text:p text:style-name="P114">достижение высокого уровня организации и качества проведения измерений, достоверности выводов и заключений по результатам выполненных измерений и оценок, обеспечивающих достоверность, объективность и конфиденциальность информации, путем реализации требований критериев аккредитации и ГОСТ ИСО/МЭК 17025;</text:p>
+					<text:p text:style-name="P96">достижение высокого уровня организации и качества проведения измерений, достоверности выводов и заключений по результатам выполненных измерений и оценок, обеспечивающих достоверность, объективность и конфиденциальность информации, путем реализации требований критериев аккредитации и ГОСТ ИСО/МЭК 17025;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">обновление материально-технической базы ИЛ;</text:p>
+					<text:p text:style-name="List_20_1">обновление материально-технической базы ИЛ;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">освоение и внедрение новых востребованных методов измерений;</text:p>
+					<text:p text:style-name="List_20_1">освоение и внедрение новых востребованных методов измерений;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">эффективное использование и развитие научно-технического потенциала ИЛ;</text:p>
+					<text:p text:style-name="List_20_1">эффективное использование и развитие научно-технического потенциала ИЛ;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">анализ деятельности ИЛ на основе результатов внутреннего аудита и проведение необходимых корректирующих и предупреждающих мероприятий;</text:p>
+					<text:p text:style-name="List_20_1">анализ деятельности ИЛ на основе результатов внутреннего аудита и проведение необходимых корректирующих и предупреждающих мероприятий;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">постоянное совершенствование системы менеджмента качества;</text:p>
+					<text:p text:style-name="List_20_1">постоянное совершенствование системы менеджмента качества;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">обеспечение участия ИЛ в межлабораторных сличительных испытаниях для подтверждения технической компетентности ИЛ.</text:p>
-				</text:list-item>
-			</text:list>
-			<text:p text:style-name="P91">Принципы нашей деятельности:</text:p>
-			<text:list xml:id="list11259447900767" text:continue-numbering="true" text:style-name="Перечисление">
-				<text:list-item>
-					<text:p text:style-name="P112">соблюдение критериев аккредитации и требований к аккредитованным лицам;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">подготовленность, профессиональный рост, компетентность и ответственность персонала;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">сотрудничество с ведущими специалистами других организаций по направлениям деятельности ИЛ;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">взаимное доверие, основанное на открытых и искренних взаимоотношениях, инициатива, личная значимость сотрудников, лидерство и ответственность в области качества;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">четкое распределение обязанностей и ответственности персонала ИЛ;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">вовлечение персонала ИЛ в непрерывное улучшение системы менеджмента качества;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="P112">предупреждение возникновения проблем, а не устранение последствий после их появления.</text:p>
+					<text:p text:style-name="List_20_1">обеспечение участия ИЛ в межлабораторных сличительных испытаниях для подтверждения технической компетентности ИЛ.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P91">Обязанности ИЛ в области качества:</text:p>
-			<text:list xml:id="list11258230864652" text:continue-numbering="true" text:style-name="Перечисление">
+			<text:p text:style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">Принципы нашей деятельности:</text:p>
+			<text:list xml:id="list132052797434003" text:continue-numbering="true" text:style-name="Перечисление">
 				<text:list-item>
-					<text:p text:style-name="P112">соблюдать критерии аккредитации и требования к аккредитованным лицам; </text:p>
+					<text:p text:style-name="List_20_1">соблюдение критериев аккредитации и требований к аккредитованным лицам;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">соблюдать установившуюся профессиональную практику лабораторных работ и сохранять высокое качество испытаний и измерений; </text:p>
+					<text:p text:style-name="List_20_1">подготовленность, профессиональный рост, компетентность и ответственность персонала;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="List_20_1"><text:span text:style-name="T13">неуклонно следовать в деятельности лаборатории требованиям ГОСТ ИСО/МЭК </text:span><text:span text:style-name="Character_5f_20_5f_style"><text:span text:style-name="T13">17025</text:span></text:span><text:span text:style-name="T13"> «Общие требования к компетентности испытательных и калибровочных лабораторий»; </text:span></text:p>
+					<text:p text:style-name="List_20_1">сотрудничество с ведущими специалистами других организаций по направлениям деятельности ИЛ;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">постоянно повышать результативность системы менеджмента лабораторных испытаний и измерений; </text:p>
+					<text:p text:style-name="List_20_1">взаимное доверие, основанное на открытых и искренних взаимоотношениях, инициатива, личная значимость сотрудников, лидерство и ответственность в области качества;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">требовать от работников лаборатории, участвующих в проведении испытаний и измерений, ознакомления с Руководством по качеству; </text:p>
+					<text:p text:style-name="List_20_1">четкое распределение обязанностей и ответственности персонала ИЛ;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="P112">руководствоваться в своей деятельности установленной Политикой в области качества деятельности ИЛ.</text:p>
+					<text:p text:style-name="List_20_1">вовлечение персонала ИЛ в непрерывное улучшение системы менеджмента качества;</text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">предупреждение возникновения проблем, а не устранение последствий после их появления.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P94">Для нас качество — результат деятельности всех сотрудников ИЛ. Каждый сотрудник знает политику в области качества, руководствуется ею в своей деятельности, ознакомлен с Руководством по качеству и несет ответственность за качество проводимых работ на своем рабочем месте.</text:p>
-			<text:list xml:id="list11259037777116" text:continue-list="list3326753135" text:style-name="Пункты_20_приложений">
+			<text:p text:style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">Обязанности ИЛ в области качества:</text:p>
+			<text:list xml:id="list132052439932418" text:continue-numbering="true" text:style-name="Перечисление">
 				<text:list-item>
-					<text:h text:style-name="P116" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__7369_317182545" /><text:bookmark-start text:name="__RefHeading___Toc28851_1015746957" /><text:line-break />(обязательное)<text:line-break />Перечень внутренних документов СМК ИЛ<text:bookmark-end text:name="__RefNumPara__7369_317182545" /><text:bookmark-end text:name="__RefHeading___Toc28851_1015746957" /></text:h>
+					<text:p text:style-name="List_20_1">соблюдать критерии аккредитации и требования к аккредитованным лицам; </text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">соблюдать установившуюся профессиональную практику лабораторных работ и сохранять высокое качество испытаний и измерений; </text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">неуклонно следовать в деятельности лаборатории требованиям ГОСТ ИСО/МЭК <text:span text:style-name="Character_5f_20_5f_style">17025</text:span> «Общие требования к компетентности испытательных и калибровочных лабораторий»; </text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">постоянно повышать результативность системы менеджмента лабораторных испытаний и измерений; </text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">требовать от работников лаборатории, участвующих в проведении испытаний и измерений, ознакомления с Руководством по качеству; </text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="List_20_1">руководствоваться в своей деятельности установленной Политикой в области качества деятельности ИЛ.</text:p>
+				</text:list-item>
+			</text:list>
+			<text:p text:style-name="Основной_20_текст_20_документа">Для нас качество — результат деятельности всех сотрудников ИЛ. Каждый сотрудник знает политику в области качества, руководствуется ею в своей деятельности, ознакомлен с Руководством по качеству и несет ответственность за качество проводимых работ на своем рабочем месте.</text:p>
+			<text:list xml:id="list132053345334011" text:continue-list="list3991541855" text:style-name="Пункты_20_приложений">
+				<text:list-item>
+					<text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28851_1015746957" /><text:bookmark-start text:name="__RefNumPara__7369_317182545" /><text:line-break />(обязательное)<text:line-break />Перечень внутренних документов СМК ИЛ<text:bookmark-end text:name="__RefHeading___Toc28851_1015746957" /><text:bookmark-end text:name="__RefNumPara__7369_317182545" /></text:h>
 				</text:list-item>
 			</text:list>
 			<table:table table:name="Таблица4" table:style-name="Таблица4">
@@ -1635,7 +1485,7 @@
 				<table:table-column table:style-name="Таблица4.B" />
 				<table:table-row table:style-name="Таблица4.1">
 					<table:table-cell table:style-name="Таблица4.A1" table:number-columns-spanned="2" office:value-type="string">
-						<text:p text:style-name="P90"><text:bookmark-start text:name="__RefHeading___Toc5836_1514331729" />Документы 1 уровня<text:bookmark-end text:name="__RefHeading___Toc5836_1514331729" /></text:p>
+						<text:p text:style-name="Заголовок_20_вне_20_оглавления"><text:bookmark-start text:name="__RefHeading___Toc5836_1514331729" />Документы 1 уровня<text:bookmark-end text:name="__RefHeading___Toc5836_1514331729" /></text:p>
 					</table:table-cell>
 					<table:covered-table-cell />
 				</table:table-row>
@@ -1649,7 +1499,7 @@
 				</table:table-row>
 				<table:table-row table:style-name="Таблица4.1">
 					<table:table-cell table:style-name="Таблица4.A1" table:number-columns-spanned="2" office:value-type="string">
-						<text:p text:style-name="P90"><text:bookmark-start text:name="__RefHeading___Toc5838_1514331729" />Документы 2 уровня<text:bookmark-end text:name="__RefHeading___Toc5838_1514331729" /></text:p>
+						<text:p text:style-name="Заголовок_20_вне_20_оглавления"><text:bookmark-start text:name="__RefHeading___Toc5838_1514331729" />Документы 2 уровня<text:bookmark-end text:name="__RefHeading___Toc5838_1514331729" /></text:p>
 					</table:table-cell>
 					<table:covered-table-cell />
 				</table:table-row>
@@ -1751,7 +1601,7 @@
 				</table:table-row>
 				<table:table-row table:style-name="Таблица4.1">
 					<table:table-cell table:style-name="Таблица4.A1" table:number-columns-spanned="2" office:value-type="string">
-						<text:p text:style-name="P90"><text:bookmark-start text:name="__RefHeading___Toc5840_1514331729" />Документы 3 уровня<text:bookmark-end text:name="__RefHeading___Toc5840_1514331729" /></text:p>
+						<text:p text:style-name="Заголовок_20_вне_20_оглавления"><text:bookmark-start text:name="__RefHeading___Toc5840_1514331729" />Документы 3 уровня<text:bookmark-end text:name="__RefHeading___Toc5840_1514331729" /></text:p>
 					</table:table-cell>
 					<table:covered-table-cell />
 				</table:table-row>
@@ -1934,9 +1784,9 @@
 				</table:table-row>
 			</table:table>
 			<text:p text:style-name="P87" />
-			<text:list xml:id="list11258085171957" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
+			<text:list xml:id="list132052867545151" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
 				<text:list-item>
-					<text:h text:style-name="P116" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28853_1015746957" /><text:span text:style-name="T21"><text:line-break /></text:span><text:span text:style-name="T18">(обязательное)<text:line-break />Перечень форм документов ИЛ</text:span><text:bookmark-end text:name="__RefHeading___Toc28853_1015746957" /></text:h>
+					<text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28853_1015746957" /><text:line-break />(обязательное)<text:line-break />Перечень форм документов ИЛ<text:bookmark-end text:name="__RefHeading___Toc28853_1015746957" /></text:h>
 				</text:list-item>
 			</text:list>
 			<table:table table:name="Таблица11" table:style-name="Таблица11">
@@ -2274,13 +2124,13 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:list xml:id="list11260094125803" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
+			<text:list xml:id="list132052712800285" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
 				<text:list-item>
-					<text:h text:style-name="P115" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__8488_317182545" /><text:bookmark-start text:name="__RefHeading___Toc28855_1015746957" /><text:line-break />(рекомендуемое)<text:line-break />Формы документов ИЛ<text:bookmark-end text:name="__RefNumPara__8488_317182545" /><text:bookmark-end text:name="__RefHeading___Toc28855_1015746957" /></text:h>
+					<text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28855_1015746957" /><text:bookmark-start text:name="__RefNumPara__8488_317182545" /><text:line-break />(рекомендуемое)<text:line-break />Формы документов ИЛ<text:bookmark-end text:name="__RefHeading___Toc28855_1015746957" /><text:bookmark-end text:name="__RefNumPara__8488_317182545" /></text:h>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P93">Ф06.01-12</text:p>
-			<text:p text:style-name="P92">Журнал учета обращений и претензий</text:p>
+			<text:p text:style-name="Обозначение_20_формы">Ф06.01-12</text:p>
+			<text:p text:style-name="Заголовок_20_формы">Журнал учета обращений и претензий</text:p>
 			<table:table table:name="Таблица9" table:style-name="Таблица9">
 				<table:table-column table:style-name="Таблица9.A" />
 				<table:table-column table:style-name="Таблица9.B" />
@@ -2357,8 +2207,8 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:p text:style-name="P93">Ф06.01-13</text:p>
-			<text:p text:style-name="P92">Журнал регистрации заявок</text:p>
+			<text:p text:style-name="Обозначение_20_формы">Ф06.01-13</text:p>
+			<text:p text:style-name="Заголовок_20_формы">Журнал регистрации заявок</text:p>
 			<table:table table:name="Таблица5" table:style-name="Таблица5">
 				<table:table-column table:style-name="Таблица5.A" />
 				<table:table-column table:style-name="Таблица5.B" />
@@ -2436,8 +2286,8 @@
 			</table:table>
 			<text:p text:style-name="P20" />
 			<text:p text:style-name="P20" />
-			<text:p text:style-name="P93">Ф07.01-06</text:p>
-			<text:p text:style-name="P92">План отбора проб</text:p>
+			<text:p text:style-name="Обозначение_20_формы">Ф07.01-06</text:p>
+			<text:p text:style-name="Заголовок_20_формы">План отбора проб</text:p>
 			<text:p text:style-name="P48">на территории заказчика: ______________________________________</text:p>
 			<text:p text:style-name="P82">(наименование и адрес организации)</text:p>
 			<text:p text:style-name="P83" />
@@ -2495,13 +2345,13 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:list xml:id="list11259191985786" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
+			<text:list xml:id="list132052026869547" text:continue-numbering="true" text:style-name="Пункты_20_приложений">
 				<text:list-item>
-					<text:h text:style-name="P115" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc6126_3842456518" /><text:bookmark-start text:name="__RefNumPara__7890_781730213" /><text:line-break />(рекомендуемое)<text:line-break />Форма журнала учета несоответствий, корректирующих и предупреждающих действий и пример заполнения<text:bookmark-end text:name="__RefHeading___Toc6126_3842456518" /><text:bookmark-end text:name="__RefNumPara__7890_781730213" /></text:h>
+					<text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__7890_781730213" /><text:bookmark-start text:name="__RefHeading___Toc6126_3842456518" /><text:line-break />(рекомендуемое)<text:line-break />Форма журнала учета несоответствий, корректирующих и предупреждающих действий и пример заполнения<text:bookmark-end text:name="__RefNumPara__7890_781730213" /><text:bookmark-end text:name="__RefHeading___Toc6126_3842456518" /></text:h>
 				</text:list-item>
 			</text:list>
-			<text:p text:style-name="P93">Ф07.01-01</text:p>
-			<text:p text:style-name="P92">Журнал учёта несоответствий, корректирующих и предупреждающих действий</text:p>
+			<text:p text:style-name="Обозначение_20_формы">Ф07.01-01</text:p>
+			<text:p text:style-name="Заголовок_20_формы">Журнал учёта несоответствий, корректирующих и предупреждающих действий</text:p>
 			<table:table table:name="Таблица1" table:style-name="Таблица1">
 				<table:table-column table:style-name="Таблица1.A" />
 				<table:table-column table:style-name="Таблица1.B" />
@@ -2568,7 +2418,7 @@
 					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.A2" table:number-rows-spanned="2" office:value-type="string">
 						<text:p text:style-name="P41">НС:</text:p>
-						<text:p text:style-name="P44"><text:span text:style-name="T19">Недостаточная оснащенность </text:span>средствами измерений для выполнения работ по исследованиям (испытаниям), измерениям согласно заявленной аккредитации:</text:p>
+						<text:p text:style-name="P44">Недостаточная оснащенность средствами измерений для выполнения работ по исследованиям (испытаниям), измерениям согласно заявленной аккредитации:</text:p>
 						<text:p text:style-name="P44">˗ СИ для измерения показателя «скорость движения воздуха» в диапазоне измерения (1,0-20) м/с с</text:p>
 						<text:p text:style-name="P43">погрешностью измерения ±0,1 м/с, необходимое для реализации МУК 4.3.2756-10 (п. 5 проекта заявленной области аккредитации);</text:p>
 					</table:table-cell>
@@ -2594,7 +2444,7 @@
 					<table:covered-table-cell />
 					<table:covered-table-cell />
 					<table:table-cell table:style-name="Таблица1.C4" office:value-type="string">
-						<text:p text:style-name="P44">Недостаточная эффективность <text:s />процедуры внедрения (<text:span text:style-name="T19">верификации) методов измерений</text:span></text:p>
+						<text:p text:style-name="P44">Недостаточная эффективность <text:s />процедуры внедрения (верификации) методов измерений</text:p>
 					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.C4" office:value-type="string">
 						<text:p text:style-name="P41">Корректирующие действия:</text:p>
@@ -2611,7 +2461,7 @@
 					</table:table-cell>
 				</table:table-row>
 			</table:table>
-			<text:p text:style-name="P94" />
+			<text:p text:style-name="Основной_20_текст_20_документа" />
 			<text:p text:style-name="Contents_20_Heading">Лист ознакомления</text:p>
 			<table:table table:name="Таблица7" table:style-name="Таблица7">
 				<table:table-column table:style-name="Таблица7.A" />

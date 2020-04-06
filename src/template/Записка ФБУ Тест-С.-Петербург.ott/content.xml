@@ -219,10 +219,6 @@
 		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto" />
 		</style:style>
-		<style:style style:name="T1" style:family="text">
-			<style:text-properties fo:font-size="6pt" />
-		</style:style>
-		<style:style style:name="T2" style:family="text" />
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Frame">
 			<style:graphic-properties style:print-content="true" style:protect="position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph" style:editable="true" loext:rel-width-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm" />
@@ -385,7 +381,7 @@
 								<table:table-header-rows>
 									<table:table-row table:style-name="Таблица1.1">
 										<table:table-cell table:style-name="Таблица1.A1" table:number-rows-spanned="2" office:value-type="string">
-											<text:p text:style-name="P2"><text:span text:style-name="T1"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор" /></text:span><text:tab /><draw:frame draw:style-name="fr4" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0">
+											<text:p text:style-name="P2"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор" /><text:tab /><draw:frame draw:style-name="fr4" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0">
 												<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf" />
 												<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png" />
 											</draw:frame></text:p>

@@ -70,6 +70,16 @@
 		<xsl:copy />
 	</xsl:template>
 
+	<!-- удаляем автоматические стили символов -->
+
+	<xsl:key name="auto-text-styles" match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]" use="attribute::style:name" />
+
+	<xsl:template match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]" />
+
+	<xsl:template match="text:span[ key( 'auto-text-styles', attribute::text:style-name ) ]">
+		<xsl:apply-templates select="node()|text()|processing-instruction()|comment()" />
+	</xsl:template>
+
 	<!-- удаляем лишние аттрибуты -->
 
 	<xsl:template match="attribute::style:language-asian" />
