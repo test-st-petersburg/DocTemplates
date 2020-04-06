@@ -50,7 +50,7 @@ configuration xITGODTDevWindowsPC
 		}
 
 		cChocoPackageInstaller LibreOffice {
-			Name      = 'libreoffice-fresh'
+			Name      = 'libreoffice-still'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
