@@ -1,75 +1,80 @@
-﻿<?xml version="1.0" encoding="utf-8"?><menu:menupopup xmlns:menu="http://openoffice.org/2001/menu">
-	<menu:menuitem menu:id=".uno:Cut" />
-	<menu:menuitem menu:id=".uno:Copy" />
-	<menu:menuitem menu:id=".uno:Paste" />
-	<menu:menu menu:id=".uno:PasteSpecialMenu">
-		<menu:menupopup>
-			<menu:menuitem menu:id=".uno:PasteUnformatted" />
-			<menu:menuitem menu:id=".uno:PasteSpecial" />
-		</menu:menupopup>
-	</menu:menu>
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:UpdateCurIndex" />
-	<menu:menuitem menu:id=".uno:EditCurIndex" />
-	<menu:menuitem menu:id=".uno:RemoveTableOf" />
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:FieldDialog" />
-	<menu:menuitem menu:id=".uno:EditFootnote" />
-	<menu:menuitem menu:id=".uno:IndexEntryDialog" />
-	<menu:menuitem menu:id=".uno:AuthoritiesEntryDialog" />
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:FormatPaintbrush" />
-	<menu:menuitem menu:id=".uno:ResetAttributes" />
-	<menu:menu menu:id=".uno:CharacterMenu">
-		<menu:menupopup>
-			<menu:menuitem menu:id=".uno:FontDialog" />
-			<menu:menuseparator />
-			<menu:menuitem menu:id=".uno:DefaultCharStyle" />
-			<menu:menuitem menu:id=".uno:EmphasisCharStyle" />
-			<menu:menuitem menu:id=".uno:StrongEmphasisCharStyle" />
-			<menu:menuitem menu:id=".uno:QuoteCharStyle" />
-			<menu:menuitem menu:id=".uno:SourceCharStyle" />
-		</menu:menupopup>
-	</menu:menu>
-	<menu:menu menu:id=".uno:ParagraphMenu">
-		<menu:menupopup>
-			<menu:menuitem menu:id=".uno:ParagraphDialog" />
-			<menu:menuseparator />
-			<menu:menuitem menu:id=".uno:StyleApply?Style:string=Основной текст документа&amp;FamilyName:string=ParagraphStyles" menu:label="Основной текст документа" />
-			<menu:menuitem menu:id=".uno:StyleApply?Style:string=Заголовок условный&amp;FamilyName:string=ParagraphStyles" menu:label="Заголовок" />
-			<menu:menuitem menu:id=".uno:PreformattedParaStyle" />
-		</menu:menupopup>
-	</menu:menu>
-	<menu:menu menu:id=".uno:NumberingMenu">
-		<menu:menupopup>
-			<menu:menuitem menu:id=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles" menu:label="Пункты документа" />
-			<menu:menuitem menu:id=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles" menu:label="Перечисление" />
-			<menu:menuseparator />
-			<menu:menuitem menu:id=".uno:IncrementLevel" />
-			<menu:menuitem menu:id=".uno:DecrementLevel" />
-			<menu:menuseparator />
-			<menu:menuitem menu:id=".uno:NumberingStart" />
-			<menu:menuitem menu:id=".uno:ContinueNumbering" />
-			<menu:menuseparator />
-			<menu:menuitem menu:id=".uno:RemoveBullets" />
-		</menu:menupopup>
-	</menu:menu>
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:InsertAnnotation" />
-	<menu:menuitem menu:id=".uno:AcceptTrackedChange" />
-	<menu:menuitem menu:id=".uno:RejectTrackedChange" />
-	<menu:menuitem menu:id=".uno:NextTrackedChange" />
-	<menu:menuitem menu:id=".uno:PreviousTrackedChange" />
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:OpenHyperlinkOnCursor" />
-	<menu:menuitem menu:id=".uno:EditHyperlink" />
-	<menu:menuitem menu:id=".uno:CopyHyperlinkLocation" />
-	<menu:menuitem menu:id=".uno:RemoveHyperlink" />
-	<menu:menuitem menu:id=".uno:OpenSmartTagMenuOnCursor" />
-	<menu:menuitem menu:id=".uno:ThesaurusFromContext" />
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:CurrentFootnoteDialog" />
-	<menu:menuitem menu:id=".uno:EditCurrentRegion" />
-	<menu:menuseparator />
-	<menu:menuitem menu:id=".uno:PageDialog" />
+<?xml version="1.0" encoding="UTF-8"?>
+<menu:menupopup xmlns:menu="http://openoffice.org/2001/menu">
+   <menu:menuitem menu:id=".uno:Cut"/>
+   <menu:menuitem menu:id=".uno:Copy"/>
+   <menu:menuitem menu:id=".uno:Paste"/>
+   <menu:menu menu:id=".uno:PasteSpecialMenu">
+      <menu:menupopup>
+         <menu:menuitem menu:id=".uno:PasteUnformatted"/>
+         <menu:menuitem menu:id=".uno:PasteSpecial"/>
+      </menu:menupopup>
+   </menu:menu>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:UpdateCurIndex"/>
+   <menu:menuitem menu:id=".uno:EditCurIndex"/>
+   <menu:menuitem menu:id=".uno:RemoveTableOf"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:FieldDialog"/>
+   <menu:menuitem menu:id=".uno:EditFootnote"/>
+   <menu:menuitem menu:id=".uno:IndexEntryDialog"/>
+   <menu:menuitem menu:id=".uno:AuthoritiesEntryDialog"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:FormatPaintbrush"/>
+   <menu:menuitem menu:id=".uno:ResetAttributes"/>
+   <menu:menu menu:id=".uno:CharacterMenu">
+      <menu:menupopup>
+         <menu:menuitem menu:id=".uno:FontDialog"/>
+         <menu:menuseparator/>
+         <menu:menuitem menu:id=".uno:DefaultCharStyle"/>
+         <menu:menuitem menu:id=".uno:EmphasisCharStyle"/>
+         <menu:menuitem menu:id=".uno:StrongEmphasisCharStyle"/>
+         <menu:menuitem menu:id=".uno:QuoteCharStyle"/>
+         <menu:menuitem menu:id=".uno:SourceCharStyle"/>
+      </menu:menupopup>
+   </menu:menu>
+   <menu:menu menu:id=".uno:ParagraphMenu">
+      <menu:menupopup>
+         <menu:menuitem menu:id=".uno:ParagraphDialog"/>
+         <menu:menuseparator/>
+         <menu:menuitem menu:id=".uno:StyleApply?Style:string=Основной текст документа&amp;FamilyName:string=ParagraphStyles"
+                        menu:label="Основной текст документа"/>
+         <menu:menuitem menu:id=".uno:StyleApply?Style:string=Заголовок условный&amp;FamilyName:string=ParagraphStyles"
+                        menu:label="Заголовок"/>
+         <menu:menuitem menu:id=".uno:PreformattedParaStyle"/>
+      </menu:menupopup>
+   </menu:menu>
+   <menu:menu menu:id=".uno:NumberingMenu">
+      <menu:menupopup>
+         <menu:menuitem menu:id=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles"
+                        menu:label="Пункты документа"/>
+         <menu:menuitem menu:id=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles"
+                        menu:label="Перечисление"/>
+         <menu:menuseparator/>
+         <menu:menuitem menu:id=".uno:IncrementLevel"/>
+         <menu:menuitem menu:id=".uno:DecrementLevel"/>
+         <menu:menuseparator/>
+         <menu:menuitem menu:id=".uno:NumberingStart"/>
+         <menu:menuitem menu:id=".uno:ContinueNumbering"/>
+         <menu:menuseparator/>
+         <menu:menuitem menu:id=".uno:RemoveBullets"/>
+      </menu:menupopup>
+   </menu:menu>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:InsertAnnotation"/>
+   <menu:menuitem menu:id=".uno:AcceptTrackedChange"/>
+   <menu:menuitem menu:id=".uno:RejectTrackedChange"/>
+   <menu:menuitem menu:id=".uno:NextTrackedChange"/>
+   <menu:menuitem menu:id=".uno:PreviousTrackedChange"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:OpenHyperlinkOnCursor"/>
+   <menu:menuitem menu:id=".uno:EditHyperlink"/>
+   <menu:menuitem menu:id=".uno:CopyHyperlinkLocation"/>
+   <menu:menuitem menu:id=".uno:RemoveHyperlink"/>
+   <menu:menuitem menu:id=".uno:OpenSmartTagMenuOnCursor"/>
+   <menu:menuitem menu:id=".uno:ThesaurusFromContext"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:CurrentFootnoteDialog"/>
+   <menu:menuitem menu:id=".uno:EditCurrentRegion"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:PageDialog"/>
 </menu:menupopup>
