@@ -1,5 +1,6 @@
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:saxon="http://saxon.sf.net/"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -40,16 +41,19 @@
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 >
 	<xsl:output
+		method="xml"
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="no"
-		method="xml"
+		indent="yes"
+		suppress-indentation="text:p text:h text:table-of-content-entry-template text:span script:module"
 	/>
 
 	<!-- строки для форматирования -->
 	<xsl:variable name="indent-chars" select="'&#x9;'" />
-	<xsl:variable name="indent-line" select="'&#xd;&#xa;'" />
+	<!-- применимо для dotNet XslTransformer -->
+	<!-- <xsl:variable name="indent-line" select="'&#xd;&#xa;'" /> -->
+	<xsl:variable name="indent-line" select="'&#xa;'" />
 
 	<!-- правило для элементов, подвергаемых форматированию -->
 	<xsl:template name="indent-self">
