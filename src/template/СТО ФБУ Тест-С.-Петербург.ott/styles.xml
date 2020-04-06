@@ -15,7 +15,7 @@
 	<office:styles>
 		<style:default-style style:family="graphic">
 			<style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false" />
-			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
+			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
 				<style:tab-stops />
 			</style:paragraph-properties>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true" />
@@ -311,7 +311,7 @@
 			<style:text-properties fo:font-size="16pt" />
 		</style:style>
 		<style:style style:name="Информация_20_об_20_организации_20_на_20_титульном_20_листе" style:display-name="Информация об организации на титульном листе" style:family="paragraph" style:parent-style-name="Standard" style:master-page-name="">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="2cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" style:page-number="auto" />
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="1.499cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" style:page-number="auto" />
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="14pt" fo:font-weight="bold" />
 		</style:style>
 		<style:style style:name="Текст_20_предисловия" style:display-name="Текст предисловия" style:family="paragraph" style:parent-style-name="Text_20_body_20_indent" />
@@ -363,6 +363,7 @@
 					<style:tab-stop style:position="6.5cm" style:type="right" />
 				</style:tab-stops>
 			</style:paragraph-properties>
+			<style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
 		</style:style>
 		<style:style style:name="Заголовок_20_условный" style:display-name="Заголовок условный" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа">
 			<style:map style:condition="outline-level()=1" style:apply-style-name="Heading_20_1" />
@@ -1643,7 +1644,7 @@
 							<text:p text:style-name="MP3" />
 						</table:table-cell>
 						<table:table-cell table:style-name="Таблица13.A3" office:value-type="string">
-							<text:p text:style-name="Header">Лист <text:page-number text:select-page="current">II</text:page-number></text:p>
+							<text:p text:style-name="Header">Лист <text:page-number text:select-page="current">III</text:page-number></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
