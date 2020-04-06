@@ -63,7 +63,7 @@
 					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
 				</xsl:apply-templates>
 			</xsl:for-each>
-			<xsl:if test="count(child::*) &gt; 0">
+			<xsl:if test="child::*">
 				<xsl:value-of select="$indent"/>
 			</xsl:if>
 		</xsl:copy>
