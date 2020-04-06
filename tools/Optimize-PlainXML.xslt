@@ -1,4 +1,4 @@
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
@@ -38,17 +38,28 @@
 	xmlns:officeooo="http://openoffice.org/2009/office"
 >
 	<xsl:output
+		method="xml"
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="no"
-		method="xml"
+		indent="yes"
+		suppress-indentation="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"
 	/>
+
+	<xsl:preserve-space elements="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"/>
+
+	<xsl:strip-space elements="*"/>
+
+	<xsl:template match="processing-instruction()">
+		<xsl:copy>
+			<xsl:apply-templates select="attribute::*"/>
+		</xsl:copy>
+	</xsl:template>
 
 	<xsl:template match="node()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*" />
-			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()" />
+			<xsl:apply-templates select="attribute::*"/>
+			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -56,23 +67,20 @@
 		<xsl:copy />
 	</xsl:template>
 
-	<xsl:template match="text()">
-		<xsl:copy />
-	</xsl:template>
-
-	<xsl:template match="processing-instruction()">
-		<xsl:copy>
-			<xsl:copy-of select="attribute::*" />
-		</xsl:copy>
-	</xsl:template>
-
 	<xsl:template match="comment()">
-		<xsl:copy />
+		<xsl:copy/>
+	</xsl:template>
+
+	<xsl:template match="text()">
+		<xsl:copy/>
 	</xsl:template>
 
 	<!-- удаляем автоматические стили символов -->
 
-	<xsl:key name="auto-text-styles" match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]" use="attribute::style:name" />
+	<xsl:key name="auto-text-styles"
+		match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]"
+		use="attribute::style:name"
+	/>
 
 	<xsl:template match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]" />
 

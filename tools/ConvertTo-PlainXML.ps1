@@ -32,24 +32,19 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	[System.Xml.XmlReaderSettings] $readerSettings = New-Object System.Xml.XmlReaderSettings;
-	$readerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
-	$readerSettings.DtdProcessing = [System.Xml.DtdProcessing]::Parse;
-	# не обрабатывать DTD в XML документах
-	$readerSettings.XmlResolver = $null;
-	$readerSettings.IgnoreComments = $false;
-	$readerSettings.IgnoreProcessingInstructions = $false;
-	$readerSettings.IgnoreWhitespace = $false;
-	$readerSettings.CloseInput = $true;
+	Add-Type -Path ( Join-Path -Path ( Split-Path -Path ( ( Get-Package -Name 'Saxon-HE' ).Source ) -Parent ) -ChildPath 'lib\net40\saxon9he-api.dll' ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
-	[System.Xml.XmlWriterSettings] $writerSettings = New-Object System.Xml.XmlWriterSettings;
-	$writerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
-	$writerSettings.DoNotEscapeUriAttributes = $false;
-	$writerSettings.WriteEndDocumentOnClose = $true;
-	$writerSettings.CloseOutput = $true;
-
-	$xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
-	$xslt.Load( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) );
+	$saxProcessor = New-Object Saxon.Api.Processor;
+	$saxCompiler = $saxProcessor.NewXsltCompiler();
+	$saxCompiler.BaseUri = $PSScriptRoot;
+	Write-Verbose 'Compiling XSLT...';
+	$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) );
+	$saxTransform = $saxExecutable.Load();
+	Write-Verbose 'XSLT loaded.';
+	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
 }
 process {
 	if ( $PSCmdlet.ShouldProcess( $FilePath, "Convert Open Office document to plain XML directory" ) ) {
@@ -61,7 +56,7 @@ process {
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		if ( -Not ( Test-Path -Path $DestinationPath ) ) {
-			New-Item -Path $DestinationPath -ItemType Directory `
+			$null = New-Item -Path $DestinationPath -ItemType Directory `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
@@ -72,43 +67,71 @@ process {
 		Copy-Item -Path $FilePath -Destination $TempZIPFileName `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		$TempXMLFolder = Join-Path `
-			-Path ( [System.IO.Path]::GetTempPath() ) `
-			-ChildPath ( [System.IO.Path]::GetRandomFileName() );
-		$DestinationTempPathForFile = Join-Path -Path $TempXMLFolder -ChildPath $DestinationDirName;
-		Expand-Archive -Path $TempZIPFileName -DestinationPath $DestinationTempPathForFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Remove-Item -Path $TempZIPFileName `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		try {
 
-		if ( $Indented ) {
-			if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Format all xml files in Open Office document plain XML directory" ) ) {
-				Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-				| Where-Object { $_.Length -gt 0 } `
-				| ForEach-Object {
-					if ( $PSCmdlet.ShouldProcess( $_, "Format xml file" ) ) {
-						$xmlReader = [System.Xml.XmlReader]::Create( $_.FullName, $readerSettings );
-						$TempXMLFileName = [System.IO.Path]::GetTempFileName();
-						$xmlWriter = [System.Xml.XmlTextWriter]::Create( $TempXMLFileName, $writerSettings );
-						$xslt.Transform( $xmlReader, $null, $xmlWriter );
-						$xmlReader.Close();
-						$xmlWriter.Flush();
-						$xmlWriter.Close();
-						Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
-							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-							-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			$TempXMLFolder = Join-Path `
+				-Path ( [System.IO.Path]::GetTempPath() ) `
+				-ChildPath ( [System.IO.Path]::GetRandomFileName() );
+			$DestinationTempPathForFile = Join-Path -Path $TempXMLFolder -ChildPath $DestinationDirName;
+			Expand-Archive -Path $TempZIPFileName -DestinationPath $DestinationTempPathForFile `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			try {
+				if ( $Indented ) {
+					if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Format all xml files in Open Office document plain XML directory" ) ) {
+						Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
+							| Where-Object { $_.Length -gt 0 } `
+							| ForEach-Object {
+							if ( $PSCmdlet.ShouldProcess( $_, "Format xml file" ) ) {
+								$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
+								try {
+									$saxTransform.SetInputStream( $sourceXMLFileStream, $_.Directory.FullName );
+
+									$TempXMLFileName = [System.IO.Path]::GetTempFileName();
+									try {
+										$saxWriter = $saxProcessor.NewSerializer();
+										$saxWriter.SetOutputFile( $TempXMLFileName );
+
+										Write-Verbose "Transforming $($_.FullName)..."
+										$saxTransform.Run( $saxWriter );
+										Write-Verbose "Transformation done."
+
+										$saxWriter.Close();
+
+										Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
+											-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+											-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+									}
+									finally {
+										if ( Test-Path -Path $TempXMLFileName ) {
+											Remove-Item -Path $TempXMLFileName -Recurse `
+												-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+												-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+										};
+									};
+								}
+								finally {
+									$sourceXMLFileStream.Close();
+									$sourceXMLFileStream.Dispose();
+								};
+							};
+						};
 					};
 				};
+				Copy-Item -Path $DestinationTempPathForFile -Destination $DestinationPath -Recurse `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			}
+			finally {
+				Remove-Item -Path $TempXMLFolder -Recurse `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 			};
+		}
+		finally {
+			Remove-Item -Path $TempZIPFileName `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
-
-		Copy-Item -Path $DestinationTempPathForFile -Destination $DestinationPath -Recurse `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Remove-Item -Path $TempXMLFolder -Recurse `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
 }
