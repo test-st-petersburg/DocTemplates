@@ -57,10 +57,10 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="node()">
+	<xsl:template match="element()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
-			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()"/>
+			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>
 

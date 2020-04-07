@@ -60,8 +60,8 @@ process {
 		try {
 			if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Unindent all xml source files before build Open Office file" ) ) {
 				Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-				| Where-Object { $_.Length -gt 0 } `
-				| ForEach-Object {
+					| Where-Object { $_.Length -gt 0 } `
+					| ForEach-Object {
 					if ( $PSCmdlet.ShouldProcess( $_, "Unindent xml file" ) ) {
 						$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
 						try {
@@ -70,9 +70,7 @@ process {
 							try {
 								$saxWriter = $saxProcessor.NewSerializer();
 								$saxWriter.SetOutputFile( $TempXMLFileName );
-								Write-Verbose "Transforming $($_.FullName)..."
 								$saxTransform.Run( $saxWriter );
-								Write-Verbose "Transformation done."
 								$saxWriter.Close();
 								Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
 									-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -110,7 +108,7 @@ process {
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				Get-ChildItem -Path $DestinationTempPathForFile -File -Recurse `
 					-Exclude 'mimetype' `
-				| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
+					| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
 					-Format Zip `
 					-CompressionLevel Normal -CompressionMethod Deflate `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `

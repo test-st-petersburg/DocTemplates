@@ -20,28 +20,27 @@ module.exports = {
       value: "style",
       name: "style:     Правки по стилю (отступы, точки, запятые и т.д.)"
     },
-    { value: "test", name: "test:      Добавление тестов" }
+    { value: "test", name: "test:      Добавление тестов" },
   ],
 
   // Область. Она характеризует фрагмент кода, которую затронули изменения
   scopes: [
     { name: "ott" },
+    { name: "build" },
     { name: "design" },
     { name: "git" },
-    { name: "commitizen" }
+    { name: "commitizen" },
   ],
 
-  // Возможность задать спец ОБЛАСТЬ для определенного типа коммита (пример для 'fix')
-  /*
+  // Возможность задать спец ОБЛАСТЬ для определенного типа типа изменения
   scopeOverrides: {
-    fix: [
-      {name: 'merge'},
-      {name: 'style'},
-      {name: 'e2eTest'},
-      {name: 'unitTest'}
-    ]
+    build: [],
+    ci: [],
+    test: [
+      { name: "ott" },
+      { name: "build" },
+    ],
   },
-  */
 
   // Поменяем вопросы
   messages: {
