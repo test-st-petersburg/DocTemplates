@@ -6,7 +6,7 @@
                           office:version="1.2">
    <office:settings>
       <config:config-item-set config:name="ooo:view-settings">
-         <config:config-item config:name="ViewAreaTop" config:type="long">19685</config:config-item>
+         <config:config-item config:name="ViewAreaTop" config:type="long">19625</config:config-item>
          <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
          <config:config-item config:name="ViewAreaWidth" config:type="long">24211</config:config-item>
          <config:config-item config:name="ViewAreaHeight" config:type="long">10453</config:config-item>
@@ -18,9 +18,9 @@
                <config:config-item config:name="ViewLeft" config:type="long">4105</config:config-item>
                <config:config-item config:name="ViewTop" config:type="long">28931</config:config-item>
                <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-               <config:config-item config:name="VisibleTop" config:type="long">19685</config:config-item>
+               <config:config-item config:name="VisibleTop" config:type="long">19625</config:config-item>
                <config:config-item config:name="VisibleRight" config:type="long">24209</config:config-item>
-               <config:config-item config:name="VisibleBottom" config:type="long">30136</config:config-item>
+               <config:config-item config:name="VisibleBottom" config:type="long">30076</config:config-item>
                <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
                <config:config-item config:name="ViewLayoutColumns" config:type="short">0</config:config-item>
                <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -50,7 +50,7 @@
          <config:config-item config:name="UnbreakableNumberings" config:type="boolean">false</config:config-item>
          <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
          <config:config-item config:name="AddVerticalFrameOffsets" config:type="boolean">false</config:config-item>
-         <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+         <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">false</config:config-item>
          <config:config-item config:name="BackgroundParaOverDrawings" config:type="boolean">false</config:config-item>
          <config:config-item config:name="AddParaTableSpacing" config:type="boolean">true</config:config-item>
          <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
@@ -86,7 +86,7 @@
          <config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
          <config:config-item config:name="RedlineProtectionKey" config:type="base64Binary"/>
          <config:config-item config:name="ConsiderTextWrapOnObjPos" config:type="boolean">true</config:config-item>
-         <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+         <config:config-item config:name="EmbedFonts" config:type="boolean">true</config:config-item>
          <config:config-item config:name="TableRowKeep" config:type="boolean">true</config:config-item>
          <config:config-item config:name="TabsRelativeToIndent" config:type="boolean">false</config:config-item>
          <config:config-item config:name="IgnoreTabsAndBlanksForLineCalculation"
@@ -98,7 +98,7 @@
          <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
          <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
          <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
-         <config:config-item config:name="Rsid" config:type="int">33409512</config:config-item>
+         <config:config-item config:name="Rsid" config:type="int">33426925</config:config-item>
          <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
          <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
          <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
@@ -107,9 +107,9 @@
          <config:config-item config:name="TabOverflow" config:type="boolean">false</config:config-item>
          <config:config-item config:name="StylesNoDefault" config:type="boolean">false</config:config-item>
          <config:config-item config:name="ClippedPictures" config:type="boolean">false</config:config-item>
-         <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+         <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">false</config:config-item>
          <config:config-item config:name="EmptyDbFieldHidesPara" config:type="boolean">false</config:config-item>
-         <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+         <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">false</config:config-item>
          <config:config-item config:name="TabOverMargin" config:type="boolean">false</config:config-item>
          <config:config-item config:name="TreatSingleColumnBreakAsPageBreak" config:type="boolean">false</config:config-item>
          <config:config-item config:name="SurroundTextWrapSmall" config:type="boolean">true</config:config-item>

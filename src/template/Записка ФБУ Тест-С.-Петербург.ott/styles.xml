@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                        xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+<office:document-styles xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+                        xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
                         xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
                         xmlns:ooo="http://openoffice.org/2004/office"
                         xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
@@ -44,13 +44,13 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed"/>
+      <style:font-face style:name="Courier New1"
+                       svg:font-family="'Courier New'"
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable"/>
       <style:font-face style:name="Liberation Mono"
                        svg:font-family="'Liberation Mono'"
                        style:font-family-generic="modern"
@@ -78,30 +78,30 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Tahoma"
                        svg:font-family="Tahoma"
-                       style:font-family-generic="swiss"
+                       style:font-family-generic="system"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Tahoma1"
                        svg:font-family="Tahoma"
-                       style:font-family-generic="system"
+                       style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Обычный"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
+                       style:font-family-generic="roman"/>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Полужирный"
+                       style:font-adornments="Обычный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
+                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman3"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Обычный"
-                       style:font-family-generic="roman"/>
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable"/>
    </office:font-face-decls>
    <office:styles>
       <draw:fill-image draw:name="Логотип_20_Тест"
@@ -123,7 +123,6 @@
                                    style:flow-with-text="false"/>
          <style:paragraph-properties style:text-autospace="ideograph-alpha"
                                      style:line-break="strict"
-                                     style:writing-mode="lr-tb"
                                      style:font-independent-line-spacing="false">
             <style:tab-stops/>
          </style:paragraph-properties>
@@ -164,7 +163,7 @@
             <style:tab-stops/>
          </style:paragraph-properties>
          <style:text-properties style:use-window-font-color="true"
-                                style:font-name="Times New Roman"
+                                style:font-name="Times New Roman1"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="roman"
@@ -193,7 +192,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman1"
+         <style:text-properties style:font-name="Times New Roman2"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -276,7 +275,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman1"
+         <style:text-properties style:font-name="Times New Roman2"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -309,7 +308,7 @@
                <style:tab-stop style:position="14.651cm" style:type="right"/>
             </style:tab-stops>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman2"
+         <style:text-properties style:font-name="Times New Roman3"
                                 fo:font-family="'Times New Roman'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -330,7 +329,7 @@
                    style:display-name="Текст выноски"
                    style:family="paragraph"
                    style:parent-style-name="Standard">
-         <style:text-properties style:font-name="Tahoma"
+         <style:text-properties style:font-name="Tahoma1"
                                 fo:font-family="Tahoma"
                                 style:font-family-generic="swiss"
                                 style:font-pitch="variable"
@@ -2010,7 +2009,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="modern"
@@ -2694,7 +2693,7 @@
          <style:text-properties fo:font-style="italic"/>
       </style:style>
       <style:style style:name="CODE" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2707,7 +2706,7 @@
                                 style:text-underline-color="font-color"/>
       </style:style>
       <style:style style:name="Keyboard" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2715,7 +2714,7 @@
                                 fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Sample" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"/>
@@ -2724,7 +2723,7 @@
          <style:text-properties fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Typewriter" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -3563,7 +3562,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="2"
                                        text:style-name="Bullet_20_Symbols"
@@ -3571,7 +3570,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="3"
                                        text:style-name="Bullet_20_Symbols"
@@ -3579,7 +3578,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="4"
                                        text:style-name="Bullet_20_Symbols"
@@ -3587,7 +3586,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="5"
                                        text:style-name="Bullet_20_Symbols"
@@ -3595,7 +3594,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="6"
                                        text:style-name="Bullet_20_Symbols"
@@ -3603,7 +3602,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="7"
                                        text:style-name="Bullet_20_Symbols"
@@ -3611,7 +3610,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="8"
                                        text:style-name="Bullet_20_Symbols"
@@ -3619,7 +3618,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="9"
                                        text:style-name="Bullet_20_Symbols"
@@ -3627,7 +3626,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="10"
                                        text:style-name="Bullet_20_Symbols"
@@ -3635,7 +3634,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman3"/>
+            <style:text-properties style:font-name="Times New Roman"/>
          </text:list-level-style-bullet>
       </text:list-style>
       <text:list-style style:name="List_20_3"
