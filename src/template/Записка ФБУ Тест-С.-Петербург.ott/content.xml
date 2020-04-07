@@ -114,7 +114,7 @@
       </style:font-face>
       <style:font-face style:name="PT Sans"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Жирный"
+                       style:font-adornments="Обычный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -134,7 +134,7 @@
       </style:font-face>
       <style:font-face style:name="PT Sans1"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Обычный"
+                       style:font-adornments="Жирный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -194,9 +194,8 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Полужирный"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable">
+                       style:font-adornments="Обычный"
+                       style:font-family-generic="roman">
          <svg:font-face-src>
             <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
                                xlink:type="simple"
@@ -226,6 +225,7 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
+                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -257,8 +257,8 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman3"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Обычный"
-                       style:font-family-generic="roman">
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable">
          <svg:font-face-src>
             <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
                                xlink:type="simple"
@@ -288,90 +288,6 @@
       </style:font-face>
    </office:font-face-decls>
    <office:automatic-styles>
-      <style:style style:name="Таблица6" style:family="table">
-         <style:table-properties fo:break-before="auto"
-                                 fo:break-after="auto"
-                                 table:align="margins"
-                                 style:may-break-between-rows="false"
-                                 style:writing-mode="lr-tb"/>
-      </style:style>
-      <style:style style:name="Таблица6.A" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="38227*"/>
-      </style:style>
-      <style:style style:name="Таблица6.B" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="15983*"/>
-      </style:style>
-      <style:style style:name="Таблица6.C" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="11325*"/>
-      </style:style>
-      <style:style style:name="Таблица6.1" style:family="table-row">
-         <style:table-row-properties style:row-height="1.199cm"/>
-      </style:style>
-      <style:style style:name="Таблица6.A1" style:family="table-cell">
-         <style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-      </style:style>
-      <style:style style:name="Таблица6.2" style:family="table-row">
-         <style:table-row-properties style:row-height="0.499cm"/>
-      </style:style>
-      <style:style style:name="Таблица6.B2" style:family="table-cell">
-         <style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-      </style:style>
-      <style:style style:name="Таблица10" style:family="table">
-         <style:table-properties table:align="margins"
-                                 style:may-break-between-rows="false"
-                                 style:writing-mode="lr-tb"/>
-      </style:style>
-      <style:style style:name="Таблица10.A" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="21845*"/>
-      </style:style>
-      <style:style style:name="Таблица11" style:family="table">
-         <style:table-properties fo:margin-top="0.4cm"
-                                 fo:margin-bottom="0cm"
-                                 fo:break-before="auto"
-                                 fo:break-after="auto"
-                                 table:align="margins"
-                                 fo:keep-with-next="auto"
-                                 style:may-break-between-rows="false"
-                                 style:writing-mode="lr-tb"
-                                 table:border-model="collapsing"/>
-      </style:style>
-      <style:style style:name="Таблица11.A" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="16023*"/>
-      </style:style>
-      <style:style style:name="Таблица11.B" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="35660*"/>
-      </style:style>
-      <style:style style:name="Таблица11.C" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="13852*"/>
-      </style:style>
-      <style:style style:name="Таблица11.1" style:family="table-row">
-         <style:table-row-properties fo:keep-together="auto"/>
-      </style:style>
-      <style:style style:name="Таблица11.A1" style:family="table-cell">
-         <style:table-cell-properties fo:background-color="transparent"
-                                      fo:padding="0cm"
-                                      fo:border="none"
-                                      style:writing-mode="page">
-            <style:background-image/>
-         </style:table-cell-properties>
-      </style:style>
-      <style:style style:name="Таблица11.B1" style:family="table-cell">
-         <style:table-cell-properties style:vertical-align="middle"
-                                      fo:background-color="transparent"
-                                      fo:padding="0cm"
-                                      fo:border="none"
-                                      style:writing-mode="page">
-            <style:background-image/>
-         </style:table-cell-properties>
-      </style:style>
-      <style:style style:name="Таблица12" style:family="table">
-         <style:table-properties table:align="margins"
-                                 style:may-break-between-rows="false"
-                                 style:writing-mode="lr-tb"/>
-      </style:style>
-      <style:style style:name="Таблица12.A" style:family="table-column">
-         <style:table-column-properties style:rel-column-width="21845*"/>
-      </style:style>
       <style:style style:name="Таблица13" style:family="table">
          <style:table-properties style:width="17.501cm"
                                  fo:margin-top="0cm"
@@ -819,24 +735,24 @@
       </style:style>
       <style:style style:name="P8"
                    style:family="paragraph"
+                   style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+      </style:style>
+      <style:style style:name="P9"
+                   style:family="paragraph"
+                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:break-before="column"/>
+      </style:style>
+      <style:style style:name="P10"
+                   style:family="paragraph"
                    style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
          <style:text-properties fo:font-variant="normal"
                                 fo:text-transform="none"
-                                style:font-name="PT Sans"
+                                style:font-name="PT Sans1"
                                 fo:font-size="13pt"
                                 fo:letter-spacing="0.141cm"
                                 fo:font-weight="bold"
                                 style:text-scale="110%"/>
-      </style:style>
-      <style:style style:name="P9"
-                   style:family="paragraph"
-                   style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
-      </style:style>
-      <style:style style:name="P10"
-                   style:family="paragraph"
-                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:paragraph-properties fo:break-before="column"/>
       </style:style>
       <style:style style:name="P11"
                    style:family="paragraph"
@@ -1006,20 +922,20 @@
             <text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
             <text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
             <text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияИНН"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияКПП"/>
+            <text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
+            <text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
             <text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
             <text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
             <text:variable-decl office:value-type="string"
                                 text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
             <text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияИНН"/>
-            <text:variable-decl office:value-type="string" text:name="ОрганизацияКПП"/>
-            <text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
             <text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
             <text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
             <text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
@@ -1260,7 +1176,7 @@
             <text:p text:style-name="Пустой_20_абзац"/>
          </text:section>
          <text:section text:style-name="Sect1" text:name="Бланк: Шапка">
-            <text:p text:style-name="P14"><draw:frame draw:style-name="fr1" draw:name="Бланк: Шапка" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0"><draw:text-box fo:min-height="0.499cm"><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица1" table:style-name="Таблица1"><table:table-column table:style-name="Таблица1.A"/><table:table-column table:style-name="Таблица1.B"/><table:table-column table:style-name="Таблица1.C"/><table:table-header-rows><table:table-row table:style-name="Таблица1.1"><table:table-cell table:style-name="Таблица1.A1" table:number-rows-spanned="2" office:value-type="string"><text:p text:style-name="P2"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="fr4" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0"><draw:image xlink:href="Pictures/test-black.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/test-black.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица1.A1" table:number-columns-spanned="2" office:value-type="string"><text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p></table:table-cell><table:covered-table-cell/></table:table-row></table:table-header-rows><table:table-row table:style-name="Таблица1.2"><table:covered-table-cell/><table:table-cell table:style-name="Таблица1.B2" office:value-type="string"><text:p text:style-name="Гриф_20_ограничения_20_доступа"><text:variable-set text:name="ГрифОграниченияДоступ" office:value-type="string">Общедоступно</text:variable-set><text:hidden-paragraph text:condition="ooow:(ГрифОграниченияДоступ == &#34;Общедоступно&#34;) OR (ГрифОграниченияДоступ == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p></table:table-cell><table:table-cell table:style-name="Таблица1.B2" office:value-type="string"><text:p text:style-name="Код_20_формы_20_документа"><text:variable-set text:name="КодФормыДокумента" office:value-type="string"> </text:variable-set></text:p></table:table-cell></table:table-row></table:table><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование организации" text:condition="ooow:ЭтоДоговор" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_организации_20_в_20_шапке_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «ТЕСТ-С.-ПЕТЕРБУРГ»)</text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование структурного подразделения" text:condition="ooow:ЭтоДоговор OR (ЭтоВнутреннийДокумент AND ЭтоПереписка)" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_структурного_20_подразделения_20_-_20_автора_20_документа_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента" office:value-type="string">Новгородский филиал</text:variable-set></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="ОрганизацияАдрес" text:formula="ooow:ОрганизацияАдрес" office:value-type="string" office:string-value="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set><text:line-break/>Тел. <text:variable-set text:name="ОрганизацияТелефон" text:formula="ooow:ОрганизацияТелефон" office:value-type="string" office:string-value="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-set>; факс <text:variable-set text:name="ОрганизацияФакс" office:value-type="string">ОрганизацияФакс</text:variable-set>; e-mail <text:variable-set text:name="ОрганизацияEmail" text:formula="ooow:ОрганизацияEmail" office:value-type="string" office:string-value="ОрганизацияEmail">mail@csm.nov.ru</text:variable-set>; <text:variable-set text:name="ОрганизацияWebСайт" text:formula="ooow:ОрганизацияWebСайт" office:value-type="string" office:string-value="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-set>;<text:line-break/>ОКПО <text:variable-set text:name="ОрганизацияОКПО" text:formula="ooow:ОрганизацияОКПО" office:value-type="string" office:string-value="ОрганизацияОКПО">04725993</text:variable-set>; ОГРН <text:variable-set text:name="ОрганизацияОГРН" text:formula="ooow:ОрганизацияОГРН" office:value-type="string" office:string-value="ОрганизацияОГРН">1027810289286</text:variable-set>; ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" text:formula="ooow:ОрганизацияИНН" office:value-type="string" office:string-value="ОрганизацияИНН">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" text:formula="ooow:ОрганизацияКПП" office:value-type="string" office:string-value="ОрганизацияКПП">783901001</text:variable-set></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование вида документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Регистрационные данные (во внутренних документах)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица7" table:style-name="Таблица7"><table:table-column table:style-name="Таблица7.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="P4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P6"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P5">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование вида документа (во внутренней переписке)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка" text:condition="ooow:NOT (ФормаБланка EQ &#34;ПРИКАЗ от 17.10.2019 №132/АХД&#34;)" text:display="condition"><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Логоблок и сведения об организации" text:protected="true"><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Логоблок" text:protected="true"><table:table table:name="Таблица9" table:style-name="Таблица9"><table:table-column table:style-name="Таблица9.A"/><table:table-column table:style-name="Таблица9.B"/><table:table-column table:style-name="Таблица9.C"/><table:table-row table:style-name="Таблица9.1"><table:table-cell table:style-name="Таблица9.A1" office:value-type="string"><text:p text:style-name="P7"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="2"><draw:image xlink:href="Pictures/rst.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/rst.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица9.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="P8">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица9.A1" office:value-type="string"><text:p text:style-name="P9"><draw:frame draw:style-name="fr2" draw:name="Изображение3" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="3"><draw:image xlink:href="Pictures/test.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/test.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect3" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="P10"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="P10">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Наименование вида документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Регистрационные данные (во внутренних документах)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица8" table:style-name="Таблица8"><table:table-column table:style-name="Таблица8.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="P4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P6"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P5">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Наименование вида документа (во внутренней переписке)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:p text:style-name="Пустой_20_абзац"/></draw:text-box></draw:frame></text:p>
+            <text:p text:style-name="P14"><draw:frame draw:style-name="fr1" draw:name="Бланк: Шапка" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0"><draw:text-box fo:min-height="0.499cm"><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица1" table:style-name="Таблица1"><table:table-column table:style-name="Таблица1.A"/><table:table-column table:style-name="Таблица1.B"/><table:table-column table:style-name="Таблица1.C"/><table:table-header-rows><table:table-row table:style-name="Таблица1.1"><table:table-cell table:style-name="Таблица1.A1" table:number-rows-spanned="2" office:value-type="string"><text:p text:style-name="P2"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="fr4" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица1.A1" table:number-columns-spanned="2" office:value-type="string"><text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p></table:table-cell><table:covered-table-cell/></table:table-row></table:table-header-rows><table:table-row table:style-name="Таблица1.2"><table:covered-table-cell/><table:table-cell table:style-name="Таблица1.B2" office:value-type="string"><text:p text:style-name="Гриф_20_ограничения_20_доступа"><text:variable-set text:name="ГрифОграниченияДоступ" office:value-type="string">Общедоступно</text:variable-set><text:hidden-paragraph text:condition="ooow:(ГрифОграниченияДоступ == &#34;Общедоступно&#34;) OR (ГрифОграниченияДоступ == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p></table:table-cell><table:table-cell table:style-name="Таблица1.B2" office:value-type="string"><text:p text:style-name="Код_20_формы_20_документа"><text:variable-set text:name="КодФормыДокумента" office:value-type="string"> </text:variable-set></text:p></table:table-cell></table:table-row></table:table><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование организации" text:condition="ooow:ЭтоДоговор" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_организации_20_в_20_шапке_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «ТЕСТ-С.-ПЕТЕРБУРГ»)</text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование структурного подразделения" text:condition="ooow:ЭтоДоговор OR (ЭтоВнутреннийДокумент AND ЭтоПереписка)" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_структурного_20_подразделения_20_-_20_автора_20_документа_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента" office:value-type="string">Новгородский филиал</text:variable-set></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="ОрганизацияАдрес" text:formula="ooow:ОрганизацияАдрес" office:value-type="string" office:string-value="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set><text:line-break/>Тел. <text:variable-set text:name="ОрганизацияТелефон" text:formula="ooow:ОрганизацияТелефон" office:value-type="string" office:string-value="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-set>; факс <text:variable-set text:name="ОрганизацияФакс" office:value-type="string">ОрганизацияФакс</text:variable-set>; e-mail <text:variable-set text:name="ОрганизацияEmail" text:formula="ooow:ОрганизацияEmail" office:value-type="string" office:string-value="ОрганизацияEmail">mail@csm.nov.ru</text:variable-set>; <text:variable-set text:name="ОрганизацияWebСайт" text:formula="ooow:ОрганизацияWebСайт" office:value-type="string" office:string-value="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-set>;<text:line-break/>ОКПО <text:variable-set text:name="ОрганизацияОКПО" text:formula="ooow:ОрганизацияОКПО" office:value-type="string" office:string-value="ОрганизацияОКПО">04725993</text:variable-set>; ОГРН <text:variable-set text:name="ОрганизацияОГРН" text:formula="ooow:ОрганизацияОГРН" office:value-type="string" office:string-value="ОрганизацияОГРН">1027810289286</text:variable-set>; ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" text:formula="ooow:ОрганизацияИНН" office:value-type="string" office:string-value="ОрганизацияИНН">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" text:formula="ooow:ОрганизацияКПП" office:value-type="string" office:string-value="ОрганизацияКПП">783901001</text:variable-set></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование вида документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Регистрационные данные (во внутренних документах)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица7" table:style-name="Таблица7"><table:table-column table:style-name="Таблица7.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="P4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P6"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P5">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка: Наименование вида документа (во внутренней переписке)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка" text:condition="ooow:NOT (ФормаБланка EQ &#34;ПРИКАЗ от 17.10.2019 №132/АХД&#34;)" text:display="condition"><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Логоблок и сведения об организации" text:protected="true"><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Логоблок" text:protected="true"><table:table table:name="Таблица9" table:style-name="Таблица9"><table:table-column table:style-name="Таблица9.A"/><table:table-column table:style-name="Таблица9.B"/><table:table-column table:style-name="Таблица9.C"/><table:table-row table:style-name="Таблица9.1"><table:table-cell table:style-name="Таблица9.A1" office:value-type="string"><text:p text:style-name="P7"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="2"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица9.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="P10">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица9.A1" office:value-type="string"><text:p text:style-name="P8"><draw:frame draw:style-name="fr2" draw:name="Изображение3" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="3"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect3" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="P9"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="P9">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Наименование вида документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Регистрационные данные (во внутренних документах)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица8" table:style-name="Таблица8"><table:table-column table:style-name="Таблица8.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="P4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P6"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="P5">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="Sect1" text:name="Бланк: ПРИКАЗ от 17.10.2019 №132/АХД: Шапка: Наименование вида документа (во внутренней переписке)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:p text:style-name="Пустой_20_абзац"/></draw:text-box></draw:frame></text:p>
          </text:section>
          <text:section text:style-name="Sect1"
                        text:name="Регистрационные данные и получатели в переписке"
