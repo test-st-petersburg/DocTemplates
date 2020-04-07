@@ -44,13 +44,13 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable"/>
+      <style:font-face style:name="Courier New1"
+                       svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed"/>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
       <style:font-face style:name="Liberation Mono"
                        svg:font-family="'Liberation Mono'"
                        style:font-family-generic="modern"
@@ -64,12 +64,12 @@
                        style:font-charset="x-symbol"/>
       <style:font-face style:name="PT Sans"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Жирный"
+                       style:font-adornments="Обычный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="PT Sans1"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Обычный"
+                       style:font-adornments="Жирный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Segoe UI"
@@ -78,30 +78,30 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Tahoma"
                        svg:font-family="Tahoma"
-                       style:font-family-generic="system"
+                       style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Tahoma1"
                        svg:font-family="Tahoma"
-                       style:font-family-generic="swiss"
+                       style:font-family-generic="system"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Обычный"
-                       style:font-family-generic="roman"/>
-      <style:font-face style:name="Times New Roman1"
-                       svg:font-family="'Times New Roman'"
-                       style:font-adornments="Обычный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
-      <style:font-face style:name="Times New Roman2"
+      <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
-      <style:font-face style:name="Times New Roman3"
+      <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
+      <style:font-face style:name="Times New Roman3"
+                       svg:font-family="'Times New Roman'"
+                       style:font-adornments="Обычный"
+                       style:font-family-generic="roman"/>
    </office:font-face-decls>
    <office:styles>
       <draw:fill-image draw:name="Логотип_20_Тест"
@@ -123,6 +123,7 @@
                                    style:flow-with-text="false"/>
          <style:paragraph-properties style:text-autospace="ideograph-alpha"
                                      style:line-break="strict"
+                                     style:writing-mode="lr-tb"
                                      style:font-independent-line-spacing="false">
             <style:tab-stops/>
          </style:paragraph-properties>
@@ -163,7 +164,7 @@
             <style:tab-stops/>
          </style:paragraph-properties>
          <style:text-properties style:use-window-font-color="true"
-                                style:font-name="Times New Roman1"
+                                style:font-name="Times New Roman"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="roman"
@@ -192,7 +193,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman2"
+         <style:text-properties style:font-name="Times New Roman1"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -275,7 +276,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman2"
+         <style:text-properties style:font-name="Times New Roman1"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -308,7 +309,7 @@
                <style:tab-stop style:position="14.651cm" style:type="right"/>
             </style:tab-stops>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman3"
+         <style:text-properties style:font-name="Times New Roman2"
                                 fo:font-family="'Times New Roman'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -329,7 +330,7 @@
                    style:display-name="Текст выноски"
                    style:family="paragraph"
                    style:parent-style-name="Standard">
-         <style:text-properties style:font-name="Tahoma1"
+         <style:text-properties style:font-name="Tahoma"
                                 fo:font-family="Tahoma"
                                 style:font-family-generic="swiss"
                                 style:font-pitch="variable"
@@ -2009,7 +2010,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="modern"
@@ -2075,7 +2076,7 @@
                                      style:snap-to-layout-grid="false">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="PT Sans"
+         <style:text-properties style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Жирный"
                                 style:font-family-generic="swiss"
@@ -2550,7 +2551,7 @@
                                      style:justify-single-word="false"
                                      style:page-number="auto"/>
          <style:text-properties fo:text-transform="uppercase"
-                                style:font-name="PT Sans"
+                                style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Жирный"
                                 style:font-family-generic="swiss"
@@ -2597,7 +2598,7 @@
       <style:style style:name="Шапка_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"
                    style:display-name="Шапка (по Приказу от 17.10.2019 №132/АХД)"
                    style:family="paragraph">
-         <style:text-properties style:font-name="PT Sans1"
+         <style:text-properties style:font-name="PT Sans"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -2693,7 +2694,7 @@
          <style:text-properties fo:font-style="italic"/>
       </style:style>
       <style:style style:name="CODE" style:family="text">
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2706,7 +2707,7 @@
                                 style:text-underline-color="font-color"/>
       </style:style>
       <style:style style:name="Keyboard" style:family="text">
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2714,7 +2715,7 @@
                                 fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Sample" style:family="text">
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"/>
@@ -2723,7 +2724,7 @@
          <style:text-properties fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Typewriter" style:family="text">
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -3562,7 +3563,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="2"
                                        text:style-name="Bullet_20_Symbols"
@@ -3570,7 +3571,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="3"
                                        text:style-name="Bullet_20_Symbols"
@@ -3578,7 +3579,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="4"
                                        text:style-name="Bullet_20_Symbols"
@@ -3586,7 +3587,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="5"
                                        text:style-name="Bullet_20_Symbols"
@@ -3594,7 +3595,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="6"
                                        text:style-name="Bullet_20_Symbols"
@@ -3602,7 +3603,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="7"
                                        text:style-name="Bullet_20_Symbols"
@@ -3610,7 +3611,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="8"
                                        text:style-name="Bullet_20_Symbols"
@@ -3618,7 +3619,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="9"
                                        text:style-name="Bullet_20_Symbols"
@@ -3626,7 +3627,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
          <text:list-level-style-bullet text:level="10"
                                        text:style-name="Bullet_20_Symbols"
@@ -3634,7 +3635,7 @@
             <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
                <style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
             </style:list-level-properties>
-            <style:text-properties style:font-name="Times New Roman"/>
+            <style:text-properties style:font-name="Times New Roman3"/>
          </text:list-level-style-bullet>
       </text:list-style>
       <text:list-style style:name="List_20_3"
@@ -4727,6 +4728,168 @@
       <style:style style:name="Таблица5.2" style:family="table-row">
          <style:table-row-properties style:row-height="0.499cm"/>
       </style:style>
+      <style:style style:name="Таблица6" style:family="table">
+         <style:table-properties fo:break-before="auto"
+                                 fo:break-after="auto"
+                                 table:align="margins"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"/>
+      </style:style>
+      <style:style style:name="Таблица6.A" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="38227*"/>
+      </style:style>
+      <style:style style:name="Таблица6.B" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="15983*"/>
+      </style:style>
+      <style:style style:name="Таблица6.C" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="11325*"/>
+      </style:style>
+      <style:style style:name="Таблица6.1" style:family="table-row">
+         <style:table-row-properties style:row-height="1.199cm"/>
+      </style:style>
+      <style:style style:name="Таблица6.A1" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+      </style:style>
+      <style:style style:name="Таблица6.2" style:family="table-row">
+         <style:table-row-properties style:row-height="0.499cm"/>
+      </style:style>
+      <style:style style:name="Таблица6.B2" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+      </style:style>
+      <style:style style:name="Таблица10" style:family="table">
+         <style:table-properties table:align="margins"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"/>
+      </style:style>
+      <style:style style:name="Таблица10.A" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="21845*"/>
+      </style:style>
+      <style:style style:name="Таблица11" style:family="table">
+         <style:table-properties fo:margin-top="0.4cm"
+                                 fo:margin-bottom="0cm"
+                                 fo:break-before="auto"
+                                 fo:break-after="auto"
+                                 table:align="margins"
+                                 fo:keep-with-next="auto"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"
+                                 table:border-model="collapsing"/>
+      </style:style>
+      <style:style style:name="Таблица11.A" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="16023*"/>
+      </style:style>
+      <style:style style:name="Таблица11.B" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="35660*"/>
+      </style:style>
+      <style:style style:name="Таблица11.C" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="13852*"/>
+      </style:style>
+      <style:style style:name="Таблица11.1" style:family="table-row">
+         <style:table-row-properties fo:keep-together="auto"/>
+      </style:style>
+      <style:style style:name="Таблица11.A1" style:family="table-cell">
+         <style:table-cell-properties fo:background-color="transparent"
+                                      fo:padding="0cm"
+                                      fo:border="none"
+                                      style:writing-mode="page">
+            <style:background-image/>
+         </style:table-cell-properties>
+      </style:style>
+      <style:style style:name="Таблица11.B1" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="middle"
+                                      fo:background-color="transparent"
+                                      fo:padding="0cm"
+                                      fo:border="none"
+                                      style:writing-mode="page">
+            <style:background-image/>
+         </style:table-cell-properties>
+      </style:style>
+      <style:style style:name="Таблица12" style:family="table">
+         <style:table-properties table:align="margins"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"/>
+      </style:style>
+      <style:style style:name="Таблица12.A" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="21845*"/>
+      </style:style>
+      <style:style style:name="Таблица13" style:family="table">
+         <style:table-properties style:width="17.501cm"
+                                 fo:margin-top="0cm"
+                                 fo:margin-bottom="0cm"
+                                 fo:break-before="auto"
+                                 fo:break-after="auto"
+                                 table:align="margins"
+                                 fo:keep-with-next="auto"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"
+                                 table:border-model="collapsing"/>
+      </style:style>
+      <style:style style:name="Таблица13.A" style:family="table-column">
+         <style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
+      </style:style>
+      <style:style style:name="Таблица13.B" style:family="table-column">
+         <style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
+      </style:style>
+      <style:style style:name="Таблица13.C" style:family="table-column">
+         <style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
+      </style:style>
+      <style:style style:name="Таблица13.1" style:family="table-row">
+         <style:table-row-properties fo:keep-together="auto"/>
+      </style:style>
+      <style:style style:name="Таблица13.A1" style:family="table-cell">
+         <style:table-cell-properties fo:background-color="transparent"
+                                      fo:padding="0cm"
+                                      fo:border="none"
+                                      style:writing-mode="page">
+            <style:background-image/>
+         </style:table-cell-properties>
+      </style:style>
+      <style:style style:name="Таблица13.B1" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="middle"
+                                      fo:background-color="transparent"
+                                      fo:padding="0cm"
+                                      fo:border="none"
+                                      style:writing-mode="page">
+            <style:background-image/>
+         </style:table-cell-properties>
+      </style:style>
+      <style:style style:name="Таблица14" style:family="table">
+         <style:table-properties table:align="margins"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"/>
+      </style:style>
+      <style:style style:name="Таблица14.A" style:family="table-column">
+         <style:table-column-properties style:rel-column-width="21845*"/>
+      </style:style>
+      <style:style style:name="Таблица15" style:family="table">
+         <style:table-properties style:width="17.501cm"
+                                 style:rel-width="100%"
+                                 fo:break-before="page"
+                                 table:align="left"
+                                 style:may-break-between-rows="false"
+                                 style:writing-mode="lr-tb"/>
+      </style:style>
+      <style:style style:name="Таблица15.A" style:family="table-column">
+         <style:table-column-properties style:column-width="10.694cm" style:rel-column-width="6236*"/>
+      </style:style>
+      <style:style style:name="Таблица15.B" style:family="table-column">
+         <style:table-column-properties style:column-width="2.917cm" style:rel-column-width="1701*"/>
+      </style:style>
+      <style:style style:name="Таблица15.C" style:family="table-column">
+         <style:table-column-properties style:column-width="3.889cm" style:rel-column-width="2268*"/>
+      </style:style>
+      <style:style style:name="Таблица15.1" style:family="table-row">
+         <style:table-row-properties style:row-height="1cm"/>
+      </style:style>
+      <style:style style:name="Таблица15.A1" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+      </style:style>
+      <style:style style:name="Таблица15.2" style:family="table-row">
+         <style:table-row-properties style:row-height="0.499cm"/>
+      </style:style>
+      <style:style style:name="Таблица15.B2" style:family="table-cell">
+         <style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+      </style:style>
       <style:style style:name="MP1"
                    style:family="paragraph"
                    style:parent-style-name="Standard">
@@ -4743,9 +4906,304 @@
       </style:style>
       <style:style style:name="MP3"
                    style:family="paragraph"
-                   style:parent-style-name="Служебный"
-                   style:master-page-name="Служебная">
-         <style:paragraph-properties style:page-number="auto"/>
+                   style:parent-style-name="Standard">
+         <style:paragraph-properties>
+            <style:tab-stops>
+               <style:tab-stop style:position="8.969cm" style:type="center"/>
+            </style:tab-stops>
+         </style:paragraph-properties>
+      </style:style>
+      <style:style style:name="MP4"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties style:writing-mode="lr-tb">
+            <style:tab-stops/>
+         </style:paragraph-properties>
+      </style:style>
+      <style:style style:name="MP5"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
+            <style:tab-stops>
+               <style:tab-stop style:position="1.704cm" style:type="center"/>
+               <style:tab-stop style:position="3.5cm"/>
+               <style:tab-stop style:position="5.75cm" style:type="center"/>
+               <style:tab-stop style:position="7.451cm"/>
+            </style:tab-stops>
+         </style:paragraph-properties>
+      </style:style>
+      <style:style style:name="MP6"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties fo:text-align="end"
+                                     style:justify-single-word="false"
+                                     style:writing-mode="lr-tb">
+            <style:tab-stops/>
+         </style:paragraph-properties>
+      </style:style>
+      <style:style style:name="MP7"
+                   style:family="paragraph"
+                   style:parent-style-name="Table_20_Contents">
+         <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
+         <style:text-properties style:use-window-font-color="true"
+                                style:text-outline="false"
+                                style:text-line-through-style="none"
+                                style:text-line-through-type="none"
+                                style:font-name="Times New Roman"
+                                fo:font-size="12pt"
+                                fo:font-style="normal"
+                                fo:text-shadow="none"
+                                style:text-underline-style="none"
+                                fo:font-weight="normal"
+                                style:text-overline-style="none"
+                                style:text-overline-color="font-color"/>
+      </style:style>
+      <style:style style:name="MP8"
+                   style:family="paragraph"
+                   style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:text-properties fo:font-variant="normal"
+                                fo:text-transform="none"
+                                style:font-name="PT Sans1"
+                                fo:font-size="13pt"
+                                fo:letter-spacing="0.141cm"
+                                fo:font-weight="bold"
+                                style:text-scale="110%"/>
+      </style:style>
+      <style:style style:name="MP9"
+                   style:family="paragraph"
+                   style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+      </style:style>
+      <style:style style:name="MP10"
+                   style:family="paragraph"
+                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:break-before="column"/>
+      </style:style>
+      <style:style style:name="MP11"
+                   style:family="paragraph"
+                   style:parent-style-name="Пустой_20_абзац">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP12"
+                   style:family="paragraph"
+                   style:parent-style-name="Table_20_Contents">
+         <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
+         <style:text-properties style:use-window-font-color="true"
+                                style:text-outline="false"
+                                style:text-line-through-style="none"
+                                style:text-line-through-type="none"
+                                style:font-name="Times New Roman"
+                                fo:font-size="12pt"
+                                fo:font-style="normal"
+                                fo:text-shadow="none"
+                                style:text-underline-style="none"
+                                fo:font-weight="normal"
+                                style:text-overline-style="none"
+                                style:text-overline-color="font-color"/>
+      </style:style>
+      <style:style style:name="MP13"
+                   style:family="paragraph"
+                   style:parent-style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP14"
+                   style:family="paragraph"
+                   style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:text-properties fo:font-variant="normal"
+                                fo:text-transform="none"
+                                style:font-name="PT Sans1"
+                                fo:font-size="13pt"
+                                fo:letter-spacing="0.141cm"
+                                fo:font-weight="bold"
+                                style:text-scale="110%"/>
+      </style:style>
+      <style:style style:name="MP15"
+                   style:family="paragraph"
+                   style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP16"
+                   style:family="paragraph"
+                   style:parent-style-name="Пустой_20_абзац">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP17"
+                   style:family="paragraph"
+                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP18"
+                   style:family="paragraph"
+                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:paragraph-properties fo:break-before="column"/>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP19"
+                   style:family="paragraph"
+                   style:parent-style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP20"
+                   style:family="paragraph"
+                   style:parent-style-name="Наименование_20_вида_20_документа">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP21"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties style:writing-mode="lr-tb">
+            <style:tab-stops/>
+         </style:paragraph-properties>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP22"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
+            <style:tab-stops>
+               <style:tab-stop style:position="1.704cm" style:type="center"/>
+               <style:tab-stop style:position="3.5cm"/>
+               <style:tab-stop style:position="5.75cm" style:type="center"/>
+               <style:tab-stop style:position="7.451cm"/>
+            </style:tab-stops>
+         </style:paragraph-properties>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP23"
+                   style:family="paragraph"
+                   style:parent-style-name="Регистрационные_20_данные">
+         <style:paragraph-properties fo:text-align="end"
+                                     style:justify-single-word="false"
+                                     style:writing-mode="lr-tb">
+            <style:tab-stops/>
+         </style:paragraph-properties>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP24"
+                   style:family="paragraph"
+                   style:parent-style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP25"
+                   style:family="paragraph"
+                   style:parent-style-name="Исполнитель">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP26"
+                   style:family="paragraph"
+                   style:parent-style-name="В_20_дело">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP27"
+                   style:family="paragraph"
+                   style:parent-style-name="Отметка_20_о_20_поступлении">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP28"
+                   style:family="paragraph"
+                   style:parent-style-name="Пустой_20_абзац">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP29"
+                   style:family="paragraph"
+                   style:parent-style-name="Standard">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP30"
+                   style:family="paragraph"
+                   style:parent-style-name="Подстрочник">
+         <style:paragraph-properties>
+            <style:tab-stops>
+               <style:tab-stop style:position="14cm" style:type="right"/>
+            </style:tab-stops>
+         </style:paragraph-properties>
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="MP31"
+                   style:family="paragraph"
+                   style:parent-style-name="Номер_20_страницы">
+         <style:text-properties/>
+      </style:style>
+      <style:style style:name="Mfr1"
+                   style:family="graphic"
+                   style:parent-style-name="Frame">
+         <style:graphic-properties style:print-content="true"
+                                   style:protect="position"
+                                   style:wrap="none"
+                                   style:vertical-pos="top"
+                                   style:vertical-rel="paragraph-content"
+                                   style:horizontal-pos="center"
+                                   style:horizontal-rel="paragraph"
+                                   style:editable="true"
+                                   loext:rel-width-rel="paragraph">
+            <style:columns fo:column-count="1" fo:column-gap="0cm"/>
+         </style:graphic-properties>
+      </style:style>
+      <style:style style:name="Mfr2"
+                   style:family="graphic"
+                   style:parent-style-name="Graphics">
+         <style:graphic-properties fo:margin-left="0cm"
+                                   fo:margin-right="0cm"
+                                   fo:margin-top="0cm"
+                                   fo:margin-bottom="0cm"
+                                   style:vertical-pos="top"
+                                   style:vertical-rel="baseline"
+                                   draw:fill-image-width="0cm"
+                                   draw:fill-image-height="0cm"
+                                   fo:padding="0cm"
+                                   fo:border="none"
+                                   style:shadow="none"
+                                   draw:shadow-opacity="100%"
+                                   style:mirror="none"
+                                   fo:clip="rect(0cm, 0cm, 0cm, 0cm)"
+                                   draw:luminance="0%"
+                                   draw:contrast="0%"
+                                   draw:red="0%"
+                                   draw:green="0%"
+                                   draw:blue="0%"
+                                   draw:gamma="100%"
+                                   draw:color-inversion="false"
+                                   draw:image-opacity="100%"
+                                   draw:color-mode="standard"/>
+      </style:style>
+      <style:style style:name="Mfr3"
+                   style:family="graphic"
+                   style:parent-style-name="Лого_20_РСТ_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:graphic-properties style:vertical-pos="top"
+                                   style:vertical-rel="baseline"
+                                   style:horizontal-pos="left"
+                                   style:horizontal-rel="paragraph"
+                                   style:mirror="none"
+                                   fo:clip="rect(0cm, 0cm, 0cm, 0cm)"
+                                   draw:luminance="0%"
+                                   draw:contrast="0%"
+                                   draw:red="0%"
+                                   draw:green="0%"
+                                   draw:blue="0%"
+                                   draw:gamma="100%"
+                                   draw:color-inversion="false"
+                                   draw:image-opacity="100%"
+                                   draw:color-mode="standard"/>
+      </style:style>
+      <style:style style:name="Mfr4"
+                   style:family="graphic"
+                   style:parent-style-name="Лого_20_Тест_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:graphic-properties style:vertical-pos="top"
+                                   style:vertical-rel="baseline"
+                                   style:horizontal-pos="right"
+                                   style:horizontal-rel="paragraph-content"
+                                   style:mirror="none"
+                                   fo:clip="rect(0cm, 0cm, 0cm, 0cm)"
+                                   draw:luminance="0%"
+                                   draw:contrast="0%"
+                                   draw:red="0%"
+                                   draw:green="0%"
+                                   draw:blue="0%"
+                                   draw:gamma="100%"
+                                   draw:color-inversion="false"
+                                   draw:image-opacity="100%"
+                                   draw:color-mode="standard"/>
       </style:style>
       <style:style style:name="MSect1" style:family="section">
          <style:section-properties fo:background-color="transparent" style:editable="false">
@@ -4756,6 +5214,28 @@
       <style:style style:name="MSect2" style:family="section">
          <style:section-properties style:editable="false">
             <style:columns fo:column-count="1" fo:column-gap="0cm"/>
+         </style:section-properties>
+      </style:style>
+      <style:style style:name="MSect3" style:family="section">
+         <style:section-properties fo:background-color="transparent"
+                                   text:dont-balance-text-columns="true"
+                                   style:editable="false">
+            <style:columns fo:column-count="3" fo:column-gap="0.801cm">
+               <style:column-sep style:width="0.071cm"
+                                 style:color="#0083c9"
+                                 style:height="100%"
+                                 style:style="solid"/>
+               <style:column style:rel-width="21845*"
+                             fo:start-indent="0cm"
+                             fo:end-indent="0.4cm"/>
+               <style:column style:rel-width="21845*"
+                             fo:start-indent="0.4cm"
+                             fo:end-indent="0.4cm"/>
+               <style:column style:rel-width="21845*"
+                             fo:start-indent="0.4cm"
+                             fo:end-indent="0cm"/>
+            </style:columns>
+            <style:background-image/>
          </style:section-properties>
       </style:style>
       <style:page-layout style:name="Mpm1">
@@ -4989,12 +5469,7 @@
                                 style:color="#000000"/>
          </style:page-layout-properties>
          <style:header-style/>
-         <style:footer-style>
-            <style:header-footer-properties fo:min-height="0cm"
-                                            fo:margin-left="0cm"
-                                            fo:margin-right="0cm"
-                                            fo:margin-top="0.499cm"/>
-         </style:footer-style>
+         <style:footer-style/>
       </style:page-layout>
       <style:page-layout style:name="Mpm7">
          <style:page-layout-properties fo:page-width="29.7cm"
@@ -5153,9 +5628,75 @@
          <style:header-style/>
          <style:footer-style/>
       </style:page-layout>
-      <number:boolean-style style:name="N99">
-         <number:boolean/>
-      </number:boolean-style>
+      <style:page-layout style:name="Mpm12" style:page-usage="right">
+         <style:page-layout-properties fo:page-width="21.001cm"
+                                       fo:page-height="29.7cm"
+                                       style:num-format="1"
+                                       style:print-orientation="portrait"
+                                       fo:margin-top="0.7cm"
+                                       fo:margin-bottom="0.3cm"
+                                       fo:margin-left="2.499cm"
+                                       fo:margin-right="1cm"
+                                       style:writing-mode="lr-tb"
+                                       style:footnote-max-height="0cm">
+            <style:footnote-sep style:width="0.018cm"
+                                style:distance-before-sep="0.101cm"
+                                style:distance-after-sep="0.101cm"
+                                style:line-style="solid"
+                                style:adjustment="left"
+                                style:rel-width="25%"
+                                style:color="#000000"/>
+         </style:page-layout-properties>
+         <style:header-style>
+            <style:header-footer-properties fo:min-height="0.998cm"
+                                            fo:margin-left="0cm"
+                                            fo:margin-right="0cm"
+                                            fo:margin-bottom="0.499cm"
+                                            fo:background-color="transparent"
+                                            style:dynamic-spacing="false"
+                                            draw:fill="none"/>
+         </style:header-style>
+         <style:footer-style>
+            <style:header-footer-properties fo:min-height="0.998cm"
+                                            fo:margin-left="0cm"
+                                            fo:margin-right="0cm"
+                                            fo:margin-top="0.499cm"
+                                            fo:background-color="transparent"
+                                            style:dynamic-spacing="false"
+                                            draw:fill="none"/>
+         </style:footer-style>
+      </style:page-layout>
+      <style:page-layout style:name="Mpm13" style:page-usage="mirrored">
+         <style:page-layout-properties fo:page-width="21.001cm"
+                                       fo:page-height="29.7cm"
+                                       style:num-format="1"
+                                       style:print-orientation="portrait"
+                                       fo:margin-top="1cm"
+                                       fo:margin-bottom="2cm"
+                                       fo:margin-left="2.499cm"
+                                       fo:margin-right="1cm"
+                                       style:writing-mode="lr-tb"
+                                       style:footnote-max-height="0cm">
+            <style:columns fo:column-count="1" fo:column-gap="0cm"/>
+            <style:footnote-sep style:width="0.018cm"
+                                style:distance-before-sep="0.101cm"
+                                style:distance-after-sep="0.101cm"
+                                style:line-style="solid"
+                                style:adjustment="left"
+                                style:rel-width="25%"
+                                style:color="#000000"/>
+         </style:page-layout-properties>
+         <style:header-style>
+            <style:header-footer-properties fo:min-height="0.998cm"
+                                            fo:margin-left="0cm"
+                                            fo:margin-right="0cm"
+                                            fo:margin-bottom="0.499cm"
+                                            fo:background-color="transparent"
+                                            style:dynamic-spacing="false"
+                                            draw:fill="none"/>
+         </style:header-style>
+         <style:footer-style/>
+      </style:page-layout>
    </office:automatic-styles>
    <office:master-styles>
       <style:master-page style:name="Standard"
@@ -5270,45 +5811,13 @@
                          style:display-name="Последующие листы"
                          style:page-layout-name="Mpm4">
          <style:header>
-            <text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">0</text:page-number></text:p>
+            <text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">4</text:page-number></text:p>
          </style:header>
       </style:master-page>
       <style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm5"/>
-      <style:master-page style:name="Служебная" style:page-layout-name="Mpm6">
-         <style:footer>
-            <text:variable-decls>
-               <text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
-               <text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
-               <text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
-               <text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
-               <text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
-               <text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
-               <text:variable-decl office:value-type="string"
-                                   text:name="ПодписалПредставлениеВДокументахРП"/>
-               <text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
-               <text:variable-decl office:value-type="string" text:name="ФормаБланка"/>
-               <text:variable-decl office:value-type="boolean" text:name="ЭтоВнутреннийДокумент"/>
-               <text:variable-decl office:value-type="boolean" text:name="ЭтоВходящийДокумент"/>
-               <text:variable-decl office:value-type="boolean" text:name="ЭтоДоговор"/>
-               <text:variable-decl office:value-type="boolean" text:name="ЭтоИсходящийДокумент"/>
-               <text:variable-decl office:value-type="boolean" text:name="ЭтоПереписка"/>
-            </text:variable-decls>
-            <text:p text:style-name="MP3"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-            <text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
-         </style:footer>
-      </style:master-page>
+      <style:master-page style:name="Служебная"
+                         style:page-layout-name="Mpm6"
+                         style:next-style-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/>
       <style:master-page style:name="Landscape"
                          style:hidden="true"
                          style:page-layout-name="Mpm7"/>
@@ -5334,5 +5843,76 @@
       <style:master-page style:name="Index"
                          style:hidden="true"
                          style:page-layout-name="Mpm2"/>
+      <style:master-page style:name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"
+                         style:display-name="Первый лист записки (по Приказу от 17.10.2019 №132/АХД)"
+                         style:page-layout-name="Mpm12"
+                         style:next-style-name="Последующие_20_листы_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+         <style:header>
+            <text:p text:style-name="Header"/>
+         </style:header>
+         <style:header-left>
+            <text:p text:style-name="Header"/>
+         </style:header-left>
+         <loext:header-first>
+            <text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: шапка (по Приказу от 17.10.2019 №132/АХД)" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="6"><draw:text-box fo:min-height="0.499cm"><text:section text:style-name="MSect1" text:name="Раздел1" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица6" table:style-name="Таблица6"><table:table-column table:style-name="Таблица6.A"/><table:table-column table:style-name="Таблица6.B"/><table:table-column table:style-name="Таблица6.C"/><table:table-header-rows><table:table-row table:style-name="Таблица6.1"><table:table-cell table:style-name="Таблица6.A1" table:number-rows-spanned="2" office:value-type="string"><text:p text:style-name="MP3"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="Mfr2" draw:name="Изображение4" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="7"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.A1" table:number-columns-spanned="2" office:value-type="string"><text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p></table:table-cell><table:covered-table-cell/></table:table-row></table:table-header-rows><table:table-row table:style-name="Таблица6.2"><table:covered-table-cell/><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Гриф_20_ограничения_20_доступа"><text:variable-set text:name="ГрифОграниченияДоступ" office:value-type="string">Общедоступно</text:variable-set><text:hidden-paragraph text:condition="ooow:(ГрифОграниченияДоступ == &#34;Общедоступно&#34;) OR (ГрифОграниченияДоступ == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Код_20_формы_20_документа"><text:variable-set text:name="КодФормыДокумента" office:value-type="string"> </text:variable-set></text:p></table:table-cell></table:table-row></table:table><text:section text:style-name="MSect1" text:name="Раздел2" text:condition="ooow:ЭтоДоговор" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_организации_20_в_20_шапке_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «ТЕСТ-С.-ПЕТЕРБУРГ»)</text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел3" text:condition="ooow:ЭтоДоговор OR (ЭтоВнутреннийДокумент AND ЭтоПереписка)" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_структурного_20_подразделения_20_-_20_автора_20_документа_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента" office:value-type="string">Новгородский филиал</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел4" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">ОрганизацияАдрес</text:variable-set><text:line-break/>Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">ОрганизацияТелефон</text:variable-set>; факс <text:variable-set text:name="ОрганизацияФакс" office:value-type="string">ОрганизацияФакс</text:variable-set>; e-mail <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">ОрганизацияEmail</text:variable-set>; <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">ОрганизацияWebСайт</text:variable-set>;<text:line-break/>ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">ОрганизацияОКПО</text:variable-set>; ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">ОрганизацияОГРН</text:variable-set>; ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">ОрганизацияИНН</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">ОрганизацияКПП</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел5" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел6" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица10" table:style-name="Таблица10"><table:table-column table:style-name="Таблица10.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел7" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел8" text:condition="ooow:NOT (ФормаБланка EQ &#34;ПРИКАЗ от 17.10.2019 №132/АХД&#34;)" text:is-hidden="true" text:display="condition"><text:section text:style-name="MSect1" text:name="Раздел9" text:display="none" text:protected="true"><text:section text:style-name="MSect1" text:name="Раздел10" text:display="none" text:protected="true"><table:table table:name="Таблица11" table:style-name="Таблица11"><table:table-column table:style-name="Таблица11.A"/><table:table-column table:style-name="Таблица11.B"/><table:table-column table:style-name="Таблица11.C"/><table:table-row table:style-name="Таблица11.1"><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP7"><draw:frame draw:style-name="Mfr3" draw:name="Изображение5" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="8"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица11.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP8">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP9"><draw:frame draw:style-name="Mfr4" draw:name="Изображение6" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="9"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect3" text:name="Раздел11" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP10"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP10">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/></text:section><text:section text:style-name="MSect1" text:name="Раздел12" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел13" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица12" table:style-name="Таблица12"><table:table-column table:style-name="Таблица12.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел14" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:p text:style-name="MP11"/><table:table table:name="Таблица13" table:style-name="Таблица13"><table:table-column table:style-name="Таблица13.A"/><table:table-column table:style-name="Таблица13.B"/><table:table-column table:style-name="Таблица13.C"/><table:table-row table:style-name="Таблица13.1"><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP12"><draw:frame draw:style-name="Mfr3" draw:name="Изображение7" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="10"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица13.B1" office:value-type="string"><text:p text:style-name="MP13">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP14">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP15"><draw:frame draw:style-name="Mfr4" draw:name="Изображение8" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="11"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="MP16"/><text:section text:style-name="MSect3" text:name="Раздел15" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="MP17">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP18"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="MP17">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="MP17">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP18">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="MP17">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="MP17">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="MP19"/><text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="MP20"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел17" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица14" table:style-name="Таблица14"><table:table-column table:style-name="Таблица14.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP21"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP22"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP23">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="MP16"/></text:section><text:section text:style-name="MSect1" text:name="Раздел18" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="MP24"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="MP16"/></draw:text-box></draw:frame></text:p>
+         </loext:header-first>
+         <style:footer>
+            <text:p text:style-name="Footer"/>
+         </style:footer>
+         <style:footer-left>
+            <text:p text:style-name="Footer"/>
+         </style:footer-left>
+         <loext:footer-first>
+            <table:table table:name="Таблица15" table:style-name="Таблица15">
+               <table:table-column table:style-name="Таблица15.A"/>
+               <table:table-column table:style-name="Таблица15.B"/>
+               <table:table-column table:style-name="Таблица15.C"/>
+               <table:table-row table:style-name="Таблица15.1">
+                  <table:table-cell table:style-name="Таблица15.A1"
+                                    table:number-rows-spanned="2"
+                                    office:value-type="string">
+                     <text:p text:style-name="MP25">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break/><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set>,<text:line-break/><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/></text:p>
+                  </table:table-cell>
+                  <table:table-cell table:style-name="Таблица15.A1" office:value-type="string">
+                     <text:p text:style-name="MP26">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break/>за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
+                  </table:table-cell>
+                  <table:table-cell table:style-name="Таблица15.A1"
+                                    table:number-rows-spanned="2"
+                                    office:value-type="string">
+                     <text:section text:style-name="MSect1"
+                                   text:name="Раздел19"
+                                   text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)"
+                                   text:is-hidden="true"
+                                   text:display="condition">
+                        <text:p text:style-name="MP27"><text:tab/>Исх №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span></text:p>
+                        <text:p text:style-name="MP27"><text:tab/>от<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span></text:p>
+                     </text:section>
+                     <text:section text:style-name="MSect2"
+                                   text:name="Раздел20"
+                                   text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND NOT ЭтоВнутреннийДокумент)"
+                                   text:display="condition">
+                        <text:p text:style-name="MP27"/>
+                     </text:section>
+                     <text:p text:style-name="MP28"/>
+                  </table:table-cell>
+               </table:table-row>
+               <table:table-row table:style-name="Таблица15.2">
+                  <table:covered-table-cell/>
+                  <table:table-cell table:style-name="Таблица15.B2" office:value-type="string">
+                     <text:p text:style-name="MP30">подпись<text:tab/>дата</text:p>
+                  </table:table-cell>
+                  <table:covered-table-cell/>
+               </table:table-row>
+            </table:table>
+            <text:p text:style-name="Пустой_20_абзац"/>
+         </loext:footer-first>
+      </style:master-page>
+      <style:master-page style:name="Последующие_20_листы_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"
+                         style:display-name="Последующие листы записки (по Приказу от 17.10.2019 №132/АХД)"
+                         style:page-layout-name="Mpm13">
+         <style:header>
+            <text:p text:style-name="MP31"><text:page-number text:select-page="current">2</text:page-number></text:p>
+         </style:header>
+      </style:master-page>
    </office:master-styles>
 </office:document-styles>
