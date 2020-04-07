@@ -91,13 +91,8 @@ process {
 									try {
 										$saxWriter = $saxProcessor.NewSerializer();
 										$saxWriter.SetOutputFile( $TempXMLFileName );
-
-										Write-Verbose "Transforming $($_.FullName)..."
 										$saxTransform.Run( $saxWriter );
-										Write-Verbose "Transformation done."
-
 										$saxWriter.Close();
-
 										Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
 											-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 											-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
