@@ -29,6 +29,7 @@
 	xmlns:math="http://www.w3.org/1998/Math/MathML"
 	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0"
 	xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0"
+	xmlns:script-module="http://openoffice.org/2000/script"
 	xmlns:dom="http://www.w3.org/2001/xml-events"
 	xmlns:xforms="http://www.w3.org/2002/xforms"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -86,6 +87,31 @@
 
 	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]">
 		<xsl:apply-templates select="node()" />
+	</xsl:template>
+
+	<!-- форматируем текст модулей -->
+
+	<xsl:template match="script-module:module/text()">
+		<xsl:variable name="module-text" select="." />
+		<xsl:variable name="module-text">
+			<!-- удаляем лишние пробелы в конце строк -->
+			<xsl:analyze-string select="$module-text" regex="^(.*?)\s*$" flags="s">
+				<xsl:matching-substring>
+					<xsl:value-of select='regex-group(1)' />
+				</xsl:matching-substring>
+			</xsl:analyze-string>
+		</xsl:variable>
+		<xsl:variable name="module-text">
+			<!-- удаляем лишние пустые строки в начале и конце модуля -->
+			<xsl:analyze-string select="$module-text" regex="^\s*(.*?)\s*$" flags="ms">
+				<xsl:matching-substring>
+					<xsl:value-of select="'&#x0A;'" />
+					<xsl:value-of select='regex-group(1)' />
+					<xsl:value-of select="'&#x0A;'" />
+				</xsl:matching-substring>
+			</xsl:analyze-string>
+		</xsl:variable>
+		<xsl:value-of select="$module-text" />
 	</xsl:template>
 
 	<!-- удаляем лишние аттрибуты -->
