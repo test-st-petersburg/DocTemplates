@@ -34,10 +34,6 @@
    <office:font-face-decls>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed"/>
@@ -50,12 +46,12 @@
                        style:font-charset="x-symbol"/>
       <style:font-face style:name="PT Sans"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Обычный"
+                       style:font-adornments="Жирный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="PT Sans1"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Жирный"
+                       style:font-adornments="Обычный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Segoe UI"
@@ -73,11 +69,11 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
+                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman3"
@@ -105,6 +101,7 @@
                                    style:flow-with-text="false"/>
          <style:paragraph-properties style:text-autospace="ideograph-alpha"
                                      style:line-break="strict"
+                                     style:writing-mode="lr-tb"
                                      style:font-independent-line-spacing="false">
             <style:tab-stops/>
          </style:paragraph-properties>
@@ -174,7 +171,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman2"
+         <style:text-properties style:font-name="Times New Roman1"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -257,7 +254,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman2"
+         <style:text-properties style:font-name="Times New Roman1"
                                 fo:font-family="'Times New Roman'"
                                 style:font-style-name="Полужирный"
                                 style:font-family-generic="roman"
@@ -290,7 +287,7 @@
                <style:tab-stop style:position="14.651cm" style:type="right"/>
             </style:tab-stops>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Times New Roman1"
+         <style:text-properties style:font-name="Times New Roman2"
                                 fo:font-family="'Times New Roman'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -311,7 +308,7 @@
                    style:display-name="Текст выноски"
                    style:family="paragraph"
                    style:parent-style-name="Standard">
-         <style:text-properties style:font-name="PT Sans"
+         <style:text-properties style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -491,7 +488,7 @@
             <style:tab-stops/>
          </style:paragraph-properties>
          <style:text-properties fo:text-transform="uppercase"
-                                style:font-name="PT Sans"
+                                style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -539,7 +536,7 @@
          </style:paragraph-properties>
          <style:text-properties fo:text-transform="uppercase"
                                 fo:color="#0000ff"
-                                style:font-name="PT Sans"
+                                style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -1918,7 +1915,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="PT Sans"
+         <style:text-properties style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -1992,7 +1989,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="modern"
@@ -2058,7 +2055,7 @@
                                      style:snap-to-layout-grid="false">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="PT Sans1"
+         <style:text-properties style:font-name="PT Sans"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Жирный"
                                 style:font-family-generic="swiss"
@@ -2533,7 +2530,7 @@
                                      style:justify-single-word="false"
                                      style:page-number="auto"/>
          <style:text-properties fo:text-transform="uppercase"
-                                style:font-name="PT Sans1"
+                                style:font-name="PT Sans"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Жирный"
                                 style:font-family-generic="swiss"
@@ -2580,7 +2577,7 @@
       <style:style style:name="Шапка_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"
                    style:display-name="Шапка (по Приказу от 17.10.2019 №132/АХД)"
                    style:family="paragraph">
-         <style:text-properties style:font-name="PT Sans"
+         <style:text-properties style:font-name="PT Sans1"
                                 fo:font-family="'PT Sans'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="swiss"
@@ -2678,8 +2675,9 @@
       <style:style style:name="CODE" style:family="text">
          <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
-                                style:font-family-generic="roman"
-                                style:font-pitch="variable"
+                                style:font-style-name="Обычный"
+                                style:font-family-generic="modern"
+                                style:font-pitch="fixed"
                                 fo:font-size="10pt"/>
       </style:style>
       <style:style style:name="FollowedHyperlink" style:family="text">
@@ -2691,16 +2689,18 @@
       <style:style style:name="Keyboard" style:family="text">
          <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
-                                style:font-family-generic="roman"
-                                style:font-pitch="variable"
+                                style:font-style-name="Обычный"
+                                style:font-family-generic="modern"
+                                style:font-pitch="fixed"
                                 fo:font-size="10pt"
                                 fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Sample" style:family="text">
          <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
-                                style:font-family-generic="roman"
-                                style:font-pitch="variable"/>
+                                style:font-style-name="Обычный"
+                                style:font-family-generic="modern"
+                                style:font-pitch="fixed"/>
       </style:style>
       <style:style style:name="Strong" style:family="text">
          <style:text-properties fo:font-weight="bold"/>
@@ -2708,8 +2708,9 @@
       <style:style style:name="Typewriter" style:family="text">
          <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
-                                style:font-family-generic="roman"
-                                style:font-pitch="variable"
+                                style:font-style-name="Обычный"
+                                style:font-family-generic="modern"
+                                style:font-pitch="fixed"
                                 fo:font-size="10pt"/>
       </style:style>
       <style:style style:name="HTML_20_Markup"
@@ -4925,7 +4926,7 @@
                    style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
          <style:text-properties fo:font-variant="normal"
                                 fo:text-transform="none"
-                                style:font-name="PT Sans1"
+                                style:font-name="PT Sans"
                                 fo:font-size="13pt"
                                 fo:letter-spacing="0.141cm"
                                 fo:font-weight="bold"

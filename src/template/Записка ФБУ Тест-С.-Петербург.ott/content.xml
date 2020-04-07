@@ -39,10 +39,6 @@
    <office:font-face-decls>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed">
@@ -118,7 +114,7 @@
       </style:font-face>
       <style:font-face style:name="PT Sans"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Обычный"
+                       style:font-adornments="Жирный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -138,7 +134,7 @@
       </style:font-face>
       <style:font-face style:name="PT Sans1"
                        svg:font-family="'PT Sans'"
-                       style:font-adornments="Жирный"
+                       style:font-adornments="Обычный"
                        style:font-family-generic="swiss"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -198,6 +194,7 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
+                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -229,7 +226,6 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -826,7 +822,7 @@
                    style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
          <style:text-properties fo:font-variant="normal"
                                 fo:text-transform="none"
-                                style:font-name="PT Sans1"
+                                style:font-name="PT Sans"
                                 fo:font-size="13pt"
                                 fo:letter-spacing="0.141cm"
                                 fo:font-weight="bold"
