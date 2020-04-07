@@ -1,27 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?><toolbar:toolbar xmlns:toolbar="http://openoffice.org/2001/toolbar" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<toolbar:toolbaritem xlink:href=".uno:DecrementLevel" />
-	<toolbar:toolbaritem xlink:href=".uno:IncrementLevel" />
-	<toolbar:toolbaritem xlink:href=".uno:DecrementSubLevels" />
-	<toolbar:toolbaritem xlink:href=".uno:IncrementSubLevels" />
-	<toolbar:toolbarseparator />
-	<toolbar:toolbaritem xlink:href=".uno:MoveDown" />
-	<toolbar:toolbaritem xlink:href=".uno:MoveUp" />
-	<toolbar:toolbaritem xlink:href=".uno:MoveDownSubItems" />
-	<toolbar:toolbaritem xlink:href=".uno:MoveUpSubItems" />
-	<toolbar:toolbarseparator />
-	<toolbar:toolbaritem xlink:href=".uno:InsertNeutralParagraph" />
-	<toolbar:toolbaritem xlink:href=".uno:NumberingStart" />
-	<toolbar:toolbaritem xlink:href=".uno:RemoveBullets" />
-	<toolbar:toolbarseparator />
-	<toolbar:toolbaritem xlink:href=".uno:JumpDownThisLevel" toolbar:visible="false" />
-	<toolbar:toolbaritem xlink:href=".uno:JumpUpThisLevel" toolbar:visible="false" />
-	<toolbar:toolbaritem xlink:href=".uno:ContinueNumbering" toolbar:visible="false" />
-	<toolbar:toolbarseparator />
-	<toolbar:toolbaritem xlink:href=".uno:DefaultBullet" toolbar:visible="false" />
-	<toolbar:toolbaritem xlink:href=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles" toolbar:text="Перечисление" />
-	<toolbar:toolbaritem xlink:href=".uno:DefaultNumbering" toolbar:visible="false" />
-	<toolbar:toolbaritem xlink:href=".uno:SetOutline" toolbar:visible="false" />
-	<toolbar:toolbaritem xlink:href=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles" toolbar:text="Пункты документа" />
-	<toolbar:toolbarseparator />
-	<toolbar:toolbaritem xlink:href=".uno:BulletsAndNumberingDialog" toolbar:visible="false" />
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbar:toolbar xmlns:toolbar="http://openoffice.org/2001/toolbar"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+   <toolbar:toolbaritem xlink:href=".uno:DecrementLevel"/>
+   <toolbar:toolbaritem xlink:href=".uno:IncrementLevel"/>
+   <toolbar:toolbaritem xlink:href=".uno:DecrementSubLevels"/>
+   <toolbar:toolbaritem xlink:href=".uno:IncrementSubLevels"/>
+   <toolbar:toolbarseparator/>
+   <toolbar:toolbaritem xlink:href=".uno:MoveDown"/>
+   <toolbar:toolbaritem xlink:href=".uno:MoveUp"/>
+   <toolbar:toolbaritem xlink:href=".uno:MoveDownSubItems"/>
+   <toolbar:toolbaritem xlink:href=".uno:MoveUpSubItems"/>
+   <toolbar:toolbarseparator/>
+   <toolbar:toolbaritem xlink:href=".uno:InsertNeutralParagraph"/>
+   <toolbar:toolbaritem xlink:href=".uno:NumberingStart"/>
+   <toolbar:toolbaritem xlink:href=".uno:RemoveBullets"/>
+   <toolbar:toolbarseparator/>
+   <toolbar:toolbaritem xlink:href=".uno:JumpDownThisLevel" toolbar:visible="false"/>
+   <toolbar:toolbaritem xlink:href=".uno:JumpUpThisLevel" toolbar:visible="false"/>
+   <toolbar:toolbaritem xlink:href=".uno:ContinueNumbering" toolbar:visible="false"/>
+   <toolbar:toolbarseparator/>
+   <toolbar:toolbaritem xlink:href=".uno:DefaultBullet" toolbar:visible="false"/>
+   <toolbar:toolbaritem xlink:href=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles"
+                        toolbar:text="Перечисление"/>
+   <toolbar:toolbaritem xlink:href=".uno:DefaultNumbering" toolbar:visible="false"/>
+   <toolbar:toolbaritem xlink:href=".uno:SetOutline" toolbar:visible="false"/>
+   <toolbar:toolbaritem xlink:href=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles"
+                        toolbar:text="Пункты документа"/>
+   <toolbar:toolbarseparator/>
+   <toolbar:toolbaritem xlink:href=".uno:BulletsAndNumberingDialog" toolbar:visible="false"/>
 </toolbar:toolbar>

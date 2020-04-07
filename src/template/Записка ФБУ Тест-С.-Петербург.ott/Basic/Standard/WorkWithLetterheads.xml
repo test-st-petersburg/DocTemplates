@@ -1,4 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?><script:module script:name="WorkWithLetterheads" script:language="StarBasic" script:moduleType="normal" xmlns:script="http://openoffice.org/2000/script">REM  *****  BASIC  *****
+<?xml version="1.0" encoding="UTF-8"?>
+<script:module xmlns:script="http://openoffice.org/2000/script"
+               script:name="WorkWithLetterheads"
+               script:language="StarBasic"
+               script:moduleType="normal">
+REM  *****  BASIC  *****
 
 rem ----------------------------------------------------------------------
 rem Подготовка документа к печати на бумаге
@@ -56,5 +61,4 @@ rem ----------------------------------------------------------------------
 sub setLetterheadVariantOrder132_17_10_2019
 	Common.setDocVariableValue("ФормаБланка", "ПРИКАЗ от 17.10.2019 №132/АХД")
 end sub
-
 </script:module>

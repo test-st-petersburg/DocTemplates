@@ -13,6 +13,7 @@ configuration xITGODTDevWindowsPC
 		[string[]] $ComputerName = 'localhost'
 	)
 
+	Import-DscResource -ModuleName PackageManagement -ModuleVersion 1.3.1
 	Import-DscResource -ModuleName PSDesiredStateConfiguration
 	Import-DscResource -ModuleName cChoco
 	Import-DscResource -ModuleName xComputerManagement
@@ -50,12 +51,18 @@ configuration xITGODTDevWindowsPC
 		}
 
 		cChocoPackageInstaller LibreOffice {
-			Name      = 'libreoffice-fresh'
+			Name      = 'libreoffice-still'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
 		PSModuleResource 7Zip4Powershell {
 			Module_Name = '7Zip4Powershell'
+		}
+
+		PackageManagement SaxonHE {
+			Ensure = "Present"
+			Name   = "Saxon-HE"
+			Source = "NuGet"
 		}
 
 	}

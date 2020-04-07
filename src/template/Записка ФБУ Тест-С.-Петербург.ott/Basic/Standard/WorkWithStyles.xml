@@ -1,4 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?><script:module script:name="WorkWithStyles" script:language="StarBasic" script:moduleType="normal" xmlns:script="http://openoffice.org/2000/script">REM  *****  BASIC  *****
+<?xml version="1.0" encoding="UTF-8"?>
+<script:module xmlns:script="http://openoffice.org/2000/script"
+               script:name="WorkWithStyles"
+               script:language="StarBasic"
+               script:moduleType="normal">
+REM  *****  BASIC  *****
 
 rem ----------------------------------------------------------------------
 rem Изменение межсточного интервала для основного текста
@@ -24,5 +29,4 @@ end sub
 sub setDocTextLineSpacing100
 	setDocTextLineSpacing(100)
 end sub
-
 </script:module>

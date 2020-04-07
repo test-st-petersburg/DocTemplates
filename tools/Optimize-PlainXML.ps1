@@ -16,54 +16,48 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	[System.Xml.XmlReaderSettings] $readerSettings = New-Object System.Xml.XmlReaderSettings;
-	$readerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
-	$readerSettings.DtdProcessing = [System.Xml.DtdProcessing]::Parse;
-	# не обрабатывать DTD в XML документах
-	$readerSettings.XmlResolver = $null;
-	$readerSettings.IgnoreComments = $false;
-	$readerSettings.IgnoreProcessingInstructions = $false;
-	$readerSettings.IgnoreWhitespace = $false;
-	$readerSettings.CloseInput = $true;
+	Add-Type -Path ( Join-Path -Path ( Split-Path -Path ( ( Get-Package -Name 'Saxon-HE' ).Source ) -Parent ) -ChildPath 'lib\net40\saxon9he-api.dll' ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
-	[System.Xml.XmlWriterSettings] $writerSettings = New-Object System.Xml.XmlWriterSettings;
-	$writerSettings.ConformanceLevel = [System.Xml.ConformanceLevel]::Document;
-	$writerSettings.DoNotEscapeUriAttributes = $false;
-	$writerSettings.WriteEndDocumentOnClose = $true;
-	$writerSettings.CloseOutput = $true;
-
-	# $xsltFormat = New-Object System.Xml.Xsl.XslCompiledTransform;
-	# $xsltFormat.Load( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) );
-
-	$xsltOptimize = New-Object System.Xml.Xsl.XslCompiledTransform;
-	$xsltOptimize.Load( ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) );
+	$saxProcessor = New-Object Saxon.Api.Processor;
+	$saxCompiler = $saxProcessor.NewXsltCompiler();
+	$saxCompiler.BaseUri = $PSScriptRoot;
+	Write-Verbose 'Compiling XSLT...';
+	$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) );
+	$saxTransform = $saxExecutable.Load();
+	Write-Verbose 'XSLT loaded.';
+	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
 }
 process {
-	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-
 	if ( $PSCmdlet.ShouldProcess( $FilePath, "Optimize Open Office content.xml" ) ) {
-		$TempXMLFileName1 = [System.IO.Path]::GetTempFileName();
-		$xmlReader = [System.Xml.XmlReader]::Create( $FilePath, $readerSettings );
-		$xmlWriter = [System.Xml.XmlTextWriter]::Create( $TempXMLFileName1, $writerSettings );
-		$xsltOptimize.Transform( $xmlReader, $null, $xmlWriter );
-		$xmlReader.Close();
-		$xmlWriter.Flush();
-		$xmlWriter.Close();
+		$sourceFile = Get-Item -Path $FilePath;
+		$sourceXMLFileStream = [System.IO.File]::OpenRead( $sourceFile.FullName );
+		try {
+			$saxTransform.SetInputStream( $sourceXMLFileStream, $sourceFile.Directory.FullName );
 
-		# $TempXMLFileName2 = [System.IO.Path]::GetTempFileName();
-		# $xmlReader = [System.Xml.XmlReader]::Create( $TempXMLFileName1, $readerSettings );
-		# $xmlWriter = [System.Xml.XmlTextWriter]::Create( $TempXMLFileName2, $writerSettings );
-		# $xsltFormat.Transform( $xmlReader, $null, $xmlWriter );
-		# $xmlReader.Close();
-		# $xmlWriter.Flush();
-		# $xmlWriter.Close();
-
-		Move-Item -Path $TempXMLFileName1 -Destination ( $FilePath ) -Force `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-		# Remove-Item -Path $TempXMLFileName1 `
-		# 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		# 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			$TempXMLFileName = [System.IO.Path]::GetTempFileName();
+			try {
+				$saxWriter = $saxProcessor.NewSerializer();
+				$saxWriter.SetOutputFile( $TempXMLFileName );
+				$saxTransform.Run( $saxWriter );
+				$saxWriter.Close();
+				Move-Item -Path $TempXMLFileName -Destination ( $sourceFile.FullName ) -Force `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			}
+			finally {
+				if ( Test-Path -Path $TempXMLFileName ) {
+					Remove-Item -Path $TempXMLFileName -Recurse `
+						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				};
+			};
+		}
+		finally {
+			$sourceXMLFileStream.Close();
+			$sourceXMLFileStream.Dispose();
+		};
 	};
 }

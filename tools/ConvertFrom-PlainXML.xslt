@@ -44,8 +44,7 @@
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="yes"
-		suppress-indentation="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"
+		indent="no"
 	/>
 
 	<xsl:preserve-space elements="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"/>
@@ -54,7 +53,7 @@
 
 	<xsl:template match="processing-instruction()">
 		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates select="attribute::*"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -65,7 +64,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="@*">
+	<xsl:template match="attribute::*">
 		<xsl:copy />
 	</xsl:template>
 
@@ -75,30 +74,6 @@
 
 	<xsl:template match="text()">
 		<xsl:copy/>
-	</xsl:template>
-
-	<!-- правила для обработки "особых" элементов -->
-
-	<xsl:template match="/manifest:manifest">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="manifest:file-entry">
-				<xsl:sort select="@manifest:full-path"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
-			</xsl:apply-templates>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:font-face-decls">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="style:font-face">
-				<xsl:sort select="@style:name"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
-			</xsl:apply-templates>
-		</xsl:copy>
 	</xsl:template>
 
 </xsl:stylesheet>
