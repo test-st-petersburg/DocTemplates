@@ -54,18 +54,18 @@
 
 	<xsl:template match="processing-instruction()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
+			<xsl:apply-templates select="@*"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="node()">
+	<xsl:template match="element()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
-			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()"/>
+			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="attribute::*">
+	<xsl:template match="@*">
 		<xsl:copy />
 	</xsl:template>
 
@@ -81,9 +81,9 @@
 
 	<xsl:template match="/manifest:manifest">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
+			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="manifest:file-entry">
-				<xsl:sort select="attribute::manifest:full-path"
+				<xsl:sort select="@manifest:full-path"
 					data-type="text" order="ascending" case-order="upper-first"
 				/>
 			</xsl:apply-templates>
@@ -92,9 +92,9 @@
 
 	<xsl:template match="office:font-face-decls">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
+			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="style:font-face">
-				<xsl:sort select="attribute::style:name"
+				<xsl:sort select="@style:name"
 					data-type="text" order="ascending" case-order="upper-first"
 				/>
 			</xsl:apply-templates>

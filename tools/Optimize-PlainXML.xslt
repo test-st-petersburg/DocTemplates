@@ -52,18 +52,18 @@
 
 	<xsl:template match="processing-instruction()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
+			<xsl:apply-templates select="@*"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="node()">
+	<xsl:template match="element()">
 		<xsl:copy>
-			<xsl:apply-templates select="attribute::*"/>
-			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()"/>
+			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="attribute::*">
+	<xsl:template match="@*">
 		<xsl:copy />
 	</xsl:template>
 
@@ -78,44 +78,44 @@
 	<!-- удаляем автоматические стили символов -->
 
 	<xsl:key name="auto-text-styles"
-		match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]"
-		use="attribute::style:name"
+		match="office:automatic-styles/style:style[ @style:family='text' ]"
+		use="@style:name"
 	/>
 
-	<xsl:template match="style:style[ parent::office:automatic-styles and attribute::style:family='text' ]" />
+	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" />
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', attribute::text:style-name ) ]">
-		<xsl:apply-templates select="node()|text()|processing-instruction()|comment()" />
+	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]">
+		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
 	<!-- удаляем лишние аттрибуты -->
 
-	<xsl:template match="attribute::style:language-asian" />
-	<xsl:template match="attribute::style:language-complex" />
+	<xsl:template match="@style:language-asian" />
+	<xsl:template match="@style:language-complex" />
 
-	<xsl:template match="attribute::style:country-asian" />
-	<xsl:template match="attribute::style:country-complex" />
+	<xsl:template match="@style:country-asian" />
+	<xsl:template match="@style:country-complex" />
 
-	<xsl:template match="attribute::style:font-name-asian" />
-	<xsl:template match="attribute::style:font-family-asian" />
-	<xsl:template match="attribute::style:font-pitch-asian" />
-	<xsl:template match="attribute::style:font-family-generic-asian" />
-	<xsl:template match="attribute::style:font-size-asian" />
-	<xsl:template match="attribute::style:font-weight-asian" />
-	<xsl:template match="attribute::style:font-style-asian" />
+	<xsl:template match="@style:font-name-asian" />
+	<xsl:template match="@style:font-family-asian" />
+	<xsl:template match="@style:font-pitch-asian" />
+	<xsl:template match="@style:font-family-generic-asian" />
+	<xsl:template match="@style:font-size-asian" />
+	<xsl:template match="@style:font-weight-asian" />
+	<xsl:template match="@style:font-style-asian" />
 
-	<xsl:template match="attribute::style:font-name-complex" />
-	<xsl:template match="attribute::style:font-family-complex" />
-	<xsl:template match="attribute::style:font-family-generic-complex" />
-	<xsl:template match="attribute::style:font-pitch-complex" />
-	<xsl:template match="attribute::style:font-size-complex" />
-	<xsl:template match="attribute::style:font-weight-complex" />
-	<xsl:template match="attribute::style:font-style-complex" />
+	<xsl:template match="@style:font-name-complex" />
+	<xsl:template match="@style:font-family-complex" />
+	<xsl:template match="@style:font-family-generic-complex" />
+	<xsl:template match="@style:font-pitch-complex" />
+	<xsl:template match="@style:font-size-complex" />
+	<xsl:template match="@style:font-weight-complex" />
+	<xsl:template match="@style:font-style-complex" />
 
-	<xsl:template match="attribute::officeooo:paragraph-rsid[parent::style:text-properties]" />
-	<xsl:template match="attribute::officeooo:rsid[parent::style:text-properties]" />
+	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" />
+	<xsl:template match="style:text-properties/@officeooo:rsid" />
 
-	<xsl:template match="attribute::fo:language[ parent::style:text-properties/parent::style:style/parent::office:automatic-styles ]" />
-	<xsl:template match="attribute::fo:country[ parent::style:text-properties/parent::style:style/parent::office:automatic-styles ]" />
+	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" />
+	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" />
 
 </xsl:stylesheet>
