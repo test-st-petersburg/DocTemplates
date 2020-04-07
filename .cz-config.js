@@ -40,6 +40,15 @@ module.exports = {
       { name: "ott" },
       { name: "build" },
     ],
+    docs: [
+      { name: "changelog" },
+      { name: "readme" },
+      { name: "ott" },
+      { name: "build" },
+      { name: "design" },
+      { name: "git" },
+      { name: "other" },
+    ],
   },
 
   // Поменяем вопросы
