@@ -44,21 +44,17 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed"/>
+      <style:font-face style:name="Courier New1"
+                       svg:font-family="'Courier New'"
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable"/>
       <style:font-face style:name="Liberation Mono"
                        svg:font-family="'Liberation Mono'"
                        style:font-family-generic="modern"
                        style:font-pitch="fixed"/>
-      <style:font-face style:name="Liberation Serif"
-                       svg:font-family="'Liberation Serif'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
       <style:font-face style:name="OpenSymbol"
                        svg:font-family="OpenSymbol"
                        style:font-charset="x-symbol"/>
@@ -123,12 +119,11 @@
                                    style:flow-with-text="false"/>
          <style:paragraph-properties style:text-autospace="ideograph-alpha"
                                      style:line-break="strict"
-                                     style:writing-mode="lr-tb"
                                      style:font-independent-line-spacing="false">
             <style:tab-stops/>
          </style:paragraph-properties>
          <style:text-properties style:use-window-font-color="true"
-                                style:font-name="Liberation Serif"
+                                style:font-name="Times New Roman"
                                 fo:font-size="12pt"
                                 fo:language="ru"
                                 fo:country="RU"
@@ -142,7 +137,7 @@
                                      style:tab-stop-distance="1.27cm"
                                      style:writing-mode="lr-tb"/>
          <style:text-properties style:use-window-font-color="true"
-                                style:font-name="Liberation Serif"
+                                style:font-name="Times New Roman"
                                 fo:font-size="12pt"
                                 fo:language="ru"
                                 fo:country="RU"
@@ -2010,7 +2005,7 @@
                                      style:writing-mode="lr-tb">
             <style:tab-stops/>
          </style:paragraph-properties>
-         <style:text-properties style:font-name="Courier New1"
+         <style:text-properties style:font-name="Courier New"
                                 fo:font-family="'Courier New'"
                                 style:font-style-name="Обычный"
                                 style:font-family-generic="modern"
@@ -2694,7 +2689,7 @@
          <style:text-properties fo:font-style="italic"/>
       </style:style>
       <style:style style:name="CODE" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2707,7 +2702,7 @@
                                 style:text-underline-color="font-color"/>
       </style:style>
       <style:style style:name="Keyboard" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -2715,7 +2710,7 @@
                                 fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Sample" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"/>
@@ -2724,7 +2719,7 @@
          <style:text-properties fo:font-weight="bold"/>
       </style:style>
       <style:style style:name="Typewriter" style:family="text">
-         <style:text-properties style:font-name="Courier New"
+         <style:text-properties style:font-name="Courier New1"
                                 fo:font-family="'Courier New'"
                                 style:font-family-generic="roman"
                                 style:font-pitch="variable"
@@ -4979,152 +4974,6 @@
                    style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
          <style:paragraph-properties fo:break-before="column"/>
       </style:style>
-      <style:style style:name="MP11"
-                   style:family="paragraph"
-                   style:parent-style-name="Пустой_20_абзац">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP12"
-                   style:family="paragraph"
-                   style:parent-style-name="Table_20_Contents">
-         <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
-         <style:text-properties style:use-window-font-color="true"
-                                style:text-outline="false"
-                                style:text-line-through-style="none"
-                                style:text-line-through-type="none"
-                                style:font-name="Times New Roman"
-                                fo:font-size="12pt"
-                                fo:font-style="normal"
-                                fo:text-shadow="none"
-                                style:text-underline-style="none"
-                                fo:font-weight="normal"
-                                style:text-overline-style="none"
-                                style:text-overline-color="font-color"/>
-      </style:style>
-      <style:style style:name="MP13"
-                   style:family="paragraph"
-                   style:parent-style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP14"
-                   style:family="paragraph"
-                   style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:text-properties fo:font-variant="normal"
-                                fo:text-transform="none"
-                                style:font-name="PT Sans1"
-                                fo:font-size="13pt"
-                                fo:letter-spacing="0.141cm"
-                                fo:font-weight="bold"
-                                style:text-scale="110%"/>
-      </style:style>
-      <style:style style:name="MP15"
-                   style:family="paragraph"
-                   style:parent-style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP16"
-                   style:family="paragraph"
-                   style:parent-style-name="Пустой_20_абзац">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP17"
-                   style:family="paragraph"
-                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP18"
-                   style:family="paragraph"
-                   style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:paragraph-properties fo:break-before="column"/>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP19"
-                   style:family="paragraph"
-                   style:parent-style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP20"
-                   style:family="paragraph"
-                   style:parent-style-name="Наименование_20_вида_20_документа">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP21"
-                   style:family="paragraph"
-                   style:parent-style-name="Регистрационные_20_данные">
-         <style:paragraph-properties style:writing-mode="lr-tb">
-            <style:tab-stops/>
-         </style:paragraph-properties>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP22"
-                   style:family="paragraph"
-                   style:parent-style-name="Регистрационные_20_данные">
-         <style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
-            <style:tab-stops>
-               <style:tab-stop style:position="1.704cm" style:type="center"/>
-               <style:tab-stop style:position="3.5cm"/>
-               <style:tab-stop style:position="5.75cm" style:type="center"/>
-               <style:tab-stop style:position="7.451cm"/>
-            </style:tab-stops>
-         </style:paragraph-properties>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP23"
-                   style:family="paragraph"
-                   style:parent-style-name="Регистрационные_20_данные">
-         <style:paragraph-properties fo:text-align="end"
-                                     style:justify-single-word="false"
-                                     style:writing-mode="lr-tb">
-            <style:tab-stops/>
-         </style:paragraph-properties>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP24"
-                   style:family="paragraph"
-                   style:parent-style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP25"
-                   style:family="paragraph"
-                   style:parent-style-name="Исполнитель">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP26"
-                   style:family="paragraph"
-                   style:parent-style-name="В_20_дело">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP27"
-                   style:family="paragraph"
-                   style:parent-style-name="Отметка_20_о_20_поступлении">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP28"
-                   style:family="paragraph"
-                   style:parent-style-name="Пустой_20_абзац">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP29"
-                   style:family="paragraph"
-                   style:parent-style-name="Standard">
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP30"
-                   style:family="paragraph"
-                   style:parent-style-name="Подстрочник">
-         <style:paragraph-properties>
-            <style:tab-stops>
-               <style:tab-stop style:position="14cm" style:type="right"/>
-            </style:tab-stops>
-         </style:paragraph-properties>
-         <style:text-properties/>
-      </style:style>
-      <style:style style:name="MP31"
-                   style:family="paragraph"
-                   style:parent-style-name="Номер_20_страницы">
-         <style:text-properties/>
-      </style:style>
       <style:style style:name="Mfr1"
                    style:family="graphic"
                    style:parent-style-name="Frame">
@@ -5638,6 +5487,16 @@
                                        fo:margin-left="2.499cm"
                                        fo:margin-right="1cm"
                                        style:writing-mode="lr-tb"
+                                       style:layout-grid-color="#c0c0c0"
+                                       style:layout-grid-lines="20"
+                                       style:layout-grid-base-height="0.706cm"
+                                       style:layout-grid-ruby-height="0.353cm"
+                                       style:layout-grid-mode="none"
+                                       style:layout-grid-ruby-below="false"
+                                       style:layout-grid-print="false"
+                                       style:layout-grid-display="false"
+                                       style:layout-grid-base-width="0.706cm"
+                                       style:layout-grid-snap-to="true"
                                        style:footnote-max-height="0cm">
             <style:footnote-sep style:width="0.018cm"
                                 style:distance-before-sep="0.101cm"
@@ -5654,7 +5513,8 @@
                                             fo:margin-bottom="0.499cm"
                                             fo:background-color="transparent"
                                             style:dynamic-spacing="false"
-                                            draw:fill="none"/>
+                                            draw:fill="none"
+                                            draw:fill-color="#729fcf"/>
          </style:header-style>
          <style:footer-style>
             <style:header-footer-properties fo:min-height="0.998cm"
@@ -5663,7 +5523,8 @@
                                             fo:margin-top="0.499cm"
                                             fo:background-color="transparent"
                                             style:dynamic-spacing="false"
-                                            draw:fill="none"/>
+                                            draw:fill="none"
+                                            draw:fill-color="#729fcf"/>
          </style:footer-style>
       </style:page-layout>
       <style:page-layout style:name="Mpm13" style:page-usage="mirrored">
@@ -5676,6 +5537,16 @@
                                        fo:margin-left="2.499cm"
                                        fo:margin-right="1cm"
                                        style:writing-mode="lr-tb"
+                                       style:layout-grid-color="#c0c0c0"
+                                       style:layout-grid-lines="20"
+                                       style:layout-grid-base-height="0.706cm"
+                                       style:layout-grid-ruby-height="0.353cm"
+                                       style:layout-grid-mode="none"
+                                       style:layout-grid-ruby-below="false"
+                                       style:layout-grid-print="false"
+                                       style:layout-grid-display="false"
+                                       style:layout-grid-base-width="0.706cm"
+                                       style:layout-grid-snap-to="true"
                                        style:footnote-max-height="0cm">
             <style:columns fo:column-count="1" fo:column-gap="0cm"/>
             <style:footnote-sep style:width="0.018cm"
@@ -5693,10 +5564,14 @@
                                             fo:margin-bottom="0.499cm"
                                             fo:background-color="transparent"
                                             style:dynamic-spacing="false"
-                                            draw:fill="none"/>
+                                            draw:fill="none"
+                                            draw:fill-color="#729fcf"/>
          </style:header-style>
          <style:footer-style/>
       </style:page-layout>
+      <number:number-style style:name="N0">
+         <number:number number:min-integer-digits="1"/>
+      </number:number-style>
    </office:automatic-styles>
    <office:master-styles>
       <style:master-page style:name="Standard"
@@ -5811,7 +5686,7 @@
                          style:display-name="Последующие листы"
                          style:page-layout-name="Mpm4">
          <style:header>
-            <text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">4</text:page-number></text:p>
+            <text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">0</text:page-number></text:p>
          </style:header>
       </style:master-page>
       <style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm5"/>
@@ -5854,7 +5729,7 @@
             <text:p text:style-name="Header"/>
          </style:header-left>
          <loext:header-first>
-            <text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: шапка (по Приказу от 17.10.2019 №132/АХД)" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="6"><draw:text-box fo:min-height="0.499cm"><text:section text:style-name="MSect1" text:name="Раздел1" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица6" table:style-name="Таблица6"><table:table-column table:style-name="Таблица6.A"/><table:table-column table:style-name="Таблица6.B"/><table:table-column table:style-name="Таблица6.C"/><table:table-header-rows><table:table-row table:style-name="Таблица6.1"><table:table-cell table:style-name="Таблица6.A1" table:number-rows-spanned="2" office:value-type="string"><text:p text:style-name="MP3"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="Mfr2" draw:name="Изображение4" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="7"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.A1" table:number-columns-spanned="2" office:value-type="string"><text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p></table:table-cell><table:covered-table-cell/></table:table-row></table:table-header-rows><table:table-row table:style-name="Таблица6.2"><table:covered-table-cell/><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Гриф_20_ограничения_20_доступа"><text:variable-set text:name="ГрифОграниченияДоступ" office:value-type="string">Общедоступно</text:variable-set><text:hidden-paragraph text:condition="ooow:(ГрифОграниченияДоступ == &#34;Общедоступно&#34;) OR (ГрифОграниченияДоступ == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Код_20_формы_20_документа"><text:variable-set text:name="КодФормыДокумента" office:value-type="string"> </text:variable-set></text:p></table:table-cell></table:table-row></table:table><text:section text:style-name="MSect1" text:name="Раздел2" text:condition="ooow:ЭтоДоговор" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_организации_20_в_20_шапке_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «ТЕСТ-С.-ПЕТЕРБУРГ»)</text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел3" text:condition="ooow:ЭтоДоговор OR (ЭтоВнутреннийДокумент AND ЭтоПереписка)" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_структурного_20_подразделения_20_-_20_автора_20_документа_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента" office:value-type="string">Новгородский филиал</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел4" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">ОрганизацияАдрес</text:variable-set><text:line-break/>Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">ОрганизацияТелефон</text:variable-set>; факс <text:variable-set text:name="ОрганизацияФакс" office:value-type="string">ОрганизацияФакс</text:variable-set>; e-mail <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">ОрганизацияEmail</text:variable-set>; <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">ОрганизацияWebСайт</text:variable-set>;<text:line-break/>ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">ОрганизацияОКПО</text:variable-set>; ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">ОрганизацияОГРН</text:variable-set>; ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">ОрганизацияИНН</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">ОрганизацияКПП</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел5" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел6" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица10" table:style-name="Таблица10"><table:table-column table:style-name="Таблица10.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел7" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел8" text:condition="ooow:NOT (ФормаБланка EQ &#34;ПРИКАЗ от 17.10.2019 №132/АХД&#34;)" text:is-hidden="true" text:display="condition"><text:section text:style-name="MSect1" text:name="Раздел9" text:display="none" text:protected="true"><text:section text:style-name="MSect1" text:name="Раздел10" text:display="none" text:protected="true"><table:table table:name="Таблица11" table:style-name="Таблица11"><table:table-column table:style-name="Таблица11.A"/><table:table-column table:style-name="Таблица11.B"/><table:table-column table:style-name="Таблица11.C"/><table:table-row table:style-name="Таблица11.1"><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP7"><draw:frame draw:style-name="Mfr3" draw:name="Изображение5" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="8"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица11.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP8">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP9"><draw:frame draw:style-name="Mfr4" draw:name="Изображение6" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="9"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect3" text:name="Раздел11" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP10"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP10">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/></text:section><text:section text:style-name="MSect1" text:name="Раздел12" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел13" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица12" table:style-name="Таблица12"><table:table-column table:style-name="Таблица12.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел14" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:p text:style-name="MP11"/><table:table table:name="Таблица13" table:style-name="Таблица13"><table:table-column table:style-name="Таблица13.A"/><table:table-column table:style-name="Таблица13.B"/><table:table-column table:style-name="Таблица13.C"/><table:table-row table:style-name="Таблица13.1"><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP12"><draw:frame draw:style-name="Mfr3" draw:name="Изображение7" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="10"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица13.B1" office:value-type="string"><text:p text:style-name="MP13">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP14">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP15"><draw:frame draw:style-name="Mfr4" draw:name="Изображение8" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="11"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="MP16"/><text:section text:style-name="MSect3" text:name="Раздел15" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="MP17">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP18"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="MP17">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="MP17">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP18">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="MP17">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="MP17">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="MP19"/><text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="MP20"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел17" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица14" table:style-name="Таблица14"><table:table-column table:style-name="Таблица14.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP21"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP22"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP23">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="MP16"/></text:section><text:section text:style-name="MSect1" text:name="Раздел18" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="MP24"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="MP16"/></draw:text-box></draw:frame></text:p>
+            <text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: шапка (по Приказу от 17.10.2019 №132/АХД)" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="1"><draw:text-box fo:min-height="0.499cm"><text:section text:style-name="MSect1" text:name="Раздел1" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица6" table:style-name="Таблица6"><table:table-column table:style-name="Таблица6.A"/><table:table-column table:style-name="Таблица6.B"/><table:table-column table:style-name="Таблица6.C"/><table:table-header-rows><table:table-row table:style-name="Таблица6.1"><table:table-cell table:style-name="Таблица6.A1" table:number-rows-spanned="2" office:value-type="string"><text:p text:style-name="MP3"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="Mfr2" draw:name="Изображение4" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.A1" table:number-columns-spanned="2" office:value-type="string"><text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p></table:table-cell><table:covered-table-cell/></table:table-row></table:table-header-rows><table:table-row table:style-name="Таблица6.2"><table:covered-table-cell/><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Гриф_20_ограничения_20_доступа"><text:variable-set text:name="ГрифОграниченияДоступ" office:value-type="string">Общедоступно</text:variable-set><text:hidden-paragraph text:condition="ooow:(ГрифОграниченияДоступ == &#34;Общедоступно&#34;) OR (ГрифОграниченияДоступ == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p></table:table-cell><table:table-cell table:style-name="Таблица6.B2" office:value-type="string"><text:p text:style-name="Код_20_формы_20_документа"><text:variable-set text:name="КодФормыДокумента" office:value-type="string"> </text:variable-set></text:p></table:table-cell></table:table-row></table:table><text:section text:style-name="MSect1" text:name="Раздел2" text:condition="ooow:ЭтоДоговор" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_организации_20_в_20_шапке_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «ТЕСТ-С.-ПЕТЕРБУРГ»)</text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел3" text:condition="ooow:ЭтоДоговор OR (ЭтоВнутреннийДокумент AND ЭтоПереписка)" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_структурного_20_подразделения_20_-_20_автора_20_документа_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента" office:value-type="string">Новгородский филиал</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел4" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">ОрганизацияАдрес</text:variable-set><text:line-break/>Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">ОрганизацияТелефон</text:variable-set>; факс <text:variable-set text:name="ОрганизацияФакс" office:value-type="string">ОрганизацияФакс</text:variable-set>; e-mail <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">ОрганизацияEmail</text:variable-set>; <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">ОрганизацияWebСайт</text:variable-set>;<text:line-break/>ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">ОрганизацияОКПО</text:variable-set>; ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">ОрганизацияОГРН</text:variable-set>; ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">ОрганизацияИНН</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">ОрганизацияКПП</text:variable-set></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел5" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел6" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition"><table:table table:name="Таблица10" table:style-name="Таблица10"><table:table-column table:style-name="Таблица10.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел7" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел8" text:condition="ooow:NOT (ФормаБланка EQ &#34;ПРИКАЗ от 17.10.2019 №132/АХД&#34;)" text:is-hidden="true" text:display="condition"><text:section text:style-name="MSect1" text:name="Раздел9" text:display="none" text:protected="true"><text:section text:style-name="MSect1" text:name="Раздел10" text:display="none" text:protected="true"><table:table table:name="Таблица11" table:style-name="Таблица11"><table:table-column table:style-name="Таблица11.A"/><table:table-column table:style-name="Таблица11.B"/><table:table-column table:style-name="Таблица11.C"/><table:table-row table:style-name="Таблица11.1"><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP7"><draw:frame draw:style-name="Mfr3" draw:name="Изображение5" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="0"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица11.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP8">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица11.A1" office:value-type="string"><text:p text:style-name="MP9"><draw:frame draw:style-name="Mfr4" draw:name="Изображение6" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="0"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect3" text:name="Раздел11" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP10"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP10">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/></text:section><text:section text:style-name="MSect1" text:name="Раздел12" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел13" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица12" table:style-name="Таблица12"><table:table-column table:style-name="Таблица12.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел14" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></text:section><text:p text:style-name="Пустой_20_абзац"/><table:table table:name="Таблица13" table:style-name="Таблица13"><table:table-column table:style-name="Таблица13.A"/><table:table-column table:style-name="Таблица13.B"/><table:table-column table:style-name="Таблица13.C"/><table:table-row table:style-name="Таблица13.1"><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP7"><draw:frame draw:style-name="Mfr3" draw:name="Изображение7" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="4"><draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell><table:table-cell table:style-name="Таблица13.B1" office:value-type="string"><text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p><text:p text:style-name="MP8">Новгородский филиал</text:p></table:table-cell><table:table-cell table:style-name="Таблица13.A1" office:value-type="string"><text:p text:style-name="MP9"><draw:frame draw:style-name="Mfr4" draw:name="Изображение8" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="5"><draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/><text:section text:style-name="MSect3" text:name="Раздел15" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true"><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p><text:p text:style-name="MP10"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p><text:p text:style-name="MP10">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p><text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p></text:section><text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/><text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p></text:section><text:section text:style-name="MSect1" text:name="Раздел17" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true"><table:table table:name="Таблица14" table:style-name="Таблица14"><table:table-column table:style-name="Таблица14.A" table:number-columns-repeated="3"/><table:table-row><table:table-cell office:value-type="string"><text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p></table:table-cell><table:table-cell office:value-type="string"><text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p></table:table-cell></table:table-row></table:table><text:p text:style-name="Пустой_20_абзац"/></text:section><text:section text:style-name="MSect1" text:name="Раздел18" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true"><text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p></text:section><text:p text:style-name="Пустой_20_абзац"/></draw:text-box></draw:frame></text:p>
          </loext:header-first>
          <style:footer>
             <text:p text:style-name="Footer"/>
@@ -5871,10 +5746,10 @@
                   <table:table-cell table:style-name="Таблица15.A1"
                                     table:number-rows-spanned="2"
                                     office:value-type="string">
-                     <text:p text:style-name="MP25">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break/><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set>,<text:line-break/><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/></text:p>
+                     <text:p text:style-name="Исполнитель">Исп.: <text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set><text:line-break/><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set>, <text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set>,<text:line-break/><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set>, <text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/></text:p>
                   </table:table-cell>
                   <table:table-cell table:style-name="Таблица15.A1" office:value-type="string">
-                     <text:p text:style-name="MP26">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break/>за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
+                     <text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:span> <text:line-break/>за <text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set> г.</text:p>
                   </table:table-cell>
                   <table:table-cell table:style-name="Таблица15.A1"
                                     table:number-rows-spanned="2"
@@ -5884,22 +5759,22 @@
                                    text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)"
                                    text:is-hidden="true"
                                    text:display="condition">
-                        <text:p text:style-name="MP27"><text:tab/>Исх №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span></text:p>
-                        <text:p text:style-name="MP27"><text:tab/>от<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span></text:p>
+                        <text:p text:style-name="Отметка_20_о_20_поступлении"><text:tab/>Исх №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span></text:p>
+                        <text:p text:style-name="Отметка_20_о_20_поступлении"><text:tab/>от<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span></text:p>
                      </text:section>
                      <text:section text:style-name="MSect2"
                                    text:name="Раздел20"
                                    text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND NOT ЭтоВнутреннийДокумент)"
                                    text:display="condition">
-                        <text:p text:style-name="MP27"/>
+                        <text:p text:style-name="Отметка_20_о_20_поступлении"/>
                      </text:section>
-                     <text:p text:style-name="MP28"/>
+                     <text:p text:style-name="Пустой_20_абзац"/>
                   </table:table-cell>
                </table:table-row>
                <table:table-row table:style-name="Таблица15.2">
                   <table:covered-table-cell/>
                   <table:table-cell table:style-name="Таблица15.B2" office:value-type="string">
-                     <text:p text:style-name="MP30">подпись<text:tab/>дата</text:p>
+                     <text:p text:style-name="MP2">подпись<text:tab/>дата</text:p>
                   </table:table-cell>
                   <table:covered-table-cell/>
                </table:table-row>
@@ -5911,7 +5786,7 @@
                          style:display-name="Последующие листы записки (по Приказу от 17.10.2019 №132/АХД)"
                          style:page-layout-name="Mpm13">
          <style:header>
-            <text:p text:style-name="MP31"><text:page-number text:select-page="current">2</text:page-number></text:p>
+            <text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">2</text:page-number></text:p>
          </style:header>
       </style:master-page>
    </office:master-styles>
