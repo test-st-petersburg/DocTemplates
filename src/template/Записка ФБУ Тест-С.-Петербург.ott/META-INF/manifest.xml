@@ -33,14 +33,6 @@
    <manifest:file-entry manifest:full-path="Configurations2/toolbar/textobjectbar.xml"
                         manifest:media-type=""/>
    <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Arial_1.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Arial_2.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Arial_3.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Arial_4.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
    <manifest:file-entry manifest:full-path="Fonts/Font_Courier_New_1.ttf"
                         manifest:media-type="application/x-font-ttf"/>
    <manifest:file-entry manifest:full-path="Fonts/Font_Courier_New_2.ttf"
@@ -62,10 +54,6 @@
    <manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_1.ttf"
                         manifest:media-type="application/x-font-ttf"/>
    <manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_2.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Tahoma_1.ttf"
-                        manifest:media-type="application/x-font-ttf"/>
-   <manifest:file-entry manifest:full-path="Fonts/Font_Tahoma_2.ttf"
                         manifest:media-type="application/x-font-ttf"/>
    <manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_1.ttf"
                         manifest:media-type="application/x-font-ttf"/>

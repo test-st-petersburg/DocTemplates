@@ -37,44 +37,11 @@
                          office:version="1.2">
    <office:scripts/>
    <office:font-face-decls>
-      <style:font-face style:name="Arial"
-                       svg:font-family="Arial"
-                       style:font-adornments="Обычный"
-                       style:font-family-generic="swiss"
-                       style:font-pitch="variable">
-         <svg:font-face-src>
-            <svg:font-face-uri xlink:href="Fonts/Font_Arial_1.ttf"
-                               xlink:type="simple"
-                               loext:font-style="normal"
-                               loext:font-weight="normal">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-            <svg:font-face-uri xlink:href="Fonts/Font_Arial_2.ttf"
-                               xlink:type="simple"
-                               loext:font-style="normal"
-                               loext:font-weight="bold">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-            <svg:font-face-uri xlink:href="Fonts/Font_Arial_3.ttf"
-                               xlink:type="simple"
-                               loext:font-style="italic"
-                               loext:font-weight="normal">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-            <svg:font-face-uri xlink:href="Fonts/Font_Arial_4.ttf"
-                               xlink:type="simple"
-                               loext:font-style="italic"
-                               loext:font-weight="bold">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-         </svg:font-face-src>
-      </style:font-face>
-      <style:font-face style:name="Arial Black"
-                       svg:font-family="'Arial Black'"
-                       style:font-adornments="Обычный"
-                       style:font-family-generic="swiss"
-                       style:font-pitch="variable"/>
       <style:font-face style:name="Courier New"
+                       svg:font-family="'Courier New'"
+                       style:font-family-generic="roman"
+                       style:font-pitch="variable"/>
+      <style:font-face style:name="Courier New1"
                        svg:font-family="'Courier New'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="modern"
@@ -106,10 +73,6 @@
             </svg:font-face-uri>
          </svg:font-face-src>
       </style:font-face>
-      <style:font-face style:name="Courier New1"
-                       svg:font-family="'Courier New'"
-                       style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
       <style:font-face style:name="Liberation Mono"
                        svg:font-family="'Liberation Mono'"
                        style:font-family-generic="modern"
@@ -199,25 +162,6 @@
                        style:font-pitch="variable"/>
       <style:font-face style:name="Tahoma"
                        svg:font-family="Tahoma"
-                       style:font-family-generic="swiss"
-                       style:font-pitch="variable">
-         <svg:font-face-src>
-            <svg:font-face-uri xlink:href="Fonts/Font_Tahoma_1.ttf"
-                               xlink:type="simple"
-                               loext:font-style="normal"
-                               loext:font-weight="normal">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-            <svg:font-face-uri xlink:href="Fonts/Font_Tahoma_2.ttf"
-                               xlink:type="simple"
-                               loext:font-style="normal"
-                               loext:font-weight="bold">
-               <svg:font-face-format svg:string="truetype"/>
-            </svg:font-face-uri>
-         </svg:font-face-src>
-      </style:font-face>
-      <style:font-face style:name="Tahoma1"
-                       svg:font-family="Tahoma"
                        style:font-family-generic="system"
                        style:font-pitch="variable"/>
       <style:font-face style:name="Times New Roman"
@@ -254,7 +198,6 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
-                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -286,6 +229,7 @@
       </style:font-face>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
+                       style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
                        style:font-pitch="variable">
          <svg:font-face-src>
@@ -1270,12 +1214,12 @@
                           text:display="condition">
                <text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
                <text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-               <text:list xml:id="list1301869095" text:style-name="Numbering_20_123">
+               <text:list xml:id="list4087733166" text:style-name="Numbering_20_123">
                   <text:list-item>
                      <text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
                   </text:list-item>
                </text:list>
-               <text:list xml:id="list663243394" text:style-name="List_20_2">
+               <text:list xml:id="list3545714830" text:style-name="List_20_2">
                   <text:list-item>
                      <text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
                   </text:list-item>
@@ -1291,7 +1235,7 @@
                <text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
                <text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной"><text:soft-page-break/>а</text:p>
                <text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
-               <text:list xml:id="list3279815066"
+               <text:list xml:id="list1390744409"
                           text:style-name="Нумерация_20_списка_20_приложений">
                   <text:list-item>
                      <text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
@@ -1433,16 +1377,12 @@
                        text:display="condition">
             <text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
             <text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-            <text:list xml:id="list194931069661567"
-                       text:continue-list="list1146609327"
-                       text:style-name="Numbering_20_123">
+            <text:list xml:id="list194931069661567" text:style-name="Numbering_20_123">
                <text:list-item>
                   <text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
                </text:list-item>
             </text:list>
-            <text:list xml:id="list194931303451260"
-                       text:continue-list="list2157242240"
-                       text:style-name="List_20_2">
+            <text:list xml:id="list194931303451260" text:style-name="List_20_2">
                <text:list-item>
                   <text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
                </text:list-item>
@@ -1450,7 +1390,6 @@
             <text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
             <text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
             <text:list xml:id="list194930588580277"
-                       text:continue-list="list1957514850"
                        text:style-name="Нумерация_20_списка_20_приложений">
                <text:list-item>
                   <text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
