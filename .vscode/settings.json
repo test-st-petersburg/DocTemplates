@@ -8,7 +8,23 @@
 	"shellcheck.exclude": [
 		1017
 	],
+	"[xml]": {
+		"editor.formatOnSave": false,
+		"files.trimTrailingWhitespace": false,
+		"files.insertFinalNewline": false,
+	},
+	"[xsl]": {
+		"editor.formatOnSave": false,
+		"files.trimTrailingWhitespace": false,
+		"files.insertFinalNewline": false,
+	},
+	"[powershell]": {
+		"editor.formatOnSave": true,
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+	},
 	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": true,
 }
