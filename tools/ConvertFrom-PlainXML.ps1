@@ -46,6 +46,8 @@ begin {
 	Write-Verbose 'XSLT loaded.';
 	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
+
+	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
 	if ( $PSCmdlet.ShouldProcess( $DestinationPath, "Create Open Office document from plain XML directory" ) ) {
@@ -65,7 +67,7 @@ process {
 					if ( $PSCmdlet.ShouldProcess( $_, "Unindent xml file" ) ) {
 						$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
 						try {
-							$saxTransform.SetInputStream( $sourceXMLFileStream, $_.Directory.FullName );
+							$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
 							$TempXMLFileName = [System.IO.Path]::GetTempFileName();
 							try {
 								$saxWriter = $saxProcessor.NewSerializer();
