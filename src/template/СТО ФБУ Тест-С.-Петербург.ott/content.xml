@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                         xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+<office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+                         xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
                          xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
                          xmlns:ooo="http://openoffice.org/2004/office"
                          xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
@@ -40,18 +40,126 @@
       <style:font-face style:name="Arial"
                        svg:font-family="Arial"
                        style:font-family-generic="swiss"
-                       style:font-pitch="variable"/>
+                       style:font-pitch="variable">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Arial_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Arial_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Arial_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Arial_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Courier New"
                        svg:font-family="'Courier New'"
-                       style:font-family-generic="modern"/>
+                       style:font-family-generic="modern">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Courier_New_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Courier_New_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Courier_New_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Courier_New_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Liberation Mono"
                        svg:font-family="'Liberation Mono'"
                        style:font-family-generic="modern"
-                       style:font-pitch="fixed"/>
+                       style:font-pitch="fixed">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Liberation Serif"
                        svg:font-family="'Liberation Serif'"
                        style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
+                       style:font-pitch="variable">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="OpenSymbol"
                        svg:font-family="OpenSymbol, 'Arial Unicode MS'"/>
       <style:font-face style:name="Segoe UI"
@@ -65,21 +173,129 @@
       <style:font-face style:name="Times New Roman"
                        svg:font-family="'Times New Roman'"
                        style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
+                       style:font-pitch="variable">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Times New Roman1"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Полужирный"
                        style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
+                       style:font-pitch="variable">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Times New Roman2"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Обычный"
                        style:font-family-generic="roman"
-                       style:font-pitch="variable"/>
+                       style:font-pitch="variable">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
       <style:font-face style:name="Times New Roman3"
                        svg:font-family="'Times New Roman'"
                        style:font-adornments="Обычный"
-                       style:font-family-generic="roman"/>
+                       style:font-family-generic="roman">
+         <svg:font-face-src>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf"
+                               xlink:type="simple"
+                               loext:font-style="normal"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="normal">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+            <svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf"
+                               xlink:type="simple"
+                               loext:font-style="italic"
+                               loext:font-weight="bold">
+               <svg:font-face-format svg:string="truetype"/>
+            </svg:font-face-uri>
+         </svg:font-face-src>
+      </style:font-face>
    </office:font-face-decls>
    <office:automatic-styles>
       <style:style style:name="Таблица2" style:family="table">
@@ -2317,15 +2533,15 @@
       </style:style>
       <style:style style:name="fr1"
                    style:family="graphic"
-                   style:parent-style-name="Год_20_издания_20_на_20_титульном_20_листе">
-         <style:graphic-properties style:vertical-pos="bottom"
+                   style:parent-style-name="Заголовок_20_на_20_титульном_20_листе">
+         <style:graphic-properties style:vertical-pos="middle"
                                    style:vertical-rel="page-content"
                                    loext:rel-width-rel="paragraph"/>
       </style:style>
       <style:style style:name="fr2"
                    style:family="graphic"
-                   style:parent-style-name="Заголовок_20_на_20_титульном_20_листе">
-         <style:graphic-properties style:vertical-pos="middle"
+                   style:parent-style-name="Год_20_издания_20_на_20_титульном_20_листе">
+         <style:graphic-properties style:vertical-pos="bottom"
                                    style:vertical-rel="page-content"
                                    loext:rel-width-rel="paragraph"/>
       </style:style>
@@ -2416,17 +2632,6 @@
                                   text:name="BC_COMP_WWW"/>
          </text:user-field-decls>
          <draw:frame draw:style-name="fr1"
-                     draw:name="Врезка2"
-                     text:anchor-type="page"
-                     text:anchor-page-number="1"
-                     svg:width="18cm"
-                     style:rel-width="100%"
-                     draw:z-index="2">
-            <draw:text-box fo:min-height="0.499cm">
-               <text:p text:style-name="P51">2019</text:p>
-            </draw:text-box>
-         </draw:frame>
-         <draw:frame draw:style-name="fr2"
                      draw:name="Врезка1"
                      text:anchor-type="page"
                      text:anchor-page-number="1"
@@ -2439,6 +2644,17 @@
                <text:p text:style-name="Subtitle"><office:annotation office:name="__Annotation__6136_3610614920"><dc:creator>Сергеевич </dc:creator><dc:date>2020-01-10T21:40:15.700000000</dc:date><text:p text:style-name="P110">Подразделение учреждения</text:p></office:annotation>испытательной лаборатории<text:line-break/>сектора специальной оценки условий труда<text:line-break/>Новгородского филиала ФБУ «Тест‑С. – Петербург»<office:annotation-end office:name="__Annotation__6136_3610614920"/></text:p>
                <text:p text:style-name="Обозначение_20_документа"><text:bookmark-start text:name="ОбозначениеДокумента"/><office:annotation office:name="__Annotation__6134_3610614920"><dc:creator>Сергеевич </dc:creator><dc:date>2020-01-10T21:39:25.390000000</dc:date><text:p text:style-name="P110">Введите обозначение документа. Осторожно! Необходимо сохранить закладку «Обозначение документа»!</text:p></office:annotation>СК 02‑11‑19<text:bookmark-end text:name="ОбозначениеДокумента"/><office:annotation-end office:name="__Annotation__6134_3610614920"/></text:p>
                <text:p text:style-name="Обозначение_20_документа_20_для_20_внешних_20_ссылок"><text:bookmark-start text:name="ОбозначениеДокументаДляВнешнихСсылок"/><office:annotation office:name="__Annotation__31573_1173144730"><dc:creator>Сергей Сергеевич Бетке</dc:creator><dc:date>2020-01-15T21:28:27.003000000</dc:date><loext:sender-initials>С.С.</loext:sender-initials><text:p text:style-name="P110">Оставлять только для документированных процедур (инструкций)</text:p></office:annotation>СК 30428528‑01.01‑02‑2020/ред.5<text:bookmark-end text:name="ОбозначениеДокументаДляВнешнихСсылок"/><office:annotation-end office:name="__Annotation__31573_1173144730"/></text:p>
+            </draw:text-box>
+         </draw:frame>
+         <draw:frame draw:style-name="fr2"
+                     draw:name="Врезка2"
+                     text:anchor-type="page"
+                     text:anchor-page-number="1"
+                     svg:width="18cm"
+                     style:rel-width="100%"
+                     draw:z-index="2">
+            <draw:text-box fo:min-height="0.499cm">
+               <text:p text:style-name="P51">2019</text:p>
             </draw:text-box>
          </draw:frame>
          <text:p text:style-name="P95"><draw:frame draw:style-name="fr3" draw:name="Изображение1" text:anchor-type="as-char" svg:width="2.14cm" svg:height="1.293cm" draw:z-index="0"><draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/><draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/></draw:frame></text:p>
@@ -2963,7 +3179,7 @@
          </text:list>
          <text:list xml:id="list3991541855" text:style-name="Пункты_20_приложений">
             <text:list-item>
-               <text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957"/><text:bookmark-start text:name="__RefNumPara__5312_317182545"/><text:line-break/><office:annotation office:name="__Annotation__6150_2954163101"><dc:creator>Сергей Сергеевич Бетке</dc:creator><dc:date>2020-01-15T20:58:51.945000000</dc:date><loext:sender-initials>С.С.</loext:sender-initials><text:p text:style-name="P110">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:p></office:annotation>(обязательное)<text:line-break/>Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101"/><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957"/><text:bookmark-end text:name="__RefNumPara__5312_317182545"/></text:h>
+               <text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__5312_317182545"/><text:bookmark-start text:name="__RefHeading___Toc27085_1015746957"/><text:line-break/><office:annotation office:name="__Annotation__6150_2954163101"><dc:creator>Сергей Сергеевич Бетке</dc:creator><dc:date>2020-01-15T20:58:51.945000000</dc:date><loext:sender-initials>С.С.</loext:sender-initials><text:p text:style-name="P110">Заголовки приложений оформляйте стилем «Заголовок приложения». Приложение автоматически начнётся с новой страницы.</text:p></office:annotation>(обязательное)<text:line-break/>Заявление о Политике в области качества<office:annotation-end office:name="__Annotation__6150_2954163101"/><text:bookmark-end text:name="__RefNumPara__5312_317182545"/><text:bookmark-end text:name="__RefHeading___Toc27085_1015746957"/></text:h>
             </text:list-item>
          </text:list>
          <text:p text:style-name="Заголовок_20_раздела_20_политики_20_в_20_области_20_качества">Главная цель:</text:p>
@@ -3048,7 +3264,7 @@
                     text:continue-list="list3991541855"
                     text:style-name="Пункты_20_приложений">
             <text:list-item>
-               <text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28851_1015746957"/><text:bookmark-start text:name="__RefNumPara__7369_317182545"/><text:line-break/>(обязательное)<text:line-break/>Перечень внутренних документов СМК ИЛ<text:bookmark-end text:name="__RefHeading___Toc28851_1015746957"/><text:bookmark-end text:name="__RefNumPara__7369_317182545"/></text:h>
+               <text:h text:style-name="P99" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__7369_317182545"/><text:bookmark-start text:name="__RefHeading___Toc28851_1015746957"/><text:line-break/>(обязательное)<text:line-break/>Перечень внутренних документов СМК ИЛ<text:bookmark-end text:name="__RefNumPara__7369_317182545"/><text:bookmark-end text:name="__RefHeading___Toc28851_1015746957"/></text:h>
             </text:list-item>
          </text:list>
          <table:table table:name="Таблица4" table:style-name="Таблица4">
@@ -3707,7 +3923,7 @@
                     text:continue-numbering="true"
                     text:style-name="Пункты_20_приложений">
             <text:list-item>
-               <text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc28855_1015746957"/><text:bookmark-start text:name="__RefNumPara__8488_317182545"/><text:line-break/>(рекомендуемое)<text:line-break/>Формы документов ИЛ<text:bookmark-end text:name="__RefHeading___Toc28855_1015746957"/><text:bookmark-end text:name="__RefNumPara__8488_317182545"/></text:h>
+               <text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__8488_317182545"/><text:bookmark-start text:name="__RefHeading___Toc28855_1015746957"/><text:line-break/>(рекомендуемое)<text:line-break/>Формы документов ИЛ<text:bookmark-end text:name="__RefNumPara__8488_317182545"/><text:bookmark-end text:name="__RefHeading___Toc28855_1015746957"/></text:h>
             </text:list-item>
          </text:list>
          <text:p text:style-name="Обозначение_20_формы">Ф06.01-12</text:p>
@@ -3930,7 +4146,7 @@
                     text:continue-numbering="true"
                     text:style-name="Пункты_20_приложений">
             <text:list-item>
-               <text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefNumPara__7890_781730213"/><text:bookmark-start text:name="__RefHeading___Toc6126_3842456518"/><text:line-break/>(рекомендуемое)<text:line-break/>Форма журнала учета несоответствий, корректирующих и предупреждающих действий и пример заполнения<text:bookmark-end text:name="__RefNumPara__7890_781730213"/><text:bookmark-end text:name="__RefHeading___Toc6126_3842456518"/></text:h>
+               <text:h text:style-name="P98" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc6126_3842456518"/><text:bookmark-start text:name="__RefNumPara__7890_781730213"/><text:line-break/>(рекомендуемое)<text:line-break/>Форма журнала учета несоответствий, корректирующих и предупреждающих действий и пример заполнения<text:bookmark-end text:name="__RefHeading___Toc6126_3842456518"/><text:bookmark-end text:name="__RefNumPara__7890_781730213"/></text:h>
             </text:list-item>
          </text:list>
          <text:p text:style-name="Обозначение_20_формы">Ф07.01-01</text:p>
