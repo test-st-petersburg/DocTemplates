@@ -2235,8 +2235,8 @@
 									</draw:frame></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="Таблица13.B1" office:value-type="string">
-									<text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ФБУ «Тест-С.-Петербург»</text:p>
-									<text:p text:style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Новгородский филиал</text:p>
+									<text:p text:style-name="Наименование_20_организации_20_в_20_логоблоке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"><text:variable-get text:name="ОрганизацияНаименование" style:data-style-name="N0">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
+									<text:p text:style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"><text:variable-get text:name="ПодразделениеДляБланка" style:data-style-name="N0">Новгородский филиал</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
 									<text:p text:style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29__20_Тест"><draw:frame draw:style-name="Mfr3" draw:name="Изображение8" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="5">
@@ -2246,37 +2246,37 @@
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
-						<text:section text:style-name="MSect3" text:name="Раздел15" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect3" text:name="Справочные данные об организации (по Приказу от 17.10.2019 №132/АХД)" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true">
 							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
-							<text:p text:style-name="MP3"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
-							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
-							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-email <text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set> <text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
-							<text:p text:style-name="MP3">ОГРН <text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
-							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set>/<text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
-							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+							<text:p text:style-name="MP3"><text:variable-get text:name="ОрганизацияАдрес" style:data-style-name="N0">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
+							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">Тел. <text:variable-get text:name="ОрганизацияТелефон" style:data-style-name="N0">+7 (8162) 60-77-27</text:variable-get></text:p>
+							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">e-mail <text:variable-get text:name="ОрганизацияEmail" style:data-style-name="N0">mail@csm.nov.ru</text:variable-get>, <text:variable-get text:name="ОрганизацияWebСайт" style:data-style-name="N0">http://rustest.spb.ru</text:variable-get></text:p>
+							<text:p text:style-name="MP3">ОГРН <text:variable-get text:name="ОрганизацияОГРН" style:data-style-name="N0">1027810289286</text:variable-get></text:p>
+							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН" style:data-style-name="N0">7809018702</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП" style:data-style-name="N0">783901001</text:variable-get></text:p>
+							<text:p text:style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">код ОКПО <text:variable-get text:name="ОрганизацияОКПО" style:data-style-name="N0">04725993</text:variable-get></text:p>
 						</text:section>
 						<text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/>
-						<text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-							<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
-						</text:section>
-						<text:section text:style-name="MSect1" text:name="Раздел17" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Регистрационные данные документа  (по Приказу от 17.10.2019 №132/АХД)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true">
 							<table:table table:name="Таблица14" table:style-name="Таблица14">
 								<table:table-column table:style-name="Таблица14.A" table:number-columns-repeated="3"/>
 								<table:table-row>
 									<table:table-cell office:value-type="string">
-										<text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> 17 декабря 2018 г.</text:variable-set></text:span></text:p>
+										<text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0">17 декабря 2018 г.</text:variable-get></text:span></text:p>
 									</table:table-cell>
 									<table:table-cell office:value-type="string">
-										<text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:span></text:p>
+										<text:p text:style-name="MP5"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-get text:name="МестоСоставленияДокумента" style:data-style-name="N0">Великий Новгород</text:variable-get></text:span></text:p>
 									</table:table-cell>
 									<table:table-cell office:value-type="string">
-										<text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">__________________</text:variable-set></text:span></text:p>
+										<text:p text:style-name="MP6">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"> </text:variable-get></text:span></text:p>
 									</table:table-cell>
 								</table:table-row>
 							</table:table>
 						</text:section>
 						<text:section text:style-name="MSect1" text:name="Раздел18" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
 							<text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p>
+						</text:section>
+						<text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
+							<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 						</text:section>
 					</draw:text-box>
 				</draw:frame><text:s/></text:p>
