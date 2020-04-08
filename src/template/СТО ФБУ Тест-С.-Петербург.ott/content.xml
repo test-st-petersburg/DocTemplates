@@ -135,7 +135,7 @@
 	</office:font-face-decls>
 	<office:automatic-styles>
 		<style:style style:name="Таблица2" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица2.A" style:family="table-column">
 			<style:table-column-properties style:column-width="6.518cm" style:rel-column-width="23728*"/>
@@ -147,10 +147,10 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="Таблица2.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="top" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="none" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="top" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Таблица3" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица3.A" style:family="table-column">
 			<style:table-column-properties style:column-width="2.163cm" style:rel-column-width="7870*"/>
@@ -165,10 +165,10 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="Таблица3.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="none" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Таблица4" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица4.A" style:family="table-column">
 			<style:table-column-properties style:column-width="4.561cm" style:rel-column-width="16606*"/>
@@ -180,13 +180,13 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="Таблица4.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="top" fo:padding="0.097cm" fo:border="none" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="top" fo:padding="0.097cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Таблица4.A17" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0.097cm" fo:border="none" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="middle" fo:padding="0.097cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Таблица11" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица11.A" style:family="table-column">
 			<style:table-column-properties style:column-width="2.639cm" style:rel-column-width="9607*"/>
@@ -198,27 +198,27 @@
 			<style:table-column-properties style:column-width="4.881cm" style:rel-column-width="17769*"/>
 		</style:style>
 		<style:style style:name="Таблица11.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица11.C1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица11.A2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица11.C2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица9" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица9.A" style:family="table-column">
 			<style:table-column-properties style:column-width="1.471cm" style:rel-column-width="5358*"/>
@@ -233,27 +233,27 @@
 			<style:table-column-properties style:column-width="2.572cm" style:rel-column-width="9364*"/>
 		</style:style>
 		<style:style style:name="Таблица9.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица9.G1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица9.A2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица9.G2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица5" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица5.A" style:family="table-column">
 			<style:table-column-properties style:column-width="1.378cm" style:rel-column-width="5018*"/>
@@ -268,27 +268,27 @@
 			<style:table-column-properties style:column-width="2.572cm" style:rel-column-width="9364*"/>
 		</style:style>
 		<style:style style:name="Таблица5.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица5.G1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица5.A2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица5.G2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица10.A" style:family="table-column">
 			<style:table-column-properties style:column-width="1.274cm" style:rel-column-width="4637*"/>
@@ -306,52 +306,52 @@
 			<style:table-column-properties style:column-width="3.918cm" style:rel-column-width="14263*"/>
 		</style:style>
 		<style:style style:name="Таблица10.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.G1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.A2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.B2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.C2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.D2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.E2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.F2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица10.G2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица1" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица1.A" style:family="table-column">
 			<style:table-column-properties style:column-width="1.196cm" style:rel-column-width="4355*"/>
@@ -378,25 +378,25 @@
 			<style:table-row-properties fo:keep-together="always"/>
 		</style:style>
 		<style:style style:name="Таблица1.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица1.G1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="middle" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица1.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица1.G2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица1.C4" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица1.G4" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="lr-tb"/>
+			<style:table-cell-properties style:vertical-align="" fo:padding-left="0.191cm" fo:padding-right="0.191cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 		</style:style>
 		<style:style style:name="Таблица7" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="18cm" table:align="margins"/>
 		</style:style>
 		<style:style style:name="Таблица7.A" style:family="table-column">
 			<style:table-column-properties style:column-width="6.791cm" style:rel-column-width="24724*"/>
@@ -414,27 +414,27 @@
 			<style:table-row-properties fo:keep-together="always"/>
 		</style:style>
 		<style:style style:name="Таблица7.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="0.5pt solid #000000" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица7.D1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица7.A2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица7.D2" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0.097cm" fo:border-left="0.5pt solid #000000" fo:border-right="0.5pt solid #000000" fo:border-top="none" fo:border-bottom="0.5pt solid #000000">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="1.265cm" fo:text-align="end" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="1.265cm" fo:text-align="end" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
 		</style:style>
 		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Header">
 			<style:paragraph-properties style:snap-to-layout-grid="false"/>
@@ -444,11 +444,11 @@
 			<style:text-properties fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="0.026cm"/>
 				</style:tab-stops>
@@ -456,19 +456,19 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P6" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P8" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P9" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="1.251cm"/>
 					<style:tab-stop style:position="1.752cm"/>
@@ -477,15 +477,15 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P10" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P11" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P12" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="1.251cm"/>
 					<style:tab-stop style:position="1.752cm"/>
@@ -494,52 +494,52 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P13" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P15" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P16" style:family="paragraph" style:parent-style-name="Standard">
 			<loext:graphic-properties draw:fill="none"/>
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" fo:background-color="transparent" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" fo:background-color="transparent" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P18" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P19" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:font-style="normal" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P20" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P21" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P22" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P23" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P24" style:family="paragraph" style:parent-style-name="Text_20_body">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="0cm" style:auto-text-indent="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="0.026cm"/>
 				</style:tab-stops>
@@ -595,15 +595,15 @@
 		</style:style>
 		<style:style style:name="P34" style:family="paragraph" style:parent-style-name="Standard" style:master-page-name="">
 			<loext:graphic-properties draw:fill="none"/>
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P35" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P36" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false" text:line-number="0"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P37" style:family="paragraph" style:parent-style-name="Table_20_Contents">
@@ -611,11 +611,11 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P38" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="11pt" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P39" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:text-autospace="none" style:punctuation-wrap="simple" style:vertical-align="baseline">
 				<style:tab-stops>
 					<style:tab-stop style:position="5.408cm"/>
 				</style:tab-stops>
@@ -623,7 +623,7 @@
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P40" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="1.896cm"/>
 				</style:tab-stops>
@@ -667,7 +667,7 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="8pt" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="P50" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="1.251cm"/>
 					<style:tab-stop style:position="1.752cm"/>
@@ -676,23 +676,23 @@
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P51" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P52" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P53" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P54" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="start" style:justify-single-word="false" fo:orphans="2" fo:widows="2"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P55" style:family="paragraph" style:parent-style-name="Text_20_body">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P56" style:family="paragraph" style:parent-style-name="Table_20_Contents">
@@ -816,7 +816,7 @@
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="P81" style:family="paragraph" style:parent-style-name="Standard">
-			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:writing-mode="lr-tb"/>
+			<style:paragraph-properties fo:margin-left="0.101cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="justify" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" fo:font-size="12pt" fo:font-weight="normal" fo:background-color="transparent" fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="P82" style:family="paragraph" style:parent-style-name="Standard" style:master-page-name="">
@@ -904,7 +904,7 @@
 		</style:style>
 		<style:style style:name="P109" style:family="paragraph" style:parent-style-name="Текст_20_предисловия" style:list-style-name="Пункты_20_предисловия"/>
 		<style:style style:name="P110" style:family="paragraph">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict">
 				<style:tab-stops/>
 			</style:paragraph-properties>
 			<style:text-properties fo:hyphenate="false"/>

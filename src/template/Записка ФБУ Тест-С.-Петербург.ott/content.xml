@@ -129,7 +129,7 @@
 	</office:font-face-decls>
 	<office:automatic-styles>
 		<style:style style:name="Таблица13" style:family="table">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" style:writing-mode="lr-tb" table:border-model="collapsing"/>
+			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
 		</style:style>
 		<style:style style:name="Таблица13.A" style:family="table-column">
 			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
@@ -144,23 +144,23 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="Таблица13.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица13.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none" style:writing-mode="page">
+			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица14" style:family="table">
-			<style:table-properties table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица14.A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="Таблица16" style:family="table" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:page-number="1" fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:page-number="1" fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица16.A" style:family="table-column">
 			<style:table-column-properties style:column-width="0.187cm" style:rel-column-width="700*"/>
@@ -222,7 +222,7 @@
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица17" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица17.A" style:family="table-column">
 			<style:table-column-properties style:column-width="7.299cm" style:rel-column-width="27331*"/>
@@ -237,7 +237,7 @@
 			<style:table-cell-properties style:vertical-align="bottom"/>
 		</style:style>
 		<style:style style:name="Таблица1" style:family="table">
-			<style:table-properties fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица1.A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="38227*"/>
@@ -261,13 +261,13 @@
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Таблица7" style:family="table">
-			<style:table-properties table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица7.A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="Таблица9" style:family="table">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0.4cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" style:writing-mode="lr-tb" table:border-model="collapsing"/>
+			<style:table-properties style:width="17.501cm" fo:margin-top="0.4cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
 		</style:style>
 		<style:style style:name="Таблица9.A" style:family="table-column">
 			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
@@ -282,23 +282,23 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="Таблица9.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none" style:writing-mode="page">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица9.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none" style:writing-mode="page">
+			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица8" style:family="table">
-			<style:table-properties table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица8.A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="Таблица4" style:family="table">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица4.A" style:family="table-column">
 			<style:table-column-properties style:column-width="0.187cm" style:rel-column-width="700*"/>
@@ -360,7 +360,7 @@
 			</style:table-cell-properties>
 		</style:style>
 		<style:style style:name="Таблица3" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false" style:writing-mode="lr-tb"/>
+			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Таблица3.A" style:family="table-column">
 			<style:table-column-properties style:column-width="7.299cm" style:rel-column-width="27331*"/>
@@ -392,12 +392,12 @@
 			</style:paragraph-properties>
 		</style:style>
 		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties style:writing-mode="lr-tb">
+			<style:paragraph-properties>
 				<style:tab-stops/>
 			</style:paragraph-properties>
 		</style:style>
 		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" style:writing-mode="lr-tb">
+			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false">
 				<style:tab-stops/>
 			</style:paragraph-properties>
 		</style:style>
