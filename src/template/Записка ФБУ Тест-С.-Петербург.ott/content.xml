@@ -602,6 +602,15 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">17 декабря 2018 г.</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Служебный"/>
 				<table:table table:name="Таблица16" table:style-name="Таблица16">
 					<table:table-column table:style-name="Таблица16.A"/>
