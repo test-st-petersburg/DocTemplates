@@ -40,7 +40,7 @@
 				</svg:font-face-uri>
 			</svg:font-face-src>
 		</style:font-face>
-		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable">
+		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
 					<svg:font-face-format svg:string="truetype"/>
@@ -50,7 +50,7 @@
 				</svg:font-face-uri>
 			</svg:font-face-src>
 		</style:font-face>
-		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
+		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
 					<svg:font-face-format svg:string="truetype"/>
@@ -158,15 +158,6 @@
 		</style:style>
 		<style:style style:name="Таблица14.A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
-		</style:style>
-		<style:style style:name="Таблица16" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins"/>
-		</style:style>
-		<style:style style:name="Таблица16.A" style:family="table-column">
-			<style:table-column-properties style:column-width="3.5cm" style:rel-column-width="13106*"/>
-		</style:style>
-		<style:style style:name="Таблица16.E" style:family="table-column">
-			<style:table-column-properties style:column-width="3.501cm" style:rel-column-width="13111*"/>
 		</style:style>
 		<style:style style:name="Таблица1" style:family="table" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:page-number="1" fo:break-before="auto" fo:break-after="auto" table:align="margins" style:may-break-between-rows="false"/>
@@ -383,6 +374,24 @@
 		<style:style style:name="Таблица6.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom"/>
 		</style:style>
+		<style:style style:name="РегистрационныеДанные" style:family="table">
+			<style:table-properties style:width="5.999cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="РегистрационныеДанные.A" style:family="table-column">
+			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="450*"/>
+		</style:style>
+		<style:style style:name="РегистрационныеДанные.B" style:family="table-column">
+			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="1251*"/>
+		</style:style>
+		<style:style style:name="РегистрационныеДанные.C" style:family="table-column">
+			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="335*"/>
+		</style:style>
+		<style:style style:name="РегистрационныеДанные.D" style:family="table-column">
+			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="1366*"/>
+		</style:style>
+		<style:style style:name="РегистрационныеДанные.A1" style:family="table-cell">
+			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+		</style:style>
 		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
@@ -431,7 +440,7 @@
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
 		<style:style style:name="P10" style:family="paragraph" style:parent-style-name="Наименование_20_структурного_20_подразделения_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="PT Sans" fo:font-size="13pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:text-scale="110%"/>
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:font-name="PT Sans1" fo:font-size="13pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:text-scale="110%"/>
 		</style:style>
 		<style:style style:name="P11" style:family="paragraph" style:parent-style-name="Signature">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
@@ -439,31 +448,56 @@
 		<style:style style:name="P12" style:family="paragraph" style:parent-style-name="Addressee">
 			<style:text-properties text:display="true"/>
 		</style:style>
-		<style:style style:name="P13" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Титульный_20_лист">
+		<style:style style:name="P13" style:family="paragraph" style:parent-style-name="Frame_20_contents">
+			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false"/>
+		</style:style>
+		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Титульный_20_лист">
 			<style:paragraph-properties style:page-number="auto"/>
 		</style:style>
-		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Frame_20_contents">
-			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false"/>
+		<style:style style:name="P15" style:family="paragraph" style:parent-style-name="Addressee">
+			<style:paragraph-properties fo:break-before="column"/>
 			<style:text-properties/>
 		</style:style>
-		<style:style style:name="P15" style:family="paragraph">
+		<style:style style:name="P16" style:family="paragraph" style:parent-style-name="Addressee">
+			<style:paragraph-properties fo:break-before="column"/>
+			<style:text-properties/>
+		</style:style>
+		<style:style style:name="P17" style:family="paragraph" style:parent-style-name="Заголовок_20_документа">
+			<style:text-properties/>
+		</style:style>
+		<style:style style:name="P18" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения">
+			<style:text-properties/>
+		</style:style>
+		<style:style style:name="P19" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения">
+			<style:text-properties/>
+		</style:style>
+		<style:style style:name="P20" style:family="paragraph">
+			<style:paragraph-properties fo:break-before="column"/>
+		</style:style>
+		<style:style style:name="P21" style:family="paragraph" style:parent-style-name="Справочные_20_данные_20_об_20_организации_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+			<style:paragraph-properties fo:break-before="column"/>
+		</style:style>
+		<style:style style:name="P22" style:family="paragraph">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
-		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Frame">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Тема_20_документа">
+			<style:graphic-properties style:protect="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:opacity="100%" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="Frame">
 			<style:graphic-properties style:print-content="true" style:protect="position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph" style:editable="true" loext:rel-width-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="Лого_20_Тест_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="Frame">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="Лого_20_Тест_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
-		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="Лого_20_РСТ_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="Лого_20_РСТ_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
-		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="Graphics">
+		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="Graphics">
 			<style:graphic-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:vertical-pos="top" style:vertical-rel="baseline" draw:fill-image-width="0cm" draw:fill-image-height="0cm" fo:padding="0cm" fo:border="none" style:shadow="none" draw:shadow-opacity="100%" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Sect1" style:family="section">
@@ -488,17 +522,41 @@
 				<style:background-image/>
 			</style:section-properties>
 		</style:style>
+		<style:style style:name="Sect4" style:family="section">
+			<style:section-properties fo:background-color="transparent" text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="2">
+					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.249cm"/>
+					<style:column style:rel-width="38389*" fo:start-indent="1.249cm" fo:end-indent="0cm"/>
+				</style:columns>
+				<style:background-image/>
+			</style:section-properties>
+		</style:style>
 		<style:style style:name="gr1" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:style style:name="gr2" style:family="graphic">
 			<style:graphic-properties draw:textarea-horizontal-align="center" draw:textarea-vertical-align="middle" style:run-through="foreground"/>
 		</style:style>
 		<style:style style:name="gr3" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:style style:name="gr4" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr5" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr6" style:family="graphic">
+			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr7" style:family="graphic">
+			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr8" style:family="graphic">
+			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr9" style:family="graphic">
+			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<number:boolean-style style:name="N99">
 			<number:boolean/>
@@ -614,8 +672,8 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> 999</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> 21.01.2020</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
@@ -651,164 +709,164 @@
 				<table:table-row table:style-name="Таблица1.1">
 					<table:table-cell table:style-name="Таблица1.A1" table:number-columns-spanned="3" office:value-type="string">
 						<text:section text:style-name="Sect1" text:name="Раздел1" text:condition="ooow:NOT (ЭтоПереписка AND NOT (ЭтоВнутреннийДокумент AND ЭтоИсходящийДокумент))" text:is-hidden="true">
-								<text:p text:style-name="Регистрационные_20_данные">Дата<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span> №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span></text:p>
-							</text:section>
+							<text:p text:style-name="Регистрационные_20_данные">Дата<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span> №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span></text:p>
+						</text:section>
 						<text:section text:style-name="Sect1" text:name="Раздел2" text:condition="ooow:NOT (ЭтоПереписка AND (ЭтоВнутреннийДокумент AND ЭтоИсходящийДокумент))" text:is-hidden="true" text:display="condition">
-								<text:p text:style-name="Регистрационные_20_данные">Дата<text:span text:style-name="Дата_20_регистрации"><text:tab/><text:tab/></text:span> №<text:span text:style-name="Регистрационный_20_номер"><text:tab/><text:tab/></text:span></text:p>
-							</text:section>
-						<text:section text:style-name="Sect1" text:name="Раздел3" text:condition="ooow:ВОтветНаДату==&#34; &#34;" text:is-hidden="true" text:display="condition">
-								<text:p text:style-name="Регистрационные_20_данные">На №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span> от<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span></text:p>
-							</text:section>
-						</table:table-cell>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
+							<text:p text:style-name="Регистрационные_20_данные">Дата<text:span text:style-name="Дата_20_регистрации"><text:tab/><text:tab/></text:span> №<text:span text:style-name="Регистрационный_20_номер"><text:tab/><text:tab/></text:span></text:p>
+						</text:section>
+						<text:section text:style-name="Sect1" text:name="Раздел3" text:condition="ooow:ВОтветНаДату==&#34; &#34;" text:display="condition">
+							<text:p text:style-name="Регистрационные_20_данные">На №<text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Регистрационный_20_номер"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Регистрационный_20_номер"><text:tab/></text:span> от<text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Дата_20_регистрации"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:span><text:span text:style-name="Дата_20_регистрации"><text:tab/></text:span></text:p>
+						</text:section>
+					</table:table-cell>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
 					<table:table-cell table:style-name="Таблица1.D1" table:number-rows-spanned="5" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.A1" table:number-rows-spanned="5" office:value-type="string">
-							<text:p text:style-name="P12"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
-						</table:table-cell>
-					</table:table-row>
+						<text:p text:style-name="P12"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
+					</table:table-cell>
+				</table:table-row>
 				<table:table-row table:style-name="Таблица1.2">
 					<table:table-cell table:style-name="Таблица1.A2" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.B2" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.C2" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-					</table:table-row>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+				</table:table-row>
 				<table:table-row table:style-name="Таблица1.3">
 					<table:table-cell table:style-name="Таблица1.D1" table:number-columns-spanned="3" office:value-type="string">
-							<text:p text:style-name="Заголовок_20_документа"><text:variable-set text:name="Тема" office:value-type="string">Тема</text:variable-set></text:p>
-						</table:table-cell>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-					</table:table-row>
+						<text:p text:style-name="Заголовок_20_документа"><text:variable-set text:name="Тема" office:value-type="string">Тема</text:variable-set></text:p>
+					</table:table-cell>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+				</table:table-row>
 				<table:table-row table:style-name="Таблица1.2">
 					<table:table-cell table:style-name="Таблица1.A4" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.B2" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
 					<table:table-cell table:style-name="Таблица1.C4" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-					</table:table-row>
-					<table:table-row>
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+				</table:table-row>
+				<table:table-row>
 					<table:table-cell table:style-name="Таблица1.B2" table:number-columns-spanned="3" office:value-type="string">
-							<text:p text:style-name="Пустой_20_абзац"/>
-						</table:table-cell>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-						<table:covered-table-cell/>
-					</table:table-row>
-				</table:table>
-				<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
-				<text:section text:style-name="Sect1" text:name="Раздел24" text:condition="ooow:NOT ЭтоПереписка" text:display="condition">
-					<text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
-				<text:p text:style-name="Основной_20_текст_20_документа"><draw:frame draw:style-name="fr1" draw:name="Врезка1" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="6">
+						<text:p text:style-name="Пустой_20_абзац"/>
+					</table:table-cell>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+					<table:covered-table-cell/>
+				</table:table-row>
+			</table:table>
+			<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
+			<text:section text:style-name="Sect1" text:name="Раздел24" text:condition="ooow:NOT ЭтоПереписка" text:display="condition">
+				<text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа"><draw:frame draw:style-name="fr3" draw:name="Врезка1" text:anchor-type="paragraph" svg:width="6.001cm" style:rel-width="100%" draw:z-index="4">
 					<draw:text-box fo:min-height="0.499cm">
-						<draw:g text:anchor-type="frame" draw:z-index="10" draw:style-name="gr1">
-							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="0.85cm" svg:y1="2.919cm" svg:x2="0cm" svg:y2="2.919cm">
+						<draw:g text:anchor-type="frame" draw:z-index="9" draw:style-name="gr8">
+							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="0.85cm" svg:y1="2.919cm" svg:x2="0cm" svg:y2="2.919cm">
 								<text:p/>
 							</draw:line>
-							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="0cm" svg:y1="2.919cm" svg:x2="0cm" svg:y2="2.125cm">
-								<text:p/>
-							</draw:line>
-						</draw:g>
-						<draw:g text:anchor-type="frame" draw:z-index="9" draw:style-name="gr3">
-							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="17.493cm" svg:y1="2.062cm" svg:x2="17.493cm" svg:y2="2.912cm">
-								<text:p/>
-							</draw:line>
-							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="17.493cm" svg:y1="2.912cm" svg:x2="16.699cm" svg:y2="2.912cm">
+							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="0cm" svg:y1="2.919cm" svg:x2="0cm" svg:y2="2.125cm">
 								<text:p/>
 							</draw:line>
 						</draw:g>
-						<draw:g text:anchor-type="frame" draw:z-index="8" draw:style-name="gr4">
-							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="16.649cm" svg:y1="0cm" svg:x2="17.499cm" svg:y2="0cm">
+						<draw:g text:anchor-type="frame" draw:z-index="8" draw:style-name="gr9">
+							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="17.494cm" svg:y1="2.062cm" svg:x2="17.494cm" svg:y2="2.912cm">
 								<text:p/>
 							</draw:line>
-							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="17.499cm" svg:y1="0cm" svg:x2="17.499cm" svg:y2="0.794cm">
-								<text:p/>
-							</draw:line>
-						</draw:g>
-						<draw:g text:anchor-type="frame" draw:z-index="7" draw:style-name="gr3">
-							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="0cm" svg:y1="0.85cm" svg:x2="0cm" svg:y2="0cm">
-								<text:p/>
-							</draw:line>
-							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P15" svg:x1="0cm" svg:y1="0cm" svg:x2="0.794cm" svg:y2="0cm">
+							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="17.493cm" svg:y1="2.912cm" svg:x2="16.699cm" svg:y2="2.912cm">
 								<text:p/>
 							</draw:line>
 						</draw:g>
-						<text:p text:style-name="P14">Апвапва</text:p>
-						<text:p text:style-name="P14">аваыва</text:p>
-						<text:p text:style-name="P14">п</text:p>
-						<text:p text:style-name="P14"/>
-						<text:p text:style-name="P14">в</text:p>
-						<text:p text:style-name="P14"/>
+						<draw:g text:anchor-type="frame" draw:z-index="6" draw:style-name="gr7">
+							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="16.649cm" svg:y1="0cm" svg:x2="17.499cm" svg:y2="0cm">
+								<text:p/>
+							</draw:line>
+							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="17.498cm" svg:y1="0cm" svg:x2="17.498cm" svg:y2="0.794cm">
+								<text:p/>
+							</draw:line>
+						</draw:g>
+						<draw:g text:anchor-type="frame" draw:z-index="5" draw:style-name="gr9">
+							<draw:line draw:name="Фигура1" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="0cm" svg:y1="0.85cm" svg:x2="0cm" svg:y2="0cm">
+								<text:p/>
+							</draw:line>
+							<draw:line draw:name="Фигура2" draw:style-name="gr2" draw:text-style-name="P22" svg:x1="0cm" svg:y1="0cm" svg:x2="0.794cm" svg:y2="0cm">
+								<text:p/>
+							</draw:line>
+						</draw:g>
+						<text:p text:style-name="P13">Апвапва</text:p>
+						<text:p text:style-name="P13">аваыва</text:p>
+						<text:p text:style-name="P13">п</text:p>
+						<text:p text:style-name="P13"/>
+						<text:p text:style-name="P13">в</text:p>
+						<text:p text:style-name="P13"/>
 					</draw:text-box>
 				</draw:frame></text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-					<text:list xml:id="list4087733166" text:style-name="Numbering_20_123">
-						<text:list-item>
-							<text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
-						</text:list-item>
-					</text:list>
-					<text:list xml:id="list3545714830" text:style-name="List_20_2">
-						<text:list-item>
-							<text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
-						</text:list-item>
-					</text:list>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">А</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной"/>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
-					<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной"><text:soft-page-break/>а</text:p>
-					<text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
-					<text:list xml:id="list1390744409" text:style-name="Нумерация_20_списка_20_приложений">
-						<text:list-item>
-							<text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
-						</text:list-item>
-						<text:list-item>
-							<text:p text:style-name="Список_20_приложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
-						</text:list-item>
-					</text:list>
-				</text:section>
-				<table:table table:name="Таблица17" table:style-name="Таблица17">
-					<table:table-column table:style-name="Таблица17.A"/>
-					<table:table-column table:style-name="Таблица17.B"/>
-					<table:table-column table:style-name="Таблица17.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
-							<text:p text:style-name="P11"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
-							<text:p text:style-name="P11"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
-				<text:p text:style-name="Пустой_20_абзац"/>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:list xml:id="list4022528500" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list243773398" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="List_20_1"><text:soft-page-break/>пример маркированного списка.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">А</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной"/>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">а</text:p>
+				<text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
+				<text:list xml:id="list1424521173" text:style-name="Нумерация_20_списка_20_приложений">
+					<text:list-item>
+						<text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Список_20_приложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
+					</text:list-item>
+				</text:list>
+			</text:section>
+			<table:table table:name="Таблица17" table:style-name="Таблица17">
+				<table:table-column table:style-name="Таблица17.A"/>
+				<table:table-column table:style-name="Таблица17.B"/>
+				<table:table-column table:style-name="Таблица17.C"/>
+				<table:table-row>
+					<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
+						<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+					</table:table-cell>
+					<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
+						<text:p text:style-name="P11"/>
+					</table:table-cell>
+					<table:table-cell table:style-name="Таблица17.A1" office:value-type="string">
+						<text:p text:style-name="P11"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+					</table:table-cell>
+				</table:table-row>
+			</table:table>
+			<text:p text:style-name="Пустой_20_абзац"/>
 			<text:section text:style-name="Sect1" text:name="Бланк: Шапка">
-				<text:p text:style-name="P13"><draw:frame draw:style-name="fr2" draw:name="Бланк: Шапка" text:anchor-type="paragraph" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0">
+				<text:p text:style-name="P14"><draw:frame draw:style-name="fr2" draw:name="Бланк: Шапка" text:anchor-type="paragraph" svg:width="6.001cm" style:rel-width="100%" draw:z-index="0">
 					<draw:text-box fo:min-height="0.499cm">
 						<text:section text:style-name="Sect1" text:name="Бланк: ГОСТ Р 7.0.97-2016: Шапка" text:condition="ooow:NOT (ФормаБланка EQ &#34;ГОСТ Р 7.0.97-2016&#34;)" text:is-hidden="true" text:display="condition">
 							<table:table table:name="Таблица3" table:style-name="Таблица3">
@@ -818,7 +876,7 @@
 								<table:table-header-rows>
 									<table:table-row table:style-name="Таблица3.1">
 										<table:table-cell table:style-name="Таблица3.A1" table:number-rows-spanned="2" office:value-type="string">
-											<text:p text:style-name="P2"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="fr5" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0">
+											<text:p text:style-name="P2"><text:hidden-paragraph text:condition="ooow:ЭтоДоговор"/><text:tab/><draw:frame draw:style-name="fr6" draw:name="Изображение2" text:anchor-type="as-char" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="0">
 												<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 												<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 											</draw:frame></text:p>
@@ -882,7 +940,7 @@
 										<table:table-column table:style-name="Таблица9.C"/>
 										<table:table-row table:style-name="Таблица9.1">
 											<table:table-cell table:style-name="Таблица9.A1" office:value-type="string">
-												<text:p text:style-name="P8"><draw:frame draw:style-name="fr4" draw:name="Изображение1" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="2">
+												<text:p text:style-name="P8"><draw:frame draw:style-name="fr5" draw:name="Изображение1" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="2">
 													<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 													<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 												</draw:frame></text:p>
@@ -892,7 +950,7 @@
 												<text:p text:style-name="P10">Новгородский филиал</text:p>
 											</table:table-cell>
 											<table:table-cell table:style-name="Таблица9.A1" office:value-type="string">
-												<text:p text:style-name="P9"><draw:frame draw:style-name="fr3" draw:name="Изображение3" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="3">
+												<text:p text:style-name="P9"><draw:frame draw:style-name="fr4" draw:name="Изображение3" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="3">
 													<draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 													<draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 												</draw:frame></text:p>
