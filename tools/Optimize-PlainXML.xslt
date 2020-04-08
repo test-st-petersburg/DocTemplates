@@ -110,6 +110,8 @@
 	<xsl:template match="@style:font-weight-complex" mode="#all" />
 	<xsl:template match="@style:font-style-complex" mode="#all" />
 
+	<xsl:template match="@style:writing-mode" mode="#all" />
+
 	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
 	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
 
