@@ -1,5 +1,6 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:saxon="http://saxon.sf.net/"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -44,61 +45,211 @@
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="yes"
-		suppress-indentation="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"
+		indent="no"
 	/>
 
-	<xsl:preserve-space elements="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"/>
+	<!-- строки для форматирования -->
+	<xsl:variable name="indent-chars" select="'&#x9;'" />
+	<!-- применимо для dotNet XslTransformer -->
+	<!-- <xsl:variable name="indent-line" select="'&#xd;&#xa;'" /> -->
+	<xsl:variable name="indent-line" select="'&#xa;'" />
 
-	<xsl:strip-space elements="*"/>
-
-	<xsl:template match="processing-instruction()">
+	<!-- правило для элементов, подвергаемых форматированию -->
+	<xsl:template name="indent-self">
+		<xsl:param name="indent" select="$indent-line"/>
 		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates select="@*" mode="indent">
+				<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+			</xsl:apply-templates>
+			<xsl:for-each select="node()|text()|processing-instruction()|comment()">
+				<xsl:apply-templates select="." mode="preindent">
+					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+				</xsl:apply-templates>
+			</xsl:for-each>
+			<xsl:if test="*">
+				<xsl:value-of select="$indent"/>
+			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="element()">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="node()"/>
-		</xsl:copy>
+	<xsl:template match="node()|processing-instruction()|comment()" mode="preindent">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:value-of select="$indent"/>
+		<xsl:apply-templates select="." mode="indent">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:apply-templates>
 	</xsl:template>
 
-	<xsl:template match="@*">
+	<xsl:template match="text()" mode="preindent">
+		<xsl:param name="indent"/>
 		<xsl:copy />
 	</xsl:template>
 
-	<xsl:template match="comment()">
-		<xsl:copy/>
+	<!-- правило для элементов, не подвергаемых форматированию -->
+	<xsl:template name="noindent-self">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="indent">
+				<xsl:with-param name="indent" select="$indent"/>
+			</xsl:apply-templates>
+			<xsl:apply-templates select="node()|text()|processing-instruction()|comment()" mode="noindent">
+				<xsl:with-param name="indent" select="$indent"/>
+			</xsl:apply-templates>
+		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="text()">
-		<xsl:copy/>
+	<!-- обработка элементов -->
+
+	<xsl:template match="processing-instruction()" mode="indent">
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="processing-instruction()" mode="noindent">
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="comment()" mode="indent">
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="comment()" mode="noindent">
+		<xsl:copy />
+	</xsl:template>
+
+
+	<xsl:template match="node()">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:call-template name="indent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="node()" mode="indent">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:call-template name="indent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="node()" mode="noindent">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<!-- правила для элементов, содержимое которых нельзя "форматировать" -->
+
+	<xsl:template match="text:p" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="text:h" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="text:table-of-content-entry-template" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="text:span" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="script:module" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="noindent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<!-- правило для элементов, которые следует всегда "форматировать" -->
+
+	<xsl:template match="office:annotation" mode="noindent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="indent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="draw:frame" mode="noindent">
+		<xsl:param name="indent"/>
+		<xsl:call-template name="indent-self">
+			<xsl:with-param name="indent" select="$indent"/>
+		</xsl:call-template>
 	</xsl:template>
 
 	<!-- правила для обработки "особых" элементов -->
 
 	<xsl:template match="/manifest:manifest">
+		<xsl:param name="indent" select="$indent-line"/>
 		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="manifest:file-entry">
-				<xsl:sort select="@manifest:full-path"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
+			<xsl:apply-templates select="@*" mode="indent">
+				<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
 			</xsl:apply-templates>
+			<xsl:for-each select="manifest:file-entry">
+				<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
+				<xsl:apply-templates select="." mode="preindent">
+					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+				</xsl:apply-templates>
+			</xsl:for-each>
+			<xsl:value-of select="$indent"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="office:font-face-decls">
+	<xsl:template match="office:font-face-decls" mode="indent">
+		<xsl:param name="indent" select="$indent-line"/>
 		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="style:font-face">
-				<xsl:sort select="@style:name"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
+			<xsl:apply-templates select="@*" mode="indent">
+				<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
 			</xsl:apply-templates>
+			<xsl:for-each select="style:font-face">
+				<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
+				<xsl:apply-templates select="." mode="preindent">
+					<xsl:with-param name="indent" select="concat($indent, $indent-chars)"/>
+				</xsl:apply-templates>
+			</xsl:for-each>
+			<xsl:value-of select="$indent"/>
 		</xsl:copy>
+	</xsl:template>
+
+	<!-- правила для атрибутов -->
+
+	<xsl:template match="@*" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="@*" mode="noindent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
+	</xsl:template>
+
+	<!-- правила для обработки text() -->
+
+	<xsl:preserve-space elements="text:p text:span text:variable-set"/>
+	<xsl:strip-space elements="*" />
+
+	<xsl:template match="text()" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="text()" mode="noindent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
 	</xsl:template>
 
 </xsl:stylesheet>
