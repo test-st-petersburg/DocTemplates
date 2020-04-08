@@ -43,38 +43,10 @@
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="yes"
-		suppress-indentation="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"
+		indent="no"
 	/>
 
-	<xsl:preserve-space elements="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"/>
-
-	<xsl:strip-space elements="*"/>
-
-	<xsl:template match="processing-instruction()">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="element()">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="node()"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="@*">
-		<xsl:copy />
-	</xsl:template>
-
-	<xsl:template match="comment()">
-		<xsl:copy/>
-	</xsl:template>
-
-	<xsl:template match="text()">
-		<xsl:copy/>
-	</xsl:template>
+	<xsl:include href="ODTXMLFormatter.xslt" />
 
 	<!-- удаляем автоматические стили символов -->
 
@@ -83,15 +55,15 @@
 		use="@style:name"
 	/>
 
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" />
+	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" mode="#all" />
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]">
+	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all">
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
 	<!-- форматируем текст модулей -->
 
-	<xsl:template match="script-module:module/text()">
+	<xsl:template match="script-module:module/text()" mode="#all">
 		<xsl:variable name="module-text" select="." />
 		<xsl:variable name="module-text">
 			<!-- удаляем лишние пробелы в конце строк -->
@@ -116,32 +88,32 @@
 
 	<!-- удаляем лишние аттрибуты -->
 
-	<xsl:template match="@style:language-asian" />
-	<xsl:template match="@style:language-complex" />
+	<xsl:template match="@style:language-asian" mode="#all" />
+	<xsl:template match="@style:language-complex" mode="#all" />
 
-	<xsl:template match="@style:country-asian" />
-	<xsl:template match="@style:country-complex" />
+	<xsl:template match="@style:country-asian" mode="#all" />
+	<xsl:template match="@style:country-complex" mode="#all" />
 
-	<xsl:template match="@style:font-name-asian" />
-	<xsl:template match="@style:font-family-asian" />
-	<xsl:template match="@style:font-pitch-asian" />
-	<xsl:template match="@style:font-family-generic-asian" />
-	<xsl:template match="@style:font-size-asian" />
-	<xsl:template match="@style:font-weight-asian" />
-	<xsl:template match="@style:font-style-asian" />
+	<xsl:template match="@style:font-name-asian" mode="#all" />
+	<xsl:template match="@style:font-family-asian" mode="#all" />
+	<xsl:template match="@style:font-pitch-asian" mode="#all" />
+	<xsl:template match="@style:font-family-generic-asian" mode="#all" />
+	<xsl:template match="@style:font-size-asian" mode="#all" />
+	<xsl:template match="@style:font-weight-asian" mode="#all" />
+	<xsl:template match="@style:font-style-asian" mode="#all" />
 
-	<xsl:template match="@style:font-name-complex" />
-	<xsl:template match="@style:font-family-complex" />
-	<xsl:template match="@style:font-family-generic-complex" />
-	<xsl:template match="@style:font-pitch-complex" />
-	<xsl:template match="@style:font-size-complex" />
-	<xsl:template match="@style:font-weight-complex" />
-	<xsl:template match="@style:font-style-complex" />
+	<xsl:template match="@style:font-name-complex" mode="#all" />
+	<xsl:template match="@style:font-family-complex" mode="#all" />
+	<xsl:template match="@style:font-family-generic-complex" mode="#all" />
+	<xsl:template match="@style:font-pitch-complex" mode="#all" />
+	<xsl:template match="@style:font-size-complex" mode="#all" />
+	<xsl:template match="@style:font-weight-complex" mode="#all" />
+	<xsl:template match="@style:font-style-complex" mode="#all" />
 
-	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" />
-	<xsl:template match="style:text-properties/@officeooo:rsid" />
+	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
+	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
 
-	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" />
-	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" />
+	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
+	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" mode="#all" />
 
 </xsl:stylesheet>
