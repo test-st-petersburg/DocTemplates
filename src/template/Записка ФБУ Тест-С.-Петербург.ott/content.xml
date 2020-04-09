@@ -181,13 +181,13 @@
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Подписи.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="4137*"/>
+			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
 		</style:style>
 		<style:style style:name="Подписи.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="2835*"/>
+			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
 		</style:style>
 		<style:style style:name="Подписи.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="2950*"/>
+			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
 		</style:style>
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
@@ -223,8 +223,8 @@
 		<style:style style:name="P6" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
-			<style:paragraph-properties style:page-number="1"/>
+		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
+			<style:paragraph-properties style:page-number="auto"/>
 		</style:style>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Тема_20_документа">
 			<style:graphic-properties style:protect="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:opacity="100%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
@@ -291,15 +291,7 @@
 		</number:boolean-style>
 	</office:automatic-styles>
 	<office:body>
-		<office:text text:use-soft-page-breaks="true">
-			<office:forms form:automatic-focus="false" form:apply-design-mode="true">
-				<form:form form:name="Форма" form:apply-filter="true" form:command-type="table" form:control-implementation="ooo:com.sun.star.form.component.Form" office:target-frame="">
-					<form:properties>
-						<form:property form:property-name="PropertyChangeNotificationEnabled" office:value-type="boolean" office:boolean-value="true"/>
-						<form:property form:property-name="TargetURL" office:value-type="string" office:string-value=""/>
-					</form:properties>
-				</form:form>
-			</office:forms>
+		<office:text>
 			<text:variable-decls>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
@@ -389,7 +381,8 @@
 			<text:user-field-decls>
 				<text:user-field-decl office:value-type="float" office:value="111" text:name="ДатаРегистрации_renamed_1"/>
 			</text:user-field-decls>
-			<text:section text:style-name="Sect1" text:name="Служебный">
+			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
+				<text:p text:style-name="P7"/>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
@@ -429,8 +422,8 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"/>
-				<text:p text:style-name="P7"/>
 			</text:section>
+			<text:p text:style-name="Бланк_3a__20_начало"/>
 			<text:section text:style-name="Sect2" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
 				<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
 			</text:section>

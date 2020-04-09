@@ -257,6 +257,9 @@
 				</style:tab-stops>
 			</style:paragraph-properties>
 		</style:style>
+		<style:style style:name="Бланк_3a__20_начало" style:display-name="Бланк: начало" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+			<style:paragraph-properties style:page-number="1"/>
+		</style:style>
 		<style:style style:name="List_20_2_20_Start" style:display-name="List 2 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:next-style-name="List_20_2" style:class="list">
 			<style:paragraph-properties fo:margin-left="1.27cm" fo:margin-right="0cm" fo:margin-top="0.423cm" fo:margin-bottom="0.212cm" loext:contextual-spacing="false" fo:text-indent="-0.635cm" style:auto-text-indent="false"/>
 		</style:style>
@@ -2451,7 +2454,7 @@
 		</style:master-page>
 		<style:master-page style:name="Последующие_20_листы_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_" style:display-name="Последующие листы записки (по Приказу от 17.10.2019 №132/АХД)" style:page-layout-name="Mpm8">
 			<style:header>
-				<text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">0</text:page-number></text:p>
+				<text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">2</text:page-number></text:p>
 			</style:header>
 		</style:master-page>
 	</office:master-styles>
