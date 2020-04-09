@@ -40,7 +40,7 @@
 				</svg:font-face-uri>
 			</svg:font-face-src>
 		</style:font-face>
-		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable">
+		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
 					<svg:font-face-format svg:string="truetype"/>
@@ -50,7 +50,7 @@
 				</svg:font-face-uri>
 			</svg:font-face-src>
 		</style:font-face>
-		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
+		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
 					<svg:font-face-format svg:string="truetype"/>
@@ -177,20 +177,20 @@
 		<style:style style:name="РегистрационныеДанные.A1" style:family="table-cell">
 			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="Таблица6" style:family="table">
+		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
-		<style:style style:name="Таблица6.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.299cm" style:rel-column-width="27331*"/>
+		<style:style style:name="Подписи.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="4137*"/>
 		</style:style>
-		<style:style style:name="Таблица6.B" style:family="table-column">
-			<style:table-column-properties style:column-width="2.91cm" style:rel-column-width="10897*"/>
+		<style:style style:name="Подписи.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="2835*"/>
 		</style:style>
-		<style:style style:name="Таблица6.C" style:family="table-column">
-			<style:table-column-properties style:column-width="7.292cm" style:rel-column-width="27307*"/>
+		<style:style style:name="Подписи.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="2950*"/>
 		</style:style>
-		<style:style style:name="Таблица6.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom"/>
+		<style:style style:name="Подписи.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
@@ -223,10 +223,7 @@
 		<style:style style:name="P6" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Signature">
-			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
-		</style:style>
-		<style:style style:name="P8" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
+		<style:style style:name="P7" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Тема_20_документа">
@@ -432,26 +429,26 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"/>
-				<text:p text:style-name="P8"/>
+				<text:p text:style-name="P7"/>
 			</text:section>
 			<text:section text:style-name="Sect2" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
 				<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
 			</text:section>
 			<text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
-			<text:p text:style-name="Основной_20_текст_20_документа" text:cond-style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-			<text:list xml:id="list1532167273" text:style-name="Numbering_20_123">
+			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+			<text:list xml:id="list3683255438" text:style-name="Numbering_20_123">
 				<text:list-item>
 					<text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
 				</text:list-item>
 			</text:list>
-			<text:list xml:id="list3782751984" text:style-name="List_20_2">
+			<text:list xml:id="list3763344078" text:style-name="List_20_2">
 				<text:list-item>
 					<text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 			<text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
-			<text:list xml:id="list3154814337" text:style-name="Нумерация_20_списка_20_приложений">
+			<text:list xml:id="list1862892549" text:style-name="Нумерация_20_списка_20_приложений">
 				<text:list-item>
 					<text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
 				</text:list-item>
@@ -460,19 +457,19 @@
 				</text:list-item>
 			</text:list>
 			<text:section text:style-name="Sect2" text:name="Подписи">
-				<table:table table:name="Таблица6" table:style-name="Таблица6">
-					<table:table-column table:style-name="Таблица6.A"/>
-					<table:table-column table:style-name="Таблица6.B"/>
-					<table:table-column table:style-name="Таблица6.C"/>
+				<table:table table:name="Подписи" table:style-name="Подписи">
+					<table:table-column table:style-name="Подписи.A"/>
+					<table:table-column table:style-name="Подписи.B"/>
+					<table:table-column table:style-name="Подписи.C"/>
 					<table:table-row>
-						<table:table-cell table:style-name="Таблица6.A1" office:value-type="string">
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
 						</table:table-cell>
-						<table:table-cell table:style-name="Таблица6.A1" office:value-type="string">
-							<text:p text:style-name="P7"/>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 						</table:table-cell>
-						<table:table-cell table:style-name="Таблица6.A1" office:value-type="string">
-							<text:p text:style-name="P7"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
