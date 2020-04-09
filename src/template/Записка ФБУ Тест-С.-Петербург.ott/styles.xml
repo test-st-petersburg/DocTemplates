@@ -2191,7 +2191,7 @@
 									<draw:text-box>
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации"/></text:span></text:p>
+								</draw:frame><text:span text:style-name="Дата_20_регистрации"><text:s/><text:variable-get text:name="ДатаРегистрации"/><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
 								<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк: префикс поля РегистрационныйНомер" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="7">
@@ -2205,7 +2205,7 @@
 									<draw:text-box>
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер"/></text:span></text:p>
+								</draw:frame><text:span text:style-name="Регистрационный_20_номер"><text:s/><text:variable-get text:name="РегистрационныйНомер"/><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row table:style-name="РегистрационныеДанные.2">
@@ -2221,7 +2221,7 @@
 									<draw:text-box>
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Регистрационный_20_номер"><text:variable-get text:name="ВОтветНаНомер"/></text:span></text:p>
+								</draw:frame><text:span text:style-name="Регистрационный_20_номер"><text:s/><text:variable-get text:name="ВОтветНаНомер"/><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
 								<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк: префикс поля ВОтветНаДату" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="9">
@@ -2235,7 +2235,7 @@
 									<draw:text-box>
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ВОтветНаДату"/></text:span></text:p>
+								</draw:frame><text:span text:style-name="Дата_20_регистрации"><text:s/><text:variable-get text:name="ВОтветНаДату"/><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
