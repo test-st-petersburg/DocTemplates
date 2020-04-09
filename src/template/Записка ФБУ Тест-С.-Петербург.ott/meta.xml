@@ -1,37 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                      xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
-                      xmlns:grddl="http://www.w3.org/2003/g/data-view#"
-                      xmlns:ooo="http://openoffice.org/2004/office"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      xmlns:dc="http://purl.org/dc/elements/1.1/"
-                      office:version="1.2">
-   <office:meta>
-      <meta:initial-creator>Gznrjdf</meta:initial-creator>
-      <meta:creation-date>2012-12-07T13:57:00</meta:creation-date>
-      <dc:date>2020-04-01T21:39:52.557000000</dc:date>
-      <meta:editing-cycles>481</meta:editing-cycles>
-      <meta:editing-duration>P1DT6H42M23S</meta:editing-duration>
-      <meta:generator>LibreOffice/6.3.4.2$Windows_X86_64 LibreOffice_project/60da17e045e08f1793c57c00ba83cdfce946d0aa</meta:generator>
-      <dc:subject>О чём</dc:subject>
-      <dc:creator>Сергей Сергеевич Бетке</dc:creator>
-      <meta:printed-by>Сергей Сергеевич Бетке</meta:printed-by>
-      <meta:print-date>2020-04-01T19:34:37.215000000</meta:print-date>
-      <meta:document-statistic meta:table-count="8"
-                               meta:image-count="3"
-                               meta:object-count="0"
-                               meta:page-count="1"
-                               meta:paragraph-count="48"
-                               meta:word-count="228"
-                               meta:character-count="1783"
-                               meta:non-whitespace-character-count="1589"/>
-      <meta:user-defined meta:name="DocumentEncoding">utf-8</meta:user-defined>
-      <meta:user-defined meta:name="HTML" meta:value-type="boolean">true</meta:user-defined>
-      <meta:user-defined meta:name="ДатаРегистрации" meta:value-type="date">2015-05-14</meta:user-defined>
-      <meta:user-defined meta:name="Организация_Наименование">Организация</meta:user-defined>
-      <meta:user-defined meta:name="Подписал_Должность" meta:value-type="string">Должность</meta:user-defined>
-      <meta:user-defined meta:name="Подписал_ПредставлениеВДокументах" meta:value-type="string">И.О. Фамилия</meta:user-defined>
-      <meta:user-defined meta:name="РегистрационныйНомер" meta:value-type="string">460/ХХХ</meta:user-defined>
-      <meta:user-defined meta:name="Содержание" meta:value-type="string">Собственно содержание</meta:user-defined>
-   </office:meta>
+<?xml version="1.0" encoding="UTF-8"?><office:document-meta xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" office:version="1.2">
+	<office:meta>
+		<meta:initial-creator>Сергей Сергеевич Бетке</meta:initial-creator>
+		<meta:creation-date>2012-12-07T13:57:00</meta:creation-date>
+		<dc:date>2020-04-09T13:08:05.442000000</dc:date>
+		<meta:editing-cycles>492</meta:editing-cycles>
+		<meta:editing-duration>P1DT7H36M44S</meta:editing-duration>
+		<meta:generator>LibreOffice/6.3.4.2$Windows_X86_64 LibreOffice_project/60da17e045e08f1793c57c00ba83cdfce946d0aa</meta:generator>
+		<dc:subject>О чём</dc:subject>
+		<meta:printed-by>Сергей Сергеевич Бетке</meta:printed-by>
+		<meta:print-date>2020-04-01T19:34:37.215000000</meta:print-date>
+		<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+		<meta:document-statistic meta:table-count="7" meta:image-count="2" meta:object-count="0" meta:page-count="3" meta:paragraph-count="85" meta:word-count="293" meta:character-count="2379" meta:non-whitespace-character-count="2149"/>
+		<meta:user-defined meta:name="DocumentEncoding">utf-8</meta:user-defined>
+		<meta:user-defined meta:name="HTML" meta:value-type="boolean">true</meta:user-defined>
+		<meta:user-defined meta:name="ДатаРегистрации" meta:value-type="date">2015-05-14</meta:user-defined>
+		<meta:user-defined meta:name="Организация_Наименование">Организация</meta:user-defined>
+		<meta:user-defined meta:name="Подписал_Должность" meta:value-type="string">Должность</meta:user-defined>
+		<meta:user-defined meta:name="Подписал_ПредставлениеВДокументах" meta:value-type="string">И.О. Фамилия</meta:user-defined>
+		<meta:user-defined meta:name="РегистрационныйНомер" meta:value-type="string">460/ХХХ</meta:user-defined>
+		<meta:user-defined meta:name="Содержание" meta:value-type="string">Собственно содержание</meta:user-defined>
+	</office:meta>
 </office:document-meta>
