@@ -217,16 +217,12 @@
 		<style:style style:name="Основной_20_текст_20_документа" style:display-name="Основной текст документа" style:family="paragraph" style:parent-style-name="First_20_line_20_indent" style:master-page-name="">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false" style:page-number="auto"/>
 		</style:style>
-		<style:style style:name="Заголовок_20_документа" style:display-name="Заголовок документа" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Основной_20_текст_20_документа" style:master-page-name="">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" style:page-number="auto" text:number-lines="false" text:line-number="0">
-				<style:tab-stops/>
-			</style:paragraph-properties>
+		<style:style style:name="Заголовок_20_документа" style:display-name="Заголовок документа" style:family="paragraph" style:parent-style-name="Heading" style:master-page-name="">
+			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" style:page-number="auto" text:number-lines="false" text:line-number="0"/>
 			<style:text-properties fo:font-size="12pt" fo:font-style="italic" fo:font-weight="normal" fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="Вступительное_20_обращение" style:display-name="Вступительное обращение" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной_20_текст_20_документа" style:master-page-name="">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:page-number="auto" fo:keep-with-next="always">
-				<style:tab-stops/>
-			</style:paragraph-properties>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0cm" style:auto-text-indent="false" style:page-number="auto" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-weight="bold" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
 		<style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="html">
@@ -237,9 +233,7 @@
 			<style:paragraph-properties text:number-lines="false" text:line-number="0"/>
 		</style:style>
 		<style:style style:name="Addressee" style:family="paragraph" style:parent-style-name="Standard" style:class="extra" style:master-page-name="">
-			<style:paragraph-properties fo:margin-top="0.4cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" style:page-number="auto" text:number-lines="false" text:line-number="0">
-				<style:tab-stops/>
-			</style:paragraph-properties>
+			<style:paragraph-properties fo:margin-top="0.4cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:orphans="0" fo:widows="0" style:page-number="auto" text:number-lines="false" text:line-number="0"/>
 			<style:text-properties fo:background-color="transparent"/>
 		</style:style>
 		<style:style style:name="Sender" style:family="paragraph" style:parent-style-name="Addressee" style:class="extra" style:master-page-name="">
@@ -1962,26 +1956,26 @@
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
-		<style:style style:name="Таблица14" style:family="table">
+		<style:style style:name="Регистрационные_20_данные_20__28_вн._29_" style:display-name="Регистрационные данные (вн.)" style:family="table">
 			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
-		<style:style style:name="Таблица14.A" style:family="table-column">
+		<style:style style:name="Регистрационные_20_данные_20__28_вн._29_.A" style:display-name="Регистрационные данные (вн.).A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные" style:family="table">
 			<style:table-properties style:width="5.999cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные.A" style:family="table-column">
-			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="450*"/>
+			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные.B" style:family="table-column">
-			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="1251*"/>
+			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные.C" style:family="table-column">
-			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="335*"/>
+			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные.D" style:family="table-column">
-			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="1366*"/>
+			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
 		</style:style>
 		<style:style style:name="РегистрационныеДанные.A1" style:family="table-cell">
 			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
@@ -2039,29 +2033,7 @@
 			</style:paragraph-properties>
 		</style:style>
 		<style:style style:name="MP6" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false">
-				<style:tab-stops/>
-			</style:paragraph-properties>
-		</style:style>
-		<style:style style:name="MP7" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения">
-			<style:text-properties/>
-		</style:style>
-		<style:style style:name="MP8" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения">
-			<style:text-properties/>
-		</style:style>
-		<style:style style:name="MP9" style:family="paragraph">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
-		<style:style style:name="MP10" style:family="paragraph" style:parent-style-name="Заголовок_20_документа">
-			<style:text-properties/>
-		</style:style>
-		<style:style style:name="MP11" style:family="paragraph" style:parent-style-name="Addressee">
-			<style:paragraph-properties fo:break-before="column"/>
-			<style:text-properties/>
-		</style:style>
-		<style:style style:name="MP12" style:family="paragraph" style:parent-style-name="Addressee">
-			<style:paragraph-properties fo:break-before="column"/>
-			<style:text-properties/>
+			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
 		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="Frame">
 			<style:graphic-properties style:print-content="true" style:protect="position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph" style:editable="true" loext:rel-width-rel="paragraph">
@@ -2075,7 +2047,7 @@
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="Тема_20_документа">
-			<style:graphic-properties style:protect="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:opacity="100%" draw:textarea-vertical-align="middle"/>
+			<style:graphic-properties style:protect="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:opacity="100%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties fo:background-color="transparent" style:editable="false">
@@ -2109,31 +2081,19 @@
 			</style:section-properties>
 		</style:style>
 		<style:style style:name="Mgr1" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="Mgr2" style:family="graphic">
-			<style:graphic-properties draw:textarea-horizontal-align="center" draw:textarea-vertical-align="middle" style:run-through="foreground"/>
-		</style:style>
-		<style:style style:name="Mgr3" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="Mgr4" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="Mgr5" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<style:style style:name="Mgr6" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		<style:style style:name="Mgr2" style:family="graphic">
+			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 		</style:style>
-		<style:style style:name="Mgr7" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		<style:style style:name="Mgr3" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<style:style style:name="Mgr8" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		<style:style style:name="Mgr4" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<style:style style:name="Mgr9" style:family="graphic">
-			<style:graphic-properties style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		<style:style style:name="Mgr5" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:page-layout style:name="Mpm1">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1.27cm" fo:margin-bottom="1.27cm" fo:margin-left="1.501cm" fo:margin-right="1.249cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="25" style:layout-grid-base-height="1.058cm" style:layout-grid-ruby-height="0cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:layout-grid-base-width="0.706cm" style:layout-grid-snap-to="true" style:footnote-max-height="0cm">
@@ -2319,7 +2279,7 @@
 							<table:table-column table:style-name="Таблица13.C"/>
 							<table:table-row table:style-name="Таблица13.1">
 								<table:table-cell table:style-name="Таблица13.A1" office:value-type="string">
-									<text:p text:style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29__20_РСТ"><draw:frame draw:style-name="Mfr2" draw:name="Изображение7" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="7">
+									<text:p text:style-name="Логотипы_20_в_20_шапке_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29__20_РСТ"><draw:frame draw:style-name="Mfr2" draw:name="Изображение7" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="9">
 										<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 										<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 									</draw:frame></text:p>
@@ -2349,8 +2309,8 @@
 						</text:section>
 						<text:p text:style-name="Окончание_20_шапки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/>
 						<text:section text:style-name="MSect1" text:name="Регистрационные данные документа  (по Приказу от 17.10.2019 №132/АХД)" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true">
-							<table:table table:name="Таблица14" table:style-name="Таблица14">
-								<table:table-column table:style-name="Таблица14.A" table:number-columns-repeated="3"/>
+							<table:table table:name="Регистрационные данные (вн.)" table:style-name="Регистрационные_20_данные_20__28_вн._29_">
+								<table:table-column table:style-name="Регистрационные_20_данные_20__28_вн._29_.A" table:number-columns-repeated="3"/>
 								<table:table-row>
 									<table:table-cell office:value-type="string">
 										<text:p text:style-name="MP4"><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации">17 декабря 2018 г.</text:variable-get></text:span></text:p>
@@ -2364,11 +2324,8 @@
 								</table:table-row>
 							</table:table>
 						</text:section>
-						<text:section text:style-name="MSect1" text:name="Раздел18" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Вид документа (вн.)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
 							<text:p text:style-name="Наименование_20_вида_20_документа_20__28_во_20_внутренней_20_переписке_29__20__28_по_20_ГОСТ_20_Р_20_7.0.97-2016_29_"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p>
-						</text:section>
-						<text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-							<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 						</text:section>
 						<text:section text:style-name="MSect4" text:name="Регистрационные данные, проба пера">
 							<table:table table:name="РегистрационныеДанные" table:style-name="РегистрационныеДанные">
@@ -2381,13 +2338,13 @@
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс">от</text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-										<text:p text:style-name="MP7"><text:span text:style-name="Дата_20_регистрации">5.05.2015</text:span></text:p>
+										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><text:span text:style-name="Дата_20_регистрации">5.05.2015</text:span></text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс">№</text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-										<text:p text:style-name="MP8"><text:span text:style-name="Регистрационный_20_номер">555</text:span></text:p>
+										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><text:span text:style-name="Регистрационный_20_номер">555</text:span></text:p>
 									</table:table-cell>
 								</table:table-row>
 								<table:table-row>
@@ -2395,128 +2352,67 @@
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс">На №</text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-										<text:p text:style-name="MP7"><text:span text:style-name="Регистрационный_20_номер">777</text:span></text:p>
+										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><text:span text:style-name="Регистрационный_20_номер">777</text:span></text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
 										<text:p text:style-name="Регистрационные_20_данные_3a__20_префикс">от</text:p>
 									</table:table-cell>
 									<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-										<text:p text:style-name="MP7"><text:span text:style-name="Дата_20_регистрации">8.08.2008</text:span></text:p>
+										<text:p text:style-name="Регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><text:span text:style-name="Дата_20_регистрации">8.08.2008</text:span></text:p>
 									</table:table-cell>
 								</table:table-row>
 							</table:table>
-							<text:p text:style-name="Наименование_20_вида_20_документа"><draw:frame draw:style-name="Mfr4" draw:name="Заголовок документа" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="11">
+							<text:p text:style-name="Standard"><draw:frame draw:style-name="Mfr4" draw:name="Заголовок документа" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="4">
 								<draw:text-box fo:min-height="2cm">
-									<draw:g text:anchor-type="frame" draw:z-index="23" draw:style-name="Mgr1">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.148cm" svg:x2="5.998cm" svg:y2="1.998cm">
+									<draw:g text:anchor-type="frame" draw:z-index="8" draw:style-name="Mgr1">
+										<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
 											<text:p/>
 										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.998cm" svg:x2="5.204cm" svg:y2="1.998cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="22" draw:style-name="Mgr3">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.147cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.997cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0.794cm">
+										<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.999cm" svg:x2="0.2cm" svg:y2="1.999cm">
 											<text:p/>
 										</draw:line>
 									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="21" draw:style-name="Mgr4">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0.85cm" svg:x2="0cm" svg:y2="0cm">
+									<draw:g text:anchor-type="frame" draw:z-index="7" draw:style-name="Mgr3">
+										<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0cm" svg:y2="0.2cm">
 											<text:p/>
 										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0cm" svg:x2="0.794cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="20" draw:style-name="Mgr5">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0.85cm" svg:y1="1.999cm" svg:x2="0cm" svg:y2="1.999cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="1.998cm" svg:x2="0cm" svg:y2="1.204cm">
+										<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0.2cm" svg:y2="0cm">
 											<text:p/>
 										</draw:line>
 									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="19" draw:style-name="Mgr6">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.148cm" svg:x2="5.998cm" svg:y2="1.998cm">
+									<draw:g text:anchor-type="frame" draw:z-index="6" draw:style-name="Mgr4">
+										<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0.2cm">
 											<text:p/>
 										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.998cm" svg:x2="5.204cm" svg:y2="1.998cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="18" draw:style-name="Mgr7">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.147cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.997cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0.794cm">
+										<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0cm">
 											<text:p/>
 										</draw:line>
 									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="17" draw:style-name="Mgr8">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0.85cm" svg:y1="1.999cm" svg:x2="0cm" svg:y2="1.999cm">
+									<draw:g text:anchor-type="frame" draw:z-index="5" draw:style-name="Mgr5">
+										<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="1.799cm" svg:x2="5.998cm" svg:y2="1.999cm">
 											<text:p/>
 										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="1.998cm" svg:x2="0cm" svg:y2="1.204cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="16" draw:style-name="Mgr9">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0.85cm" svg:x2="0cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0cm" svg:x2="0.794cm" svg:y2="0cm">
+										<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="1.999cm" svg:x2="5.998cm" svg:y2="1.999cm">
 											<text:p/>
 										</draw:line>
 									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="15" draw:style-name="Mgr8">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0.85cm" svg:y1="1.999cm" svg:x2="0cm" svg:y2="1.999cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="1.998cm" svg:x2="0cm" svg:y2="1.204cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="14" draw:style-name="Mgr6">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.148cm" svg:x2="5.998cm" svg:y2="1.998cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.998cm" svg:y1="1.998cm" svg:x2="5.204cm" svg:y2="1.998cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="13" draw:style-name="Mgr7">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.147cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="5.997cm" svg:y1="0cm" svg:x2="5.997cm" svg:y2="0.794cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<draw:g text:anchor-type="frame" draw:z-index="12" draw:style-name="Mgr9">
-										<draw:line draw:name="Фигура1" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0.85cm" svg:x2="0cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-										<draw:line draw:name="Фигура2" draw:style-name="Mgr2" draw:text-style-name="MP9" svg:x1="0cm" svg:y1="0cm" svg:x2="0.794cm" svg:y2="0cm">
-											<text:p/>
-										</draw:line>
-									</draw:g>
-									<text:p text:style-name="MP10">Такая вот очень длинная тема документа</text:p>
+									<text:p text:style-name="Заголовок_20_документа">Такая вот очень длинная тема документа</text:p>
 								</draw:text-box>
 							</draw:frame></text:p>
 							<text:p text:style-name="Конец_20_колонки"/>
-							<text:p text:style-name="MP11">Кому то Кому то Кому то</text:p>
-							<text:p text:style-name="MP11">Кому то</text:p>
-							<text:p text:style-name="MP11">Кому то</text:p>
-							<text:p text:style-name="MP11">Кому то</text:p>
-							<text:p text:style-name="MP12">Кому то</text:p>
-							<text:p text:style-name="MP11">Кому то</text:p>
-							<text:p text:style-name="MP11">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то Кому то Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
+							<text:p text:style-name="Addressee">Кому то</text:p>
 						</text:section>
 						<text:section text:style-name="MSect1" text:name="Регистрационные данные, тема и адресат">
 							<text:p text:style-name="Standard"/>
+						</text:section>
+						<text:section text:style-name="MSect1" text:name="Раздел16" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
+							<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 						</text:section>
 						<text:section text:style-name="MSect1" text:name="Вступительное обращение">
 							<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
