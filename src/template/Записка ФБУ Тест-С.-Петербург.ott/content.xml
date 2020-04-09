@@ -403,8 +403,8 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> 999</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> 21.01.2020</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
