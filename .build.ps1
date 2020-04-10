@@ -48,21 +48,24 @@ task Unpack Clean, {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $Path `
 		-Indented `
-		-Verbose;
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
 
 # Synopsis: Оптимизирует XML файлы Open Office
 task OptimizeXML {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$XMLFolder | .\tools\Optimize-PlainXML.ps1 `
-		-Verbose;
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 task Build {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$XMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
-		-Verbose;
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
 
 task . Build;

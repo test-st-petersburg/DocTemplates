@@ -51,7 +51,7 @@
 		},
 		{
 			"label": "Optimize Open Office XML files",
-			"command": "Invoke-Build -Task OptimizeXML"
+			"command": "Invoke-Build -Task OptimizeXML -Verbose"
 		},
 		{
 			"label": "Create Open Office files from plain XML",
@@ -59,7 +59,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "Invoke-Build -Task Build"
+			"command": "Invoke-Build -Task Build -Verbose"
 		}
 	]
 }
