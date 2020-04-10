@@ -59,6 +59,10 @@ configuration xITGODTDevWindowsPC
 			Module_Name = '7Zip4Powershell'
 		}
 
+		PSModuleResource PSake {
+			Module_Name = 'psake'
+		}
+
 		PackageManagement SaxonHE {
 			Ensure = "Present"
 			Name   = "Saxon-HE"
