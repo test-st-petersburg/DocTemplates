@@ -4,24 +4,21 @@
 properties {
 	$buildOutputPath = ".\template";
 	$sourcePath = ".\src\template";
-	$ottFiles = ( Get-ChildItem -Path $buildOutputPath -File -Filter '*.ott' );
-	$sources = ( Get-ChildItem -Path $sourcePath -Directory );
+	$ottFiles = ( Get-ChildItem -Path $buildOutputPath -File -Filter '*.ott' ) | Resolve-Path -Relative;
+	$sources = ( Get-ChildItem -Path $sourcePath -Directory ) | Resolve-Path -Relative;
 };
 
 # task default -depends Build;
 
 task Clean -Description 'Clean source directory for selected or all .ott files' {
-	Write-Host $sources;
-	Push-Location;
-	try {
-		Set-Location $sourcePath;
-		$sources | ForEach-Object {
-			if ( Test-Path -Path $_ ) {
-				Remove-Item -Path $_ -Recurse -Force;
-			};
+	$sources | ForEach-Object {
+		if ( Test-Path -Path $_ ) {
+			Remove-Item -Path $_ -Recurse -Force;
 		};
-	}
-	finally {
-		Pop-Location;
+	};
+};
+
+task Build -Description 'Build .ott files from source XML files' {
+	$sources | ForEach-Object {
 	};
 };
