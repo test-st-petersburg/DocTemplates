@@ -79,7 +79,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "Invoke-psake -Task Build",
+			"command": "Invoke-Build -Task Build",
 			"presentation": {
 				"clear": true
 			}
