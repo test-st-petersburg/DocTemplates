@@ -29,14 +29,11 @@ param(
 	$XMLFolder = ( ( Get-ChildItem -Path $Path -Directory -Filter '*.ott' ) | Resolve-Path )
 )
 
-# task Clean -Description 'Clean source directory for selected or all .ott files' {
-# 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-# 	$sources | ForEach-Object {
-# 		if ( Test-Path -Path $_ ) {
-# 			Remove-Item -Path $_ -Recurse -Force;
-# 		};
-# 	};
-# };
+# Synopsis: Удаляет каталоги с XML файлами
+task Clean {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	$XMLFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+};
 
 # task Build - `
 # 	-Outputs @() `

@@ -43,7 +43,7 @@
 		},
 		{
 			"label": "Clean",
-			"command": "Invoke-psake -Task Clean",
+			"command": "Invoke-Build -Task Clean",
 			"presentation": {
 				"reveal": "silent",
 				"clear": true
