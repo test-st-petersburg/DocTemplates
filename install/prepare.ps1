@@ -27,7 +27,7 @@ Install-Module PowerShellModule;
 
 $ModulesDir = (Join-Path -Path $PSScriptRoot -ChildPath 'Modules');
 
-Start-DscConfiguration -Force;
+Stop-DscConfiguration -Force;
 
 Import-Module (Join-Path -Path $ModulesDir -ChildPath 'xITGPSEnvironment') -Force;
 $PSConfigDir = (Join-Path -Path $PSScriptRoot -ChildPath 'PSConfig');
