@@ -59,8 +59,8 @@ configuration xITGODTDevWindowsPC
 			Module_Name = '7Zip4Powershell'
 		}
 
-		PSModuleResource PSake {
-			Module_Name = 'psake'
+		PSModuleResource InvokeBuild {
+			Module_Name = 'InvokeBuild'
 		}
 
 		PackageManagement SaxonHE {
