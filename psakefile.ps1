@@ -8,7 +8,3 @@ task Clean {
 		Remove-Item -Path 'src' -Recurse -Force;
 	};
 }
-
-task ? -Description "Helper to display task info" {
-	Write-Documentation;
-};
