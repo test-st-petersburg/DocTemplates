@@ -4,6 +4,7 @@
 		"node_modules/": true,
 		"**/Thumbs.db": true,
 		"Thumbs.db": true,
+		"**/.~lock.*": true,
 	},
 	"shellcheck.exclude": [
 		1017
