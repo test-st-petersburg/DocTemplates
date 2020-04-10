@@ -809,9 +809,7 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" style:page-number="auto" text:number-lines="false" text:line-number="0" style:snap-to-layout-grid="false"/>
 		</style:style>
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text"/>
-		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text">
-			<style:text-properties style:font-name="OpenSymbol" fo:font-family="OpenSymbol" style:font-charset="x-symbol"/>
-		</style:style>
+		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text"/>
 		<style:style style:name="Регистрационный_20_номер" style:display-name="Регистрационный номер" style:family="text">
 			<style:text-properties style:text-underline-style="none" style:text-scale="60%"/>
 		</style:style>
@@ -836,34 +834,6 @@
 		</style:style>
 		<style:style style:name="Emphasis" style:family="text">
 			<style:text-properties fo:font-style="normal" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Character_5f_20_5f_style" style:display-name="Character_20_style" style:family="text"/>
-		<style:style style:name="CITE" style:family="text">
-			<style:text-properties fo:font-style="italic"/>
-		</style:style>
-		<style:style style:name="CODE" style:family="text">
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
-		</style:style>
-		<style:style style:name="FollowedHyperlink" style:family="text">
-			<style:text-properties fo:color="#800080" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"/>
-		</style:style>
-		<style:style style:name="Keyboard" style:family="text">
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Sample" style:family="text">
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed"/>
-		</style:style>
-		<style:style style:name="Strong" style:family="text">
-			<style:text-properties fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Typewriter" style:family="text">
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
-		</style:style>
-		<style:style style:name="HTML_20_Markup" style:display-name="HTML Markup" style:family="text">
-			<style:text-properties fo:color="#ff0000" text:display="none"/>
-		</style:style>
-		<style:style style:name="Comment" style:family="text">
-			<style:text-properties text:display="none"/>
 		</style:style>
 		<style:style style:name="Frame" style:family="graphic">
 			<style:graphic-properties text:anchor-type="paragraph" svg:x="0cm" svg:y="0cm" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content"/>
