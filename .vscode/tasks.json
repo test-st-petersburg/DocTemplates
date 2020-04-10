@@ -38,16 +38,16 @@
 			},
 			"presentation": {
 				"reveal": "always",
-				"clear": true,
+				"clear": true
 			}
 		},
 		{
 			"label": "Clean",
-			"command": " if ( Test-Path -Path 'src' ) { Remove-Item -Path 'src' -Recurse -Force }",
+			"command": "Invoke-psake -Task Clean",
 			"presentation": {
 				"reveal": "silent",
-				"clear": true,
-			},
+				"clear": true
+			}
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
@@ -71,7 +71,7 @@
 				"-Path",
 				"src\\template",
 				"-Verbose"
-			],
+			]
 		},
 		{
 			"label": "Create Open Office files from plain XML",
@@ -89,8 +89,8 @@
 				"-Verbose"
 			],
 			"presentation": {
-				"clear": true,
-			},
-		},
-	],
+				"clear": true
+			}
+		}
+	]
 }
