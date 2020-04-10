@@ -1,5 +1,6 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:saxon="http://saxon.sf.net/"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -44,61 +45,9 @@
 		version="1.0"
 		encoding="UTF-8"
 		omit-xml-declaration="no"
-		indent="yes"
-		suppress-indentation="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"
+		indent="no"
 	/>
 
-	<xsl:preserve-space elements="text:p text:h text:span text:variable-set text:table-of-content-entry-template script:module"/>
-
-	<xsl:strip-space elements="*"/>
-
-	<xsl:template match="processing-instruction()">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="element()">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="node()"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="@*">
-		<xsl:copy />
-	</xsl:template>
-
-	<xsl:template match="comment()">
-		<xsl:copy/>
-	</xsl:template>
-
-	<xsl:template match="text()">
-		<xsl:copy/>
-	</xsl:template>
-
-	<!-- правила для обработки "особых" элементов -->
-
-	<xsl:template match="/manifest:manifest">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="manifest:file-entry">
-				<xsl:sort select="@manifest:full-path"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
-			</xsl:apply-templates>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:font-face-decls">
-		<xsl:copy>
-			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="style:font-face">
-				<xsl:sort select="@style:name"
-					data-type="text" order="ascending" case-order="upper-first"
-				/>
-			</xsl:apply-templates>
-		</xsl:copy>
-	</xsl:template>
+	<xsl:include href="ODTXMLFormatter.xslt" />
 
 </xsl:stylesheet>
