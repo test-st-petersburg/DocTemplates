@@ -50,13 +50,8 @@
 			"command": "Invoke-Build -Task Unpack"
 		},
 		{
-			"label": "Clean Open Office content.xml",
-			"command": ".\\tools\\Optimize-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-Path",
-				"src\\template",
-				"-Verbose"
-			]
+			"label": "Optimize Open Office XML files",
+			"command": "Invoke-Build -Task OptimizeXML"
 		},
 		{
 			"label": "Create Open Office files from plain XML",

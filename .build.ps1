@@ -51,6 +51,13 @@ task Unpack Clean, {
 		-Verbose;
 };
 
+# Synopsis: Оптимизирует XML файлы Open Office
+task OptimizeXML {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	$XMLFolder | .\tools\Optimize-PlainXML.ps1 `
+		-Verbose;
+};
+
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 task Build {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
