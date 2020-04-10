@@ -2,7 +2,6 @@
 	<office:font-face-decls>
 		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed"/>
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
-		<style:font-face style:name="OpenSymbol" svg:font-family="OpenSymbol" style:font-charset="x-symbol"/>
 		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
 		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable"/>
 		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
@@ -935,61 +934,51 @@
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="2" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="3" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="4" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="5" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="6" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="7" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="8" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="9" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="10" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="OpenSymbol"/>
 			</text:list-level-style-bullet>
 		</text:list-style>
 		<text:list-style style:name="List_20_2" style:display-name="List 2">
@@ -1291,10 +1280,10 @@
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="Поле_20_в_20_бланке">
-			<style:graphic-properties style:protect="content size position" style:print-content="true" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr5" style:family="graphic" style:parent-style-name="Бланк_3a__20_поле_20_подчёркнутое">
-			<style:graphic-properties style:protect="content size position" style:print-content="true" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="Поле_20_в_20_бланке_20_с_20_автоматической_20_высотой">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
@@ -1376,13 +1365,62 @@
 			</style:header-style>
 			<style:footer-style/>
 		</style:page-layout>
+		<style:page-layout style:name="Mpm5">
+			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm6">
+			<style:page-layout-properties fo:page-width="22.901cm" fo:page-height="11.4cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm7">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm8" style:page-usage="left">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm9" style:page-usage="right">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm10">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm11">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
 		<number:number-style style:name="N0">
 			<number:number number:min-integer-digits="1"/>
 		</number:number-style>
 	</office:automatic-styles>
 	<office:master-styles>
-		<style:master-page style:name="Standard" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="Служебная" style:page-layout-name="Mpm2" style:next-style-name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_"/>
+		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Служебная" style:page-layout-name="Mpm2"/>
 		<style:master-page style:name="Первый_20_лист_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_" style:display-name="Первый лист записки (по Приказу от 17.10.2019 №132/АХД)" style:page-layout-name="Mpm3" style:next-style-name="Последующие_20_листы_20_записки_20__28_по_20_Приказу_20_от_20_17.10.2019_20__2116_132_2f_АХД_29_">
 			<style:header>
 				<text:p text:style-name="Header"/>
@@ -1602,5 +1640,14 @@
 				<text:p text:style-name="Номер_20_страницы"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
 		</style:master-page>
+		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm5"/>
+		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm6"/>
+		<style:master-page style:name="Endnote" style:hidden="true" style:page-layout-name="Mpm7"/>
+		<style:master-page style:name="Left_20_Page" style:hidden="true" style:display-name="Left Page" style:page-layout-name="Mpm8" style:next-style-name="Right_20_Page"/>
+		<style:master-page style:name="Right_20_Page" style:hidden="true" style:display-name="Right Page" style:page-layout-name="Mpm9" style:next-style-name="Left_20_Page"/>
+		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm10" style:next-style-name="Standard"/>
+		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm7"/>
+		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm10"/>
+		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm11"/>
 	</office:master-styles>
 </office:document-styles>

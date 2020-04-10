@@ -23,7 +23,6 @@
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_3.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_4.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_OpenSymbol_1.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_1.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_1.ttf" manifest:media-type="application/x-font-ttf"/>
