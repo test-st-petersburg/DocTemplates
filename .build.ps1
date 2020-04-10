@@ -43,7 +43,15 @@ task Clean {
 # 	}
 # }
 
-# Synopsis: Создаёт Open Office файлы из папки с xml файлами (build)
+# Synopsis: Преобразовывает Open Office файлы в папки с XML файлами
+task Unpack Clean, {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $Path `
+		-Indented `
+		-Verbose;
+};
+
+# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 task Build {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$XMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `

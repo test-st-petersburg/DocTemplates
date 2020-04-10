@@ -9,7 +9,7 @@
 		"focus": false,
 		"echo": true,
 		"panel": "shared",
-		"clear": false,
+		"clear": true,
 	},
 	"problemMatcher": {
 		"owner": "custom",
@@ -43,26 +43,11 @@
 		},
 		{
 			"label": "Clean",
-			"command": "Invoke-Build -Task Clean",
-			"presentation": {
-				"reveal": "silent",
-				"clear": true
-			}
+			"command": "Invoke-Build -Task Clean"
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
-			"command": ".\\tools\\ConvertTo-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-Path",
-				"template",
-				"-DestinationPath",
-				"src\\template",
-				"-Indented",
-				"-Verbose"
-			],
-			"dependsOn": [
-				"Clean"
-			]
+			"command": "Invoke-Build -Task Unpack"
 		},
 		{
 			"label": "Clean Open Office content.xml",
@@ -79,10 +64,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "Invoke-Build -Task Build",
-			"presentation": {
-				"clear": true
-			}
+			"command": "Invoke-Build -Task Build"
 		}
 	]
 }
