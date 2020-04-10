@@ -31,6 +31,17 @@
 	},
 	"tasks": [
 		{
+			"label": "Install tools",
+			"command": ".\\prepare.ps1",
+			"options": {
+				"cwd": "${workspaceRoot}/install"
+			},
+			"presentation": {
+				"reveal": "always",
+				"clear": true,
+			}
+		},
+		{
 			"label": "Clean",
 			"command": " if ( Test-Path -Path 'src' ) { Remove-Item -Path 'src' -Recurse -Force }",
 			"presentation": {
