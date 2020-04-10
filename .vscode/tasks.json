@@ -79,15 +79,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": ".\\tools\\ConvertFrom-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-DestinationPath",
-				"template",
-				"-Path",
-				"src\\template",
-				"-Force",
-				"-Verbose"
-			],
+			"command": "Invoke-psake -Task Build",
 			"presentation": {
 				"clear": true
 			}
