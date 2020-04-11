@@ -278,8 +278,10 @@
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
 				<text:variable-decl office:value-type="string" text:name="Получатели"/>
 				<text:variable-decl office:value-type="string" text:name="Тема"/>
+				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
@@ -372,6 +374,7 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
@@ -392,6 +395,7 @@
 				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Служебный"/>
 			</text:section>
 			<text:p text:style-name="Бланк_3a__20_начало"/>
