@@ -7,10 +7,10 @@
 
 [CmdletBinding( ConfirmImpact = 'Medium', SupportsShouldProcess = $true )]
 param(
-	# путь к content.xml Open Office файлу
+	# путь к каталогу с XML файлами Open Office
 	[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $true )]
 	[System.String]
-	$FilePath
+	$Path
 )
 
 begin {
@@ -33,33 +33,36 @@ begin {
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
-	if ( $PSCmdlet.ShouldProcess( $FilePath, "Optimize Open Office content.xml" ) ) {
-		$sourceFile = Get-Item -Path $FilePath;
-		$sourceXMLFileStream = [System.IO.File]::OpenRead( $sourceFile.FullName );
-		try {
-			$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
-
-			$TempXMLFileName = [System.IO.Path]::GetTempFileName();
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
+		Get-ChildItem -Path $Path -Recurse -Filter '*.xml' | Where-Object { $_.Length -gt 0 } | ForEach-Object {
+			$sourceFile = $_;
+			$sourceXMLFileStream = [System.IO.File]::OpenRead( $sourceFile.FullName );
 			try {
-				$saxWriter = $saxProcessor.NewSerializer();
-				$saxWriter.SetOutputFile( $TempXMLFileName );
-				$saxTransform.Run( $saxWriter );
-				$saxWriter.Close();
-				Move-Item -Path $TempXMLFileName -Destination ( $sourceFile.FullName ) -Force `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-			}
-			finally {
-				if ( Test-Path -Path $TempXMLFileName ) {
-					Remove-Item -Path $TempXMLFileName -Recurse `
+				$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
+
+				$TempXMLFileName = [System.IO.Path]::GetTempFileName();
+				try {
+					$saxWriter = $saxProcessor.NewSerializer();
+					$saxWriter.SetOutputFile( $TempXMLFileName );
+					$saxTransform.Run( $saxWriter );
+					$saxWriter.Close();
+					Move-Item -Path $TempXMLFileName -Destination ( $sourceFile.FullName ) -Force `
 						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				}
+				finally {
+					if ( Test-Path -Path $TempXMLFileName ) {
+						Remove-Item -Path $TempXMLFileName -Recurse `
+							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+							-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					};
 				};
+			}
+			finally {
+				$sourceXMLFileStream.Close();
+				$sourceXMLFileStream.Dispose();
 			};
-		}
-		finally {
-			$sourceXMLFileStream.Close();
-			$sourceXMLFileStream.Dispose();
 		};
 	};
 }

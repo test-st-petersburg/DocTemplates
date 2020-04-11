@@ -59,6 +59,10 @@ configuration xITGODTDevWindowsPC
 			Module_Name = '7Zip4Powershell'
 		}
 
+		PSModuleResource InvokeBuild {
+			Module_Name = 'InvokeBuild'
+		}
+
 		PackageManagement SaxonHE {
 			Ensure = "Present"
 			Name   = "Saxon-HE"
