@@ -41,11 +41,52 @@
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 >
 
+	<xsl:mode
+		name="#default"
+		on-no-match="fail" warning-on-no-match="false"
+		on-multiple-match="fail" warning-on-multiple-match="false"
+		visibility="public"
+		streamable="true"
+		use-accumulators=""
+	/>
+
+	<xsl:mode
+		name="noindent"
+		on-no-match="shallow-copy" warning-on-no-match="false"
+		on-multiple-match="fail" warning-on-multiple-match="false"
+		visibility="public"
+		streamable="true"
+		use-accumulators=""
+	/>
+
+	<xsl:mode
+		name="indent"
+		on-no-match="fail" warning-on-no-match="false"
+		on-multiple-match="fail" warning-on-multiple-match="false"
+		visibility="public"
+		streamable="true"
+		use-accumulators=""
+	/>
+
+	<xsl:mode
+		name="preindent"
+		on-no-match="fail" warning-on-no-match="false"
+		on-multiple-match="fail" warning-on-multiple-match="false"
+		visibility="public"
+		streamable="true"
+		use-accumulators=""
+	/>
+
 	<!-- строки для форматирования -->
 	<xsl:variable name="indent-chars" select="'&#x9;'" />
 	<!-- применимо для dotNet XslTransformer -->
 	<!-- <xsl:variable name="indent-line" select="'&#xd;&#xa;'" /> -->
 	<xsl:variable name="indent-line" select="'&#xa;'" />
+
+	<xsl:preserve-space elements="text:p text:span text:variable-set"/>
+	<xsl:strip-space elements="*" />
+
+	<!-- обработка в режиме preindent (добавляем отступ перед текущим элементом) -->
 
 	<xsl:template match="element()|processing-instruction()|comment()" mode="preindent">
 		<xsl:param name="indent" select="$indent-line"/>
@@ -55,11 +96,18 @@
 		</xsl:apply-templates>
 	</xsl:template>
 
-	<xsl:template match="processing-instruction()" mode="#all">
+	<xsl:template match="text()" mode="preindent">
+		<xsl:param name="indent" select="$indent-line"/>
+		<xsl:apply-templates select="." mode="noindent"/>
+	</xsl:template>
+
+	<!-- обработка в режиме indent (добавляем отступы для потомков текущего элемента) -->
+
+	<xsl:template match="processing-instruction()" mode="indent">
 		<xsl:copy />
 	</xsl:template>
 
-	<xsl:template match="comment()" mode="#all">
+	<xsl:template match="comment()" mode="indent">
 		<xsl:copy />
 	</xsl:template>
 
@@ -87,16 +135,14 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="element()|processing-instruction()|comment()" mode="noindent">
-		<xsl:param name="indent" select="$indent-line"/>
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent">
-				<xsl:with-param name="indent" select="$indent"/>
-			</xsl:apply-templates>
-			<xsl:apply-templates select="node()" mode="noindent">
-				<xsl:with-param name="indent" select="$indent"/>
-			</xsl:apply-templates>
-		</xsl:copy>
+	<xsl:template match="@*" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
+	</xsl:template>
+
+	<xsl:template match="text()" mode="indent">
+		<xsl:param name="indent"/>
+		<xsl:copy />
 	</xsl:template>
 
 	<!-- правила для элементов, содержимое которых нельзя "форматировать" -->
@@ -173,23 +219,6 @@
 			</xsl:apply-templates>
 			<xsl:value-of select="$indent"/>
 		</xsl:copy>
-	</xsl:template>
-
-	<!-- правила для атрибутов -->
-
-	<xsl:template match="@*" mode="#all">
-		<xsl:param name="indent"/>
-		<xsl:copy />
-	</xsl:template>
-
-	<!-- правила для обработки text() -->
-
-	<xsl:preserve-space elements="text:p text:span text:variable-set"/>
-	<xsl:strip-space elements="*" />
-
-	<xsl:template match="text()" mode="#all">
-		<xsl:param name="indent"/>
-		<xsl:copy />
 	</xsl:template>
 
 </xsl:stylesheet>
