@@ -61,6 +61,15 @@
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
+	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+
+	<xsl:key name="used-paragraph-styles"
+		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
+		use="@text:style-name"
+	/>
+
+	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" />
+
 	<!-- форматируем текст модулей -->
 
 	<xsl:template match="script-module:module/text()" mode="#all">
