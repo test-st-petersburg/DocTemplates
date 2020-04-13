@@ -95,11 +95,15 @@
 
 	<!-- обработка в режиме indent-self (введён для возможности переопределения обработки узла без оформления) -->
 
-	<xsl:template match="*" mode="indent-self">
+	<xsl:template name="shallow-indent-copy">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="indent"/>
 			<xsl:apply-templates select="node()" mode="indent"/>
 		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="*" mode="indent-self">
+		<xsl:call-template name="shallow-indent-copy"/>
 	</xsl:template>
 
 	<!-- обработка в режиме indent (добавляем отступы для себя) -->
