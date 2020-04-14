@@ -6,18 +6,11 @@
 		<meta:editing-cycles>492</meta:editing-cycles>
 		<meta:editing-duration>P1DT7H36M44S</meta:editing-duration>
 		<meta:generator>LibreOffice/6.3.4.2$Windows_X86_64 LibreOffice_project/60da17e045e08f1793c57c00ba83cdfce946d0aa</meta:generator>
-		<dc:subject>О чём</dc:subject>
+		<dc:subject>Шаблон письма на бланке учреждения</dc:subject>
 		<meta:printed-by>Сергей Сергеевич Бетке</meta:printed-by>
 		<meta:print-date>2020-04-01T19:34:37.215000000</meta:print-date>
 		<dc:creator>Сергей Сергеевич Бетке</dc:creator>
 		<meta:document-statistic meta:table-count="5" meta:image-count="2" meta:object-count="0" meta:page-count="1" meta:paragraph-count="38" meta:word-count="202" meta:character-count="1469" meta:non-whitespace-character-count="1288"/>
-		<meta:user-defined meta:name="DocumentEncoding">utf-8</meta:user-defined>
-		<meta:user-defined meta:name="HTML" meta:value-type="boolean">true</meta:user-defined>
-		<meta:user-defined meta:name="ДатаРегистрации" meta:value-type="date">2015-05-14</meta:user-defined>
-		<meta:user-defined meta:name="Организация_Наименование">Организация</meta:user-defined>
-		<meta:user-defined meta:name="Подписал_Должность" meta:value-type="string">Должность</meta:user-defined>
-		<meta:user-defined meta:name="Подписал_ПредставлениеВДокументах" meta:value-type="string">И.О. Фамилия</meta:user-defined>
-		<meta:user-defined meta:name="РегистрационныйНомер" meta:value-type="string">460/ХХХ</meta:user-defined>
-		<meta:user-defined meta:name="Содержание" meta:value-type="string">Собственно содержание</meta:user-defined>
+		<meta:template xlink:type="simple" xlink:actuate="onRequest" xlink:title="1.1.1. (не использовать) Документ на бланке ФБУ Тест-С.-Петербург" xlink:href="./1.1.1.%20(не%20использовать)%20Документ%20на%20бланке%20ФБУ%20Тест-С.-Петербург.ott" meta:date="2020-04-14T14:15:58.044000000"/>
 	</office:meta>
 </office:document-meta>
