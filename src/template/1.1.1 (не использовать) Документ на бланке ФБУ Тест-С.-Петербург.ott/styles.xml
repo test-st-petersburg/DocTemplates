@@ -249,7 +249,7 @@
 				</style:tab-stops>
 			</style:paragraph-properties>
 		</style:style>
-		<style:style style:name="Бланк_3a__20_начало" style:display-name="Бланк: начало" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Первый_20_лист_20_письма">
+		<style:style style:name="Бланк_3a__20_начало_20_письма" style:display-name="Бланк: начало письма" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Первый_20_лист_20_письма">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="List_20_2_20_Start" style:display-name="List 2 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:next-style-name="List_20_2" style:class="list">
