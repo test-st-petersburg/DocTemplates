@@ -110,7 +110,7 @@
 
 	<xsl:template match="element()|processing-instruction()|comment()" mode="indent">
 		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
-		<xsl:param name="process-on-completion" as="xs:boolean" select="true()"/>
+		<xsl:param name="process-on-completion" as="xs:boolean" select="position() = last()"/>
 		<xsl:on-non-empty>
 			<xsl:value-of select="concat($indent, $indent-chars)"/>
 		</xsl:on-non-empty>
@@ -118,7 +118,7 @@
 			<xsl:with-param name="indent" select="concat($indent, $indent-chars)" tunnel="yes"/>
 		</xsl:apply-templates>
 		<xsl:on-non-empty>
-			<xsl:if test="$process-on-completion and ( position() = last() )">
+			<xsl:if test="$process-on-completion">
 				<xsl:value-of select="$indent"/>
 			</xsl:if>
 		</xsl:on-non-empty>
