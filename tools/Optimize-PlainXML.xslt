@@ -2,6 +2,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+	xmlns:array="http://www.w3.org/2005/xpath-functions/array"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -106,6 +107,12 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@*[ not( name(.)='style:hidden' ) ]" mode="indent"/>
 			<xsl:attribute name="style:hidden" select="true()"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="text:list-style[ @style:hidden ]" mode="indent-self">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="indent"/>
 		</xsl:copy>
 	</xsl:template>
 
