@@ -167,31 +167,6 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties>
-				<style:tab-stops/>
-			</style:paragraph-properties>
-		</style:style>
-		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
-				<style:tab-stops>
-					<style:tab-stop style:position="1.704cm" style:type="center"/>
-					<style:tab-stop style:position="3.5cm"/>
-					<style:tab-stop style:position="5.75cm" style:type="center"/>
-					<style:tab-stop style:position="7.451cm"/>
-				</style:tab-stops>
-			</style:paragraph-properties>
-		</style:style>
-		<style:style style:name="P3" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
-		</style:style>
-		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Подстрочник">
-			<style:paragraph-properties>
-				<style:tab-stops>
-					<style:tab-stop style:position="14cm" style:type="right"/>
-				</style:tab-stops>
-			</style:paragraph-properties>
-		</style:style>
 		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
 			<style:paragraph-properties style:page-number="auto"/>
 		</style:style>
