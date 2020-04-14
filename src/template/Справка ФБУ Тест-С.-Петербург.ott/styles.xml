@@ -1403,7 +1403,7 @@
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
-						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:protected="true">
 							<text:p text:style-name="Справочные_20_данные_20_об_20_организации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
 							<text:p text:style-name="Конец_20_колонки"/>
 							<text:p text:style-name="Справочные_20_данные_20_об_20_организации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
@@ -1418,7 +1418,7 @@
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="После_20_шапки"/>
-				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат">
+				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат" text:condition="ooow:((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
 					<table:table table:name="РегистрационныеДанные" table:style-name="РегистрационныеДанные">
 						<table:table-column table:style-name="РегистрационныеДанные.A"/>
 						<table:table-column table:style-name="РегистрационныеДанные.B"/>
@@ -1526,7 +1526,7 @@
 					<text:p text:style-name="Пустой_20_абзац"/>
 					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ЭтоВнутреннийДокумент" text:is-hidden="false" text:display="condition" text:protected="true">
 					<table:table table:name="Регистрационные данные (вн.)" table:style-name="Регистрационные_20_данные_20__28_вн._29_">
 						<table:table-column table:style-name="Регистрационные_20_данные_20__28_вн._29_.A" table:number-columns-repeated="3"/>
 						<table:table-row>
@@ -1542,8 +1542,8 @@
 						</table:table-row>
 					</table:table>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Вид документа (вн.)" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
+				<text:section text:style-name="MSect3" text:name="Вид документа (вн.)" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="false" text:display="condition" text:protected="true">
+					<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Справка</text:variable-get></text:p>
 				</text:section>
 			</loext:header-first>
 			<style:footer>
@@ -1559,7 +1559,7 @@
 					<table:table-column table:style-name="Подвал.C"/>
 					<table:table-row table:style-name="Подвал.1">
 						<table:table-cell table:style-name="Подвал.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="Исполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/></text:p>
+							<text:p text:style-name="Исполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:p text:style-name="В_20_дело">В дело № <text:span text:style-name="Индекс_20_дела"><text:variable-get text:name="Дело">_______</text:variable-get></text:span> <text:line-break/>за <text:variable-get text:name="ДелоГод">________</text:variable-get> г.</text:p>
