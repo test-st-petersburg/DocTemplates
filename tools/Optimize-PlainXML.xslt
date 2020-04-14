@@ -168,26 +168,24 @@
 	<!-- форматируем текст модулей -->
 
 	<xsl:template match="script-module:module/text()" mode="#all">
-		<xsl:variable name="module-text" select="." />
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph1" as="xs:string" select="." />
+		<xsl:variable name="module-text-ph2" as="xs:string">
 			<!-- удаляем лишние пробелы в конце строк -->
-			<xsl:analyze-string select="$module-text" regex="^(.*?)\s*$" flags="s">
+			<xsl:analyze-string select="$module-text-ph1" regex="^(.*?)\s*$" flags="s">
 				<xsl:matching-substring>
 					<xsl:value-of select='regex-group(1)' />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph3" as="xs:string">
 			<!-- удаляем лишние пустые строки в начале и конце модуля -->
-			<xsl:analyze-string select="$module-text" regex="^\s*(.*?)\s*$" flags="ms">
+			<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
 				<xsl:matching-substring>
-					<xsl:value-of select="'&#x0A;'" />
-					<xsl:value-of select='regex-group(1)' />
-					<xsl:value-of select="'&#x0A;'" />
+					<xsl:value-of select="concat( $indent-line, regex-group(1), $indent-line )" />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:value-of select="$module-text" />
+		<xsl:value-of select="$module-text-ph3" />
 	</xsl:template>
 
 	<!-- удаляем лишние аттрибуты -->
