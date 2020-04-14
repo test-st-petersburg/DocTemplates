@@ -242,85 +242,85 @@
 		<office:text>
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьДП"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьИмПадеж"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатИмяОтчествоИП"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатИО"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатФИО"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатФИОДП"/>
+				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
+				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
+				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
+				<text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
+				<text:variable-decl office:value-type="string" text:name="ДатаВозникновения"/>
+				<text:variable-decl office:value-type="float" text:name="ДатаВозникновенияЗадолженности"/>
+				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
-				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
-				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
-				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
-				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
-				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
-				<text:variable-decl office:value-type="string" text:name="Получатели"/>
-				<text:variable-decl office:value-type="string" text:name="Тема"/>
-				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
+				<text:variable-decl office:value-type="string" text:name="КБК"/>
+				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
+				<text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
+				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияИНН"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияКПП"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименование"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименованиеПолное"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
-				<text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
-				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
-				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
 				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументах"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИмПадеж"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументах"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
+				<text:variable-decl office:value-type="string" text:name="ПодтверждающиеДокументы"/>
+				<text:variable-decl office:value-type="string" text:name="Получатели"/>
+				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБанк"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБИК"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииКсч"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
+				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
+				<text:variable-decl office:value-type="string" text:name="Содержание"/>
+				<text:variable-decl office:value-type="string" text:name="Сумма"/>
+				<text:variable-decl office:value-type="float" text:name="СуммаЗадолженности"/>
+				<text:variable-decl office:value-type="string" text:name="СуммаПрописью"/>
+				<text:variable-decl office:value-type="string" text:name="Тема"/>
 				<text:variable-decl office:value-type="string" text:name="ФормаБланка"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВнутреннийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВходящийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоДоговор"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоИсходящийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоПереписка"/>
-				<text:variable-decl office:value-type="string" text:name="Содержание"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументах"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименование"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИО"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьИмПадеж"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИО"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументах"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИмПадеж"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахРП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьРП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьДП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИОДП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИмяОтчествоИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
-				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
-				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
-				<text:variable-decl office:value-type="string" text:name="ДатаВозникновения"/>
-				<text:variable-decl office:value-type="string" text:name="Сумма"/>
-				<text:variable-decl office:value-type="string" text:name="СуммаПрописью"/>
-				<text:variable-decl office:value-type="string" text:name="ПодтверждающиеДокументы"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБИК"/>
-				<text:variable-decl office:value-type="string" text:name="КБК"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииКсч"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБанк"/>
-				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
-				<text:variable-decl office:value-type="float" text:name="ДатаВозникновенияЗадолженности"/>
-				<text:variable-decl office:value-type="float" text:name="СуммаЗадолженности"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименованиеПолное"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
-				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
 			</text:variable-decls>
 			<text:sequence-decls>
 				<text:sequence-decl text:display-outline-level="0" text:name="Illustration"/>

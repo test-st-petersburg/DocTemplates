@@ -33,6 +33,4 @@ sub onDocOpen()
 	document.getTextFields().refresh()
 
 end sub
-
-
 </script:module>
