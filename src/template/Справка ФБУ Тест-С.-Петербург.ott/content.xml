@@ -7,22 +7,6 @@
 		</office:event-listeners>
 	</office:scripts>
 	<office:font-face-decls>
-		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
@@ -77,39 +61,7 @@
 				</svg:font-face-uri>
 			</svg:font-face-src>
 		</style:font-face>
-		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
-		<style:font-face style:name="Times New Roman2" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
-		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-family-generic="roman" style:font-pitch="variable">
+		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
 					<svg:font-face-format svg:string="truetype"/>
@@ -277,7 +229,6 @@
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
 				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
