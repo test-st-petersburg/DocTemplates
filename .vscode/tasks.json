@@ -9,7 +9,7 @@
 		"focus": false,
 		"echo": true,
 		"panel": "shared",
-		"clear": false,
+		"clear": true,
 	},
 	"problemMatcher": {
 		"owner": "custom",
@@ -31,36 +31,27 @@
 	},
 	"tasks": [
 		{
-			"label": "Clean",
-			"command": " if ( Test-Path -Path 'src' ) { Remove-Item -Path 'src' -Recurse -Force }",
-			"presentation": {
-				"reveal": "silent",
-				"clear": true,
+			"label": "Install tools",
+			"command": ".\\prepare.ps1",
+			"options": {
+				"cwd": "${workspaceRoot}/install"
 			},
+			"presentation": {
+				"reveal": "always",
+				"clear": true
+			}
+		},
+		{
+			"label": "Clean",
+			"command": "Invoke-Build -Task Clean"
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
-			"command": ".\\tools\\ConvertTo-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-Path",
-				"template",
-				"-DestinationPath",
-				"src\\template",
-				"-Indented",
-				"-Verbose"
-			],
-			"dependsOn": [
-				"Clean"
-			]
+			"command": "Invoke-Build -Task Unpack"
 		},
 		{
-			"label": "Clean Open Office content.xml",
-			"command": ".\\tools\\Optimize-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-Path",
-				"src\\template",
-				"-Verbose"
-			],
+			"label": "Optimize Open Office XML files",
+			"command": "Invoke-Build -Task OptimizeXML -Verbose"
 		},
 		{
 			"label": "Create Open Office files from plain XML",
@@ -68,18 +59,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": ".\\tools\\ConvertFrom-PlainXMLAllDocuments.ps1",
-			"args": [
-				"-DestinationPath",
-				"template",
-				"-Path",
-				"src\\template",
-				"-Force",
-				"-Verbose"
-			],
-			"presentation": {
-				"clear": true,
-			},
-		},
-	],
+			"command": "Invoke-Build -Task Build -Verbose"
+		}
+	]
 }

@@ -10,16 +10,11 @@
 param(
 	# путь к папке с xml файлами
 	[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $true )]
-	[Alias( "Directory" )]
 	[System.String]
 	$Path,
 
-	# путь к файлу Open Office, который будет создан
+	# путь к папке, в которой будет создан файл Open Office
 	[Parameter( Mandatory = $True, Position = 1, ValueFromPipeline = $false )]
-	[Alias( "ODT_File" )]
-	[Alias( "ODTFile" )]
-	[Alias( "OTT_File" )]
-	[Alias( "OTTFile" )]
 	[System.String]
 	$DestinationPath,
 
@@ -50,6 +45,7 @@ begin {
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	if ( $PSCmdlet.ShouldProcess( $DestinationPath, "Create Open Office document from plain XML directory" ) ) {
 
 		$TempXMLFolder = Join-Path `
@@ -62,8 +58,8 @@ process {
 		try {
 			if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Unindent all xml source files before build Open Office file" ) ) {
 				Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-					| Where-Object { $_.Length -gt 0 } `
-					| ForEach-Object {
+				| Where-Object { $_.Length -gt 0 } `
+				| ForEach-Object {
 					if ( $PSCmdlet.ShouldProcess( $_, "Unindent xml file" ) ) {
 						$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
 						try {
@@ -110,7 +106,7 @@ process {
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				Get-ChildItem -Path $DestinationTempPathForFile -File -Recurse `
 					-Exclude 'mimetype' `
-					| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
+				| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
 					-Format Zip `
 					-CompressionLevel Normal -CompressionMethod Deflate `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
