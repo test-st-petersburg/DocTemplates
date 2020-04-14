@@ -50,50 +50,6 @@
 
 	<xsl:include href="ODTXMLFormatter.xslt" />
 
-	<!--
-		особая обработка документа styles.xml
-		при удалении "пустых" автоматических стилей необходим анализ
-		уже обработанного (результирующего) дерева.
-	-->
-
-	<xsl:template match="/office:document-styles" mode="indent-self">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-			<xsl:iterate select="node()">
-				<xsl:param name="result-auto-paragraph-styles" as="map( xs:string, element( style:style ) )" select="map{}"/>
-				<xsl:choose>
-					<xsl:when test="name() = 'office:automatic-styles'">
-						<xsl:message select="'!!!!!'"/>
-						<!-- <xsl:variable name="automatic-styles" as="element( office:automatic-styles )"> -->
-							<xsl:apply-templates select="." mode="indent">
-								<xsl:with-param name="process-on-completion" select="position() = last()"/>
-							</xsl:apply-templates>
-						<!-- </xsl:variable> -->
-						<!-- <xsl:value-of select="$automatic-styles"/> -->
-						<xsl:next-iteration>
-							<!-- <xsl:with-param name="result-auto-paragraph-styles" select="map:merge( $result-auto-paragraph-styles, $automatic-styles-map )"/> -->
-							<!-- <xsl:with-param name="result-auto-paragraph-styles">
-								<xsl:map>
-									<xsl:for-each select="$automatic-styles/office:automatic-styles/style:style">
-										<xsl:map-entry key="@style:name" select="."/>
-									</xsl:for-each>
-								</xsl:map>
-							</xsl:with-param> -->
-						</xsl:next-iteration>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:message select="name()"/>
-						<xsl:message select="map:size( $result-auto-paragraph-styles )"/>
-						<xsl:apply-templates select="." mode="indent">
-							<xsl:with-param name="process-on-completion" select="position() = last()"/>
-						</xsl:apply-templates>
-						<xsl:next-iteration/>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:iterate>
-		</xsl:copy>
-	</xsl:template>
-
 	<!-- удаляем автоматические стили символов -->
 
 	<xsl:key name="auto-text-styles"
@@ -120,65 +76,6 @@
 	/>
 
 	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" />
-
-	<!-- удаляем автоматические стили абзацев, не переопределяющие свойства родительского стиля -->
-
-	<xsl:variable name="output-styles" select="map{}"/>
-	<!-- <xsl:variable name="output-styles" as="map(xs:string, element(style:style))" select="map{}"/> -->
-
-	<xsl:template name="remove-if-non-populated">
-		<xsl:where-populated>
-			<xsl:call-template name="shallow-indent-copy"/>
-		</xsl:where-populated>
-	</xsl:template>
-
-	<xsl:template name="remove-if-empty">
-		<xsl:choose>
-			<xsl:when test='@*'>
-				<xsl:call-template name="shallow-indent-copy"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="remove-if-non-populated" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='paragraph' ]" mode="indent-self">
-		<xsl:on-non-empty>
-			<xsl:variable name="this" select="copy-of(.)" as="element(style:style)"/>
-			<!-- <xsl:evaluate context-item="." xpath="let $output-styles := map:put( $output-styles, $this/@style:name, $this )"/> -->
-		</xsl:on-non-empty>
-		<xsl:call-template name="remove-if-non-populated" />
-	</xsl:template>
-
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='paragraph' ]/style:paragraph-properties" mode="indent-self">
-		<xsl:call-template name="remove-if-empty" />
-	</xsl:template>
-
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='paragraph' ]/style:paragraph-properties/style:tab-stops" mode="indent-self">
-		<xsl:call-template name="remove-if-non-populated" />
-	</xsl:template>
-
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='paragraph' ]/style:text-properties" mode="indent-self">
-		<xsl:call-template name="remove-if-empty" />
-	</xsl:template>
-
-	<!-- <xsl:template match="office:automatic-styles/style:style[ @style:family='paragraph' ]/style:paragraph-properties/style:tab-stops" mode="indent-self">
-		<xsl:apply-templates mode="remove-if-empty"/>
-	</xsl:template> -->
-
-	<!-- <xsl:key name="used-paragraph-styles"
-		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
-		use="@text:style-name"
-	/>
-
-	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" /> -->
-
-	<!-- <style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
-		<style:paragraph-properties>
-			<style:tab-stops/>
-		</style:paragraph-properties>
-	</style:style> -->
 
 	<!-- форматируем текст модулей -->
 
