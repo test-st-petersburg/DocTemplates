@@ -468,8 +468,9 @@
 		<style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="html">
 			<style:paragraph-properties fo:margin-left="1cm" fo:margin-right="0cm" fo:text-indent="0cm" style:auto-text-indent="false"/>
 		</style:style>
-		<style:style style:name="Наименование_20_вида_20_документа" style:display-name="Наименование вида документа" style:family="paragraph" style:parent-style-name="Наименование_20_структурного_20_подразделения" style:class="extra" style:master-page-name="">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="true" style:page-number="auto"/>
+		<style:style style:name="Наименование_20_вида_20_документа" style:display-name="Наименование вида документа" style:family="paragraph" style:parent-style-name="Шапка" style:class="extra" style:master-page-name="">
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center" style:justify-single-word="false" style:page-number="auto" style:snap-to-layout-grid="false"/>
+			<style:text-properties fo:text-transform="uppercase" fo:font-size="14pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:letter-kerning="false"/>
 		</style:style>
 		<style:style style:name="Заголовок_20_перечня_20_приложений" style:display-name="Заголовок перечня приложений" style:family="paragraph" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Список_20_приложений" style:master-page-name="">
 			<style:paragraph-properties fo:hyphenation-ladder-count="no-limit" style:page-number="auto" fo:keep-with-next="always"/>
@@ -1356,13 +1357,6 @@
 			<style:header-style/>
 			<style:footer-style/>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm10">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
-				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-			</style:page-layout-properties>
-			<style:header-style/>
-			<style:footer-style/>
-		</style:page-layout>
 		<number:number-style style:name="N0">
 			<number:number number:min-integer-digits="1"/>
 		</number:number-style>
@@ -1403,7 +1397,7 @@
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
-						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:condition="ooow:ЭтоДоговор OR ЭтоВнутреннийДокумент" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:protected="true">
 							<text:p text:style-name="Справочные_20_данные_20_об_20_организации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
 							<text:p text:style-name="Конец_20_колонки"/>
 							<text:p text:style-name="Справочные_20_данные_20_об_20_организации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
@@ -1418,7 +1412,7 @@
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="После_20_шапки"/>
-				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат">
+				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат" text:condition="ooow:((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:display="condition">
 					<table:table table:name="РегистрационныеДанные" table:style-name="РегистрационныеДанные">
 						<table:table-column table:style-name="РегистрационныеДанные.A"/>
 						<table:table-column table:style-name="РегистрационныеДанные.B"/>
@@ -1524,26 +1518,26 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="Конец_20_колонки"/>
 					<text:p text:style-name="Пустой_20_абзац"/>
-					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
+					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели"/></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:condition="ooow:ЭтоПереписка" text:is-hidden="true" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ЭтоИсходящийДокумент) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент) )" text:display="condition" text:protected="true">
+					<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Справка</text:variable-get></text:p>
+				</text:section>
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
 					<table:table table:name="Регистрационные данные (вн.)" table:style-name="Регистрационные_20_данные_20__28_вн._29_">
 						<table:table-column table:style-name="Регистрационные_20_данные_20__28_вн._29_.A" table:number-columns-repeated="3"/>
 						<table:table-row>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP1"><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span></text:p>
+								<text:p text:style-name="MP1"><text:span text:style-name="Дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации"/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP2"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-get text:name="МестоСоставленияДокумента" style:data-style-name="N0">Великий Новгород</text:variable-get></text:span></text:p>
+								<text:p text:style-name="MP2"><text:span text:style-name="Место_20_составление_20_документа"><text:variable-get text:name="МестоСоставленияДокумента">Великий Новгород</text:variable-get></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP3">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span></text:p>
+								<text:p text:style-name="MP3">№<text:span text:style-name="Регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер"/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
-				</text:section>
-				<text:section text:style-name="MSect3" text:name="Вид документа (вн.)" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="Наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 				</text:section>
 			</loext:header-first>
 			<style:footer>
@@ -1594,6 +1588,6 @@
 		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm1" style:next-style-name="Standard"/>
 		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm7"/>
 		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm10"/>
+		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm1"/>
 	</office:master-styles>
 </office:document-styles>

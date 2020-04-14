@@ -21,4 +21,18 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 	document.getTextFields().refresh()
 
 end sub
+
+rem ----------------------------------------------------------------------
+rem Обновляем поля при открытии документа
+rem ----------------------------------------------------------------------
+sub onDocOpen()
+	dim document as object
+	
+	document   = ThisComponent
+
+	document.getTextFields().refresh()
+
+end sub
+
+
 </script:module>
