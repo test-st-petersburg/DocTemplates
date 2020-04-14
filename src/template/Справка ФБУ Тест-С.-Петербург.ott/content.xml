@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?><office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" office:version="1.2">
+	<office:scripts/>
+	<office:font-face-decls>
+		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
+		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable"/>
+		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="Times New Roman1" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="Times New Roman2" svg:font-family="'Times New Roman'" style:font-adornments="Полужирный" style:font-family-generic="roman" style:font-pitch="variable">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-family-generic="roman" style:font-pitch="variable">
+			<svg:font-face-src>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
+					<svg:font-face-format svg:string="truetype"/>
+				</svg:font-face-uri>
+			</svg:font-face-src>
+		</style:font-face>
+	</office:font-face-decls>
+	<office:automatic-styles>
+		<style:style style:name="ТаблицаСЛоготипами" style:family="table">
+			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.A" style:family="table-column">
+			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.B" style:family="table-column">
+			<style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.C" style:family="table-column">
+			<style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.1" style:family="table-row">
+			<style:table-row-properties fo:keep-together="auto"/>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.A1" style:family="table-cell">
+			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none">
+				<style:background-image/>
+			</style:table-cell-properties>
+		</style:style>
+		<style:style style:name="ТаблицаСЛоготипами.B1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none">
+				<style:background-image/>
+			</style:table-cell-properties>
+		</style:style>
+		<style:style style:name="Подписи" style:family="table">
+			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="Подписи.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
+		</style:style>
+		<style:style style:name="Подписи.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
+		</style:style>
+		<style:style style:name="Подписи.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
+		</style:style>
+		<style:style style:name="Подписи.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
+			<style:paragraph-properties>
+				<style:tab-stops/>
+			</style:paragraph-properties>
+		</style:style>
+		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
+			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false">
+				<style:tab-stops>
+					<style:tab-stop style:position="1.704cm" style:type="center"/>
+					<style:tab-stop style:position="3.5cm"/>
+					<style:tab-stop style:position="5.75cm" style:type="center"/>
+					<style:tab-stop style:position="7.451cm"/>
+				</style:tab-stops>
+			</style:paragraph-properties>
+		</style:style>
+		<style:style style:name="P3" style:family="paragraph" style:parent-style-name="Регистрационные_20_данные">
+			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
+		</style:style>
+		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Подстрочник">
+			<style:paragraph-properties>
+				<style:tab-stops>
+					<style:tab-stop style:position="14cm" style:type="right"/>
+				</style:tab-stops>
+			</style:paragraph-properties>
+		</style:style>
+		<style:style style:name="P5" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
+			<style:paragraph-properties style:page-number="auto"/>
+		</style:style>
+		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Поле_20_в_20_бланке_20_с_20_автоматической_20_высотой">
+			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
+		</style:style>
+		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="Бланк_3a__20_поле_20_подчёркнутое">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="Поле_20_в_20_бланке">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="Шапка_20_в_20_бланке">
+			<style:graphic-properties style:print-content="true" style:protect="size position" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="Лого_20_Тест_20_в_20_шапке">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+		</style:style>
+		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="Лого_20_РСТ_20_в_20_шапке">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+		</style:style>
+		<style:style style:name="Sect1" style:family="section">
+			<style:section-properties fo:background-color="transparent" text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="3" fo:column-gap="0.801cm">
+					<style:column-sep style:width="0.071cm" style:color="#0083c9" style:height="100%" style:style="solid"/>
+					<style:column style:rel-width="21845*" fo:start-indent="0cm" fo:end-indent="0.4cm"/>
+					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0.4cm"/>
+					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0cm"/>
+				</style:columns>
+				<style:background-image/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect2" style:family="section">
+			<style:section-properties fo:background-color="transparent" text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="2">
+					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.249cm"/>
+					<style:column style:rel-width="38389*" fo:start-indent="1.249cm" fo:end-indent="0cm"/>
+				</style:columns>
+				<style:background-image/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect3" style:family="section">
+			<style:section-properties fo:background-color="transparent" style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+				<style:background-image/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect4" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="gr1" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr2" style:family="graphic">
+			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
+		</style:style>
+		<style:style style:name="gr3" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr4" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="gr5" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<number:boolean-style style:name="N99">
+			<number:boolean/>
+		</number:boolean-style>
+	</office:automatic-styles>
+	<office:body>
+		<office:text>
+			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
+			<text:variable-decls>
+				<text:variable-decl office:value-type="string" text:name="Дело"/>
+				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
+				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
+				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
+				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
+				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
+				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
+				<text:variable-decl office:value-type="string" text:name="Получатели"/>
+				<text:variable-decl office:value-type="string" text:name="Тема"/>
+				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОГРН"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияИНН"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияКПП"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
+				<text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
+				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
+				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
+				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ФормаБланка"/>
+				<text:variable-decl office:value-type="boolean" text:name="ЭтоВнутреннийДокумент"/>
+				<text:variable-decl office:value-type="boolean" text:name="ЭтоВходящийДокумент"/>
+				<text:variable-decl office:value-type="boolean" text:name="ЭтоДоговор"/>
+				<text:variable-decl office:value-type="boolean" text:name="ЭтоИсходящийДокумент"/>
+				<text:variable-decl office:value-type="boolean" text:name="ЭтоПереписка"/>
+				<text:variable-decl office:value-type="string" text:name="Содержание"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументах"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименование"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатФИО"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьИмПадеж"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатИО"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжность"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументах"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИмПадеж"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьРП"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьДП"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатФИОДП"/>
+				<text:variable-decl office:value-type="string" text:name="АдресатИмяОтчествоИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
+				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
+				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
+				<text:variable-decl office:value-type="string" text:name="ДатаВозникновения"/>
+				<text:variable-decl office:value-type="string" text:name="Сумма"/>
+				<text:variable-decl office:value-type="string" text:name="СуммаПрописью"/>
+				<text:variable-decl office:value-type="string" text:name="ПодтверждающиеДокументы"/>
+				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБИК"/>
+				<text:variable-decl office:value-type="string" text:name="КБК"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииКсч"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБанк"/>
+				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
+				<text:variable-decl office:value-type="float" text:name="ДатаВозникновенияЗадолженности"/>
+				<text:variable-decl office:value-type="float" text:name="СуммаЗадолженности"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияНаименованиеПолное"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
+				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
+			</text:variable-decls>
+			<text:sequence-decls>
+				<text:sequence-decl text:display-outline-level="0" text:name="Illustration"/>
+				<text:sequence-decl text:display-outline-level="10" text:separation-character="." text:name="Table"/>
+				<text:sequence-decl text:display-outline-level="0" text:name="Text"/>
+				<text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
+				<text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
+			</text:sequence-decls>
+			<text:user-field-decls/>
+			<text:section text:style-name="Sect3" text:name="Служебный" text:display="none">
+				<text:p text:style-name="P5"/>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+				<text:p text:style-name="Служебный"/>
+			</text:section>
+			<text:p text:style-name="Бланк_3a__20_начало"/>
+			<text:section text:style-name="Sect4" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
+				<text:p text:style-name="Вступительное_20_обращение"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
+			</text:section>
+			<text:p text:style-name="Основной_20_текст_20_документа">{Содержание}</text:p>
+			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+			<text:list xml:id="list3683255438" text:style-name="Numbering_20_123">
+				<text:list-item>
+					<text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
+				</text:list-item>
+			</text:list>
+			<text:list xml:id="list3763344078" text:style-name="List_20_2">
+				<text:list-item>
+					<text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
+				</text:list-item>
+			</text:list>
+			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+			<text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
+			<text:list xml:id="list1862892549" text:style-name="Нумерация_20_списка_20_приложений">
+				<text:list-item>
+					<text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
+				</text:list-item>
+				<text:list-item>
+					<text:p text:style-name="Список_20_приложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
+				</text:list-item>
+			</text:list>
+			<text:section text:style-name="Sect4" text:name="Подписи">
+				<table:table table:name="Подписи" table:style-name="Подписи">
+					<table:table-column table:style-name="Подписи.A"/>
+					<table:table-column table:style-name="Подписи.B"/>
+					<table:table-column table:style-name="Подписи.C"/>
+					<table:table-row>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+						</table:table-cell>
+					</table:table-row>
+				</table:table>
+			</text:section>
+		</office:text>
+	</office:body>
+</office:document-content>
