@@ -180,4 +180,13 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template match="text:variable-decls" mode="indent-self">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="indent"/>
+			<xsl:apply-templates select="text:variable-decl" mode="indent">
+				<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
+			</xsl:apply-templates>
+		</xsl:copy>
+	</xsl:template>
+
 </xsl:stylesheet>
