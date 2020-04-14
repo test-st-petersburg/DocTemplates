@@ -1,5 +1,6 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -48,12 +49,35 @@
 
 	<xsl:include href="ODTXMLFormatter.xslt" />
 
-	<!-- ключ, содержащий родительские стили -->
+	<!--
+		особая обработка документа styles.xml
+		при удалении "пустых" автоматических стилей необходим анализ
+		уже обработанного (результирующего) дерева.
+	-->
 
-	<xsl:key name="parent-styles"
-		match="style:style"
-		use="@style:parent-style-name"
-	/>
+	<xsl:template match="/office:document-styles" mode="indent-self">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="indent"/>
+			<xsl:iterate select="node()">
+				<!-- <xsl:param name="result-auto-paragraph-styles" tunnel="yes" select="map{}"/> -->
+				<xsl:choose>
+					<xsl:when test='office:automatic-styles'>
+						<xsl:apply-templates select="." mode="indent">
+							<xsl:with-param name="process-on-completion" select="position() = last()"/>
+						</xsl:apply-templates>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="indent">
+							<xsl:with-param name="process-on-completion" select="position() = last()"/>
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:next-iteration>
+					<!-- <xsl:with-param name="result-auto-paragraph-styles" select="$result-auto-paragraph-styles"/> -->
+				</xsl:next-iteration>
+			</xsl:iterate>
+		</xsl:copy>
+	</xsl:template>
 
 	<!-- удаляем автоматические стили символов -->
 
@@ -69,6 +93,11 @@
 	</xsl:template>
 
 	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+
+	<xsl:key name="auto-paragraph-styles"
+		match="office:automatic-styles/style:style[ @style:family='paragraph' ]"
+		use="@style:name"
+	/>
 
 	<xsl:key name="used-paragraph-styles"
 		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
