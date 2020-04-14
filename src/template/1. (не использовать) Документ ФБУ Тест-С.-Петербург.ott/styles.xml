@@ -888,58 +888,7 @@
 		<text:list-style style:name="Numbering_20_abc" style:display-name="Numbering abc" style:hidden="true"/>
 		<text:list-style style:name="Numbering_20_IVX" style:display-name="Numbering IVX" style:hidden="true"/>
 		<text:list-style style:name="Numbering_20_ivx" style:display-name="Numbering ivx" style:hidden="true"/>
-		<text:list-style style:name="List_20_1" style:display-name="List 1" style:hidden="true">
-			<text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="2" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="3" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="4" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="5" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="6" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="7" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="8" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="9" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="10" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
-				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
-					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
-				</style:list-level-properties>
-			</text:list-level-style-bullet>
-		</text:list-style>
+		<text:list-style style:name="List_20_1" style:display-name="List 1" style:hidden="true"/>
 		<text:list-style style:name="List_20_2" style:display-name="List 2">
 			<text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
