@@ -1,5 +1,7 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -61,29 +63,41 @@
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
+	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+
+	<xsl:key name="auto-paragraph-styles"
+		match="office:automatic-styles/style:style[ @style:family='paragraph' ]"
+		use="@style:name"
+	/>
+
+	<xsl:key name="used-paragraph-styles"
+		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
+		use="@text:style-name"
+	/>
+
+	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" />
+
 	<!-- форматируем текст модулей -->
 
 	<xsl:template match="script-module:module/text()" mode="#all">
-		<xsl:variable name="module-text" select="." />
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph1" as="xs:string" select="." />
+		<xsl:variable name="module-text-ph2" as="xs:string">
 			<!-- удаляем лишние пробелы в конце строк -->
-			<xsl:analyze-string select="$module-text" regex="^(.*?)\s*$" flags="s">
+			<xsl:analyze-string select="$module-text-ph1" regex="^(.*?)\s*$" flags="s">
 				<xsl:matching-substring>
 					<xsl:value-of select='regex-group(1)' />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph3" as="xs:string">
 			<!-- удаляем лишние пустые строки в начале и конце модуля -->
-			<xsl:analyze-string select="$module-text" regex="^\s*(.*?)\s*$" flags="ms">
+			<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
 				<xsl:matching-substring>
-					<xsl:value-of select="'&#x0A;'" />
-					<xsl:value-of select='regex-group(1)' />
-					<xsl:value-of select="'&#x0A;'" />
+					<xsl:value-of select="concat( $indent-line, regex-group(1), $indent-line )" />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:value-of select="$module-text" />
+		<xsl:value-of select="$module-text-ph3" />
 	</xsl:template>
 
 	<!-- удаляем лишние аттрибуты -->

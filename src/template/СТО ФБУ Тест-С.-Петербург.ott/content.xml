@@ -433,16 +433,6 @@
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
-		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="1.265cm" fo:text-align="end" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
-		</style:style>
-		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties style:snap-to-layout-grid="false"/>
-		</style:style>
-		<style:style style:name="P3" style:family="paragraph" style:parent-style-name="Header">
-			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
-			<style:text-properties fo:font-weight="bold"/>
-		</style:style>
 		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Standard">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:orphans="2" fo:widows="2" fo:text-indent="0cm" style:auto-text-indent="false"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="10pt" fo:letter-spacing="0.004cm" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent"/>
@@ -854,13 +844,7 @@
 		<style:style style:name="P90" style:family="paragraph" style:parent-style-name="Heading_20_2" style:list-style-name="Пункты_20_документа">
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true"/>
 		</style:style>
-		<style:style style:name="P91" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true"/>
-		</style:style>
 		<style:style style:name="P92" style:family="paragraph" style:parent-style-name="Heading_20_3" style:list-style-name="Пункты_20_документа">
-			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true"/>
-		</style:style>
-		<style:style style:name="P93" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true"/>
 		</style:style>
 		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога">
@@ -880,19 +864,10 @@
 		<style:style style:name="P100" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
 			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true"/>
 		</style:style>
-		<style:style style:name="P101" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
-			<style:text-properties fo:text-transform="uppercase" style:use-window-font-color="true" style:font-name="Times New Roman1" fo:font-size="14pt" fo:font-weight="bold" style:letter-kerning="true"/>
-		</style:style>
 		<style:style style:name="P102" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="P103" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа" style:master-page-name="Листы_20_документа">
-			<style:paragraph-properties style:page-number="1"/>
-		</style:style>
 		<style:style style:name="P104" style:family="paragraph" style:parent-style-name="Heading_20_1" style:list-style-name="Пункты_20_документа">
-			<style:paragraph-properties fo:break-before="page"/>
-		</style:style>
-		<style:style style:name="P105" style:family="paragraph" style:parent-style-name="Заголовок_20_условный" style:list-style-name="Пункты_20_документа">
 			<style:paragraph-properties fo:break-before="page"/>
 		</style:style>
 		<style:style style:name="P106" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="Пункты_20_документа"/>
