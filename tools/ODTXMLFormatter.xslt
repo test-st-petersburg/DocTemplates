@@ -1,5 +1,6 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:saxon="http://saxon.sf.net/"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
@@ -78,10 +79,9 @@
 	/>
 
 	<!-- строки для форматирования -->
-	<xsl:variable name="indent-chars" select="'&#x9;'" />
+	<xsl:param name="indent-chars" as="xs:string" select="'&#x9;'" />
 	<!-- применимо для dotNet XslTransformer -->
-	<!-- <xsl:variable name="indent-line" select="'&#xd;&#xa;'" /> -->
-	<xsl:variable name="indent-line" select="'&#xa;'" />
+	<xsl:param name="indent-line" as="xs:string" select="'&#xa;'" />
 
 	<xsl:preserve-space elements="text:p text:span text:variable-set"/>
 	<xsl:strip-space elements="*" />
@@ -89,7 +89,7 @@
 	<!-- переводим обработку корня в режим indent -->
 
 	<xsl:template match="/*">
-		<xsl:param name="indent" select="$indent-line" tunnel="yes"/>
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
 		<xsl:apply-templates select="." mode="indent-self"/>
 	</xsl:template>
 
@@ -109,7 +109,8 @@
 	<!-- обработка в режиме indent (добавляем отступы для себя) -->
 
 	<xsl:template match="element()|processing-instruction()|comment()" mode="indent">
-		<xsl:param name="indent" select="$indent-line" tunnel="yes"/>
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:param name="process-on-completion" as="xs:boolean" select="true()"/>
 		<xsl:on-non-empty>
 			<xsl:value-of select="concat($indent, $indent-chars)"/>
 		</xsl:on-non-empty>
@@ -117,7 +118,7 @@
 			<xsl:with-param name="indent" select="concat($indent, $indent-chars)" tunnel="yes"/>
 		</xsl:apply-templates>
 		<xsl:on-non-empty>
-			<xsl:if test="position()=last()">
+			<xsl:if test="$process-on-completion and ( position() = last() )">
 				<xsl:value-of select="$indent"/>
 			</xsl:if>
 		</xsl:on-non-empty>
