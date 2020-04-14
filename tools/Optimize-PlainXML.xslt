@@ -1,6 +1,7 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -59,22 +60,36 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="indent"/>
 			<xsl:iterate select="node()">
-				<!-- <xsl:param name="result-auto-paragraph-styles" tunnel="yes" select="map{}"/> -->
+				<xsl:param name="result-auto-paragraph-styles" as="map( xs:string, element( style:style ) )" select="map{}"/>
 				<xsl:choose>
-					<xsl:when test='office:automatic-styles'>
-						<xsl:apply-templates select="." mode="indent">
-							<xsl:with-param name="process-on-completion" select="position() = last()"/>
-						</xsl:apply-templates>
+					<xsl:when test="name() = 'office:automatic-styles'">
+						<xsl:message select="'!!!!!'"/>
+						<!-- <xsl:variable name="automatic-styles" as="element( office:automatic-styles )"> -->
+							<xsl:apply-templates select="." mode="indent">
+								<xsl:with-param name="process-on-completion" select="position() = last()"/>
+							</xsl:apply-templates>
+						<!-- </xsl:variable> -->
+						<!-- <xsl:value-of select="$automatic-styles"/> -->
+						<xsl:next-iteration>
+							<!-- <xsl:with-param name="result-auto-paragraph-styles" select="map:merge( $result-auto-paragraph-styles, $automatic-styles-map )"/> -->
+							<!-- <xsl:with-param name="result-auto-paragraph-styles">
+								<xsl:map>
+									<xsl:for-each select="$automatic-styles/office:automatic-styles/style:style">
+										<xsl:map-entry key="@style:name" select="."/>
+									</xsl:for-each>
+								</xsl:map>
+							</xsl:with-param> -->
+						</xsl:next-iteration>
 					</xsl:when>
 					<xsl:otherwise>
+						<xsl:message select="name()"/>
+						<xsl:message select="map:size( $result-auto-paragraph-styles )"/>
 						<xsl:apply-templates select="." mode="indent">
 							<xsl:with-param name="process-on-completion" select="position() = last()"/>
 						</xsl:apply-templates>
+						<xsl:next-iteration/>
 					</xsl:otherwise>
 				</xsl:choose>
-				<xsl:next-iteration>
-					<!-- <xsl:with-param name="result-auto-paragraph-styles" select="$result-auto-paragraph-styles"/> -->
-				</xsl:next-iteration>
 			</xsl:iterate>
 		</xsl:copy>
 	</xsl:template>
