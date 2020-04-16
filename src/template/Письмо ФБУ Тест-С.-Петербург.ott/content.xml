@@ -294,7 +294,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
-			<text:p text:style-name="Бланк_3a__20_начало_20_письма"/>
+			<text:p text:style-name="Бланк_начало_20_письма"/>
 			<text:section text:style-name="Sect4" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
 				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
 			</text:section>
