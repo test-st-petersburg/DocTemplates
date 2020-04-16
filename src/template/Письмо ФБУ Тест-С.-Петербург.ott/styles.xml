@@ -777,12 +777,7 @@
 		<style:style style:name="Mgr5" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<style:page-layout style:name="Mpm2">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.499cm" fo:margin-bottom="0.499cm" fo:margin-left="0.499cm" fo:margin-right="0.499cm">
-				<style:columns fo:column-count="1"/>
-			</style:page-layout-properties>
-		</style:page-layout>
-		<style:page-layout style:name="Mpm3" style:page-usage="right">
+		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:footnote-max-height="0cm">
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
@@ -790,18 +785,20 @@
 				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
 			</style:header-style>
 			<style:footer-style>
-				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+				<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
 			</style:footer-style>
 		</style:page-layout>
 		<style:page-layout style:name="Mpm4" style:page-usage="mirrored">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
 			<style:header-style>
-				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" fo:background-color="transparent" style:dynamic-spacing="false" draw:fill="none" draw:fill-color="#729fcf"/>
+				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
 			</style:header-style>
-			<style:footer-style/>
+			<style:footer-style>
+				<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+			</style:footer-style>
 		</style:page-layout>
 		<style:page-layout style:name="Mpm5">
 			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm">
@@ -816,8 +813,8 @@
 		</number:number-style>
 	</office:automatic-styles>
 	<office:master-styles>
-		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm2"/>
-		<style:master-page style:name="Служебная" style:page-layout-name="Mpm2"/>
+		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm4"/>
+		<style:master-page style:name="Служебная" style:page-layout-name="Mpm4"/>
 		<style:master-page style:name="Бланк_первый_20_лист_20_письма" style:display-name="Бланк_первый лист письма" style:page-layout-name="Mpm3" style:next-style-name="Бланк_последующие_20_листы_20_письма">
 			<style:header>
 				<text:p text:style-name="Header"/>
@@ -1033,6 +1030,9 @@
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
 		</style:master-page>
 		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm5"/>
 		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm6"/>
@@ -1042,6 +1042,6 @@
 		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm4" style:next-style-name="Standard"/>
 		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm4"/>
 		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm2"/>
+		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm4"/>
 	</office:master-styles>
 </office:document-styles>
