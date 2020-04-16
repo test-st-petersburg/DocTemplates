@@ -102,14 +102,13 @@
 	</xsl:template>
 
 	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
-
+<!--
 	<xsl:template match="text:outline-style[ @style:name='Outline' ]" mode="indent-self">
 		<xsl:copy>
-			<xsl:apply-templates select="@*[ not( name(.)='style:hidden' ) ]" mode="indent"/>
-			<xsl:attribute name="style:hidden" select="true()"/>
+			<xsl:apply-templates select="@*" mode="indent"/>
 		</xsl:copy>
 	</xsl:template>
-
+ -->
 	<xsl:template match="text:list-style[ @style:hidden ]" mode="indent-self">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="indent"/>
