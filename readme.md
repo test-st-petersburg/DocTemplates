@@ -4,6 +4,12 @@
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
+## Документация
+
+Описание решений по данному проекту расширения формируется с помощью сервиса [ReadTheDocs][].
+
+[![Documentation build status](https://readthedocs.org/projects/DocTemplates/badge/?version=latest&style=plastic)](https://DocTemplates.readthedocs.io/)
+
 ## Шаблоны документов
 
 ### Шаблон "Письмо ФБУ Тест-С.-Петербург"
@@ -76,3 +82,4 @@ git репозиторий.
 [LibreOffice]: https://ru.libreoffice.org "Libre Office"
 [7Zip4Powershell]: https://github.com/thoemmi/7Zip4Powershell
 [Saxon HE]: https://saxonica.com/products/products.xml "Saxon Home Edition"
+[ReadTheDocs]: https://readthedocs.org

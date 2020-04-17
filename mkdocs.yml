@@ -1,0 +1,10 @@
+site_name: Шаблоны документов учреждения (ФБУ "Тест-С.-Петербург")
+
+repo_url: https://github.com/test-st-petersburg/DocTemplates
+
+# nav:
+# - В начало: 'index.md'
+
+docs_dir: docs
+
+theme: readthedocs
