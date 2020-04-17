@@ -102,7 +102,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="*" mode="indent-self">
+	<xsl:template match="element()|processing-instruction()|comment()" mode="indent-self">
 		<xsl:call-template name="shallow-indent-copy"/>
 	</xsl:template>
 
