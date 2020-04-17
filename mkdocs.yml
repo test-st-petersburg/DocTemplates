@@ -7,4 +7,4 @@ repo_url: https://github.com/test-st-petersburg/DocTemplates
 
 docs_dir: docs
 
-theme: Bootstrap386
+theme: readthedocs
