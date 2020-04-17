@@ -6,3 +6,5 @@ repo_url: https://github.com/test-st-petersburg/DocTemplates
 # - В начало: 'index.md'
 
 docs_dir: docs
+
+theme: Bootstrap386
