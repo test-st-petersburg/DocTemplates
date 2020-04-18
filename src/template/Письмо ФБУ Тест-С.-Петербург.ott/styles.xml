@@ -814,7 +814,7 @@
 	</office:automatic-styles>
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Служебная" style:page-layout-name="Mpm4"/>
+		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm4"/>
 		<style:master-page style:name="БланкПервыйЛистПисьма" style:page-layout-name="Mpm3" style:next-style-name="БланкПоследующиеЛистыПисьма">
 			<style:header>
 				<text:p text:style-name="Header"/>
