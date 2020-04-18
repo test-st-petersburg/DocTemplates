@@ -397,7 +397,7 @@
 			<style:graphic-properties style:rel-width="100%" style:rel-height="100%" style:print-content="true" style:protect="size position" style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:fill="none" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="1.25pt solid #000000" style:flow-with-text="true" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph" draw:textarea-vertical-align="bottom"/>
 		</style:style>
 		<style:style style:name="БланкПолеСПодстрочником" style:family="graphic" style:hidden="true">
-			<style:graphic-properties style:rel-width="100%" fo:min-height="0cm" svg:y="0cm" style:print-content="true" style:run-through="foreground" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:fill="none" fo:padding="0cm" fo:border="none" style:flow-with-text="false" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+			<style:graphic-properties style:rel-width="100%" fo:min-height="0.041cm" style:print-content="true" style:run-through="foreground" style:protect="size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:fill="none" fo:padding="0cm" fo:border="none" style:flow-with-text="false" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
 		</style:style>
 		<style:style style:name="БланкПолеАвтоВысота" style:family="graphic" style:hidden="true">
 			<style:graphic-properties style:rel-width="100%" fo:min-height="2cm" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
@@ -406,6 +406,12 @@
 			<style:graphic-properties style:rel-width="100%" fo:min-height="2cm" style:print-content="true" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="БланкПолеСПодстрочникомВТексте" style:family="graphic">
+			<style:graphic-properties svg:width="0cm" fo:min-height="0cm" text:anchor-type="paragraph" style:protect="size position" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" draw:opacity="100%"/>
+		</style:style>
+		<style:style style:name="БланкПодстрочникПоляВТексте" style:family="graphic">
+			<style:graphic-properties svg:width="0cm" fo:min-height="0cm" svg:y="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" draw:opacity="100%"/>
 		</style:style>
 		<text:outline-style style:name="Outline">
 			<text:outline-level-style text:level="1" style:num-suffix="." style:num-format="1">
@@ -753,8 +759,11 @@
 		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочником">
-			<style:graphic-properties style:print-content="true" style:run-through="foreground" style:protect="content size position" style:wrap="none" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
@@ -1100,25 +1109,16 @@
 											</draw:frame><text:variable-get text:name="ДелоГод"/></text:p>
 										</table:table-cell>
 									</table:table-row>
-									<table:table-row>
-										<table:table-cell table:number-columns-spanned="2" office:value-type="string">
-											<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr7" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" style:rel-width="100%" draw:z-index="10">
-												<draw:text-box fo:min-height="0.101cm">
-													<text:p text:style-name="Подстрочник">подпись</text:p>
-												</draw:text-box>
-											</draw:frame><text:s/></text:p>
-										</table:table-cell>
-										<table:covered-table-cell/>
-										<table:table-cell table:number-columns-spanned="2" office:value-type="string">
-											<text:p text:style-name="БланкДатаПодписиДелопроизводителя"><draw:frame draw:style-name="Mfr7" draw:name="Бланк: оформление поля ДатаПодписиДелопроизводителя" text:anchor-type="char" style:rel-width="100%" draw:z-index="11">
-												<draw:text-box fo:min-height="0.101cm">
-													<text:p text:style-name="Подстрочник">дата</text:p>
-												</draw:text-box>
-											</draw:frame><text:s/></text:p>
-										</table:table-cell>
-										<table:covered-table-cell/>
-									</table:table-row>
 								</table:table>
+								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr7" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="20">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="2cm">
+										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" style:rel-width="100%" draw:z-index="27">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">подпись, дата</text:p>
+											</draw:text-box>
+										</draw:frame><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
 							</text:section>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
