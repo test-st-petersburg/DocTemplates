@@ -320,7 +320,7 @@
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
 		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
-		<style:style style:name="Бланк_в_20_дело" style:display-name="Бланк_в дело" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+		<style:style style:name="БланкВДело" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
 		<style:style style:name="Подстрочник" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard">
@@ -374,12 +374,12 @@
 			<style:graphic-properties text:anchor-type="paragraph" svg:x="0cm" svg:y="0cm" style:wrap="dynamic" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="БланкЛогоРСТвШапке" style:family="graphic" style:hidden="true">
-			<style:graphic-properties fo:min-width="0.499cm" fo:min-height="0.499cm" svg:x="0cm" svg:y="0cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="right" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph">
+			<style:graphic-properties fo:min-width="0.499cm" fo:min-height="0.499cm" svg:x="0cm" svg:y="0cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="right" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
 		<style:style style:name="БланкЛогоТестВШапке" style:family="graphic" style:hidden="true" style:parent-style-name="БланкЛогоРСТвШапке">
-			<style:graphic-properties style:wrap="left" style:horizontal-pos="right"/>
+			<style:graphic-properties svg:x="0cm" style:wrap="left" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:horizontal-pos="right" style:horizontal-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="БланкТемаДокумента" style:family="graphic" style:hidden="true">
 			<style:graphic-properties svg:width="2.207cm" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle">
@@ -398,7 +398,7 @@
 			<style:graphic-properties svg:width="0.041cm" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="БланкШапкаВБланке" style:family="graphic" style:hidden="true">
-			<style:graphic-properties style:print-content="true" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph">
+			<style:graphic-properties svg:width="0cm" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" style:print-content="true" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
@@ -687,10 +687,10 @@
 				<style:background-image/>
 			</style:table-row-properties>
 		</style:style>
-		<style:style style:name="БланкРегДанныеВн" style:family="table">
+		<style:style style:name="Регистрационные_20_данные_20__28_вн._29_" style:display-name="Регистрационные данные (вн.)" style:family="table">
 			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
-		<style:style style:name="БланкРегДанныеВн.A" style:display-name="Регистрационные данные (вн.).A" style:family="table-column">
+		<style:style style:name="Регистрационные_20_данные_20__28_вн._29_.A" style:display-name="Регистрационные данные (вн.).A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="Подвал" style:family="table">
@@ -717,18 +717,27 @@
 		<style:style style:name="Подвал.B2" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="БланкРегДанные">
+		<style:style style:name="MP1" style:family="paragraph" style:parent-style-name="БланкРегДанные">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="БланкРегДанные">
+		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="БланкРегДанные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="MP4" style:family="paragraph" style:parent-style-name="Подстрочник">
+		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Подстрочник">
 			<style:paragraph-properties>
 				<style:tab-stops>
 					<style:tab-stop style:position="14cm" style:type="right"/>
 				</style:tab-stops>
 			</style:paragraph-properties>
+		</style:style>
+		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr2" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+		</style:style>
+		<style:style style:name="Mfr3" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+			<style:graphic-properties style:vertical-pos="from-top" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
@@ -739,7 +748,7 @@
 		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="БланкСведенияОбОрганизацииРаздел" style:family="section">
+		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="3" fo:column-gap="0.801cm">
 					<style:column-sep style:width="0.071cm" style:color="#0083c9" style:height="100%" style:style="solid"/>
@@ -777,19 +786,27 @@
 		<style:style style:name="Mgr5" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:footnote-max-height="0cm">
+		<style:page-layout style:name="Mpm1" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm2" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
 			<style:header-style>
 				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
 			</style:header-style>
 			<style:footer-style>
-				<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
 			</style:footer-style>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm4" style:page-usage="mirrored">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm">
+		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
@@ -797,25 +814,31 @@
 				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
 			</style:header-style>
 			<style:footer-style>
-				<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
 			</style:footer-style>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm5">
-			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm">
+		<style:page-layout style:name="Mpm4">
+			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm6">
-			<style:page-layout-properties fo:page-width="22.901cm" fo:page-height="11.4cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm"/>
+		<style:page-layout style:name="Mpm5">
+			<style:page-layout-properties fo:page-width="22.901cm" fo:page-height="11.4cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
 		</style:page-layout>
 		<number:number-style style:name="N0">
 			<number:number number:min-integer-digits="1"/>
 		</number:number-style>
 	</office:automatic-styles>
 	<office:master-styles>
-		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="БланкПервыйЛистПисьма" style:page-layout-name="Mpm3" style:next-style-name="БланкПоследующиеЛистыПисьма">
+		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="БланкПервыйЛистПисьма" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыПисьма">
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
@@ -823,7 +846,7 @@
 				<text:p text:style-name="Header"/>
 			</style:header-left>
 			<loext:header-first>
-				<text:p text:style-name="Header"><draw:frame draw:style-name="БланкШапкаВБланке" draw:name="БланкШапка" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0">
+				<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="БланкШапка" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0">
 					<draw:text-box fo:min-height="2cm">
 						<table:table table:name="БланкТаблицаСЛоготипами" table:style-name="БланкТаблицаСЛоготипами">
 							<table:table-column table:style-name="БланкТаблицаСЛоготипами.A"/>
@@ -831,7 +854,7 @@
 							<table:table-column table:style-name="БланкТаблицаСЛоготипами.C"/>
 							<table:table-row table:style-name="БланкТаблицаСЛоготипами.1">
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
-									<text:p text:style-name="БланкЛоготипыВШапкеРСТ"><draw:frame draw:style-name="БланкЛогоРСТвШапке" draw:name="Бланк_лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="14">
+									<text:p text:style-name="БланкЛоготипыВШапкеРСТ"><draw:frame draw:style-name="Mfr2" draw:name="Бланк_лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="14">
 										<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 										<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 									</draw:frame></text:p>
@@ -841,14 +864,14 @@
 									<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
-									<text:p text:style-name="БланкЛоготипыВШапкеТест"><draw:frame draw:style-name="БланкЛогоТестВШапке" draw:name="Бланк_лого в шапке Тест" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="15">
+									<text:p text:style-name="БланкЛоготипыВШапкеТест"><draw:frame draw:style-name="Mfr3" draw:name="Бланк_лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="15">
 										<draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 										<draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 									</draw:frame></text:p>
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
-						<text:section text:style-name="БланкСведенияОбОрганизацииРаздел" text:name="Справочные данные об организации" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:protected="true">
 							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
 							<text:p text:style-name="КонецКолонки"/>
 							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
@@ -972,20 +995,20 @@
 					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ЭтоИсходящийДокумент) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент) )" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
+					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-					<table:table table:name="Регистрационные данные (вн.)" table:style-name="БланкРегДанныеВн">
-						<table:table-column table:style-name="БланкРегДанныеВн.A" table:number-columns-repeated="3"/>
+					<table:table table:name="Регистрационные данные (вн.)" table:style-name="Регистрационные_20_данные_20__28_вн._29_">
+						<table:table-column table:style-name="Регистрационные_20_данные_20__28_вн._29_.A" table:number-columns-repeated="3"/>
 						<table:table-row>
 							<table:table-cell office:value-type="string">
 								<text:p text:style-name="БланкРегДанные"><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP2"><text:variable-get text:name="МестоСоставленияДокумента" style:data-style-name="N0">Великий Новгород</text:variable-get></text:p>
+								<text:p text:style-name="MP1"><text:variable-get text:name="МестоСоставленияДокумента" style:data-style-name="N0">Великий Новгород</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP3">№<text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span></text:p>
+								<text:p text:style-name="MP2">№<text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
@@ -1007,7 +1030,7 @@
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:p text:style-name="Бланк_в_20_дело">В дело № <text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело">_______</text:variable-get></text:span> <text:line-break/>за <text:variable-get text:name="ДелоГод">________</text:variable-get> г.</text:p>
+							<text:p text:style-name="БланкВДело">В дело № <text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело">_______</text:variable-get></text:span> <text:line-break/>за <text:variable-get text:name="ДелоГод">________</text:variable-get> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" table:number-rows-spanned="2" office:value-type="string">
 							<text:section text:style-name="MSect3" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
@@ -1019,14 +1042,14 @@
 					<table:table-row table:style-name="Подвал.2">
 						<table:covered-table-cell/>
 						<table:table-cell table:style-name="Подвал.B2" office:value-type="string">
-							<text:p text:style-name="MP4">подпись<text:tab/>дата</text:p>
+							<text:p text:style-name="MP3">подпись<text:tab/>дата</text:p>
 						</table:table-cell>
 						<table:covered-table-cell/>
 					</table:table-row>
 				</table:table>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="БланкПоследующиеЛистыПисьма" style:page-layout-name="Mpm4">
+		<style:master-page style:name="БланкПоследующиеЛистыПисьма" style:page-layout-name="Mpm3">
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
@@ -1034,14 +1057,14 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 		</style:master-page>
-		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm5"/>
-		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm6"/>
-		<style:master-page style:name="Endnote" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Left_20_Page" style:hidden="true" style:display-name="Left Page" style:page-layout-name="Mpm4" style:next-style-name="Right_20_Page"/>
-		<style:master-page style:name="Right_20_Page" style:hidden="true" style:display-name="Right Page" style:page-layout-name="Mpm4" style:next-style-name="Left_20_Page"/>
-		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm4" style:next-style-name="Standard"/>
-		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm4"/>
+		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm4"/>
+		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm5"/>
+		<style:master-page style:name="Endnote" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Left_20_Page" style:hidden="true" style:display-name="Left Page" style:page-layout-name="Mpm1" style:next-style-name="Right_20_Page"/>
+		<style:master-page style:name="Right_20_Page" style:hidden="true" style:display-name="Right Page" style:page-layout-name="Mpm1" style:next-style-name="Left_20_Page"/>
+		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm1" style:next-style-name="Standard"/>
+		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm1"/>
 	</office:master-styles>
 </office:document-styles>
