@@ -133,11 +133,6 @@
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:section-properties>
 		</style:style>
-		<style:style style:name="Sect4" style:family="section">
-			<style:section-properties style:editable="false">
-				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-			</style:section-properties>
-		</style:style>
 		<style:style style:name="gr1" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
@@ -247,7 +242,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
 			</text:sequence-decls>
-			<text:section text:style-name="Sect4" text:name="Служебный" text:display="none">
+			<text:section text:style-name="Sect3" text:name="Служебный" text:display="none">
 				<text:p text:style-name="P2"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
