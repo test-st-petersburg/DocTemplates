@@ -1006,7 +1006,7 @@
 				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ЭтоИсходящийДокумент) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент) )" text:is-hidden="true" text:display="condition" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect4" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true">
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
 					<table:table table:name="РегДанныеВнДатаРегистрации" table:style-name="РегДанныеВнДатаРегистрации">
 						<table:table-column table:style-name="РегДанныеВнДатаРегистрации.A"/>
 						<table:table-column table:style-name="РегДанныеВнДатаРегистрации.B"/>
