@@ -60,7 +60,7 @@
 
 	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" mode="#all" />
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all">
+	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all" priority="10">
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
