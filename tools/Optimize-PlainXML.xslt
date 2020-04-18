@@ -108,6 +108,10 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<!-- удаляем лишние элементы -->
+
+	<xsl:template match="style:background-image[empty(@*|node())]" mode="indent-self" />
+
 	<!-- удаляем лишние аттрибуты -->
 
 	<xsl:template match="@style:language-asian" mode="#all" />
@@ -134,10 +138,26 @@
 
 	<xsl:template match="@style:writing-mode" mode="#all" />
 
-	<xsl:template match="@style:master-page-name[.='']" mode="#all" />
+	<xsl:template match="@style:master-page-name[ .='' ]" mode="#all" />
 
  	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
 	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
+
+	<xsl:template match="@fo:background-color[ .='transparent' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties/@style:page-number[ .='auto' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @text:number-lines='false' ]/@text:line-number[ .='0' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:orphans" mode="#all" />
+	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:widows" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @fo:text-align!='justify' ]/@style:justify-single-word" mode="#all" />
+
+	<xsl:template match="style:style[ style:text-properties/@fo:hyphenate='false' ]/style:paragraph-properties/@fo:hyphenation-ladder-count" mode="#all" />
+
+	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-remain-char-count" mode="#all" />
+	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-push-char-count" mode="#all" />
 
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" mode="#all" />
