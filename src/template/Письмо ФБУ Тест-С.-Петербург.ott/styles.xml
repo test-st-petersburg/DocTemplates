@@ -132,10 +132,10 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" style:border-line-width-bottom="0cm 0.004cm 0.002cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" text:line-number="0" style:join-border="false"/>
 			<style:text-properties fo:font-size="6pt"/>
 		</style:style>
-		<style:style style:name="Пустой_20_абзац" style:display-name="Пустой абзац" style:family="paragraph" style:hidden="true" style:class="extra">
+		<style:style style:name="ПустойАбзац" style:family="paragraph" style:hidden="true" style:class="extra">
 			<style:paragraph-properties fo:line-height="0.049cm" text:number-lines="false" text:line-number="0"/>
 		</style:style>
-		<style:style style:name="Конец_20_колонки" style:display-name="Конец колонки" style:family="paragraph" style:hidden="true" style:parent-style-name="Пустой_20_абзац" style:next-style-name="Standard" style:class="extra">
+		<style:style style:name="КонецКолонки" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:break-after="column"/>
 		</style:style>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
@@ -258,38 +258,38 @@
 			<style:map style:condition="list-level()=9" style:apply-style-name="Numbering_20_1"/>
 			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
 		</style:style>
-		<style:style style:name="Бланк_начало_20_письма" style:display-name="Бланк_начало письма" style:family="paragraph" style:hidden="true" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Бланк_первый_20_лист_20_письма">
+		<style:style style:name="БланкПисьмоНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистПисьма">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="Бланк_шапка" style:display-name="Бланк_шапка" style:family="paragraph" style:hidden="true" style:class="extra">
+		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:class="extra">
 			<style:text-properties style:font-name="PT Sans" fo:font-family="'PT Sans'" style:font-style-name="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
 		</style:style>
-		<style:style style:name="Бланк_логоблок" style:display-name="Бланк_логоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra">
+		<style:style style:name="БланкЛогоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:text-properties fo:font-weight="bold"/>
 		</style:style>
-		<style:style style:name="Бланк_наименование_20_организации_20_в_20_логоблоке" style:display-name="Бланк_наименование организации в логоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_логоблок" style:class="extra">
+		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкЛогоблок" style:class="extra">
 			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="center" style:justify-single-word="false"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="13pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:text-scale="110%"/>
 		</style:style>
-		<style:style style:name="Бланк_наименование_20_структурного_20_подразделения" style:display-name="Бланк_наименование структурного подразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_наименование_20_организации_20_в_20_логоблоке" style:class="extra">
+		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
 			<style:text-properties fo:font-variant="normal" fo:text-transform="none"/>
 		</style:style>
-		<style:style style:name="Бланк_логотипы_20_в_20_шапке" style:display-name="Бланк_логотипы в шапке" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra"/>
-		<style:style style:name="Бланк_логотипы_20_в_20_шапке_20_РСТ" style:display-name="Бланк_логотипы в шапке РСТ" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_логотипы_20_в_20_шапке" style:class="extra"/>
-		<style:style style:name="Бланк_логотипы_20_в_20_шапке_20_Тест" style:display-name="Бланк_логотипы в шапке Тест" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_логотипы_20_в_20_шапке" style:class="extra">
+		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra"/>
+		<style:style style:name="БланкЛоготипыВШапкеРСТ" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкЛоготипыВШапке" style:class="extra"/>
+		<style:style style:name="БланкЛоготипыВШапкеТест" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкЛоготипыВШапке" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="Бланк_справочные_20_данные_20_об_20_организации" style:display-name="Бланк_справочные данные об организации" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra">
+		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:line-height="90%"/>
 			<style:text-properties fo:font-size="7pt" style:letter-kerning="true"/>
 		</style:style>
-		<style:style style:name="Бланк_окончание_20_шапки" style:display-name="Бланк_окончание шапки" style:family="paragraph" style:hidden="true" style:class="extra">
+		<style:style style:name="БланкОкончаниеШапки" style:family="paragraph" style:hidden="true" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="0.049cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="2.01pt solid #0083c9" text:number-lines="false" text:line-number="0"/>
 		</style:style>
-		<style:style style:name="Бланк_после_20_шапки" style:display-name="Бланк_после шапки" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+		<style:style style:name="БланкПослеШапки" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" text:number-lines="false" text:line-number="0"/>
 		</style:style>
-		<style:style style:name="Бланк_регистрационные_20_данные" style:display-name="Бланк_регистрационные данные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+		<style:style style:name="БланкРегДанные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<!-- TODO: разделить на два стиля: в шапке, и в подвале. В подвале - связать со стилем подвала -->
 			<!-- TODO: уйти от табуляции в шапке. Уже сейчас не нужна -->
 			<!-- TODO: уйти от табуляции в подвале (на таблицу) -->
@@ -303,23 +303,23 @@
 			</style:paragraph-properties>
 			<style:text-properties fo:font-size="9pt"/>
 		</style:style>
-		<style:style style:name="Бланк_регистрационные_20_данные_3a__20_префикс" style:display-name="Бланк_регистрационные данные: префикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_регистрационные_20_данные" style:class="extra"/>
-		<style:style style:name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения" style:display-name="Бланк_регистрационные данные: поля для заполнения" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_регистрационные_20_данные" style:class="extra">
+		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
+		<style:style style:name="БланкРегДанныеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="Бланк_заголовок_20_документа" style:display-name="Бланк_заголовок документа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+		<style:style style:name="БланкЗаголовокДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false" fo:keep-together="always" fo:hyphenation-ladder-count="no-limit" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-style="italic" fo:font-weight="normal" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
 		</style:style>
-		<style:style style:name="Бланк_гриф_20_ограничения_20_доступа" style:display-name="Бланк_гриф ограничения доступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra">
+		<style:style style:name="БланкГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false" fo:orphans="0" fo:widows="0" text:number-lines="false" text:line-number="0"/>
 			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%"/>
 		</style:style>
-		<style:style style:name="Штрихкод" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra">
+		<style:style style:name="Штрихкод" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" style:justify-single-word="false" fo:keep-together="always"/>
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
-		<style:style style:name="Бланк_исполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
+		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
 		<style:style style:name="Бланк_в_20_дело" style:display-name="Бланк_в дело" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
@@ -327,7 +327,7 @@
 			<style:paragraph-properties fo:keep-together="always" fo:orphans="0" fo:widows="0" fo:padding="0cm" fo:border="none"/>
 			<style:text-properties fo:font-size="6pt"/>
 		</style:style>
-		<style:style style:name="Бланк_отметка_20_о_20_поступлении" style:display-name="Бланк_отметка о поступлении" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+		<style:style style:name="БланкОтметкаОПоступлении" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="start" style:justify-single-word="false">
 				<style:tab-stops>
 					<style:tab-stop style:position="1.199cm" style:type="right"/>
@@ -336,7 +336,7 @@
 				</style:tab-stops>
 			</style:paragraph-properties>
 		</style:style>
-		<style:style style:name="Бланк_наименование_20_вида_20_документа" style:display-name="Бланк_наименование вида документа" style:family="paragraph" style:hidden="true" style:parent-style-name="Бланк_шапка" style:class="extra">
+		<style:style style:name="БланкВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center" style:justify-single-word="false"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="14pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:letter-kerning="false"/>
 		</style:style>
@@ -357,11 +357,11 @@
 		<style:style style:name="Footnote_20_Symbol" style:display-name="Footnote Symbol" style:family="text">
 			<style:text-properties style:text-position="0% 100%"/>
 		</style:style>
-		<style:style style:name="Бланк_регистрационный_20_номер" style:display-name="Бланк_регистрационный номер" style:family="text" style:hidden="true">
+		<style:style style:name="БланкРегНомер" style:family="text" style:hidden="true">
 			<style:text-properties style:text-scale="60%"/>
 		</style:style>
-		<style:style style:name="Бланк_дата_20_регистрации" style:display-name="Бланк_дата регистрации" style:family="text" style:hidden="true" style:parent-style-name="Бланк_регистрационный_20_номер"/>
-		<style:style style:name="Бланк_индекс_20_дела" style:display-name="Бланк_индекс дела" style:family="text" style:hidden="true">
+		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true" style:parent-style-name="БланкРегНомер"/>
+		<style:style style:name="БланкИндексДела" style:family="text" style:hidden="true">
 			<style:text-properties style:text-scale="80%"/>
 		</style:style>
 		<style:style style:name="Frame" style:family="graphic">
@@ -373,31 +373,31 @@
 		<style:style style:name="OLE" style:family="graphic">
 			<style:graphic-properties text:anchor-type="paragraph" svg:x="0cm" svg:y="0cm" style:wrap="dynamic" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="Бланк_лого_20_РСТ_20_в_20_шапке" style:display-name="Бланк_лого РСТ в шапке" style:family="graphic">
+		<style:style style:name="БланкЛогоРСТвШапке" style:family="graphic" style:hidden="true">
 			<style:graphic-properties fo:min-width="0.499cm" fo:min-height="0.499cm" svg:x="0cm" svg:y="0cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="right" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="Бланк_лого_20_Тест_20_в_20_шапке" style:display-name="Бланк_лого Тест в шапке" style:family="graphic" style:parent-style-name="Бланк_лого_20_РСТ_20_в_20_шапке">
-			<style:graphic-properties style:wrap="left" style:horizontal-pos="right" style:horizontal-rel="paragraph-content"/>
+		<style:style style:name="БланкЛогоТестВШапке" style:family="graphic" style:hidden="true" style:parent-style-name="БланкЛогоРСТвШапке">
+			<style:graphic-properties style:wrap="left" style:horizontal-pos="right"/>
 		</style:style>
-		<style:style style:name="Бланк_тема_20_документа" style:display-name="Бланк_тема документа" style:family="graphic">
+		<style:style style:name="БланкТемаДокумента" style:family="graphic" style:hidden="true">
 			<style:graphic-properties svg:width="2.207cm" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="Бланк_поле_20_в_20_бланке" style:display-name="Бланк_поле в бланке" style:family="graphic">
+		<style:style style:name="БланкПолеВБланке" style:family="graphic" style:hidden="true">
 			<style:graphic-properties svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" svg:x="0cm" svg:y="0cm" style:run-through="background" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="page-content" fo:padding="0cm" fo:border="none" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph" draw:textarea-vertical-align="bottom">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="Бланк_поле_20_подчёркнутое" style:display-name="Бланк_поле подчёркнутое" style:family="graphic" style:parent-style-name="Бланк_поле_20_в_20_бланке">
+		<style:style style:name="БланкПолеПодчёркнутое" style:family="graphic" style:hidden="true" style:parent-style-name="БланкПолеВБланке">
 			<style:graphic-properties svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" svg:x="0cm" svg:y="0cm" style:print-content="true" style:protect="size position" style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" fo:background-color="transparent" draw:fill="none" draw:fill-color="#729fcf" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="1.25pt solid #000000" style:flow-with-text="true" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph" draw:textarea-vertical-align="bottom"/>
 		</style:style>
-		<style:style style:name="Бланк_поле_20_в_20_бланке_20_с_20_автоматической_20_высотой" style:display-name="Бланк_поле в бланке с автоматической высотой" style:family="graphic">
+		<style:style style:name="БланкПолеАвтоВысота" style:family="graphic" style:hidden="true">
 			<style:graphic-properties svg:width="0.041cm" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="Бланк_шапка_20_в_20_бланке" style:display-name="Бланка: шапка в бланке" style:family="graphic">
+		<style:style style:name="БланкШапкаВБланке" style:family="graphic" style:hidden="true">
 			<style:graphic-properties style:print-content="true" style:rel-width="100%" fo:min-height="2cm" svg:x="0cm" svg:y="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
@@ -637,60 +637,60 @@
 		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5"/>
 	</office:styles>
 	<office:automatic-styles>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами" style:family="table">
+		<style:style style:name="БланкТаблицаСЛоготипами" style:family="table">
 			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.A" style:family="table-column">
+		<style:style style:name="БланкТаблицаСЛоготипами.A" style:family="table-column">
 			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.B" style:family="table-column">
+		<style:style style:name="БланкТаблицаСЛоготипами.B" style:family="table-column">
 			<style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.C" style:family="table-column">
+		<style:style style:name="БланкТаблицаСЛоготипами.C" style:family="table-column">
 			<style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.1" style:family="table-row">
+		<style:style style:name="БланкТаблицаСЛоготипами.1" style:family="table-row">
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.A1" style:family="table-cell">
+		<style:style style:name="БланкТаблицаСЛоготипами.A1" style:family="table-cell">
 			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
-		<style:style style:name="Бланк_ТаблицаСЛоготипами.B1" style:family="table-cell">
+		<style:style style:name="БланкТаблицаСЛоготипами.B1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none">
 				<style:background-image/>
 			</style:table-cell-properties>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные" style:family="table">
+		<style:style style:name="РегДанные" style:family="table">
 			<style:table-properties style:width="5.999cm" table:align="margins" fo:background-color="transparent" style:may-break-between-rows="false">
 				<style:background-image/>
 			</style:table-properties>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.A" style:family="table-column">
+		<style:style style:name="РегДанные.A" style:family="table-column">
 			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.B" style:family="table-column">
+		<style:style style:name="РегДанные.B" style:family="table-column">
 			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.C" style:family="table-column">
+		<style:style style:name="РегДанные.C" style:family="table-column">
 			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.D" style:family="table-column">
+		<style:style style:name="РегДанные.D" style:family="table-column">
 			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.A1" style:family="table-cell">
+		<style:style style:name="РегДанные.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="РегистрационныеДанные.2" style:family="table-row">
+		<style:style style:name="РегДанные.2" style:family="table-row">
 			<style:table-row-properties fo:background-color="transparent">
 				<style:background-image/>
 			</style:table-row-properties>
 		</style:style>
-		<style:style style:name="Бланк_регистрационные_20_данные_20__28_вн._29_" style:display-name="Регистрационные данные (вн.)" style:family="table">
+		<style:style style:name="БланкРегДанныеВн" style:family="table">
 			<style:table-properties table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
-		<style:style style:name="Бланк_регистрационные_20_данные_20__28_вн._29_.A" style:display-name="Регистрационные данные (вн.).A" style:family="table-column">
+		<style:style style:name="БланкРегДанныеВн.A" style:display-name="Регистрационные данные (вн.).A" style:family="table-column">
 			<style:table-column-properties style:rel-column-width="21845*"/>
 		</style:style>
 		<style:style style:name="Подвал" style:family="table">
@@ -717,10 +717,10 @@
 		<style:style style:name="Подвал.B2" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="Бланк_регистрационные_20_данные">
+		<style:style style:name="MP2" style:family="paragraph" style:parent-style-name="БланкРегДанные">
 			<style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="Бланк_регистрационные_20_данные">
+		<style:style style:name="MP3" style:family="paragraph" style:parent-style-name="БланкРегДанные">
 			<style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
 		</style:style>
 		<style:style style:name="MP4" style:family="paragraph" style:parent-style-name="Подстрочник">
@@ -730,16 +730,16 @@
 				</style:tab-stops>
 			</style:paragraph-properties>
 		</style:style>
-		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="Бланк_поле_20_в_20_бланке">
+		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="Mfr5" style:family="graphic" style:parent-style-name="Бланк_поле_20_подчёркнутое">
+		<style:style style:name="Mfr5" style:family="graphic" style:parent-style-name="БланкПолеПодчёркнутое">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="Бланк_поле_20_в_20_бланке_20_с_20_автоматической_20_высотой">
+		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="Бланк_сведения_20_об_20_организации_20_раздел" style:display-name="Бланк_сведения об организации раздел" style:family="section">
+		<style:style style:name="БланкСведенияОбОрганизацииРаздел" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="3" fo:column-gap="0.801cm">
 					<style:column-sep style:width="0.071cm" style:color="#0083c9" style:height="100%" style:style="solid"/>
@@ -815,7 +815,7 @@
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm4"/>
 		<style:master-page style:name="Служебная" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Бланк_первый_20_лист_20_письма" style:display-name="Бланк_первый лист письма" style:page-layout-name="Mpm3" style:next-style-name="Бланк_последующие_20_листы_20_письма">
+		<style:master-page style:name="БланкПервыйЛистПисьма" style:page-layout-name="Mpm3" style:next-style-name="БланкПоследующиеЛистыПисьма">
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
@@ -823,114 +823,114 @@
 				<text:p text:style-name="Header"/>
 			</style:header-left>
 			<loext:header-first>
-				<text:p text:style-name="Header"><draw:frame draw:style-name="Бланк_шапка_20_в_20_бланке" draw:name="Бланк_шапка" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0">
+				<text:p text:style-name="Header"><draw:frame draw:style-name="БланкШапкаВБланке" draw:name="БланкШапка" text:anchor-type="as-char" svg:width="17.501cm" style:rel-width="100%" draw:z-index="0">
 					<draw:text-box fo:min-height="2cm">
-						<table:table table:name="Бланк_ТаблицаСЛоготипами" table:style-name="Бланк_ТаблицаСЛоготипами">
-							<table:table-column table:style-name="Бланк_ТаблицаСЛоготипами.A"/>
-							<table:table-column table:style-name="Бланк_ТаблицаСЛоготипами.B"/>
-							<table:table-column table:style-name="Бланк_ТаблицаСЛоготипами.C"/>
-							<table:table-row table:style-name="Бланк_ТаблицаСЛоготипами.1">
-								<table:table-cell table:style-name="Бланк_ТаблицаСЛоготипами.A1" office:value-type="string">
-									<text:p text:style-name="Бланк_логотипы_20_в_20_шапке_20_РСТ"><draw:frame draw:style-name="Бланк_лого_20_РСТ_20_в_20_шапке" draw:name="Бланк_лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="14">
+						<table:table table:name="БланкТаблицаСЛоготипами" table:style-name="БланкТаблицаСЛоготипами">
+							<table:table-column table:style-name="БланкТаблицаСЛоготипами.A"/>
+							<table:table-column table:style-name="БланкТаблицаСЛоготипами.B"/>
+							<table:table-column table:style-name="БланкТаблицаСЛоготипами.C"/>
+							<table:table-row table:style-name="БланкТаблицаСЛоготипами.1">
+								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
+									<text:p text:style-name="БланкЛоготипыВШапкеРСТ"><draw:frame draw:style-name="БланкЛогоРСТвШапке" draw:name="Бланк_лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="14">
 										<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 										<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 									</draw:frame></text:p>
 								</table:table-cell>
-								<table:table-cell table:style-name="Бланк_ТаблицаСЛоготипами.B1" office:value-type="string">
-									<text:p text:style-name="Бланк_наименование_20_организации_20_в_20_логоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
-									<text:p text:style-name="Бланк_наименование_20_структурного_20_подразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
+								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.B1" office:value-type="string">
+									<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
+									<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 								</table:table-cell>
-								<table:table-cell table:style-name="Бланк_ТаблицаСЛоготипами.A1" office:value-type="string">
-									<text:p text:style-name="Бланк_логотипы_20_в_20_шапке_20_Тест"><draw:frame draw:style-name="Бланк_лого_20_Тест_20_в_20_шапке" draw:name="Бланк_лого в шапке Тест" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="15">
+								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
+									<text:p text:style-name="БланкЛоготипыВШапкеТест"><draw:frame draw:style-name="БланкЛогоТестВШапке" draw:name="Бланк_лого в шапке Тест" text:anchor-type="as-char" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="15">
 										<draw:image xlink:href="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 										<draw:image xlink:href="Pictures/10000201000000C30000008400B6937B49C29E66.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 									</draw:frame></text:p>
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
-						<text:section text:style-name="Бланк_сведения_20_об_20_организации_20_раздел" text:name="Справочные данные об организации" text:protected="true">
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
-							<text:p text:style-name="Конец_20_колонки"/>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-get></text:p>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">e-mail <text:variable-get text:name="ОрганизацияEmail">mail@csm.nov.ru</text:variable-get>, <text:variable-get text:name="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-get></text:p>
-							<text:p text:style-name="Конец_20_колонки"/>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">ОГРН <text:variable-get text:name="ОрганизацияОГРН">1027810289286</text:variable-get></text:p>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">7809018702</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">783901001</text:variable-get></text:p>
-							<text:p text:style-name="Бланк_справочные_20_данные_20_об_20_организации">код ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get></text:p>
+						<text:section text:style-name="БланкСведенияОбОрганизацииРаздел" text:name="Справочные данные об организации" text:protected="true">
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
+							<text:p text:style-name="КонецКолонки"/>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-get></text:p>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">e-mail <text:variable-get text:name="ОрганизацияEmail">mail@csm.nov.ru</text:variable-get>, <text:variable-get text:name="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-get></text:p>
+							<text:p text:style-name="КонецКолонки"/>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">ОГРН <text:variable-get text:name="ОрганизацияОГРН">1027810289286</text:variable-get></text:p>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">7809018702</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">783901001</text:variable-get></text:p>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">код ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get></text:p>
 						</text:section>
-						<text:p text:style-name="Бланк_окончание_20_шапки"/>
+						<text:p text:style-name="БланкОкончаниеШапки"/>
 					</draw:text-box>
 				</draw:frame></text:p>
-				<text:p text:style-name="Бланк_после_20_шапки"/>
+				<text:p text:style-name="БланкПослеШапки"/>
 				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат" text:condition="ooow:((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:display="condition">
-					<table:table table:name="РегистрационныеДанные" table:style-name="РегистрационныеДанные">
-						<table:table-column table:style-name="РегистрационныеДанные.A"/>
-						<table:table-column table:style-name="РегистрационныеДанные.B"/>
-						<table:table-column table:style-name="РегистрационныеДанные.C"/>
-						<table:table-column table:style-name="РегистрационныеДанные.D"/>
+					<table:table table:name="РегДанные" table:style-name="РегДанные">
+						<table:table-column table:style-name="РегДанные.A"/>
+						<table:table-column table:style-name="РегДанные.B"/>
+						<table:table-column table:style-name="РегДанные.C"/>
+						<table:table-column table:style-name="РегДанные.D"/>
 						<table:table-row>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ДатаРегистрации" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="6">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ДатаРегистрации" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="6">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс">от</text:p>
+										<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ДатаРегистрации" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="10">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ДатаРегистрации" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="10">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
+										<text:p text:style-name="БланкРегДанныеПоля"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Бланк_дата_20_регистрации"><text:s/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации"/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации"/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля РегистрационныйНомер" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="7">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля РегистрационныйНомер" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="7">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс">№</text:p>
+										<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля РегистрационныйНомер" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="11">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля РегистрационныйНомер" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="11">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
+										<text:p text:style-name="БланкРегДанныеПоля"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Бланк_регистрационный_20_номер"><text:s/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер"/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер"/></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
-						<table:table-row table:style-name="РегистрационныеДанные.2">
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ВОтветНаНомер" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="8">
+						<table:table-row table:style-name="РегДанные.2">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ВОтветНаНомер" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="8">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс">На №</text:p>
+										<text:p text:style-name="БланкРегДанныеПрефикс">На №</text:p>
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ВОтветНаНомер" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="12">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ВОтветНаНомер" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="12">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
+										<text:p text:style-name="БланкРегДанныеПоля"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Бланк_регистрационный_20_номер"><text:s/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:variable-get text:name="ВОтветНаНомер"/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"/></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ВОтветНаДату" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="9">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк_префикс поля ВОтветНаДату" text:anchor-type="paragraph" svg:width="0.792cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="9">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_префикс">от</text:p>
+										<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегистрационныеДанные.A1" office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ВОтветНаДату" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="13">
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк_оформление поля ВОтветНаДату" text:anchor-type="paragraph" svg:width="2.207cm" style:rel-width="100%" svg:height="0.85cm" style:rel-height="100%" draw:z-index="13">
 									<draw:text-box>
-										<text:p text:style-name="Бланк_регистрационные_20_данные_3a__20_поля_20_для_20_заполнения"/>
+										<text:p text:style-name="БланкРегДанныеПоля"/>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="Бланк_дата_20_регистрации"><text:s/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:variable-get text:name="ВОтветНаДату"/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
-					<text:p text:style-name="Бланк_заголовок_20_документа"><draw:frame draw:style-name="Mfr6" draw:name="Заголовок документа" text:anchor-type="as-char" svg:y="0cm" svg:width="5.999cm" style:rel-width="100%" draw:z-index="1">
+					<text:p text:style-name="БланкЗаголовокДокумента"><draw:frame draw:style-name="Mfr6" draw:name="Заголовок документа" text:anchor-type="as-char" svg:y="0cm" svg:width="5.999cm" style:rel-width="100%" draw:z-index="1">
 						<draw:text-box fo:min-height="2cm">
 							<draw:g text:anchor-type="frame" draw:z-index="5" draw:style-name="Mgr1">
 								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
@@ -964,28 +964,28 @@
 									<text:p/>
 								</draw:line>
 							</draw:g>
-							<text:p text:style-name="Бланк_заголовок_20_документа"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+							<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
 						</draw:text-box>
 					</draw:frame></text:p>
-					<text:p text:style-name="Конец_20_колонки"/>
-					<text:p text:style-name="Пустой_20_абзац"/>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ЭтоИсходящийДокумент) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент) )" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="Бланк_наименование_20_вида_20_документа"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
+					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="true">
-					<table:table table:name="Регистрационные данные (вн.)" table:style-name="Бланк_регистрационные_20_данные_20__28_вн._29_">
-						<table:table-column table:style-name="Бланк_регистрационные_20_данные_20__28_вн._29_.A" table:number-columns-repeated="3"/>
+					<table:table table:name="Регистрационные данные (вн.)" table:style-name="БланкРегДанныеВн">
+						<table:table-column table:style-name="БланкРегДанныеВн.A" table:number-columns-repeated="3"/>
 						<table:table-row>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="Бланк_регистрационные_20_данные"><text:span text:style-name="Бланк_дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span></text:p>
+								<text:p text:style-name="БланкРегДанные"><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<text:p text:style-name="MP2"><text:variable-get text:name="МестоСоставленияДокумента" style:data-style-name="N0">Великий Новгород</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
-								<text:p text:style-name="MP3">№<text:span text:style-name="Бланк_регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span></text:p>
+								<text:p text:style-name="MP3">№<text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
@@ -1004,15 +1004,15 @@
 					<table:table-column table:style-name="Подвал.C"/>
 					<table:table-row table:style-name="Подвал.1">
 						<table:table-cell table:style-name="Подвал.A1" table:number-rows-spanned="2" office:value-type="string">
-							<text:p text:style-name="Бланк_исполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:p text:style-name="Бланк_в_20_дело">В дело № <text:span text:style-name="Бланк_индекс_20_дела"><text:variable-get text:name="Дело">_______</text:variable-get></text:span> <text:line-break/>за <text:variable-get text:name="ДелоГод">________</text:variable-get> г.</text:p>
+							<text:p text:style-name="Бланк_в_20_дело">В дело № <text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело">_______</text:variable-get></text:span> <text:line-break/>за <text:variable-get text:name="ДелоГод">________</text:variable-get> г.</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" table:number-rows-spanned="2" office:value-type="string">
 							<text:section text:style-name="MSect3" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
-								<text:p text:style-name="Бланк_отметка_20_о_20_поступлении"><text:tab/>Исх №<text:span text:style-name="Бланк_регистрационный_20_номер"><text:tab/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span><text:span text:style-name="Бланк_регистрационный_20_номер"><text:tab/></text:span></text:p>
-								<text:p text:style-name="Бланк_отметка_20_о_20_поступлении"><text:tab/>от<text:span text:style-name="Бланк_дата_20_регистрации"><text:tab/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span><text:span text:style-name="Бланк_дата_20_регистрации"><text:tab/></text:span></text:p>
+								<text:p text:style-name="БланкОтметкаОПоступлении"><text:tab/>Исх №<text:span text:style-name="БланкРегНомер"><text:tab/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span><text:span text:style-name="БланкРегНомер"><text:tab/></text:span></text:p>
+								<text:p text:style-name="БланкОтметкаОПоступлении"><text:tab/>от<text:span text:style-name="БланкДатаРегистрации"><text:tab/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:tab/></text:span></text:p>
 							</text:section>
 						</table:table-cell>
 					</table:table-row>
@@ -1026,7 +1026,7 @@
 				</table:table>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="Бланк_последующие_20_листы_20_письма" style:display-name="Бланк_последующие листы письма" style:page-layout-name="Mpm4">
+		<style:master-page style:name="БланкПоследующиеЛистыПисьма" style:page-layout-name="Mpm4">
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
