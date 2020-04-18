@@ -102,13 +102,6 @@
 	</xsl:template>
 
 	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
-<!--
-	<xsl:template match="text:outline-style[ @style:name='Outline' ]" mode="indent-self">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-		</xsl:copy>
-	</xsl:template>
- -->
 	<xsl:template match="text:list-style[ @style:hidden ]" mode="indent-self">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="indent"/>
@@ -141,7 +134,9 @@
 
 	<xsl:template match="@style:writing-mode" mode="#all" />
 
-	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
+	<xsl:template match="@style:master-page-name[.='']" mode="#all" />
+
+ 	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
 	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
 
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
