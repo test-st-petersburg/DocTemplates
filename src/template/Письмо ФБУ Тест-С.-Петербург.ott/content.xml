@@ -69,14 +69,10 @@
 			<style:table-row-properties fo:keep-together="auto"/>
 		</style:style>
 		<style:style style:name="БланкТаблицаСЛоготипами.A1" style:family="table-cell">
-			<style:table-cell-properties fo:background-color="transparent" fo:padding="0cm" fo:border="none">
-				<style:background-image/>
-			</style:table-cell-properties>
+			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="БланкТаблицаСЛоготипами.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:background-color="transparent" fo:padding="0cm" fo:border="none">
-				<style:background-image/>
-			</style:table-cell-properties>
+			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
@@ -93,9 +89,7 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная">
-			<style:paragraph-properties style:page-number="auto"/>
-		</style:style>
+		<style:style style:name="P4" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная"/>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
@@ -138,9 +132,17 @@
 			</style:section-properties>
 		</style:style>
 		<style:style style:name="Sect4" style:family="section">
-			<style:section-properties fo:background-color="transparent" style:editable="false">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="3">
+					<style:column style:rel-width="2551*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="4824*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="2547*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
+				</style:columns>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect5" style:family="section">
+			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-				<style:background-image/>
 			</style:section-properties>
 		</style:style>
 		<style:style style:name="gr1" style:family="graphic">
@@ -252,7 +254,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
 			</text:sequence-decls>
-			<text:section text:style-name="Sect4" text:name="Служебный" text:display="none">
+			<text:section text:style-name="Sect5" text:name="Служебный" text:display="none">
 				<text:p text:style-name="P4"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
