@@ -318,7 +318,7 @@
 			<style:text-properties style:text-scale="50%"/>
 		</style:style>
 		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело">
-			<style:paragraph-properties fo:text-align="start"/>
+			<style:paragraph-properties fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
 		</style:style>
 		<style:style style:name="БланкПодписьДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
 		<style:style style:name="БланкДатаПодписиДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
@@ -408,10 +408,10 @@
 			</style:graphic-properties>
 		</style:style>
 		<style:style style:name="БланкПолеСПодстрочникомВТексте" style:family="graphic">
-			<style:graphic-properties svg:width="0cm" fo:min-height="0cm" text:anchor-type="paragraph" style:protect="size position" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" draw:opacity="100%"/>
+			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" text:anchor-type="paragraph" style:protect="size position" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" draw:opacity="100%"/>
 		</style:style>
 		<style:style style:name="БланкПодстрочникПоляВТексте" style:family="graphic">
-			<style:graphic-properties svg:width="0cm" fo:min-height="0cm" svg:y="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" draw:opacity="100%"/>
+			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page-content" draw:opacity="100%"/>
 		</style:style>
 		<text:outline-style style:name="Outline">
 			<text:outline-level-style text:level="1" style:num-suffix="." style:num-format="1">
@@ -723,24 +723,6 @@
 		<style:style style:name="Подвал.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="СведенияОДеле" style:family="table">
-			<style:table-properties style:width="2.916cm" style:rel-width="100%" table:align="left"/>
-		</style:style>
-		<style:style style:name="СведенияОДеле.A" style:family="table-column">
-			<style:table-column-properties style:column-width="0.437cm" style:rel-column-width="248*"/>
-		</style:style>
-		<style:style style:name="СведенияОДеле.B" style:family="table-column">
-			<style:table-column-properties style:column-width="1.603cm" style:rel-column-width="909*"/>
-		</style:style>
-		<style:style style:name="СведенияОДеле.C" style:family="table-column">
-			<style:table-column-properties style:column-width="0.291cm" style:rel-column-width="165*"/>
-		</style:style>
-		<style:style style:name="СведенияОДеле.D" style:family="table-column">
-			<style:table-column-properties style:column-width="0.584cm" style:rel-column-width="331*"/>
-		</style:style>
-		<style:style style:name="СведенияОДеле.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom"/>
-		</style:style>
 		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -760,10 +742,13 @@
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
 		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr9" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="MSect1" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
@@ -1074,45 +1059,26 @@
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect3" text:name="Сведения о деле">
-								<table:table table:name="СведенияОДеле" table:style-name="СведенияОДеле">
-									<table:table-column table:style-name="СведенияОДеле.A"/>
-									<table:table-column table:style-name="СведенияОДеле.B"/>
-									<table:table-column table:style-name="СведенияОДеле.C"/>
-									<table:table-column table:style-name="СведенияОДеле.D"/>
-									<table:table-row>
-										<table:table-cell table:style-name="СведенияОДеле.A1" office:value-type="string">
-											<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк: префикс поля ВДело" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="7">
-												<draw:text-box>
-													<text:p text:style-name="БланкВДелоПрефикс">В дело</text:p>
-												</draw:text-box>
-											</draw:frame></text:p>
-										</table:table-cell>
-										<table:table-cell office:value-type="string">
-											<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr5" draw:name="Бланк: оформление поля ВДело" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="18">
-												<draw:text-box>
-													<text:p text:style-name="БланкВДело"/>
-												</draw:text-box>
-											</draw:frame><text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело"/></text:span></text:p>
-										</table:table-cell>
-										<table:table-cell office:value-type="string">
-											<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк: префикс поля ДелоГод" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="8">
-												<draw:text-box>
-													<text:p text:style-name="БланкВДелоПрефикс">за</text:p>
-												</draw:text-box>
-											</draw:frame></text:p>
-										</table:table-cell>
-										<table:table-cell office:value-type="string">
-											<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr5" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="15">
-												<draw:text-box>
-													<text:p text:style-name="БланкВДело"/>
-												</draw:text-box>
-											</draw:frame><text:variable-get text:name="ДелоГод"/></text:p>
-										</table:table-cell>
-									</table:table-row>
-								</table:table>
-								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr7" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="20">
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="2cm">
-										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" style:rel-width="100%" draw:z-index="27">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело<draw:frame draw:style-name="Mfr7" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="16">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.7cm">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame><text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело"/></text:span></text:p>
+									</draw:text-box>
+								</draw:frame> за <draw:frame draw:style-name="Mfr7" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="18">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame><text:variable-get text:name="ДелоГод"/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr9" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="20">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
+										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="21">
 											<draw:text-box fo:min-height="0.041cm">
 												<text:p text:style-name="Подстрочник">подпись, дата</text:p>
 											</draw:text-box>
