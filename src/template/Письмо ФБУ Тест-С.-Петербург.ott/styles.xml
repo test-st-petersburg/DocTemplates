@@ -1063,7 +1063,7 @@
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.7cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
 											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+												<text:p text:style-name="Подстрочник">индекс дела</text:p>
 											</draw:text-box>
 										</draw:frame><text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело"/></text:span></text:p>
 									</draw:text-box>
@@ -1071,7 +1071,7 @@
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr8" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
 											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+												<text:p text:style-name="Подстрочник">год</text:p>
 											</draw:text-box>
 										</draw:frame><text:variable-get text:name="ДелоГод"/></text:p>
 									</draw:text-box>
