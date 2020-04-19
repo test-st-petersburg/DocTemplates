@@ -1,4 +1,4 @@
-<xsl:stylesheet version="3.0"
+<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
@@ -76,4 +76,4 @@
 		<xsl:copy/>
 	</xsl:template>
 
-</xsl:stylesheet>
+</xsl:transform>
