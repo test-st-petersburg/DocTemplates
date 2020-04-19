@@ -1,5 +1,8 @@
 <xsl:stylesheet version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+	xmlns:array="http://www.w3.org/2005/xpath-functions/array"
 
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -57,34 +60,57 @@
 
 	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" mode="#all" />
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all">
+	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all" priority="10">
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
+
+	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+
+	<xsl:key name="auto-paragraph-styles"
+		match="office:automatic-styles/style:style[ @style:family='paragraph' ]"
+		use="@style:name"
+	/>
+
+	<xsl:key name="used-paragraph-styles"
+		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
+		use="@text:style-name"
+	/>
+
+	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" />
 
 	<!-- форматируем текст модулей -->
 
 	<xsl:template match="script-module:module/text()" mode="#all">
-		<xsl:variable name="module-text" select="." />
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph1" as="xs:string" select="." />
+		<xsl:variable name="module-text-ph2" as="xs:string">
 			<!-- удаляем лишние пробелы в конце строк -->
-			<xsl:analyze-string select="$module-text" regex="^(.*?)\s*$" flags="s">
+			<xsl:analyze-string select="$module-text-ph1" regex="^(.*?)\s*$" flags="s">
 				<xsl:matching-substring>
 					<xsl:value-of select='regex-group(1)' />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:variable name="module-text">
+		<xsl:variable name="module-text-ph3" as="xs:string">
 			<!-- удаляем лишние пустые строки в начале и конце модуля -->
-			<xsl:analyze-string select="$module-text" regex="^\s*(.*?)\s*$" flags="ms">
+			<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
 				<xsl:matching-substring>
-					<xsl:value-of select="'&#x0A;'" />
-					<xsl:value-of select='regex-group(1)' />
-					<xsl:value-of select="'&#x0A;'" />
+					<xsl:value-of select="concat( $indent-line, regex-group(1), $indent-line )" />
 				</xsl:matching-substring>
 			</xsl:analyze-string>
 		</xsl:variable>
-		<xsl:value-of select="$module-text" />
+		<xsl:value-of select="$module-text-ph3" />
 	</xsl:template>
+
+	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
+	<xsl:template match="text:list-style[ @style:hidden ]" mode="indent-self">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="indent"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<!-- удаляем лишние элементы -->
+
+	<xsl:template match="style:background-image[empty(@*|node())]" mode="indent-self" />
 
 	<!-- удаляем лишние аттрибуты -->
 
@@ -112,8 +138,33 @@
 
 	<xsl:template match="@style:writing-mode" mode="#all" />
 
-	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
+	<xsl:template match="@style:master-page-name[ .='' ]" mode="#all" />
+
+ 	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
 	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
+
+	<xsl:template match="@fo:background-color[ .='transparent' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties/@style:page-number[ .='auto' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @text:number-lines='false' ]/@text:line-number[ .='0' ]" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:orphans" mode="#all" />
+	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:widows" mode="#all" />
+
+	<xsl:template match="style:paragraph-properties[ @fo:text-align!='justify' ]/@style:justify-single-word" mode="#all" />
+
+	<xsl:template match="style:style[ style:text-properties/@fo:hyphenate='false' ]/style:paragraph-properties/@fo:hyphenation-ladder-count" mode="#all" />
+
+	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-remain-char-count" mode="#all" />
+	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-push-char-count" mode="#all" />
+
+	<xsl:template match="*[ @draw:fill='none' ]/@draw:fill-color" mode="#all" />
+
+	<xsl:template match="*[ @style:rel-width ]/@svg:width" mode="#all" />
+	<xsl:template match="*[ @style:rel-height ]/@svg:height" mode="#all" />
+	<xsl:template match="*[ @style:vertical-rel ]/@svg:y" mode="#all" />
+	<xsl:template match="*[ @style:horizontal-rel ]/@svg:x" mode="#all" />
 
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" mode="#all" />

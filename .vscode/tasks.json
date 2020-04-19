@@ -47,11 +47,15 @@
 		},
 		{
 			"label": "Convert Open Office files to plain XML",
-			"command": "Invoke-Build -Task Unpack"
+			"command": "Invoke-Build -Task Unpack -Verbose"
 		},
 		{
 			"label": "Optimize Open Office XML files",
 			"command": "Invoke-Build -Task OptimizeXML -Verbose"
+		},
+		{
+			"label": "Unpack and optimize Open Office XML files",
+			"command": "Invoke-Build -Task UnpackAndOptimize -Verbose"
 		},
 		{
 			"label": "Create Open Office files from plain XML",
