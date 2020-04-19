@@ -999,7 +999,7 @@
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
 								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник">дата регистрации</text:p>
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
 							</draw:frame><text:variable-get text:name="ДатаРегистрации"/></text:p>
 						</draw:text-box>
@@ -1011,7 +1011,7 @@
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
 								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник">регистрационный номер</text:p>
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
 							</draw:frame><text:variable-get text:name="РегистрационныйНомер"/></text:p>
 						</draw:text-box>
