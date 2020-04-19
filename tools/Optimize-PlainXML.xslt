@@ -49,7 +49,11 @@
 		indent="no"
 	/>
 
-	<xsl:include href="ODTXMLFormatter.xslt" />
+	<!-- <xsl:include href="ODTXMLFormatter.xslt" /> -->
+
+	<xsl:include href="xslt/formatter/main.xslt" />
+	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/blob/master/tools/xslt/formatter/main.xslt" package-version=".*"/>
+	<!-- <xsl:use-package name="xslt/formatter/main.xslt" package-version=".*"/> -->
 
 	<!-- удаляем автоматические стили символов -->
 
