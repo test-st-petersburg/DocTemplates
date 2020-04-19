@@ -89,25 +89,34 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="P2" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная">
+		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная">
 			<style:paragraph-properties/>
 		</style:style>
-		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПолеПодчёркнутое">
-			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
-			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
+		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+			<style:graphic-properties style:print-content="true" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 			<style:graphic-properties style:vertical-pos="from-top" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
-		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
+		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Sect1" style:family="section">
@@ -132,6 +141,14 @@
 			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect4" style:family="section">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="3">
+					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
+				</style:columns></style:section-properties>
 		</style:style>
 		<style:style style:name="gr1" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
@@ -176,7 +193,6 @@
 				<text:variable-decl office:value-type="string" text:name="КБК"/>
 				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
-				<text:variable-decl office:value-type="string" text:name="МестоСоставленияДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
 				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
@@ -243,7 +259,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
 			</text:sequence-decls>
 			<text:section text:style-name="Sect3" text:name="Служебный" text:display="none">
-				<text:p text:style-name="P2"/>
+				<text:p text:style-name="P1"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
@@ -256,7 +272,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:True" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
@@ -269,14 +285,14 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставленияДокумента" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string">_______</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string">________</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>

@@ -60,7 +60,7 @@
 
 	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" mode="#all" />
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all">
+	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all" priority="10">
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
@@ -158,6 +158,13 @@
 
 	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-remain-char-count" mode="#all" />
 	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-push-char-count" mode="#all" />
+
+	<xsl:template match="*[ @draw:fill='none' ]/@draw:fill-color" mode="#all" />
+
+	<xsl:template match="*[ @style:rel-width ]/@svg:width" mode="#all" />
+	<xsl:template match="*[ @style:rel-height ]/@svg:height" mode="#all" />
+	<xsl:template match="*[ @style:vertical-rel ]/@svg:y" mode="#all" />
+	<xsl:template match="*[ @style:horizontal-rel ]/@svg:x" mode="#all" />
 
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
 	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" mode="#all" />
