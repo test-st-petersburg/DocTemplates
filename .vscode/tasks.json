@@ -54,6 +54,10 @@
 			"command": "Invoke-Build -Task OptimizeXML -Verbose"
 		},
 		{
+			"label": "Unpack and optimize Open Office XML files",
+			"command": "Invoke-Build -Task UnpackAndOptimize -Verbose"
+		},
+		{
 			"label": "Create Open Office files from plain XML",
 			"group": {
 				"kind": "build",
