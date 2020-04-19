@@ -52,6 +52,8 @@ task OptimizeXML {
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
 
+task UnpackAndOptimize Unpack, OptimizeXML;
+
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 
 $OOFilesBuildTasks = @();
