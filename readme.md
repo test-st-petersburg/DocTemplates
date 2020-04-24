@@ -1,6 +1,6 @@
 # Libre Office шаблоны документов
 
-[![GitHub release](https://img.shields.io/github/release/test-st-petersburg/DocTemplates.svg)](https://github.com/test-st-petersburg/DocTemplates/releases)
+[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates?sort=semver&style=plastic)](https://github.com/test-st-petersburg/DocTemplates/releases)
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
@@ -8,7 +8,7 @@
 
 Описание решений по данному проекту расширения формируется с помощью сервиса [ReadTheDocs][].
 
-[![Documentation build status](https://readthedocs.org/projects/DocTemplates/badge/?version=latest&style=plastic)](https://DocTemplates.readthedocs.io/)
+[![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master&style=plastic)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
 
 ## Подготовка среды
 
