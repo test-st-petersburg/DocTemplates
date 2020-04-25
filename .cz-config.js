@@ -5,22 +5,25 @@ module.exports = {
   types: [
     {
       value: "build",
-      name: "build:     Сборка проекта или изменения внешних зависимостей"
+      name: "build: Сборка проекта или изменения внешних зависимостей"
     },
-    { value: "ci", name: "ci:        Настройка CI и работа со скриптами" },
-    { value: "docs", name: "docs:      Обновление документации" },
-    { value: "feat", name: "feat:      Добавление нового функционала" },
-    { value: "fix", name: "fix:       Исправление ошибок" },
+    { value: "ci", name: "ci: Настройка CI и работа со скриптами" },
+    { value: "docs", name: "docs: Обновление документации" },
+    { value: "feat", name: "feat: Добавление нового функционала" },
+    { value: "update", name: "update: Обновление функционала" },
+    { value: "fix", name: "fix: Исправление ошибок" },
     {
       value: "refactor",
-      name: "refactor:  Правки без исправления ошибок или добавления новых функций"
+      name: "refactor: Правки без исправления ошибок или добавления новых функций"
     },
-    { value: "revert", name: "revert:    Откат на предыдущие версии" },
+    { value: "revert", name: "revert: Откат на предыдущие версии" },
     {
       value: "style",
-      name: "style:     Правки по стилю (отступы, точки, запятые и т.д.)"
+      name: "style: Правки по стилю (отступы, точки, запятые и т.д.)"
     },
-    { value: "test", name: "test:      Добавление тестов" },
+    { value: "test", name: "test: Добавление тестов" },
+    { value: "WIP", name: "WIP: В процессе реализации..." },
+    { value: "init", name: "init: Initial commit" }
   ],
 
   // Область. Она характеризует фрагмент кода, которую затронули изменения
@@ -29,7 +32,7 @@ module.exports = {
     { name: "build" },
     { name: "design" },
     { name: "git" },
-    { name: "commitizen" },
+    { name: "other" }
   ],
 
   // Возможность задать спец ОБЛАСТЬ для определенного типа типа изменения
@@ -67,10 +70,9 @@ module.exports = {
   },
 
   // Разрешим собственную ОБЛАСТЬ
-  // allowCustomScopes: false,
+  allowCustomScopes: false,
 
-  // Запрет на Breaking Changes
-  allowBreakingChanges: false,
+  allowBreakingChanges: ["feat", "fix"],
 
   // Префикс для нижнего колонтитула
   footerPrefix: "МЕТАДАННЫЕ:",

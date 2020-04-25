@@ -47,7 +47,6 @@
 		on-no-match="fail" warning-on-no-match="true"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
 		use-accumulators=""
 	/>
 
@@ -56,7 +55,6 @@
 		on-no-match="shallow-copy" warning-on-no-match="false"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
 		use-accumulators=""
 	/>
 
@@ -65,7 +63,6 @@
 		on-no-match="fail" warning-on-no-match="true"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
 		use-accumulators=""
 	/>
 
@@ -74,7 +71,6 @@
 		on-no-match="fail" warning-on-no-match="true"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
 		use-accumulators=""
 	/>
 
