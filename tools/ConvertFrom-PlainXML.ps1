@@ -36,7 +36,42 @@ begin {
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 	$saxCompiler.BaseUri = $PSScriptRoot;
 	Write-Verbose 'Compiling XSLT...';
-	$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertFrom-PlainXML.xslt' ) );
+	try {
+		$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertFrom-PlainXML.xslt' ) );
+		foreach ( $Error in $saxCompiler.ErrorList ) {
+			Write-Warning `
+				-Message @"
+
+$($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+				-WarningAction Continue;
+		};
+	}
+	catch {
+		foreach ( $Error in $saxCompiler.ErrorList ) {
+			if ( $Error.isWarning ) {
+				Write-Warning `
+					-Message @"
+
+$($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+					-WarningAction Continue;
+			}
+			else {
+				Write-Error `
+					-Message @"
+
+ERROR: $($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+					-Exception $Error `
+					-ErrorAction Continue;
+			};
+		};
+		Write-Error -Message 'Обнаружены ошибки компиляции XSLT';
+	};
 	$saxTransform = $saxExecutable.Load();
 	Write-Verbose 'XSLT loaded.';
 	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;

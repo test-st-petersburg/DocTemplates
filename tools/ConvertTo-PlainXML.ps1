@@ -40,7 +40,42 @@ begin {
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 	$saxCompiler.BaseUri = $PSScriptRoot;
 	Write-Verbose 'Compiling XSLT...';
-	$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) );
+	try {
+		$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) );
+		foreach ( $Error in $saxCompiler.ErrorList ) {
+			Write-Warning `
+				-Message @"
+
+$($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+				-WarningAction Continue;
+		};
+	}
+	catch {
+		foreach ( $Error in $saxCompiler.ErrorList ) {
+			if ( $Error.isWarning ) {
+				Write-Warning `
+					-Message @"
+
+$($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+					-WarningAction Continue;
+			}
+			else {
+				Write-Error `
+					-Message @"
+
+ERROR: $($Error.Message)
+$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+					-Exception $Error `
+					-ErrorAction Continue;
+			};
+		};
+		Write-Error -Message 'Обнаружены ошибки компиляции XSLT';
+	};
 	$saxTransform = $saxExecutable.Load();
 	Write-Verbose 'XSLT loaded.';
 	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
@@ -82,8 +117,8 @@ process {
 				if ( $Indented ) {
 					if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Format all xml files in Open Office document plain XML directory" ) ) {
 						Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-							| Where-Object { $_.Length -gt 0 } `
-							| ForEach-Object {
+						| Where-Object { $_.Length -gt 0 } `
+						| ForEach-Object {
 							if ( $PSCmdlet.ShouldProcess( $_, "Format xml file" ) ) {
 								$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
 								try {

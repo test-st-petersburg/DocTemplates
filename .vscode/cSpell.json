@@ -1,38 +1,39 @@
 {
-	"version": "0.1",
-	"ignorePaths": [
-		".git",
-		".git/**",
-		".vscode/*",
-		"node_modules",
-		"**/node_modules",
-		"**/node_modules/**",
-		"node_modules/**"
-	],
-	"language": "ru,en",
-	"dictionaries": [],
-	"words": [
-		"рефакторинг",
-		"precommit",
-		"mkdocs",
-		"расширения",
-		"repo",
-		"Документооборот",
-		"betke",
-		"markdownlint",
-		"codecov",
-		"Recurse",
-		"PreRelease",
-		"Veyor"
-	],
-	"ignoreRegExpList": [
-		"эскалаци(я|и|ю|ей)",
-		"автоответ(а|у|ом|е|ы|ов|ам|ами|ах)",
-		"автоподстанов(ка|ки|ке|кой|ку|ки|ок|кам|ках)",
-		"автозаполнени(е|я|ем|и|ю|й|ям|ях)",
-		"AppVeyor",
-		"репозитори(й|я|ю|ем|и)",
-		"\\.gitattributes",
-		"\\[.*?\\]\\(.*?\\)"
-	]
+    "version": "0.1",
+    "ignorePaths": [
+        ".git",
+        ".git/**",
+        ".vscode/*",
+        "node_modules",
+        "**/node_modules",
+        "**/node_modules/**",
+        "node_modules/**"
+    ],
+    "language": "ru,en",
+    "dictionaries": [],
+    "words": [
+        "Документооборот",
+        "расширения",
+        "рефакторинг",
+        "betke",
+        "codecov",
+        "commitlint",
+        "markdownlint",
+        "mkdocs",
+        "precommit",
+        "PreRelease",
+        "Recurse",
+        "repo",
+        "Veyor"
+    ],
+    "ignoreRegExpList": [
+        "эскалаци(я|и|ю|ей)",
+        "автоответ(а|у|ом|е|ы|ов|ам|ами|ах)",
+        "автоподстанов(ка|ки|ке|кой|ку|ки|ок|кам|ках)",
+        "автозаполнени(е|я|ем|и|ю|й|ям|ях)",
+        "AppVeyor",
+        "репозитори(й|я|ю|ем|и)",
+        "\\.gitattributes",
+        "\\[.*?\\]\\(.*?\\)"
+    ]
 }
