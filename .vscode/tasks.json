@@ -18,11 +18,16 @@
 		],
 		"pattern": [
 			{
-				"regexp": ".*",
-				"message": 0
+				"regexp": "^(?!\\s*\\+)(?:(.*?\\.ps1) : )?(?:(ПРЕДУПРЕЖДЕНИЕ|WARNING|ОШИБКА|ERROR):)?\\s*(.*)$",
+				"severity": 2,
+				"message": 3
 			},
 			{
-				"regexp": "(.*\\.ps1):(\\d*) знак:(\\d*)(.*)",
+				"regexp": "(.*)",
+				"message": 1
+			},
+			{
+				"regexp": "(.*):(\\d+) знак:(\\d+)",
 				"file": 1,
 				"line": 2,
 				"column": 3
