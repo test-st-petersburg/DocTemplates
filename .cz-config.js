@@ -10,7 +10,7 @@ module.exports = {
     { value: "ci", name: "ci: Настройка CI и работа со скриптами" },
     { value: "docs", name: "docs: Обновление документации" },
     { value: "feat", name: "feat: Добавление нового функционала" },
-    { value: 'update', name: 'update: Обновление функционала' },
+    { value: "update", name: "update: Обновление функционала" },
     { value: "fix", name: "fix: Исправление ошибок" },
     {
       value: "refactor",
@@ -22,19 +22,17 @@ module.exports = {
       name: "style: Правки по стилю (отступы, точки, запятые и т.д.)"
     },
     { value: "test", name: "test: Добавление тестов" },
-    { value: 'WIP', name: 'WIP: В процессе реализации...' },
-    { value: 'init', name: 'init: Initial commit' }
+    { value: "WIP", name: "WIP: В процессе реализации..." },
+    { value: "init", name: "init: Initial commit" }
   ],
 
   // Область. Она характеризует фрагмент кода, которую затронули изменения
   scopes: [
-    { name: "changelog" },
-    { name: "readme" },
     { name: "ott" },
     { name: "build" },
     { name: "design" },
     { name: "git" },
-    { name: "other" },
+    { name: "other" }
   ],
 
   // Возможность задать спец ОБЛАСТЬ для определенного типа типа изменения
@@ -72,9 +70,9 @@ module.exports = {
   },
 
   // Разрешим собственную ОБЛАСТЬ
-  allowCustomScopes: true,
+  allowCustomScopes: false,
 
-  allowBreakingChanges: ['feat', 'fix'],
+  allowBreakingChanges: ["feat", "fix"],
 
   // Префикс для нижнего колонтитула
   footerPrefix: "МЕТАДАННЫЕ:",
