@@ -16,6 +16,12 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+	# Import-Module -Name ( Join-Path -Path $PSScriptRoot -ChildPath 'localXSLT.psm1' );
+	# # $saxCompiler.BaseUri = $PSScriptRoot;
+	# $saxTransform = Get-XSLTTransform ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) `
+	# 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+	# 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
 	Add-Type -Path ( Join-Path -Path ( Split-Path -Path ( ( Get-Package -Name 'Saxon-HE' ).Source ) -Parent ) -ChildPath 'lib\net40\saxon9he-api.dll' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
