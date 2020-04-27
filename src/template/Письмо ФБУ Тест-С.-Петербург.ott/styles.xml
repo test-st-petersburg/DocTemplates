@@ -857,7 +857,7 @@
 									</draw:frame></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.B1" office:value-type="string">
-									<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
+									<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ&#xA0;«Тест-С.-Петербург»</text:variable-get></text:p>
 									<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
@@ -869,7 +869,7 @@
 							</table:table-row>
 						</table:table>
 						<text:section text:style-name="MSect1" text:name="Справочные данные об организации" text:protected="true">
-							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:p>
+							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияНаименованиеПолное">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-get></text:p>
 							<text:p text:style-name="КонецКолонки"/>
 							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
 							<text:p text:style-name="БланкСправочныеДанныеОбОрганизации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-get></text:p>

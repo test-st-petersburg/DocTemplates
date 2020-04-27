@@ -173,29 +173,15 @@
 		<office:text>
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьДП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьИмПадеж"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИмяОтчествоИП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИО"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИО"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИОДП"/>
 				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
-				<text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
-				<text:variable-decl office:value-type="string" text:name="ДатаВозникновения"/>
-				<text:variable-decl office:value-type="float" text:name="ДатаВозникновенияЗадолженности"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
-				<text:variable-decl office:value-type="string" text:name="КБК"/>
 				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
@@ -207,29 +193,21 @@
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
 				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжность"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументах"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИмПадеж"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументах"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВПодписиИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
-				<text:variable-decl office:value-type="string" text:name="ПодтверждающиеДокументы"/>
 				<text:variable-decl office:value-type="string" text:name="Получатели"/>
 				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
@@ -239,12 +217,7 @@
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
 				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
-				<text:variable-decl office:value-type="string" text:name="Содержание"/>
-				<text:variable-decl office:value-type="string" text:name="Сумма"/>
-				<text:variable-decl office:value-type="float" text:name="СуммаЗадолженности"/>
-				<text:variable-decl office:value-type="string" text:name="СуммаПрописью"/>
 				<text:variable-decl office:value-type="string" text:name="Тема"/>
-				<text:variable-decl office:value-type="string" text:name="ФормаБланка"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВнутреннийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВходящийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоДоговор"/>
@@ -266,15 +239,17 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ&#xA0;«Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
@@ -291,6 +266,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
@@ -300,7 +276,7 @@
 			</text:section>
 			<text:p text:style-name="БланкПисьмоНачало"/>
 			<text:section text:style-name="Sect3" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
-				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
+				<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-get>!</text:p>
 			</text:section>
 			<text:p text:style-name="Основной">{Содержание}</text:p>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
@@ -331,13 +307,13 @@
 					<table:table-column table:style-name="Подписи.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+							<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
