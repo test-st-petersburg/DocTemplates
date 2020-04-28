@@ -18,23 +18,6 @@
 			</svg:font-face-src>
 		</style:font-face>
 		<style:font-face style:name="Arial Black" svg:font-family="'Arial Black'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
-		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Courier_New_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
-		<style:font-face style:name="Courier New1" svg:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable"/>
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
@@ -47,22 +30,6 @@
 					<svg:font-face-format svg:string="truetype"/>
 				</svg:font-face-uri>
 				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
-		<style:font-face style:name="Liberation Serif" svg:font-family="'Liberation Serif'" style:font-family-generic="roman" style:font-pitch="variable">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Serif_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
 					<svg:font-face-format svg:string="truetype"/>
 				</svg:font-face-uri>
 			</svg:font-face-src>
@@ -341,7 +308,7 @@
 		<style:style style:name="P13" style:family="paragraph" style:parent-style-name="Пустой_20_абзац" style:master-page-name="Титульный_20_лист">
 			<style:paragraph-properties/>
 		</style:style>
-		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Служебный" style:master-page-name="Служебная">
+		<style:style style:name="P14" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная">
 			<style:paragraph-properties/>
 		</style:style>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="Frame">
@@ -483,7 +450,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Бланк: Шапка">
 				<text:p text:style-name="P13"><draw:frame draw:style-name="fr1" draw:name="Бланк: Шапка" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="0">

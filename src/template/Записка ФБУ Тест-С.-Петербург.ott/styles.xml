@@ -2,10 +2,7 @@
 	<office:font-face-decls>
 		<style:font-face style:name="Arial" svg:font-family="Arial" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
 		<style:font-face style:name="Arial Black" svg:font-family="'Arial Black'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
-		<style:font-face style:name="Courier New" svg:font-family="'Courier New'" style:font-adornments="Обычный" style:font-family-generic="modern" style:font-pitch="fixed"/>
-		<style:font-face style:name="Courier New1" svg:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable"/>
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
-		<style:font-face style:name="Liberation Serif" svg:font-family="'Liberation Serif'" style:font-family-generic="roman" style:font-pitch="variable"/>
 		<style:font-face style:name="OpenSymbol" svg:font-family="OpenSymbol" style:font-charset="x-symbol"/>
 		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Жирный" style:font-family-generic="swiss" style:font-pitch="variable"/>
 		<style:font-face style:name="PT Sans1" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable"/>
@@ -18,17 +15,16 @@
 		<style:font-face style:name="Times New Roman3" svg:font-family="'Times New Roman'" style:font-family-generic="roman" style:font-pitch="variable"/>
 	</office:font-face-decls>
 	<office:styles>
-		<draw:fill-image draw:name="Логотип_20_Тест" draw:display-name="Логотип Тест" xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
 		<style:default-style style:family="graphic">
 			<style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false"/>
 			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" style:letter-kerning="true"/>
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU"/>
 		</style:default-style>
 		<style:default-style style:family="paragraph">
-			<style:paragraph-properties fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:tab-stop-distance="1.27cm"/>
-			<style:text-properties style:use-window-font-color="true" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:hyphenate="false"/>
+			<style:paragraph-properties fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict"/>
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:hyphenate="false"/>
 		</style:default-style>
 		<style:default-style style:family="table">
 			<style:table-properties table:border-model="collapsing"/>
@@ -235,8 +231,8 @@
 			</style:paragraph-properties>
 			<style:text-properties fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
-		<style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="html">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
+		<style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:hidden="true" style:class="html">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 			<style:text-properties style:font-name="Liberation Mono" fo:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
 		</style:style>
 		<style:style style:name="Salutation" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="text">
@@ -569,13 +565,6 @@
 			<style:map style:condition="list-level()=9" style:apply-style-name="Numbering_20_1"/>
 			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
 		</style:style>
-		<style:style style:name="Служебный" style:family="paragraph">
-			<loext:graphic-properties draw:fill="none"/>
-			<style:paragraph-properties style:shadow="none" text:number-lines="false" style:snap-to-layout-grid="false">
-				<style:tab-stops/>
-			</style:paragraph-properties>
-			<style:text-properties style:font-name="Courier New" fo:font-family="'Courier New'" style:font-style-name="Обычный" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="9pt" text:display="true"/>
-		</style:style>
 		<style:style style:name="Footnote" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-left="0.598cm" fo:margin-right="0cm" fo:text-indent="-0.598cm" style:auto-text-indent="false" text:number-lines="false"/>
 			<style:text-properties fo:font-size="10pt"/>
@@ -830,23 +819,11 @@
 		<style:style style:name="CITE" style:family="text">
 			<style:text-properties fo:font-style="italic"/>
 		</style:style>
-		<style:style style:name="CODE" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt"/>
-		</style:style>
 		<style:style style:name="FollowedHyperlink" style:family="text">
 			<style:text-properties fo:color="#800080" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"/>
 		</style:style>
-		<style:style style:name="Keyboard" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Sample" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable"/>
-		</style:style>
 		<style:style style:name="Strong" style:family="text">
 			<style:text-properties fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Typewriter" style:family="text">
-			<style:text-properties style:font-name="Courier New1" fo:font-family="'Courier New'" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="10pt"/>
 		</style:style>
 		<style:style style:name="HTML_20_Markup" style:display-name="HTML Markup" style:family="text">
 			<style:text-properties fo:color="#ff0000" text:display="none"/>
@@ -1485,19 +1462,19 @@
 					<text:variable-decl office:value-type="boolean" text:name="ЭтоПереписка"/>
 				</text:variable-decls>
 				<text:p text:style-name="MP3"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Служебный"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Footer"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
 			</style:footer>
 		</style:master-page>
 		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm7"/>
