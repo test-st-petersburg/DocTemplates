@@ -286,14 +286,7 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="БланкРегДанные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false">
-				<style:tab-stops>
-					<style:tab-stop style:position="1.75cm" style:type="center"/>
-					<style:tab-stop style:position="3cm"/>
-					<style:tab-stop style:position="4.75cm" style:type="center"/>
-					<style:tab-stop style:position="5.95cm"/>
-				</style:tab-stops>
-			</style:paragraph-properties>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
 			<style:text-properties fo:font-size="9pt"/>
 		</style:style>
 		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
