@@ -2,14 +2,12 @@
 	<office:meta>
 		<meta:initial-creator>Сергей Сергеевич Бетке</meta:initial-creator>
 		<meta:creation-date>2012-12-07T13:57:00</meta:creation-date>
-		<dc:date>2020-04-01T21:39:52.557000000</dc:date>
-		<meta:editing-cycles>481</meta:editing-cycles>
-		<meta:editing-duration>P1DT6H42M23S</meta:editing-duration>
+		<dc:date>2020-04-09T13:08:05.442000000</dc:date>
+		<meta:editing-cycles>492</meta:editing-cycles>
+		<meta:editing-duration>P1DT7H36M44S</meta:editing-duration>
 		<meta:generator>LibreOffice/6.3.4.2$Windows_X86_64 LibreOffice_project/60da17e045e08f1793c57c00ba83cdfce946d0aa</meta:generator>
-		<dc:subject>О чём</dc:subject>
+		<dc:subject>Шаблон записки (внутренней переписки) учреждения</dc:subject>
 		<dc:creator>Сергей Сергеевич Бетке</dc:creator>
-		<meta:printed-by>Сергей Сергеевич Бетке</meta:printed-by>
-		<meta:print-date>2020-04-01T19:34:37.215000000</meta:print-date>
-		<meta:document-statistic meta:table-count="8" meta:image-count="3" meta:object-count="0" meta:page-count="1" meta:paragraph-count="48" meta:word-count="228" meta:character-count="1783" meta:non-whitespace-character-count="1589"/>
+		<meta:document-statistic meta:table-count="5" meta:image-count="2" meta:object-count="0" meta:page-count="1" meta:paragraph-count="38" meta:word-count="202" meta:character-count="1469" meta:non-whitespace-character-count="1288"/>
 	</office:meta>
 </office:document-meta>

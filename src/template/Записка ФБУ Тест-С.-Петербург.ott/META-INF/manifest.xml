@@ -15,31 +15,18 @@
 	<manifest:file-entry manifest:full-path="Configurations2/toolbar/standardbar.xml" manifest:media-type=""/>
 	<manifest:file-entry manifest:full-path="Configurations2/toolbar/textobjectbar.xml" manifest:media-type=""/>
 	<manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Arial_1.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Arial_2.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Arial_3.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Arial_4.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_1.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_3.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Liberation_Mono_4.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_OpenSymbol_1.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_1.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_2.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Tahoma_1.ttf" manifest:media-type="application/x-font-ttf"/>
-	<manifest:file-entry manifest:full-path="Fonts/Font_Tahoma_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_1.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_3.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="Fonts/Font_Times_New_Roman_4.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="manifest.rdf" manifest:media-type="application/rdf+xml"/>
 	<manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Pictures/10000201000000C30000008400B6937B49C29E66.png" manifest:media-type="image/png"/>
-	<manifest:file-entry manifest:full-path="Pictures/10000201000000E300000084919C7A2C886277CE.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Pictures/10000201000003880000022964DEC239BCBF4702.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" manifest:media-type="image/x-wmf"/>
-	<manifest:file-entry manifest:full-path="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" manifest:media-type="image/x-wmf"/>
-	<manifest:file-entry manifest:full-path="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" manifest:media-type="image/x-wmf"/>
 	<manifest:file-entry manifest:full-path="settings.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Thumbnails/thumbnail.png" manifest:media-type="image/png"/>
