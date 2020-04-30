@@ -877,7 +877,9 @@
 											</table:table-header-rows>
 											<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.2">
 												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
-													<text:p text:style-name="ГрифОграниченияДоступа"><text:variable-get text:name="ГрифДоступа">Общедоступно</text:variable-get><text:hidden-paragraph text:condition="ooow:(ГрифДоступа == &#34;Общедоступно&#34;) OR (ГрифДоступа == &#34;ДСП&#34;)" text:is-hidden="true"/></text:p>
+													<text:p text:style-name="ГрифОграниченияДоступа">
+														<!-- <text:variable-get text:name="ГрифДоступа">Общедоступно</text:variable-get><text:hidden-paragraph text:condition="ooow:(ГрифДоступа == &#34;Общедоступно&#34;) OR (ГрифДоступа == &#34;ДСП&#34;)" text:is-hidden="true"/> -->
+													</text:p>
 												</table:table-cell>
 												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
 													<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
