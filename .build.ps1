@@ -1,44 +1,55 @@
-﻿<#
-.Synopsis
-	Создаёт Open Office файлы из папки с xml файлами (build),
-	либо разбираем файлы в папки XML файлов
-#>
-#Requires -Version 5.0
+﻿#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
-[CmdletBinding()]
 param(
 	# путь к папке с .ott файлами
-	[Parameter( Mandatory = $false, Position = 0, ValueFromPipeline = $true )]
 	[System.String]
-	$DestinationPath = ( ( Get-Item -Path '.\template' ) | Resolve-Path ),
+	$DestinationPath = ( property DestinationPath ( ( Get-Item -Path '.\template' ).FullName ) ),
+
+	# имя .ott шаблона
+	[System.String]
+	$Filter = ( property Filter '*' ),
 
 	# путь к .ott файлу
-	[Parameter( Mandatory = $false )]
 	[System.String[]]
-	$DestinationFile = @( ( Get-ChildItem -Path $DestinationPath -File -Filter '*.ott' ) | Resolve-Path ),
+	$DestinationFile = ( property DestinationFile @( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ),
 
 	# путь к папке с xml папками .ott файлов
-	[Parameter( Mandatory = $false, Position = 1 )]
 	[System.String]
-	$Path = ( ( Get-Item -Path '.\src\template' ) | Resolve-Path ),
+	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ) | Resolve-Path ) ),
 
 	# путь к папке с xml файлами одного .ott файла
-	[Parameter( Mandatory = $false )]
 	[System.String[]]
-	$XMLFolder = @( ( Get-ChildItem -Path $Path -Directory -Filter '*.ott' ) | Resolve-Path )
+	$SourceFolder = ( property SourceFolder @( Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ),
+
+	# состояние окна Open Office при открытии документа
+	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
+	# 0  Open the application with a hidden window.
+	# 1  Open the application with a normal window. If the window is minimized or maximized, the system restores it to its original size and position.
+	# 2  Open the application with a minimized window.
+	# 3  Open the application with a maximized window.
+	# 4  Open the application with its window at its most recent size and position. The active window remains active.
+	# 5  Open the application with its window at its current size and position.
+	# 7  Open the application with a minimized window. The active window remains active.
+	# 10 Open the application with its window in the default state specified by the application.
+	[System.Int16]
+	$OOWindowState = ( property OOWindowState 10 )
 )
+
+$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
+[System.String[]] $NewDestinationFile = $SourceFolder | ForEach-Object {
+	Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
+};
 
 # Synopsis: Удаляет каталоги с XML файлами
 task Clean {
-	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-	$XMLFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$SourceFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Преобразовывает Open Office файлы в папки с XML файлами
 task Unpack Clean, {
-	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $Path `
+	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
 		-Indented `
 		-WarningAction SilentlyContinue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -47,8 +58,7 @@ task Unpack Clean, {
 
 # Synopsis: Оптимизирует XML файлы Open Office
 task OptimizeXML {
-	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-	$XMLFolder | .\tools\Optimize-PlainXML.ps1 `
+	$SourceFolder | .\tools\Optimize-PlainXML.ps1 `
 		-WarningAction SilentlyContinue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -60,21 +70,19 @@ task UnpackAndOptimize Unpack, OptimizeXML;
 
 $OOFilesBuildTasks = @();
 
-foreach ( $documentXMLFolder in $XMLFolder ) {
+foreach ( $documentXMLFolder in $SourceFolder ) {
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$OOFilesBuildTask = "Build $documentName";
+	$OOFilesBuildTask = "Build-$documentName";
 	$OOFilesBuildTasks += $OOFilesBuildTask;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse );
 	$target = @( Join-Path -Path $DestinationPath -ChildPath $documentName );
 
-	# dynamically added incremental task
 	task $OOFilesBuildTask `
 		-Inputs $prerequisites `
 		-Outputs $target `
 	{
-		$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 		$localDestinationFile = $Outputs[0];
-		$localXMLFolder = @( Join-Path -Path $Path -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
 			-WarningAction SilentlyContinue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -84,5 +92,15 @@ foreach ( $documentXMLFolder in $XMLFolder ) {
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 task Build $OOFilesBuildTasks;
+
+task BuildAndOpen Build, {
+	$Shell = New-Object -Com 'Shell.Application';
+	$NewDestinationFile | Get-Item | ForEach-Object {
+		$verb = 'open';
+		if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) ) {
+			$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
+		};
+	};
+};
 
 task . Build;
