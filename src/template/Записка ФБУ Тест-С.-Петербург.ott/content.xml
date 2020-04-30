@@ -43,6 +43,27 @@
 		</style:font-face>
 	</office:font-face-decls>
 	<office:automatic-styles>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица" style:family="table">
+			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A" style:family="table-column">
+			<style:table-column-properties style:column-width="4.001cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.B" style:family="table-column">
+			<style:table-column-properties style:column-width="3cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.1" style:family="table-row">
+			<style:table-row-properties style:row-height="1.199cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.2" style:family="table-row">
+			<style:table-row-properties style:row-height="0.499cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A2" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
 		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
@@ -79,11 +100,19 @@
 		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
-			<style:graphic-properties style:print-content="true" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="Frame">
+			<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
-			<style:graphic-properties style:vertical-pos="from-top" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="Frame">
+			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+		</style:style>
+		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr10" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+			<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Sect1" style:family="section">
 			<style:section-properties style:editable="false">
@@ -114,13 +143,13 @@
 			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 		</style:style>
 		<style:style style:name="gr3" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:style style:name="gr4" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:style style:name="gr5" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<number:boolean-style style:name="N99">
 			<number:boolean/>
