@@ -261,11 +261,11 @@
 		</style:style>
 		<style:style style:name="БланкЛогоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra"/>
 		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.3cm"/>
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
 		</style:style>
 		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
@@ -715,18 +715,6 @@
 			<style:table-row-properties style:row-height="1.7cm"/>
 		</style:style>
 		<style:style style:name="Подвал.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="Таблица1" style:family="table">
-			<style:table-properties style:width="2.916cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="Таблица1.A" style:family="table-column">
-			<style:table-column-properties style:column-width="2.916cm" style:rel-column-width="10205*"/>
-		</style:style>
-		<style:style style:name="Таблица1.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.7cm"/>
-		</style:style>
-		<style:style style:name="Таблица1.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
