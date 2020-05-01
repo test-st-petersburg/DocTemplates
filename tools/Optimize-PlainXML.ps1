@@ -16,61 +16,12 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	# Import-Module -Name ( Join-Path -Path $PSScriptRoot -ChildPath 'localXSLT.psm1' );
-	# # $saxCompiler.BaseUri = $PSScriptRoot;
-	# $saxTransform = Get-XSLTTransform ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) `
-	# 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-	# 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-	Add-Type -Path ( Join-Path -Path ( Split-Path -Path ( ( Get-Package -Name 'Saxon-HE' ).Source ) -Parent ) -ChildPath 'lib\net40\saxon9he-api.dll' ) `
+	$saxTransform = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTTransform.ps1' ) `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-	$saxProcessor = New-Object Saxon.Api.Processor;
-	$saxCompiler = $saxProcessor.NewXsltCompiler();
-	$saxCompiler.BaseUri = $PSScriptRoot;
-	Write-Verbose 'Compiling XSLT...';
-	try {
-		$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) );
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			Write-Warning `
-				-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-				-WarningAction Continue;
-		};
-	}
-	catch {
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			if ( $Error.isWarning ) {
-				Write-Warning `
-					-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-					-WarningAction Continue;
-			}
-			else {
-				Write-Error `
-					-Message @"
-
-ERROR: $($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-					-Exception $Error `
-					-ErrorAction Continue;
-			};
-		};
-		Write-Error -Message 'Обнаружены ошибки компиляции XSLT';
-	};
-	$saxTransform = $saxExecutable.Load();
-	Write-Verbose 'XSLT loaded.';
 	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
-
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
@@ -84,7 +35,7 @@ process {
 
 				$TempXMLFileName = [System.IO.Path]::GetTempFileName();
 				try {
-					$saxWriter = $saxProcessor.NewSerializer();
+					$saxWriter = New-Object Saxon.Api.Serializer;
 					$saxWriter.SetOutputFile( $TempXMLFileName );
 					$saxTransform.Run( $saxWriter );
 					$saxWriter.Close();

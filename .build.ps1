@@ -40,7 +40,7 @@ task Unpack Clean, {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $Path `
 		-Indented `
-		-WarningAction SilentlyContinue `
+		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -49,7 +49,7 @@ task Unpack Clean, {
 task OptimizeXML {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$XMLFolder | .\tools\Optimize-PlainXML.ps1 `
-		-WarningAction SilentlyContinue `
+		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -76,7 +76,7 @@ foreach ( $documentXMLFolder in $XMLFolder ) {
 		$localDestinationFile = $Outputs[0];
 		$localXMLFolder = @( Join-Path -Path $Path -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
-			-WarningAction SilentlyContinue `
+			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
