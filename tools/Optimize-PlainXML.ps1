@@ -18,8 +18,7 @@ begin {
 
 	$saxTransform = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTTransform.ps1' ) `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'Optimize-PlainXML.xslt' ) `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
