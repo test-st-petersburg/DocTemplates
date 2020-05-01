@@ -41,15 +41,8 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:officeooo="http://openoffice.org/2009/office"
 >
-	<xsl:output
-		method="xml"
-		version="1.0"
-		encoding="UTF-8"
-		omit-xml-declaration="no"
-		indent="no"
-	/>
 
-	<xsl:include href="ODTXMLFormatter.xslt" />
+	<!-- <xsl:include href="ODTXMLFormatter.xslt" /> -->
 
 	<!-- <xsl:include href="xslt/formatter/main.xslt" /> -->
 	<!-- <xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/blob/master/tools/xslt/formatter/main.xslt" package-version=".*"/> -->
@@ -84,7 +77,7 @@
 
 	<!-- форматируем текст модулей -->
 
-	<xsl:template match="script-module:module/text()" mode="#all">
+	<xsl:template match="script-module:module/text()" mode="#all" priority="100">
 		<xsl:variable name="module-text-ph1" as="xs:string" select="." />
 		<xsl:variable name="module-text-ph2" as="xs:string">
 			<!-- удаляем лишние пробелы в конце строк -->
@@ -106,9 +99,9 @@
 	</xsl:template>
 
 	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
-	<xsl:template match="text:list-style[ @style:hidden ]" mode="indent-self">
+	<xsl:template match="text:list-style[ @style:hidden ]" mode="outline">
 		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
+			<xsl:apply-templates select="@*" mode="outline"/>
 		</xsl:copy>
 	</xsl:template>
 

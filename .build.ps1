@@ -16,7 +16,7 @@ param(
 
 	# путь к папке с xml папками .ott файлов
 	[System.String]
-	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ) | Resolve-Path ) ),
+	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ).FullName ) ),
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]

@@ -60,15 +60,12 @@ $( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$(
 ERROR: $($Error.Message)
 $( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
 "@ `
-					-Exception $Error `
 					-ErrorAction Continue;
 			};
 		};
 		throw;
 	};
-	$saxTransform = $saxExecutable.Load();
-	Write-Verbose 'XSLT loaded.';
-	return $saxTransform;
+	return $saxExecutable;
 }
 catch {
 	Write-Error -ErrorRecord $_;

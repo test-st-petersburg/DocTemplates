@@ -16,44 +16,40 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxTransform = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTTransform.ps1' ) `
+	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'Transform-OpenOfficeDocument.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
-	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
-		Get-ChildItem -Path $Path -Recurse -Filter '*.xml' | Where-Object { $_.Length -gt 0 } | ForEach-Object {
-			$sourceFile = $_;
-			$sourceXMLFileStream = [System.IO.File]::OpenRead( $sourceFile.FullName );
-			try {
-				$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
+		$saxTransform = $saxExecutable.Load30();
+		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 
-				$TempXMLFileName = [System.IO.Path]::GetTempFileName();
-				try {
-					$saxWriter = New-Object Saxon.Api.Serializer;
-					$saxWriter.SetOutputFile( $TempXMLFileName );
-					$saxTransform.Run( $saxWriter );
-					$saxWriter.Close();
-					Move-Item -Path $TempXMLFileName -Destination ( $sourceFile.FullName ) -Force `
-						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-				}
-				finally {
-					if ( Test-Path -Path $TempXMLFileName ) {
-						Remove-Item -Path $TempXMLFileName -Recurse `
-							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-							-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-					};
-				};
-			}
-			finally {
-				$sourceXMLFileStream.Close();
-				$sourceXMLFileStream.Dispose();
-			};
+		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		$XSLTParams = New-Object 'System.Collections.Generic.Dictionary`2[Saxon.Api.QName,Saxon.Api.XdmValue]';
+		$XSLTParams.Add( 'base-uri', ( New-Object Saxon.Api.XdmAtomicValue -ArgumentList ( $BaseUri ) ) );
+		$saxTransform.SetStylesheetParameters( $XSLTParams );
+		Write-Verbose "Source base URI: $( $BaseUri )";
+
+		$TempXMLFolder = New-Item -ItemType Directory `
+			-Path ( [System.IO.Path]::GetTempPath() ) `
+			-Name ( [System.IO.Path]::GetRandomFileName() );
+		try {
+			$saxTransform.BaseOutputURI = ( [System.Uri] ( $TempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
+			$null = $saxTransform.CallTemplate( 'optimize' );
+			Write-Verbose 'Transformation done';
+
+			Get-ChildItem -Path $TempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		}
+		finally {
+			Remove-Item -Path $TempXMLFolder -Recurse `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 	};
 }
