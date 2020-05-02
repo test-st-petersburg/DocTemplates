@@ -68,6 +68,22 @@
 		use-accumulators=""
 	/>
 
+	<xsl:mode
+		name="outline-child"
+		on-no-match="fail" warning-on-no-match="true"
+		on-multiple-match="fail" warning-on-multiple-match="true"
+		visibility="public"
+		use-accumulators=""
+	/>
+
+	<xsl:mode
+		name="outline-self"
+		on-no-match="fail" warning-on-no-match="true"
+		on-multiple-match="fail" warning-on-multiple-match="true"
+		visibility="public"
+		use-accumulators=""
+	/>
+
 	<!-- строки для форматирования -->
 	<xsl:param name="indent-chars" as="xs:string" select="'&#x9;'" />
 	<xsl:param name="indent-line" as="xs:string" select="'&#xa;'" />
@@ -113,17 +129,25 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="outline"/>
 			<xsl:sequence>
-				<xsl:for-each select="node()">
-					<xsl:sequence>
-						<xsl:on-non-empty select="concat( $indent, $indent-chars )"/>
-						<xsl:apply-templates select="." mode="outline">
-							<xsl:with-param name="indent" select="concat( $indent, $indent-chars )" tunnel="yes"/>
-						</xsl:apply-templates>
-					</xsl:sequence>
-				</xsl:for-each>
+				<xsl:apply-templates select="." mode="outline-child"/>
 				<xsl:on-non-empty select="$indent"/>
 			</xsl:sequence>
 		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template mode="outline-child" match="element()">
+		<xsl:apply-templates select="node()" mode="outline-self"/>
+	</xsl:template>
+
+	<xsl:template mode="outline-self" match="element()">
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:variable name="next-indent" as="xs:string" select="concat( $indent, $indent-chars )"/>
+		<xsl:sequence>
+			<xsl:on-non-empty select="$next-indent"/>
+			<xsl:apply-templates select="." mode="outline">
+				<xsl:with-param name="indent" select="$next-indent" tunnel="yes"/>
+			</xsl:apply-templates>
+		</xsl:sequence>
 	</xsl:template>
 
 	<!-- правила для элементов, содержимое которых нельзя "форматировать" -->
@@ -149,6 +173,26 @@
 
 	<xsl:template mode="inline" match="office:annotation | draw:frame">
 		<xsl:apply-templates select="." mode="outline"/>
+	</xsl:template>
+
+	<!-- правила для обработки элементов с "особыми" правилами обработки потомков -->
+
+	<xsl:template mode="outline-child" match="/manifest:manifest">
+		<xsl:apply-templates select="manifest:file-entry" mode="outline-self">
+			<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template mode="outline-child" match="office:font-face-decls">
+		<xsl:apply-templates select="style:font-face" mode="outline-self">
+			<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template mode="outline-child" match="text:variable-decls">
+		<xsl:apply-templates select="text:variable-decl" mode="outline-self">
+			<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
+		</xsl:apply-templates>
 	</xsl:template>
 
 </xsl:transform>
