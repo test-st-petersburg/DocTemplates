@@ -1,203 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
 	id="mainFormatter"
-	name="https://github.com/test-st-petersburg/DocTemplates/blob/master/tools/xslt/formatter/main.xslt"
+	name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/main.xslt"
 	package-version="1.5.0"
 	input-type-annotations="preserve"
 	declared-modes="yes"
-	default-mode="#unnamed"
+	default-mode="f:outline"
 	default-validation="preserve"
 	expand-text="no"
 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:saxon="http://saxon.sf.net/"
 
-	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
-	xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
-	xmlns:ooo="http://openoffice.org/2004/office"
-	xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
-	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-	xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0"
-	xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"
-	xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0"
-	xmlns:rpt="http://openoffice.org/2005/report"
-	xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0"
-	xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0"
-	xmlns:ooow="http://openoffice.org/2004/writer"
-	xmlns:oooc="http://openoffice.org/2004/calc"
-	xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2"
-	xmlns:css3t="http://www.w3.org/TR/css3-text/"
-	xmlns:tableooo="http://openoffice.org/2009/table"
-	xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"
-	xmlns:drawooo="http://openoffice.org/2010/draw"
-	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"
-	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
-	xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0"
-	xmlns:math="http://www.w3.org/1998/Math/MathML"
-	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0"
-	xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0"
-	xmlns:dom="http://www.w3.org/2001/xml-events"
-	xmlns:xforms="http://www.w3.org/2002/xforms"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:officeooo="http://openoffice.org/2009/office"
-
-	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
+	xmlns:f="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 >
 
-	<xsl:expose component="template" names="*" visibility="public"/>
-
 	<xsl:mode
-		name="#default"
-		on-no-match="fail" warning-on-no-match="true"
-		on-multiple-match="fail" warning-on-multiple-match="true"
-		visibility="public"
-		streamable="true"
-		use-accumulators=""
-	/>
-
-	<xsl:mode
-		name="noindent"
+		name="f:inline"
 		on-no-match="shallow-copy" warning-on-no-match="false"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
-		use-accumulators=""
 	/>
 
 	<xsl:mode
-		name="indent"
+		name="f:outline"
 		on-no-match="fail" warning-on-no-match="true"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
-		use-accumulators=""
 	/>
 
 	<xsl:mode
-		name="indent-self"
+		name="f:outline-child"
 		on-no-match="fail" warning-on-no-match="true"
 		on-multiple-match="fail" warning-on-multiple-match="true"
 		visibility="public"
-		streamable="true"
-		use-accumulators=""
+	/>
+
+	<xsl:mode
+		name="f:outline-self"
+		on-no-match="fail" warning-on-no-match="true"
+		on-multiple-match="fail" warning-on-multiple-match="true"
+		visibility="final"
+	/>
+
+	<xsl:mode
+		name="f:text"
+		on-no-match="shallow-copy" warning-on-no-match="true"
+		on-multiple-match="fail" warning-on-multiple-match="true"
+		visibility="public"
 	/>
 
 	<!-- строки для форматирования -->
-	<xsl:param name="indent-chars" as="xs:string" select="'&#x9;'" />
-	<!-- применимо для dotNet XslTransformer -->
-	<xsl:param name="indent-line" as="xs:string" select="'&#xa;'" />
+	<xsl:variable name="indent-chars" as="xs:string" select="'&#x9;'" visibility="public"/>
+	<xsl:variable name="indent-line" as="xs:string" select="'&#xa;'" visibility="public"/>
 
-	<xsl:preserve-space elements="text:p text:span text:variable-set"/>
-	<xsl:strip-space elements="*" />
+	<!--
+		Обработаем текст, в том числе - пробелы, используемые для форматирования.
+		При обработке уже форматированного текста будем иметь на входе "лишние" text(),
+		которые необходимо исключить.
+		Следующие два правила удаляют text(), состоящие только из пробельных символов,
+		и копируют другие text().
+		Для иной обработки text() в конкретном случае необходимо переопределять
+		шаблоны для всех указанных ниже режимов, указывая более высокий приоритет.
+	-->
 
-	<!-- переводим обработку корня в режим indent -->
-
-	<xsl:template match="/*">
-		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
-		<xsl:apply-templates select="." mode="indent-self"/>
+	<xsl:template mode="f:outline f:inline" match="text()">
+		<xsl:apply-templates select="." mode="f:text"/>
 	</xsl:template>
 
-	<!-- обработка в режиме indent-self (введён для возможности переопределения обработки узла без оформления) -->
+	<xsl:template mode="f:text" match="text()[ not( matches( data(), '\S+' ) ) ]" priority="-5"/>
 
-	<xsl:template name="shallow-indent-copy">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-			<xsl:apply-templates select="node()" mode="indent"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="element()|processing-instruction()|comment()" mode="indent-self">
-		<xsl:call-template name="shallow-indent-copy"/>
-	</xsl:template>
-
-	<!-- обработка в режиме indent (добавляем отступы для себя) -->
-
-	<xsl:template match="element()|processing-instruction()|comment()" mode="indent">
-		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
-		<xsl:param name="process-on-completion" as="xs:boolean" select="position() = last()"/>
-		<xsl:on-non-empty>
-			<xsl:value-of select="concat($indent, $indent-chars)"/>
-		</xsl:on-non-empty>
-		<xsl:apply-templates select="." mode="indent-self">
-			<xsl:with-param name="indent" select="concat($indent, $indent-chars)" tunnel="yes"/>
-		</xsl:apply-templates>
-		<xsl:on-non-empty>
-			<xsl:if test="$process-on-completion">
-				<xsl:value-of select="$indent"/>
-			</xsl:if>
-		</xsl:on-non-empty>
-	</xsl:template>
-
-	<xsl:template match="@*" mode="indent">
+	<xsl:template mode="f:text" match="text()" priority="-10">
 		<xsl:copy />
 	</xsl:template>
 
-	<!-- правила для элементов, содержимое которых нельзя "форматировать" -->
+	<!--
+		Обработка в режиме f:outline (форматируем XML, формируем древовидную структуру).
+		Режим f:outline отвечает за обработку узла целиком.
+		Переопределять правила для режима f:outline,
+		если при этом формирование структуры всё-таки требуется, нежелательно.
+		См. f:outline-child.
+	-->
 
-	<xsl:template match="text()" mode="indent">
+	<xsl:template mode="f:outline" match="processing-instruction() | comment()">
+		<xsl:copy/>
+	</xsl:template>
+
+	<xsl:template mode="f:outline" match="@*">
 		<xsl:copy />
 	</xsl:template>
 
-	<xsl:template match="text:p/node()" mode="indent">
-		<xsl:apply-templates select="." mode="noindent"/>
-	</xsl:template>
-
-	<xsl:template match="text:h/node()" mode="indent">
-		<xsl:apply-templates select="." mode="noindent"/>
-	</xsl:template>
-
-	<xsl:template match="text:span/node()" mode="indent">
-		<xsl:apply-templates select="." mode="noindent"/>
-	</xsl:template>
-
-	<xsl:template match="text:table-of-content-entry-template/node()" mode="indent">
-		<xsl:apply-templates select="." mode="noindent"/>
-	</xsl:template>
-
-	<!-- правило для элементов, которые следует всегда "форматировать" -->
-
-	<xsl:template match="office:annotation" mode="noindent">
-		<xsl:apply-templates select="." mode="indent-self"/>
-	</xsl:template>
-
-	<xsl:template match="draw:frame" mode="noindent">
-		<xsl:apply-templates select="." mode="indent-self"/>
-	</xsl:template>
-
-	<!-- правила для обработки "особых" элементов -->
-
-	<xsl:template match="/manifest:manifest" mode="indent-self">
+	<xsl:template mode="f:outline" match="element()">
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
 		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-			<xsl:apply-templates select="manifest:file-entry" mode="indent">
-				<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
-			</xsl:apply-templates>
+			<xsl:apply-templates select="@*" mode="f:outline"/>
+			<xsl:sequence>
+				<xsl:apply-templates select="." mode="f:outline-child"/>
+				<xsl:on-non-empty select="$indent"/>
+			</xsl:sequence>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="office:font-face-decls" mode="indent-self">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-			<xsl:apply-templates select="style:font-face" mode="indent">
-				<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
-			</xsl:apply-templates>
-		</xsl:copy>
+	<!--
+		Режим f:outline-child выделен для облегчения переопределения порядка вывода
+		потомков без нарушения нормализации правил, генерирующих форматирование.
+		Если требуеся изменить порядок вывода потомков, переопределять следует
+		правило для элемента именно в режиме f:outline-child.
+	-->
+
+	<xsl:template mode="f:outline-child" match="element()">
+		<xsl:apply-templates select="node()" mode="f:outline-self"/>
 	</xsl:template>
 
-	<xsl:template match="text:variable-decls" mode="indent-self">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="indent"/>
-			<xsl:apply-templates select="text:variable-decl" mode="indent">
-				<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
+	<!--
+		Режим f:outline-self выделен для инкапсуляции правил,
+		генерирующих отступы в тексте XML при его форматировании.
+		Переопределение шаблонов данного режима крайне нежелательно
+		(как наружение инкапсуляции и нормализации кода).
+		В целях изменения поведения используйте режимы f:outline, ouline-child.
+	-->
+
+	<xsl:template mode="f:outline-self" match="element()">
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:variable name="next-indent" as="xs:string" select="concat( $indent, $indent-chars )"/>
+		<xsl:sequence>
+			<xsl:on-non-empty select="$next-indent"/>
+			<xsl:apply-templates select="." mode="f:outline">
+				<xsl:with-param name="indent" select="$next-indent" tunnel="yes"/>
 			</xsl:apply-templates>
-		</xsl:copy>
+		</xsl:sequence>
 	</xsl:template>
 
 </xsl:package>

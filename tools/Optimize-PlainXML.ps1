@@ -17,6 +17,7 @@ begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
+		-PackagesPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt' ) `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'Transform-OpenOfficeDocument.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;

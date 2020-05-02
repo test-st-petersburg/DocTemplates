@@ -11,8 +11,59 @@ Param(
 	# путь к файлу XSLT
 	[Parameter( Mandatory = $True, Position = 0 )]
 	[System.String]
-	$LiteralPath
+	$LiteralPath,
+
+	# путь к каталогу с пакетами XSLT
+	[Parameter( Mandatory = $False )]
+	[System.String[]]
+	$PackagesPath
 )
+
+Function Write-CompilerWarningAndErrors {
+	[CmdletBinding()]
+	Param(
+		# список ошибок
+		[Parameter( Mandatory = $True, Position = 0 )]
+		$ErrorList,
+
+		# компилируемый модуль
+		[Parameter( Mandatory = $False )]
+		[System.Uri]
+		$ModuleUri
+	)
+
+	[int] $ErrorsCount = 0;
+	foreach ( $Error in $ErrorList ) {
+		if ( $Error.ModuleUri.LocalPath.Length -eq 0 ) {
+			[System.Uri] $ModuleUriAux = $ModuleUri;
+		}
+		else {
+			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
+		};
+		if ( $Error.isWarning ) {
+			Write-Warning `
+				-Message @"
+
+$($Error.Message)
+$( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@;
+		}
+		else {
+			$ErrorsCount++;
+			Write-Error `
+				-Message @"
+
+ERROR: $($Error.Message)
+$( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
+"@ `
+				-ErrorAction Continue;
+		};
+	};
+	if ( $ErrorsCount ) {
+		Write-Error -Message "Compiler errors total: $ErrorsCount";
+	};
+
+}
 
 try {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
@@ -30,43 +81,49 @@ try {
 	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
-	try {
-		Write-Verbose 'Компиляция XSLT.';
-		$saxExecutable = $saxCompiler.Compile( $LiteralPath );
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			Write-Warning `
-				-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@;
-		};
-	}
-	catch {
-		Write-Error -Message "Ошибок $( $saxCompiler.ErrorList.Count )" -ErrorAction Continue;
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			if ( $Error.isWarning ) {
-				Write-Warning `
-					-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@;
-			}
-			else {
-				Write-Error `
-					-Message @"
-
-ERROR: $($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-					-ErrorAction Continue;
+	foreach ( $PackageFolder in $PackagesPath ) {
+		if ( $PSCmdlet.ShouldProcess( $PackageFolder, 'Compile XSLT packages in folder' ) ) {
+			Get-ChildItem -Path $PackageFolder -Filter '*.xslt' -Recurse | ForEach-Object {
+				$XSLTPackagePath = $_.FullName;
+				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) ) {
+					try {
+						$saxPackage = $saxCompiler.CompilePackage(
+							( New-Object System.IO.FileStream -ArgumentList $_.FullName, 'Open' )
+						);
+						Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+							-ModuleUri $XSLTPackagePath `
+							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+						if ( $PSCmdlet.ShouldProcess( $_.FullName, 'Import XLST package' ) ) {
+							$saxCompiler.ImportPackage( $saxPackage );
+						};
+					}
+					catch {
+						Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+							-ModuleUri $XSLTPackagePath `
+							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+						throw;
+					};
+				};
 			};
 		};
+	};
+
+	try {
+		Write-Verbose "Компиляция XSLT преобразования $LiteralPath";
+		$saxExecutable = $saxCompiler.Compile( $LiteralPath );
+		Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+			-ModuleUri $LiteralPath `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+	}
+	catch {
+		Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+			-ModuleUri $LiteralPath `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 		throw;
 	};
 	return $saxExecutable;
 }
 catch {
 	Write-Error -ErrorRecord $_;
+	throw;
 };
