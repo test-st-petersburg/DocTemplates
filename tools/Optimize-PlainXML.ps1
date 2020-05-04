@@ -17,8 +17,9 @@ begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
-		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt' `
-		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'Transform-OpenOfficeDocument.xslt' ) `
+		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
+		'tools/xslt/OODocumentProcessor/main.xslt' `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/optimizer/Optimize-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
@@ -29,9 +30,6 @@ process {
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 
 		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
-		$XSLTParams = New-Object 'System.Collections.Generic.Dictionary`2[Saxon.Api.QName,Saxon.Api.XdmValue]';
-		$XSLTParams.Add( 'base-uri', ( New-Object Saxon.Api.XdmAtomicValue -ArgumentList ( $BaseUri ) ) );
-		$saxTransform.SetStylesheetParameters( $XSLTParams );
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		$TempXMLFolder = New-Item -ItemType Directory `
@@ -40,7 +38,18 @@ process {
 		try {
 			$saxTransform.BaseOutputURI = ( [System.Uri] ( $TempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
-			$null = $saxTransform.CallTemplate( 'optimize' );
+
+			$XSLTParams = New-Object 'System.Collections.Generic.Dictionary`2[Saxon.Api.QName,Saxon.Api.XdmValue]';
+			$XSLTParams.Add(
+				( New-Object Saxon.Api.QName -ArgumentList `
+						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					'base-uri' ),
+				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList ( $BaseUri ) ) 	);
+			$saxTransform.SetInitialTemplateParameters( $XSLTParams, $false );
+
+			$null = $saxTransform.CallTemplate( ( New-Object Saxon.Api.QName -ArgumentList `
+						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					'optimize' ) );
 			Write-Verbose 'Transformation done';
 
 			Get-ChildItem -Path $TempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `

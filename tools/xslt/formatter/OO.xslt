@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
 	id="OOFormatter"
-	name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
 	package-version="1.5.0"
 	input-type-annotations="preserve"
 	declared-modes="yes"
@@ -8,16 +8,22 @@
 	expand-text="no"
 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
-	xmlns:f="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
+	xmlns:css3t="http://www.w3.org/TR/css3-text/"
+	xmlns:dom="http://www.w3.org/2001/xml-events"
+	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
+	xmlns:math="http://www.w3.org/1998/Math/MathML"
+	xmlns:xforms="http://www.w3.org/2002/xforms"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
 	xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"
 	xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0"
 	xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"
-	xmlns:css3t="http://www.w3.org/TR/css3-text/"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:dom="http://www.w3.org/2001/xml-events"
 	xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0"
 	xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
 	xmlns:drawooo="http://openoffice.org/2010/draw"
@@ -25,10 +31,8 @@
 	xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
 	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0"
 	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
-	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
 	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
-	xmlns:math="http://www.w3.org/1998/Math/MathML"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
 	xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0"
 	xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2"
@@ -45,20 +49,15 @@
 	xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0"
 	xmlns:tableooo="http://openoffice.org/2009/table"
 	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-	xmlns:xforms="http://www.w3.org/2002/xforms"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 >
 
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline" visibility="public"/>
 		<xsl:accept component="mode" names="f:outline-child" visibility="public"/>
 		<xsl:accept component="mode" names="f:outline-self" visibility="final"/>
 		<xsl:accept component="mode" names="f:inline" visibility="public"/>
-		<xsl:accept component="variable" names="indent-chars" visibility="public"/>
-		<xsl:accept component="variable" names="indent-line" visibility="public"/>
 		<xsl:override>
 
 			<!-- правила для элементов, не подвергаемых форматированию -->
@@ -109,6 +108,8 @@
 
 			<!-- TODO: упростить, переписав на XQuery -->
 			<xsl:template mode="f:inline f:outline" match="script-module:module/text()">
+				<xsl:param name="f:indent" as="xs:string" tunnel="yes"/>
+				<xsl:param name="f:indent-chars" as="xs:string" tunnel="yes"/>
 				<xsl:variable name="module-text-ph1" as="xs:string" select="." />
 				<xsl:variable name="module-text-ph2" as="xs:string">
 					<!-- удаляем лишние пробелы в конце строк -->
@@ -122,7 +123,7 @@
 					<!-- удаляем лишние пустые строки в начале и конце модуля -->
 					<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
 						<xsl:matching-substring>
-							<xsl:value-of select="concat( $indent-line, regex-group(1), $indent-line )" />
+							<xsl:value-of select="concat( $f:indent, regex-group(1), $f:indent )" />
 						</xsl:matching-substring>
 					</xsl:analyze-string>
 				</xsl:variable>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
 	id="BasicXMLFormatter"
-	name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt"
 	package-version="1.5.0"
 	input-type-annotations="preserve"
 	declared-modes="yes"
@@ -11,7 +11,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
-	xmlns:f="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
+	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 >
 
 	<xsl:mode
@@ -42,9 +42,8 @@
 		visibility="final"
 	/>
 
-	<!-- строки для форматирования -->
-	<xsl:variable name="indent-chars" as="xs:string" select="'&#x9;'" visibility="public"/>
-	<xsl:variable name="indent-line" as="xs:string" select="'&#xa;'" visibility="public"/>
+	<xsl:variable name="f:default-indent-chars" as="xs:string" select="'&#x9;'" static="yes" visibility="private"/>
+	<xsl:variable name="f:default-indent-line" as="xs:string" select="'&#xa;'" static="yes" visibility="private"/>
 
 	<!--
 		Обработаем текст, в том числе - пробелы, используемые для форматирования.
@@ -71,7 +70,8 @@
 	-->
 
 	<xsl:template mode="f:outline" match="/">
-		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
+		<xsl:param name="f:indent-chars" as="xs:string" select="$f:default-indent-chars" tunnel="yes"/>
 		<xsl:apply-templates select="element()" mode="f:outline"/>
 	</xsl:template>
 
@@ -84,15 +84,21 @@
 	</xsl:template>
 
 	<xsl:template mode="f:outline" match="element()">
-		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
+		<xsl:param name="f:indent-chars" as="xs:string" select="$f:default-indent-chars" tunnel="yes"/>
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="f:outline"/>
 			<xsl:sequence>
 				<xsl:apply-templates select="." mode="f:outline-child"/>
-				<xsl:on-non-empty select="$indent"/>
+				<xsl:on-non-empty select="$f:indent"/>
 			</xsl:sequence>
 		</xsl:copy>
 	</xsl:template>
+
+	<!--
+		TODO: рассмотреть вариант динамического определения элементов,
+		содержащих только текст, с переводом их в режим inline.
+	-->
 
 	<!--
 		Режим f:outline-child выделен для облегчения переопределения порядка вывода
@@ -114,12 +120,13 @@
 	-->
 
 	<xsl:template mode="f:outline-self" match="element()">
-		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
-		<xsl:variable name="next-indent" as="xs:string" select="concat( $indent, $indent-chars )"/>
+		<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
+		<xsl:param name="f:indent-chars" as="xs:string" select="$f:default-indent-chars" tunnel="yes"/>
+		<xsl:variable name="f:next-indent" as="xs:string" select="concat( $f:indent, $f:indent-chars )"/>
 		<xsl:sequence>
-			<xsl:on-non-empty select="$next-indent"/>
+			<xsl:on-non-empty select="$f:next-indent"/>
 			<xsl:apply-templates select="." mode="f:outline">
-				<xsl:with-param name="indent" select="$next-indent" tunnel="yes"/>
+				<xsl:with-param name="f:indent" select="$f:next-indent" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:sequence>
 	</xsl:template>
