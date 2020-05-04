@@ -10,16 +10,9 @@
 	xmlns:f="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 >
 
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/main.xslt" package-version="1"/>
-
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOTexts.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOAnnotations.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOConfig.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OODraws.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOFontFaces.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOManifest.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOMetas.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOScripts.xslt" package-version="1"/>
-	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OOVariables.xslt" package-version="1"/>
+	<xsl:use-package name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="f:outline" visibility="public"/>
+		<xsl:accept component="mode" names="f:inline" visibility="final"/>
+	</xsl:use-package>
 
 </xsl:transform>

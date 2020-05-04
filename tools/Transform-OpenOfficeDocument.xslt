@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
+	default-validation="preserve"
+	expand-text="no"
+
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,6 +46,8 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:officeooo="http://openoffice.org/2009/office"
 	xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"
+
+	xmlns:f="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 >
 
 	<xsl:param name="base-uri" as="xs:anyURI"/>
@@ -65,7 +70,7 @@
 				streamable="no" use-accumulators="#all" validation="preserve"
 			>
 				<xsl:result-document href="{ $file-full-path }" format="OOXmlFile" validation="preserve">
-					<xsl:apply-templates select="/"/>
+					<xsl:apply-templates select="/" mode="f:outline"/>
 				</xsl:result-document>
 			</xsl:source-document>
 			<xsl:catch errors="*"/>
@@ -81,7 +86,7 @@
 				streamable="no" use-accumulators="" validation="preserve"
 			>
 				<xsl:result-document href="{ $file-full-path }" format="OORdfFile" validation="preserve">
-					<xsl:apply-templates select="/"/>
+					<xsl:apply-templates select="/" mode="f:outline"/>
 				</xsl:result-document>
 			</xsl:source-document>
 			<xsl:catch errors="*"/>
@@ -105,6 +110,6 @@
 	<xsl:strip-space elements="*"/>
 
 	<xsl:include href="Optimize-PlainXML.xslt" />
-	<xsl:include href="ODTXMLFormatter.xslt" />
+	<xsl:include href="ODTXMLFormatter2.xslt" />
 
 </xsl:transform>

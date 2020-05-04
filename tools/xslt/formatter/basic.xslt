@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="mainFormatter"
-	name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/main.xslt"
+	id="BasicXMLFormatter"
+	name="https://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt"
 	package-version="1.5.0"
 	input-type-annotations="preserve"
 	declared-modes="yes"
@@ -42,13 +42,6 @@
 		visibility="final"
 	/>
 
-	<xsl:mode
-		name="f:text"
-		on-no-match="shallow-copy" warning-on-no-match="true"
-		on-multiple-match="fail" warning-on-multiple-match="true"
-		visibility="public"
-	/>
-
 	<!-- строки для форматирования -->
 	<xsl:variable name="indent-chars" as="xs:string" select="'&#x9;'" visibility="public"/>
 	<xsl:variable name="indent-line" as="xs:string" select="'&#xa;'" visibility="public"/>
@@ -63,13 +56,9 @@
 		шаблоны для всех указанных ниже режимов, указывая более высокий приоритет.
 	-->
 
-	<xsl:template mode="f:outline f:inline" match="text()">
-		<xsl:apply-templates select="." mode="f:text"/>
-	</xsl:template>
+	<xsl:template mode="f:outline f:outline-self" match="text()[ not( matches( data(), '\S+' ) ) ]" priority="-5"/>
 
-	<xsl:template mode="f:text" match="text()[ not( matches( data(), '\S+' ) ) ]" priority="-5"/>
-
-	<xsl:template mode="f:text" match="text()" priority="-10">
+	<xsl:template mode="f:inline f:outline f:outline-self" match="text()" priority="-10">
 		<xsl:copy />
 	</xsl:template>
 
@@ -80,6 +69,11 @@
 		если при этом формирование структуры всё-таки требуется, нежелательно.
 		См. f:outline-child.
 	-->
+
+	<xsl:template mode="f:outline" match="/">
+		<xsl:param name="indent" as="xs:string" select="$indent-line" tunnel="yes"/>
+		<xsl:apply-templates select="element()" mode="f:outline"/>
+	</xsl:template>
 
 	<xsl:template mode="f:outline" match="processing-instruction() | comment()">
 		<xsl:copy/>

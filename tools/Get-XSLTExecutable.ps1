@@ -13,10 +13,10 @@ Param(
 	[System.String]
 	$LiteralPath,
 
-	# путь к каталогу с пакетами XSLT
+	# массив путей к пакетам XSLT, необходимых для компиляции трансформации
 	[Parameter( Mandatory = $False )]
 	[System.String[]]
-	$PackagesPath
+	$PackagePath
 )
 
 Function Write-CompilerWarningAndErrors {
@@ -81,29 +81,25 @@ try {
 	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
-	foreach ( $PackageFolder in $PackagesPath ) {
-		if ( $PSCmdlet.ShouldProcess( $PackageFolder, 'Compile XSLT packages in folder' ) ) {
-			Get-ChildItem -Path $PackageFolder -Filter '*.xslt' -Recurse | ForEach-Object {
-				$XSLTPackagePath = $_.FullName;
-				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) ) {
-					try {
-						$saxPackage = $saxCompiler.CompilePackage(
-							( New-Object System.IO.FileStream -ArgumentList $_.FullName, 'Open' )
-						);
-						Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
-							-ModuleUri $XSLTPackagePath `
-							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-						if ( $PSCmdlet.ShouldProcess( $_.FullName, 'Import XLST package' ) ) {
-							$saxCompiler.ImportPackage( $saxPackage );
-						};
-					}
-					catch {
-						Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
-							-ModuleUri $XSLTPackagePath `
-							-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-						throw;
-					};
+	foreach ( $Package in $PackagePath ) {
+		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
+		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) ) {
+			try {
+				$saxPackage = $saxCompiler.CompilePackage(
+					( New-Object System.IO.FileStream -ArgumentList $XSLTPackagePath, 'Open' )
+				);
+				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+					-ModuleUri $XSLTPackagePath `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XLST package' ) ) {
+					$saxCompiler.ImportPackage( $saxPackage );
 				};
+			}
+			catch {
+				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+					-ModuleUri $XSLTPackagePath `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				throw;
 			};
 		};
 	};
