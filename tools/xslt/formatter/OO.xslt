@@ -55,9 +55,11 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline" visibility="public"/>
+		<xsl:accept component="mode" names="f:outline-preserve-space" visibility="public"/>
 		<xsl:accept component="mode" names="f:outline-child" visibility="public"/>
 		<xsl:accept component="mode" names="f:outline-self" visibility="final"/>
 		<xsl:accept component="mode" names="f:inline" visibility="public"/>
+		<xsl:accept component="mode" names="f:inline-preserve-space" visibility="public"/>
 		<xsl:override>
 
 			<!-- правила для элементов, не подвергаемых форматированию -->
@@ -72,12 +74,12 @@
 				| script:module
 				| config:config-item
 			">
-				<xsl:apply-templates select="." mode="f:inline"/>
+				<xsl:apply-templates select="." mode="f:outline-preserve-space"/>
 			</xsl:template>
 
 			<!-- правила для элементов, подвергаемых форматированию всегда -->
 
-			<xsl:template mode="f:inline" match="
+			<xsl:template mode="f:outline-preserve-space" match="
 				office:annotation
 				| draw:frame
 			">
@@ -107,7 +109,7 @@
 			<!-- форматирование текста модулей -->
 
 			<!-- TODO: упростить, переписав на XQuery -->
-			<xsl:template mode="f:inline f:outline" match="script-module:module/text()">
+			<xsl:template mode="f:outline-preserve-space f:inline-preserve-space" match="script-module:module/text()">
 				<xsl:param name="f:indent" as="xs:string" tunnel="yes"/>
 				<xsl:param name="f:indent-chars" as="xs:string" tunnel="yes"/>
 				<xsl:variable name="module-text-ph1" as="xs:string" select="." />

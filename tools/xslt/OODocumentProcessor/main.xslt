@@ -19,10 +19,21 @@
 	<xsl:global-context-item use="absent"/>
 
 	<xsl:mode
-		name="p:optimize-file"
-		on-no-match="deep-skip" warning-on-no-match="false"
-		on-multiple-match="fail" warning-on-multiple-match="true"
+		name="p:process-document-file"
+		on-no-match="deep-skip" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
+	/>
+
+	<!--
+		Для определения порядка обработки файлов документа необходимо переопределить шаблоны в указанном ниже режиме
+		в преобразовании, использующем данный пакет
+	-->
+	<xsl:mode
+		name="p:process-document-file-document-node"
+		on-no-match="fail" warning-on-no-match="yes"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="public"
 	/>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
@@ -30,46 +41,45 @@
 		<xsl:accept component="mode" names="f:inline" visibility="final"/>
 	</xsl:use-package>
 
-	<xsl:template name="p:optimize" visibility="final">
-		<xsl:param name="p:base-uri" as="xs:anyURI"/>
-		<xsl:source-document href="{ iri-to-uri( concat(  $p:base-uri, 'META-INF/manifest.xml' ) ) }"
+	<xsl:template name="p:process" visibility="final">
+		<xsl:context-item use="absent"/>
+		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
+		<xsl:source-document href="{ iri-to-uri( concat(  $p:document-folder-uri, 'META-INF/manifest.xml' ) ) }"
 			streamable="no" use-accumulators="" validation="preserve"
 		>
-			<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="p:optimize-file">
-				<xsl:with-param name="p:base-uri" select="$p:base-uri"/>
-			</xsl:apply-templates>
+			<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="p:process-document-file"/>
 		</xsl:source-document>
 	</xsl:template>
 
-	<xsl:template mode="p:optimize-file" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:process-document-file" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
-		<xsl:param name="p:base-uri" as="xs:anyURI"/>
+		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
 		<xsl:variable name="p:file-relative-uri" select="data( @manifest:full-path )"/>
 		<xsl:try rollback-output="yes">
-			<xsl:source-document href="{ iri-to-uri( concat( $p:base-uri, $p:file-relative-uri ) ) }"
+			<xsl:source-document href="{ iri-to-uri( concat( $p:document-folder-uri, $p:file-relative-uri ) ) }"
 				streamable="no" use-accumulators="#all" validation="preserve"
 			>
 				<xsl:result-document href="{ iri-to-uri( $p:file-relative-uri ) }" format="p:OOXmlFile" validation="preserve">
-					<xsl:apply-templates select="/" mode="f:outline"/>
+					<xsl:apply-templates select="/" mode="p:process-document-file-document-node"/>
 				</xsl:result-document>
 			</xsl:source-document>
 			<xsl:catch errors="*"/>
 		</xsl:try>
 	</xsl:template>
 
-	<xsl:template mode="p:optimize-file" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:process-document-file" match="/manifest:manifest/manifest:file-entry[
 		@manifest:media-type='application/rdf+xml'
 	]">
-		<xsl:param name="p:base-uri" as="xs:anyURI"/>
+		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
 		<xsl:variable name="file-full-path" select="data( @manifest:full-path )"/>
 		<xsl:try rollback-output="yes">
-			<xsl:source-document href="{ concat( iri-to-uri($p:base-uri), $file-full-path ) }"
+			<xsl:source-document href="{ concat( iri-to-uri($p:document-folder-uri), $file-full-path ) }"
 				streamable="no" use-accumulators="" validation="preserve"
 			>
 				<xsl:result-document href="{ $file-full-path }" format="p:OORdfFile" validation="preserve">
-					<xsl:apply-templates select="/" mode="f:outline"/>
+					<xsl:apply-templates select="/" mode="p:process-document-file-document-node"/>
 				</xsl:result-document>
 			</xsl:source-document>
 			<xsl:catch errors="*"/>

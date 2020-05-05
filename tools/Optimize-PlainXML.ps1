@@ -43,13 +43,13 @@ process {
 			$XSLTParams.Add(
 				( New-Object Saxon.Api.QName -ArgumentList `
 						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'base-uri' ),
+					'document-folder-uri' ),
 				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList ( $BaseUri ) ) 	);
-			$saxTransform.SetInitialTemplateParameters( $XSLTParams, $false );
+			$saxTransform.SetInitialTemplateParameters( $XSLTParams, $true );
 
 			$null = $saxTransform.CallTemplate( ( New-Object Saxon.Api.QName -ArgumentList `
 						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'optimize' ) );
+					'process' ) );
 			Write-Verbose 'Transformation done';
 
 			Get-ChildItem -Path $TempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
