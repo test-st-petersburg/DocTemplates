@@ -29,7 +29,7 @@ process {
 		$saxTransform = $saxExecutable.Load30();
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 
-		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		[System.Uri] $BaseUri = ( [System.Uri] ( ( Resolve-Path -Path $Path ).Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		$TempXMLFolder = New-Item -ItemType Directory `
