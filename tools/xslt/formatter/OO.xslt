@@ -60,6 +60,9 @@
 		<xsl:accept component="mode" names="f:outline-self" visibility="final"/>
 		<xsl:accept component="mode" names="f:inline" visibility="public"/>
 		<xsl:accept component="mode" names="f:inline-preserve-space" visibility="public"/>
+		<xsl:accept component="mode" names="f:preserve-space" visibility="public"/>
+		<xsl:accept component="mode" names="f:strip-space" visibility="public"/>
+		<xsl:accept component="variable" names="f:new-line" visibility="final"/>
 		<xsl:override>
 
 			<!-- правила для элементов, не подвергаемых форматированию -->
@@ -71,7 +74,7 @@
 				| dc:creator | dc:date
 				| loext:sender-initials
 				| text:variable-set | text:variable-get
-				| script:module
+				| script-module:module
 				| config:config-item
 			">
 				<xsl:apply-templates select="." mode="f:outline-preserve-space"/>
@@ -109,7 +112,7 @@
 			<!-- форматирование текста модулей -->
 
 			<!-- TODO: упростить, переписав на XQuery -->
-			<xsl:template mode="f:outline-preserve-space f:inline-preserve-space" match="script-module:module/text()">
+			<xsl:template mode="f:preserve-space" match="script-module:module/text()" priority="100">
 				<xsl:param name="f:indent" as="xs:string" tunnel="yes"/>
 				<xsl:param name="f:indent-chars" as="xs:string" tunnel="yes"/>
 				<xsl:variable name="module-text-ph1" as="xs:string" select="." />
@@ -125,7 +128,7 @@
 					<!-- удаляем лишние пустые строки в начале и конце модуля -->
 					<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
 						<xsl:matching-substring>
-							<xsl:value-of select="concat( $f:indent, regex-group(1), $f:indent )" />
+							<xsl:value-of select="concat( $f:new-line, regex-group(1), $f:indent )" />
 						</xsl:matching-substring>
 					</xsl:analyze-string>
 				</xsl:variable>
