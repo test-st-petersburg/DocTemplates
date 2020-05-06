@@ -44,7 +44,7 @@
 	<xsl:template name="p:process" visibility="final">
 		<xsl:context-item use="absent"/>
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
-		<xsl:source-document href="{ iri-to-uri( concat(  $p:document-folder-uri, 'META-INF/manifest.xml' ) ) }"
+		<xsl:source-document href="{ iri-to-uri( resolve-uri( 'META-INF/manifest.xml', $p:document-folder-uri ) ) }"
 			streamable="no" use-accumulators="" validation="preserve"
 		>
 			<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="p:process-document-file"/>
@@ -58,7 +58,7 @@
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
 		<xsl:variable name="p:file-relative-uri" select="data( @manifest:full-path )"/>
 		<xsl:try rollback-output="yes">
-			<xsl:source-document href="{ iri-to-uri( concat( $p:document-folder-uri, $p:file-relative-uri ) ) }"
+			<xsl:source-document href="{ iri-to-uri( resolve-uri( $p:file-relative-uri, $p:document-folder-uri ) ) }"
 				streamable="no" use-accumulators="#all" validation="preserve"
 			>
 				<xsl:result-document href="{ iri-to-uri( $p:file-relative-uri ) }" format="p:OOXmlFile" validation="preserve">
@@ -73,12 +73,12 @@
 		@manifest:media-type='application/rdf+xml'
 	]">
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" required="yes" tunnel="yes"/>
-		<xsl:variable name="file-full-path" select="data( @manifest:full-path )"/>
+		<xsl:variable name="p:file-relative-uri" select="data( @manifest:full-path )"/>
 		<xsl:try rollback-output="yes">
-			<xsl:source-document href="{ concat( iri-to-uri($p:document-folder-uri), $file-full-path ) }"
-				streamable="no" use-accumulators="" validation="preserve"
+			<xsl:source-document href="{ iri-to-uri( resolve-uri( $p:file-relative-uri, $p:document-folder-uri ) ) }"
+				streamable="no" use-accumulators="#all" validation="preserve"
 			>
-				<xsl:result-document href="{ $file-full-path }" format="p:OORdfFile" validation="preserve">
+				<xsl:result-document href="{ iri-to-uri( $p:file-relative-uri ) }" format="p:OORdfFile" validation="preserve">
 					<xsl:apply-templates select="/" mode="p:process-document-file-document-node"/>
 				</xsl:result-document>
 			</xsl:source-document>
