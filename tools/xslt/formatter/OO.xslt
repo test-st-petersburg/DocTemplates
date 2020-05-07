@@ -62,7 +62,7 @@
 		<xsl:accept component="mode" names="f:inline-preserve-space" visibility="public"/>
 		<xsl:accept component="mode" names="f:preserve-space" visibility="public"/>
 		<xsl:accept component="mode" names="f:strip-space" visibility="public"/>
-		<xsl:accept component="variable" names="f:new-line" visibility="final"/>
+		<xsl:accept component="variable" names="f:new-line f:default-indent-line f:default-indent-chars" visibility="final"/>
 		<xsl:override>
 
 			<!-- правила для элементов, не подвергаемых форматированию -->
@@ -113,8 +113,8 @@
 
 			<!-- TODO: упростить, переписав на XQuery -->
 			<xsl:template mode="f:preserve-space" match="script-module:module/text()" priority="100">
-				<xsl:param name="f:indent" as="xs:string" tunnel="yes"/>
-				<xsl:param name="f:indent-chars" as="xs:string" tunnel="yes"/>
+				<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
+				<xsl:param name="f:indent-chars" as="xs:string" select="$f:default-indent-chars" tunnel="yes"/>
 				<xsl:variable name="module-text-ph1" as="xs:string" select="." />
 				<xsl:variable name="module-text-ph2" as="xs:string">
 					<!-- удаляем лишние пробелы в конце строк -->

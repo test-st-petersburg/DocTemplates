@@ -5,15 +5,19 @@
 	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
+
+	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
+
 >
 
-	<xsl:global-context-item use="absent"/>
+	<!-- default-mode="p:process-document-manifest" -->
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline f:inline" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/main.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="p:process-document-manifest" visibility="final"/>
 		<xsl:accept component="mode" names="p:process-document-file-document-node" visibility="public"/>
 		<xsl:accept component="template" names="p:process" visibility="final"/>
 		<xsl:override>
@@ -24,5 +28,11 @@
 
 		</xsl:override>
 	</xsl:use-package>
+
+	<xsl:template match="/">
+		<xsl:context-item use="required" as="document-node()"/>
+		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
+		<xsl:apply-templates select="." mode="p:process-document-manifest"/>
+	</xsl:template>
 
 </xsl:transform>

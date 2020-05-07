@@ -115,9 +115,9 @@
 		visibility="final"
 	/>
 
-	<xsl:variable name="f:default-indent-chars" as="xs:string" select="'&#x9;'" visibility="private"/>
+	<xsl:variable name="f:default-indent-chars" as="xs:string" select="'&#x9;'" visibility="final"/>
 	<xsl:variable name="f:new-line" as="xs:string" select="'&#xa;'" visibility="final"/>
-	<xsl:variable name="f:default-indent-line" as="xs:string" select="$f:new-line" visibility="private"/>
+	<xsl:variable name="f:default-indent-line" as="xs:string" select="$f:new-line" visibility="final"/>
 
 	<!--
 		Обработаем текст, в том числе - пробелы, используемые для форматирования.

@@ -26,7 +26,7 @@ begin {
 process {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
-		$saxTransform = $saxExecutable.Load30();
+		$saxTransform = $saxExecutable.Load();
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 
 		[System.Uri] $BaseUri = ( Resolve-Path -Path $Path ).Path + [System.IO.Path]::DirectorySeparatorChar;
@@ -41,17 +41,14 @@ process {
 			$saxTransform.BaseOutputURI = ( [System.Uri] ( $TempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-			$XSLTParams = New-Object 'System.Collections.Generic.Dictionary`2[Saxon.Api.QName,Saxon.Api.XdmValue]';
-			$XSLTParams.Add(
-				( New-Object Saxon.Api.QName -ArgumentList `
-						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'document-folder-uri' ),
-				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList ( $BaseUri ) ) 	);
-			$saxTransform.SetInitialTemplateParameters( $XSLTParams, $true );
+			$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $Path -ChildPath 'META-INF/manifest.xml' ) ).Path;
+			# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+			[System.Uri] $ManifestUri = $ManifestPath;
+			$saxTransform.SetInputStream(
+				( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
+				$ManifestUri );
+			$saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
 
-			$null = $saxTransform.CallTemplate( ( New-Object Saxon.Api.QName -ArgumentList `
-						'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'process' ) );
 			Write-Verbose 'Transformation done';
 
 			Get-ChildItem -Path $TempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
