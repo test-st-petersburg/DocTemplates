@@ -190,20 +190,6 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- TODO: убрать, должны работать встроенные правила -->
-	<xsl:template mode="f:outline-preserve-space" match="*">
-		<xsl:copy validation="preserve">
-			<xsl:apply-templates select="@*" mode="f:outline-preserve-space"/>
-			<xsl:apply-templates select="node()" mode="f:outline-preserve-space"/>
-		</xsl:copy>
-	</xsl:template>
-	<xsl:template mode="f:inline-preserve-space" match="*">
-		<xsl:copy validation="preserve">
-			<xsl:apply-templates select="@*" mode="f:inline-preserve-space"/>
-			<xsl:apply-templates select="node()" mode="f:inline-preserve-space"/>
-		</xsl:copy>
-	</xsl:template>
-
 	<xsl:template mode="f:outline-available" match="*">
 		<xsl:value-of select="true()"/>
 	</xsl:template>
