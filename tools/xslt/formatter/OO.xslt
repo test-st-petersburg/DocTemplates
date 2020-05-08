@@ -111,31 +111,23 @@
 
 			<!-- форматирование текста модулей -->
 
-			<!-- TODO: упростить, переписав на XQuery -->
 			<xsl:template mode="f:preserve-space" match="script-module:module/text()" priority="100">
 				<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
-				<xsl:param name="f:indent-chars" as="xs:string" select="$f:default-indent-chars" tunnel="yes"/>
-				<xsl:variable name="module-text-ph1" as="xs:string" select="." />
-				<xsl:variable name="module-text-ph2" as="xs:string">
-					<!-- удаляем лишние пробелы в конце строк -->
-					<xsl:analyze-string select="$module-text-ph1" regex="^(.*?)\s*$" flags="s">
-						<xsl:matching-substring>
-							<xsl:value-of select='regex-group(1)' />
-						</xsl:matching-substring>
-					</xsl:analyze-string>
-				</xsl:variable>
-				<xsl:variable name="module-text-ph3" as="xs:string">
-					<!-- удаляем лишние пустые строки в начале и конце модуля -->
-					<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
-						<xsl:matching-substring>
-							<xsl:value-of select="concat( $f:new-line, regex-group(1), $f:indent )" />
-						</xsl:matching-substring>
-					</xsl:analyze-string>
-				</xsl:variable>
-				<xsl:value-of select="$module-text-ph3" />
+				<xsl:value-of select="concat( $f:new-line, f:normalize-script-text( data() ), $f:indent )" />
 			</xsl:template>
 
 		</xsl:override>
 	</xsl:use-package>
+
+	<xsl:function name="f:normalize-script-text" as="xs:string" visibility="private">
+		<xsl:param name="f:script-text" as="xs:string"/>
+		<xsl:value-of select="
+			replace(
+				replace(
+					replace( $f:script-text, '\s+$', '' ),
+					'^\s+', '' ),
+				'\s+$', '' )
+		"/>
+	</xsl:function>
 
 </xsl:package>
