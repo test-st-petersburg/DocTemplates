@@ -12,7 +12,7 @@ param(
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationFile = ( property DestinationFile @( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ),
+	$DestinationFile = ( property DestinationFile @( ( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ) ),
 
 	# путь к папке с xml папками .ott файлов
 	[System.String]
@@ -20,7 +20,7 @@ param(
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]
-	$SourceFolder = ( property SourceFolder @( Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ),
+	$SourceFolder = ( property SourceFolder @( (Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ) ),
 
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
