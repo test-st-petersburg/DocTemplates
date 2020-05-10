@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><library:library xmlns:library="http://openoffice.org/2000/library" library:name="Standard" library:readonly="false" library:passwordprotected="false">
+<?xml version="1.0" encoding="UTF-8"?><library:library xmlns:library="http://openoffice.org/2000/library" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" library:name="Standard" library:readonly="false" library:passwordprotected="false">
 	<library:element library:name="Common"/>
 	<library:element library:name="WorkWithLetterheads"/>
 	<library:element library:name="WorkWithStyles"/>

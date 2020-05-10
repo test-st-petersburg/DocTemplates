@@ -55,20 +55,18 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline" visibility="public"/>
-		<xsl:accept component="mode" names="f:outline-preserve-space" visibility="public"/>
 		<xsl:accept component="mode" names="f:outline-child" visibility="public"/>
-		<xsl:accept component="mode" names="f:outline-self" visibility="final"/>
+		<xsl:accept component="mode" names="f:outline-prohibited" visibility="final"/>
 		<xsl:accept component="mode" names="f:inline" visibility="public"/>
-		<xsl:accept component="mode" names="f:inline-preserve-space" visibility="public"/>
-		<xsl:accept component="mode" names="f:preserve-space" visibility="public"/>
-		<xsl:accept component="mode" names="f:strip-space" visibility="public"/>
+		<xsl:accept component="mode" names="f:strip-space f:preserve-space" visibility="final"/>
 		<xsl:accept component="variable" names="f:new-line f:default-indent-line f:default-indent-chars" visibility="final"/>
 		<xsl:override>
 
 			<!-- правила для элементов, не подвергаемых форматированию -->
 
 			<xsl:template mode="f:outline" match="
-				text:p | text:h | text:span
+				text:p | text:h
+				| text:span | text:a | text:note-citation | text:page-number | text:bookmark-ref
 				| text:table-of-content-entry-template | text:index-title-template
 				| office:meta/*
 				| dc:creator | dc:date
@@ -77,21 +75,20 @@
 				| script-module:module
 				| config:config-item
 			">
-				<xsl:apply-templates select="." mode="f:outline-preserve-space"/>
+				<xsl:apply-templates select="." mode="f:outline-prohibited"/>
 			</xsl:template>
 
-			<!-- правила для элементов, подвергаемых форматированию всегда -->
-
-			<xsl:template mode="f:outline-preserve-space" match="
-				office:annotation
-				| draw:frame
-			">
-				<xsl:apply-templates select="." mode="f:outline"/>
+			<xsl:template mode="f:inline f:outline" match="(
+				text:p | text:h
+				| text:span | text:a | text:bookmark-ref
+				| text:variable-set | text:variable-get
+			)/text()">
+				<xsl:apply-templates select="." mode="f:preserve-space"/>
 			</xsl:template>
 
 			<!-- правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
 
-			<xsl:template mode="f:outline-child" match="office:font-face-decls">
+			<!-- <xsl:template mode="f:outline-child" match="office:font-face-decls">
 				<xsl:apply-templates select="style:font-face" mode="f:outline-self">
 					<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
 				</xsl:apply-templates>
@@ -107,13 +104,12 @@
 				<xsl:apply-templates select="text:variable-decl" mode="f:outline-self">
 					<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
 				</xsl:apply-templates>
-			</xsl:template>
+			</xsl:template> -->
 
 			<!-- форматирование текста модулей -->
 
-			<xsl:template mode="f:preserve-space" match="script-module:module/text()" priority="100">
-				<xsl:param name="f:indent" as="xs:string" select="$f:default-indent-line" tunnel="yes"/>
-				<xsl:value-of select="concat( $f:new-line, f:normalize-script-text( data() ), $f:indent )" />
+			<xsl:template mode="f:inline f:outline" match="script-module:module/text()">
+				<xsl:value-of select="concat( $f:new-line, f:normalize-script-text( data() ), $f:new-line )" />
 			</xsl:template>
 
 		</xsl:override>

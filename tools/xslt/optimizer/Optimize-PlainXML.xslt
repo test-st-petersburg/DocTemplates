@@ -7,32 +7,24 @@
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
 
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
-
 >
 
-	<!-- default-mode="p:process-document-manifest" -->
-
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="final"/>
-	</xsl:use-package>
-
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/main.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="p:process-document-manifest" visibility="final"/>
-		<xsl:accept component="mode" names="p:process-document-file-document-node" visibility="public"/>
-		<xsl:accept component="template" names="p:process" visibility="final"/>
-		<xsl:override>
-
-			<xsl:template mode="p:process-document-file-document-node" match="/">
-				<xsl:apply-templates mode="f:outline"/>
-			</xsl:template>
-
-		</xsl:override>
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/OOProcessor.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="p:merge-document-files" visibility="final"/>
+		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:template match="/">
 		<xsl:context-item use="required" as="document-node()"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:apply-templates select="." mode="p:process-document-manifest"/>
+		<xsl:variable name="o:complex-document" as="document-node()">
+			<xsl:apply-templates select="." mode="p:merge-document-files"/>
+		</xsl:variable>
+		<!-- <xsl:variable name="o:optimized-document" as="document-node()">
+			<xsl:apply-templates select="$o:complex-document" mode="o:optimize-complex-document"/>
+		</xsl:variable>
+		<xsl:apply-templates select="$o:optimized-document" mode="p:create-outline-document-files"/> -->
+		<xsl:apply-templates select="$o:complex-document" mode="p:create-outline-document-files"/>
 	</xsl:template>
 
 </xsl:transform>

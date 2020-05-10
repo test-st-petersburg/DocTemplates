@@ -18,7 +18,7 @@ begin {
 
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
 		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
-		'tools/xslt/OODocumentProcessor/main.xslt' `
+		'tools/xslt/OODocumentProcessor/OOProcessor.xslt' `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/optimizer/Optimize-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
