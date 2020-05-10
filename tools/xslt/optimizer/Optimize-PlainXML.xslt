@@ -13,11 +13,8 @@
 		<xsl:accept component="mode" names="p:merge-document-files" visibility="final"/>
 	</xsl:use-package>
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-outline-writer.xslt" package-version="1.5">
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="final"/>
-	</xsl:use-package>
-
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-inline-writer.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="final"/>
 	</xsl:use-package>
 

@@ -19,8 +19,7 @@ begin {
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
 		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
 		'tools/xslt/optimizer/OOOptimizer.xslt', `
-		'tools/xslt/OODocumentProcessor/oo-outline-writer.xslt', `
-		'tools/xslt/OODocumentProcessor/oo-inline-writer.xslt', `
+		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/optimizer/Optimize-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
