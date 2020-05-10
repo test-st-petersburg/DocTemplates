@@ -12,15 +12,15 @@ param(
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationFile = ( property DestinationFile @( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ),
+	$DestinationFile = ( property DestinationFile @( ( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ) ),
 
 	# путь к папке с xml папками .ott файлов
 	[System.String]
-	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ) | Resolve-Path ) ),
+	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ).FullName ) ),
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]
-	$SourceFolder = ( property SourceFolder @( Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ),
+	$SourceFolder = ( property SourceFolder @( (Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ) ),
 
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
@@ -51,7 +51,7 @@ task Clean {
 task Unpack Clean, {
 	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
 		-Indented `
-		-WarningAction SilentlyContinue `
+		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -59,7 +59,7 @@ task Unpack Clean, {
 # Synopsis: Оптимизирует XML файлы Open Office
 task OptimizeXML {
 	$SourceFolder | .\tools\Optimize-PlainXML.ps1 `
-		-WarningAction SilentlyContinue `
+		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -84,7 +84,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 		$localDestinationFile = $Outputs[0];
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
-			-WarningAction SilentlyContinue `
+			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};

@@ -26,57 +26,14 @@ param(
 
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
-	Import-Module 7Zip4Powershell;
 
-	Add-Type -Path ( Join-Path -Path ( Split-Path -Path ( ( Get-Package -Name 'Saxon-HE' ).Source ) -Parent ) -ChildPath 'lib\net40\saxon9he-api.dll' ) `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-	$saxProcessor = New-Object Saxon.Api.Processor;
-	$saxCompiler = $saxProcessor.NewXsltCompiler();
-	$saxCompiler.BaseUri = $PSScriptRoot;
-	Write-Verbose 'Compiling XSLT...';
-	try {
-		$saxExecutable = $saxCompiler.Compile( ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertFrom-PlainXML.xslt' ) );
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			Write-Warning `
-				-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-				-WarningAction Continue;
-		};
-	}
-	catch {
-		foreach ( $Error in $saxCompiler.ErrorList ) {
-			if ( $Error.isWarning ) {
-				Write-Warning `
-					-Message @"
-
-$($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-					-WarningAction Continue;
-			}
-			else {
-				Write-Error `
-					-Message @"
-
-ERROR: $($Error.Message)
-$( ( [System.Uri]$Error.ModuleUri ).LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-					-Exception $Error `
-					-ErrorAction Continue;
-			};
-		};
-		Write-Error -Message 'Обнаружены ошибки компиляции XSLT';
-	};
-	$saxTransform = $saxExecutable.Load();
-	Write-Verbose 'XSLT loaded.';
-	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
-	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
-
+	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
+		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
+		'tools/xslt/optimizer/OOOptimizer.xslt', `
+		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
+		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Transform-PlainXML.xslt' ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
@@ -91,37 +48,43 @@ process {
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		try {
-			if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Unindent all xml source files before build Open Office file" ) ) {
-				Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-				| Where-Object { $_.Length -gt 0 } `
-				| ForEach-Object {
-					if ( $PSCmdlet.ShouldProcess( $_, "Unindent xml file" ) ) {
-						$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
-						try {
-							$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
-							$TempXMLFileName = [System.IO.Path]::GetTempFileName();
-							try {
-								$saxWriter = $saxProcessor.NewSerializer();
-								$saxWriter.SetOutputFile( $TempXMLFileName );
-								$saxTransform.Run( $saxWriter );
-								$saxWriter.Close();
-								Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
-									-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-									-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-							}
-							finally {
-								if ( Test-Path -Path $TempXMLFileName ) {
-									Remove-Item -Path $TempXMLFileName -Recurse `
-										-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-										-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-								};
-							};
-						}
-						finally {
-							$sourceXMLFileStream.Close();
-							$sourceXMLFileStream.Dispose();
-						};
-					};
+			if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Unindent all xml source files before build Open Office file" ) ) {
+				$saxTransform = $saxExecutable.Load();
+				$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+
+				$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
+					'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'inline';
+
+				[System.Uri] $BaseUri = $TempXMLFolder + [System.IO.Path]::DirectorySeparatorChar;
+				# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+				$BaseUri = $BaseUri.AbsoluteUri;
+				Write-Verbose "Source base URI: $( $BaseUri )";
+
+				$FormatterTempXMLFolder = New-Item -ItemType Directory `
+					-Path ( [System.IO.Path]::GetTempPath() ) `
+					-Name ( [System.IO.Path]::GetRandomFileName() );
+				try {
+					$saxTransform.BaseOutputURI = ( [System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+					Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
+
+					$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $TempXMLFolder -ChildPath 'META-INF/manifest.xml' ) ).Path;
+					# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+					[System.Uri] $ManifestUri = $ManifestPath;
+					$saxTransform.SetInputStream(
+						( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
+						$ManifestUri );
+					$saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
+
+					Write-Verbose 'Transformation done';
+
+					Get-ChildItem -Path $FormatterTempXMLFolder | Copy-Item -Destination $TempXMLFolder -Recurse -Force `
+						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				}
+				finally {
+					Remove-Item -Path $FormatterTempXMLFolder -Recurse `
+						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				};
 			};
 
