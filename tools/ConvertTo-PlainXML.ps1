@@ -32,11 +32,13 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxTransform = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTTransform.ps1' ) `
-		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'ConvertTo-PlainXML.xslt' ) `
+	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
+		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
+		'tools/xslt/optimizer/OOOptimizer.xslt', `
+		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
+		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Transform-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
-	# $saxTransform.RecoveryPolicy = [Saxon.Api.RecoveryPolicy]::DoNotRecover;
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
@@ -71,38 +73,43 @@ process {
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 			try {
 				if ( $Indented ) {
-					if ( $PSCmdlet.ShouldProcess( $DestinationPathForFile, "Format all xml files in Open Office document plain XML directory" ) ) {
-						Get-ChildItem -Path $DestinationTempPathForFile -Filter '*.xml' -Recurse `
-						| Where-Object { $_.Length -gt 0 } `
-						| ForEach-Object {
-							if ( $PSCmdlet.ShouldProcess( $_, "Format xml file" ) ) {
-								$sourceXMLFileStream = [System.IO.File]::OpenRead( $_.FullName );
-								try {
-									$saxTransform.SetInputStream( $sourceXMLFileStream, $DTDPath );
+					if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Format all xml files in Open Office document plain XML directory" ) ) {
+						$saxTransform = $saxExecutable.Load();
+						$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
 
-									$TempXMLFileName = [System.IO.Path]::GetTempFileName();
-									try {
-										$saxWriter = New-Object Saxon.Api.Serializer;
-										$saxWriter.SetOutputFile( $TempXMLFileName );
-										$saxTransform.Run( $saxWriter );
-										$saxWriter.Close();
-										Move-Item -Path $TempXMLFileName -Destination ( $_.FullName ) -Force `
-											-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-											-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-									}
-									finally {
-										if ( Test-Path -Path $TempXMLFileName ) {
-											Remove-Item -Path $TempXMLFileName -Recurse `
-												-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-												-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-										};
-									};
-								}
-								finally {
-									$sourceXMLFileStream.Close();
-									$sourceXMLFileStream.Dispose();
-								};
-							};
+						$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
+							'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'outline';
+
+						[System.Uri] $BaseUri = $DestinationTempPathForFile + [System.IO.Path]::DirectorySeparatorChar;
+						# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+						$BaseUri = $BaseUri.AbsoluteUri;
+						Write-Verbose "Source base URI: $( $BaseUri )";
+
+						$FormatterTempXMLFolder = New-Item -ItemType Directory `
+							-Path ( [System.IO.Path]::GetTempPath() ) `
+							-Name ( [System.IO.Path]::GetRandomFileName() );
+						try {
+							$saxTransform.BaseOutputURI = ( [System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+							Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
+
+							$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $DestinationTempPathForFile -ChildPath 'META-INF/manifest.xml' ) ).Path;
+							# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+							[System.Uri] $ManifestUri = $ManifestPath;
+							$saxTransform.SetInputStream(
+								( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
+								$ManifestUri );
+							$saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
+
+							Write-Verbose 'Transformation done';
+
+							Get-ChildItem -Path $FormatterTempXMLFolder | Copy-Item -Destination $DestinationTempPathForFile -Recurse -Force `
+								-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+								-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+						}
+						finally {
+							Remove-Item -Path $FormatterTempXMLFolder -Recurse `
+								-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+								-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 						};
 					};
 				};

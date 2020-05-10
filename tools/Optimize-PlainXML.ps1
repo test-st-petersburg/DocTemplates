@@ -21,7 +21,7 @@ begin {
 		'tools/xslt/optimizer/OOOptimizer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
-		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Optimize-PlainXML.xslt' ) `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Transform-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
@@ -30,6 +30,9 @@ process {
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
 		$saxTransform = $saxExecutable.Load();
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+
+		$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
+			'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'optimize';
 
 		[System.Uri] $BaseUri = ( Resolve-Path -Path $Path ).Path + [System.IO.Path]::DirectorySeparatorChar;
 		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString

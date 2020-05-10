@@ -29,9 +29,10 @@ begin {
 
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
 		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
+		'tools/xslt/optimizer/OOOptimizer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
-		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/ConvertFrom-PlainXML.xslt' ) `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Transform-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
@@ -50,6 +51,9 @@ process {
 			if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Unindent all xml source files before build Open Office file" ) ) {
 				$saxTransform = $saxExecutable.Load();
 				$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+
+				$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
+					'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'inline';
 
 				[System.Uri] $BaseUri = $TempXMLFolder + [System.IO.Path]::DirectorySeparatorChar;
 				# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
