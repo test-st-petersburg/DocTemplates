@@ -1,5 +1,9 @@
 *.ttf  binary
 
-*.xml  text  merge=text diff=text eol=crlf
-*.xsl  text  merge=text diff=text eol=crlf
+*.xml  text  merge=text diff=text eol=lf
+*.xsl  text  merge=text diff=text eol=lf
 *.md   text  merge=text diff=text eol=crlf
+
+*.ps1  text  merge=text diff=text eol=crlf
+*.psd1 text  merge=text diff=text eol=crlf
+*.psm1 text  merge=text diff=text eol=crlf

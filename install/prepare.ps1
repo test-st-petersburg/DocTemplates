@@ -10,11 +10,9 @@ $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	[Net.SecurityProtocolType]::Tls;
 
 $PSDefaultParameterValues = @{
-	'*:ErrorAction'                      = [System.Management.Automation.ActionPreference]::Stop;
-	'Start-DscConfiguration:Wait'        = $true;
-	'Start-DscConfiguration:Verbose'     = $true;
-	'Start-LabHostConfiguration:Verbose' = $true;
-	'Start-LabConfiguration:Verbose'     = $true;
+	'*:ErrorAction'                  = [System.Management.Automation.ActionPreference]::Stop;
+	'Start-DscConfiguration:Wait'    = $true;
+	'Start-DscConfiguration:Verbose' = $true;
 }
 
 # TODO: через GPO
