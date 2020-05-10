@@ -70,6 +70,37 @@
 		visibility="final"
 	/>
 
+	<!-- вспомогательный режим: выводим элемент только при наличии аттрибутов или потомков -->
+
+	<xsl:mode
+		name="o:where-attributes-or-elements"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="o:where-attributes-or-elements" match="element()">
+		<xsl:variable name="o:attributes" as="attribute()*">
+			<xsl:apply-templates select="@*" mode="o:optimize"/>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="exists( $o:attributes )">
+				<xsl:copy>
+					<xsl:copy-of select="$o:attributes"/>
+					<xsl:apply-templates select="node()" mode="o:optimize"/>
+				</xsl:copy>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:where-populated>
+					<xsl:copy>
+						<xsl:copy-of select="$o:attributes"/>
+						<xsl:apply-templates select="node()" mode="o:optimize"/>
+					</xsl:copy>
+				</xsl:where-populated>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
 	<!-- удаляем автоматические стили символов -->
 
 	<xsl:key name="o:auto-text-styles"
@@ -155,6 +186,13 @@
 	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
 		style:style[ style:text-properties/@fo:hyphenate = 'false' ]/style:paragraph-properties/@fo:hyphenation-ladder-count
 	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:paragraph-properties | style:tab-stops
+		| style:text-properties
+	">
+		<xsl:apply-templates select="." mode="o:where-attributes-or-elements"/>
+	</xsl:template>
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
 		style:text-properties[ @fo:hyphenate = 'false' ]/@fo:hyphenation-remain-char-count
