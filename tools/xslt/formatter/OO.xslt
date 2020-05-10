@@ -86,26 +86,6 @@
 				<xsl:apply-templates select="." mode="f:preserve-space"/>
 			</xsl:template>
 
-			<!-- правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
-
-			<!-- <xsl:template mode="f:outline-child" match="office:font-face-decls">
-				<xsl:apply-templates select="style:font-face" mode="f:outline-self">
-					<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
-				</xsl:apply-templates>
-			</xsl:template>
-
-			<xsl:template mode="f:outline-child" match="/manifest:manifest">
-				<xsl:apply-templates select="manifest:file-entry" mode="f:outline-self">
-					<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
-				</xsl:apply-templates>
-			</xsl:template>
-
-			<xsl:template mode="f:outline-child" match="text:variable-decls">
-				<xsl:apply-templates select="text:variable-decl" mode="f:outline-self">
-					<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
-				</xsl:apply-templates>
-			</xsl:template> -->
-
 			<!-- форматирование текста модулей -->
 
 			<xsl:template mode="f:inline f:outline" match="script-module:module/text()">

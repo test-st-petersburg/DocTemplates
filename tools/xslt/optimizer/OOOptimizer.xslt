@@ -52,129 +52,175 @@
 	xmlns:tableooo="http://openoffice.org/2009/table"
 	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
 
-	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
+	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
 >
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline" visibility="public"/>
-	</xsl:use-package>
+	<xsl:variable name="o:remove-text-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-unused-para-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-abs-size-when-relative" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+
+	<xsl:mode
+		name="o:optimize"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
 
 	<!-- удаляем автоматические стили символов -->
 
-	<xsl:key name="auto-text-styles"
+	<xsl:key name="o:auto-text-styles"
 		match="office:automatic-styles/style:style[ @style:family='text' ]"
 		use="@style:name"
 	/>
 
-	<xsl:template match="office:automatic-styles/style:style[ @style:family='text' ]" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-text-auto-styles"
+		 match="office:automatic-styles/style:style[ @style:family='text' ]"
+	/>
 
-	<xsl:template match="text:span[ key( 'auto-text-styles', @text:style-name ) ]" mode="#all" priority="10">
-		<xsl:apply-templates select="node()" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-text-auto-styles"
+		 match="text:span[ key( 'o:auto-text-styles', @text:style-name ) ]">
+		<xsl:apply-templates select="node()" mode="#current"/>
 	</xsl:template>
+
+	<!-- TODO: убирать автоматические стили только по отношению к базовому стилю символов -->
+	<!-- TODO: для автоматических стилей по отношению к другим стилям символов устанавливать ссылку на исходный стиль -->
 
 	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
 
-	<xsl:key name="auto-paragraph-styles"
+	<xsl:key name="o:auto-paragraph-styles" use-when="$o:remove-unused-para-auto-styles"
 		match="office:automatic-styles/style:style[ @style:family='paragraph' ]"
 		use="@style:name"
 	/>
 
-	<xsl:key name="used-paragraph-styles"
-		match="office:document-content/office:body/office:text//text:p|office:document-content/office:body/office:text//text:h"
+	<xsl:key name="o:used-paragraph-styles" use-when="$o:remove-unused-para-auto-styles"
+		match="
+			office:document-content/office:body/office:text//text:p
+			| office:document-content/office:body/office:text//text:h
+		"
 		use="@text:style-name"
 	/>
 
-	<xsl:template match="office:document-content/office:automatic-styles/style:style[ @style:family='paragraph' and not( key( 'used-paragraph-styles', @style:name ) ) ]" mode="#all" />
-
-	<!-- форматируем текст модулей -->
-
-	<xsl:template match="script-module:module/text()" mode="#all" priority="100">
-		<xsl:variable name="module-text-ph1" as="xs:string" select="." />
-		<xsl:variable name="module-text-ph2" as="xs:string">
-			<!-- удаляем лишние пробелы в конце строк -->
-			<xsl:analyze-string select="$module-text-ph1" regex="^(.*?)\s*$" flags="s">
-				<xsl:matching-substring>
-					<xsl:value-of select='regex-group(1)' />
-				</xsl:matching-substring>
-			</xsl:analyze-string>
-		</xsl:variable>
-		<xsl:variable name="module-text-ph3" as="xs:string">
-			<!-- удаляем лишние пустые строки в начале и конце модуля -->
-			<xsl:analyze-string select="$module-text-ph2" regex="^\s*(.*?)\s*$" flags="ms">
-				<xsl:matching-substring>
-					<xsl:value-of select="concat( $f:indent-line, regex-group(1), $f:indent-line )" />
-				</xsl:matching-substring>
-			</xsl:analyze-string>
-		</xsl:variable>
-		<xsl:value-of select="$module-text-ph3" />
-	</xsl:template>
+	<xsl:template mode="o:optimize" use-when="$o:remove-unused-para-auto-styles" match="
+		office:document-content/office:automatic-styles/style:style[
+		 	@style:family='paragraph'
+			and not( key( 'o:used-paragraph-styles', @style:name ) )
+		]
+	"/>
 
 	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
-	<xsl:template match="text:list-style[ @style:hidden ]" mode="outline">
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-hidden-list-styles" match="
+		text:list-style[ @style:hidden ]
+	">
 		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="outline"/>
+			<xsl:apply-templates select="@*" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
 
 	<!-- удаляем лишние элементы -->
 
-	<xsl:template match="style:background-image[empty(@*|node())]" mode="f:outline" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="(
+		style:background-image
+	)[ empty( @* | node() ) ]"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		@style:master-page-name[ . = '' ]
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		@fo:background-color[ . = 'transparent' ]
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:paragraph-properties/@style:page-number[ . = 'auto' ]
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:paragraph-properties[ @text:number-lines = 'false' ]/@text:line-number[ .='0' ]
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:paragraph-properties[ @fo:keep-together = 'always' ]/@fo:orphans
+		| style:paragraph-properties[ @fo:keep-together = 'always' ]/@fo:widows
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:paragraph-properties[ @fo:text-align != 'justify' ]/@style:justify-single-word
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:style[ style:text-properties/@fo:hyphenate = 'false' ]/style:paragraph-properties/@fo:hyphenation-ladder-count
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		style:text-properties[ @fo:hyphenate = 'false' ]/@fo:hyphenation-remain-char-count
+		| style:text-properties[ @fo:hyphenate = 'false' ]/@fo:hyphenation-push-char-count
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="
+		*[ @draw:fill = 'none' ]/@draw:fill-color
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-abs-size-when-relative" match="
+		*[ @style:rel-width ]/@svg:width
+		| *[ @style:rel-height ]/@svg:height
+		| *[ @style:vertical-rel ]/@svg:y
+		| *[ @style:horizontal-rel ]/@svg:x
+	"/>
 
 	<!-- удаляем лишние аттрибуты -->
 
-	<xsl:template match="@style:language-asian" mode="#all" />
-	<xsl:template match="@style:language-complex" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
+		@style:language-asian | @style:language-complex
+		| @style:country-asian | @style:country-complex
+		| @style:font-name-asian | @style:font-family-asian | @style:font-family-generic-asian
+		| @style:font-style-asian | @style:font-pitch-asian| @style:font-size-asian | @style:font-weight-asian
+		| @style:font-name-complex | @style:font-family-complex | @style:font-family-generic-complex
+		| @style:font-style-complex | @style:font-pitch-complex | @style:font-size-complex | @style:font-weight-complex
+		| @style:writing-mode
+	)"/>
 
-	<xsl:template match="@style:country-asian" mode="#all" />
-	<xsl:template match="@style:country-complex" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
+		office:automatic-styles/style:style/style:text-properties/@fo:language
+		| office:automatic-styles/style:style/style:text-properties/@fo:country
+	)"/>
 
-	<xsl:template match="@style:font-name-asian" mode="#all" />
-	<xsl:template match="@style:font-family-asian" mode="#all" />
-	<xsl:template match="@style:font-pitch-asian" mode="#all" />
-	<xsl:template match="@style:font-family-generic-asian" mode="#all" />
-	<xsl:template match="@style:font-size-asian" mode="#all" />
-	<xsl:template match="@style:font-weight-asian" mode="#all" />
-	<xsl:template match="@style:font-style-asian" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
+		style:text-properties/@officeooo:paragraph-rsid
+		| style:text-properties/@officeooo:rsid
+	)"/>
 
-	<xsl:template match="@style:font-name-complex" mode="#all" />
-	<xsl:template match="@style:font-family-complex" mode="#all" />
-	<xsl:template match="@style:font-family-generic-complex" mode="#all" />
-	<xsl:template match="@style:font-pitch-complex" mode="#all" />
-	<xsl:template match="@style:font-size-complex" mode="#all" />
-	<xsl:template match="@style:font-weight-complex" mode="#all" />
-	<xsl:template match="@style:font-style-complex" mode="#all" />
+	<!-- правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
 
-	<xsl:template match="@style:writing-mode" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:sort-sortable-nodes" match="office:font-face-decls">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:apply-templates select="style:font-face" mode="#current">
+				<xsl:sort select="@style:name" data-type="text" order="ascending" case-order="upper-first" />
+			</xsl:apply-templates>
+		</xsl:copy>
+	</xsl:template>
 
-	<xsl:template match="@style:master-page-name[ .='' ]" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:sort-sortable-nodes" match="manifest:manifest">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:apply-templates select="manifest:file-entry" mode="#current">
+				<xsl:sort select="@manifest:full-path" data-type="text" order="ascending" case-order="upper-first" />
+			</xsl:apply-templates>
+		</xsl:copy>
+	</xsl:template>
 
- 	<xsl:template match="style:text-properties/@officeooo:paragraph-rsid" mode="#all" />
-	<xsl:template match="style:text-properties/@officeooo:rsid" mode="#all" />
-
-	<xsl:template match="@fo:background-color[ .='transparent' ]" mode="#all" />
-
-	<xsl:template match="style:paragraph-properties/@style:page-number[ .='auto' ]" mode="#all" />
-
-	<xsl:template match="style:paragraph-properties[ @text:number-lines='false' ]/@text:line-number[ .='0' ]" mode="#all" />
-
-	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:orphans" mode="#all" />
-	<xsl:template match="style:paragraph-properties[ @fo:keep-together='always' ]/@fo:widows" mode="#all" />
-
-	<xsl:template match="style:paragraph-properties[ @fo:text-align!='justify' ]/@style:justify-single-word" mode="#all" />
-
-	<xsl:template match="style:style[ style:text-properties/@fo:hyphenate='false' ]/style:paragraph-properties/@fo:hyphenation-ladder-count" mode="#all" />
-
-	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-remain-char-count" mode="#all" />
-	<xsl:template match="style:text-properties[ @fo:hyphenate='false' ]/@fo:hyphenation-push-char-count" mode="#all" />
-
-	<xsl:template match="*[ @draw:fill='none' ]/@draw:fill-color" mode="#all" />
-
-	<xsl:template match="*[ @style:rel-width ]/@svg:width" mode="#all" />
-	<xsl:template match="*[ @style:rel-height ]/@svg:height" mode="#all" />
-	<xsl:template match="*[ @style:vertical-rel ]/@svg:y" mode="#all" />
-	<xsl:template match="*[ @style:horizontal-rel ]/@svg:x" mode="#all" />
-
-	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:language" mode="#all" />
-	<xsl:template match="office:automatic-styles/style:style/style:text-properties/@fo:country" mode="#all" />
+	<xsl:template mode="o:optimize" use-when="$o:sort-sortable-nodes" match="text:variable-decls">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:apply-templates select="text:variable-decl" mode="#current">
+				<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
+			</xsl:apply-templates>
+		</xsl:copy>
+	</xsl:template>
 
 </xsl:package>
