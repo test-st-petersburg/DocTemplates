@@ -321,13 +321,9 @@
 		</style:style>
 		<style:style style:name="Заголовок_20_вне_20_оглавления" style:display-name="Заголовок вне оглавления" style:family="paragraph" style:parent-style-name="Заголовок_20_прочий" style:next-style-name="Основной_20_текст_20_документа" style:default-outline-level=""/>
 		<style:style style:name="Заголовок_20_предисловия" style:display-name="Заголовок предисловия" style:family="paragraph" style:parent-style-name="Заголовок_20_вне_20_оглавления" style:next-style-name="Основной_20_текст_20_документа"/>
-		<style:style style:name="Заголовок_20_листа_20_ознакомления" style:display-name="Заголовок листа ознакомления" style:family="paragraph" style:parent-style-name="Заголовок_20_вне_20_оглавления" style:next-style-name="Основной_20_текст_20_документа" style:master-page-name="">
-			<style:paragraph-properties style:page-number="auto"/>
-		</style:style>
-		<style:style style:name="Гриф" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Должность_20_в_20_подписи_20_и_20_грифе" style:master-page-name="">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" fo:keep-together="always" style:page-number="auto" fo:keep-with-next="always">
-				<style:tab-stops/>
-			</style:paragraph-properties>
+		<style:style style:name="Заголовок_20_листа_20_ознакомления" style:display-name="Заголовок листа ознакомления" style:family="paragraph" style:parent-style-name="Заголовок_20_вне_20_оглавления" style:next-style-name="Основной_20_текст_20_документа"/>
+		<style:style style:name="Гриф" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Должность_20_в_20_подписи_20_и_20_грифе">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" fo:keep-together="always" fo:keep-with-next="always"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="14pt"/>
 		</style:style>
 		<style:style style:name="Должность_20_в_20_подписи_20_и_20_грифе" style:display-name="Должность в подписи и грифе" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Signature">
