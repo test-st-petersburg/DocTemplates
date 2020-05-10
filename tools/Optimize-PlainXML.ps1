@@ -21,7 +21,7 @@ begin {
 		'tools/xslt/optimizer/OOOptimizer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
-		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/optimizer/Optimize-PlainXML.xslt' ) `
+		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Optimize-PlainXML.xslt' ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
@@ -36,11 +36,11 @@ process {
 		$BaseUri = $BaseUri.AbsoluteUri;
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
-		$TempXMLFolder = New-Item -ItemType Directory `
+		$FormatterTempXMLFolder = New-Item -ItemType Directory `
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
 		try {
-			$saxTransform.BaseOutputURI = ( [System.Uri] ( $TempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+			$saxTransform.BaseOutputURI = ( [System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
 			$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $Path -ChildPath 'META-INF/manifest.xml' ) ).Path;
@@ -53,12 +53,12 @@ process {
 
 			Write-Verbose 'Transformation done';
 
-			Get-ChildItem -Path $TempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
+			Get-ChildItem -Path $FormatterTempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		}
 		finally {
-			Remove-Item -Path $TempXMLFolder -Recurse `
+			Remove-Item -Path $FormatterTempXMLFolder -Recurse `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};

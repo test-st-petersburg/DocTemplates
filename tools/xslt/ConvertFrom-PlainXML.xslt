@@ -10,16 +10,11 @@
 >
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="p:merge-document-files" visibility="final"/>
+		<xsl:accept component="mode" names="p:merge-document-files" visibility="private"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="final"/>
-		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="final"/>
-	</xsl:use-package>
-
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="o:optimize" visibility="final"/>
+		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="private"/>
 	</xsl:use-package>
 
 	<xsl:template match="/">
@@ -28,10 +23,7 @@
 		<xsl:variable name="o:complex-document" as="document-node()">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:variable name="o:optimized-document" as="document-node()">
-			<xsl:apply-templates select="$o:complex-document" mode="o:optimize"/>
-		</xsl:variable>
-		<xsl:apply-templates select="$o:optimized-document" mode="p:create-outline-document-files"/>
+		<xsl:apply-templates select="$o:complex-document" mode="p:create-inline-document-files"/>
 	</xsl:template>
 
 </xsl:transform>
