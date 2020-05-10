@@ -9,9 +9,16 @@
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 >
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/OOProcessor.xslt" package-version="1.5">
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:merge-document-files" visibility="final"/>
+	</xsl:use-package>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-outline-writer.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="final"/>
+	</xsl:use-package>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-inline-writer.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt" package-version="1.5">

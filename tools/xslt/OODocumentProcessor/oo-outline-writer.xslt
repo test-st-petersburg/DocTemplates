@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="OOProcessor"
-	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/OOProcessor.xslt"
+	id="OOOutlineWriter"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-outline-writer.xslt"
 	package-version="1.5.0"
 	input-type-annotations="preserve"
 	declared-modes="yes"
@@ -18,20 +18,6 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="false()" visibility="private"/>
-
-	<!--
-		Сбор всех XML файлов документа в единый файл.
-		Основа структуры - файл манифеста.
-		Содержимое файлов включаем в элементы манифеста.
-	-->
-	<xsl:mode
-		name="p:merge-document-files"
-		on-no-match="shallow-copy" warning-on-no-match="no"
-		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
-	/>
-
 	<!--
 		Разбор единого XML файла в отдельные XML файлы с форматированием.
 	-->
@@ -43,35 +29,8 @@
 	/>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="final"/>
+		<xsl:accept component="mode" names="f:outline" visibility="final"/>
 	</xsl:use-package>
-
-	<!-- Сборка XML файлов в один на базе манифеста -->
-
-	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
-		( @manifest:media-type='text/xml' )
-		or ( @manifest:media-type='application/rdf+xml' )
-		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
-	]">
-		<xsl:param name="p:document-folder-uri" as="xs:anyURI" select="resolve-uri( '..', base-uri() )" tunnel="yes"/>
-		<xsl:try rollback-output="yes">
-			<xsl:copy>
-				<xsl:apply-templates select="@*" mode="#current"/>
-				<xsl:source-document href="{ iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) ) }"
-					streamable="no" use-accumulators="#all" validation="preserve"
-				>
-					<xsl:apply-templates select="." mode="f:inline"/>
-				</xsl:source-document>
-			</xsl:copy>
-			<xsl:catch errors="plug"/>
-			<!-- <xsl:catch errors="SXXP0003" use-when="$p:dont-stop-on-empty-files"> -->
-			<xsl:catch errors="*" use-when="$p:dont-stop-on-empty-files">
-				<xsl:message terminate="no" error-code="SXXP0003" expand-text="yes">Empty XML file! Check file "{ resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) }".</xsl:message>
-			</xsl:catch>
-		</xsl:try>
-	</xsl:template>
-
-	<!-- Сохранение XML файлов из одного с форматированием -->
 
 	<xsl:template mode="p:create-outline-document-files" match="/">
 		<xsl:context-item use="required" as="document-node()"/>
