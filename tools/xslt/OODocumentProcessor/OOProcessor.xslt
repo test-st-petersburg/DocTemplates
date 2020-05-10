@@ -18,6 +18,8 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
+	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+
 	<!--
 		Сбор всех XML файлов документа в единый файл.
 		Основа структуры - файл манифеста.
@@ -40,8 +42,6 @@
 		visibility="final"
 	/>
 
-	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="false()" visibility="private"/>
-
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline f:inline" visibility="final"/>
 	</xsl:use-package>
@@ -54,7 +54,7 @@
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" select="resolve-uri( '..', base-uri() )" tunnel="yes"/>
-		<xsl:try rollback-output="yes" use-when="$p:dont-stop-on-empty-files">
+		<xsl:try rollback-output="yes">
 			<xsl:copy>
 				<xsl:apply-templates select="@*" mode="#current"/>
 				<xsl:source-document href="{ iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) ) }"
@@ -63,6 +63,7 @@
 					<xsl:apply-templates select="." mode="f:inline"/>
 				</xsl:source-document>
 			</xsl:copy>
+			<xsl:catch errors="plug"/>
 			<!-- <xsl:catch errors="SXXP0003" use-when="$p:dont-stop-on-empty-files"> -->
 			<xsl:catch errors="*" use-when="$p:dont-stop-on-empty-files">
 				<xsl:message terminate="no" error-code="SXXP0003" expand-text="yes">Empty XML file! Check file "{ resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) }".</xsl:message>
