@@ -20,6 +20,8 @@
 
 	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="false()" visibility="private"/>
 
+	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
+
 	<!--
 		Сбор всех XML файлов документа в единый файл.
 		Основа структуры - файл манифеста.
@@ -57,6 +59,14 @@
 				<xsl:message terminate="no" error-code="SXXP0003" expand-text="yes">Empty XML file! Check file "{ resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) }".</xsl:message>
 			</xsl:catch>
 		</xsl:try>
+	</xsl:template>
+
+	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
+		@manifest:full-path = $p:manifest-uri
+	]">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+		</xsl:copy>
 	</xsl:template>
 
 </xsl:package>

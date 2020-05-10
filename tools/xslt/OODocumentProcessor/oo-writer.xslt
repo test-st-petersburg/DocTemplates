@@ -18,6 +18,8 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
+	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
+
 	<!--
 		Разбор единого XML файла в отдельные XML файлы с форматированием.
 	-->
@@ -34,19 +36,36 @@
 		visibility="final"
 	/>
 
+	<xsl:mode
+		name="p:select-manifest"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="final"/>
+		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
 	</xsl:use-package>
 
 	<!--  -->
 
-	<!-- TODO: создавать манифест на базе корня, а не manifest:file-entry -->
-
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
 		<xsl:context-item use="required" as="document-node()"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
+		<xsl:variable name="p:manifest" as="document-node()">
+			<xsl:apply-templates select="." mode="p:select-manifest"/>
+		</xsl:variable>
+		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }" format="p:OOXmlFile" validation="preserve">
+			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
+		</xsl:result-document>
 		<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="#current"/>
 	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
+		@manifest:full-path = $p:manifest-uri
+	]"/>
+
+	<xsl:template mode="p:select-manifest" match="/manifest:manifest/manifest:file-entry/*"/>
 
 	<!--  -->
 
