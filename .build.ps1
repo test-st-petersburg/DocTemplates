@@ -4,7 +4,7 @@
 param(
 	# путь к папке с .ott файлами
 	[System.String]
-	$DestinationPath = ( property DestinationPath ( ( Get-Item -Path '.\template' ).FullName ) ),
+	$DestinationPath = ( property DestinationPath ( ( Resolve-Path -Path '.\template' ).Path ) ),
 
 	# имя .ott шаблона
 	[System.String]
@@ -12,15 +12,20 @@ param(
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationFile = ( property DestinationFile @( ( Get-ChildItem -Path $DestinationPath -File -Filter "$Filter.ott" ).FullName ) ),
+	$DestinationFile = ( property DestinationFile `
+		@( Get-ChildItem -Path $DestinationPath -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
+	),
 
 	# путь к папке с xml папками .ott файлов
 	[System.String]
-	$SourcePath = ( property SourcePath ( ( Get-Item -Path '.\src\template' ).FullName ) ),
+	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src\template' ).Path ) ),
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]
-	$SourceFolder = ( property SourceFolder @( (Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" ).FullName ) ),
+	$SourceFolder = #( property SourceFolder `
+	@( Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
+	#)
+	,
 
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
@@ -38,9 +43,13 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-[System.String[]] $NewDestinationFile = $SourceFolder | ForEach-Object {
-	Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
-};
+Write-Verbose "$( $DestinationPath )";
+Write-Verbose "$( $DestinationFile.Count )";
+Write-Verbose "$DestinationPath.";
+
+[System.String[]] $NewDestinationFile = ( $SourceFolder | ForEach-Object {
+		Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
+	} );
 
 # Synopsis: Удаляет каталоги с XML файлами
 task Clean {
@@ -66,18 +75,47 @@ task OptimizeXML {
 
 task UnpackAndOptimize Unpack, OptimizeXML;
 
+$OOFilesUnpackTasks = @();
+foreach ( $OOFile in $DestinationFile ) {
+	$documentName = $( Split-Path -Path ( $OOFile ) -Leaf );
+	$OOUnpackTaskName = "UnpackAndOptimize-$documentName";
+	$OOFilesUnpackTasks += $OOUnpackTaskName;
+	$targetFolder = Join-Path -Path $SourcePath -ChildPath $documentName;
+	$target = Join-Path -Path $targetFolder -ChildPath 'META-INF/manifest.xml';
+
+	task $OOUnpackTaskName `
+		-Inputs @( $OOFile ) `
+		-Outputs @( $target ) `
+	{
+		$localOOFile = $Inputs[0];
+		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
+		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
+			-Indented `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
+		$localOOXMLFolder = Join-Path -Path $SourcePath -ChildPath $documentName;
+		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
+};
+
+# Synopsis: Распаковывает только изменённые файлы
+task UnpackAndOptimizeModified $OOFilesUnpackTasks;
+
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-
 $OOFilesBuildTasks = @();
-
 foreach ( $documentXMLFolder in $SourceFolder ) {
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$OOFilesBuildTask = "Build-$documentName";
-	$OOFilesBuildTasks += $OOFilesBuildTask;
+	$OOTaskName = "Build-$documentName";
+	$OOFilesBuildTasks += $OOTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse );
 	$target = @( Join-Path -Path $DestinationPath -ChildPath $documentName );
 
-	task $OOFilesBuildTask `
+	task $OOTaskName `
 		-Inputs $prerequisites `
 		-Outputs $target `
 	{
