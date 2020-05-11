@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><toolbar:toolbar xmlns:toolbar="http://openoffice.org/2001/toolbar" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" toolbar:uiname="Бланки">
+	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithLetterheads.prepareForPrintingOnLetterhead?language=Basic&amp;location=document" toolbar:text="Бланк" toolbar:visible="true"/>
+	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithLetterheads.prepareForPrintingOnPaper?language=Basic&amp;location=document" toolbar:text="Бумага" toolbar:visible="true"/>
+</toolbar:toolbar>

@@ -61,7 +61,11 @@
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-abs-size-when-relative" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-config-view-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -210,6 +214,17 @@
 		| *[ @style:horizontal-rel ]/@svg:x
 	"/>
 
+	<!-- удаляем некоторые параметры конфигурации просмотра и печати -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-config-view-params" match="
+		config:config-item-set[ @config:name = 'ooo:view-settings' ]
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-config-print-params" match="config:config-item[ contains-token(
+		'PrinterName PrintFaxName PrinterSetup PrinterPaperFromSetup PrintPaperFromSetup PrintSingleJobs PrinterIndependentLayout AllowPrintJobCancel',
+		@config:name
+	)]"/>
+
 	<!-- удаляем лишние аттрибуты -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
@@ -227,10 +242,16 @@
 		| office:automatic-styles/style:style/style:text-properties/@fo:country
 	)"/>
 
-	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
+	<!-- удаляем упоминания о сессии, в которой внесены изменения -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-rsid" match="(
 		style:text-properties/@officeooo:paragraph-rsid
 		| style:text-properties/@officeooo:rsid
 	)"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-rsid" match="
+		config:config-item[ @config:name = 'Rsid' ]
+	"/>
 
 	<!-- правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
 
