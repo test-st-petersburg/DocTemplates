@@ -88,6 +88,11 @@
 			</style:section-properties>
 		</style:style>
 		<style:style style:name="Sect2" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect3" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="3">
 					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
@@ -96,7 +101,7 @@
 				</style:columns>
 			</style:section-properties>
 		</style:style>
-		<style:style style:name="Sect3" style:family="section">
+		<style:style style:name="Sect4" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="2">
 					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.249cm"/>
@@ -119,7 +124,7 @@
 		<style:style style:name="gr5" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
-		<number:boolean-style style:name="N99">
+		<number:boolean-style style:name="N10099" number:language="en" number:country="US">
 			<number:boolean/>
 		</number:boolean-style>
 	</office:automatic-styles>
@@ -188,20 +193,20 @@
 			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 				<text:p text:style-name="P1"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Служебная записка</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N10099">FALSE</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N10099">TRUE</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N10099">TRUE</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N10099">FALSE</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N10099">FALSE</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N10099">FALSE</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
@@ -251,7 +256,7 @@
 					<text:p text:style-name="Список_20_приложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:section text:style-name="Sect1" text:name="Подписи">
+			<text:section text:style-name="Sect2" text:name="Подписи">
 				<table:table table:name="Подписи" table:style-name="Подписи">
 					<table:table-column table:style-name="Подписи.A"/>
 					<table:table-column table:style-name="Подписи.B"/>
