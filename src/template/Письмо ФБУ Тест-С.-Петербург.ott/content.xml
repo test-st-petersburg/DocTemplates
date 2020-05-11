@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" office:version="1.2">
+<?xml version="1.0" encoding="UTF-8"?><office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
 	<office:scripts>
 		<office:event-listeners>
 			<script:event-listener script:language="ooo:script" script:event-name="office:create" xlink:href="vnd.sun.star.script:Standard.Common.onDocOpen?language=Basic&amp;location=document" xlink:type="simple"/>
@@ -89,9 +89,7 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная">
-			<style:paragraph-properties/>
-		</style:style>
+		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная"/>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -148,7 +146,8 @@
 					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
 					<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
 					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
-				</style:columns></style:section-properties>
+				</style:columns>
+			</style:section-properties>
 		</style:style>
 		<style:style style:name="gr1" style:family="graphic">
 			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
@@ -173,29 +172,15 @@
 		<office:text>
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьДП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатДолжностьИмПадеж"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИмяОтчествоИП"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатИО"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИО"/>
-				<text:variable-decl office:value-type="string" text:name="АдресатФИОДП"/>
 				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
-				<text:variable-decl office:value-type="string" text:name="ГрифОграниченияДоступ"/>
-				<text:variable-decl office:value-type="string" text:name="ДатаВозникновения"/>
-				<text:variable-decl office:value-type="float" text:name="ДатаВозникновенияЗадолженности"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
-				<text:variable-decl office:value-type="string" text:name="КБК"/>
 				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеОрганизации"/>
-				<text:variable-decl office:value-type="string" text:name="НаименованиеСтруктурногоПодразделенияАвтораДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="ОбращениеУважаемый"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
@@ -207,29 +192,21 @@
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
-				<text:variable-decl office:value-type="string" text:name="ОрганизацияПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
 				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжность"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументах"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжность"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИмПадеж"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументах"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВПодписиИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
-				<text:variable-decl office:value-type="string" text:name="ПодтверждающиеДокументы"/>
 				<text:variable-decl office:value-type="string" text:name="Получатели"/>
 				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
@@ -239,12 +216,7 @@
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
 				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
-				<text:variable-decl office:value-type="string" text:name="Содержание"/>
-				<text:variable-decl office:value-type="string" text:name="Сумма"/>
-				<text:variable-decl office:value-type="float" text:name="СуммаЗадолженности"/>
-				<text:variable-decl office:value-type="string" text:name="СуммаПрописью"/>
 				<text:variable-decl office:value-type="string" text:name="Тема"/>
-				<text:variable-decl office:value-type="string" text:name="ФормаБланка"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВнутреннийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоВходящийДокумент"/>
 				<text:variable-decl office:value-type="boolean" text:name="ЭтоДоговор"/>
@@ -266,15 +238,17 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" text:formula="ooow:1" office:value-type="boolean" office:boolean-value="true" style:data-style-name="N99">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">ПодписалДолжностьРП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:False" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N99">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ФормаБланка" office:value-type="string">ПРИКАЗ от 17.10.2019 №132/АХД</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ&#xA0;«Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
@@ -291,6 +265,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
@@ -300,7 +275,7 @@
 			</text:section>
 			<text:p text:style-name="БланкПисьмоНачало"/>
 			<text:section text:style-name="Sect3" text:name="Вступительное обращение" text:condition="ooow:NOT ЭтоПереписка" text:display="condition" text:protected="true">
-				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
+				<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-get>!</text:p>
 			</text:section>
 			<text:p text:style-name="Основной">{Содержание}</text:p>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
@@ -331,13 +306,13 @@
 					<table:table-column table:style-name="Подписи.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+							<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>

@@ -27,7 +27,7 @@
 				"message": 1
 			},
 			{
-				"regexp": "(.*):(\\d+) знак:(\\d+)",
+				"regexp": "^(.*?):(\\d+)(?: знак:(\\d+))?$",
 				"file": 1,
 				"line": 2,
 				"column": 3
@@ -63,12 +63,31 @@
 			"command": "Invoke-Build -Task UnpackAndOptimize -Verbose"
 		},
 		{
+			"label": "Unpack and optimize modified Open Office XML files",
+			"command": "Invoke-Build -Task UnpackAndOptimizeModified -Verbose"
+		},
+		{
 			"label": "Create Open Office files from plain XML",
+			"group": "build",
+			"command": "Invoke-Build -Task Build -Verbose"
+		},
+		{
+			"label": "Create Open Office files from plain XML and open",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "Invoke-Build -Task Build -Verbose"
+			"command": "Invoke-Build -Task BuildAndOpen -Verbose"
+		},
+		{
+			"label": "Восстановить шаблон Письма из XML и открыть его",
+			"group": "build",
+			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Письмо ФБУ Тест-С.-Петербург' -Verbose"
+		},
+		{
+			"label": "Восстановить шаблон Записки из XML и открыть его",
+			"group": "build",
+			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Записка ФБУ Тест-С.-Петербург' -Verbose"
 		}
 	]
 }

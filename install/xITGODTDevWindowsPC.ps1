@@ -64,9 +64,11 @@ configuration xITGODTDevWindowsPC
 		}
 
 		PackageManagement SaxonHE {
-			Ensure = "Present"
-			Name   = "Saxon-HE"
-			Source = "NuGet"
+			Ensure         = 'Present'
+			Name           = 'Saxon-HE'
+			Source         = 'NuGet'
+			MinimumVersion = '9.8'
+			MaximumVersion = '9.8.999'
 		}
 
 	}

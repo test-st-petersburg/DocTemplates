@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8"?><office:document-styles xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
+	<office:font-face-decls>
+		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
+		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
+		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable"/>
+		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable"/>
+	</office:font-face-decls>
+	<office:styles>
+		<style:default-style style:family="graphic">
+			<style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false"/>
+			<style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false"/>
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU"/>
+		</style:default-style>
+		<style:default-style style:family="paragraph">
+			<style:paragraph-properties fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict"/>
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:language="ru" fo:country="RU" fo:hyphenate="false"/>
+		</style:default-style>
+		<style:default-style style:family="table">
+			<style:table-properties table:border-model="collapsing"/>
+		</style:default-style>
+		<style:default-style style:family="table-row">
+			<style:table-row-properties fo:keep-together="auto"/>
+		</style:default-style>
+		<style:style style:name="Standard" style:family="paragraph" style:hidden="true" style:class="text">
+			<style:paragraph-properties fo:orphans="2" fo:widows="2"/>
+			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" style:letter-kerning="true" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="text">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="150%" fo:hyphenation-ladder-count="no-limit"/>
+			<style:text-properties fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
+		</style:style>
+		<style:style style:name="Text_20_body_20_indent" style:display-name="Text body indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
+			<style:paragraph-properties fo:margin-left="1.251cm" fo:margin-right="0cm" fo:text-indent="0cm" style:auto-text-indent="false"/>
+		</style:style>
+		<style:style style:name="Quotations" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body_20_indent" style:class="html"/>
+		<style:style style:name="First_20_line_20_indent" style:display-name="First line indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="1.251cm" style:auto-text-indent="false"/>
+		</style:style>
+		<style:style style:name="Hanging_20_indent" style:display-name="Hanging indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text"/>
+		<style:style style:name="Marginalia" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text"/>
+		<style:style style:name="Основной_20_текст_20_документа" style:display-name="Основной текст документа" style:family="paragraph" style:hidden="true" style:parent-style-name="First_20_line_20_indent" style:class="text">
+			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false"/>
+		</style:style>
+		<style:style style:name="Заголовок_20_перечня_20_приложений" style:display-name="Заголовок перечня приложений" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:next-style-name="Список_20_приложений" style:class="text">
+			<style:paragraph-properties fo:keep-with-next="always"/>
+			<style:text-properties fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Список_20_приложений" style:display-name="Список приложений" style:family="paragraph" style:parent-style-name="Numbering_20_1" style:list-style-name="Нумерация_20_списка_20_приложений" style:class="list"/>
+		<style:style style:name="Addressee" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always"/>
+		</style:style>
+		<style:style style:name="Sender" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
+		<style:style style:name="Signature" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-with-next="always"/>
+			<style:text-properties fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Подпись_3a__20_ФИО" style:display-name="Подпись: ФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
+			<style:paragraph-properties fo:text-align="end"/>
+		</style:style>
+		<style:style style:name="Подпись_3a__20_место_20_для_20_подписи" style:display-name="Подпись: место для подписи" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:hidden="true" style:class="html">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
+			<style:text-properties style:font-name="Liberation Mono" fo:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
+		</style:style>
+		<style:style style:name="List" style:family="paragraph" style:hidden="true" style:parent-style-name="Основной_20_текст_20_документа" style:class="list">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true"/>
+		</style:style>
+		<style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="html"/>
+		<style:style style:name="List_20_Indent" style:display-name="List Indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body_20_indent" style:class="text"/>
+		<style:style style:name="List_20_1" style:display-name="List 1" style:family="paragraph" style:parent-style-name="List" style:list-style-name="List_20_2" style:class="list"/>
+		<style:style style:name="List_20_1_20_Start" style:display-name="List 1 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:next-style-name="List_20_1_20_Cont." style:class="list"/>
+		<style:style style:name="List_20_1_20_Cont." style:display-name="List 1 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:class="list"/>
+		<style:style style:name="List_20_1_20_End" style:display-name="List 1 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="List_20_2" style:display-name="List 2" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="List_20_2_20_Start" style:display-name="List 2 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_2" style:next-style-name="List_20_2_20_Cont." style:class="list"/>
+		<style:style style:name="List_20_2_20_Cont." style:display-name="List 2 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_2" style:class="list"/>
+		<style:style style:name="List_20_2_20_End" style:display-name="List 2 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_2" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="List_20_3" style:display-name="List 3" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="List_20_3_20_Start" style:display-name="List 3 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_3" style:next-style-name="List_20_3_20_Cont." style:class="list"/>
+		<style:style style:name="List_20_3_20_Cont." style:display-name="List 3 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_3" style:class="list"/>
+		<style:style style:name="List_20_3_20_End" style:display-name="List 3 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_3" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="List_20_4" style:display-name="List 4" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="List_20_4_20_Start" style:display-name="List 4 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_4" style:next-style-name="List_20_4_20_Cont." style:class="list"/>
+		<style:style style:name="List_20_4_20_Cont." style:display-name="List 4 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_4" style:class="list"/>
+		<style:style style:name="List_20_4_20_End" style:display-name="List 4 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_4" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="List_20_5" style:display-name="List 5" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="List_20_5_20_Start" style:display-name="List 5 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:next-style-name="List_20_5_20_Cont." style:class="list"/>
+		<style:style style:name="List_20_5_20_Cont." style:display-name="List 5 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:class="list"/>
+		<style:style style:name="List_20_5_20_End" style:display-name="List 5 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Numbering_20_1" style:display-name="Numbering 1" style:family="paragraph" style:parent-style-name="List" style:list-style-name="Numbering_20_123" style:class="list"/>
+		<style:style style:name="Numbering_20_1_20_Start" style:display-name="Numbering 1 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:next-style-name="Numbering_20_1_20_Cont." style:class="list"/>
+		<style:style style:name="Numbering_20_1_20_Cont." style:display-name="Numbering 1 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:class="list"/>
+		<style:style style:name="Numbering_20_1_20_End" style:display-name="Numbering 1 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Numbering_20_2" style:display-name="Numbering 2" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="Numbering_20_2_20_Start" style:display-name="Numbering 2 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_2" style:next-style-name="Numbering_20_2_20_Cont." style:class="list"/>
+		<style:style style:name="Numbering_20_2_20_Cont." style:display-name="Numbering 2 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_2" style:class="list"/>
+		<style:style style:name="Numbering_20_2_20_End" style:display-name="Numbering 2 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_2" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Numbering_20_3" style:display-name="Numbering 3" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="Numbering_20_3_20_Start" style:display-name="Numbering 3 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_3" style:next-style-name="Numbering_20_3_20_Cont." style:class="list"/>
+		<style:style style:name="Numbering_20_3_20_Cont." style:display-name="Numbering 3 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_3" style:class="list"/>
+		<style:style style:name="Numbering_20_3_20_End" style:display-name="Numbering 3 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_3" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Numbering_20_4" style:display-name="Numbering 4" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="Numbering_20_4_20_Start" style:display-name="Numbering 4 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_4" style:next-style-name="Numbering_20_4_20_Cont." style:class="list"/>
+		<style:style style:name="Numbering_20_4_20_Cont." style:display-name="Numbering 4 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_4" style:class="list"/>
+		<style:style style:name="Numbering_20_4_20_End" style:display-name="Numbering 4 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_4" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Numbering_20_5" style:display-name="Numbering 5" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="list"/>
+		<style:style style:name="Numbering_20_5_20_Start" style:display-name="Numbering 5 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_5" style:next-style-name="Numbering_20_5_20_Cont." style:class="list"/>
+		<style:style style:name="Numbering_20_5_20_Cont." style:display-name="Numbering 5 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_5" style:class="list"/>
+		<style:style style:name="Numbering_20_5_20_End" style:display-name="Numbering 5 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_5" style:next-style-name="Основной" style:class="list"/>
+		<style:style style:name="Table_20_Contents" style:display-name="Table Contents" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="start"/>
+		</style:style>
+		<style:style style:name="Table_20_Heading" style:display-name="Table Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Table_20_Contents" style:class="extra">
+			<style:paragraph-properties fo:text-align="center" fo:keep-with-next="always"/>
+			<style:text-properties fo:font-weight="bold" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Frame_20_contents" style:display-name="Frame contents" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
+		<style:style style:name="Footnote" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-left="0.598cm" fo:margin-right="0cm" fo:text-indent="-0.598cm" style:auto-text-indent="false" text:number-lines="false"/>
+			<style:text-properties fo:font-size="10pt"/>
+		</style:style>
+		<style:style style:name="Horizontal_20_Line" style:display-name="Horizontal Line" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="html">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" style:border-line-width-bottom="0cm 0.004cm 0.002cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" style:join-border="false"/>
+			<style:text-properties fo:font-size="6pt"/>
+		</style:style>
+		<style:style style:name="ПустойАбзац" style:family="paragraph" style:hidden="true" style:class="extra">
+			<style:paragraph-properties fo:line-height="0.049cm" text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="КонецКолонки" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:break-after="column"/>
+		</style:style>
+		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
+			<style:paragraph-properties fo:keep-with-next="always"/>
+			<style:text-properties fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph" style:parent-style-name="Heading_20_2" style:next-style-name="Основной" style:default-outline-level="1" style:class="text">
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false"/>
+			<style:text-properties fo:font-size="105%"/>
+		</style:style>
+		<style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph" style:parent-style-name="Heading_20_3" style:next-style-name="Основной" style:default-outline-level="2" style:class="text">
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false"/>
+			<style:text-properties fo:font-size="105%"/>
+		</style:style>
+		<style:style style:name="Heading_20_3" style:display-name="Heading 3" style:family="paragraph" style:parent-style-name="Heading_20_4" style:next-style-name="Основной" style:default-outline-level="3" style:class="text">
+			<style:text-properties fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="Heading_20_4" style:display-name="Heading 4" style:family="paragraph" style:parent-style-name="Heading_20_5" style:next-style-name="Основной" style:default-outline-level="4" style:class="text"/>
+		<style:style style:name="Heading_20_5" style:display-name="Heading 5" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_6" style:next-style-name="Основной" style:default-outline-level="5" style:class="text"/>
+		<style:style style:name="Heading_20_6" style:display-name="Heading 6" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_7" style:next-style-name="Основной" style:default-outline-level="6" style:class="text"/>
+		<style:style style:name="Heading_20_7" style:display-name="Heading 7" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_8" style:next-style-name="Основной" style:default-outline-level="7" style:class="text"/>
+		<style:style style:name="Heading_20_8" style:display-name="Heading 8" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_9" style:next-style-name="Основной" style:default-outline-level="8" style:class="text"/>
+		<style:style style:name="Heading_20_9" style:display-name="Heading 9" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_10" style:next-style-name="Основной" style:default-outline-level="9" style:class="text"/>
+		<style:style style:name="Heading_20_10" style:display-name="Heading 10" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:default-outline-level="10" style:class="text"/>
+		<style:style style:name="Title" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Subtitle" style:class="chapter"/>
+		<style:style style:name="Subtitle" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:class="chapter"/>
+		<style:style style:name="Salutation" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
+			<style:text-properties fo:font-weight="bold" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="Caption" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
+			<style:text-properties fo:font-style="italic"/>
+		</style:style>
+		<style:style style:name="Table" style:family="paragraph" style:parent-style-name="Caption" style:class="extra"/>
+		<style:style style:name="Header_20_and_20_Footer" style:display-name="Header and Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="Header" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="Header_20_left" style:display-name="Header left" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
+		<style:style style:name="Header_20_right" style:display-name="Header right" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
+		<style:style style:name="Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
+			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:text-properties fo:font-size="7pt"/>
+		</style:style>
+		<style:style style:name="Footer_20_left" style:display-name="Footer left" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
+		<style:style style:name="Footer_20_right" style:display-name="Footer right" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
+		<style:style style:name="Index_20_Heading" style:display-name="Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Index" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="index"/>
+		<style:style style:name="Index_20_Separator" style:display-name="Index Separator" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Index_20_1" style:display-name="Index 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Index_20_2" style:display-name="Index 2" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Index_20_3" style:display-name="Index 3" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Figure_20_Index_20_1" style:display-name="Figure Index 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_Heading" style:display-name="User Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="User_20_Index_20_1" style:display-name="User Index 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_2" style:display-name="User Index 2" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_3" style:display-name="User Index 3" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_4" style:display-name="User Index 4" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_5" style:display-name="User Index 5" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_6" style:display-name="User Index 6" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_7" style:display-name="User Index 7" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_8" style:display-name="User Index 8" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_9" style:display-name="User Index 9" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="User_20_Index_20_10" style:display-name="User Index 10" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Table_20_index_20_heading" style:display-name="Table index heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Table_20_index_20_1" style:display-name="Table index 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Object_20_index_20_heading" style:display-name="Object index heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Object_20_index_20_1" style:display-name="Object index 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Illustration_20_Index_20_Heading" style:display-name="Illustration Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Contents_20_Heading" style:display-name="Contents Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Contents_20_1" style:display-name="Contents 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_2" style:display-name="Contents 2" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_3" style:display-name="Contents 3" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_4" style:display-name="Contents 4" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_5" style:display-name="Contents 5" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_6" style:display-name="Contents 6" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_7" style:display-name="Contents 7" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_8" style:display-name="Contents 8" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_9" style:display-name="Contents 9" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Contents_20_10" style:display-name="Contents 10" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Bibliography_20_Heading" style:display-name="Bibliography Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
+		<style:style style:name="Bibliography_20_1" style:display-name="Bibliography 1" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
+		<style:style style:name="Текст_20_выноски" style:display-name="Текст выноски" style:family="paragraph" style:hidden="true">
+			<style:text-properties style:font-name="Liberation Mono" fo:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="8pt"/>
+		</style:style>
+		<style:style style:name="Основной" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа">
+			<style:map style:condition="table-header()" style:apply-style-name="Table_20_Heading"/>
+			<style:map style:condition="table()" style:apply-style-name="Table_20_Contents"/>
+			<style:map style:condition="text-box()" style:apply-style-name="Frame_20_contents"/>
+			<style:map style:condition="section()" style:apply-style-name="Основной_20_текст_20_документа"/>
+			<style:map style:condition="header()" style:apply-style-name="Header"/>
+			<style:map style:condition="footer()" style:apply-style-name="Footer"/>
+			<style:map style:condition="outline-level()=1" style:apply-style-name="Heading_20_1"/>
+			<style:map style:condition="outline-level()=2" style:apply-style-name="Heading_20_2"/>
+			<style:map style:condition="outline-level()=3" style:apply-style-name="Heading_20_3"/>
+			<style:map style:condition="outline-level()=4" style:apply-style-name="Heading_20_4"/>
+			<style:map style:condition="outline-level()=5" style:apply-style-name="Heading_20_5"/>
+			<style:map style:condition="outline-level()=6" style:apply-style-name="Heading_20_6"/>
+			<style:map style:condition="outline-level()=7" style:apply-style-name="Heading_20_7"/>
+			<style:map style:condition="outline-level()=8" style:apply-style-name="Heading_20_8"/>
+			<style:map style:condition="outline-level()=9" style:apply-style-name="Heading_20_9"/>
+			<style:map style:condition="outline-level()=10" style:apply-style-name="Heading_20_10"/>
+			<style:map style:condition="list-level()=1" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=2" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=3" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=4" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=5" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=6" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=7" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=8" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=9" style:apply-style-name="Numbering_20_1"/>
+			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
+		</style:style>
+		<style:style style:name="БланкЗапискаНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистЗаписки">
+			<style:paragraph-properties style:page-number="1"/>
+		</style:style>
+		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:text-properties fo:font-size="11pt"/>
+		</style:style>
+		<style:style style:name="БланкЛогоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra"/>
+		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:text-properties fo:text-transform="uppercase" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
+		</style:style>
+		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="БланкЛоготипыВШапкеРСТ" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкЛоготипыВШапке" style:class="extra">
+			<style:paragraph-properties fo:text-align="start"/>
+		</style:style>
+		<style:style style:name="БланкЛоготипыВШапкеТест" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкЛоготипыВШапке" style:class="extra">
+			<style:paragraph-properties fo:text-align="end"/>
+		</style:style>
+		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:line-height="90%"/>
+			<style:text-properties fo:font-size="7pt" style:letter-kerning="true"/>
+		</style:style>
+		<style:style style:name="БланкОкончаниеШапки" style:family="paragraph" style:hidden="true" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="0.049cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="2.49pt solid #000000" text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="БланкПослеШапки" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="БланкРегДанные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
+			<style:text-properties fo:font-size="9pt"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
+		<style:style style:name="БланкРегДанныеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеВПодвале" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
+			<style:text-properties fo:font-size="8pt"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеВПодвалеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеВПодвале" style:class="extra">
+			<style:paragraph-properties fo:text-align="end"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеВПодвалеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеВПодвале" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеДатаРегистрацииВн" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
+		<style:style style:name="БланкМестоСоставления" style:family="paragraph" style:parent-style-name="БланкРегДанныеДатаРегистрацииВн">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="БланкРегДанныеРегНомерВн" style:family="paragraph" style:parent-style-name="БланкРегДанныеДатаРегистрацииВн">
+			<style:paragraph-properties fo:text-align="end"/>
+		</style:style>
+		<style:style style:name="БланкЗаголовокДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:text-align="center" fo:keep-together="always" fo:keep-with-next="always"/>
+			<style:text-properties fo:font-style="italic" fo:font-weight="normal" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="БланкГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:text-align="end" fo:orphans="0" fo:widows="0" text:number-lines="false"/>
+			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%"/>
+		</style:style>
+		<style:style style:name="Штрихкод" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
+			<style:text-properties fo:color="#ffffff"/>
+		</style:style>
+		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
+		<style:style style:name="БланкВДело" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="center"/>
+			<style:text-properties style:text-scale="50%"/>
+		</style:style>
+		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело">
+			<style:paragraph-properties fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
+		</style:style>
+		<style:style style:name="БланкПодписьДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
+		<style:style style:name="БланкДатаПодписиДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
+		<style:style style:name="Подстрочник" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard">
+			<style:paragraph-properties fo:text-align="center" fo:keep-together="always" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="0.06pt solid #000000" fo:border-bottom="none"/>
+			<style:text-properties fo:font-size="6pt"/>
+		</style:style>
+		<style:style style:name="БланкВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center"/>
+			<style:text-properties fo:text-transform="uppercase" fo:font-size="14pt" fo:letter-spacing="0.141cm" fo:font-weight="bold" style:letter-kerning="false"/>
+		</style:style>
+		<style:style style:name="БланкВидДокументаВоВнутреннейПереписке" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="true" fo:text-align="start" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:text-properties fo:text-transform="uppercase" fo:font-size="18pt" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="ГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" style:shadow="none" text:number-lines="false"/>
+			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%"/>
+		</style:style>
+		<style:style style:name="КодФормыДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" style:hidden="true"/>
+		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text" style:hidden="true"/>
+		<style:style style:name="Internet_20_link" style:display-name="Internet link" style:family="text" style:hidden="true">
+			<style:text-properties fo:color="#000080" fo:language="zxx" fo:country="none" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"/>
+		</style:style>
+		<style:style style:name="Emphasis" style:family="text">
+			<style:text-properties fo:font-style="normal" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="Strong_20_Emphasis" style:display-name="Strong Emphasis" style:family="text" style:hidden="true">
+			<style:text-properties fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="Footnote_20_anchor" style:display-name="Footnote anchor" style:family="text" style:hidden="true">
+			<style:text-properties style:text-position="super 58%"/>
+		</style:style>
+		<style:style style:name="Footnote_20_Symbol" style:display-name="Footnote Symbol" style:family="text">
+			<style:text-properties style:text-position="0% 100%"/>
+		</style:style>
+		<style:style style:name="БланкРегНомер" style:family="text" style:hidden="true">
+			<style:text-properties style:text-scale="60%"/>
+		</style:style>
+		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true" style:parent-style-name="БланкРегНомер"/>
+		<style:style style:name="БланкИндексДела" style:family="text" style:hidden="true">
+			<style:text-properties style:text-scale="50%"/>
+		</style:style>
+		<style:style style:name="Frame" style:family="graphic">
+			<style:graphic-properties text:anchor-type="paragraph" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="Graphics" style:family="graphic">
+			<style:graphic-properties text:anchor-type="paragraph" style:wrap="dynamic" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="OLE" style:family="graphic">
+			<style:graphic-properties text:anchor-type="paragraph" style:wrap="dynamic" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="БланкЛогоРСТвШапке" style:family="graphic" style:hidden="true">
+			<style:graphic-properties fo:min-width="0.499cm" fo:min-height="0.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="right" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="БланкЛогоТестВШапке" style:family="graphic" style:hidden="true" style:parent-style-name="БланкЛогоРСТвШапке">
+			<style:graphic-properties style:wrap="left" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:horizontal-pos="right" style:horizontal-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="БланкТемаДокумента" style:family="graphic" style:hidden="true">
+			<style:graphic-properties style:rel-width="100%" fo:min-height="2cm" fo:margin-top="0.499cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="БланкПолеВБланке" style:family="graphic" style:hidden="true">
+			<style:graphic-properties style:rel-width="100%" style:rel-height="100%" style:run-through="background" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="page-content" fo:padding="0cm" fo:border="none" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph" draw:textarea-vertical-align="bottom">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="БланкПолеПодчёркнутое" style:family="graphic" style:hidden="true" style:parent-style-name="БланкПолеВБланке">
+			<style:graphic-properties style:rel-width="100%" style:rel-height="100%" style:print-content="true" style:protect="size position" style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:fill="none" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="1.25pt solid #000000" style:flow-with-text="true" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph" draw:textarea-vertical-align="bottom"/>
+		</style:style>
+		<style:style style:name="БланкПолеСПодстрочником" style:family="graphic" style:hidden="true">
+			<style:graphic-properties style:rel-width="100%" fo:min-height="0.041cm" style:print-content="true" style:run-through="foreground" style:protect="size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page" style:horizontal-pos="left" style:horizontal-rel="paragraph-content" draw:fill="none" fo:padding="0cm" fo:border="none" style:flow-with-text="false" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+		</style:style>
+		<style:style style:name="БланкПолеАвтоВысота" style:family="graphic" style:hidden="true">
+			<style:graphic-properties style:rel-width="100%" fo:min-height="2cm" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
+		</style:style>
+		<style:style style:name="БланкШапкаВБланке" style:family="graphic" style:hidden="true">
+			<style:graphic-properties style:rel-width="100%" fo:min-height="2cm" style:print-content="true" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="page-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="БланкПолеСПодстрочникомВТексте" style:family="graphic">
+			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" text:anchor-type="paragraph" style:protect="size position" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" draw:opacity="100%"/>
+		</style:style>
+		<style:style style:name="БланкПодстрочникПоляВТексте" style:family="graphic">
+			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page-content" draw:opacity="100%"/>
+		</style:style>
+		<style:style style:name="Логотип" style:family="graphic">
+			<style:graphic-properties fo:min-width="1cm" fo:min-height="1cm" fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" style:protect="content" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="page" style:horizontal-pos="center" style:horizontal-rel="page-content" draw:opacity="100%"/>
+		</style:style>
+		<text:outline-style style:name="Outline">
+			<text:outline-level-style text:level="1" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="2" style:num-suffix="." style:num-format="1" text:display-levels="2">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="3" style:num-suffix="." style:num-format="1" text:display-levels="3">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="4" style:num-suffix="." style:num-format="1" text:display-levels="4">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="5" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="6" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="7" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="8" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="9" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+			<text:outline-level-style text:level="10" style:num-format="">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:outline-level-style>
+		</text:outline-style>
+		<text:list-style style:name="Numbering_20_123" style:display-name="Numbering 123">
+			<text:list-level-style-number text:level="1" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="2" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="3" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="4" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="5" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="6" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="7" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="8" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="9" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="10" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+		</text:list-style>
+		<text:list-style style:name="Numbering_20_ABC" style:display-name="Numbering ABC" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_abc" style:display-name="Numbering abc" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_IVX" style:display-name="Numbering IVX" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_ivx" style:display-name="Numbering ivx" style:hidden="true"/>
+		<text:list-style style:name="List_20_1" style:display-name="List 1" style:hidden="true"/>
+		<text:list-style style:name="List_20_2" style:display-name="List 2">
+			<text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="2" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="3" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="4" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="5" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="6" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="7" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="8" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="9" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="10" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+				<style:text-properties style:font-name="Times New Roman"/>
+			</text:list-level-style-bullet>
+		</text:list-style>
+		<text:list-style style:name="List_20_3" style:display-name="List 3" style:hidden="true"/>
+		<text:list-style style:name="List_20_4" style:display-name="List 4" style:hidden="true"/>
+		<text:list-style style:name="List_20_5" style:display-name="List 5" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_2" style:display-name="Numbering 2" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_3" style:display-name="Numbering 3" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_4" style:display-name="Numbering 4" style:hidden="true"/>
+		<text:list-style style:name="Numbering_20_5" style:display-name="Numbering 5" style:hidden="true"/>
+		<text:list-style style:name="Нумерация_20_списка_20_приложений" style:display-name="Нумерация списка приложений">
+			<text:list-level-style-number text:level="1" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="2" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="3" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="4" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="5" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="6" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="7" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="8" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="9" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+			<text:list-level-style-number text:level="10" style:num-suffix="." style:num-format="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+		</text:list-style>
+		<text:notes-configuration text:note-class="footnote" text:citation-style-name="Footnote_20_Symbol" text:citation-body-style-name="Footnote_20_anchor" style:num-format="1" text:start-value="0" text:footnotes-position="page" text:start-numbering-at="document"/>
+		<text:notes-configuration text:note-class="endnote" style:num-format="i" text:start-value="0"/>
+		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5"/>
+	</office:styles>
+	<office:automatic-styles>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица" style:family="table">
+			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A" style:family="table-column">
+			<style:table-column-properties style:column-width="4.001cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.B" style:family="table-column">
+			<style:table-column-properties style:column-width="3cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.1" style:family="table-row">
+			<style:table-row-properties style:row-height="1.199cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.2" style:family="table-row">
+			<style:table-row-properties style:row-height="0.499cm"/>
+		</style:style>
+		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A2" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="РегДанные" style:family="table">
+			<style:table-properties style:width="5.999cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="РегДанные.A" style:family="table-column">
+			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
+		</style:style>
+		<style:style style:name="РегДанные.B" style:family="table-column">
+			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
+		</style:style>
+		<style:style style:name="РегДанные.C" style:family="table-column">
+			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
+		</style:style>
+		<style:style style:name="РегДанные.D" style:family="table-column">
+			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
+		</style:style>
+		<style:style style:name="РегДанные.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="РегДанные.B1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+		</style:style>
+		<style:style style:name="Подвал" style:family="table">
+			<style:table-properties style:width="17.501cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="Подвал.A" style:family="table-column">
+			<style:table-column-properties style:column-width="10.5cm" style:rel-column-width="5953*"/>
+		</style:style>
+		<style:style style:name="Подвал.B" style:family="table-column">
+			<style:table-column-properties style:column-width="4.001cm" style:rel-column-width="2268*"/>
+		</style:style>
+		<style:style style:name="Подвал.C" style:family="table-column">
+			<style:table-column-properties style:column-width="3cm" style:rel-column-width="1701*"/>
+		</style:style>
+		<style:style style:name="Подвал.1" style:family="table-row">
+			<style:table-row-properties style:row-height="1.7cm"/>
+		</style:style>
+		<style:style style:name="Подвал.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх" style:family="table">
+			<style:table-properties style:width="3cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.A" style:family="table-column">
+			<style:table-column-properties style:column-width="0.5cm" style:rel-column-width="283*"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.B" style:family="table-column">
+			<style:table-column-properties style:column-width="2.5cm" style:rel-column-width="1418*"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.A1" style:family="table-cell">
+			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr2" style:family="graphic" style:parent-style-name="Frame">
+			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+		</style:style>
+		<style:style style:name="Mfr3" style:family="graphic" style:parent-style-name="Frame">
+			<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:graphic-properties>
+		</style:style>
+		<style:style style:name="Mfr4" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+			<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+		</style:style>
+		<style:style style:name="Mfr5" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="Mfr6" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
+			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
+		</style:style>
+		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="Mfr9" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="Mfr10" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
+			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="MSect1" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="MSect2" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="MSect3" style:family="section">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="3">
+					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
+					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
+				</style:columns>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="MSect4" style:family="section">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="2">
+					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.249cm"/>
+					<style:column style:rel-width="38389*" fo:start-indent="1.249cm" fo:end-indent="0cm"/>
+				</style:columns>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Mgr1" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr2" style:family="graphic">
+			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
+		</style:style>
+		<style:style style:name="Mgr3" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr4" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr5" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:page-layout style:name="Mpm1" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm2" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style>
+				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+			</style:header-style>
+			<style:footer-style>
+				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+			</style:footer-style>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style>
+				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+			</style:header-style>
+			<style:footer-style>
+				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+			</style:footer-style>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm4">
+			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm5">
+			<style:page-layout-properties fo:page-width="22.901cm" fo:page-height="11.4cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<number:number-style style:name="N0">
+			<number:number number:min-integer-digits="1"/>
+		</number:number-style>
+	</office:automatic-styles>
+	<office:master-styles>
+		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="БланкПервыйЛистЗаписки" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыЗаписки">
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<style:header-left>
+				<text:p text:style-name="Header"/>
+			</style:header-left>
+			<loext:header-first>
+				<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="15">
+					<draw:text-box fo:min-height="1.7cm">
+						<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="16">
+							<draw:text-box fo:min-height="1.7cm">
+								<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="17">
+									<draw:text-box>
+										<table:table table:name="ШтрихкодГрифКодФормыТаблица" table:style-name="ШтрихкодГрифКодФормыТаблица">
+											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.A"/>
+											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.B"/>
+											<table:table-header-rows>
+												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.1">
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A1" table:number-columns-spanned="2" office:value-type="string">
+														<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+													</table:table-cell>
+													<table:covered-table-cell/>
+												</table:table-row>
+											</table:table-header-rows>
+											<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.2">
+												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
+													<text:p text:style-name="ГрифОграниченияДоступа">
+														<!-- <text:variable-get text:name="ГрифДоступа">Общедоступно</text:variable-get><text:hidden-paragraph text:condition="ooow:(ГрифДоступа == &#34;Общедоступно&#34;) OR (ГрифДоступа == &#34;ДСП&#34;)" text:is-hidden="true"/> -->
+													</text:p>
+												</table:table-cell>
+												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
+													<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
+												</table:table-cell>
+											</table:table-row>
+										</table:table>
+									</draw:text-box>
+								</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="18">
+									<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+									<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+								</draw:frame></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
+							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
+						</text:section>
+						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition" text:protected="true">
+							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
+						</text:section>
+						<text:p text:style-name="БланкОкончаниеШапки"/>
+					</draw:text-box>
+				</draw:frame></text:p>
+				<text:p text:style-name="БланкПослеШапки"/>
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition" text:protected="true">
+					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p>
+				</text:section>
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition">
+					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr5" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления" style:data-style-name="N0">Великий Новгород</text:variable-get></text:p>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:style-name="Mfr5" draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+				</text:section>
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа (во внутренней переписке)" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition">
+					<table:table table:name="РегДанные" table:style-name="РегДанные">
+						<table:table-column table:style-name="РегДанные.A"/>
+						<table:table-column table:style-name="РегДанные.B"/>
+						<table:table-column table:style-name="РегДанные.C"/>
+						<table:table-column table:style-name="РегДанные.D"/>
+						<table:table-row>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:(ЭтоИсходящийДокумент)"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:(ЭтоИсходящийДокумент)"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">На №</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+					<text:p text:style-name="БланкЗаголовокДокумента"><draw:frame draw:style-name="Mfr7" draw:name="Заголовок документа" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="4">
+						<draw:text-box fo:min-height="2cm">
+							<draw:g text:anchor-type="frame" draw:z-index="14" draw:style-name="Mgr1">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.999cm" svg:x2="0.2cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="13" draw:style-name="Mgr3">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="1.799cm" svg:x2="5.998cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="1.999cm" svg:x2="5.998cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="8" draw:style-name="Mgr4">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0cm" svg:y2="0.2cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0.2cm" svg:y2="0cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="5" draw:style-name="Mgr5">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0.2cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
+				</text:section>
+				<text:section text:style-name="MSect2" text:name="Вступительное обращение" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении">Уважаемые коллеги!</text:variable-get></text:p>
+				</text:section>
+			</loext:header-first>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+			<style:footer-left>
+				<text:p text:style-name="Footer"/>
+			</style:footer-left>
+			<loext:footer-first>
+				<table:table table:name="Подвал" table:style-name="Подвал">
+					<table:table-column table:style-name="Подвал.A"/>
+					<table:table-column table:style-name="Подвал.B"/>
+					<table:table-column table:style-name="Подвал.C"/>
+					<table:table-row table:style-name="Подвал.1">
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:section text:style-name="MSect2" text:name="Сведения о деле">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело<draw:frame draw:style-name="Mfr8" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="9">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="2cm">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="10">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">индекс дела</text:p>
+											</draw:text-box>
+										</draw:frame><text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело"> </text:variable-get></text:span></text:p>
+									</draw:text-box>
+								</draw:frame> за <draw:frame draw:style-name="Mfr8" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="11">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="1cm">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="12">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">год</text:p>
+											</draw:text-box>
+										</draw:frame><text:variable-get text:name="ДелоГод"> </text:variable-get></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr9" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="6">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
+										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="7">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">подпись, дата</text:p>
+											</draw:text-box>
+										</draw:frame><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</text:section>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:section text:style-name="MSect2" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:(NOT ЭтоПереписка) OR (NOT ЭтоИсходящийДокумент)" text:is-hidden="true">
+								<table:table table:name="РегДанныеИсх" table:style-name="РегДанныеИсх">
+									<table:table-column table:style-name="РегДанныеИсх.A"/>
+									<table:table-column table:style-name="РегДанныеИсх.B"/>
+									<table:table-row>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс"><draw:frame draw:style-name="Mfr10" draw:name="Бланк: префикс поля ДатаРегистрации исх." text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="3">
+												<draw:text-box>
+													<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">от</text:p>
+												</draw:text-box>
+											</draw:frame></text:p>
+										</table:table-cell>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрации исх." text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="2">
+												<draw:text-box fo:min-height="0.041cm">
+													<text:p text:style-name="Подстрочник">дата рег. исх.</text:p>
+												</draw:text-box>
+											</draw:frame><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:p>
+										</table:table-cell>
+									</table:table-row>
+									<table:table-row>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс"><draw:frame draw:style-name="Mfr10" draw:name="Бланк: префикс поля РегистрационныйНомер исх." text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="1">
+												<draw:text-box>
+													<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">№</text:p>
+												</draw:text-box>
+											</draw:frame></text:p>
+										</table:table-cell>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля РегистрационныйНомер исх." text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+												<draw:text-box fo:min-height="0.041cm">
+													<text:p text:style-name="Подстрочник">рег. номер исх.</text:p>
+												</draw:text-box>
+											</draw:frame><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
+										</table:table-cell>
+									</table:table-row>
+								</table:table>
+							</text:section>
+						</table:table-cell>
+					</table:table-row>
+				</table:table>
+			</loext:footer-first>
+		</style:master-page>
+		<style:master-page style:name="БланкПоследующиеЛистыЗаписки" style:page-layout-name="Mpm3">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm4"/>
+		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm5"/>
+		<style:master-page style:name="Endnote" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Left_20_Page" style:hidden="true" style:display-name="Left Page" style:page-layout-name="Mpm1" style:next-style-name="Right_20_Page"/>
+		<style:master-page style:name="Right_20_Page" style:hidden="true" style:display-name="Right Page" style:page-layout-name="Mpm1" style:next-style-name="Left_20_Page"/>
+		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm1" style:next-style-name="Standard"/>
+		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm1"/>
+		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm1"/>
+	</office:master-styles>
+</office:document-styles>
