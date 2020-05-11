@@ -68,11 +68,16 @@
 		},
 		{
 			"label": "Create Open Office files from plain XML",
+			"group": "build",
+			"command": "Invoke-Build -Task Build -Verbose"
+		},
+		{
+			"label": "Create Open Office files from plain XML and open",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "Invoke-Build -Task Build -Verbose"
+			"command": "Invoke-Build -Task BuildAndOpen -Verbose"
 		},
 		{
 			"label": "Восстановить шаблон Письма из XML и открыть его",
