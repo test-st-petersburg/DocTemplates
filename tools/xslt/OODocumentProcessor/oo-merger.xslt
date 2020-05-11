@@ -18,7 +18,7 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
 
@@ -53,7 +53,6 @@
 					<xsl:apply-templates select="." mode="f:inline"/>
 				</xsl:source-document>
 			</xsl:copy>
-			<xsl:catch errors="plug"/>
 			<!-- <xsl:catch errors="SXXP0003" use-when="$p:dont-stop-on-empty-files"> -->
 			<xsl:catch errors="*" use-when="$p:dont-stop-on-empty-files">
 				<xsl:message terminate="no" error-code="SXXP0003" expand-text="yes">Empty XML file! Check file "{ resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) }".</xsl:message>
