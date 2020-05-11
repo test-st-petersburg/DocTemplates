@@ -11,7 +11,8 @@
 [![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master&style=plastic)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
 
 Исходные файлы документации размещены в репозитории в каталоге
-[docs](/test-st-petersburg/DocTemplates/tree/master/docs).
+[docs](/docs).
+
 Подготовленная документация доступна в сети:
 [https://doctemplates.readthedocs.io](https://doctemplates.readthedocs.io).
 
@@ -56,14 +57,14 @@ git репозиторий.
 в котором размещены XML файлы и бинарный файлы изображений и прочих вложений.
 В репозитории файлы шаблонов документов хранятся в виде каталогов с XML и
 бинарными файлами в каталоге
-[/src/template](/test-st-petersburg/DocTemplates/tree/master/src/template).
+[/src/template](/src/template).
 Распаковка, форматирование, оптимизация файлов шаблонов в каталоги осуществляется
 с помощью инструментария, размещённого в репозитории,
 через задачи в среде Visual Studio Code.
 
 - **Clean**:
   данная задача предназначена для очищения каталогов с "исходными"
-  XML и бинарными файлами ([/src/template](/test-st-petersburg/DocTemplates/tree/master/src/template)).
+  XML и бинарными файлами ([/src/template](/src/template)).
 
 - Convert Open Office files to plain XML:
   преобразование файлов шаблонов документов в каталоги "исходных"
