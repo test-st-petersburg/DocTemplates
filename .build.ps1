@@ -107,15 +107,18 @@ foreach ( $OOFile in $DestinationFile ) {
 task UnpackAndOptimizeModified $OOFilesUnpackTasks;
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-$OOFilesBuildTasks = @();
+$BuildTasks = @();
+$BuildAndOpenTasks = @();
 foreach ( $documentXMLFolder in $SourceFolder ) {
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$OOTaskName = "Build-$documentName";
-	$OOFilesBuildTasks += $OOTaskName;
+	$BuildTaskName = "Build-$documentName";
+	$BuildTasks += $BuildTaskName;
+	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
+	$BuildAndOpenTasks += $BuildAndOpenTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse );
 	$target = @( Join-Path -Path $DestinationPath -ChildPath $documentName );
 
-	task $OOTaskName `
+	task $BuildTaskName `
 		-Inputs $prerequisites `
 		-Outputs $target `
 	{
@@ -126,19 +129,32 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
-};
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task Build $OOFilesBuildTasks;
+	task $BuildAndOpenTaskName `
+		-Inputs $prerequisites `
+		-Outputs $target `
+	{
+		$localDestinationFile = $Outputs[0];
+		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
-task BuildAndOpen Build, {
-	$Shell = New-Object -Com 'Shell.Application';
-	$NewDestinationFile | Get-Item | ForEach-Object {
-		$verb = 'open';
-		if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) ) {
-			$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
+		$Shell = New-Object -Com 'Shell.Application';
+		$localDestinationFile | Get-Item | ForEach-Object {
+			$verb = 'open';
+			if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) ) {
+				$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
+			};
 		};
 	};
 };
+
+# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
+task Build $BuildTasks;
+
+# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
+task BuildAndOpen $BuildAndOpenTasks;
 
 task . Build;
