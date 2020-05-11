@@ -28,9 +28,7 @@
 			<config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="DoNotCaptureDrawObjsOnPage" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="UseFormerObjectPositioning" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="PrintSingleJobs" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="EmbedSystemFonts" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="PrinterIndependentLayout" config:type="string">high-resolution</config:config-item>
 			<config:config-item config:name="IsLabelDocument" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="AddFrameOffsets" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="AddExternalLeading" config:type="boolean">true</config:config-item>
@@ -38,7 +36,6 @@
 			<config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="DoNotResetParaAttrsForNumFont" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="UseFormerLineSpacing" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
@@ -54,7 +51,6 @@
 			<config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="Rsid" config:type="int">33444563</config:config-item>
 			<config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
@@ -87,8 +83,6 @@
 			<config:config-item config:name="PrintProspectRTL" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="PrintReversed" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
-			<config:config-item config:name="PrintFaxName" config:type="string"/>
-			<config:config-item config:name="PrintPaperFromSetup" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="PrintEmptyPages" config:type="boolean">false</config:config-item>
 		</config:config-item-set>
 	</office:settings>
