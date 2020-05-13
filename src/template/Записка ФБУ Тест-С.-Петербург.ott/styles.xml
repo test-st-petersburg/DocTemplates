@@ -316,12 +316,11 @@
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
 		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
-		<style:style style:name="БланкВДело" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
-			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="center"/>
-			<style:text-properties style:text-scale="50%"/>
+		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
 		</style:style>
-		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело">
-			<style:paragraph-properties fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
+		<style:style style:name="БланкВДело" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДелоПрефикс">
+			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 		<style:style style:name="БланкПодписьДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
 		<style:style style:name="БланкДатаПодписиДелопроизводителя" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВДело"/>
@@ -364,10 +363,7 @@
 		<style:style style:name="БланкРегНомер" style:family="text" style:hidden="true">
 			<style:text-properties style:text-scale="60%"/>
 		</style:style>
-		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true" style:parent-style-name="БланкРегНомер"/>
-		<style:style style:name="БланкИндексДела" style:family="text" style:hidden="true">
-			<style:text-properties style:text-scale="50%"/>
-		</style:style>
+		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true"/>
 		<style:style style:name="Frame" style:family="graphic">
 			<style:graphic-properties text:anchor-type="paragraph" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content"/>
 		</style:style>
@@ -897,17 +893,17 @@
 						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
 						</text:section>
-						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 						</text:section>
 						<text:p text:style-name="БланкОкончаниеШапки"/>
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="БланкПослеШапки"/>
-				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT (NOT ЭтоПереписка)" text:is-hidden="true" text:display="condition">
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr5" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
@@ -930,12 +926,12 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа (во внутренней переписке)" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа (во внутренней переписке)" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition">
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition">
 					<table:table table:name="РегДанные" table:style-name="РегДанные">
 						<table:table-column table:style-name="РегДанные.A"/>
 						<table:table-column table:style-name="РегДанные.B"/>
@@ -946,13 +942,13 @@
 								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:(ЭтоИсходящийДокумент)"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; )"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:(ЭтоИсходящийДокумент)"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; )"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
@@ -1011,7 +1007,7 @@
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Вступительное обращение" text:condition="ooow:(NOT ЭтоПереписка)" text:display="condition">
+				<text:section text:style-name="MSect2" text:name="Вступительное обращение" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении">Уважаемые коллеги!</text:variable-get></text:p>
 				</text:section>
@@ -1033,21 +1029,21 @@
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect2" text:name="Сведения о деле">
-								<text:p text:style-name="БланкВДелоПрефикс">В дело<draw:frame draw:style-name="Mfr8" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="9">
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="2cm">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:style-name="Mfr8" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="9">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.8cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="10">
 											<draw:text-box fo:min-height="0.041cm">
 												<text:p text:style-name="Подстрочник">индекс дела</text:p>
 											</draw:text-box>
-										</draw:frame><text:span text:style-name="БланкИндексДела"><text:variable-get text:name="Дело"> </text:variable-get></text:span></text:p>
+										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
 								</draw:frame> за <draw:frame draw:style-name="Mfr8" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="11">
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1cm">
-										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="12">
+										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="12">
 											<draw:text-box fo:min-height="0.041cm">
 												<text:p text:style-name="Подстрочник">год</text:p>
 											</draw:text-box>
-										</draw:frame><text:variable-get text:name="ДелоГод"> </text:variable-get></text:p>
+										</draw:frame><text:s/><text:variable-get text:name="ДелоГод"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
 								</draw:frame></text:p>
 								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr9" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="6">
@@ -1062,7 +1058,7 @@
 							</text:section>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:section text:style-name="MSect2" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:(NOT ЭтоПереписка) OR (NOT ЭтоИсходящийДокумент)" text:is-hidden="true">
+							<text:section text:style-name="MSect2" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &quot;ИСТИНА&quot; ) AND ( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; ) )" text:display="condition">
 								<table:table table:name="РегДанныеИсх" table:style-name="РегДанныеИсх">
 									<table:table-column table:style-name="РегДанныеИсх.A"/>
 									<table:table-column table:style-name="РегДанныеИсх.B"/>
@@ -1079,7 +1075,7 @@
 												<draw:text-box fo:min-height="0.041cm">
 													<text:p text:style-name="Подстрочник">дата рег. исх.</text:p>
 												</draw:text-box>
-											</draw:frame><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:p>
+											</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span></text:p>
 										</table:table-cell>
 									</table:table-row>
 									<table:table-row>
@@ -1095,7 +1091,7 @@
 												<draw:text-box fo:min-height="0.041cm">
 													<text:p text:style-name="Подстрочник">рег. номер исх.</text:p>
 												</draw:text-box>
-											</draw:frame><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
+											</draw:frame><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span></text:p>
 										</table:table-cell>
 									</table:table-row>
 								</table:table>
