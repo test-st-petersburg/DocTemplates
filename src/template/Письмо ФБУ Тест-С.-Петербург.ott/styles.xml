@@ -874,7 +874,7 @@
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="БланкПослеШапки"/>
-				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат" text:condition="ooow:((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:display="condition">
+				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат" text:condition="ooow:((NOT ( ЭтоПереписка EQ &quot;ИСТИНА&quot; )) AND ( ЭтоВнутреннийДокумент EQ &quot;ИСТИНА&quot; ))" text:display="condition">
 					<table:table table:name="РегДанные" table:style-name="РегДанные">
 						<table:table-column table:style-name="РегДанные.A"/>
 						<table:table-column table:style-name="РегДанные.B"/>
@@ -980,12 +980,12 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT ЭтоПереписка"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
+					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ЭтоИсходящийДокумент) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент) )" text:is-hidden="true" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; )) AND NOT(ВидДокумента EQ &quot;Письмо&quot;)) OR ((NOT ( ЭтоПереписка EQ &quot;ИСТИНА&quot; )) AND ( ЭтоВнутреннийДокумент EQ &quot;ИСТИНА&quot; )) )" text:is-hidden="true" text:display="condition" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect4" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ЭтоПереписка) AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition" text:protected="false">
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ( ЭтоПереписка EQ &quot;ИСТИНА&quot; )) AND ( ЭтоВнутреннийДокумент EQ &quot;ИСТИНА&quot; ))" text:is-hidden="true" text:display="condition" text:protected="false">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от<draw:frame draw:style-name="Mfr7" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr5" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
@@ -1055,7 +1055,7 @@
 							</text:section>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:section text:style-name="MSect3" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT (ЭтоПереписка AND ЭтоИсходящийДокумент AND ЭтоВнутреннийДокумент)" text:is-hidden="true" text:display="condition">
+							<text:section text:style-name="MSect3" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT ( ( ЭтоПереписка EQ &quot;ИСТИНА&quot; ) AND ( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; ) AND ( ЭтоВнутреннийДокумент EQ &quot;ИСТИНА&quot; ) )" text:is-hidden="true" text:display="condition">
 								<text:p text:style-name="БланкОтметкаОПоступлении"><text:tab/>Исх №<text:span text:style-name="БланкРегНомер"><text:tab/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер" style:data-style-name="N0"/></text:span><text:span text:style-name="БланкРегНомер"><text:tab/></text:span></text:p>
 								<text:p text:style-name="БланкОтметкаОПоступлении"><text:tab/>от<text:span text:style-name="БланкДатаРегистрации"><text:tab/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:tab/></text:span></text:p>
 							</text:section>
