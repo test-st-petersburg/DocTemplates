@@ -1019,7 +1019,7 @@
 					<table:table-column table:style-name="Подвал.C"/>
 					<table:table-row table:style-name="Подвал.1">
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:p text:style-name="БланкИсполнитель">Исп.:<text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>,<text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>,<text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect3" text:name="Сведения о деле">
