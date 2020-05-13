@@ -96,25 +96,31 @@
 		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
+			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:protect="size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
 		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
+			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
+		</style:style>
+		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
 			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
-		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
+		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+		<style:style style:name="fr10" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 			<style:graphic-properties style:vertical-pos="from-top" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
-		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
+		<style:style style:name="fr11" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Sect1" style:family="section">
@@ -274,8 +280,8 @@
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
 			<text:p text:style-name="БланкПисьмоНачало"/>
-			<text:section text:style-name="Sect3" text:name="Вступительное обращение" text:condition="ooow:NOT ( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition" text:protected="true">
-				<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-get>!</text:p>
+			<text:section text:style-name="Sect3" text:name="Вступительное обращение" text:condition="ooow:NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition" text:protected="true">
+				<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении">Уважаемые господа</text:variable-get>!</text:p>
 			</text:section>
 			<text:p text:style-name="Основной">{Содержание}</text:p>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
