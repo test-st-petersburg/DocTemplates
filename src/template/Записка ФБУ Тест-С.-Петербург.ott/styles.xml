@@ -1029,7 +1029,7 @@
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect2" text:name="Сведения о деле">
-								<text:p text:style-name="БланкВДелоПрефикс">В дело<draw:frame draw:style-name="Mfr8" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="9">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:style-name="Mfr8" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="9">
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.8cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="10">
 											<draw:text-box fo:min-height="0.041cm">
