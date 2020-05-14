@@ -52,8 +52,8 @@
 	<toolbar:toolbaritem xlink:href=".uno:SetOutline" toolbar:visible="false"/>
 	<toolbar:toolbaritem xlink:href=".uno:RemoveBullets"/>
 	<toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:IncrementIndent"/>
- <toolbar:toolbaritem xlink:href=".uno:DecrementIndent"/>
+	<toolbar:toolbaritem xlink:href=".uno:IncrementIndent"/>
+	<toolbar:toolbaritem xlink:href=".uno:DecrementIndent"/>
 	<toolbar:toolbarseparator/>
 	<toolbar:toolbaritem xlink:href=".uno:LineSpacing" toolbar:visible="false"/>
 	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing150?language=Basic&amp;location=document" toolbar:text="Стандартный межстрочный интервал"/>

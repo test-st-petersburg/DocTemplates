@@ -785,7 +785,7 @@
 					<draw:text-box fo:min-height="1.7cm">
 						<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="7">
 							<draw:text-box fo:min-height="1.7cm">
-								<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="12">
+								<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="8">
 									<draw:text-box>
 										<table:table table:name="ШтрихкодГрифКодФормыТаблица" table:style-name="ШтрихкодГрифКодФормыТаблица">
 											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.A"/>
@@ -810,7 +810,7 @@
 											</table:table-row>
 										</table:table>
 									</draw:text-box>
-								</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="13">
+								</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="9">
 									<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 									<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 								</draw:frame></text:p>
@@ -864,11 +864,17 @@
 			<style:footer-left>
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
+			<loext:footer-first>
+				<text:p text:style-name="Footer"/>
+			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
 			<style:header>
-				<text:p text:style-name="Header"><text:page-number text:select-page="current">2</text:page-number></text:p>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
+			<loext:header-first>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">2</text:page-number></text:p>
+			</loext:header-first>
 			<style:footer>
 				<text:p text:style-name="Footer"/>
 			</style:footer>
@@ -883,17 +889,17 @@
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Сведения о деле">
-								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:style-name="Mfr7" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="8">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:style-name="Mfr7" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="10">
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.799cm">
-										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="9">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
 											<draw:text-box fo:min-height="0.041cm">
 												<text:p text:style-name="Подстрочник">индекс дела</text:p>
 											</draw:text-box>
 										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
-								</draw:frame><text:s/>за <draw:frame draw:style-name="Mfr7" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="10">
+								</draw:frame><text:s/>за <draw:frame draw:style-name="Mfr7" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="12">
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1cm">
-										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
+										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="13">
 											<draw:text-box fo:min-height="0.041cm">
 												<text:p text:style-name="Подстрочник">год</text:p>
 											</draw:text-box>
