@@ -132,8 +132,6 @@
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls>
 				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
-				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
@@ -154,20 +152,15 @@
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
-				<text:variable-decl office:value-type="boolean" text:name="ПечататьНаБланке"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПодразделениеИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПочта"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодготовилТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВПодписиИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
-				<text:variable-decl office:value-type="string" text:name="Получатели"/>
-				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБанк"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБИК"/>
@@ -199,13 +192,9 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">ПодписалПредставлениеВДокументахРП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПечататьНаБланке" text:formula="ooow:0" office:value-type="boolean" office:boolean-value="false" style:data-style-name="N10099">FALSE</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
@@ -224,10 +213,8 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
