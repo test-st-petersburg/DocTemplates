@@ -254,7 +254,7 @@
 		<style:style style:name="БланкЛогоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra"/>
 		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
-			<style:text-properties fo:text-transform="uppercase" fo:font-weight="bold"/>
+			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.1cm" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
@@ -891,7 +891,7 @@
 							</draw:text-box>
 						</draw:frame></text:p>
 						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">ФЕДЕРАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ<text:line-break/>«ГОСУДАРСТВЕННЫЙ РЕГИОНАЛЬНЫЙ ЦЕНТР СТАНДАРТИЗАЦИИ, МЕТРОЛОГИИ И ИСПЫТАНИЙ В Г. САНКТ‑ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
+							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в<text:s/>г.<text:s/>Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ<text:s/>«Тест-С.-Петербург»)</text:p>
 						</text:section>
 						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
