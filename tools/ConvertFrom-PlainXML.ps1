@@ -50,7 +50,7 @@ process {
 		try {
 			if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Unindent all xml source files before build Open Office file" ) ) {
 				$saxTransform = $saxExecutable.Load();
-				$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+				$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
 				$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
 					'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'inline';

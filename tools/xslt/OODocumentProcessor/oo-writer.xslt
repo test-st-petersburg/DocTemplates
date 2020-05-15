@@ -2,10 +2,10 @@
 	id="OOWriter"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt"
 	package-version="1.5.0"
-	input-type-annotations="preserve"
 	declared-modes="yes"
-	default-validation="preserve"
 	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -55,7 +55,7 @@
 		<xsl:variable name="p:manifest" as="document-node()">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
-		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }" format="p:OOXmlFile" validation="preserve">
+		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
 		</xsl:result-document>
 		<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="#current"/>
@@ -73,7 +73,7 @@
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile" validation="preserve">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="*" mode="f:outline"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -81,7 +81,7 @@
 	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
 		@manifest:media-type='application/rdf+xml'
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile" validation="preserve">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
 			<xsl:apply-templates select="*" mode="f:outline"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -92,7 +92,7 @@
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile" validation="preserve">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="*" mode="f:inline"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -100,7 +100,7 @@
 	<xsl:template mode="p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		@manifest:media-type='application/rdf+xml'
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile" validation="preserve">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
 			<xsl:apply-templates select="*" mode="f:inline"/>
 		</xsl:result-document>
 	</xsl:template>

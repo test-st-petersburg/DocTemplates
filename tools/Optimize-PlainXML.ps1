@@ -29,7 +29,7 @@ process {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
 		$saxTransform = $saxExecutable.Load();
-		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
 		$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
 			'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'optimize';
