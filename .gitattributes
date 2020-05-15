@@ -7,3 +7,5 @@
 *.ps1  text  merge=text diff=text eol=crlf
 *.psd1 text  merge=text diff=text eol=crlf
 *.psm1 text  merge=text diff=text eol=crlf
+
+packages.config  text  merge=text diff=text eol=lf

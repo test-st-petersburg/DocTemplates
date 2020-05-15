@@ -51,13 +51,27 @@ Write-Verbose "$DestinationPath.";
 		Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
 	} );
 
+# Synopsis: Устанавливает необходимые инструменты для сборки
+task Install {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	If ( !( Get-Module PSDepend ) ) {
+		Install-Module PSDepend `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+	};
+	Import-Module PSDepend;
+	Invoke-PSDepend -Install `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+}
+
 # Synopsis: Удаляет каталоги с XML файлами
 task Clean {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$SourceFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Преобразовывает Open Office файлы в папки с XML файлами
-task Unpack Clean, {
+task Unpack Clean, Install, {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
 		-Indented `
 		-WarningAction Continue `
@@ -66,7 +80,8 @@ task Unpack Clean, {
 };
 
 # Synopsis: Оптимизирует XML файлы Open Office
-task OptimizeXML {
+task OptimizeXML Install, {
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	$SourceFolder | .\tools\Optimize-PlainXML.ps1 `
 		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -87,6 +102,7 @@ foreach ( $OOFile in $DestinationFile ) {
 		-Inputs @( $OOFile ) `
 		-Outputs @( $target ) `
 	{
+		$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
@@ -104,7 +120,7 @@ foreach ( $OOFile in $DestinationFile ) {
 };
 
 # Synopsis: Распаковывает только изменённые файлы
-task UnpackAndOptimizeModified $OOFilesUnpackTasks;
+task UnpackAndOptimizeModified ( @('Install') + $OOFilesUnpackTasks );
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 $BuildTasks = @();
@@ -122,6 +138,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 		-Inputs $prerequisites `
 		-Outputs $target `
 	{
+		$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 		$localDestinationFile = $Outputs[0];
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
@@ -134,6 +151,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 		-Inputs $prerequisites `
 		-Outputs $target `
 	{
+		$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 		$localDestinationFile = $Outputs[0];
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
@@ -152,9 +170,9 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task Build $BuildTasks;
+task Build ( @( 'Install' ) + $BuildTasks );
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpen $BuildAndOpenTasks;
+task BuildAndOpen ( @( 'Install' ) + $BuildAndOpenTasks );
 
 task . Build;

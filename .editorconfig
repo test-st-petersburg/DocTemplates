@@ -45,7 +45,7 @@ charset = utf-8
 indent_style = tab
 indent_size = 2
 
-[*.{xml,xsl}]
+[*.{xml,xsl},packages.config]
 indent_style = tab
 indent_size = 4
 end_of_line = lf

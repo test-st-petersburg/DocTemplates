@@ -68,11 +68,15 @@ $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber
 try {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	$saxonLibPath = Join-Path -Path ( Split-Path -Path ( $saxonPackage.Source ) -Parent ) `
-		-ChildPath 'lib\net40\saxon9he-api.dll';
+	# $saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
+	# 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+	# 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	# $saxonPath = ( Split-Path -Path ( $saxonPackage.Source ) -Parent );
+	$saxonPath = ( Get-ChildItem `
+			-Path ( Join-Path -Path $PSScriptRoot -ChildPath 'packages' ) `
+			-Filter 'Saxon-HE.*'
+	)[0].FullName;
+	$saxonLibPath = Join-Path -Path $saxonPath -ChildPath 'lib\net40\saxon9he-api.dll';
 	Add-Type -Path $saxonLibPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
