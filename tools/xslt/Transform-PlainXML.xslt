@@ -102,4 +102,10 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template mode="t:update-document-meta" match="office:document-meta/office:meta/meta:editing-cycles">
+		<xsl:copy>
+			<xsl:value-of select="xs:int( text() ) + 1"/>
+		</xsl:copy>
+	</xsl:template>
+
 </xsl:transform>
