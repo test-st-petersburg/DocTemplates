@@ -2,10 +2,10 @@
 	id="OOFormatter"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
 	package-version="1.5.0"
-	input-type-annotations="preserve"
 	declared-modes="yes"
-	default-validation="preserve"
 	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 

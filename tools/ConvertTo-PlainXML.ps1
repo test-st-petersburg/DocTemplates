@@ -32,14 +32,15 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+	$DtdPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
 		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
 		'tools/xslt/optimizer/OOOptimizer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
 		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
 		-LiteralPath ( Join-Path -Path $PSScriptRoot -ChildPath 'xslt/Transform-PlainXML.xslt' ) `
+		-DtdPath $DtdPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	$DTDPath = ( Resolve-Path -Path 'dtd/officedocument/1_0/' ).Path;
 }
 process {
 	if ( $PSCmdlet.ShouldProcess( $FilePath, "Convert Open Office document to plain XML directory" ) ) {
@@ -75,7 +76,7 @@ process {
 				if ( $Indented ) {
 					if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Format all xml files in Open Office document plain XML directory" ) ) {
 						$saxTransform = $saxExecutable.Load();
-						$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::Preserve;
+						$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
 						$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
 							'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'outline';

@@ -10,6 +10,9 @@
 
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 
+	default-validation="strip"
+	input-type-annotations="strip"
+
 	default-mode="t:optimize"
 >
 

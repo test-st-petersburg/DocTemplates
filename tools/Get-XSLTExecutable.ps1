@@ -16,7 +16,13 @@ Param(
 	# массив путей к пакетам XSLT, необходимых для компиляции трансформации
 	[Parameter( Mandatory = $False )]
 	[System.String[]]
-	$PackagePath
+	$PackagePath,
+
+	# путь к DTD файлам
+	[Parameter( Mandatory = $False )]
+	[System.String]
+	$DtdPath
+
 )
 
 Function Write-CompilerWarningAndErrors {
@@ -65,6 +71,30 @@ $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber
 
 }
 
+class OOXmlResolver: System.Xml.XmlUrlResolver {
+
+	[System.String] $DtdPath
+
+	OOXmlResolver( [System.String] $DtdPath ) {
+		$this.DtdPath = $DtdPath;
+	}
+
+	[System.Uri]
+	ResolveUri ( [System.Uri] $baseUri, [System.String] $relativeUri ) {
+		If ( -not $this.DtdPath ) {
+			return ( [System.Xml.XmlUrlResolver] $this ).ResolveUri( $baseUri, $relativeUri );
+		};
+		[System.Uri] $DtdFileUri = Join-Path -Path $this.DtdPath -ChildPath $relativeUri;
+		If ( Test-Path -Path ( $DtdFileUri.LocalPath ) ) {
+			return $DtdFileUri;
+		}
+		else {
+			return ( [System.Xml.XmlUrlResolver] $this ).ResolveUri( $baseUri, $relativeUri );
+		};
+	}
+
+};
+
 try {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
@@ -76,8 +106,14 @@ try {
 	Add-Type -Path $saxonLibPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
 	Write-Verbose 'Создание SAX процессора.';
 	$saxProcessor = New-Object Saxon.Api.Processor;
+	$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList $DtdPath;
+	$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
+	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
+
 	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
@@ -104,20 +140,21 @@ try {
 		};
 	};
 
-	try {
-		Write-Verbose "Компиляция XSLT преобразования $LiteralPath";
-		$saxExecutable = $saxCompiler.Compile( $LiteralPath );
-		Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
-			-ModuleUri $LiteralPath `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	}
-	catch {
-		Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
-			-ModuleUri $LiteralPath `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-		throw;
+	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) ) {
+		try {
+			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
+			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+				-ModuleUri $LiteralPath `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		}
+		catch {
+			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+				-ModuleUri $LiteralPath `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+			throw;
+		};
+		return $saxExecutable;
 	};
-	return $saxExecutable;
 }
 catch {
 	Write-Error -ErrorRecord $_;

@@ -2,10 +2,10 @@
 	id="OOMerger"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt"
 	package-version="1.5.0"
-	input-type-annotations="preserve"
 	declared-modes="yes"
-	default-validation="preserve"
 	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -44,20 +44,20 @@
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" select="resolve-uri( '..', base-uri() )" tunnel="yes"/>
-		<xsl:try rollback-output="yes">
+		<!-- <xsl:try rollback-output="yes"> -->
 			<xsl:copy>
 				<xsl:apply-templates select="@*" mode="#current"/>
 				<xsl:source-document href="{ iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) ) }"
-					streamable="no" use-accumulators="#all" validation="preserve"
+					streamable="no" use-accumulators="#all" validation="strip"
 				>
 					<xsl:apply-templates select="." mode="f:inline"/>
 				</xsl:source-document>
 			</xsl:copy>
 			<!-- <xsl:catch errors="SXXP0003" use-when="$p:dont-stop-on-empty-files"> -->
-			<xsl:catch errors="*" use-when="$p:dont-stop-on-empty-files">
+			<!-- <xsl:catch errors="*" use-when="$p:dont-stop-on-empty-files">
 				<xsl:message terminate="no" error-code="SXXP0003" expand-text="yes">Empty XML file! Check file "{ resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) }".</xsl:message>
-			</xsl:catch>
-		</xsl:try>
+			</xsl:catch> -->
+		<!-- </xsl:try> -->
 	</xsl:template>
 
 	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
