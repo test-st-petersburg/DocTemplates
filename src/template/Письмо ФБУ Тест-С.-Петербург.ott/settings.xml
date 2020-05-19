@@ -4,7 +4,7 @@
 			<config:config-item config:name="ProtectForm" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="EmbeddedDatabaseName" config:type="string"/>
 			<config:config-item config:name="CurrentDatabaseDataSource" config:type="string"/>
-			<config:config-item config:name="LinkUpdateMode" config:type="short">2</config:config-item>
+			<config:config-item config:name="LinkUpdateMode" config:type="short">1</config:config-item>
 			<config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="FloattableNomargins" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="UnbreakableNumberings" config:type="boolean">false</config:config-item>
