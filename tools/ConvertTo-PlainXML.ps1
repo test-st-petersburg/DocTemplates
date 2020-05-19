@@ -79,7 +79,7 @@ process {
 						$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
 						$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
-							'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'outline';
+							'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'after-unpack';
 
 						[System.Uri] $BaseUri = $DestinationTempPathForFile + [System.IO.Path]::DirectorySeparatorChar;
 						# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
