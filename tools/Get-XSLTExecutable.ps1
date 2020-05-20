@@ -11,7 +11,7 @@ Param(
 	# путь к файлу XSLT
 	[Parameter( Mandatory = $True, Position = 0 )]
 	[System.String]
-	$LiteralPath,
+	$Path,
 
 	# массив путей к пакетам XSLT, необходимых для компиляции трансформации
 	[Parameter( Mandatory = $False )]
@@ -140,6 +140,7 @@ try {
 		};
 	};
 
+	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) ) {
 		try {
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
