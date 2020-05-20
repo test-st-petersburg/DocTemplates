@@ -65,7 +65,7 @@
 	<xsl:variable name="o:remove-config-view-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="o:remove-attributes-with-default-values" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+	<xsl:variable name="o:remove-attributes-with-default-values" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 

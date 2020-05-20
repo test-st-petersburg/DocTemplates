@@ -19,7 +19,7 @@
 >
 
 	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
-	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!--
 		Разбор единого XML файла в отдельные XML файлы с форматированием.
@@ -56,16 +56,11 @@
 		<xsl:variable name="p:manifest" as="document-node()">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
-		<xsl:result-document use-when="$p:restore-doctype"
-			href="{ iri-to-uri( $p:manifest-uri ) }"
+		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="'Manifest.dtd'" use-when="$p:restore-doctype"/>
+		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="''" use-when="not( $p:restore-doctype )"/>
+		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
 			format="p:OOXmlFileFormat"
-			doctype-system="Manifest.dtd"
-		>
-			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
-		</xsl:result-document>
-		<xsl:result-document use-when="not( $p:restore-doctype )"
-			href="{ iri-to-uri( $p:manifest-uri ) }"
-			format="p:OOXmlFileFormat"
+			doctype-system="{ $p:manifest-doctype-system }"
 		>
 			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
 		</xsl:result-document>
