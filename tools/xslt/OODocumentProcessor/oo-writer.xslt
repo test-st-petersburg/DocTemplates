@@ -56,11 +56,15 @@
 		<xsl:variable name="p:manifest" as="document-node()">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
-		<!-- <xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
+		<xsl:result-document use-when="$p:restore-doctype"
+			href="{ iri-to-uri( $p:manifest-uri ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="Manifest.dtd"
-		> -->
-		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
+		>
+			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
+		</xsl:result-document>
+		<xsl:result-document use-when="not( $p:restore-doctype )"
+			href="{ iri-to-uri( $p:manifest-uri ) }"
 			format="p:OOXmlFileFormat"
 		>
 			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
