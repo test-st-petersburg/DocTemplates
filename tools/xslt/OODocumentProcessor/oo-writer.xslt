@@ -55,7 +55,10 @@
 		<xsl:variable name="p:manifest" as="document-node()">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
-		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }" format="p:OOXmlFile">
+		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="Manifest.dtd"
+		>
 			<xsl:apply-templates select="$p:manifest" mode="f:outline"/>
 		</xsl:result-document>
 		<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="#current"/>
@@ -69,37 +72,57 @@
 
 	<!--  -->
 
-	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry/*">
+		<xsl:apply-templates select="." mode="f:outline"/>
+	</xsl:template>
+
+	<xsl:template mode="p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry/*">
+		<xsl:apply-templates select="." mode="f:inline"/>
+	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]" priority="-10">
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
-			<xsl:apply-templates select="*" mode="f:outline"/>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		@manifest:media-type='application/rdf+xml'
 	]" priority="-10">
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
-			<xsl:apply-templates select="*" mode="f:outline"/>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<!--  -->
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
+		( @manifest:full-path='content.xml' )
+		or ( @manifest:full-path='meta.xml' )
+		or ( @manifest:full-path='settings.xml' )
+		or ( @manifest:full-path='styles.xml' )
+	]">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="office.dtd"
+		>
+			<xsl:apply-templates select="*" mode="#current"/>
+		</xsl:result-document>
+	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		@manifest:full-path='Basic/script-lc.xml'
 	]">
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="libraries.dtd"
 		>
-			<xsl:apply-templates select="*" mode="f:outline"/>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		starts-with( @manifest:full-path, 'Basic/' )
 		and ends-with( @manifest:full-path, '/script-lb.xml' )
 	]" priority="-1">
@@ -107,26 +130,41 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="library.dtd"
 		>
-			<xsl:apply-templates select="*" mode="f:outline"/>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<!--  -->
-
-	<xsl:template mode="p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
-		( @manifest:media-type='text/xml' )
-		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
+		@manifest:full-path='Configurations2/images/lc_imagelist.xml'
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
-			<xsl:apply-templates select="*" mode="f:inline"/>
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="image.dtd"
+		>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<xsl:template mode="p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
-		@manifest:media-type='application/rdf+xml'
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
+		starts-with( @manifest:full-path, 'Configurations2/menubar/' )
+		or starts-with( @manifest:full-path, 'Configurations2/popupmenu/' )
 	]">
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
-			<xsl:apply-templates select="*" mode="f:inline"/>
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="menubar.dtd"
+		>
+			<xsl:apply-templates select="*" mode="#current"/>
+		</xsl:result-document>
+	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
+		starts-with( @manifest:full-path, 'Configurations2/toolbar/' )
+	]">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="toolbar.dtd"
+		>
+			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
