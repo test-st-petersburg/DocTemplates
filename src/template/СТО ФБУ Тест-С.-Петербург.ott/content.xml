@@ -797,9 +797,7 @@
 		<style:style style:name="P92" style:family="paragraph" style:parent-style-name="Heading_20_3" style:list-style-name="Пункты_20_документа">
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-size="12pt" fo:font-weight="bold" style:letter-kerning="true"/>
 		</style:style>
-		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога">
-			<style:paragraph-properties style:page-number="auto"/>
-		</style:style>
+		<style:style style:name="P94" style:family="paragraph" style:parent-style-name="Заголовок_20_предисловия" style:master-page-name="Листы_20_пролога"/>
 		<style:style style:name="P95" style:family="paragraph" style:parent-style-name="Логотип_20_на_20_титульном_20_листе" style:master-page-name="Титульный_20_лист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>

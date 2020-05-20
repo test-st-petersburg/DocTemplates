@@ -845,7 +845,7 @@
 									</draw:frame></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.B1" office:value-type="string">
-									<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ&#xA0;«Тест-С.-Петербург»</text:variable-get></text:p>
+									<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
 									<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="БланкТаблицаСЛоготипами.A1" office:value-type="string">
