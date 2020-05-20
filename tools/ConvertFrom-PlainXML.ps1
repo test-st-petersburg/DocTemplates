@@ -27,14 +27,16 @@ param(
 begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath 'Get-XSLTExecutable.ps1' ) `
-		-PackagePath 'tools/xslt/formatter/basic.xslt', 'tools/xslt/formatter/OO.xslt', `
-		'tools/xslt/optimizer/OOOptimizer.xslt', `
-		'tools/xslt/OODocumentProcessor/oo-writer.xslt', `
-		'tools/xslt/OODocumentProcessor/oo-merger.xslt' `
-		-Path 'tools/xslt/Transform-PlainXML.xslt' `
-		-DtdPath 'tools/dtd/officedocument/1_0/' `
+	Push-Location -Path $PSScriptRoot;
+	$saxExecutable = .\Get-XSLTExecutable.ps1 `
+		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+		'xslt/optimizer/OOOptimizer.xslt', `
+		'xslt/OODocumentProcessor/oo-writer.xslt', `
+		'xslt/OODocumentProcessor/oo-merger.xslt' `
+		-Path 'xslt/Transform-PlainXML.xslt' `
+		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+	Pop-Location;
 }
 process {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
