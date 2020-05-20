@@ -9,6 +9,11 @@
 - исправлено описание `@menu:style` в menubar.dtd
   [#42](https://github.com/test-st-petersburg/DocTemplates/issues/42)
 
+Прочие изменения:
+
+- опционально восстанавливаем DTD в XML файлах документов
+  [#42](https://github.com/test-st-petersburg/DocTemplates/issues/42)
+
 ## 1.6.8
 
 Прочие изменения:
