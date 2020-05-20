@@ -72,7 +72,7 @@
 	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
-	]">
+	]" priority="-10">
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="*" mode="f:outline"/>
 		</xsl:result-document>
@@ -80,8 +80,33 @@
 
 	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
 		@manifest:media-type='application/rdf+xml'
-	]">
+	]" priority="-10">
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
+			<xsl:apply-templates select="*" mode="f:outline"/>
+		</xsl:result-document>
+	</xsl:template>
+
+	<!--  -->
+
+	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+		@manifest:full-path='Basic/script-lc.xml'
+	]">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="libraries.dtd"
+		>
+			<xsl:apply-templates select="*" mode="f:outline"/>
+		</xsl:result-document>
+	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry[
+		starts-with( @manifest:full-path, 'Basic/' )
+		and ends-with( @manifest:full-path, '/script-lb.xml' )
+	]" priority="-1">
+		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+			format="p:OOXmlFileFormat"
+			doctype-system="library.dtd"
+		>
 			<xsl:apply-templates select="*" mode="f:outline"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -118,6 +143,14 @@
 		method="xml" omit-xml-declaration="no" version="1.0" standalone="omit"
 		encoding="UTF-8" byte-order-mark="no"
 		indent="no"
+	/>
+
+	<xsl:output name="p:OOXmlFileFormat"
+		media-type="text/xml"
+		method="xml" omit-xml-declaration="no" version="1.0" standalone="omit"
+		encoding="UTF-8" byte-order-mark="no"
+		indent="no"
+		doctype-public="-//OpenOffice.org//DTD OfficeDocument 1.0//EN"
 	/>
 
 </xsl:package>
