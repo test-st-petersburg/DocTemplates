@@ -51,6 +51,7 @@
 	xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0"
 	xmlns:tableooo="http://openoffice.org/2009/table"
 	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+	xmlns:toolbar="http://openoffice.org/2001/toolbar"
 
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
 >
@@ -64,6 +65,7 @@
 	<xsl:variable name="o:remove-config-view-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-attributes-with-default-values" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
@@ -240,6 +242,49 @@
 	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
 		office:automatic-styles/style:style/style:text-properties/@fo:language
 		| office:automatic-styles/style:style/style:text-properties/@fo:country
+	)"/>
+
+	<!-- удаляем аттрибуты со значениями по умолчанию -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-attributes-with-default-values" match="(
+		@style:auto-update[ . = 'false' ]
+		| @style:display[ . = 'true' ]
+		| @style:leader-char[ . = ' ' ]
+		| @style:num-letter-sync[ . = 'false' ]
+		| @style:type[ . = 'left' ]
+		| @style:vertical-align[ . = 'top' ]
+		| text:variable-set/@text:display[ . = 'value' ]
+		| text:variable-get/@text:display[ . = 'value' ]
+		| @number:display-factor[ . = '1' ]
+		| @number:grouping[ . = 'false' ]
+		| @number:transliteration-format[ . = '1' ]
+		| @number:transliteration-style[ . = 'short' ]
+		| office:annotation/@office:display[ . = 'false' ]
+		| @table:number-columns-repeated[ . = '1' ]
+		| @table:number-columns-spanned[ . = '1' ]
+		| @table:number-rows-spanned[ . = '1' ]
+		| @table:protected[ . = 'false' ]
+		| @table:number-rows-repeated[ . = '1' ]
+		| @table:structure-protected[ . = 'false' ]
+		| @table:value-type[ . = 'string' ]
+		| @table:visibility[ . = 'visible' ]
+		| @text:c[ . = '1' ]
+		| @text:consecutive-numbering[ . = 'false' ]
+		| @text:index-scope[ . = 'document' ]
+		| @text:protected[ . = 'false' ]
+		| @text:relative-tab-stop-position[ . = 'true' ]
+		| @text:restart-numbering[ . = 'false' ]
+		| @text:start-value[ . = '1' ]
+		| @text:use-outline-level[ . = 'true' ]
+		| @text:use-index-source-styles[ . = 'false' ]
+		| text:hidden-paragraph/@text:is-hidden[ . = 'false' ]
+		| text:section/@text:display[ . = 'true' ]
+		| text:index-entry-chapter/@text:display[ . = 'number-and-name' ]
+		| text:index-entry-tab-stop/@style:with-tab[ . = 'true' ]
+		| text:h/@text:level[ . = '1' ]
+		| toolbar:toolbaritem/@toolbar:visible[ . = 'true' ]
+		| @xlink:actuate[ . = 'onRequest' ]
+		| @xlink:show[ . = 'replace' ]
 	)"/>
 
 	<!-- удаляем упоминания о сессии, в которой внесены изменения -->
