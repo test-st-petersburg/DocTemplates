@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE office:document-styles
-  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "office.dtd">
-<office:document-styles xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
+<?xml version="1.0" encoding="UTF-8"?><office:document-styles xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
 	<office:font-face-decls>
 		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
 		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
@@ -418,7 +415,7 @@
 			<style:graphic-properties fo:min-width="1cm" fo:min-height="1cm" fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" style:protect="content" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="page" style:horizontal-pos="center" style:horizontal-rel="page-content" draw:opacity="100%"/>
 		</style:style>
 		<text:outline-style style:name="Outline">
-			<text:outline-level-style text:level="1" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:outline-level-style text:level="1" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
@@ -438,39 +435,39 @@
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="5" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="5" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="6" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="6" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="7" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="7" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="8" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="8" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="9" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="9" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="10" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="10" style:num-format="">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
 		</text:outline-style>
 		<text:list-style style:name="Numbering_20_123" style:display-name="Numbering 123">
-			<text:list-level-style-number text:level="1" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="1" text:style-name="Numbering_20_Symbols" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
@@ -596,52 +593,52 @@
 		<text:list-style style:name="Numbering_20_4" style:display-name="Numbering 4" style:hidden="true"/>
 		<text:list-style style:name="Numbering_20_5" style:display-name="Numbering 5" style:hidden="true"/>
 		<text:list-style style:name="Нумерация_20_списка_20_приложений" style:display-name="Нумерация списка приложений">
-			<text:list-level-style-number text:level="1" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="1" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="2" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="2" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="3" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="3" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="4" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="4" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="5" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="5" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="6" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="6" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="7" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="7" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="8" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="8" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="9" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="9" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:list-level-style-number>
-			<text:list-level-style-number text:level="10" style:num-suffix="." style:num-format="1" text:display-levels="1">
+			<text:list-level-style-number text:level="10" style:num-suffix="." style:num-format="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
@@ -649,7 +646,7 @@
 		</text:list-style>
 		<text:notes-configuration text:note-class="footnote" text:citation-style-name="Footnote_20_Symbol" text:citation-body-style-name="Footnote_20_anchor" style:num-format="1" text:start-value="0" text:footnotes-position="page" text:start-numbering-at="document"/>
 		<text:notes-configuration text:note-class="endnote" style:num-format="i" text:start-value="0"/>
-		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5" text:count-empty-lines="true" text:count-in-floating-frames="false"/>
+		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5"/>
 	</office:styles>
 	<office:automatic-styles>
 		<style:style style:name="ШтрихкодГрифКодФормыТаблица" style:family="table">
@@ -896,17 +893,17 @@
 						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в<text:s/>г.<text:s/>Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ<text:s/>«Тест-С.-Петербург»)</text:p>
 						</text:section>
-						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="true" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect2" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 						</text:section>
 						<text:p text:style-name="БланкОкончаниеШапки"/>
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="БланкПослеШапки"/>
-				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="true" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Служебная записка</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="true" text:display="condition">
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:is-hidden="true" text:display="condition">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr5" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
@@ -929,12 +926,12 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа (во внутренней переписке)" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition" text:protected="true">
+				<text:section text:style-name="MSect2" text:name="Вид внутреннего документа (во внутренней переписке)" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition">
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition">
 					<table:table table:name="РегДанные" table:style-name="РегДанные">
 						<table:table-column table:style-name="РегДанные.A"/>
 						<table:table-column table:style-name="РегДанные.B"/>
@@ -945,13 +942,13 @@
 								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; )"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; )"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
@@ -1010,7 +1007,7 @@
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Вступительное обращение" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition">
+				<text:section text:style-name="MSect2" text:name="Вступительное обращение" text:condition="ooow:NOT( ЭтоПереписка EQ &quot;ИСТИНА&quot; )" text:display="condition">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="Salutation"><text:variable-get text:name="ПолучателиВОбращении">Уважаемые коллеги!</text:variable-get></text:p>
 				</text:section>
@@ -1061,7 +1058,7 @@
 							</text:section>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:section text:style-name="MSect2" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &#34;ИСТИНА&#34; ) AND ( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; ) )" text:display="condition">
+							<text:section text:style-name="MSect2" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &quot;ИСТИНА&quot; ) AND ( ЭтоИсходящийДокумент EQ &quot;ИСТИНА&quot; ) )" text:display="condition">
 								<table:table table:name="РегДанныеИсх" table:style-name="РегДанныеИсх">
 									<table:table-column table:style-name="РегДанныеИсх.A"/>
 									<table:table-column table:style-name="РегДанныеИсх.B"/>
