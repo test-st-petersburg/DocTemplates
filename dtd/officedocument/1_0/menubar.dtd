@@ -17,7 +17,7 @@
  *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
 -->
 
-<!ENTITY % menustyle "radio">
+<!ENTITY % menustyle "(radio|text)">
 
 <!ELEMENT menu:menubar (menu:menu+)>
 <!ELEMENT menu:menu (menu:menupopup)>
