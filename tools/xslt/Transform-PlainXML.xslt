@@ -19,6 +19,8 @@
 	default-mode="t:optimize"
 >
 
+	<xsl:variable name="t:inline-document-files-before-pack" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+
 	<xsl:mode
 		name="t:after-unpack"
 		on-no-match="fail" warning-on-no-match="yes"
@@ -78,7 +80,8 @@
 		<xsl:variable name="t:updated-complex-document" as="document-node()">
 			<xsl:apply-templates select="$t:complex-document" mode="t:update-document-meta"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$t:updated-complex-document" mode="p:create-inline-document-files"/>
+		<xsl:apply-templates select="$t:updated-complex-document" mode="p:create-inline-document-files" use-when="$t:inline-document-files-before-pack"/>
+		<xsl:apply-templates select="$t:updated-complex-document" mode="p:create-outline-document-files" use-when="not( $t:inline-document-files-before-pack )"/>
 	</xsl:template>
 
 	<xsl:template mode="t:optimize" match="/">
