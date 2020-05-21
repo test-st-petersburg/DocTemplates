@@ -19,7 +19,7 @@
 	default-mode="t:optimize"
 >
 
-	<xsl:variable name="t:inline-document-files-before-pack" as="xs:boolean" static="yes" select="false()" visibility="private"/>
+	<xsl:variable name="t:inline-document-files-before-pack" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="t:after-unpack"
