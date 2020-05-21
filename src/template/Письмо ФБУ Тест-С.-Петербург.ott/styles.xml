@@ -314,7 +314,9 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
-		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
+		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true"/>
+		</style:style>
 		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
 		</style:style>
@@ -660,7 +662,7 @@
 			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="РегДанные" style:family="table">
-			<style:table-properties style:width="5.999cm" table:align="margins" style:may-break-between-rows="false"/>
+			<style:table-properties style:width="6.001cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="РегДанные.A" style:family="table-column">
 			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
@@ -741,8 +743,8 @@
 		<style:style style:name="MSect2" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="2">
-					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.27cm"/>
-					<style:column style:rel-width="38389*" fo:start-indent="1.27cm" fo:end-indent="0cm"/>
+					<style:column style:rel-width="4252*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
+					<style:column style:rel-width="5670*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
 				</style:columns>
 			</style:section-properties>
 		</style:style>
