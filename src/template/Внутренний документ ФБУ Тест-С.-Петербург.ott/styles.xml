@@ -286,6 +286,7 @@
 		<style:style style:name="БланкВнДокНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистВнДокумента">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкВнДокКонец" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="Служебная"/>
 		<style:style style:name="БланкВнДокЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
 		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:text-properties fo:font-size="11pt"/>

@@ -76,6 +76,21 @@
 		<style:style style:name="СведенияОбОзнакомлении.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
+		<style:style style:name="Таблица1" style:family="table">
+			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="Таблица1.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
+		</style:style>
+		<style:style style:name="Таблица1.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
+		</style:style>
+		<style:style style:name="Таблица1.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
+		</style:style>
+		<style:style style:name="Таблица1.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
 		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная"/>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -363,6 +378,11 @@
 							</draw:frame> г.</text:p>
 						</table:table-cell>
 					</table:table-row>
+				</table:table>
+				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
 							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:p>
@@ -409,6 +429,11 @@
 							</draw:frame> г.</text:p>
 						</table:table-cell>
 					</table:table-row>
+				</table:table>
+				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
 							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
@@ -456,6 +481,63 @@
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
+			</text:section>
+			<text:section text:style-name="Sect1" text:name="Служебный: шаблоны">
+				<text:p text:style-name="БланкВнДокКонец"/>
+				<text:section text:style-name="Sect1" text:name="Запись сведений об ознакомлении">
+					<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+						<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Директор Новгородского филиала</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.С. Бетке</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло" text:anchor-type="as-char" draw:z-index="10">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка3" text:anchor-type="as-char" draw:z-index="12">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="13">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка5" text:anchor-type="as-char" draw:z-index="18">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:p text:style-name="ПустойАбзац"/>
 			</text:section>
 		</office:text>
 	</office:body>
