@@ -314,7 +314,9 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
-		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
+		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true"/>
+		</style:style>
 		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
 		</style:style>
