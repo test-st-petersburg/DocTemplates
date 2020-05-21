@@ -52,6 +52,7 @@
 		<style:style style:name="Список_20_приложений" style:display-name="Список приложений" style:family="paragraph" style:parent-style-name="Numbering_20_1" style:list-style-name="Нумерация_20_списка_20_приложений" style:class="list"/>
 		<style:style style:name="Addressee" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.6cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always"/>
+			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="Sender" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
 		<style:style style:name="Signature" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
