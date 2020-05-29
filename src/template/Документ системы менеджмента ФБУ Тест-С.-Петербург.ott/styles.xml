@@ -903,7 +903,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
 			<loext:footer-first>
-				<text:p text:style-name="БланкГодИздания">2019</text:p>
+				<text:p text:style-name="БланкГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:p>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">

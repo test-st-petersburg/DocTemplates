@@ -155,6 +155,7 @@
 			<text:variable-decls>
 				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
+				<text:variable-decl office:value-type="string" text:name="ГодИздания"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
@@ -239,6 +240,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
 			<text:p text:style-name="БланкДокументаСМКНачало"/>
