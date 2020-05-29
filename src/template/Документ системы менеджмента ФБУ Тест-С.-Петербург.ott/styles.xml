@@ -198,19 +198,14 @@
 		</style:style>
 		<style:style style:name="Table" style:family="paragraph" style:parent-style-name="Caption" style:class="extra"/>
 		<style:style style:name="Header_20_and_20_Footer" style:display-name="Header and Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties text:number-lines="false"/>
+			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 		</style:style>
 		<style:style style:name="Header" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
-		<style:style style:name="Header_20_left" style:display-name="Header left" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
-		<style:style style:name="Header_20_right" style:display-name="Header right" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
 		<style:style style:name="Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
-			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:font-size="7pt"/>
 		</style:style>
-		<style:style style:name="Footer_20_left" style:display-name="Footer left" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
-		<style:style style:name="Footer_20_right" style:display-name="Footer right" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
 		<style:style style:name="Index_20_Heading" style:display-name="Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
 		<style:style style:name="Index" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="index"/>
 		<style:style style:name="Index_20_Separator" style:display-name="Index Separator" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
@@ -394,6 +389,10 @@
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 		<style:style style:name="ПодписьВГрифеДата" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьДата" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+
+		<style:style style:name="БланкГодИздания" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 
@@ -723,9 +722,6 @@
 		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A2" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="MP1" style:family="paragraph" style:parent-style-name="Footer">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
 		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -867,7 +863,7 @@
 						</draw:frame>Д.И. Кудрявцев</text:p>
 						<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="Mfr6" draw:name="ДатаЧисло" text:anchor-type="as-char" draw:z-index="1">
 							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-								<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr8" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="3">
+								<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr8" draw:name="Подстрочник" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="3">
 									<draw:text-box fo:min-height="0.041cm">
 										<text:p text:style-name="Подстрочник"><text:s/></text:p>
 									</draw:text-box>
@@ -875,7 +871,7 @@
 							</draw:text-box>
 						</draw:frame>» <draw:frame draw:style-name="Mfr6" draw:name="Врезка3" text:anchor-type="as-char" draw:z-index="40">
 							<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-								<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr9" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="41">
+								<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr9" draw:name="Подстрочник" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="41">
 									<draw:text-box fo:min-height="0.041cm">
 										<text:p text:style-name="Подстрочник"><text:s/></text:p>
 									</draw:text-box>
@@ -883,7 +879,7 @@
 							</draw:text-box>
 						</draw:frame> <draw:frame draw:style-name="Mfr6" draw:name="Врезка5" text:anchor-type="as-char" draw:z-index="43">
 							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-								<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr8" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="99%" draw:z-index="44">
+								<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr8" draw:name="Подстрочник" text:anchor-type="char" svg:x="0cm" style:rel-width="99%" draw:z-index="44">
 									<draw:text-box fo:min-height="0.041cm">
 										<text:p text:style-name="Подстрочник"><text:s/></text:p>
 									</draw:text-box>
@@ -907,7 +903,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
 			<loext:footer-first>
-				<text:p text:style-name="MP1">2019</text:p>
+				<text:p text:style-name="БланкГодИздания">2019</text:p>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
