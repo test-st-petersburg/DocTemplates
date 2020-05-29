@@ -43,13 +43,43 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-Write-Verbose "$( $DestinationPath )";
-Write-Verbose "$( $DestinationFile.Count )";
-Write-Verbose "$DestinationPath.";
+<#
+	.Synopsis
+		Creates a new file or updates the modified date of an existing file.
+		See 'touch'.
+
+	.Parameter Path
+		The path of the file to create or update.
+#>
+Function Update-FileLastWriteTime {
+	[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
+	Param(
+		[Parameter( Mandatory = $True, Position = 1 )]
+		[System.String] $Path
+	)
+
+	if ( -not [System.Management.Automation.WildcardPattern]::ContainsWildcardCharacters( $Path ) ) {
+		if ( -not ( Test-Path -Path $Path ) ) {
+			New-Item -ItemType File -Path $Path `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
+			| Out-Null;
+		};
+	};
+	Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
+	| Out-Null;
+}
+
 
 [System.String[]] $NewDestinationFile = ( $SourceFolder | ForEach-Object {
 		Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
 	} );
+
+[System.String] $MarkerFileName = '.dirstate';
 
 # Synopsis: Удаляет каталоги с XML файлами
 task Clean {
@@ -82,11 +112,12 @@ foreach ( $OOFile in $DestinationFile ) {
 	$OOFilesUnpackTasks += $OOUnpackTaskName;
 	$targetFolder = Join-Path -Path $SourcePath -ChildPath $documentName;
 	$target = Join-Path -Path $targetFolder -ChildPath 'META-INF/manifest.xml';
+	$marker = Join-Path -Path $targetFolder -ChildPath $MarkerFileName;
 
 	task $OOUnpackTaskName `
 		-Inputs @( $OOFile ) `
-		-Outputs @( $target ) `
-	{
+		-Outputs @( $marker ) `
+ {
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
@@ -116,28 +147,47 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
 	$BuildAndOpenTasks += $BuildAndOpenTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse );
-	$target = @( Join-Path -Path $DestinationPath -ChildPath $documentName );
+	$target = Join-Path -Path $DestinationPath -ChildPath $documentName;
+	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
 
 	task $BuildTaskName `
 		-Inputs $prerequisites `
-		-Outputs $target `
+		-Outputs @( $target, $marker ) `
 	{
 		$localDestinationFile = $Outputs[0];
+		$marker = $Outputs[1];
+		if ( Test-Path -Path $marker ) {
+			Remove-Item -Path $marker `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		};
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
 			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		Update-FileLastWriteTime -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
 
 	task $BuildAndOpenTaskName `
 		-Inputs $prerequisites `
-		-Outputs $target `
+		-Outputs @( $target, $marker ) `
 	{
 		$localDestinationFile = $Outputs[0];
+		$marker = $Outputs[1];
+		if ( Test-Path -Path $marker ) {
+			Remove-Item -Path $marker `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		};
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
 			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		Update-FileLastWriteTime -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
