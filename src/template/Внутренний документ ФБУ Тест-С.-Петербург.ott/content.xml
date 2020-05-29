@@ -278,13 +278,13 @@
 					<table:table-column table:style-name="Подписи.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-set></text:p>
+							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
