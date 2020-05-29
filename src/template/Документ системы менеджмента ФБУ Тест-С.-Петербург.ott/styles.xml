@@ -337,7 +337,7 @@
 			<style:paragraph-properties fo:text-align="end"/>
 		</style:style>
 		<style:style style:name="БланкЗаголовокДокумента" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
-			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="1cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-size="110%" fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="БланкГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
@@ -890,7 +890,7 @@
 				</draw:frame><draw:frame draw:style-name="Mfr8" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="2">
 					<draw:text-box fo:min-height="1cm">
 						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Стандарт организации</text:variable-get></text:p>
-						<text:p text:style-name="БланкЗаголовокДокумента">Руководство по качеству<text:line-break/>испытательной лаборатории<text:line-break/>сектора специальной оценки условий труда<text:line-break/>Новгородского филиала ФБУ «Тест‑С. – Петербург»</text:p>
+						<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём</text:variable-get></text:p>
 						<text:p text:style-name="Обозначение_20_документа">СК 02‑11‑19</text:p>
 						<text:p text:style-name="Обозначение_20_документа_20_для_20_внешних_20_ссылок">СК 30428528‑01.01‑02‑2020/ред.5</text:p>
 					</draw:text-box>
