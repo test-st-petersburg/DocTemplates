@@ -146,7 +146,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 	$BuildTasks += $BuildTaskName;
 	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
 	$BuildAndOpenTasks += $BuildAndOpenTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse );
+	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
 	$target = Join-Path -Path $DestinationPath -ChildPath $documentName;
 	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
 
