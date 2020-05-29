@@ -845,7 +845,7 @@
 						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
 						</text:section>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:is-hidden="true" text:display="condition" text:protected="true">
+						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 						</text:section>
 						<text:p text:style-name="БланкОкончаниеШапки"/>
