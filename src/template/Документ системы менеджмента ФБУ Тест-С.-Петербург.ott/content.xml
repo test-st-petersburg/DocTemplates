@@ -171,6 +171,7 @@
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииПолучатель"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииРсч"/>
 				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомер"/>
+				<text:variable-decl office:value-type="string" text:name="РегистрационныйНомерВнешний"/>
 				<text:variable-decl office:value-type="string" text:name="Тема"/>
 				<text:variable-decl office:value-type="string" text:name="УтвердилДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="УтвердилПредставлениеВПодписиИП"/>
@@ -201,7 +202,8 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string">Генеральный директор</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string">Д.И. Кудрявцев</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">СК 460‑01.01‑02‑2020/ред.5</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомерВнешний" office:value-type="string"/></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
