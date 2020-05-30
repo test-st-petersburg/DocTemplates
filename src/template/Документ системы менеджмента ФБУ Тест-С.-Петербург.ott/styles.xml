@@ -280,7 +280,7 @@
 		<style:style style:name="БланкДокументаСМКНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистДокументаСМК">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="БланкДокументаСМКЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
+		<style:style style:name="БланкДокументаСМКЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац"/>
 		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:text-properties fo:font-size="11pt"/>
 		</style:style>
@@ -356,9 +356,12 @@
 		<style:style style:name="СведенияОбЭкземплярах" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
 		</style:style>
-		<style:style style:name="ЗаголовокСведенийОбОзнакомлении" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="ЗаписьОбОзнакомлении" style:class="extra">
+		<style:style style:name="ЗаголовокРазделаВизБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="ЗаписьОбОзнакомлении" style:class="extra">
 			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
+			<style:text-properties fo:text-transform="uppercase"/>
 		</style:style>
+		<style:style style:name="ЗаголовокВиз" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаВизБазовый" style:next-style-name="ЗаписьОбОзнакомлении" style:class="text"/>
+		<style:style style:name="ЗаголовокСведенийОбОзнакомлении" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаВизБазовый" style:next-style-name="ЗаписьОбОзнакомлении" style:class="text"/>
 		<style:style style:name="ЗаголовокРазделаНаТитульномЛистеБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="true" fo:text-align="center" fo:keep-together="always" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-size="110%" fo:hyphenate="false"/>

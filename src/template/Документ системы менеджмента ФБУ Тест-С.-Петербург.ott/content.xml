@@ -299,6 +299,7 @@
 			</text:section>
 			<text:p text:style-name="БланкДокументаСМКЛистСогласования"/>
 			<text:section text:style-name="Sect1" text:name="Визы">
+				<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 				<table:table table:name="Визы" table:style-name="Визы">
 					<table:table-column table:style-name="Визы.A"/>
 					<table:table-column table:style-name="Визы.B"/>
@@ -316,11 +317,8 @@
 					</table:table-row>
 				</table:table>
 			</text:section>
-			<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
-				<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
-			</text:section>
 			<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
-				<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
+				<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
 					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
 					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
@@ -371,6 +369,11 @@
 							</draw:frame> г.</text:p>
 						</table:table-cell>
 					</table:table-row>
+				</table:table>
+				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
 							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:p>
@@ -417,6 +420,11 @@
 							</draw:frame> г.</text:p>
 						</table:table-cell>
 					</table:table-row>
+				</table:table>
+				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+					<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
 					<table:table-row>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
 							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
