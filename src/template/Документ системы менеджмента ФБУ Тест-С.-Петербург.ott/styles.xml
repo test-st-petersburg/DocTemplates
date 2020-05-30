@@ -311,31 +311,13 @@
 		<style:style style:name="БланкПослеШапки" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" text:number-lines="false"/>
 		</style:style>
-		<style:style style:name="БланкРегДанные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
-			<style:text-properties fo:font-size="9pt"/>
+		<style:style style:name="БланкРегДанныеДокументаСМК" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" fo:text-align="center" loext:contextual-spacing="true" fo:keep-together="always" text:number-lines="false"/>
+			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
-		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
-		<style:style style:name="БланкРегДанныеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
-		<style:style style:name="БланкРегДанныеВПодвале" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
-			<style:text-properties fo:font-size="8pt"/>
-		</style:style>
-		<style:style style:name="БланкРегДанныеВПодвалеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеВПодвале" style:class="extra">
-			<style:paragraph-properties fo:text-align="end"/>
-		</style:style>
-		<style:style style:name="БланкРегДанныеВПодвалеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеВПодвале" style:class="extra">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
-		<style:style style:name="БланкРегДанныеДатаРегистрацииВн" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
-		<style:style style:name="БланкМестоСоставления" style:family="paragraph" style:parent-style-name="БланкРегДанныеДатаРегистрацииВн">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
-		<style:style style:name="БланкРегДанныеРегНомерВн" style:family="paragraph" style:parent-style-name="БланкРегДанныеДатаРегистрацииВн">
-			<style:paragraph-properties fo:text-align="end"/>
-		</style:style>
+		<style:style style:name="БланкРегДанныеДатаРегистрацииДокументаСМК" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеДокументаСМК" style:class="extra"/>
+		<style:style style:name="БланкРегДанныеРегНомерДокументаСМК" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеДокументаСМК" style:class="extra"/>
+		<style:style style:name="БланкРегДанныеРегНомерВнешнийДокументаСМК" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеРегНомерДокументаСМК" style:class="extra"/>
 		<style:style style:name="БланкЗаголовокДокумента" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-size="110%" fo:font-weight="bold" fo:hyphenate="false"/>
@@ -348,7 +330,6 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
 			<style:text-properties fo:color="#ffffff"/>
 		</style:style>
-		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
 		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
 			<style:paragraph-properties fo:line-height="0.7cm" fo:text-align="justify" fo:text-align-last="justify" style:justify-single-word="false"/>
 		</style:style>
@@ -407,40 +388,6 @@
 		<style:style style:name="БланкГодИздания" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
-
-		<!-- TODO: добавил, необходимо обработать -->
-		<style:style style:name="Заголовок_20_прочий" style:display-name="Заголовок прочий" style:family="paragraph" style:parent-style-name="Heading_20_1" style:next-style-name="Text_20_body" style:default-outline-level="1" style:list-style-name="">
-			<loext:graphic-properties draw:fill="none"/>
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" fo:break-before="page"/>
-			<style:text-properties fo:letter-spacing="0.106cm"/>
-		</style:style>
-		<style:style style:name="Заголовок_20_вне_20_оглавления" style:display-name="Заголовок вне оглавления" style:family="paragraph" style:parent-style-name="Заголовок_20_прочий" style:next-style-name="Основной_20_текст_20_документа" style:default-outline-level=""/>
-		<style:style style:name="Заголовок_20_предисловия" style:display-name="Заголовок предисловия" style:family="paragraph" style:parent-style-name="Заголовок_20_вне_20_оглавления" style:next-style-name="Основной_20_текст_20_документа"/>
-		<style:style style:name="Наименование_20_организации_20_в_20_колонтитулах" style:display-name="Наименование организации в колонтитулах" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Вид_20_документа_20_в_20_колонтитулах" style:display-name="Вид документа в колонтитулах" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:text-transform="uppercase" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Обозначение_20_документа_20_в_20_колонтитулах" style:display-name="Обозначение документа в колонтитулах" style:family="paragraph" style:parent-style-name="Header">
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:name="Пустой_20_абзац" style:display-name="Пустой абзац" style:family="paragraph" style:parent-style-name="Standard">
-			<loext:graphic-properties draw:fill="none"/>
-			<style:paragraph-properties fo:line-height="0.049cm" text:number-lines="false" style:snap-to-layout-grid="false"/>
-			<style:text-properties fo:font-size="6pt"/>
-		</style:style>
-		<style:style style:name="Вид_20_документа_20_на_20_титульном_20_листе" style:display-name="Вид документа на титульном листе" style:family="paragraph" style:parent-style-name="Title" style:next-style-name="Title">
-			<style:text-properties fo:font-size="14pt" fo:font-weight="normal"/>
-		</style:style>
-		<style:style style:name="Обозначение_20_документа" style:display-name="Обозначение документа" style:family="paragraph" style:parent-style-name="Subtitle">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.21cm" loext:contextual-spacing="false" fo:line-height="100%"/>
-			<style:text-properties fo:font-size="16pt"/>
-		</style:style>
-		<style:style style:name="Обозначение_20_документа_20_для_20_внешних_20_ссылок" style:display-name="Обозначение документа для внешних ссылок" style:family="paragraph" style:parent-style-name="Обозначение_20_документа" style:next-style-name="Основной_20_текст_20_документа">
-			<style:text-properties fo:font-size="11pt" fo:font-weight="normal"/>
-		</style:style>
-		<!--  -->
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" style:hidden="true"/>
 		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text" style:hidden="true"/>
 		<style:style style:name="Internet_20_link" style:display-name="Internet link" style:family="text" style:hidden="true">
@@ -527,21 +474,12 @@
 		<style:style style:name="ДатаПодписиГод" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties fo:min-width="0.4cm" fo:min-height="0.041cm"/>
 		</style:style>
-		<!-- TODO: добавил, необходимо обработать -->
-		<style:style style:name="Врезки_20_на_20_титульном_20_листе" style:display-name="Врезки на титульном листе" style:family="graphic">
-			<style:graphic-properties style:rel-width="100%" fo:min-height="0.499cm" style:protect="size position" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="page-content" style:horizontal-pos="center" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
-				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-			</style:graphic-properties>
-		</style:style>
-		<style:style style:name="Заголовок_20_на_20_титульном_20_листе" style:display-name="Заголовок на титульном листе" style:family="graphic" style:parent-style-name="Врезки_20_на_20_титульном_20_листе">
-			<style:graphic-properties style:rel-width="100%" fo:min-height="1cm" fo:margin-top="1.499cm" fo:margin-bottom="1.499cm" style:protect="size position" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="page-content" style:horizontal-pos="center" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle">
-				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-			</style:graphic-properties>
+		<style:style style:name="БланкЗаголовокДокументаСМК" style:family="graphic">
+			<style:graphic-properties style:rel-width="100%" fo:min-height="1cm" fo:margin-top="1.499cm" fo:margin-bottom="1.499cm" style:protect="size position" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="page-content" style:horizontal-pos="center" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="БланкГрифУтверждаю" style:family="graphic">
 			<style:graphic-properties svg:width="7.001cm" fo:min-height="1cm" fo:margin-top="1cm" fo:margin-bottom="2cm" style:protect="size position" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:opacity="100%" draw:textarea-vertical-align="top"/>
 		</style:style>
-		<!--  -->
 		<style:style style:name="БланкРазделРазработал" style:family="graphic" style:parent-style-name="БланкГрифУтверждаю">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page-content"/>
 		</style:style>
@@ -760,9 +698,6 @@
 		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="Заголовок_20_на_20_титульном_20_листе">
-			<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page-content" loext:rel-width-rel="paragraph"/>
-		</style:style>
 		<style:style style:name="Mfr9" style:family="graphic" style:parent-style-name="БланкРазделРазработал">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
 		</style:style>
@@ -887,12 +822,12 @@
 							</draw:text-box>
 						</draw:frame> г.</text:p>
 					</draw:text-box>
-				</draw:frame><draw:frame draw:style-name="Mfr8" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="2">
+				</draw:frame><draw:frame draw:style-name="БланкЗаголовокДокументаСМК" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="2">
 					<draw:text-box fo:min-height="1cm">
 						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Стандарт организации</text:variable-get></text:p>
 						<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём</text:variable-get></text:p>
-						<text:p text:style-name="Обозначение_20_документа">СК 02‑11‑19</text:p>
-						<text:p text:style-name="Обозначение_20_документа_20_для_20_внешних_20_ссылок">СК 30428528‑01.01‑02‑2020/ред.5</text:p>
+						<text:p text:style-name="БланкРегДанныеРегНомерДокументаСМК">СК 02‑11‑19</text:p>
+						<text:p text:style-name="БланкРегДанныеРегНомерВнешнийДокументаСМК">СК 30428528‑01.01‑02‑2020/ред.5</text:p>
 					</draw:text-box>
 				</draw:frame><draw:frame draw:style-name="Mfr9" draw:name="ПодписьРазработчика" text:anchor-type="paragraph" svg:width="7.001cm" draw:z-index="0">
 					<draw:text-box fo:min-height="1cm">
