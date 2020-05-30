@@ -830,7 +830,7 @@
 						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Стандарт организации</text:variable-get></text:p>
 						<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём</text:variable-get></text:p>
 						<text:p text:style-name="БланкРегДанныеРегНомерДокументаСМК"><text:variable-get text:name="РегистрационныйНомер">СК 460‑01.01‑02‑2020/ред.5</text:variable-get></text:p>
-						<text:p text:style-name="БланкРегДанныеРегНомерВнешнийДокументаСМК"><text:variable-get text:name="РегистрационныйНомерВнешний">СК 30428528‑01.01‑02‑2020/ред.5</text:variable-get><text:hidden-paragraph text:condition="ooow:( РегистрационныйНомерВнешний EQ &#34;&#34; )"/></text:p>
+						<text:p text:style-name="БланкРегДанныеРегНомерВнешнийДокументаСМК"><text:variable-get text:name="РегистрационныйНомерВнешний">СК 30428528‑01.01‑02‑2020/ред.5</text:variable-get><text:hidden-paragraph text:condition="ooow:( РегистрационныйНомерВнешний EQ &#34; &#34; )"/></text:p>
 					</draw:text-box>
 				</draw:frame><draw:frame draw:style-name="Mfr9" draw:name="ПодписьРазработчика" text:anchor-type="paragraph" svg:width="7.001cm" draw:z-index="0">
 					<draw:text-box fo:min-height="1cm">
