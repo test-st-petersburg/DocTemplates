@@ -67,6 +67,7 @@
 	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-attributes-with-default-values" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-soft-page-breaks" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
@@ -231,6 +232,10 @@
 		'PrinterName PrintFaxName PrinterSetup PrinterPaperFromSetup PrintPaperFromSetup PrintSingleJobs PrinterIndependentLayout AllowPrintJobCancel',
 		@config:name
 	)]"/>
+
+	<!-- удаляем некоторые несущественные элементы -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-soft-page-breaks" match="text:soft-page-break"/>
 
 	<!-- удаляем лишние аттрибуты -->
 
