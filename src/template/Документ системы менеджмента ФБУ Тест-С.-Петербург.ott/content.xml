@@ -175,11 +175,6 @@
 				<text:variable-decl office:value-type="string" text:name="Тема"/>
 				<text:variable-decl office:value-type="string" text:name="УтвердилДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="УтвердилПредставлениеВПодписиИП"/>
-				<text:variable-decl office:value-type="string" text:name="ЭтоВнутреннийДокумент"/>
-				<text:variable-decl office:value-type="string" text:name="ЭтоВходящийДокумент"/>
-				<text:variable-decl office:value-type="string" text:name="ЭтоДоговор"/>
-				<text:variable-decl office:value-type="string" text:name="ЭтоИсходящийДокумент"/>
-				<text:variable-decl office:value-type="string" text:name="ЭтоПереписка"/>
 			</text:variable-decls>
 			<text:sequence-decls>
 				<text:sequence-decl text:display-outline-level="0" text:name="Illustration" text:separation-character="."/>
@@ -191,11 +186,6 @@
 			<text:section text:style-name="Sect2" text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Положение</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Бетке С. С.</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">С. С. Бетке</text:variable-set></text:p>
