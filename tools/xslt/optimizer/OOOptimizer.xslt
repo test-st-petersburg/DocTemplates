@@ -70,6 +70,7 @@
 	<xsl:variable name="o:remove-soft-page-breaks" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:reset-page-number-in-headers-and-footers" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -335,6 +336,14 @@
 				<xsl:sort select="@text:name" data-type="text" order="ascending" case-order="upper-first" />
 			</xsl:apply-templates>
 		</xsl:copy>
+	</xsl:template>
+
+	<!-- сброс номера страницы в колонтитулах мастер-страниц -->
+
+	<xsl:template mode="o:optimize" use-when="$o:reset-page-number-in-headers-and-footers" match="
+		style:header//text:page-number[ @text:select-page = 'current' ]/text()
+	">
+		<xsl:text>0</xsl:text>
 	</xsl:template>
 
 </xsl:package>
