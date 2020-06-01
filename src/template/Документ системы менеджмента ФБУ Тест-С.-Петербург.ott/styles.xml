@@ -480,7 +480,7 @@
 			<style:graphic-properties fo:min-width="0.4cm" fo:min-height="0.041cm"/>
 		</style:style>
 		<style:style style:name="БланкЗаголовокДокументаСМК" style:family="graphic">
-			<style:graphic-properties style:rel-width="100%" fo:min-height="1cm" fo:margin-top="1.499cm" fo:margin-bottom="1.499cm" style:protect="size position" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="page-content" style:horizontal-pos="center" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
+			<style:graphic-properties style:rel-width="100%" fo:min-height="1cm" fo:margin-top="1.499cm" fo:margin-bottom="1.499cm" style:protect="size position" style:wrap="none" style:vertical-pos="middle" style:vertical-rel="page" style:horizontal-pos="center" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
 		</style:style>
 		<style:style style:name="БланкГрифУтверждаю" style:family="graphic">
 			<style:graphic-properties svg:width="7.001cm" fo:min-height="1cm" fo:margin-top="1cm" fo:margin-bottom="2cm" style:protect="size position" style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="page-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:opacity="100%" draw:textarea-vertical-align="top"/>
@@ -704,7 +704,7 @@
 			<style:graphic-properties style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="БланкЗаголовокДокументаСМК">
-			<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page-content" loext:rel-width-rel="paragraph"/>
+			<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr9" style:family="graphic" style:parent-style-name="БланкРазделРазработал">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
