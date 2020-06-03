@@ -9,7 +9,7 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 	dim textField as object
 	dim fieldId as string
 	
-	document   = ThisComponent
+	document = ThisComponent
 
 	fieldId = "com.sun.star.text.fieldmaster.SetExpression" + "." + name
 	if document.TextFieldMasters.hasByName(fieldId) then
@@ -25,10 +25,10 @@ end sub
 rem ----------------------------------------------------------------------
 rem Обновляем поля при открытии документа
 rem ----------------------------------------------------------------------
-sub onDocOpen()
+sub updateAllFields()
 	dim document as object
 	
-	document   = ThisComponent
+	document = ThisComponent
 
 	document.getTextFields().refresh()
 
