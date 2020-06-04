@@ -844,9 +844,6 @@
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
-			<style:header-left>
-				<text:p text:style-name="Header"/>
-			</style:header-left>
 			<loext:header-first>
 				<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="6">
 					<draw:text-box fo:min-height="1.7cm">
@@ -928,12 +925,6 @@
 			<style:footer>
 				<text:p text:style-name="Footer"/>
 			</style:footer>
-			<style:footer-left>
-				<text:p text:style-name="Footer"/>
-			</style:footer-left>
-			<loext:footer-first>
-				<text:p text:style-name="Footer"/>
-			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
 			<style:header>
