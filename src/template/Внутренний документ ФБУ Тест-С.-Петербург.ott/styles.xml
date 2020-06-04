@@ -939,7 +939,7 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Гриф утверждения" text:condition="ooow:УтвердилПредставлениеВПодписиИП EQ &#34;&#34;" text:display="condition">
+				<text:section text:style-name="MSect3" text:name="Гриф утверждения" text:condition="ooow:УтвердилПредставлениеВПодписиИП EQ &#34;&#34;" text:is-hidden="true" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
