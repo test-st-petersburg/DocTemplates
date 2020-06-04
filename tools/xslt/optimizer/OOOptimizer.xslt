@@ -341,7 +341,7 @@
 	<!-- сброс номера страницы в колонтитулах мастер-страниц -->
 
 	<xsl:template mode="o:optimize" use-when="$o:reset-page-number-in-headers-and-footers" match="
-		style:header//text:page-number[ @text:select-page = 'current' ]/text()
+		style:master-page//text:page-number[ @text:select-page = 'current' ]/text()
 	">
 		<xsl:text>0</xsl:text>
 	</xsl:template>
