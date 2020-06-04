@@ -54,7 +54,7 @@
 		</style:style>
 		<style:style style:name="Sender" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
 		<style:style style:name="Signature" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
-			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-with-next="always"/>
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always" fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="Подпись_3a__20_ФИО" style:display-name="Подпись: ФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
@@ -76,7 +76,9 @@
 		<style:style style:name="ПодписьДатаГод" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьДата" style:class="extra">
 			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
-		<style:style style:name="Виза" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text"/>
+		<style:style style:name="Виза" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
+			<style:paragraph-properties text:number-lines="false"/>
+		</style:style>
 		<style:style style:name="ВизаДолжность" style:family="paragraph" style:parent-style-name="Виза" style:class="text"/>
 		<style:style style:name="ВизаФИО" style:family="paragraph" style:parent-style-name="Виза" style:class="text">
 			<style:paragraph-properties fo:text-align="start"/>
@@ -169,28 +171,32 @@
 		<style:style style:name="КонецКолонки" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:break-after="column"/>
 		</style:style>
+		<style:style style:name="КонецСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:break-after="page"/>
+		</style:style>
+		<style:style style:name="НачалоСлужебнойСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Preformatted_20_Text" style:class="extra" style:master-page-name="Служебная"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
-		<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph" style:parent-style-name="Heading_20_2" style:next-style-name="Основной" style:default-outline-level="1" style:class="text">
-			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false"/>
-			<style:text-properties fo:font-size="105%"/>
+		<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph" style:parent-style-name="Heading_20_2" style:next-style-name="Основной" style:default-outline-level="1" style:list-style-name="Numbering_20_123" style:class="text">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:text-align="center" fo:text-indent="0cm" style:auto-text-indent="false"/>
+			<style:text-properties fo:text-transform="uppercase" fo:font-size="105%"/>
 		</style:style>
-		<style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph" style:parent-style-name="Heading_20_3" style:next-style-name="Основной" style:default-outline-level="2" style:class="text">
+		<style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph" style:parent-style-name="Heading_20_3" style:next-style-name="Основной" style:default-outline-level="2" style:list-style-name="Numbering_20_123" style:class="text">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false"/>
 			<style:text-properties fo:font-size="105%"/>
 		</style:style>
-		<style:style style:name="Heading_20_3" style:display-name="Heading 3" style:family="paragraph" style:parent-style-name="Heading_20_4" style:next-style-name="Основной" style:default-outline-level="3" style:class="text">
+		<style:style style:name="Heading_20_3" style:display-name="Heading 3" style:family="paragraph" style:parent-style-name="Heading_20_4" style:next-style-name="Основной" style:default-outline-level="3" style:list-style-name="Numbering_20_123" style:class="text">
 			<style:text-properties fo:font-weight="bold"/>
 		</style:style>
-		<style:style style:name="Heading_20_4" style:display-name="Heading 4" style:family="paragraph" style:parent-style-name="Heading_20_5" style:next-style-name="Основной" style:default-outline-level="4" style:class="text"/>
-		<style:style style:name="Heading_20_5" style:display-name="Heading 5" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_6" style:next-style-name="Основной" style:default-outline-level="5" style:class="text"/>
-		<style:style style:name="Heading_20_6" style:display-name="Heading 6" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_7" style:next-style-name="Основной" style:default-outline-level="6" style:class="text"/>
-		<style:style style:name="Heading_20_7" style:display-name="Heading 7" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_8" style:next-style-name="Основной" style:default-outline-level="7" style:class="text"/>
-		<style:style style:name="Heading_20_8" style:display-name="Heading 8" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_9" style:next-style-name="Основной" style:default-outline-level="8" style:class="text"/>
-		<style:style style:name="Heading_20_9" style:display-name="Heading 9" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_10" style:next-style-name="Основной" style:default-outline-level="9" style:class="text"/>
-		<style:style style:name="Heading_20_10" style:display-name="Heading 10" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:default-outline-level="10" style:class="text"/>
+		<style:style style:name="Heading_20_4" style:display-name="Heading 4" style:family="paragraph" style:parent-style-name="Heading_20_5" style:next-style-name="Основной" style:default-outline-level="4" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_5" style:display-name="Heading 5" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_6" style:next-style-name="Основной" style:default-outline-level="5" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_6" style:display-name="Heading 6" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_7" style:next-style-name="Основной" style:default-outline-level="6" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_7" style:display-name="Heading 7" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_8" style:next-style-name="Основной" style:default-outline-level="7" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_8" style:display-name="Heading 8" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_9" style:next-style-name="Основной" style:default-outline-level="8" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_9" style:display-name="Heading 9" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading_20_10" style:next-style-name="Основной" style:default-outline-level="9" style:list-style-name="Numbering_20_123" style:class="text"/>
+		<style:style style:name="Heading_20_10" style:display-name="Heading 10" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:default-outline-level="10" style:list-style-name="Numbering_20_123" style:class="text"/>
 		<style:style style:name="Title" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Subtitle" style:class="chapter"/>
 		<style:style style:name="Subtitle" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:class="chapter"/>
 		<style:style style:name="Salutation" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
@@ -203,19 +209,14 @@
 		</style:style>
 		<style:style style:name="Table" style:family="paragraph" style:parent-style-name="Caption" style:class="extra"/>
 		<style:style style:name="Header_20_and_20_Footer" style:display-name="Header and Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties text:number-lines="false"/>
+			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 		</style:style>
 		<style:style style:name="Header" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
-		<style:style style:name="Header_20_left" style:display-name="Header left" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
-		<style:style style:name="Header_20_right" style:display-name="Header right" style:family="paragraph" style:hidden="true" style:parent-style-name="Header" style:class="extra"/>
 		<style:style style:name="Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
-			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:font-size="7pt"/>
 		</style:style>
-		<style:style style:name="Footer_20_left" style:display-name="Footer left" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
-		<style:style style:name="Footer_20_right" style:display-name="Footer right" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra"/>
 		<style:style style:name="Index_20_Heading" style:display-name="Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
 		<style:style style:name="Index" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="index"/>
 		<style:style style:name="Index_20_Separator" style:display-name="Index Separator" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
@@ -319,7 +320,7 @@
 		</style:style>
 		<style:style style:name="БланкРегДанные" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
-			<style:text-properties fo:font-size="9pt"/>
+			<style:text-properties fo:font-size="9pt" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
 		<style:style style:name="БланкРегДанныеПоля" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra">
@@ -379,10 +380,42 @@
 			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="СведенияОбЭкземплярах" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 		</style:style>
-		<style:style style:name="ЗаголовокСведенийОбОзнакомлении" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="ЗаписьОбОзнакомлении" style:class="extra">
-			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
+		<style:style style:name="ЗаголовокРазделаВизБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="ЗаписьОбОзнакомлении" style:class="extra">
+			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
+			<style:text-properties fo:text-transform="uppercase"/>
+		</style:style>
+		<style:style style:name="ЗаголовокВиз" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаВизБазовый" style:class="text"/>
+		<style:style style:name="ЗаголовокСведенийОбОзнакомлении" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаВизБазовый" style:next-style-name="ЗаписьОбОзнакомлении" style:class="text"/>
+		<style:style style:name="ЗаголовокРазделаНаТитульномЛистеБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="true" fo:text-align="center" fo:keep-together="always" fo:keep-with-next="always" text:number-lines="false"/>
+			<style:text-properties fo:font-size="110%" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="ГрифБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаНаТитульномЛистеБазовый" style:next-style-name="ПодписьВГрифеДолжность" style:class="extra">
+			<style:text-properties fo:text-transform="uppercase" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="ГрифУтверждаю" style:family="paragraph" style:hidden="true" style:parent-style-name="ГрифБазовый" style:next-style-name="ПодписьВГрифеДолжность" style:class="text"/>
+		<style:style style:name="ГрифСогласовано" style:family="paragraph" style:hidden="true" style:parent-style-name="ГрифБазовый" style:next-style-name="ПодписьВГрифеДолжность" style:class="text"/>
+		<style:style style:name="ЗаголовокРазработал" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаНаТитульномЛистеБазовый" style:next-style-name="ПодписьВГрифеДолжность" style:class="text">
+			<style:text-properties text:display="none"/>
+		</style:style>
+		<style:style style:name="ПодписьВГрифеБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:keep-with-next="always"/>
+		</style:style>
+		<style:style style:name="ПодписьВГрифеДолжность" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьВГрифеБазовый" style:next-style-name="ПодписьВГрифеПодписьИФИО" style:class="text"/>
+		<style:style style:name="ПодписьВГрифеПодписьИФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:next-style-name="ПодписьДатаМесяц" style:class="text">
+			<style:paragraph-properties fo:text-align="center">
+				<style:tab-stops>
+					<style:tab-stop style:position="7.001cm" style:type="right" style:leader-style="solid" style:leader-text="_"/>
+				</style:tab-stops>
+			</style:paragraph-properties>
+		</style:style>
+		<style:style style:name="ПодписьВГрифеДата" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьДата" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
+		<style:style style:name="БланкГодИздания" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" style:hidden="true"/>
 		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text" style:hidden="true"/>
@@ -449,14 +482,17 @@
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
+		<style:style style:name="Логотип" style:family="graphic">
+			<style:graphic-properties fo:min-width="1cm" fo:min-height="1cm" fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" style:protect="content" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="page" style:horizontal-pos="center" style:horizontal-rel="page-content" draw:opacity="100%"/>
+		</style:style>
 		<style:style style:name="БланкПолеСПодстрочникомВТексте" style:family="graphic">
 			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" text:anchor-type="paragraph" style:protect="size position" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" draw:opacity="100%"/>
 		</style:style>
 		<style:style style:name="БланкПодстрочникПоляВТексте" style:family="graphic">
-			<style:graphic-properties svg:width="0.041cm" fo:min-height="0.041cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page-content" draw:opacity="100%"/>
+			<style:graphic-properties style:rel-width="100%" fo:min-height="0.041cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" draw:opacity="100%" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="Логотип" style:family="graphic">
-			<style:graphic-properties fo:min-width="1cm" fo:min-height="1cm" fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.199cm" style:protect="content" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="page" style:horizontal-pos="center" style:horizontal-rel="page-content" draw:opacity="100%"/>
+		<style:style style:name="ПолеПодписиВТексте" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties fo:min-width="4.001cm" fo:min-height="0.041cm"/>
 		</style:style>
 		<style:style style:name="ДатаПодписиЧисло" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties fo:min-width="0.6cm" fo:min-height="0.041cm"/>
@@ -488,32 +524,32 @@
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="5" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="5" style:num-suffix="." style:num-format="1" text:display-levels="5">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="6" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="6" style:num-suffix="." style:num-format="1" text:display-levels="6">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="7" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="7" style:num-suffix="." style:num-format="1" text:display-levels="7">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="8" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="8" style:num-suffix="." style:num-format="1" text:display-levels="8">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="9" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="9" style:num-suffix="." style:num-format="1" text:display-levels="9">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
 			</text:outline-level-style>
-			<text:outline-level-style text:level="10" style:num-format="" text:display-levels="1">
+			<text:outline-level-style text:level="10" style:num-suffix="." style:num-format="1" text:display-levels="10">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
@@ -571,11 +607,6 @@
 				</style:list-level-properties>
 			</text:list-level-style-number>
 		</text:list-style>
-		<text:list-style style:name="Numbering_20_ABC" style:display-name="Numbering ABC" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_abc" style:display-name="Numbering abc" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_IVX" style:display-name="Numbering IVX" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_ivx" style:display-name="Numbering ivx" style:hidden="true"/>
-		<text:list-style style:name="List_20_1" style:display-name="List 1" style:hidden="true"/>
 		<text:list-style style:name="List_20_2" style:display-name="List 2">
 			<text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
@@ -638,13 +669,6 @@
 				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 		</text:list-style>
-		<text:list-style style:name="List_20_3" style:display-name="List 3" style:hidden="true"/>
-		<text:list-style style:name="List_20_4" style:display-name="List 4" style:hidden="true"/>
-		<text:list-style style:name="List_20_5" style:display-name="List 5" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_2" style:display-name="Numbering 2" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_3" style:display-name="Numbering 3" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_4" style:display-name="Numbering 4" style:hidden="true"/>
-		<text:list-style style:name="Numbering_20_5" style:display-name="Numbering 5" style:hidden="true"/>
 		<text:list-style style:name="Нумерация_20_списка_20_приложений" style:display-name="Нумерация списка приложений">
 			<text:list-level-style-number text:level="1" style:num-suffix="." style:num-format="1" text:display-levels="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
@@ -812,23 +836,6 @@
 				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
 			</style:footer-style>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm4">
-			<style:page-layout-properties fo:page-width="29.7cm" fo:page-height="21.001cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
-				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-			</style:page-layout-properties>
-			<style:header-style/>
-			<style:footer-style/>
-		</style:page-layout>
-		<style:page-layout style:name="Mpm5">
-			<style:page-layout-properties fo:page-width="22.901cm" fo:page-height="11.4cm" style:num-format="1" style:print-orientation="landscape" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
-				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-			</style:page-layout-properties>
-			<style:header-style/>
-			<style:footer-style/>
-		</style:page-layout>
-		<number:number-style style:name="N0">
-			<number:number number:min-integer-digits="1"/>
-		</number:number-style>
 	</office:automatic-styles>
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
@@ -879,8 +886,8 @@
 						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
 							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
 						</text:section>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:is-hidden="true" text:display="condition" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка" style:data-style-name="N0">Новгородский филиал</text:variable-get></text:p>
+						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
+							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 						</text:section>
 						<text:p text:style-name="БланкОкончаниеШапки"/>
 					</draw:text-box>
@@ -941,7 +948,7 @@
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
 			<loext:header-first>
-				<text:p text:style-name="Header"><text:page-number text:select-page="current">2</text:page-number></text:p>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</loext:header-first>
 			<style:footer>
 				<text:p text:style-name="Footer"/>
@@ -992,14 +999,5 @@
 				</table:table>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="Landscape" style:hidden="true" style:page-layout-name="Mpm4"/>
-		<style:master-page style:name="Envelope" style:hidden="true" style:page-layout-name="Mpm5"/>
-		<style:master-page style:name="Endnote" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="Left_20_Page" style:hidden="true" style:display-name="Left Page" style:page-layout-name="Mpm1" style:next-style-name="Right_20_Page"/>
-		<style:master-page style:name="Right_20_Page" style:hidden="true" style:display-name="Right Page" style:page-layout-name="Mpm1" style:next-style-name="Left_20_Page"/>
-		<style:master-page style:name="First_20_Page" style:hidden="true" style:display-name="First Page" style:page-layout-name="Mpm1" style:next-style-name="Standard"/>
-		<style:master-page style:name="Footnote" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="Index" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="HTML" style:hidden="true" style:page-layout-name="Mpm1"/>
 	</office:master-styles>
 </office:document-styles>
