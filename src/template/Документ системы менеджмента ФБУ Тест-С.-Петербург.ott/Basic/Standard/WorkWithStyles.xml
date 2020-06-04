@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><script:module xmlns:script="http://openoffice.org/2000/script" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" script:name="WorkWithStyles" script:language="StarBasic" script:moduleType="normal">
+REM  *****  BASIC  *****
+
+rem ----------------------------------------------------------------------
+rem Изменение межсточного интервала для основного текста
+rem ----------------------------------------------------------------------
+sub setDocTextLineSpacing(ByVal value as integer) ' в процентах
+	dim document as object
+	document   = ThisComponent
+
+	dim newParaLineSpacingSettings as new com.sun.star.style.LineSpacing
+	newParaLineSpacingSettings.Mode = com.sun.star.style.LineSpacingMode.PROP
+	newParaLineSpacingSettings.Height = value
+	document.StyleFamilies.getByName("ParagraphStyles").getByName("Text body").ParaLineSpacing = newParaLineSpacingSettings
+end sub
+
+sub setDocTextLineSpacing150
+	setDocTextLineSpacing(150)
+end sub
+
+sub setDocTextLineSpacing115
+	setDocTextLineSpacing(115)
+end sub
+
+sub setDocTextLineSpacing100
+	setDocTextLineSpacing(100)
+end sub
+</script:module>
