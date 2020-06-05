@@ -284,10 +284,10 @@
 			<style:map style:condition="list-level()=9" style:apply-style-name="Numbering_20_1"/>
 			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
 		</style:style>
-		<style:style style:name="БланкВнДокНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистВнДокумента">
+		<style:style style:name="БланкВнДокНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкСтраница1">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="БланкВнДокЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
+		<style:style style:name="БланкВнДокЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац"/>
 		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:text-properties fo:font-size="11pt"/>
 		</style:style>
@@ -786,16 +786,16 @@
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr7" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
 		<style:style style:name="Mfr8" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph"/>
+			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 		</style:style>
 		<style:style style:name="Mfr9" style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
 		<style:style style:name="Mfr10" style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
 		<style:style style:name="Mfr11" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -828,15 +828,21 @@
 				</style:columns>
 			</style:section-properties>
 		</style:style>
-		<style:page-layout style:name="Mpm1" style:page-usage="mirrored">
-			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
-				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+		<style:page-layout style:name="Mpm1">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:footnote-max-height="0cm">
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
 			<style:header-style/>
 			<style:footer-style/>
 		</style:page-layout>
 		<style:page-layout style:name="Mpm2" style:page-usage="mirrored">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style/>
+			<style:footer-style/>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 			</style:page-layout-properties>
@@ -847,7 +853,19 @@
 				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
 			</style:footer-style>
 		</style:page-layout>
-		<style:page-layout style:name="Mpm3" style:page-usage="mirrored">
+		<style:page-layout style:name="Mpm4" style:page-usage="left">
+			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="1cm" fo:margin-right="2.499cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+			</style:page-layout-properties>
+			<style:header-style>
+				<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+			</style:header-style>
+			<style:footer-style>
+				<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+			</style:footer-style>
+		</style:page-layout>
+		<style:page-layout style:name="Mpm5" style:page-usage="right">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.706cm" style:layout-grid-ruby-height="0.353cm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0cm">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 				<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
@@ -862,8 +880,8 @@
 	</office:automatic-styles>
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="БланкПервыйЛистВнДокумента" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыВнДокумента">
+		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm2"/>
+		<style:master-page style:name="БланкСтраница1" style:page-layout-name="Mpm3" style:next-style-name="БланкСтраница2">
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
@@ -982,35 +1000,15 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<text:p text:style-name="Footer"/>
-			</loext:footer-first>
-		</style:master-page>
-		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
-			<style:header>
-				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
-			</style:header>
-			<style:footer>
-				<text:p text:style-name="Footer"/>
-			</style:footer>
-		</style:master-page>
-		<style:master-page style:name="БланкЛистыСогласования" style:page-layout-name="Mpm3">
-			<style:header>
-				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
-			</style:header>
-			<loext:header-first>
-				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
-			</loext:header-first>
-			<style:footer>
-				<text:p text:style-name="Footer"/>
-			</style:footer>
-			<loext:footer-first>
 				<table:table table:name="Подвал" table:style-name="Подвал">
 					<table:table-column table:style-name="Подвал.A"/>
 					<table:table-column table:style-name="Подвал.B"/>
 					<table:table-column table:style-name="Подвал.C"/>
 					<table:table-row table:style-name="Подвал.1">
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get>
+								<text:hidden-paragraph text:condition="ooow:NOT( ( page == 1 ) OR ( page == 2 ) )"/>
+							</text:p>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Сведения о деле">
@@ -1048,6 +1046,86 @@
 					</table:table-row>
 				</table:table>
 			</loext:footer-first>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница2" style:page-layout-name="Mpm4" style:next-style-name="БланкСтраница3">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница3" style:page-layout-name="Mpm5" style:next-style-name="БланкСтраница4">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get>
+					<text:hidden-paragraph text:condition="ooow:NOT( ( page == 3 ) OR ( page == 4 ) )"/>
+				</text:p>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница4" style:page-layout-name="Mpm4" style:next-style-name="БланкСтраница5">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница5" style:page-layout-name="Mpm5" style:next-style-name="БланкСтраница6">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get>
+					<text:hidden-paragraph text:condition="ooow:NOT( ( page == 5 ) OR ( page == 6 ) )"/>
+				</text:p>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница6" style:page-layout-name="Mpm4" style:next-style-name="БланкСтраница7">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница7" style:page-layout-name="Mpm5" style:next-style-name="БланкСтраница8">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get>
+					<text:hidden-paragraph text:condition="ooow:NOT( ( page == 7 ) OR ( page == 8 ) )"/>
+				</text:p>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница8" style:page-layout-name="Mpm4" style:next-style-name="БланкСтраница9">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница9" style:page-layout-name="Mpm5" style:next-style-name="БланкСтраница10">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get>
+					<text:hidden-paragraph text:condition="ooow:NOT( ( page == 7 ) OR ( page == 8 ) )"/>
+				</text:p>
+			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкСтраница10" style:page-layout-name="Mpm4" style:next-style-name="БланкСтраница9">
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
 		</style:master-page>
 	</office:master-styles>
 </office:document-styles>
