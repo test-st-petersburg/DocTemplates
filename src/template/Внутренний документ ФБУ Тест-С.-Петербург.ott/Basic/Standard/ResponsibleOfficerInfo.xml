@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><script:module xmlns:script="http://openoffice.org/2000/script" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" script:name="ResponsibleOfficerInfo" script:language="StarBasic" script:moduleType="normal">
+REM  *****  BASIC  *****
+
+rem ----------------------------------------------------------------------
+rem Перемещение сведений об исполнителе при изменении количества страниц
+rem ----------------------------------------------------------------------
+sub updateResponsibleOfficerInfoLocation()
+	dim document as object
+	document = ThisComponent
+	
+	dim frame as object
+	dim frameName as string
+	frameName = "СведенияОбИсполнителе"
+	dim lastPageNumber as integer
+	if document.TextFrames.hasByName( frameName ) then
+		frame = document.TextFrames.getByName( frameName )
+		lastPageNumber = document.CurrentController.PageCount
+		frame.AnchorPageNo = lastPageNumber
+	end if
+
+end sub
+</script:module>

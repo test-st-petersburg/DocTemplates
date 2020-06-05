@@ -6,6 +6,7 @@
 		<office:event-listeners>
 			<script:event-listener script:language="ooo:script" script:event-name="office:save" xlink:href="vnd.sun.star.script:Standard.Common.updateAllFields?language=Basic&amp;location=document" xlink:type="simple"/>
 			<script:event-listener script:language="ooo:script" script:event-name="office:print" xlink:href="vnd.sun.star.script:Standard.Common.updateAllFields?language=Basic&amp;location=document" xlink:type="simple"/>
+			<script:event-listener script:language="ooo:script" script:event-name="office:page-count-change" xlink:href="vnd.sun.star.script:Standard.ResponsibleOfficerInfo.updateResponsibleOfficerInfoLocation?language=Basic&amp;location=document" xlink:type="simple"/>
 		</office:event-listeners>
 	</office:scripts>
 	<office:font-face-decls>
@@ -93,42 +94,45 @@
 		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкСведенияОбИсполнителе">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="page"/>
 		</style:style>
 		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="ДатаПодписиГод">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph"/>
+		<style:style style:name="fr10" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+			<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr10" style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+		<style:style style:name="fr11" style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr11" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline"/>
+		<style:style style:name="fr12" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
+			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr12" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
+		<style:style style:name="fr13" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 		</style:style>
-		<style:style style:name="fr13" style:family="graphic" style:parent-style-name="Frame">
+		<style:style style:name="fr14" style:family="graphic" style:parent-style-name="Frame">
 			<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:graphic-properties>
 		</style:style>
-		<style:style style:name="fr14" style:family="graphic" style:parent-style-name="Frame">
+		<style:style style:name="fr15" style:family="graphic" style:parent-style-name="Frame">
 			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
 		</style:style>
-		<style:style style:name="fr15" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+		<style:style style:name="fr16" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 		</style:style>
-		<style:style style:name="fr16" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
+		<style:style style:name="fr17" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 			<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 		</style:style>
 		<style:style style:name="Sect1" style:family="section">
@@ -137,6 +141,11 @@
 			</style:section-properties>
 		</style:style>
 		<style:style style:name="Sect2" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Sect3" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="3">
 					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
@@ -145,7 +154,7 @@
 				</style:columns>
 			</style:section-properties>
 		</style:style>
-		<style:style style:name="Sect3" style:family="section">
+		<style:style style:name="Sect4" style:family="section">
 			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 				<style:columns fo:column-count="2">
 					<style:column style:rel-width="4961*" fo:start-indent="0cm" fo:end-indent="1.75cm"/>
@@ -211,6 +220,11 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Drawing" text:separation-character="."/>
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
 			</text:sequence-decls>
+			<draw:frame draw:style-name="fr5" draw:name="СведенияОбИсполнителе" text:anchor-type="page" text:anchor-page-number="2" svg:width="9.999cm" draw:z-index="14">
+				<draw:text-box fo:min-height="0.499cm">
+					<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+				</draw:text-box>
+			</draw:frame>
 			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Приказ</text:variable-set></text:p>
@@ -299,7 +313,7 @@
 					<text:p text:style-name="Numbering_20_1">Контроль за исполнением настоящего приказа оставляю за собой.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:section text:style-name="Sect1" text:name="Подписи">
+			<text:section text:style-name="Sect2" text:name="Подписи">
 				<table:table table:name="Подписи" table:style-name="Подписи">
 					<table:table-column table:style-name="Подписи.A"/>
 					<table:table-column table:style-name="Подписи.B"/>
@@ -318,7 +332,7 @@
 				</table:table>
 			</text:section>
 			<text:p text:style-name="БланкВнДокЛистСогласования"/>
-			<text:section text:style-name="Sect1" text:name="Визы">
+			<text:section text:style-name="Sect2" text:name="Визы">
 				<table:table table:name="Визы" table:style-name="Визы">
 					<table:table-column table:style-name="Визы.A"/>
 					<table:table-column table:style-name="Визы.B"/>
@@ -336,10 +350,10 @@
 					</table:table-row>
 				</table:table>
 			</text:section>
-			<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
+			<text:section text:style-name="Sect2" text:name="Сведения об экземплярах">
 				<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
 			</text:section>
-			<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
+			<text:section text:style-name="Sect2" text:name="Сведения об ознакомлении">
 				<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
 				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
 					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
@@ -364,17 +378,17 @@
 							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
 						</table:table-cell>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="19">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="20">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
 									</draw:frame></text:p>
 								</draw:text-box>
-							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="21">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="23">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
@@ -426,9 +440,9 @@
 										</draw:text-box>
 									</draw:frame></text:p>
 								</draw:text-box>
-							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка10" text:anchor-type="as-char" draw:z-index="30">
+							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка10" text:anchor-type="as-char" draw:z-index="31">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка11" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="31">
+									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка11" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="32">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
@@ -456,25 +470,25 @@
 							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
 						</table:table-cell>
 						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка12" text:anchor-type="as-char" draw:z-index="32">
+							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка12" text:anchor-type="as-char" draw:z-index="33">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка13" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="33">
+									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка13" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="34">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
 									</draw:frame></text:p>
 								</draw:text-box>
-							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка14" text:anchor-type="as-char" draw:z-index="34">
+							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка14" text:anchor-type="as-char" draw:z-index="35">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка15" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="35">
+									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка15" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="36">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
 									</draw:frame></text:p>
 								</draw:text-box>
-							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка16" text:anchor-type="as-char" draw:z-index="36">
+							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка16" text:anchor-type="as-char" draw:z-index="37">
 								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка17" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="37">
+									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка17" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="38">
 										<draw:text-box fo:min-height="0.041cm">
 											<text:p text:style-name="Подстрочник"><text:s/></text:p>
 										</draw:text-box>
