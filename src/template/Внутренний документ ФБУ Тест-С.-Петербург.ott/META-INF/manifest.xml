@@ -5,7 +5,8 @@
 	<manifest:file-entry manifest:full-path="/" manifest:version="1.2" manifest:media-type="application/vnd.oasis.opendocument.text-template"/>
 	<manifest:file-entry manifest:full-path="Basic/script-lc.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/Common.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Basic/Standard/ResponsibleOfficerInfo.xml" manifest:media-type="text/xml"/>
+	<manifest:file-entry manifest:full-path="Basic/Standard/EventHandlers.xml" manifest:media-type="text/xml"/>
+	<manifest:file-entry manifest:full-path="Basic/Standard/GOST_R_7_0_97.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/script-lb.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/WorkWithLetterheads.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/WorkWithStyles.xml" manifest:media-type="text/xml"/>
