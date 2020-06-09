@@ -212,6 +212,9 @@
 		<style:style style:name="Footer" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
 			<style:text-properties fo:font-size="7pt"/>
 		</style:style>
+		<style:style style:name="БланкТитульныйЛистМестоИГодИздания" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
+			<style:paragraph-properties fo:text-align="center"/>
+		</style:style>
 		<style:style style:name="Index_20_Heading" style:display-name="Index Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:class="index"/>
 		<style:style style:name="Index" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="index"/>
 		<style:style style:name="Index_20_Separator" style:display-name="Index Separator" style:family="paragraph" style:hidden="true" style:parent-style-name="Index" style:class="index"/>
@@ -390,9 +393,6 @@
 		<style:style style:name="ПодписьВГрифеДата" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьДата" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
-		<style:style style:name="БланкГодИздания" style:family="paragraph" style:hidden="true" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
-			<style:paragraph-properties fo:text-align="center"/>
-		</style:style>
 		<style:style style:name="Numbering_20_Symbols" style:display-name="Numbering Symbols" style:family="text" style:hidden="true"/>
 		<style:style style:name="Bullet_20_Symbols" style:display-name="Bullet Symbols" style:family="text" style:hidden="true"/>
 		<style:style style:name="Internet_20_link" style:display-name="Internet link" style:family="text" style:hidden="true">
@@ -417,6 +417,8 @@
 			<style:text-properties style:text-scale="60%"/>
 		</style:style>
 		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true"/>
+		<style:style style:name="БланкТитульныйЛистМестоСоставления" style:family="text" style:hidden="true"/>
+		<style:style style:name="БланкТитульныйЛистГодИздания" style:family="text" style:hidden="true"/>
 		<style:style style:name="Frame" style:family="graphic">
 			<style:graphic-properties text:anchor-type="paragraph" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content"/>
 		</style:style>
@@ -877,7 +879,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
 			<loext:footer-first>
-				<text:p text:style-name="БланкГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:p>
+				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:span> &#8212; <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
