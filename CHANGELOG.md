@@ -10,10 +10,6 @@
 - переименована библиотека макросов в `TestStPetersburg`
   (Письмо)
   [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
-- добавлена библиотека макросов, переносимая исключительно в шаблоне документа -
-  `TemplateLib`
-  (Письмо)
-  [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
 
 ## 1.8.2
 
