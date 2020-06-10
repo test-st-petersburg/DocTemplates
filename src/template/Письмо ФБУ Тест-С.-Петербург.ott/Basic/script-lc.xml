@@ -2,5 +2,5 @@
 <!DOCTYPE library:libraries
   PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "libraries.dtd">
 <library:libraries xmlns:library="http://openoffice.org/2000/library" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0">
-	<library:library library:name="Standard" library:link="false"/>
+	<library:library library:name="TestStPetersburg" library:link="false"/>
 </library:libraries>
