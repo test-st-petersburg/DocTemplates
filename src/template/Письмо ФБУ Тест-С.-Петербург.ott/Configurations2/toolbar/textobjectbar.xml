@@ -59,9 +59,9 @@
 	<toolbar:toolbaritem xlink:href=".uno:DecrementIndent" toolbar:visible="false"/>
 	<toolbar:toolbarseparator/>
 	<toolbar:toolbaritem xlink:href=".uno:LineSpacing" toolbar:visible="false"/>
-	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing150?language=Basic&amp;location=document" toolbar:text="Стандартный межстрочный интервал"/>
-	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing115?language=Basic&amp;location=document" toolbar:text="Средний межстрочный интервал"/>
-	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing100?language=Basic&amp;location=document" toolbar:text="Минимальный межстрочный интервал"/>
+	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing150?language=Basic&amp;location=document" toolbar:text="Стандартный межстрочный интервал"/>
+	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing115?language=Basic&amp;location=document" toolbar:text="Средний межстрочный интервал"/>
+	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing100?language=Basic&amp;location=document" toolbar:text="Минимальный межстрочный интервал"/>
 	<toolbar:toolbaritem xlink:href=".uno:Spacing" toolbar:visible="false"/>
 	<toolbar:toolbaritem xlink:href=".uno:ParaspaceIncrease" toolbar:visible="false"/>
 	<toolbar:toolbaritem xlink:href=".uno:ParaspaceDecrease" toolbar:visible="false"/>
