@@ -8,7 +8,7 @@
   (Письмо, Внутренний документ, Записка, Документ СМК)
   [#68](https://github.com/test-st-petersburg/DocTemplates/issues/68)
 - переименована библиотека макросов в `TestStPetersburg`
-  (Письмо, Записка)
+  (Письмо, Внутренний документ, Записка)
   [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
 
 ## 1.8.2
