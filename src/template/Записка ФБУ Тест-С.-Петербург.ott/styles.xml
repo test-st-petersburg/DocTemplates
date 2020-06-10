@@ -1091,6 +1091,7 @@
 									</table:table-row>
 								</table:table>
 							</text:section>
+							<text:p text:style-name="ПустойАбзац"></text:p>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>

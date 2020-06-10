@@ -8,6 +8,13 @@
   (Письмо, Внутренний документ, Записка, Документ СМК)
   [#68](https://github.com/test-st-petersburg/DocTemplates/issues/68)
 
+## 1.8.2
+
+Исправлены ошибки:
+
+- на с/з в Центр восстановлен вывод регистрационных данных в подвале
+  [#60](https://github.com/test-st-petersburg/DocTemplates/issues/60)
+
 ## 1.8.1
 
 Исправлены ошибки:
