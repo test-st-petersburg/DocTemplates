@@ -51,7 +51,6 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="P1" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:master-page-name="Служебная"/>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -193,7 +192,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
 			</text:sequence-decls>
 			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
-				<text:p text:style-name="P1"/>
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Служебная записка</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ИСТИНА</text:variable-set></text:p>
@@ -240,12 +239,12 @@
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 			<text:list xml:id="list3932639284" text:style-name="Numbering_20_123">
 				<text:list-item>
-					<text:p text:style-name="Numbering_20_1">пример нумерованного списка;</text:p>
+					<text:p text:style-name="Основной">пример нумерованного списка;</text:p>
 				</text:list-item>
 			</text:list>
 			<text:list xml:id="list4281119202" text:style-name="List_20_2">
 				<text:list-item>
-					<text:p text:style-name="List_20_1">пример маркированного списка.</text:p>
+					<text:p text:style-name="Основной">пример маркированного списка.</text:p>
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
