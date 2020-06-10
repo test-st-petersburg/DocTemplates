@@ -68,6 +68,7 @@
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-attributes-with-default-values" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-soft-page-breaks" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-layout-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:reset-page-number-in-headers-and-footers" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -254,6 +255,23 @@
 		office:automatic-styles/style:style/style:text-properties/@fo:language
 		| office:automatic-styles/style:style/style:text-properties/@fo:country
 	)"/>
+
+	<!-- удаляем параметры разметки страницы при отключенной разметке -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-color"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-lines"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-base-height"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-ruby-height"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-ruby-below"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-print"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
+		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-display"/>
 
 	<!-- удаляем аттрибуты со значениями по умолчанию -->
 
