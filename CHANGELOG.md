@@ -10,6 +10,8 @@
 - переименована библиотека макросов в `TestStPetersburg`
   (Письмо, Внутренний документ, Записка, Документ СМК)
   [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
+- удаляются `style:layout-*` при `style:layout-grid-mode="none"`
+  [#70](https://github.com/test-st-petersburg/DocTemplates/issues/70)
 
 ## 1.8.2
 
