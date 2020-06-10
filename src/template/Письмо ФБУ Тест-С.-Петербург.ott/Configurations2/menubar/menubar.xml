@@ -399,8 +399,8 @@
 			</menu:menu>
 			<menu:menu menu:id=".uno:FormatBulletsMenu">
 				<menu:menupopup>
-					<menu:menuitem menu:id=".uno:DefaultBullet"/>
-					<menu:menuitem menu:id=".uno:DefaultNumbering"/>
+					<menu:menuitem menu:id=".uno:StyleApply?Style:string=List 2&amp;FamilyName:string=NumberingStyles" menu:label="Маркированный список"/>
+					<menu:menuitem menu:id=".uno:StyleApply?Style:string=Numbering 123&amp;FamilyName:string=NumberingStyles"/>
 					<menu:menuseparator/>
 					<menu:menuitem menu:id=".uno:DecrementLevel"/>
 					<menu:menuitem menu:id=".uno:IncrementLevel"/>

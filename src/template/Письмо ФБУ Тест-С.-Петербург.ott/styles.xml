@@ -523,61 +523,51 @@
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="2" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="3" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="4" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="5" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="6" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="7" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="8" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="9" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 			<text:list-level-style-bullet text:level="10" text:style-name="Bullet_20_Symbols" text:bullet-char="―">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>
-				<style:text-properties style:font-name="Times New Roman"/>
 			</text:list-level-style-bullet>
 		</text:list-style>
 		<text:list-style style:name="List_20_3" style:display-name="List 3" style:hidden="true"/>
