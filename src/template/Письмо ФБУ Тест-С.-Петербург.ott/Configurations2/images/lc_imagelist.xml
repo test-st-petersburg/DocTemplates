@@ -5,8 +5,8 @@
 	<image:images xlink:type="simple" xlink:href="Bitmaps/lc_userimages.png" image:maskcolor="#0" image:maskmode="maskcolor">
 		<image:entry image:bitmap-index="0" image:command=".uno:StyleApply?Style:string=Emphasis&amp;FamilyName:string=CharacterStyles"/>
 		<image:entry image:bitmap-index="1" image:command=".uno:PasteUnformatted"/>
-		<image:entry image:bitmap-index="2" image:command="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing150?language=Basic&amp;location=document"/>
-		<image:entry image:bitmap-index="3" image:command="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing100?language=Basic&amp;location=document"/>
-		<image:entry image:bitmap-index="4" image:command="vnd.sun.star.script:Standard.WorkWithStyles.setDocTextLineSpacing115?language=Basic&amp;location=document"/>
+		<image:entry image:bitmap-index="2" image:command="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing150?language=Basic&amp;location=document"/>
+		<image:entry image:bitmap-index="3" image:command="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing100?language=Basic&amp;location=document"/>
+		<image:entry image:bitmap-index="4" image:command="vnd.sun.star.script:TestStPetersburg.WorkWithStyles.setDocTextLineSpacing115?language=Basic&amp;location=document"/>
 	</image:images>
 </image:imagescontainer>
