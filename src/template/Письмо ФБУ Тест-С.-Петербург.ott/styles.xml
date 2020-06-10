@@ -74,7 +74,7 @@
 		</style:style>
 		<style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:class="html"/>
 		<style:style style:name="List_20_Indent" style:display-name="List Indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body_20_indent" style:class="text"/>
-		<style:style style:name="List_20_1" style:display-name="List 1" style:family="paragraph" style:parent-style-name="List" style:list-style-name="List_20_2" style:class="list"/>
+		<style:style style:name="List_20_1" style:display-name="List 1" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:list-style-name="List_20_2" style:class="list"/>
 		<style:style style:name="List_20_1_20_Start" style:display-name="List 1 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:next-style-name="List_20_1_20_Cont." style:class="list"/>
 		<style:style style:name="List_20_1_20_Cont." style:display-name="List 1 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:class="list"/>
 		<style:style style:name="List_20_1_20_End" style:display-name="List 1 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_1" style:next-style-name="Основной" style:class="list"/>
@@ -94,7 +94,7 @@
 		<style:style style:name="List_20_5_20_Start" style:display-name="List 5 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:next-style-name="List_20_5_20_Cont." style:class="list"/>
 		<style:style style:name="List_20_5_20_Cont." style:display-name="List 5 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:class="list"/>
 		<style:style style:name="List_20_5_20_End" style:display-name="List 5 End" style:family="paragraph" style:hidden="true" style:parent-style-name="List_20_5" style:next-style-name="Основной" style:class="list"/>
-		<style:style style:name="Numbering_20_1" style:display-name="Numbering 1" style:family="paragraph" style:parent-style-name="List" style:list-style-name="Numbering_20_123" style:class="list"/>
+		<style:style style:name="Numbering_20_1" style:display-name="Numbering 1" style:family="paragraph" style:hidden="true" style:parent-style-name="List" style:list-style-name="Numbering_20_123" style:class="list"/>
 		<style:style style:name="Numbering_20_1_20_Start" style:display-name="Numbering 1 Start" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:next-style-name="Numbering_20_1_20_Cont." style:class="list"/>
 		<style:style style:name="Numbering_20_1_20_Cont." style:display-name="Numbering 1 Cont." style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:class="list"/>
 		<style:style style:name="Numbering_20_1_20_End" style:display-name="Numbering 1 End" style:family="paragraph" style:hidden="true" style:parent-style-name="Numbering_20_1" style:next-style-name="Основной" style:class="list"/>
@@ -136,6 +136,10 @@
 		<style:style style:name="КонецКолонки" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:break-after="column"/>
 		</style:style>
+		<style:style style:name="КонецСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:break-after="page"/>
+		</style:style>
+		<style:style style:name="НачалоСлужебнойСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Preformatted_20_Text" style:class="extra" style:master-page-name="Служебная"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -822,9 +826,6 @@
 			<style:header-style/>
 			<style:footer-style/>
 		</style:page-layout>
-		<number:number-style style:name="N0">
-			<number:number number:min-integer-digits="1"/>
-		</number:number-style>
 	</office:automatic-styles>
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
@@ -896,7 +897,7 @@
 									<draw:text-box fo:min-height="0.041cm">
 										<text:p text:style-name="Подстрочник"><text:s/></text:p>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации"/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:style-name="Mfr4" draw:name="Бланк: префикс поля РегистрационныйНомер" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="7">
@@ -910,7 +911,7 @@
 									<draw:text-box fo:min-height="0.041cm">
 										<text:p text:style-name="Подстрочник"><text:s/></text:p>
 									</draw:text-box>
-								</draw:frame><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер"/></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+								</draw:frame><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
@@ -986,7 +987,7 @@
 					<text:p text:style-name="Addressee"><text:hidden-paragraph text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )"/><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Вид документа" text:condition="ooow:NOT( (NOT(NOT ( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )) AND NOT(ВидДокумента EQ &#34;Письмо&#34;)) OR ((NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )) AND ( ЭтоВнутреннийДокумент EQ &#34;ИСТИНА&#34; )) )" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента" style:data-style-name="N0">Письмо</text:variable-get></text:p>
+					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
 				</text:section>
 				<text:section text:style-name="MSect4" text:name="Регистрационные данные внутреннего документа" text:condition="ooow:NOT ((NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )) AND ( ЭтоВнутреннийДокумент EQ &#34;ИСТИНА&#34; ))" text:is-hidden="true" text:display="condition">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от<draw:frame draw:style-name="Mfr7" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
@@ -995,7 +996,7 @@
 								<draw:text-box fo:min-height="0.041cm">
 									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
-							</draw:frame><text:variable-get text:name="ДатаРегистрации" style:data-style-name="N0"/></text:p>
+							</draw:frame><text:variable-get text:name="ДатаРегистрации"/></text:p>
 						</draw:text-box>
 					</draw:frame></text:p>
 					<text:p text:style-name="КонецКолонки"/>
