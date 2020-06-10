@@ -10,5 +10,4 @@ sub beforeSave()
 	BasicLibraries.LoadLibrary( "TestStPetersburg" )
 	TestStPetersburg.Common.updateAllFields()
 end sub
-
 </script:module>
