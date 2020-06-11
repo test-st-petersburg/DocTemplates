@@ -29,7 +29,7 @@
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" style:letter-kerning="true" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="СпециальныйБазовый" style:family="paragraph" style:hidden="true" style:class="extra">
-			<style:paragraph-properties text:number-lines="false"/>
+			<style:paragraph-properties text:number-lines="false" style:snap-to-layout-grid="false"/>
 		</style:style>
 		<style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="text">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="150%" fo:hyphenation-ladder-count="no-limit"/>
@@ -297,11 +297,12 @@
 			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
 		</style:style>
 		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:font-size="11pt"/>
 		</style:style>
 		<style:style style:name="БланкЛогоблок" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra"/>
 		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
@@ -391,6 +392,9 @@
 		<style:style style:name="БланкВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="true" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="18pt" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="БланкВидДокументаВоВнутреннейПереписке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
+			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
 		<style:style style:name="ГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" style:shadow="none" text:number-lines="false"/>
@@ -1065,9 +1069,14 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Вид документа" text:condition="ooow:NOT( ЭтоПереписка NEQ &#34;ИСТИНА&#34; )" text:display="condition" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect1" text:name="Вид документа (во внутренней переписке)" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="true" text:display="condition" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа">
