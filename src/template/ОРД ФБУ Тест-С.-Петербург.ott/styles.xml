@@ -173,10 +173,10 @@
 			<style:paragraph-properties fo:break-after="page"/>
 		</style:style>
 		<style:style style:name="НачалоСлужебнойСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Preformatted_20_Text" style:class="extra" style:master-page-name="Служебная"/>
-		<style:style style:name="БланкОРДПервыйЛистБезТитульного" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистОРД">
+		<style:style style:name="БланкОРДПервыйЛист" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкОРДПервыйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
+		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкОРДЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -851,7 +851,7 @@
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
 		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="БланкПервыйЛистОРД" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыОРД">
+		<style:master-page style:name="БланкОРДПервыйЛист" style:page-layout-name="Mpm2" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
@@ -973,7 +973,7 @@
 				<text:p text:style-name="Footer"/>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="БланкПоследующиеЛистыОРД" style:page-layout-name="Mpm3">
+		<style:master-page style:name="БланкОРДПоследующиеЛисты" style:page-layout-name="Mpm3">
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
@@ -981,7 +981,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 		</style:master-page>
-		<style:master-page style:name="БланкЛистыСогласования" style:page-layout-name="Mpm3">
+		<style:master-page style:name="БланкОРДЛистыСогласования" style:page-layout-name="Mpm3">
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>

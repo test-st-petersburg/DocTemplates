@@ -250,7 +250,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
-			<text:p text:style-name="БланкОРДПервыйЛистБезТитульного"/>
+			<text:p text:style-name="БланкОРДПервыйЛист"/>
 			<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
 			<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
 				<text:list-item>
