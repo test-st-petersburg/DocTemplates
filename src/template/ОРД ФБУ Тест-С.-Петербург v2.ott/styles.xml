@@ -212,6 +212,7 @@
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
+		<style:style style:name="ВступительноеОбращение" style:family="paragraph" style:parent-style-name="Salutation" style:next-style-name="Основной" style:class="text"/>
 		<style:style style:name="Caption" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 			<style:text-properties fo:font-style="italic"/>
@@ -1069,76 +1070,85 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа" text:condition="ooow:NOT( ЭтоПереписка NEQ &#34;ИСТИНА&#34; )" text:display="condition" text:protected="true">
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
-					<text:p text:style-name="ПустойАбзац"/>
+				<text:section text:style-name="MSect1" text:name="Реквизиты документа (не переписка)" text:condition="ooow:NOT( ЭтоПереписка NEQ &#34;ИСТИНА&#34; )" text:display="condition">
+					<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
+						<text:p text:style-name="ПустойАбзац"/>
+						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
+						<text:p text:style-name="ПустойАбзац"/>
+					</text:section>
+					<text:section text:style-name="MSect3" text:name="Регистрационные данные документа">
+						<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr11" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+						<text:p text:style-name="КонецКолонки"/>
+						<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:p>
+						<text:p text:style-name="КонецКолонки"/>
+						<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:style-name="Mfr11" draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="0">
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</text:section>
+					<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:is-hidden="true" text:display="condition">
+						<text:p text:style-name="КонецКолонки"/>
+						<text:p text:style-name="ПустойАбзац"/>
+						<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
+						<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
+						<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
+						<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="Mfr5" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="0">
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+								<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник3" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</draw:text-box>
+						</draw:frame>» <draw:frame draw:style-name="Mfr7" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="0">
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+								<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник11" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</draw:text-box>
+						</draw:frame> <draw:frame draw:style-name="Mfr8" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="0">
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+								<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr9" draw:name="Подстрочник21" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame>20 <text:s text:c="4"/></text:p>
+							</draw:text-box>
+						</draw:frame> г.</text:p>
+						<text:p text:style-name="ПустойАбзац"/>
+					</text:section>
+					<text:section text:style-name="MSect1" text:name="Заголовок документа">
+						<text:p text:style-name="ПустойАбзац"/>
+						<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+						<text:p text:style-name="ПустойАбзац"/>
+					</text:section>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа (во внутренней переписке)" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="true" text:display="condition" text:protected="true">
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
-					<text:p text:style-name="ПустойАбзац"/>
-				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа">
-					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr11" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:p>
-						</draw:text-box>
-					</draw:frame></text:p>
-					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:p>
-					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:style-name="Mfr11" draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="0">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
-						</draw:text-box>
-					</draw:frame></text:p>
-				</text:section>
-				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:is-hidden="true" text:display="condition">
-					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
-					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
-					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
-					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="Mfr5" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="0">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник3" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame>» <draw:frame draw:style-name="Mfr7" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="0">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник11" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame> <draw:frame draw:style-name="Mfr8" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="0">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr9" draw:name="Подстрочник21" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame>20 <text:s text:c="4"/></text:p>
-						</draw:text-box>
-					</draw:frame> г.</text:p>
-					<text:p text:style-name="ПустойАбзац"/>
-				</text:section>
-				<text:section text:style-name="MSect1" text:name="Заголовок документа">
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
-					<text:p text:style-name="ПустойАбзац"/>
+				<text:section text:style-name="MSect1" text:name="Реквизиты документа (переписка)" text:condition="ooow:NOT( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:is-hidden="false" text:display="condition">
+					<text:section text:style-name="MSect1" text:name="Вид документа (в переписке)" text:protected="true">
+						<text:p text:style-name="ПустойАбзац"/>
+						<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
+						<text:p text:style-name="ПустойАбзац"/>
+					</text:section>
+					<text:section text:style-name="MSect1" text:name="Вступительное обращение" text:condition="ooow:ВступительноеОбращение EQ &#34;&#34;" text:display="condition">
+						<text:p text:style-name="ПустойАбзац"/>
+						<text:p text:style-name="ВступительноеОбращение"><text:variable-get text:name="ВступительноеОбращение">Уважаемые коллеги!</text:variable-get></text:p>
+						<text:p text:style-name="ПустойАбзац"/>
+					</text:section>
 				</text:section>
 			</loext:header-first>
 			<style:footer>
