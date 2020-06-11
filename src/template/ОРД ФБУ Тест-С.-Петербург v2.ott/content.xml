@@ -238,7 +238,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
 			</text:sequence-decls>
 			<text:section text:style-name="Sect1" text:name="Пример приказа">
-				<text:section text:style-name="Sect1" text:name="Служебный: для примера приказа" text:display="none">
+				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Приказ</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
@@ -329,24 +329,24 @@
 							<text:p text:style-name="Основной">Контроль за исполнением настоящего приказа оставляю за собой.</text:p>
 						</text:list-item>
 					</text:list>
-					<text:section text:style-name="Sect1" text:name="Подписи">
-						<table:table table:name="Подписи" table:style-name="Подписи">
-							<table:table-column table:style-name="Подписи.A"/>
-							<table:table-column table:style-name="Подписи.B"/>
-							<table:table-column table:style-name="Подписи.C"/>
-							<table:table-row>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
-								</table:table-cell>
-							</table:table-row>
-						</table:table>
-					</text:section>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
 					<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
@@ -520,7 +520,7 @@
 				</text:section>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Пример положения о подразделении">
-				<text:section text:style-name="Sect2" text:name="Служебный: для примера положения о подразделении" text:display="none">
+				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Положение</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
@@ -997,24 +997,24 @@
 							</text:list>
 						</text:list-item>
 					</text:list>
-					<text:section text:style-name="Sect1" text:name="Подписи">
-						<table:table table:name="Подписи" table:style-name="Подписи">
-							<table:table-column table:style-name="Подписи.A"/>
-							<table:table-column table:style-name="Подписи.B"/>
-							<table:table-column table:style-name="Подписи.C"/>
-							<table:table-row>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С. С. Бетке</text:variable-get></text:p>
-								</table:table-cell>
-							</table:table-row>
-						</table:table>
-					</text:section>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
 					<text:p text:style-name="БланкОРДЛистСогласования"/>
@@ -1105,7 +1105,7 @@
 				</text:section>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Пример должностной инструкции">
-				<text:section text:style-name="Sect2" text:name="Служебный: для примера должностной инструкции" text:display="none">
+				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Должностная инструкция</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
@@ -1546,24 +1546,24 @@
 							</text:list>
 						</text:list-item>
 					</text:list>
-					<text:section text:style-name="Sect1" text:name="Подпись">
-						<table:table table:name="Таблица1" table:style-name="Таблица1">
-							<table:table-column table:style-name="Таблица1.A"/>
-							<table:table-column table:style-name="Таблица1.B"/>
-							<table:table-column table:style-name="Таблица1.C"/>
-							<table:table-row>
-								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.С. Бетке</text:variable-get></text:p>
-								</table:table-cell>
-							</table:table-row>
-						</table:table>
-					</text:section>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
 					<text:p text:style-name="БланкОРДЛистСогласования"/>
