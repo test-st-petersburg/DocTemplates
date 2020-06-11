@@ -58,7 +58,7 @@
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="ПодписьФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
-			<style:paragraph-properties fo:text-align="end"/>
+			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
 		<style:style style:name="ПодписьМестоДляПодписи" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
 			<style:paragraph-properties fo:text-align="center"/>
