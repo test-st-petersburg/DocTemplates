@@ -173,6 +173,10 @@
 			<style:paragraph-properties fo:break-after="page"/>
 		</style:style>
 		<style:style style:name="НачалоСлужебнойСтраницы" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Preformatted_20_Text" style:class="extra" style:master-page-name="Служебная"/>
+		<style:style style:name="БланкОРДПервыйЛистБезТитульного" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистОРД">
+			<style:paragraph-properties style:page-number="1"/>
+		</style:style>
+		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -282,10 +286,6 @@
 			<style:map style:condition="list-level()=9" style:apply-style-name="Numbering_20_1"/>
 			<style:map style:condition="list-level()=10" style:apply-style-name="Numbering_20_1"/>
 		</style:style>
-		<style:style style:name="БланкВнДокНачало" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкПервыйЛистВнДокумента">
-			<style:paragraph-properties style:page-number="1"/>
-		</style:style>
-		<style:style style:name="БланкВнДокЛистСогласования" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:master-page-name="БланкЛистыСогласования"/>
 		<style:style style:name="БланкШапка" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:text-properties fo:font-size="11pt"/>
 		</style:style>
@@ -851,7 +851,7 @@
 	<office:master-styles>
 		<style:master-page style:name="Standard" style:hidden="true" style:page-layout-name="Mpm1"/>
 		<style:master-page style:name="Служебная" style:hidden="true" style:page-layout-name="Mpm1"/>
-		<style:master-page style:name="БланкПервыйЛистВнДокумента" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыВнДокумента">
+		<style:master-page style:name="БланкПервыйЛистОРД" style:page-layout-name="Mpm2" style:next-style-name="БланкПоследующиеЛистыОРД">
 			<style:header>
 				<text:p text:style-name="Header"/>
 			</style:header>
@@ -901,10 +901,10 @@
 					</draw:text-box>
 				</draw:frame></text:p>
 				<text:p text:style-name="БланкПослеШапки"/>
-				<text:section text:style-name="MSect1" text:name="Вид внутреннего документа" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Регистрационные данные внутреннего документа">
+				<text:section text:style-name="MSect2" text:name="Регистрационные данные документа">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr5" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="1">
@@ -973,7 +973,7 @@
 				<text:p text:style-name="Footer"/>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="БланкПоследующиеЛистыВнДокумента" style:page-layout-name="Mpm3">
+		<style:master-page style:name="БланкПоследующиеЛистыОРД" style:page-layout-name="Mpm3">
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
