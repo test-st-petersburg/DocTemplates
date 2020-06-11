@@ -28,6 +28,9 @@
 			<style:paragraph-properties fo:orphans="2" fo:widows="2"/>
 			<style:text-properties style:use-window-font-color="true" style:font-name="Times New Roman" fo:font-family="'Times New Roman'" style:font-style-name="Обычный" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="12pt" fo:letter-spacing="normal" fo:language="ru" fo:country="RU" style:letter-kerning="true" fo:hyphenate="false"/>
 		</style:style>
+		<style:style style:name="СпециальныйБазовый" style:family="paragraph" style:hidden="true" style:class="extra">
+			<style:paragraph-properties text:number-lines="false"/>
+		</style:style>
 		<style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="text">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="150%" fo:hyphenation-ladder-count="no-limit"/>
 			<style:text-properties fo:hyphenate="true" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2"/>
@@ -163,8 +166,8 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" style:border-line-width-bottom="0cm 0.004cm 0.002cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" style:join-border="false"/>
 			<style:text-properties fo:font-size="6pt"/>
 		</style:style>
-		<style:style style:name="ПустойАбзац" style:family="paragraph" style:hidden="true" style:class="extra">
-			<style:paragraph-properties fo:line-height="0.049cm" text:number-lines="false"/>
+		<style:style style:name="ПустойАбзац" style:family="paragraph" style:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra">
+			<style:paragraph-properties fo:line-height="0.049cm"/>
 		</style:style>
 		<style:style style:name="КонецКолонки" style:family="paragraph" style:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra">
 			<style:paragraph-properties fo:break-after="column"/>
@@ -301,9 +304,7 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
-		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
-		</style:style>
+		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
 		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
@@ -317,8 +318,9 @@
 			<style:paragraph-properties fo:line-height="90%"/>
 			<style:text-properties fo:font-size="7pt" style:letter-kerning="true"/>
 		</style:style>
-		<style:style style:name="БланкОкончаниеШапки" style:family="paragraph" style:hidden="true" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="0.049cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="2.49pt solid #000000" text:number-lines="false"/>
+		<style:style style:name="БланкШапкаКонтейнер" style:family="paragraph" style:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra"/>
+		<style:style style:name="БланкОкончаниеШапки" style:family="paragraph" style:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.101cm" fo:margin-bottom="0.199cm" loext:contextual-spacing="false" fo:line-height="0.049cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="2.49pt solid #000000"/>
 		</style:style>
 		<style:style style:name="БланкПослеШапки" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="0.049cm" text:number-lines="false"/>
@@ -915,51 +917,53 @@
 				<text:p text:style-name="Header"/>
 			</style:header>
 			<loext:header-first>
-				<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="22">
-					<draw:text-box fo:min-height="1.7cm">
-						<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="2">
-							<draw:text-box fo:min-height="1.7cm">
-								<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="3">
-									<draw:text-box>
-										<table:table table:name="ШтрихкодГрифКодФормыТаблица" table:style-name="ШтрихкодГрифКодФормыТаблица">
-											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.A"/>
-											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.B"/>
-											<table:table-header-rows>
-												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.1">
-													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A1" table:number-columns-spanned="2" office:value-type="string">
-														<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+				<text:section text:style-name="MSect1" text:name="Шапка" text:protected="true">
+					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="22">
+						<draw:text-box fo:min-height="1.7cm">
+							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="2">
+								<draw:text-box fo:min-height="1.7cm">
+									<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="3">
+										<draw:text-box>
+											<table:table table:name="ШтрихкодГрифКодФормыТаблица" table:style-name="ШтрихкодГрифКодФормыТаблица">
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.A"/>
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица.B"/>
+												<table:table-header-rows>
+													<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.1">
+														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A1" table:number-columns-spanned="2" office:value-type="string">
+															<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+														</table:table-cell>
+														<table:covered-table-cell/>
+													</table:table-row>
+												</table:table-header-rows>
+												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.2">
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
+														<text:p text:style-name="ГрифОграниченияДоступа">
+															<!-- <text:variable-get text:name="ГрифДоступа">Общедоступно</text:variable-get><text:hidden-paragraph text:condition="ooow:(ГрифДоступа == &#34;Общедоступно&#34;) OR (ГрифДоступа == &#34;ДСП&#34;)" text:is-hidden="true"/> -->
+														</text:p>
 													</table:table-cell>
-													<table:covered-table-cell/>
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
+														<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
+													</table:table-cell>
 												</table:table-row>
-											</table:table-header-rows>
-											<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица.2">
-												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
-													<text:p text:style-name="ГрифОграниченияДоступа">
-														<!-- <text:variable-get text:name="ГрифДоступа">Общедоступно</text:variable-get><text:hidden-paragraph text:condition="ooow:(ГрифДоступа == &#34;Общедоступно&#34;) OR (ГрифДоступа == &#34;ДСП&#34;)" text:is-hidden="true"/> -->
-													</text:p>
-												</table:table-cell>
-												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица.A2" office:value-type="string">
-													<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
-												</table:table-cell>
-											</table:table-row>
-										</table:table>
-									</draw:text-box>
-								</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест на титульном листе" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="27">
-									<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
-									<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
-								</draw:frame></text:p>
-							</draw:text-box>
-						</draw:frame></text:p>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка на титульном листе: Наименование организации" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
-						</text:section>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка на титульном листе: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
-						</text:section>
-						<text:p text:style-name="БланкОкончаниеШапки"/>
-					</draw:text-box>
-				</draw:frame></text:p>
-				<text:p text:style-name="БланкПослеШапки"/>
+											</table:table>
+										</draw:text-box>
+									</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест на титульном листе" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="27">
+										<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+										<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+									</draw:frame></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка на титульном листе: Наименование организации" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
+							</text:section>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка на титульном листе: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
+							</text:section>
+							<text:p text:style-name="БланкОкончаниеШапки"/>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="БланкПослеШапки"/>
+				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения на титульном листе" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
@@ -993,14 +997,16 @@
 					</draw:frame> г.</text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:p text:style-name="ПустойАбзац"><draw:frame draw:style-name="Mfr10" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="0">
-					<draw:text-box fo:min-height="1cm">
-						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
-						<text:p text:style-name="БланкТЛЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
-						<text:p text:style-name="БланкТЛРегДанныеРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
-						<text:p text:style-name="БланкТЛРегДанныеРегНомерВнешний"><text:variable-get text:name="РегистрационныйНомерВнешний"> </text:variable-get><text:hidden-paragraph text:condition="ooow:( РегистрационныйНомерВнешний EQ &#34;&#34; )" text:is-hidden="true"/></text:p>
-					</draw:text-box>
-				</draw:frame></text:p>
+				<text:section text:style-name="MSect1" text:name="Заголовок на титульном листе">
+					<text:p text:style-name="ПустойАбзац"><draw:frame draw:style-name="Mfr10" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="0">
+						<draw:text-box fo:min-height="1cm">
+							<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
+							<text:p text:style-name="БланкТЛЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+							<text:p text:style-name="БланкТЛРегДанныеРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
+							<text:p text:style-name="БланкТЛРегДанныеРегНомерВнешний"><text:variable-get text:name="РегистрационныйНомерВнешний"> </text:variable-get><text:hidden-paragraph text:condition="ooow:( РегистрационныйНомерВнешний EQ &#34;&#34; )" text:is-hidden="true"/></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+				</text:section>
 			</loext:header-first>
 			<style:footer>
 				<text:p text:style-name="Footer"/>
@@ -1014,49 +1020,51 @@
 				<text:p text:style-name="Header"/>
 			</style:header>
 			<loext:header-first>
-				<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="0">
-					<draw:text-box fo:min-height="1.7cm">
-						<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="0">
-							<draw:text-box fo:min-height="1.7cm">
-								<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы1" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="0">
-									<draw:text-box>
-										<table:table table:name="ШтрихкодГрифКодФормыТаблица2" table:style-name="ШтрихкодГрифКодФормыТаблица2">
-											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.A"/>
-											<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.B"/>
-											<table:table-header-rows>
-												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.1">
-													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A1" table:number-columns-spanned="2" office:value-type="string">
-														<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+				<text:section text:style-name="MSect1" text:name="Шапка" text:protected="true">
+					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="0">
+						<draw:text-box fo:min-height="1.7cm">
+							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="1.7cm">
+									<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы1" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="0">
+										<draw:text-box>
+											<table:table table:name="ШтрихкодГрифКодФормыТаблица2" table:style-name="ШтрихкодГрифКодФормыТаблица2">
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.A"/>
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.B"/>
+												<table:table-header-rows>
+													<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.1">
+														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A1" table:number-columns-spanned="2" office:value-type="string">
+															<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+														</table:table-cell>
+														<table:covered-table-cell/>
+													</table:table-row>
+												</table:table-header-rows>
+												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.2">
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<text:p text:style-name="ГрифОграниченияДоступа"/>
 													</table:table-cell>
-													<table:covered-table-cell/>
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
+													</table:table-cell>
 												</table:table-row>
-											</table:table-header-rows>
-											<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.2">
-												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
-													<text:p text:style-name="ГрифОграниченияДоступа"/>
-												</table:table-cell>
-												<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
-													<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
-												</table:table-cell>
-											</table:table-row>
-										</table:table>
-									</draw:text-box>
-								</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="9">
-									<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
-									<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
-								</draw:frame></text:p>
-							</draw:text-box>
-						</draw:frame></text:p>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
-						</text:section>
-						<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
-							<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
-						</text:section>
-						<text:p text:style-name="БланкОкончаниеШапки"/>
-					</draw:text-box>
-				</draw:frame></text:p>
-				<text:p text:style-name="БланкПослеШапки"/>
+											</table:table>
+										</draw:text-box>
+									</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="9">
+										<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+										<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+									</draw:frame></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
+							</text:section>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
+							</text:section>
+							<text:p text:style-name="БланкОкончаниеШапки"/>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="БланкПослеШапки"/>
+				</text:section>
 				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
 				</text:section>
