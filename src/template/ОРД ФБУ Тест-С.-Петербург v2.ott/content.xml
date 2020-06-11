@@ -340,10 +340,10 @@
 								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+								<text:p text:style-name="ПодписьМестоДляПодписи"/>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+								<text:p text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
@@ -1008,10 +1008,10 @@
 								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+								<text:p text:style-name="ПодписьМестоДляПодписи"/>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+								<text:p text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
@@ -1557,10 +1557,10 @@
 								<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+								<text:p text:style-name="ПодписьМестоДляПодписи"/>
 							</table:table-cell>
 							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+								<text:p text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>

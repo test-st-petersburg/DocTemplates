@@ -57,10 +57,10 @@
 			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always" fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
-		<style:style style:name="Подпись_3a__20_ФИО" style:display-name="Подпись: ФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
+		<style:style style:name="ПодписьФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
 			<style:paragraph-properties fo:text-align="end"/>
 		</style:style>
-		<style:style style:name="Подпись_3a__20_место_20_для_20_подписи" style:display-name="Подпись: место для подписи" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
+		<style:style style:name="ПодписьМестоДляПодписи" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 		<style:style style:name="ПодписьДата" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
