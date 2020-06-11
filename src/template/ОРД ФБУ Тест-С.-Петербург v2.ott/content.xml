@@ -336,13 +336,13 @@
 							<table:table-column table:style-name="Подписи.C"/>
 							<table:table-row>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 								</table:table-cell>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
@@ -1004,13 +1004,13 @@
 							<table:table-column table:style-name="Подписи.C"/>
 							<table:table-row>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" text:formula="ooow:ПодписалДолжностьИП" office:value-type="string" office:string-value="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-set></text:p>
+									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
 									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 								</table:table-cell>
 								<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" text:formula="ooow:ПодписалПредставлениеВПодписиИП" office:value-type="string" office:string-value="ПодписалПредставлениеВПодписиИП">С. С. Бетке</text:variable-set></text:p>
+									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С. С. Бетке</text:variable-get></text:p>
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
@@ -1553,13 +1553,13 @@
 							<table:table-column table:style-name="Таблица1.C"/>
 							<table:table-row>
 								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
-									<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" text:formula="ooow:ПодписалДолжностьИП" office:value-type="string" office:string-value="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-set></text:p>
+									<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:p>
 								</table:table-cell>
 								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
 									<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
 								</table:table-cell>
 								<table:table-cell table:style-name="Таблица1.A1" office:value-type="string">
-									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" text:formula="ooow:ПодписалПредставлениеВПодписиИП" office:value-type="string" office:string-value="ПодписалПредставлениеВПодписиИП">С.С. Бетке</text:variable-set></text:p>
+									<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.С. Бетке</text:variable-get></text:p>
 								</table:table-cell>
 							</table:table-row>
 						</table:table>
