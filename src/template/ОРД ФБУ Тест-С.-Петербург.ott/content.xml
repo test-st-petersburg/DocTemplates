@@ -278,240 +278,786 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
-			<text:p text:style-name="БланкОРДПервыйЛист"/>
-			<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
-			<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
-				<text:list-item>
-					<text:p text:style-name="Основной">Создать конструкторско-производственный отдел (далее — Отдел).</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">Считать основными функциями Отдела следующие:</text:p>
-				</text:list-item>
-			</text:list>
-			<text:list xml:id="list1755997972" text:style-name="List_20_2">
-				<text:list-item>
-					<text:p text:style-name="Основной">выполнение ОКР и НИОКР по разработке и производству эталонов единиц величин;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">производство эталонов единиц величин;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">реализация производимых ФБУ «Тест‑С.‑Петербург» эталонов единиц величин;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">проведение маркетинговых исследований и выработка требований к производимым ФБУ «Тест‑С.‑Петербург» и планируемым к производству эталонам единиц величин.</text:p>
-				</text:list-item>
-			</text:list>
-			<text:list xml:id="list172702699194438" text:continue-list="list1336077129" text:style-name="Numbering_20_123">
-				<text:list-item>
-					<text:p text:style-name="Основной">Функционально подчинить Отдел директору Новгородского филиала ФБУ «Тест‑С.‑Петербург» Бетке С.С..</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">Утвердить штатное расписание Отдела (Приложение №1).</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">Директору Новгородского филиала Бетке С.С.:</text:p>
-					<text:list>
-						<text:list-item>
-							<text:p text:style-name="Основной">подготовить Положение о производственно-коммерческом отделе, должностные инструкции работников отдела, и утвердить их в установленном порядке;</text:p>
-						</text:list-item>
-						<text:list-item>
-							<text:p text:style-name="Основной">до 01.06.2020 подготовить и представить на утверждение план мероприятий на 2020 год по организации производства эталонов единиц величин — стационарных расходомерных установок;</text:p>
-						</text:list-item>
-					</text:list>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">Начальнику сектора планово-экономической работы бухгалтерско-финансового отдела №483 Гарбузовой О.В. внести изменения в организационную структуру и штатное расписание ФБУ «Тест‑С.‑Петербург».</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="Основной">Контроль за исполнением настоящего приказа оставляю за собой.</text:p>
-				</text:list-item>
-			</text:list>
-			<text:section text:style-name="Sect1" text:name="Подписи">
-				<table:table table:name="Подписи" table:style-name="Подписи">
-					<table:table-column table:style-name="Подписи.A"/>
-					<table:table-column table:style-name="Подписи.B"/>
-					<table:table-column table:style-name="Подписи.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
+			<text:section text:style-name="Sect1" text:name="Пример приказа">
+				<text:p text:style-name="БланкОРДПервыйЛист"/>
+				<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
+				<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Основной">Создать конструкторско-производственный отдел (далее — Отдел).</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Считать основными функциями Отдела следующие:</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list1755997972" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="Основной">выполнение ОКР и НИОКР по разработке и производству эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">производство эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">реализация производимых ФБУ «Тест‑С.‑Петербург» эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">проведение маркетинговых исследований и выработка требований к производимым ФБУ «Тест‑С.‑Петербург» и планируемым к производству эталонам единиц величин.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list172702699194438" text:continue-list="list1336077129" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Основной">Функционально подчинить Отдел директору Новгородского филиала ФБУ «Тест‑С.‑Петербург» Бетке С.С..</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Утвердить штатное расписание Отдела (Приложение №1).</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Директору Новгородского филиала Бетке С.С.:</text:p>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">подготовить Положение о производственно-коммерческом отделе, должностные инструкции работников отдела, и утвердить их в установленном порядке;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">до 01.06.2020 подготовить и представить на утверждение план мероприятий на 2020 год по организации производства эталонов единиц величин — стационарных расходомерных установок;</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Начальнику сектора планово-экономической работы бухгалтерско-финансового отдела №483 Гарбузовой О.В. внести изменения в организационную структуру и штатное расписание ФБУ «Тест‑С.‑Петербург».</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Контроль за исполнением настоящего приказа оставляю за собой.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:p text:style-name="БланкОРДЛистСогласования"/>
+				<text:section text:style-name="Sect1" text:name="Визы">
+					<table:table table:name="Визы" table:style-name="Визы">
+						<table:table-column table:style-name="Визы.A"/>
+						<table:table-column table:style-name="Визы.B"/>
+						<table:table-column table:style-name="Визы.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
+					<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
+					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
+					<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+						<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Директор Новгородского филиала</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.С. Бетке</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">Е.А. Кузнецова</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка1" text:anchor-type="as-char" draw:z-index="26">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка7" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="27">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка8" text:anchor-type="as-char" draw:z-index="28">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка9" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="29">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка10" text:anchor-type="as-char" draw:z-index="30">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка11" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="31">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">О.В. Гарбузова</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка12" text:anchor-type="as-char" draw:z-index="32">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка13" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="33">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка14" text:anchor-type="as-char" draw:z-index="34">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка15" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="35">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка16" text:anchor-type="as-char" draw:z-index="36">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка17" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="37">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
 			</text:section>
-			<text:p text:style-name="БланкОРДЛистСогласования"/>
-			<text:section text:style-name="Sect1" text:name="Визы">
-				<table:table table:name="Визы" table:style-name="Визы">
-					<table:table-column table:style-name="Визы.A"/>
-					<table:table-column table:style-name="Визы.B"/>
-					<table:table-column table:style-name="Визы.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-							<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-							<text:p text:style-name="ВизаМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-							<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
-				<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
-				<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
-				<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
-					<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
-					<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
-					<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Директор Новгородского филиала</text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.С. Бетке</text:p>
-						</table:table-cell>
-					</table:table-row>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame>20 <text:s text:c="4"/></text:p>
-								</draw:text-box>
-							</draw:frame> г.</text:p>
-						</table:table-cell>
-					</table:table-row>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииФИО">Е.А. Кузнецова</text:p>
-						</table:table-cell>
-					</table:table-row>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка1" text:anchor-type="as-char" draw:z-index="26">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка7" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="27">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка8" text:anchor-type="as-char" draw:z-index="28">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка9" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="29">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка10" text:anchor-type="as-char" draw:z-index="30">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка11" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="31">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame>20 <text:s text:c="4"/></text:p>
-								</draw:text-box>
-							</draw:frame> г.</text:p>
-						</table:table-cell>
-					</table:table-row>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииФИО">О.В. Гарбузова</text:p>
-						</table:table-cell>
-					</table:table-row>
-					<table:table-row>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-							<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка12" text:anchor-type="as-char" draw:z-index="32">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-									<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка13" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="33">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка14" text:anchor-type="as-char" draw:z-index="34">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-									<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка15" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="35">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка16" text:anchor-type="as-char" draw:z-index="36">
-								<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-									<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка17" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="37">
-										<draw:text-box fo:min-height="0.041cm">
-											<text:p text:style-name="Подстрочник"><text:s/></text:p>
-										</draw:text-box>
-									</draw:frame>20 <text:s text:c="4"/></text:p>
-								</draw:text-box>
-							</draw:frame> г.</text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
+			<text:section text:style-name="Sect1" text:name="Пример положения о подразделении">
+				<text:p text:style-name="БланкОРДТитульныйЛист"/>
+				<text:list xml:id="list4184995225" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Общие положения</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Сектор по обеспечению функционирования филиала (далее – Сектор) <text:s/>является самостоятельным структурным подразделением Новгородского филиала (далее – Филиал) ФБУ «Тест – С.‑Петербург» (далее – Центр) и подчиняется непосредственно директору Филиала.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Сектор в своей работе руководствуется действующим законодательством, нормативными документами (правилами), приказами Федерального агентства по техническому регулированию и метрологии (Росстандарта), национальными стандартами, документацией системы менеджмента качества Центра, <text:s/>приказами (распоряжениями) по Филиалу, а также настоящим Положением.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Сектор возглавляется начальником Сектора. </text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной">Начальник Сектора назначается на должность и освобождается от занимаемой должности приказом по Центру, по представлению директора Филиала.</text:p>
+				<text:p text:style-name="Основной">На должность начальника Сектора назначается лицо, имеющее высшее образование и стаж работы на инженерно-технических (и руководящих) должностях не менее пяти лет.</text:p>
+				<text:p text:style-name="Основной">В случае временного отсутствия начальника Сектора его замещает лицо, назначаемое в установленном порядке.</text:p>
+				<text:list xml:id="list145315194545245" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Штатное расписание и предложения по изменению штатного расписания Сектора разрабатываются начальником Сектора в соответствии с положением об оплате труда Центра.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Деятельность Сектора осуществляется в соответствии с планом работы подразделений Филиала, утвержденным директором Филиала.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">В ведении Сектора находятся предметы вычислительной и организационной техники (персональные компьютеры, принтеры, оборудования телефонной связи), расходные материалы, канцелярия, автотранспортные средства.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">При осуществлении своей деятельности Сектор соблюдает установленные требования по вопросам обеспечения информационной безопасности.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Основные задачи</text:h>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной">Основные задачи Сектора:</text:p>
+				<text:list xml:id="list145314949391612" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">обеспечение снабжения Филиала энергоресурсами, связью, расходными материалами;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">обеспечение необходимых и безопасных условий труда в Филиале;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">обеспечение правильной технической эксплуатации, бесперебойной работы компьютеров и отдельных устройств в Филиале;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">содействие в исполнении <text:s/>работниками Филиала противопожарных мероприятий, соблюдении ими норм электро- и пожарной безопасности и охраны окружающей среды;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">организация автотранспортных перевозок в Филиале;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">организация эксплуатации автотранспорта Филиала, технического обслуживания и ремонта автотранспорта Филиала;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">обеспечение технического надзора за состоянием автотранспорта Филиала на линии;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">выполнение работ по ремонту средств измерений и вспомогательного оборудования Филиала и сторонних организаций;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">осуществление технического обслуживания средств измерений и вспомогательного оборудования Филиала и сторонних организаций.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Организационная структура</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Сектор не имеет структурных звеньев.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Функции</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Общие функции:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение снабжения Филиала энергоресурсами, связью, расходными материалами;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение необходимых и безопасных условий труда в Филиале;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение правильной технической эксплуатации, бесперебойной работы компьютеров и отдельных устройств;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">содействие в исполнении <text:s/>работниками Филиала противопожарных мероприятий, соблюдения ими норм электро- и пожарной безопасности и охраны окружающей среды;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организация обучения требованиям пожарной безопасности, электробезопасности, техники безопасности и прочих видов обучения;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">проведение инструктажа по охране труда, пожарной безопасности, электробезопасности и технике безопасности;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">консультирование персонала филиала по ИТ-вопросам, решение ИТ-проблем и ИТ-инцидентов;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">эксплуатация, техническое обслуживание и организация ремонта вычислительной техники Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">техническое обслуживание и обеспечение расходными материалами, организация ремонта копировально-множительной техники Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">внедрение, эксплуатация программных продуктов на вычислительной технике Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">контроль соблюдения авторских прав при хранении и эксплуатации программных продуктов на вычислительной технике Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществление ежедневного технического осмотра автотранспортных средств Филиала, выходящих на линию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">проведение инструктажа водителей автотранспортных средств Филиала перед выпуском на линию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществление контроля за соблюдением водителями автотранспортного средства Филиала правил технической эксплуатации автотранспортных средств;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организация и контроль прохождения водителями автотранспортного средства Филиала предрейсовых осмотров и своевременностью медицинских переосвидетельствований;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществление по установленным формам учета наличия, движения, технического обслуживания, ремонта подвижного состава и агрегатов, пробега автомобильных шин, расхода горюче-смазочных материалов;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение горюче-смазочными материалами автотранспортных средств Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществление хранения вторых экземпляров ключей, запасных частей, резины (по сезону) автотранспортных средств Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">выполнение мероприятий по постановке на учёт автотранспортных средств Филиала и по снятию с учёта;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">оформление путевых листов и других документов, отражающих выполненную водителями работу и правильность их оформления и расчета в путевых листах технико-эксплуатационных показателей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">составление и выполнение плана-графика технического обслуживания автотранспорта Филиала, заключение с автосервисными организациями договоров на техническое обслуживание и ремонт автотранспортных средств Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществление ремонтных работ средств измерений и вспомогательного оборудования для Филиала и сторонних организаций;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">проводить техническое обслуживание средств измерений Филиала и сторонних организаций;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">определение и удовлетворение потребности в запасных частях для ремонта средств измерений и вспомогательного оборудования;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">разработка мероприятий по совершенствованию обслуживания и ремонта средств измерений и вспомогательного оборудования, по снижению трудоемкости и стоимости ремонтных работ, улучшению их качества;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">изготовление полимерных клише для поверительных и калибровочных клейм для нужд метрологического отдела поверки и калибровки средств измерений Новгородского Филиала.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Возложение на Сектор функций, не предусмотренных настоящим положением, кроме специальных (адресных) поручений директора Филиала, не допускается.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Обязанности начальника Сектора</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора обязан:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">осуществлять руководство деятельностью Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">планировать деятельность Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организовывать работу и распределять её с учетом наилучшего использования знаний и опыта работников в целях повышения эффективности труда;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">анализировать работу Сектора и организовывать работу по подготовке отчетов о деятельности Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организовывать ведение делопроизводства в Секторе;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организовывать проведение инвентаризации имущества, закрепленного за Сектором;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать распределение функций, ответственности и взаимодействия персонала Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать надлежащее выполнение всеми работниками Сектора установленных для них должностных обязанностей, а также правил внутреннего трудового распорядка;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать взаимодействие Сектора с другими структурными подразделениями Центра и Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">контролировать выполнение мероприятий по вопросам, относящимся к компетенции Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">контролировать выполнение условий и сроков договоров, заключаемых по направлению деятельности Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">принимать меры по созданию необходимых условий работы в Секторе;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">своевременно составлять заявку на внесение в план финансово-хозяйственной деятельности;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать работников Филиала необходимыми расходными материалами, осуществлять контроль над их рациональным расходованием;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">создавать условия для повышения квалификации работников Сектора, способствовать улучшению условий их работы;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">консультировать персонал филиала по ИТ-вопросам;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">решать ИТ-проблемы и ИТ-инциденты;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">контролировать работу по ведению табельного учета фактического времени пребывания работников в Секторе;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">принимать участие в разработке и осуществлении мероприятий по укреплению трудовой дисциплины, регулированию социально-трудовых отношений;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">вносить согласно установленному порядку директору Филиала (его заместителю) предложения о направлении работников Сектора в служебные командировки;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">организовывать совместно с отделом кадров работу по повышению квалификации работников в соответствии с установленным планом;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать выполнение работниками Сектора противопожарных мероприятий, соблюдение норм пожарной безопасности и охраны окружающей среды;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">проводить с работниками Сектора инструктаж по охране труда, пожарной безопасности, электробезопасности и технике безопасности на рабочих местах;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">заключить договор о полной индивидуальной материальной ответственности и соблюдать его условия;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">систематически повышать собственную профессиональную компетентность и квалификацию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать установленный порядок хранения документов и материальных ценностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">эффективно использовать персональные компьютеры, оргтехнику и другое оборудование, экономно и рационально расходовать материалы и энергию, другие материальные ресурсы;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать установленные требования по вопросам обеспечения информационной безопасности, в т.ч. при обработке персональных данных;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать правила внутреннего трудового распорядка Центра и Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать в своей деятельности требования системы менеджмента качества, установленные в Руководстве по качеству и документированных процедурах системы менеджмента;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдать конфиденциальность любой информации, полученной в процессе выполнения работ;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">сообщать руководству о любой известной ситуации, которая может привести к конфликту интересов;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">поддерживать систему менеджмента качества Филиала и вносить предложения по её усовершенствованию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечивать проведение ремонтных работ СИ и потребность в запасных частях для ремонта СИ и обеспечиванию ими Филиала.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора должен знать:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">профиль, структуру Филиала, перспективы развития Филиала, организацию финансово-хозяйственной деятельности Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">функции подразделений Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">общие принципы системы менеджмента качества в соответствии со стандартами ГОСТ Р ИСО 9001; ИСО/МЭК 27001;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">политику в области качества, Руководство по качеству, документированные процедуры системы менеджмента;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">приказы и распоряжения Филиала, регулирующие вопросы, входящие в компетенцию сектора по обеспечению функционирования филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">основы трудового законодательства, охраны труда;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">основы экономики, планирования, организации производства, труда и управления;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила делового общения;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила пользования средствами вычислительной техники, коммуникаций и связи;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">внутренний трудовой распорядок Центра и Филиала.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора в установленном порядке проходит аттестацию на соответствие занимаемой должности и переподготовку по плану Центра один раз в 5 лет.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Права</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Права Сектора осуществляются начальником сектора и, в соответствии с установленным в должностных инструкциях распределением обязанностей, другими работниками Сектора.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора имеет право:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">закреплять оборудование и технические средства за конкретными работниками Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">участвовать в подборе, расстановке кадров в Секторе, вносить на рассмотрение директору Филиала предложения о численности Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">вносить на рассмотрение директору Филиала представления о назначении, перемещении и увольнении подчиненных ему работников;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">принимать участие в совещаниях, проводимых директором Филиала (его заместителем) при рассмотрении вопросов, отнесенных к компетенции Сектора;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">вносить в соответствии с установленным порядком предложения о применении в отношении работников Сектора мер поощрения или дисциплинарного воздействия;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">запрашивать и получать в установленном порядке от структурных подразделений Филиала материалы и сведения, необходимые для выполнения своих должностных обязанностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">привлекать с согласия руководителей структурных подразделений Филиала работников для разработки и осуществления мероприятий, проводимых в соответствии с возложенными на него обязанностями;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">вести переписку по вопросам, относящимся к его компетенции;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">требовать от каждого работника Сектора своевременного и качественного выполнения полученного производственного задания;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">требовать от каждого работника Сектора строгого соблюдения трудовой и производственной дисциплины, правил внутреннего трудового распорядка Центра, а также бережного отношения к закрепленному за Сектором и оборудованию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">представлять Филиал в других предприятиях и организациях в пределах делегированных полномочий;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обращаться по организационным вопросам к директору Филиала, участвовать в обсуждении вопросов, касающихся исполняемых им профессиональных обязанностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">вносить на рассмотрение директора Филиала предложения по улучшению качества выполнения своей работы;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обращаться к директору Филиала за оказанием содействия в исполнении своих профессиональных обязанностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">принимать участие в общих собраниях трудового коллектива Центра и Филиала и вносить свои предложения;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">принимать решения в пределах своей компетенции;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">запрашивать от соответствующих структурных подразделений предприятия предоставления информации и документов, необходимых для осуществления деятельности, входящей в его компетенцию;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">визировать проекты документов, подготовленные Сектором, а также иные документы, поступившие на согласование из других структурных подразделений Филиала.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1">Ответственность</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора несет ответственность за:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">невыполнение и ненадлежащее выполнение функций, возложенных на Сектор, и своих должностных обязанностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правильность и полноту использование предоставленных ему прав;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение выполнения плановых заданий или плановых показателей, закрепленных за Сектором;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">низкую исполнительскую дисциплину в Секторе;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение соответствия должностных инструкций работников положению о Секторе;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">доведение до каждого работника политики в области качества и функционирование в Секторе системы менеджмента качества;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">разглашение ставших ему известным в связи с исполнением должностных обязанностей сведений, составляющих охраняемую законом тайну;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">нарушение информационной безопасности, в т.ч. при обработке персональных данных;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдение правил внутреннего трудового распорядка.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Начальник сектора несет в установленном порядке материальную ответственность за причиненный Филиалу ущерб в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Ответственность других работников Сектора устанавливается должностными инструкциями.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" text:formula="ooow:ПодписалДолжностьИП" office:value-type="string" office:string-value="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-set></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" text:formula="ooow:ПодписалПредставлениеВПодписиИП" office:value-type="string" office:string-value="ПодписалПредставлениеВПодписиИП">С. С. Бетке</text:variable-set></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Визы">
+					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
+					<table:table table:name="Визы" table:style-name="Визы">
+						<table:table-column table:style-name="Визы.A"/>
+						<table:table-column table:style-name="Визы.B"/>
+						<table:table-column table:style-name="Визы.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаФИО">О.В. Гарбузова</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
+					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
+					<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+						<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора по обеспечению функционирования филиала</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.Э. Гущин</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло3" text:anchor-type="as-char" draw:z-index="3">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка23" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="7">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка33" text:anchor-type="as-char" draw:z-index="10">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка43" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка53" text:anchor-type="as-char" draw:z-index="13">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка63" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="20">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
 			</text:section>
 		</office:text>
 	</office:body>
