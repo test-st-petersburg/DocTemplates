@@ -1066,7 +1066,9 @@
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr11" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="0">
