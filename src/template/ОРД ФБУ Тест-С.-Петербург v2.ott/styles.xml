@@ -337,7 +337,7 @@
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
 		<style:style style:name="БланкРегДанныеВПодвале" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.85cm" fo:keep-together="always" text:number-lines="false"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.7cm" fo:keep-together="always" text:number-lines="false"/>
 			<style:text-properties fo:font-size="8pt"/>
 		</style:style>
 		<style:style style:name="БланкРегДанныеВПодвалеПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкРегДанныеВПодвале" style:class="extra">
@@ -813,6 +813,18 @@
 		<style:style style:name="Подвал.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
 		</style:style>
+		<style:style style:name="РегДанныеИсх" style:family="table">
+			<style:table-properties style:width="3cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.A" style:family="table-column">
+			<style:table-column-properties style:column-width="0.5cm" style:rel-column-width="283*"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.B" style:family="table-column">
+			<style:table-column-properties style:column-width="2.5cm" style:rel-column-width="1418*"/>
+		</style:style>
+		<style:style style:name="РегДанныеИсх.A1" style:family="table-cell">
+			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+		</style:style>
 		<style:style style:name="Mfr1" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -1245,7 +1257,37 @@
 							</text:section>
 						</table:table-cell>
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
-							<text:p text:style-name="Footer"/>
+							<text:section text:style-name="MSect1" text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &#34;ИСТИНА&#34; ) AND ( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; ) )" text:display="condition">
+								<table:table table:name="РегДанныеИсх" table:style-name="РегДанныеИсх">
+									<table:table-column table:style-name="РегДанныеИсх.A"/>
+									<table:table-column table:style-name="РегДанныеИсх.B"/>
+									<table:table-row>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">от</text:p>
+										</table:table-cell>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля ДатаРегистрации исх." text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="2">
+												<draw:text-box fo:min-height="0.041cm">
+													<text:p text:style-name="Подстрочник">дата рег. исх.</text:p>
+												</draw:text-box>
+											</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span></text:p>
+										</table:table-cell>
+									</table:table-row>
+									<table:table-row>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">№</text:p>
+										</table:table-cell>
+										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:style-name="Mfr6" draw:name="Бланк: оформление поля РегистрационныйНомер исх." text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="0">
+												<draw:text-box fo:min-height="0.041cm">
+													<text:p text:style-name="Подстрочник">рег. номер исх.</text:p>
+												</draw:text-box>
+											</draw:frame><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span></text:p>
+										</table:table-cell>
+									</table:table-row>
+								</table:table>
+							</text:section>
+							<text:p text:style-name="ПустойАбзац"/>
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
