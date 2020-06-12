@@ -1206,7 +1206,49 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<text:p text:style-name="Footer"/>
+				<table:table table:name="Подвал" table:style-name="Подвал">
+					<table:table-column table:style-name="Подвал.A"/>
+					<table:table-column table:style-name="Подвал.B"/>
+					<table:table-column table:style-name="Подвал.C"/>
+					<table:table-row table:style-name="Подвал.1">
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:section text:style-name="MSect1" text:name="Сведения о деле">
+								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:style-name="Mfr13" draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="31">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.799cm">
+										<text:p text:style-name="БланкВДело"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="32">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">индекс дела</text:p>
+											</draw:text-box>
+										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame><text:s/>за <draw:frame draw:style-name="Mfr13" draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="33">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="1cm">
+										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="34">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">год</text:p>
+											</draw:text-box>
+										</draw:frame><text:s/><text:variable-get text:name="ДелоГод"> </text:variable-get><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr14" draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="20">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
+										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="21">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник">подпись, дата</text:p>
+											</draw:text-box>
+										</draw:frame><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</text:section>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+							<text:p text:style-name="Footer"/>
+						</table:table-cell>
+					</table:table-row>
+				</table:table>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПоследующиеЛисты" style:page-layout-name="Mpm3">
