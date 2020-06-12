@@ -405,7 +405,7 @@
 			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="ЗаголовокРазделаВизБазовый" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="ЗаписьОбОзнакомлении" style:class="extra">
-			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
+			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-indent="0cm" style:auto-text-indent="false" text:number-lines="false"/>
 			<style:text-properties fo:text-transform="uppercase"/>
 		</style:style>
 		<style:style style:name="ЗаголовокВиз" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРазделаВизБазовый" style:class="text"/>
