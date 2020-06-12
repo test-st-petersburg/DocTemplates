@@ -1742,92 +1742,24 @@
 						</table:table-row>
 					</table:table>
 				</text:section>
-				<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
-					<text:p text:style-name="БланкОРДЛистСогласования"/>
-					<text:section text:style-name="Sect1" text:name="Визы">
-						<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
-						<table:table table:name="Таблица2" table:style-name="Таблица2">
-							<table:table-column table:style-name="Визы.A"/>
-							<table:table-column table:style-name="Визы.B"/>
-							<table:table-column table:style-name="Визы.C"/>
-							<table:table-row>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаМестоДляПодписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
-								</table:table-cell>
-							</table:table-row>
-							<table:table-row>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаМестоДляПодписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-									<text:p text:style-name="ВизаФИО">О.В. Гарбузова</text:p>
-								</table:table-cell>
-							</table:table-row>
-						</table:table>
-					</text:section>
-					<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
-						<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-						<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
-							<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
-							<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
-							<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
-							<table:table-row>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Инженер 2 категории</text:p>
-								</table:table-cell>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииФИО">О.Г. Григорьев</text:p>
-								</table:table-cell>
-							</table:table-row>
-							<table:table-row>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-								</table:table-cell>
-								<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-									<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="0">
-										<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-											<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="1">
-												<draw:text-box fo:min-height="0.041cm">
-													<text:p text:style-name="Подстрочник"><text:s/></text:p>
-												</draw:text-box>
-											</draw:frame></text:p>
-										</draw:text-box>
-									</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="2">
-										<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-											<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="3">
-												<draw:text-box fo:min-height="0.041cm">
-													<text:p text:style-name="Подстрочник"><text:s/></text:p>
-												</draw:text-box>
-											</draw:frame></text:p>
-										</draw:text-box>
-									</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="4">
-										<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-											<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="7">
-												<draw:text-box fo:min-height="0.041cm">
-													<text:p text:style-name="Подстрочник"><text:s/></text:p>
-												</draw:text-box>
-											</draw:frame>20 <text:s text:c="4"/></text:p>
-										</draw:text-box>
-									</draw:frame> г.</text:p>
-								</table:table-cell>
-							</table:table-row>
-						</table:table>
-					</text:section>
+				<text:section text:style-name="Sect1" text:name="Визы">
+					<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
+					<table:table table:name="Таблица2" table:style-name="Таблица2">
+						<table:table-column table:style-name="Визы.A"/>
+						<table:table-column table:style-name="Визы.B"/>
+						<table:table-column table:style-name="Визы.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаДолжность">Инженер по метрологии</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаФИО">И.И. Иванов</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
 				</text:section>
 			</text:section>
 		</office:text>
