@@ -366,9 +366,13 @@
 		<style:style style:name="БланкТЛЗаголовокДокумента" style:family="paragraph" style:parent-style-name="БланкЗаголовокДокумента" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
 		</style:style>
+		<style:style style:name="БланкЗаголовокДокументаВПереписке" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:text-align="center" fo:keep-together="always" text:number-lines="false"/>
+			<style:text-properties fo:font-style="italic" fo:font-weight="normal" fo:hyphenate="false"/>
+		</style:style>
 		<style:style style:name="БланкГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
-			<style:paragraph-properties fo:text-align="end" fo:orphans="0" fo:widows="0" text:number-lines="false"/>
-			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%"/>
+			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" text:number-lines="false"/>
+			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="Штрихкод" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
@@ -514,6 +518,9 @@
 		</style:style>
 		<style:style style:name="БланкПодстрочникПоляВТексте" style:family="graphic">
 			<style:graphic-properties style:rel-width="100%" fo:min-height="0.041cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="bottom" style:vertical-rel="page-content" style:horizontal-pos="from-left" style:horizontal-rel="page-content" draw:opacity="100%" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="БланкПолеЗаголовокДокументаВПереписке" style:family="graphic" style:hidden="true" style:parent-style-name="БланкПолеАвтоВысота">
+			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position"/>
 		</style:style>
 		<style:style style:name="ПолеПодписиВТексте" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 			<style:graphic-properties fo:min-width="4.001cm" fo:min-height="0.041cm"/>
@@ -795,6 +802,27 @@
 		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A2" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
+		<style:style style:name="РегДанные" style:family="table">
+			<style:table-properties style:width="5.999cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="РегДанные.A" style:family="table-column">
+			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
+		</style:style>
+		<style:style style:name="РегДанные.B" style:family="table-column">
+			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
+		</style:style>
+		<style:style style:name="РегДанные.C" style:family="table-column">
+			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
+		</style:style>
+		<style:style style:name="РегДанные.D" style:family="table-column">
+			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
+		</style:style>
+		<style:style style:name="РегДанные.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="РегДанные.B1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+		</style:style>
 		<style:style style:name="Подвал" style:family="table">
 			<style:table-properties style:width="17.501cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
 		</style:style>
@@ -890,6 +918,29 @@
 					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
 				</style:columns>
 			</style:section-properties>
+		</style:style>
+		<style:style style:name="MSect4" style:family="section">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="2">
+					<style:column style:rel-width="27146*" fo:start-indent="0cm" fo:end-indent="1.249cm"/>
+					<style:column style:rel-width="38389*" fo:start-indent="1.249cm" fo:end-indent="0cm"/>
+				</style:columns>
+			</style:section-properties>
+		</style:style>
+		<style:style style:name="Mgr1" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr2" style:family="graphic">
+			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
+		</style:style>
+		<style:style style:name="Mgr3" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr4" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
+		</style:style>
+		<style:style style:name="Mgr5" style:family="graphic">
+			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<style:page-layout style:name="Mpm1" style:page-usage="mirrored">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
@@ -1206,6 +1257,83 @@
 				<text:section text:style-name="MSect1" text:name="Вид документа (в переписке)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect4" text:name="Регистрационные данные и адресат">
+					<table:table table:name="РегДанные" table:style-name="РегДанные">
+						<table:table-column table:style-name="РегДанные.A"/>
+						<table:table-column table:style-name="РегДанные.B"/>
+						<table:table-column table:style-name="РегДанные.C"/>
+						<table:table-column table:style-name="РегДанные.D"/>
+						<table:table-row>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">На №</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+					<text:p text:style-name="БланкЗаголовокДокументаВПереписке"><draw:frame draw:style-name="БланкПолеЗаголовокДокументаВПереписке" draw:name="Заголовок документа (в переписке)" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="4">
+						<draw:text-box fo:min-height="2cm">
+							<draw:g text:anchor-type="frame" draw:z-index="14" draw:style-name="Mgr1">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="1.999cm" svg:x2="0.2cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="13" draw:style-name="Mgr3">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="1.799cm" svg:x2="5.998cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="1.999cm" svg:x2="5.998cm" svg:y2="1.999cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="8" draw:style-name="Mgr4">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0cm" svg:y2="0.2cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="0cm" svg:y1="0cm" svg:x2="0.2cm" svg:y2="0cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<draw:g text:anchor-type="frame" draw:z-index="5" draw:style-name="Mgr5">
+								<draw:line draw:name="Вертикальная линия уголка" draw:style-name="Mgr2" svg:x1="5.998cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0.2cm">
+									<text:p/>
+								</draw:line>
+								<draw:line draw:name="Горизонтальная линия уголка" draw:style-name="Mgr2" svg:x1="5.798cm" svg:y1="0cm" svg:x2="5.998cm" svg:y2="0cm">
+									<text:p/>
+								</draw:line>
+							</draw:g>
+							<text:p text:style-name="БланкЗаголовокДокументаВПереписке"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Вступительное обращение" text:condition="ooow:ВступительноеОбращение EQ &#34;&#34;" text:display="condition">
