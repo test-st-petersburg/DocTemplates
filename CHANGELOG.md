@@ -2,14 +2,6 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
-Новые возможности:
-
-- добавлен шаблон титульного листа в шаблон ОРД
-  (на основе Документа системы менеджмента)
-  (для Положений о подразделениях, Стандартов организации, Инструкций).
-  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
-  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
-
 Прочие изменения:
 
 - убран промежуток между верхним колонтитулом на первых страницах
@@ -18,6 +10,13 @@
 - ФИО в подписи выравнены по аналогии с подписью в сведениях об ознакомлении
   (ОРД)
   [#65](https://github.com/test-st-petersburg/DocTemplates/issues/65)
+- шаблон Записки объединён с шаблоном ОРД
+  (добавлен шаблон первого листа записки)
+  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+- шаблон Документа СМК объединён с шаблоном ОРД
+  (добавлен шаблон титульного листа)
+  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
+  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 - шаблон Внутренние документы преобразован в шаблон ОРД
   (Приказы, Распоряжения, Инструкции без титульного листа)
   [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
