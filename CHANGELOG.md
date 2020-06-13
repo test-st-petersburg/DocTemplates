@@ -2,6 +2,39 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.0.0
+
+Исправлены ошибки:
+
+- исправлены поля страниц и размеры полей в соответствии с ГОСТ Р 7.0.97-2016
+
+Прочие изменения:
+
+- убран промежуток между верхним колонтитулом на первых страницах
+  и текстом. Все интервалы должны определяться стилями абзацев
+  (ОРД)
+- ФИО в подписи выравнены по аналогии с подписью в сведениях об ознакомлении
+  (ОРД)
+  [#65](https://github.com/test-st-petersburg/DocTemplates/issues/65)
+- шаблон Записки объединён с шаблоном ОРД
+  (добавлен шаблон первого листа записки)
+  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+- шаблон Документа СМК объединён с шаблоном ОРД
+  (добавлен шаблон титульного листа)
+  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
+  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+- шаблон Внутренние документы преобразован в шаблон ОРД
+  (Приказы, Распоряжения, Инструкции без титульного листа)
+  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
+- исключены стили абзацев Нумерованный список, Маркированный список
+  (Письмо, Внутренний документ, Записка, Документ СМК)
+  [#68](https://github.com/test-st-petersburg/DocTemplates/issues/68)
+- переименована библиотека макросов в `TestStPetersburg`
+  (Письмо, Внутренний документ, Записка, Документ СМК)
+  [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
+- удаляются `style:layout-*` при `style:layout-grid-mode="none"`
+  [#70](https://github.com/test-st-petersburg/DocTemplates/issues/70)
+
 ## 1.8.2
 
 Исправлены ошибки:
