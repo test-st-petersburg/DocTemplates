@@ -58,46 +58,46 @@
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Подписи" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Подписи.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
 		</style:style>
 		<style:style style:name="Подписи.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
 		</style:style>
 		<style:style style:name="Подписи.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
 		</style:style>
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="Визы" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="Визы.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
 		</style:style>
 		<style:style style:name="Визы.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
 		</style:style>
 		<style:style style:name="Визы.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
 		</style:style>
 		<style:style style:name="Визы.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
 		<style:style style:name="СведенияОбОзнакомлении" style:family="table">
-			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
 		<style:style style:name="СведенияОбОзнакомлении.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.297cm" style:rel-column-width="27324*"/>
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
 		</style:style>
 		<style:style style:name="СведенияОбОзнакомлении.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.001cm" style:rel-column-width="18725*"/>
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
 		</style:style>
 		<style:style style:name="СведенияОбОзнакомлении.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.203cm" style:rel-column-width="19486*"/>
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
 		</style:style>
 		<style:style style:name="СведенияОбОзнакомлении.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
