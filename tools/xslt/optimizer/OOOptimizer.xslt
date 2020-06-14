@@ -60,6 +60,7 @@
 	<xsl:variable name="o:remove-unused-para-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-table-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-graphic-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-unused-section-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -198,6 +199,25 @@
 		office:document-content/office:automatic-styles/style:style[
 		 	@style:family='graphic'
 			and not( key( 'o:used-graphic-styles', @style:name ) )
+		]
+	"/>
+
+	<!-- удаляем неиспользуемые автоматические стили разделов в content.xml -->
+
+	<xsl:key name="o:auto-section-styles" use-when="$o:remove-unused-section-auto-styles"
+		match="office:automatic-styles/style:style[ @style:family='section' ]"
+		use="@style:name"
+	/>
+
+	<xsl:key name="o:used-section-styles" use-when="$o:remove-unused-section-auto-styles"
+		match="office:document-content/office:body/office:text//text:section"
+		use="@text:style-name"
+	/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-unused-section-auto-styles" match="
+		office:document-content/office:automatic-styles/style:style[
+		 	@style:family='section'
+			and not( key( 'o:used-section-styles', @style:name ) )
 		]
 	"/>
 
