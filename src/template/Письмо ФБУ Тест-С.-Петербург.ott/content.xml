@@ -70,36 +70,9 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="Sect1" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="3" fo:column-gap="0.801cm">
-					<style:column-sep style:width="0.071cm" style:color="#0083c9" style:height="100%" style:style="solid"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0cm" fo:end-indent="0.4cm"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0.4cm"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0cm"/>
-				</style:columns>
-			</style:section-properties>
-		</style:style>
-		<style:style style:name="Sect2" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="2">
-					<style:column style:rel-width="4252*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
-					<style:column style:rel-width="5670*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
-				</style:columns>
-			</style:section-properties>
-		</style:style>
 		<style:style style:name="Sect3" style:family="section">
 			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-			</style:section-properties>
-		</style:style>
-		<style:style style:name="Sect4" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="3">
-					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
-					<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
-					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
-				</style:columns>
 			</style:section-properties>
 		</style:style>
 		<number:boolean-style style:name="N99">
