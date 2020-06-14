@@ -4,6 +4,9 @@
 
 Прочие изменения:
 
+- удалены доступные на типовой рабочей станции встроенные шрифты
+  (Письмо)
+  [#73](https://github.com/test-st-petersburg/DocTemplates/issues/73)
 - при оптимизации из content.xml убираем неиспользуемые автоматические стили
   таблиц, графики, врезок, разделов
   [#72](https://github.com/test-st-petersburg/DocTemplates/issues/72)
