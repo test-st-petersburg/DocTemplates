@@ -15,48 +15,6 @@
 		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable"/>
 	</office:font-face-decls>
 	<office:automatic-styles>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица" style:family="table">
-			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.199cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.2" style:family="table-row">
-			<style:table-row-properties style:row-height="0.499cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2" style:family="table">
-			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.199cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.2" style:family="table-row">
-			<style:table-row-properties style:row-height="0.499cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
 		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
@@ -183,10 +141,10 @@
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls>
 				<text:variable-decl office:value-type="string" text:name="ВидДокумента"/>
-				<text:variable-decl office:value-type="string" text:name="ВступительноеОбращение"/>
-				<text:variable-decl office:value-type="string" text:name="ГодИздания"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаДату"/>
 				<text:variable-decl office:value-type="string" text:name="ВОтветНаНомер"/>
+				<text:variable-decl office:value-type="string" text:name="ВступительноеОбращение"/>
+				<text:variable-decl office:value-type="string" text:name="ГодИздания"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
