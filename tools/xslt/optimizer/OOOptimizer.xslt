@@ -75,6 +75,7 @@
 	<xsl:variable name="o:sort-sortable-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:reset-page-number-in-headers-and-footers" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-common-embedded-fonts" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -292,6 +293,32 @@
 	<!-- удаляем некоторые файлы из манифеста -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-unimportant-files" match="manifest:file-entry[ @manifest:full-path = 'layout-cache' ]"/>
+
+	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
+
+	<xsl:variable name="o:common-fonts" as="map( xs:string, xs:boolean )" static="yes" visibility="private" select='
+		map:merge(
+			for $font-name in (
+				"Liberation Mono", "Segoe UI", "Tahoma", "Times New Roman"
+			) return map:entry( concat( "&apos;", $font-name, "&apos;" ), true() )
+		)
+	'/>
+
+	<xsl:key name="o:common-font-face-uris" use-when="$o:remove-common-embedded-fonts"
+		match="office:font-face-decls/style:font-face[
+			map:contains( $o:common-fonts, @svg:font-family )
+		]/svg:font-face-src/svg:font-face-uri"
+		use="@xlink:href"
+	/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-common-embedded-fonts" match="
+		office:font-face-decls/style:font-face[
+			map:contains( $o:common-fonts, @svg:font-family )
+		]/svg:font-face-src
+	"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-common-embedded-fonts" match="
+		manifest:file-entry[ key( 'o:common-font-face-uris', @manifest:full-path ) ]
+	"/>
 
 	<!-- удаляем некоторые параметры конфигурации просмотра и печати -->
 
