@@ -322,14 +322,22 @@
 
 	<!-- удаляем некоторые параметры конфигурации просмотра и печати -->
 
+	<xsl:variable name="o:removed-config-params" as="map( xs:string, xs:boolean )" static="yes" visibility="private" select='
+		map:merge(
+			for $config-param in (
+				"PrinterName", "PrintFaxName", "PrinterSetup", "PrinterPaperFromSetup", "PrintPaperFromSetup",
+				"PrintSingleJobs", "PrinterIndependentLayout", "AllowPrintJobCancel"
+			) return map:entry( $config-param, true() )
+		)
+	'/>
+
 	<xsl:template mode="o:optimize" use-when="$o:remove-config-view-params" match="
 		config:config-item-set[ @config:name = 'ooo:view-settings' ]
 	"/>
 
-	<xsl:template mode="o:optimize" use-when="$o:remove-config-print-params" match="config:config-item[ contains-token(
-		'PrinterName PrintFaxName PrinterSetup PrinterPaperFromSetup PrintPaperFromSetup PrintSingleJobs PrinterIndependentLayout AllowPrintJobCancel',
-		@config:name
-	)]"/>
+	<xsl:template mode="o:optimize" use-when="$o:remove-config-print-params" match="
+		config:config-item[ map:contains( $o:removed-config-params, @config:name ) ]
+	"/>
 
 	<!-- удаляем некоторые несущественные элементы -->
 
