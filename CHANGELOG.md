@@ -2,8 +2,18 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+Исправлены ошибки:
+
+- добавлен отдельный стиль страницы для должностной инструкции
+  (в соответствии с СТО СК 03-07-16)
+  [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
+
 Прочие изменения:
 
+- добавлены отдельные стили первого абзаца для каждого вида документа
+  [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
+- и размещены в защищённом от редактирования разделе
+  [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
 - удалены доступные на типовой рабочей станции встроенные шрифты
   (Письмо)
   [#73](https://github.com/test-st-petersburg/DocTemplates/issues/73)

@@ -183,8 +183,10 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
+				<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПриказа" text:protected="true">
+					<text:p text:style-name="БланкОРДПервыйЛистПриказа"/>
+				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДПервыйЛист"/>
 					<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
 					<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
 						<text:list-item>
@@ -460,8 +462,10 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
+				<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПоложенияОПодразделении" text:protected="true">
+					<text:p text:style-name="БланкОРДПервыйЛистПоложенияОПодразделении"/>
+				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДТитульныйЛист"/>
 					<text:list xml:id="list4184995225" text:style-name="Numbering_20_123">
 						<text:list-item>
 							<text:h text:style-name="Heading_20_1">Общие положения</text:h>
@@ -1048,8 +1052,10 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
+				<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистДолжностнойИнструкции" text:protected="true">
+					<text:p text:style-name="БланкОРДПервыйЛистДолжностнойИнструкции"/>
+				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДПервыйЛист"/>
 					<text:list xml:id="list1839347423" text:style-name="Numbering_20_123">
 						<text:list-item>
 							<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
@@ -1599,8 +1605,10 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВступительноеОбращение" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
-				<text:section text:style-name="Sect1" text:name="Содержание">
+				<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистЗаписки" text:protected="true">
 					<text:p text:style-name="БланкОРДПервыйЛистЗаписки"/>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Содержание">
 					<text:p text:style-name="Основной">{Содержание}</text:p>
 					<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 					<text:list xml:id="list3932639284" text:style-name="Numbering_20_123">
