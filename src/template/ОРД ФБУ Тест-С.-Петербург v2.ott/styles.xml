@@ -179,15 +179,22 @@
 		<style:style style:name="БланкОРДПервыйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПриказа" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистРаспоряжения" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистДолжностнойИнструкции" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистДолжностнойИнструкции">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПрофессиональнойИнструкции" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистДолжностнойИнструкции" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистЗаписки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистЗаписки">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПоложенияОПодразделении" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистСТО" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистИнструкцииСистемыМенеджмента" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
@@ -1345,7 +1352,7 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:is-hidden="true" text:display="condition">
+				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>

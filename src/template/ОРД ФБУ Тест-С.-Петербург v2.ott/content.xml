@@ -184,7 +184,7 @@
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДПервыйЛист"/>
+					<text:p text:style-name="БланкОРДПервыйЛистПриказа"/>
 					<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
 					<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
 						<text:list-item>
@@ -461,7 +461,7 @@
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДТитульныйЛист"/>
+					<text:p text:style-name="БланкОРДПервыйЛистПоложенияОПодразделении"/>
 					<text:list xml:id="list4184995225" text:style-name="Numbering_20_123">
 						<text:list-item>
 							<text:h text:style-name="Heading_20_1">Общие положения</text:h>

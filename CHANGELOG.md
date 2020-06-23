@@ -10,6 +10,8 @@
 
 Прочие изменения:
 
+- добавлены отдельные стили первого абзаца для каждого вида документа
+  [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
 - удалены доступные на типовой рабочей станции встроенные шрифты
   (Письмо)
   [#73](https://github.com/test-st-petersburg/DocTemplates/issues/73)
