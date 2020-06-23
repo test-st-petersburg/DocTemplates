@@ -1324,33 +1324,17 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа" text:display="none" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Приказ</text:variable-get></text:p>
+					<text:p text:style-name="БланкВидДокумента"/>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:display="none">
-					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:style-name="Mfr11" draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="28">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="30">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame><text:variable-get text:name="ДатаРегистрации">25.01.2020</text:variable-get></text:p>
-						</draw:text-box>
-					</draw:frame></text:p>
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:protected="true">
+					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн"/>
 					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:p>
+					<text:p text:style-name="БланкМестоСоставления"/>
 					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:style-name="Mfr11" draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="32">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:style-name="Mfr12" draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="34">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:p>
-						</draw:text-box>
-					</draw:frame></text:p>
+					<text:p text:style-name="БланкРегДанныеРегНомерВн"/>
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
