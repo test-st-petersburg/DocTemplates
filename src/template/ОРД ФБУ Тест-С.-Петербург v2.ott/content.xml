@@ -1049,7 +1049,7 @@
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Содержание">
-					<text:p text:style-name="БланкОРДПервыйЛист"/>
+					<text:p text:style-name="БланкОРДПервыйЛистДолжностнойИнструкции"/>
 					<text:list xml:id="list1839347423" text:style-name="Numbering_20_123">
 						<text:list-item>
 							<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
