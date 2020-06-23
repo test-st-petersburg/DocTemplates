@@ -179,12 +179,22 @@
 		<style:style style:name="БланкОРДПервыйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПриказа" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистРаспоряжения" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистДолжностнойИнструкции" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистДолжностнойИнструкции">
+			<style:paragraph-properties style:page-number="1"/>
+		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПрофессиональнойИнструкции" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистДолжностнойИнструкции" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистЗаписки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистЗаписки">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистПоложенияОПодразделении" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистСТО" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистИнструкцииСистемыМенеджмента" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" style:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
@@ -1229,6 +1239,104 @@
 					</draw:frame></text:p>
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:is-hidden="true" text:display="condition">
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="Mfr5" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник3" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:style-name="Mfr7" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr6" draw:name="Подстрочник11" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:style-name="Mfr8" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr9" draw:name="Подстрочник21" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect1" text:name="Заголовок документа">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+			</loext:header-first>
+		</style:master-page>
+		<style:master-page style:name="БланкОРДПервыйЛистДолжностнойИнструкции" style:page-layout-name="Mpm3" style:next-style-name="БланкОРДПоследующиеЛисты">
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<loext:header-first>
+				<text:section text:style-name="MSect1" text:name="Шапка" text:protected="true">
+					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
+						<draw:text-box fo:min-height="1.7cm">
+							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="21">
+								<draw:text-box fo:min-height="1.7cm">
+									<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы1" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="24">
+										<draw:text-box>
+											<table:table table:name="ШтрихкодГрифКодФормыТаблица2" table:style-name="ШтрихкодГрифКодФормыТаблица2">
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.A"/>
+												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.B"/>
+												<table:table-header-rows>
+													<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.1">
+														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A1" table:number-columns-spanned="2" office:value-type="string">
+															<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
+														</table:table-cell>
+														<table:covered-table-cell/>
+													</table:table-row>
+												</table:table-header-rows>
+												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.2">
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<text:p text:style-name="ГрифОграниченияДоступа"/>
+													</table:table-cell>
+													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
+													</table:table-cell>
+												</table:table-row>
+											</table:table>
+										</draw:text-box>
+									</draw:frame></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации1" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
+							</text:section>
+							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения1" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
+								<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
+							</text:section>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="БланкПослеШапки"/>
+				</text:section>
+				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкВидДокумента"/>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:protected="true">
+					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн"/>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="БланкМестоСоставления"/>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="БланкРегДанныеРегНомерВн"/>
+				</text:section>
+				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>

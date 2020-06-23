@@ -9,22 +9,7 @@
 		</office:event-listeners>
 	</office:scripts>
 	<office:font-face-decls>
-		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Liberation_Mono_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
+		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
 		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
 			<svg:font-face-src>
 				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
@@ -37,45 +22,9 @@
 		</style:font-face>
 		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
 		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable"/>
-		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_3.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_Times_New_Roman_4.ttf" xlink:type="simple" loext:font-style="italic" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
+		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable"/>
 	</office:font-face-decls>
 	<office:automatic-styles>
-		<style:style style:name="БланкТаблицаСЛоготипами" style:family="table">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.B" style:family="table-column">
-			<style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.C" style:family="table-column">
-			<style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.1" style:family="table-row">
-			<style:table-row-properties fo:keep-together="auto"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.A1" style:family="table-cell">
-			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="БланкТаблицаСЛоготипами.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
 		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
 		</style:style>
@@ -91,85 +40,10 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-		</style:style>
-		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-		</style:style>
-		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
-			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:run-through="foreground" style:protect="size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
-		</style:style>
-		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-		</style:style>
-		<style:style style:name="fr5" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
-			<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
-		</style:style>
-		<style:style style:name="fr6" style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-		</style:style>
-		<style:style style:name="fr7" style:family="graphic" style:parent-style-name="БланкПолеАвтоВысота">
-			<style:graphic-properties fo:margin-top="0.55cm" fo:margin-bottom="0cm" style:protect="size position" style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="page-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="middle"/>
-		</style:style>
-		<style:style style:name="fr8" style:family="graphic" style:parent-style-name="БланкПолеВБланке">
-			<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
-		</style:style>
-		<style:style style:name="fr9" style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
-			<style:graphic-properties style:print-content="true" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
-		</style:style>
-		<style:style style:name="fr10" style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
-			<style:graphic-properties style:vertical-pos="from-top" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
-		</style:style>
-		<style:style style:name="fr11" style:family="graphic" style:parent-style-name="БланкЛогоРСТвШапке">
-			<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
-		</style:style>
-		<style:style style:name="Sect1" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="3" fo:column-gap="0.801cm">
-					<style:column-sep style:width="0.071cm" style:color="#0083c9" style:height="100%" style:style="solid"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0cm" fo:end-indent="0.4cm"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0.4cm"/>
-					<style:column style:rel-width="21845*" fo:start-indent="0.4cm" fo:end-indent="0cm"/>
-				</style:columns>
-			</style:section-properties>
-		</style:style>
-		<style:style style:name="Sect2" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="2">
-					<style:column style:rel-width="4252*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
-					<style:column style:rel-width="5670*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
-				</style:columns>
-			</style:section-properties>
-		</style:style>
 		<style:style style:name="Sect3" style:family="section">
 			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:section-properties>
-		</style:style>
-		<style:style style:name="Sect4" style:family="section">
-			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
-				<style:columns fo:column-count="3">
-					<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
-					<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
-					<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
-				</style:columns>
-			</style:section-properties>
-		</style:style>
-		<style:style style:name="gr1" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="gr2" style:family="graphic">
-			<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
-		</style:style>
-		<style:style style:name="gr3" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="gr4" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
-		</style:style>
-		<style:style style:name="gr5" style:family="graphic">
-			<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 		</style:style>
 		<number:boolean-style style:name="N99">
 			<number:boolean/>
