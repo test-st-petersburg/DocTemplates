@@ -63,6 +63,7 @@
 	<xsl:variable name="o:remove-unused-section-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-page-number-nodes-in-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-abs-size-when-relative" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unimportant-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -288,6 +289,19 @@
 		| *[ @style:rel-height ]/@svg:height
 		| *[ @style:vertical-rel ]/@svg:y
 		| *[ @style:horizontal-rel ]/@svg:x
+	"/>
+
+	<!-- удаляем `style:page-number` в стилях-потомках, если значение атрибута совпадает со значением в предках -->
+
+	<xsl:key name="o:paragraph-styles" use-when="$o:remove-unused-para-auto-styles"
+		match="office:styles/style:style[ @style:family = 'paragraph' ]"
+		use="@style:name"
+	/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-page-number-nodes-in-styles" match="
+		style:paragraph-properties/@style:page-number[
+			. = key( 'o:paragraph-styles', parent::*/parent::*/@style:parent-style-name )/style:paragraph-properties/@style:page-number
+		]
 	"/>
 
 	<!-- удаляем некоторые файлы из манифеста -->
