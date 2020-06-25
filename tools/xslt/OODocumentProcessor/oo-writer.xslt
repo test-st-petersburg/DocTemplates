@@ -83,6 +83,14 @@
 		<xsl:apply-templates select="." mode="f:inline"/>
 	</xsl:template>
 
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='/' ]"
+	>
+		<xsl:result-document href="mimetype" format="p:OOmimetypeFileFormat">
+			<xsl:value-of select="@manifest:media-type"/>
+		</xsl:result-document>
+	</xsl:template>
+
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
@@ -179,6 +187,12 @@
 	</xsl:template>
 
 	<!-- Описание форматов генерируемых файлов  -->
+
+	<xsl:output name="p:OOmimetypeFileFormat"
+		media-type="text/plain"
+		method="text"
+		encoding="UTF-8" byte-order-mark="no"
+	/>
 
 	<xsl:output name="p:OOXmlFile"
 		media-type="text/xml"
