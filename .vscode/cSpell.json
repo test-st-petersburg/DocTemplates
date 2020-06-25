@@ -19,6 +19,7 @@
         "codecov",
         "commitlint",
         "markdownlint",
+        "mimetype",
         "mkdocs",
         "precommit",
         "PreRelease",
