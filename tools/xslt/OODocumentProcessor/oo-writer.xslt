@@ -67,19 +67,23 @@
 		<xsl:apply-templates select="/manifest:manifest/manifest:file-entry" mode="#current"/>
 	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
-		@manifest:full-path = $p:manifest-uri
-	]"/>
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path = $p:manifest-uri ]"
+	/>
 
 	<xsl:template mode="p:select-manifest" match="/manifest:manifest/manifest:file-entry/*"/>
 
 	<!--  -->
 
-	<xsl:template mode="p:create-outline-document-files" match="/manifest:manifest/manifest:file-entry/*">
+	<xsl:template mode="p:create-outline-document-files"
+		match="/manifest:manifest/manifest:file-entry/*"
+	>
 		<xsl:apply-templates select="." mode="f:outline"/>
 	</xsl:template>
 
-	<xsl:template mode="p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry/*">
+	<xsl:template mode="p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry/*"
+	>
 		<xsl:apply-templates select="." mode="f:inline"/>
 	</xsl:template>
 
@@ -91,18 +95,20 @@
 		</xsl:result-document>
 	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
-		( @manifest:media-type='text/xml' )
-		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
-	]" priority="-10">
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" priority="-10"
+		match="/manifest:manifest/manifest:file-entry[
+			( @manifest:media-type='text/xml' )
+			or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
+		]"
+	>
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
-	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/manifest:manifest/manifest:file-entry[
-		@manifest:media-type='application/rdf+xml'
-	]">
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry[ @manifest:media-type='application/rdf+xml' ]"
+	>
 		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
 			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
