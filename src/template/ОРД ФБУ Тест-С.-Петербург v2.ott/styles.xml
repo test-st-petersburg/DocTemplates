@@ -1283,7 +1283,7 @@
 				<text:p text:style-name="Header"/>
 			</style:header>
 			<loext:header-first>
-				<text:section text:style-name="MSect1" text:name="Шапка" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Шапка (для должностной инструкции)" text:protected="true">
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
 						<draw:text-box fo:min-height="1.7cm">
 							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы1" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="21">
@@ -1324,19 +1324,19 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Вид документа (для должностной инструкции)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокумента"/>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа" text:protected="true">
+				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа (для должностной инструкции)" text:protected="true">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн"/>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="БланкМестоСоставления"/>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="БланкРегДанныеРегНомерВн"/>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Гриф утверждения" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
+				<text:section text:style-name="MSect2" text:name="Гриф утверждения (для должностной инструкции)" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
@@ -1369,7 +1369,7 @@
 					</draw:frame> г.</text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Заголовок документа">
+				<text:section text:style-name="MSect1" text:name="Заголовок документа (для должностной инструкции)">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
@@ -1381,7 +1381,7 @@
 				<text:p text:style-name="Header"/>
 			</style:header>
 			<loext:header-first>
-				<text:section text:style-name="MSect1" text:name="Шапка на первом листе записки" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Шапка (в записке)" text:protected="true">
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка2" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="56">
 						<draw:text-box fo:min-height="1.7cm">
 							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы2" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="57">
@@ -1426,12 +1426,12 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа (в переписке)" text:protected="true">
+				<text:section text:style-name="MSect1" text:name="Вид документа (в записке)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат">
+				<text:section text:style-name="MSect2" text:name="Регистрационные данные и адресат (в записке)">
 					<table:table table:name="РегДанные" table:style-name="РегДанные">
 						<table:table-column table:style-name="РегДанные.A"/>
 						<table:table-column table:style-name="РегДанные.B"/>
@@ -1508,7 +1508,7 @@
 					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вступительное обращение" text:condition="ooow:ВступительноеОбращение EQ &#34;&#34;" text:display="condition">
+				<text:section text:style-name="MSect1" text:name="Вступительное обращение (в записке)" text:condition="ooow:ВступительноеОбращение EQ &#34;&#34;" text:display="condition">
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ВступительноеОбращение"><text:variable-get text:name="ВступительноеОбращение">Уважаемые коллеги!</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
