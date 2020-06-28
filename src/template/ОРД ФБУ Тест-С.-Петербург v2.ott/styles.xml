@@ -1382,49 +1382,7 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка (в записке)" text:protected="true">
-					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:style-name="Mfr1" draw:name="Бланк: Шапка2" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="56">
-						<draw:text-box fo:min-height="1.7cm">
-							<text:p text:style-name="Header"><draw:frame draw:style-name="Mfr2" draw:name="Бланк: Логотип, гриф, штрихкод и код формы2" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="57">
-								<draw:text-box fo:min-height="1.7cm">
-									<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:style-name="Mfr3" draw:name="Бланк: Штрихкод, гриф, код формы2" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="58">
-										<draw:text-box>
-											<table:table table:name="ШтрихкодГрифКодФормыТаблица3" table:style-name="ШтрихкодГрифКодФормыТаблица3">
-												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица3.A"/>
-												<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица3.B"/>
-												<table:table-header-rows>
-													<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица3.1">
-														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица3.A1" table:number-columns-spanned="2" office:value-type="string">
-															<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
-														</table:table-cell>
-														<table:covered-table-cell/>
-													</table:table-row>
-												</table:table-header-rows>
-												<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица3.2">
-													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица3.A2" office:value-type="string">
-														<text:p text:style-name="ГрифОграниченияДоступа"/>
-													</table:table-cell>
-													<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица3.A2" office:value-type="string">
-														<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
-													</table:table-cell>
-												</table:table-row>
-											</table:table>
-										</draw:text-box>
-									</draw:frame><draw:frame draw:style-name="Mfr4" draw:name="Бланк: лого в шапке Тест2" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="59">
-										<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
-										<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/png"/>
-									</draw:frame></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации2" text:protected="true">
-								<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр стандартизации, метрологии и испытаний<text:line-break/>в г. Санкт-Петербурге и Ленинградской области»<text:line-break/>(ФБУ «Тест-С.-Петербург»)</text:p>
-							</text:section>
-							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование структурного подразделения2" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:protected="true">
-								<text:p text:style-name="БланкНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
-							</text:section>
-							<text:p text:style-name="БланкОкончаниеШапки"/>
-						</draw:text-box>
-					</draw:frame></text:p>
-					<text:p text:style-name="БланкПослеШапки"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:show="embed"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Вид документа (в записке)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
