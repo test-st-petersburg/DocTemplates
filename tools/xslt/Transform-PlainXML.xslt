@@ -40,13 +40,6 @@
 		visibility="final"
 	/>
 
-	<xsl:mode
-		name="t:update-document-meta"
-		on-no-match="shallow-copy" warning-on-no-match="no"
-		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="private"
-	/>
-
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:merge-document-files" visibility="private"/>
 	</xsl:use-package>
@@ -54,6 +47,10 @@
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="private"/>
 		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="private"/>
+	</xsl:use-package>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt" package-version="2.2">
+		<xsl:accept component="mode" names="p:update-document-meta" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt" package-version="1.5">
@@ -76,7 +73,7 @@
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
 		<xsl:variable name="t:updated-complex-document" as="document-node()">
-			<xsl:apply-templates select="$t:complex-document" mode="t:update-document-meta"/>
+			<xsl:apply-templates select="$t:complex-document" mode="p:update-document-meta"/>
 		</xsl:variable>
 		<xsl:apply-templates select="$t:updated-complex-document" mode="p:create-inline-document-files"/>
 	</xsl:template>
@@ -91,21 +88,6 @@
 			<xsl:apply-templates select="$t:complex-document" mode="o:optimize"/>
 		</xsl:variable>
 		<xsl:apply-templates select="$t:optimized-document" mode="p:create-outline-document-files"/>
-	</xsl:template>
-
-	<xsl:template mode="t:update-document-meta" match="office:document-meta/office:meta/dc:date">
-		<xsl:copy>
-			<xsl:value-of select="format-dateTime(
-				adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
-				'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
-			)"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template mode="t:update-document-meta" match="office:document-meta/office:meta/meta:editing-cycles">
-		<xsl:copy>
-			<xsl:value-of select="xs:int( text() ) + 1"/>
-		</xsl:copy>
 	</xsl:template>
 
 </xsl:transform>

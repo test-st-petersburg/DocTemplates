@@ -4,6 +4,11 @@
 
 Прочие изменения:
 
+- обновление метаданных документа при сборке
+  (`meta:editing-cycles`, `dc:date`)
+  выделено в отдельный XSLT пакет
+  (oo-preprocessor.xslt, режим `p:update-document-meta`)
+  [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 - убраны дублирования в оформлении стилей страниц
   (за счёт применения `text:section-name`)
   [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
