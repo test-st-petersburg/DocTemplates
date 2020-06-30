@@ -76,6 +76,9 @@
 	<xsl:variable name="o:set-config-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:reset-page-number-in-headers-and-footers" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-common-embedded-fonts" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-calculated-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-generator-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-print-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -467,5 +470,21 @@
 	">
 		<xsl:text>0</xsl:text>
 	</xsl:template>
+
+	<!-- удаление из meta.xml вычисляемых при сборке метаданных -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-calculated-meta" match="
+		office:meta/meta:editing-cycles
+		| office:meta/meta:editing-duration
+		| office:meta/meta:document-statistic
+		| office:meta/dc:date
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-print-meta" match="
+		office:meta/meta:printed-by
+		| office:meta/meta:print-date
+	"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-generator-meta" match="office:meta/meta:generator"/>
 
 </xsl:package>
