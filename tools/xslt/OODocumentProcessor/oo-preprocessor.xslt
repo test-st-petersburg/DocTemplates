@@ -62,6 +62,7 @@
 	<xsl:variable name="p:update-document-date" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
 	<xsl:variable name="p:update-document-editing-cycles" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
 	<xsl:mode
@@ -122,9 +123,44 @@
 		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
 		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">begin expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
 		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
+			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
 		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
 		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">end expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
+	</xsl:template>
+
+	<!--
+		при подстановке элементов (например - вместо `text:section-source`) переименование вставляемых
+		разделов, таблиц, врезок
+		(с учётом реквизита `text:section-source/@xlink:title`) #81
+	-->
+
+	<xsl:template mode="p:preprocess-document" use-when="$p:rename-elements-on-insert" match="
+		@table:name
+	">
+		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
+		<xsl:choose>
+			<xsl:when test="$p:embed-link-title">
+				<xsl:attribute name="{ name() }" select="concat( data(), $p:embed-link-title )"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template mode="p:preprocess-document" use-when="$p:rename-elements-on-insert" match="
+		text:section/@text:name | @draw:name
+	">
+		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
+		<xsl:choose>
+			<xsl:when test="$p:embed-link-title">
+				<xsl:attribute name="{ name() }" select="concat( data(), ' (', $p:embed-link-title, ')' )"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<!-- удаление атрибутов препроцессора из документа #81 -->

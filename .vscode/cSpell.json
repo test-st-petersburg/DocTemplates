@@ -25,7 +25,8 @@
         "PreRelease",
         "Recurse",
         "repo",
-        "Veyor"
+        "Veyor",
+        "xlink"
     ],
     "ignoreRegExpList": [
         "эскалаци(я|и|ю|ей)",
