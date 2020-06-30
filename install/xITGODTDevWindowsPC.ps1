@@ -55,6 +55,11 @@ configuration xITGODTDevWindowsPC
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
+		cChocoPackageInstaller GitVersion {
+			Name      = 'gitversion.portable'
+			DependsOn = @('[cChocoInstaller]choco')
+		}
+
 		PSModuleResource 7Zip4Powershell {
 			Module_Name = '7Zip4Powershell'
 		}

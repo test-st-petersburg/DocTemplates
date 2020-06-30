@@ -61,6 +61,7 @@
 	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:update-document-date" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
 	<xsl:variable name="p:update-document-editing-cycles" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
+	<xsl:variable name="p:update-document-version" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
@@ -102,6 +103,25 @@
 	">
 		<xsl:copy>
 			<xsl:value-of select="xs:int( text() ) + 1"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<!-- обновление / установка версии документа -->
+
+	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-version" match="
+		office:document-meta/office:meta
+	">
+		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
+		<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы -->
+		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
+		<xsl:copy validation="preserve">
+			<xsl:apply-templates mode="#current" select="@*"/>
+			<xsl:apply-templates mode="#current" select="node() except meta:user-defined[ @meta:name = $p:version-meta-name ]"/>
+			<xsl:if test="$p:version">
+				<meta:user-defined meta:name="{ $p:version-meta-name }">
+					<xsl:value-of select="$p:version"/>
+				</meta:user-defined>
+			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
 

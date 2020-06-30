@@ -64,14 +64,14 @@ Function Update-FileLastWriteTime {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-			| Out-Null;
+				| Out-Null;
 		};
 	};
 	Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-	| Out-Null;
+		| Out-Null;
 }
 
 
@@ -138,6 +138,8 @@ foreach ( $OOFile in $DestinationFile ) {
 task UnpackAndOptimizeModified $OOFilesUnpackTasks;
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
+$version = gitversion /output json /showvariable SemVer
+
 $BuildTasks = @();
 $BuildAndOpenTasks = @();
 foreach ( $documentXMLFolder in $SourceFolder ) {
@@ -163,6 +165,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 		};
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
+			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -184,6 +187,7 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 		};
 		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
+			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
