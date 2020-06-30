@@ -10,7 +10,7 @@
   (oo-preprocessor.xslt, режим `p:update-document-meta`)
   [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 - убраны дублирования в оформлении стилей страниц
-  (за счёт применения `text:section-name`)
+  (за счёт применения `text:section-source`)
   [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
 - убраны файлы `mimetype` из репозитория
   (добавлена автоматическая их генерация при сборке из манифеста)
