@@ -118,9 +118,10 @@
 			<xsl:apply-templates mode="#current" select="@*"/>
 			<xsl:apply-templates mode="#current" select="node() except meta:user-defined[ @meta:name = $p:version-meta-name ]"/>
 			<xsl:if test="$p:version">
-				<meta:user-defined meta:name="{ $p:version-meta-name }">
+				<xsl:element name="meta:user-defined" inherit-namespaces="no">
+					<xsl:attribute name="meta:name" select="$p:version-meta-name"/>
 					<xsl:value-of select="$p:version"/>
-				</meta:user-defined>
+				</xsl:element>
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
