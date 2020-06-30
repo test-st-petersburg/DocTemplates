@@ -9,5 +9,6 @@ end sub
 sub beforeSave()
 	BasicLibraries.LoadLibrary( "TestStPetersburg" )
 	TestStPetersburg.Common.updateAllFields()
+	TestStPetersburg.Metas.updateDocMetas()
 end sub
 </script:module>

@@ -23,7 +23,24 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 end sub
 
 rem ----------------------------------------------------------------------
-rem Обновляем поля при открытии документа
+rem Чтение значения переменных документа
+rem ----------------------------------------------------------------------
+function getDocVariableValue(ByVal name as string)
+	dim document as object
+	dim textField as object
+	dim fieldId as string
+	
+	document = ThisComponent
+
+	fieldId = "com.sun.star.text.fieldmaster.SetExpression" + "." + name
+	if document.TextFieldMasters.hasByName(fieldId) then
+		getDocVariableValue = document.TextFieldMasters.getByName(fieldId).dependentTextFields(0).Content
+	end if
+	
+end function
+
+rem ----------------------------------------------------------------------
+rem Обновляем поля
 rem ----------------------------------------------------------------------
 sub updateAllFields()
 	dim document as object
