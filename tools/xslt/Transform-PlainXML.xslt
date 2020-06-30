@@ -51,6 +51,7 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt" package-version="2.2">
 		<xsl:accept component="mode" names="p:update-document-meta" visibility="final"/>
+		<xsl:accept component="mode" names="p:preprocess-document" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt" package-version="1.5">
@@ -75,7 +76,10 @@
 		<xsl:variable name="t:updated-complex-document" as="document-node()">
 			<xsl:apply-templates select="$t:complex-document" mode="p:update-document-meta"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$t:updated-complex-document" mode="p:create-inline-document-files"/>
+		<xsl:variable name="t:preprocessed-complex-document" as="document-node()">
+			<xsl:apply-templates select="$t:updated-complex-document" mode="p:preprocess-document"/>
+		</xsl:variable>
+		<xsl:apply-templates select="$t:preprocessed-complex-document" mode="p:create-inline-document-files"/>
 	</xsl:template>
 
 	<xsl:template mode="t:optimize" match="/">
