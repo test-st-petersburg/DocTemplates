@@ -59,9 +59,6 @@
 
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:update-document-date" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
-	<xsl:variable name="p:update-document-editing-cycles" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
-	<xsl:variable name="p:update-document-version" as="xs:boolean" static="yes" select="$p:update-document-meta" visibility="private"/>
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
@@ -87,28 +84,7 @@
 
 	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
 
-	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-date" match="
-		office:document-meta/office:meta/dc:date
-	">
-		<xsl:copy>
-			<xsl:value-of select="format-dateTime(
-				adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
-				'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
-			)"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-editing-cycles" match="
-		office:document-meta/office:meta/meta:editing-cycles
-	">
-		<xsl:copy>
-			<xsl:value-of select="xs:int( text() ) + 1"/>
-		</xsl:copy>
-	</xsl:template>
-
-	<!-- обновление / установка версии документа -->
-
-	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-version" match="
+	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-meta" match="
 		office:document-meta/office:meta
 	">
 		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -116,7 +92,21 @@
 		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select="@*"/>
-			<xsl:apply-templates mode="#current" select="node() except meta:user-defined[ @meta:name = $p:version-meta-name ]"/>
+			<xsl:apply-templates mode="#current" select="
+				node() except (
+					meta:generator
+					| dc:date
+					| meta:user-defined[ @meta:name = $p:version-meta-name ]
+				)
+			"/>
+			<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы, параметры -->
+			<xsl:element name="meta:generator" inherit-namespaces="no">http://github.com/test-st-petersburg/DocTemplates/tools/ConvertFrom-PlainXML.ps1 document builder</xsl:element>
+			<xsl:element name="dc:date" inherit-namespaces="no">
+				<xsl:value-of select="format-dateTime(
+					adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
+					'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
+				)"/>
+			</xsl:element>
 			<xsl:if test="$p:version">
 				<xsl:element name="meta:user-defined" inherit-namespaces="no">
 					<xsl:attribute name="meta:name" select="$p:version-meta-name"/>
