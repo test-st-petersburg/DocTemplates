@@ -37,7 +37,8 @@ begin {
 		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
 		'xslt/optimizer/OOOptimizer.xslt', `
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
-		'xslt/OODocumentProcessor/oo-merger.xslt' `
+		'xslt/OODocumentProcessor/oo-merger.xslt', `
+		'xslt/OODocumentProcessor/oo-preprocessor.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
 		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
