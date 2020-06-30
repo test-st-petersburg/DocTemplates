@@ -26,14 +26,7 @@
 - [LibreOffice][]
 - [7Zip4Powershell][]
 - [Saxon HE][]
-
-Под Linux:
-
-- [PowerShellCore][]
-- [VSCode][]
-- [LibreOffice][]
-- [7Zip4Powershell][]
-- [Saxon HE][]
+- [GitVersion][]
 
 Для [VSCode][] рекомендую установить расширения, указанные в рабочей области.
 
@@ -118,3 +111,4 @@ git репозиторий.
 [Saxon HE]: https://saxonica.com/products/products.xml "Saxon Home Edition"
 [ReadTheDocs]: https://readthedocs.org
 [OASIS]: https://docs.oasis-open.org/office/OpenDocument/v1.3/cs01/part3-schema/OpenDocument-v1.3-cs01-part3-schema.html "Open Document Format for Office Applications (OpenDocument) Version 1.3. Part 3: OpenDocument Schema"
+[GitVersion]: https://github.com/GitTools/GitVersion "Easy Semantic Versioning for projects using Git"

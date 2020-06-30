@@ -9,14 +9,19 @@
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
 	# путь к папке с xml файлами
-	[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $true )]
+	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true )]
 	[System.String]
 	$Path,
 
 	# путь к папке, в которой будет создан файл Open Office
-	[Parameter( Mandatory = $True, Position = 1, ValueFromPipeline = $false )]
+	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
 	$DestinationPath,
+
+	# версия файла (для указания в свойствах файла Open Office)
+	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
+	[System.String]
+	$Version,
 
 	# перезаписать существующий файл
 	[Parameter()]
@@ -57,6 +62,13 @@ process {
 
 				$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
 					'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'before-pack';
+
+				if ( $Version ) {
+					$saxTransform.SetParameter(
+						( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'version' ),
+						( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $Version )
+					)
+				};
 
 				[System.Uri] $BaseUri = $TempXMLFolder + [System.IO.Path]::DirectorySeparatorChar;
 				# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
@@ -107,7 +119,7 @@ process {
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				Get-ChildItem -Path $DestinationTempPathForFile -File -Recurse `
 					-Exclude 'mimetype' `
-				| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
+					| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
 					-Format Zip `
 					-CompressionLevel Normal -CompressionMethod Deflate `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `

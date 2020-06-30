@@ -40,6 +40,8 @@
 		visibility="final"
 	/>
 
+	<xsl:param name="t:version" as="xs:string" required="no" select="''"/>
+
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="p:merge-document-files" visibility="private"/>
 	</xsl:use-package>
@@ -74,7 +76,9 @@
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
 		<xsl:variable name="t:updated-complex-document" as="document-node()">
-			<xsl:apply-templates select="$t:complex-document" mode="p:update-document-meta"/>
+			<xsl:apply-templates select="$t:complex-document" mode="p:update-document-meta">
+				<xsl:with-param name="p:version" select="$t:version" as="xs:string" tunnel="yes"/>
+			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:variable name="t:preprocessed-complex-document" as="document-node()">
 			<xsl:apply-templates select="$t:updated-complex-document" mode="p:preprocess-document"/>

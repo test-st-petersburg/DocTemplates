@@ -4,6 +4,8 @@
 
 Прочие изменения:
 
+- при сборке указывается версия в свойствах файла
+  [#20](https://github.com/test-st-petersburg/DocTemplates/issues/20)
 - при подстановке разделов вместо `text:section-source` осуществляется
   переименование вставляемых разделов, таблиц, врезок с учётом реквизита
   `text:section-source/@xlink:title`
