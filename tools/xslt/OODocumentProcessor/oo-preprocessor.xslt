@@ -127,4 +127,10 @@
 		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">end expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
 	</xsl:template>
 
+	<!-- удаление атрибутов препроцессора из документа #81 -->
+
+	<xsl:template mode="p:preprocess-document" match="@*[
+		namespace-uri() = 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor'
+	]"/>
+
 </xsl:package>
