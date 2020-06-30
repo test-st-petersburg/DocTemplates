@@ -2,6 +2,30 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.2.0
+
+Прочие изменения:
+
+- вычисляемые при сборке метаданных убираем из `meta.xml`
+  [#64](https://github.com/test-st-petersburg/DocTemplates/issues/64)
+- при сборке указывается версия в свойствах файла
+  [#20](https://github.com/test-st-petersburg/DocTemplates/issues/20)
+- при подстановке разделов вместо `text:section-source` осуществляется
+  переименование вставляемых разделов, таблиц, врезок с учётом реквизита
+  `text:section-source/@xlink:title`
+  [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
+- убраны дублирования в оформлении стилей страниц
+  (за счёт применения `text:section-source`)
+  [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
+- обновление метаданных документа при сборке
+  (`meta:editing-cycles`, `dc:date`)
+  выделено в отдельный XSLT пакет
+  (oo-preprocessor.xslt, режим `p:update-document-meta`)
+  [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
+- убраны файлы `mimetype` из репозитория
+  (добавлена автоматическая их генерация при сборке из манифеста)
+  [#80](https://github.com/test-st-petersburg/DocTemplates/issues/80)
+
 ## 2.1.0
 
 Исправлены ошибки:

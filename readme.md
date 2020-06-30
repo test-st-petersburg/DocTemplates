@@ -26,14 +26,7 @@
 - [LibreOffice][]
 - [7Zip4Powershell][]
 - [Saxon HE][]
-
-Под Linux:
-
-- [PowerShellCore][]
-- [VSCode][]
-- [LibreOffice][]
-- [7Zip4Powershell][]
-- [Saxon HE][]
+- [GitVersion][]
 
 Для [VSCode][] рекомендую установить расширения, указанные в рабочей области.
 
@@ -57,6 +50,8 @@ git репозиторий.
 в котором размещены XML файлы и бинарные файлы изображений и прочих вложений.
 В репозитории файлы шаблонов документов хранятся в виде каталогов с XML и
 бинарными файлами (см. [/src/template](/src/template)).
+Описание схемы xml файлов, входящих в состав документа: [OASIS][].
+
 Распаковка, форматирование, оптимизация XML файлов осуществляется
 с помощью инструментария, размещённого в репозитории.
 Через задачи в среде Visual Studio Code.
@@ -115,3 +110,5 @@ git репозиторий.
 [7Zip4Powershell]: https://github.com/thoemmi/7Zip4Powershell
 [Saxon HE]: https://saxonica.com/products/products.xml "Saxon Home Edition"
 [ReadTheDocs]: https://readthedocs.org
+[OASIS]: https://docs.oasis-open.org/office/OpenDocument/v1.3/cs01/part3-schema/OpenDocument-v1.3-cs01-part3-schema.html "Open Document Format for Office Applications (OpenDocument) Version 1.3. Part 3: OpenDocument Schema"
+[GitVersion]: https://github.com/GitTools/GitVersion "Easy Semantic Versioning for projects using Git"
