@@ -90,6 +90,10 @@
 		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
 		<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы -->
 		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
+		<!-- TODO: определиться с передачей p:generator-name -->
+		<xsl:param name="p:generator-name" as="xs:string" required="no" tunnel="yes"
+			select="'http://github.com/test-st-petersburg/DocTemplates/tools/ConvertFrom-PlainXML.ps1'"
+		/>
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select="@*"/>
 			<xsl:apply-templates mode="#current" select="
@@ -99,8 +103,12 @@
 					| meta:user-defined[ @meta:name = $p:version-meta-name ]
 				)
 			"/>
-			<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы, параметры -->
-			<xsl:element name="meta:generator" inherit-namespaces="no">http://github.com/test-st-petersburg/DocTemplates/tools/ConvertFrom-PlainXML.ps1 document builder</xsl:element>
+			<xsl:element name="meta:generator" inherit-namespaces="no">
+				<xsl:value-of select="$p:generator-name"/>
+				<xsl:if test="$p:version">
+					<xsl:value-of select="concat( '/', $p:version )"/>
+				</xsl:if>
+			</xsl:element>
 			<xsl:element name="dc:date" inherit-namespaces="no">
 				<xsl:value-of select="format-dateTime(
 					adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
