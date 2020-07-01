@@ -93,6 +93,8 @@
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
 				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
+				<text:variable-decl office:value-type="string" text:name="Название"/>
+				<text:variable-decl office:value-type="string" text:name="Описание"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияEmail"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияWebСайт"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияАдрес"/>
@@ -179,6 +181,8 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Приказ «о чём-то»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
@@ -458,6 +462,8 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">о секторе по обеспечению функционирования филиала</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Положение о секторе по обеспечению функционирования филиала</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
@@ -1049,6 +1055,8 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">Должностная инструкция инженера 2 категории сектора по ремонту средств измерений</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Должностная инструкция инженера 2 категории сектора по ремонту средств измерений</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
 				</text:section>
@@ -1601,6 +1609,8 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Служебная записка «о чём-то»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВступительноеОбращение" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"/>
