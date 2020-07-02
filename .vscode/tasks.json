@@ -51,6 +51,10 @@
 			"command": "Invoke-Build -Task Clean"
 		},
 		{
+			"label": "Remove sources",
+			"command": "Invoke-Build -Task RemoveSources"
+		},
+		{
 			"label": "Convert Open Office files to plain XML",
 			"command": "Invoke-Build -Task Unpack -Verbose"
 		},

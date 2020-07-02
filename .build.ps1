@@ -4,7 +4,7 @@
 param(
 	# путь к папке с .ott файлами
 	[System.String]
-	$DestinationPath = ( property DestinationPath ( ( Resolve-Path -Path '.\template' ).Path ) ),
+	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
 
 	# имя .ott шаблона
 	[System.String]
@@ -13,7 +13,7 @@ param(
 	# путь к .ott файлу
 	[System.String[]]
 	$DestinationFile = ( property DestinationFile `
-		@( Get-ChildItem -Path $DestinationPath -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
+		@( $DestinationPath | Where-Object { Test-Path -Path $_ } | Get-ChildItem -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
 	),
 
 	# путь к папке с xml папками .ott файлов
@@ -74,6 +74,9 @@ Function Update-FileLastWriteTime {
 		| Out-Null;
 }
 
+if ( -not ( Test-Path -Path $DestinationPath ) ) {
+	New-Item -Path $DestinationPath -ItemType Directory | Out-Null;
+};
 
 [System.String[]] $NewDestinationFile = ( $SourceFolder | ForEach-Object {
 		Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
@@ -81,13 +84,18 @@ Function Update-FileLastWriteTime {
 
 [System.String] $MarkerFileName = '.dirstate';
 
-# Synopsis: Удаляет каталоги с XML файлами
+# Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
+	$DestinationPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+};
+
+# Synopsis: Удаляет каталоги с XML файлами
+task RemoveSources {
 	$SourceFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Преобразовывает Open Office файлы в папки с XML файлами
-task Unpack Clean, {
+task Unpack RemoveSources, {
 	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
 		-Indented `
 		-WarningAction Continue `
