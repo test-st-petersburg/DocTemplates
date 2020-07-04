@@ -83,15 +83,5 @@
 			},
 			"command": "Invoke-Build -Task BuildAndOpen -Verbose"
 		},
-		{
-			"label": "Восстановить шаблон Письма из XML и открыть его",
-			"group": "build",
-			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Письмо ФБУ Тест-С.-Петербург' -Verbose"
-		},
-		{
-			"label": "Восстановить шаблон Записки из XML и открыть его",
-			"group": "build",
-			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Записка ФБУ Тест-С.-Петербург' -Verbose"
-		}
 	]
 }

@@ -4,26 +4,26 @@
 param(
 	# путь к папке с .ott файлами
 	[System.String]
-	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
+	$DestinationTemplatesPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
 
 	# имя .ott шаблона
 	[System.String]
-	$Filter = ( property Filter '*' ),
+	$TemplatesFilter = ( property Filter '*' ),
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationFile = ( property DestinationFile `
-		@( $DestinationPath | Where-Object { Test-Path -Path $_ } | Get-ChildItem -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
+	$DestinationTemplateFile = ( property DestinationFile `
+		@( $DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } | Get-ChildItem -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
 	),
 
 	# путь к папке с xml папками .ott файлов
 	[System.String]
-	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src\template' ).Path ) ),
+	$SourceTemplatesPath = ( property SourcePath ( ( Resolve-Path -Path '.\src\template' ).Path ) ),
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]
-	$SourceFolder = #( property SourceFolder `
-	@( Get-ChildItem -Path $SourcePath -Directory -Filter "$Filter.ott" | Select-Object -ExpandProperty FullName )
+	$SourceTemplatesFolder = #( property SourceFolder `
+	@( Get-ChildItem -Path $SourceTemplatesPath -Directory -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
 	#)
 	,
 
@@ -64,39 +64,35 @@ Function Update-FileLastWriteTime {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-				| Out-Null;
+			| Out-Null;
 		};
 	};
 	Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-		| Out-Null;
+	| Out-Null;
 }
 
-if ( -not ( Test-Path -Path $DestinationPath ) ) {
-	New-Item -Path $DestinationPath -ItemType Directory | Out-Null;
+if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
+	New-Item -Path $DestinationTemplatesPath -ItemType Directory | Out-Null;
 };
-
-[System.String[]] $NewDestinationFile = ( $SourceFolder | ForEach-Object {
-		Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $_ -Leaf );
-	} );
 
 [System.String] $MarkerFileName = '.dirstate';
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Удаляет каталоги с XML файлами
 task RemoveSources {
-	$SourceFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$SourceTemplatesFolder | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Преобразовывает Open Office файлы в папки с XML файлами
 task Unpack RemoveSources, {
-	$DestinationFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
+	$DestinationTemplateFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
 		-Indented `
 		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -105,7 +101,7 @@ task Unpack RemoveSources, {
 
 # Synopsis: Оптимизирует XML файлы Open Office
 task OptimizeXML {
-	$SourceFolder | .\tools\Optimize-PlainXML.ps1 `
+	$SourceTemplatesFolder | .\tools\Optimize-PlainXML.ps1 `
 		-WarningAction Continue `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -114,11 +110,11 @@ task OptimizeXML {
 task UnpackAndOptimize Unpack, OptimizeXML;
 
 $OOFilesUnpackTasks = @();
-foreach ( $OOFile in $DestinationFile ) {
+foreach ( $OOFile in $DestinationTemplateFile ) {
 	$documentName = $( Split-Path -Path ( $OOFile ) -Leaf );
 	$OOUnpackTaskName = "UnpackAndOptimize-$documentName";
 	$OOFilesUnpackTasks += $OOUnpackTaskName;
-	$targetFolder = Join-Path -Path $SourcePath -ChildPath $documentName;
+	$targetFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
 	$target = Join-Path -Path $targetFolder -ChildPath 'META-INF/manifest.xml';
 	$marker = Join-Path -Path $targetFolder -ChildPath $MarkerFileName;
 
@@ -128,13 +124,13 @@ foreach ( $OOFile in $DestinationFile ) {
  {
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
-		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourcePath `
+		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
-		$localOOXMLFolder = Join-Path -Path $SourcePath -ChildPath $documentName;
+		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
 		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -150,14 +146,14 @@ $version = gitversion /output json /showvariable SemVer
 
 $BuildTasks = @();
 $BuildAndOpenTasks = @();
-foreach ( $documentXMLFolder in $SourceFolder ) {
+foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
 	$BuildTaskName = "Build-$documentName";
 	$BuildTasks += $BuildTaskName;
 	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
 	$BuildAndOpenTasks += $BuildAndOpenTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationPath -ChildPath $documentName;
+	$target = Join-Path -Path $DestinationTemplatesPath -ChildPath $documentName;
 	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
 
 	task $BuildTaskName `
@@ -171,8 +167,8 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
-		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
+		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationTemplatesPath -Force `
 			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -193,8 +189,8 @@ foreach ( $documentXMLFolder in $SourceFolder ) {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
-		$localXMLFolder = @( Join-Path -Path $SourcePath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationPath -Force `
+		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationTemplatesPath -Force `
 			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
