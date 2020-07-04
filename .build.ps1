@@ -4,7 +4,7 @@
 param(
 	# путь к папке с генерируемыми файлами
 	[System.String]
-	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\output' ) ),
+	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'output' ) ),
 
 	# путь к папке с .ott файлами
 	[System.String]
