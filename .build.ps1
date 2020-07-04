@@ -2,9 +2,15 @@
 #Requires -Modules InvokeBuild
 
 param(
+	# путь к папке с генерируемыми файлами
+	[System.String]
+	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\output' ) ),
+
 	# путь к папке с .ott файлами
 	[System.String]
-	$DestinationTemplatesPath = ( property DestinationTemplatesPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
+	$DestinationTemplatesPath = ( property DestinationTemplatesPath (
+			Join-Path -Path $DestinationPath -ChildPath 'template'
+		) ),
 
 	# имя .ott шаблона
 	[System.String]
@@ -88,7 +94,7 @@ if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$DestinationPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Удаляет каталоги с XML файлами
