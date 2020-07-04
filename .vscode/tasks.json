@@ -71,17 +71,22 @@
 			"command": "Invoke-Build -Task UnpackAndOptimizeModified -Verbose"
 		},
 		{
-			"label": "Create Open Office files from plain XML",
+			"label": "Build Open Office files from plain XML",
 			"group": "build",
 			"command": "Invoke-Build -Task Build -Verbose"
 		},
 		{
-			"label": "Create Open Office files from plain XML and open",
+			"label": "Build Open Office files from plain XML and open",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
 			"command": "Invoke-Build -Task BuildAndOpen -Verbose"
+		},
+		{
+			"label": "Build Open Office macro libraries",
+			"group": "build",
+			"command": "Invoke-Build -Task BuildLibs -Verbose"
 		},
 	]
 }

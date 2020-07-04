@@ -87,11 +87,16 @@ git репозиторий.
   Изменёнными считаются файлы, время изменения которых более позднее,
   чем время изменения файла манифеста в каталоге документа.
 
-- **Create Open Office files from plain XML**:
+- Build Open Office macro libraries:
+  создание каталогов с библиотеками макрокоманд Open Office
+  для последующего использования как в составе шаблонов документов,
+  так и отдельно.
+
+- **Build Open Office files from plain XML**:
   создание .ott файлов шаблонов документов из каталогов
   с XML и бинарными файлами.
 
-- **Create Open Office files from plain XML and open**:
+- **Build Open Office files from plain XML and open**:
   обновление .ott файлов шаблонов документов из каталогов
   с XML и бинарными файлами и открытие их ассоциированным
   приложением (только для Windows).

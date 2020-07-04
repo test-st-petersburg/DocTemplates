@@ -14,13 +14,20 @@ param(
 
 	# имя .ott шаблона
 	[System.String]
-	$TemplatesFilter = ( property TemplatesFilter '*' ),
+	$TemplatesFilter = ( property TemplatesFilter '*.ott' ),
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationTemplateFile = ( property DestinationTemplateFile `
-		@( $DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } | Get-ChildItem -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
-	),
+	$DestinationTemplateFile = ( property DestinationTemplateFile @(
+			$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+		) ),
+
+	# путь к папке с библиотеками макросов
+	[System.String]
+	$DestinationLibrariesPath = ( property DestinationLibrariesPath (
+			Join-Path -Path $DestinationPath -ChildPath 'basic'
+		) ),
 
 	# путь к папке с исходными файлами
 	[System.String]
@@ -32,12 +39,25 @@ param(
 			Join-Path -Path $SourcePath -ChildPath 'template'
 		) ),
 
-	# путь к папке с xml файлами одного .ott файла
+	# пути к папкам с xml файлами .ott файлов
 	[System.String[]]
-	$SourceTemplatesFolder = #( property SourceTemplatesFolder `
-	@( Get-ChildItem -Path $SourceTemplatesPath -Directory -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
-	#)
-	,
+	$SourceTemplatesFolder = ( property SourceTemplatesFolder @(
+			$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -Directory -Filter $TemplatesFilter.ott | Select-Object -ExpandProperty FullName
+		) ),
+
+	# путь к папке с исходными файлами библиотек макросов
+	[System.String]
+	$SourceLibrariesPath = ( property SourceLibrariesPath (
+			Join-Path -Path $SourcePath -ChildPath 'basic'
+		) ),
+
+	# пути к папкам с "исходными" файлами библиотек макросов
+	[System.String[]]
+	$SourceLibrariesFolder = ( property SourceLibrariesFolder @(
+			$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
+		) ),
 
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
@@ -87,7 +107,10 @@ Function Update-FileLastWriteTime {
 }
 
 if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
-	New-Item -Path $DestinationTemplatesPath -ItemType Directory | Out-Null;
+	New-Item -Path $DestinationTemplatesPath -ItemType Directory `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+	| Out-Null;
 };
 
 [System.String] $MarkerFileName = '.dirstate';
@@ -155,6 +178,31 @@ task UnpackAndOptimizeModified $OOFilesUnpackTasks;
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 $version = gitversion /output json /showvariable SemVer
+
+$BuildLibrariesTasks = @();
+foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
+	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
+	$BuildTaskName = "BuildLib-$LibName";
+	$BuildLibrariesTasks += $BuildTaskName;
+	$prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
+	$target = Join-Path -Path $DestinationLibrariesPath -ChildPath $LibName;
+	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
+
+	task $BuildTaskName `
+		-Inputs $prerequisites `
+		-Outputs @( $scriptsLibFile ) `
+	{
+		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
+
+		$SourceLibFolder | .\tools\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
+};
+
+# Synopsis: Создаёт библиотеки макросов Open Office
+task BuildLibs $BuildLibrariesTasks;
 
 $BuildTasks = @();
 $BuildAndOpenTasks = @();
