@@ -4,25 +4,31 @@
 param(
 	# путь к папке с .ott файлами
 	[System.String]
-	$DestinationTemplatesPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
+	$DestinationTemplatesPath = ( property DestinationTemplatesPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath '.\template' ) ),
 
 	# имя .ott шаблона
 	[System.String]
-	$TemplatesFilter = ( property Filter '*' ),
+	$TemplatesFilter = ( property TemplatesFilter '*' ),
 
 	# путь к .ott файлу
 	[System.String[]]
-	$DestinationTemplateFile = ( property DestinationFile `
+	$DestinationTemplateFile = ( property DestinationTemplateFile `
 		@( $DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } | Get-ChildItem -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
 	),
 
+	# путь к папке с исходными файлами
+	[System.String]
+	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src' ).Path ) ),
+
 	# путь к папке с xml папками .ott файлов
 	[System.String]
-	$SourceTemplatesPath = ( property SourcePath ( ( Resolve-Path -Path '.\src\template' ).Path ) ),
+	$SourceTemplatesPath = ( property SourceTemplatesPath (
+			Join-Path -Path $SourcePath -ChildPath 'template'
+		) ),
 
 	# путь к папке с xml файлами одного .ott файла
 	[System.String[]]
-	$SourceTemplatesFolder = #( property SourceFolder `
+	$SourceTemplatesFolder = #( property SourceTemplatesFolder `
 	@( Get-ChildItem -Path $SourceTemplatesPath -Directory -Filter "$TemplatesFilter.ott" | Select-Object -ExpandProperty FullName )
 	#)
 	,
