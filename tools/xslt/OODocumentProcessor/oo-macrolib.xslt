@@ -18,6 +18,7 @@
 	xmlns:library="http://openoffice.org/2000/library"
 
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
+	xmlns:s="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system"
 >
 
 	<xsl:param name="p:basic-module-header" as="xs:string" required="no">
@@ -29,6 +30,10 @@ REM  *****  BASIC  *****
 	<xsl:param name="p:basic-module-footer" as="xs:string" required="no">
 		<xsl:text/>
 	</xsl:param>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt" package-version="2.3">
+		<xsl:accept component="function" names="s:get-parent-directory-name s:get-file-name-without-extension s:get-relative-uri" visibility="private"/>
+	</xsl:use-package>
 
 	<!-- сборка библиотеки сценариев из "исходных" файлов -->
 	<xsl:mode
@@ -42,12 +47,7 @@ REM  *****  BASIC  *****
 		<xsl:context-item use="optional"/>
 		<xsl:param name="p:source-directory" as="xs:string" required="no" select="''"/>
 		<xsl:param name="p:destination-directory" as="xs:string" required="no" select="''"/>
-		<xsl:param name="library:name" as="xs:string" required="no" select="
-			tokenize(
-				replace( resolve-uri( $p:source-directory ), '/$', '' ),
-				'/'
-			)[ last() ]
-		"/>
+		<xsl:param name="library:name" as="xs:string" required="no" select="s:get-parent-directory-name( xs:anyURI( $p:source-directory ) )"/>
 		<xsl:param name="library:readonly" as="xs:boolean" required="no" select="false()"/>
 		<xsl:param name="library:passwordprotected" as="xs:boolean" required="no" select="false()"/>
 		<xsl:param name="script:language" as="xs:Name" select="xs:Name( 'StarBasic' )"/>
@@ -64,18 +64,8 @@ REM  *****  BASIC  *****
 				<xsl:attribute name="library:passwordprotected" select="$library:passwordprotected"/>
 
 				<xsl:for-each select="uri-collection( concat( $p:source-directory, '?recurse=yes,select=*.bas' ) )">
-					<xsl:variable name="p:relative-current-uri" as="xs:string" select="
-						substring-after(
-							replace( current(), '^(?:(?:\w{2,}):/{1,3})', '' ),
-							replace( resolve-uri( $p:source-directory ), '^(?:(?:\w{2,}):/{1,3})', '' )
-						)
-					"/>
-					<xsl:variable name="script:name" as="xs:string" select="
-						data( analyze-string(
-							current(),
-							'^((?:(?:\w{2,}):/{1,3})?)((?:\w:)?)((?:(?:[^/]+)/)*)([^/]+?)((?:\.[^/.]+)?)$'
-						)/fn:match/fn:group[ @nr = '4' ]/text() )
-					"/>
+					<xsl:variable name="p:relative-current-uri" as="xs:string" select="s:get-relative-uri( current(), xs:anyURI( $p:source-directory ) )"/>
+					<xsl:variable name="script:name" as="xs:string" select="s:get-file-name-without-extension( current() )"/>
 					<xsl:fork>
 						<xsl:sequence>
 							<xsl:element name="library:element" inherit-namespaces="no">

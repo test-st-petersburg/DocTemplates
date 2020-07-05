@@ -28,7 +28,9 @@ begin {
 
 	Push-Location -Path $PSScriptRoot;
 	$saxExecutable = .\Get-XSLTExecutable.ps1 `
-		-PackagePath 'xslt/OODocumentProcessor/oo-macrolib.xslt' `
+		-PackagePath `
+		'xslt/system/uri.xslt', `
+		'xslt/OODocumentProcessor/oo-macrolib.xslt' `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
 		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
