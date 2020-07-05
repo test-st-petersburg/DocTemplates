@@ -81,7 +81,7 @@ process {
 
 		$null = $saxTransform.CallTemplate(
 			( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-				'create-macro-library' )
+				'build-macro-library' )
 		);
 
 		Write-Verbose "Macroses library $LibraryName is ready in ""$DestinationLibraryPath"".";

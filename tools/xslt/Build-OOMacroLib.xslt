@@ -10,7 +10,7 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt" package-version="2.3">
 		<xsl:accept component="mode" names="p:build-macro-library" visibility="final"/>
-		<xsl:accept component="template" names="p:create-macro-library" visibility="final"/>
+		<xsl:accept component="template" names="p:build-macro-library" visibility="final"/>
 	</xsl:use-package>
 
 </xsl:transform>

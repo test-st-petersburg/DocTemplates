@@ -38,7 +38,7 @@ REM  *****  BASIC  *****
 		visibility="final"
 	/>
 
-	<xsl:template name="p:create-macro-library" visibility="final">
+	<xsl:template name="p:build-macro-library" visibility="final">
 		<xsl:context-item use="optional"/>
 		<xsl:param name="p:source-directory" as="xs:string" required="no" select="''"/>
 		<xsl:param name="p:destination-directory" as="xs:string" required="no" select="''"/>
