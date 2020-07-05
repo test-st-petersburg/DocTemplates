@@ -18,7 +18,7 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
+	<xsl:variable name="p:manifest-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'META-INF/manifest.xml' )" visibility="private"/>
 	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!--
@@ -58,7 +58,7 @@
 		</xsl:variable>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="'Manifest.dtd'" use-when="$p:restore-doctype"/>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="''" use-when="not( $p:restore-doctype )"/>
-		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
+		<xsl:result-document href="{ $p:manifest-uri }"
 			format="p:OOXmlFileFormat"
 			doctype-system="{ $p:manifest-doctype-system }"
 		>
@@ -101,7 +101,7 @@
 			or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
+		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OOXmlFile">
 			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -109,7 +109,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
 		match="/manifest:manifest/manifest:file-entry[ @manifest:media-type='application/rdf+xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
+		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OORdfFile">
 			<xsl:apply-templates select="*" mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -122,7 +122,7 @@
 			or ( @manifest:full-path='styles.xml' )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="office.dtd"
 		>
@@ -133,7 +133,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='Basic/script-lc.xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="libraries.dtd"
 		>
@@ -148,7 +148,7 @@
 		]"
 		 priority="-1"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="library.dtd"
 		>
@@ -159,7 +159,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[	@manifest:full-path='Configurations2/images/lc_imagelist.xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="image.dtd"
 		>
@@ -173,7 +173,7 @@
 			or starts-with( @manifest:full-path, 'Configurations2/popupmenu/' )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="menubar.dtd"
 		>
@@ -184,7 +184,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[ starts-with( @manifest:full-path, 'Configurations2/toolbar/' ) ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="toolbar.dtd"
 		>
