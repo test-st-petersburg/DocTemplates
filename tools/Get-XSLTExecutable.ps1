@@ -121,6 +121,7 @@ try {
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) ) {
 			try {
+				$saxCompiler.BaseUri = $XSLTPackagePath;
 				$saxPackage = $saxCompiler.CompilePackage(
 					( New-Object System.IO.FileStream -ArgumentList $XSLTPackagePath, 'Open' )
 				);
