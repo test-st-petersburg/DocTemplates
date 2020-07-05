@@ -28,12 +28,8 @@ begin {
 
 	Push-Location -Path $PSScriptRoot;
 	$saxExecutable = .\Get-XSLTExecutable.ps1 `
-		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
-		'xslt/optimizer/OOOptimizer.xslt', `
-		'xslt/OODocumentProcessor/oo-writer.xslt', `
-		'xslt/OODocumentProcessor/oo-merger.xslt', `
-		'xslt/OODocumentProcessor/oo-preprocessor.xslt' `
-		-Path 'xslt/Transform-PlainXML.xslt' `
+		-PackagePath 'xslt/OODocumentProcessor/oo-macrolib.xslt' `
+		-Path 'xslt/Build-OOMacroLib.xslt' `
 		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
@@ -60,16 +56,11 @@ process {
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 		| Out-Null;
 
-		$saxTransform = $saxExecutable.Load();
+		$saxTransform = $saxExecutable.Load30();
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
-		# $saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
-		# 	'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'before-pack';
-
-		# $saxTransform.SetParameter(
-		# 	( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'version' ),
-		# 	( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $Version )
-		# )
+		$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor', `
+			'build-macro-library';
 
 		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
 		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
@@ -80,10 +71,18 @@ process {
 		$saxTransform.BaseOutputURI = $BaseOutputURI;
 		Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-		# $saxTransform.SetInputStream(
-		# 	( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
-		# 	$ManifestUri );
-		# $saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
+		$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+		$Params.Add(
+			( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				'source-directory' ),
+			( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
+		)
+		$saxTransform.SetInitialTemplateParameters( $Params, $false );
+
+		$null = $saxTransform.CallTemplate(
+			( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				'create-macro-library' )
+		);
 
 		Write-Verbose "Macroses library $LibraryName is ready in ""$DestinationLibraryPath"".";
 	};
