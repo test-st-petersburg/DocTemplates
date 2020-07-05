@@ -51,7 +51,7 @@
 	<!--  -->
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
-		<xsl:context-item use="required" as="document-node()"/>
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
 		<xsl:variable name="p:manifest" as="document-node()">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>

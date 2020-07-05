@@ -61,7 +61,7 @@
 	</xsl:use-package>
 
 	<xsl:template mode="t:after-unpack" match="/">
-		<xsl:context-item use="required" as="document-node()"/>
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
 		<xsl:variable name="t:complex-document" as="document-node()">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
@@ -70,7 +70,7 @@
 	</xsl:template>
 
 	<xsl:template mode="t:before-pack" match="/">
-		<xsl:context-item use="required" as="document-node()"/>
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
 		<xsl:variable name="t:complex-document" as="document-node()">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
@@ -87,7 +87,7 @@
 	</xsl:template>
 
 	<xsl:template mode="t:optimize" match="/">
-		<xsl:context-item use="required" as="document-node()"/>
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
 		<xsl:variable name="t:complex-document" as="document-node()">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
