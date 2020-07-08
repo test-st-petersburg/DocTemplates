@@ -187,10 +187,15 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 	$prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
 	$target = Join-Path -Path $DestinationLibrariesPath -ChildPath $LibName;
 	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
+	$targetFiles = @(
+		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
+		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
+		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
+	);
 
 	task $BuildTaskName `
 		-Inputs $prerequisites `
-		-Outputs @( $scriptsLibFile ) `
+		-Outputs ( @( $scriptsLibFile ) + $targetFiles ) `
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
