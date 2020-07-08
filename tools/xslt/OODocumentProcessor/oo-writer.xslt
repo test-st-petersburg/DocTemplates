@@ -18,7 +18,8 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:manifest-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'META-INF/manifest.xml' )" visibility="private"/>
+	<xsl:import href="oo-defs.xslt"/>
+
 	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!--
@@ -53,7 +54,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:manifest" as="document-node()">
+		<xsl:variable name="p:manifest" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="'Manifest.dtd'" use-when="$p:restore-doctype"/>

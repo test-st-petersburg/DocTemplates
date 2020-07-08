@@ -63,7 +63,7 @@
 	<xsl:template mode="t:after-unpack" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="t:complex-document" as="document-node()">
+		<xsl:variable name="t:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
 		<xsl:apply-templates select="$t:complex-document" mode="p:create-outline-document-files"/>
@@ -72,15 +72,15 @@
 	<xsl:template mode="t:before-pack" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="t:complex-document" as="document-node()">
+		<xsl:variable name="t:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:variable name="t:updated-complex-document" as="document-node()">
+		<xsl:variable name="t:updated-complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="$t:complex-document" mode="p:update-document-meta">
 				<xsl:with-param name="p:version" select="$t:version" as="xs:string" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:variable>
-		<xsl:variable name="t:preprocessed-complex-document" as="document-node()">
+		<xsl:variable name="t:preprocessed-complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="$t:updated-complex-document" mode="p:preprocess-document"/>
 		</xsl:variable>
 		<xsl:apply-templates select="$t:preprocessed-complex-document" mode="p:create-inline-document-files"/>
@@ -89,10 +89,10 @@
 	<xsl:template mode="t:optimize" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="t:complex-document" as="document-node()">
+		<xsl:variable name="t:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:variable name="t:optimized-document" as="document-node()">
+		<xsl:variable name="t:optimized-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="$t:complex-document" mode="o:optimize"/>
 		</xsl:variable>
 		<xsl:apply-templates select="$t:optimized-document" mode="p:create-outline-document-files"/>
