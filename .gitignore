@@ -9,3 +9,4 @@ template/*.odt#
 template/*.ott
 template/*.ott#
 src/template/**/mimetype
+src/template/**/Thumbnails
