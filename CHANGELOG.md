@@ -4,6 +4,10 @@
 
 Прочие изменения:
 
+- восстанавливаются реквизиты `@manifest:media-type` в манифесте
+  для раздела `Configurations2`.
+  Libre Office генерирует их пустыми.
+  [#89](https://github.com/test-st-petersburg/DocTemplates/issues/89)
 - исключены thumbnails из репозитория и генерируемых документов
   и отключена в настройках документов их генерация
   [#88](https://github.com/test-st-petersburg/DocTemplates/issues/88)
