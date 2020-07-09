@@ -298,7 +298,15 @@
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-unimportant-files" match="manifest:file-entry[ @manifest:full-path = 'layout-cache' ]"/>
 
+	<!-- удаляем thumbnails -->
+
 	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="manifest:file-entry[ @manifest:full-path = 'Thumbnails/thumbnail.png' ]"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="
+		config:config-item[ @config:name = 'SaveThumbnail' ]/text()
+	">
+		<xsl:value-of select=" false() "/>
+	</xsl:template>
 
 	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
 
