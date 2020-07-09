@@ -80,6 +80,7 @@
 	<xsl:variable name="o:remove-calculated-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-generator-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-print-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:fix-manifest" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -306,6 +307,26 @@
 		config:config-item[ @config:name = 'SaveThumbnail' ]/text()
 	">
 		<xsl:value-of select=" false() "/>
+	</xsl:template>
+
+	<!-- исправляем `@manifest:media-type` в манифесте для раздела Configurations2 -->
+
+	<xsl:template mode="o:optimize" use-when="$o:fix-manifest" match="
+		/manifest:manifest/manifest:file-entry[
+			( @manifest:media-type = '' )
+			and ( starts-with( @manifest:full-path, 'Configurations2/' ) and ends-with( @manifest:full-path, '.xml' ) )
+		]/@manifest:media-type
+	">
+		<xsl:attribute name="manifest:media-type" select=" 'text/xml' "/>
+	</xsl:template>
+
+	<xsl:template mode="o:optimize" use-when="$o:fix-manifest" match="
+		/manifest:manifest/manifest:file-entry[
+			( @manifest:media-type = '' )
+			and ( starts-with( @manifest:full-path, 'Configurations2/images/Bitmaps/' ) and ends-with( @manifest:full-path, '.png' ) )
+		]/@manifest:media-type
+	">
+		<xsl:attribute name="manifest:media-type" select=" 'image/png' "/>
 	</xsl:template>
 
 	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
