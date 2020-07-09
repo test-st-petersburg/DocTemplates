@@ -29,5 +29,4 @@
 	<manifest:file-entry manifest:full-path="Pictures/100052A60000143200000DACA5DF8DA61B17A88D.wmf" manifest:media-type="image/x-wmf"/>
 	<manifest:file-entry manifest:full-path="settings.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Thumbnails/thumbnail.png" manifest:media-type="image/png"/>
 </manifest:manifest>

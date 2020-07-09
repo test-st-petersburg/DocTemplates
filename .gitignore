@@ -7,3 +7,4 @@ Thumbs.db
 output
 tmp
 src/template/**/mimetype
+src/template/**/Thumbnails

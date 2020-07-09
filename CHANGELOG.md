@@ -11,6 +11,9 @@
 - добавлена возможность сборки библиотек макросов из "исходных" файлов
   (команда сборки `BuildLibs`)
   [#43](https://github.com/test-st-petersburg/DocTemplates/issues/43)
+- исключены thumbnails из репозитория и генерируемых документов
+  и отключена в настройках документов их генерация
+  [#88](https://github.com/test-st-petersburg/DocTemplates/issues/88)
 - метаданные `meta:generator` указываются с учётом RFC 2616
   [#84](https://github.com/test-st-petersburg/DocTemplates/issues/84)
 - метаданные (свойства) документа обновляются при сохранении документа
