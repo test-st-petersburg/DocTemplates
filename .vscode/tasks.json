@@ -88,5 +88,10 @@
 			"group": "build",
 			"command": "Invoke-Build -Task BuildLibs -Verbose"
 		},
+		{
+			"label": "Build Open Office macro libraries containers",
+			"group": "build",
+			"command": "Invoke-Build -Task BuildLibContainers -Verbose"
+		},
 	]
 }

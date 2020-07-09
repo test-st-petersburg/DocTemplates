@@ -1,18 +1,19 @@
 ﻿<#
 	.SYNOPSIS
-		Создаёт каталог библиотеки макросов из папки с "исходными" файлами
+		Создаёт для последующего включения в состав документа либо шаблона документа каталог контейнера,
+		содержащего единственную библиотеку макросов, из папки библиотеки
 #>
 
 #Requires -Version 5.0
 
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
-	# путь к папке с исходными файлами
+	# путь к папке библиотеки
 	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true )]
 	[System.String]
 	$Path,
 
-	# путь к папке, в которой будет создана библиотека макросов Open Office
+	# путь к папке, в которой будет создан контейнер библиотеки
 	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
 	$DestinationPath,
@@ -43,19 +44,19 @@ process {
 
 	$LibraryName = Split-Path -Path $Path -Leaf;
 
-	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library from source directory" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) ) {
 
-		$DestinationLibraryPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
+		$DestinationContainerPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
 
-		if ( Test-Path -Path $DestinationLibraryPath ) {
+		if ( Test-Path -Path $DestinationContainerPath ) {
 			if ( -not $Force ) {
-				Write-Error -Message "Destination library path ""$DestinationLibraryPath"" exists.";
+				Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
 			};
-			Remove-Item -Path $DestinationLibraryPath -Recurse -Force `
+			Remove-Item -Path $DestinationContainerPath -Recurse -Force `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
-		New-Item -Path $DestinationLibraryPath -ItemType Directory `
+		New-Item -Path $DestinationContainerPath -ItemType Directory `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 		| Out-Null;
@@ -68,7 +69,7 @@ process {
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-		[System.Uri] $BaseOutputURI = ( [System.Uri] ( $DestinationLibraryPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		[System.Uri] $BaseOutputURI = ( [System.Uri] ( $DestinationContainerPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 		$saxTransform.BaseOutputURI = $BaseOutputURI;
 		Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
@@ -82,9 +83,9 @@ process {
 
 		$null = $saxTransform.CallTemplate(
 			( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-				'build-macro-library' )
+				'build-macro-library-container' )
 		);
 
-		Write-Verbose "Macroses library $LibraryName is ready in ""$DestinationLibraryPath"".";
+		Write-Verbose "Macroses library $LibraryName container is ready in ""$DestinationContainerPath"".";
 	};
 };

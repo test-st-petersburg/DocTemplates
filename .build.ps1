@@ -29,6 +29,16 @@ param(
 			Join-Path -Path $DestinationPath -ChildPath 'basic'
 		) ),
 
+	# путь к папке с генерируемыми файлами, используемыми только для выполнения других задач
+	[System.String]
+	$TempPath = ( property TempPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'tmp' ) ),
+
+	# путь к папке с контейнерами библиотек макросов
+	[System.String]
+	$DestinationLibContainersPath = ( property DestinationLibContainersPath (
+			Join-Path -Path $TempPath -ChildPath 'basic'
+		) ),
+
 	# путь к папке с исходными файлами
 	[System.String]
 	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src' ).Path ) ),
@@ -117,7 +127,7 @@ if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$DestinationPath, $TempPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Удаляет каталоги с XML файлами
@@ -180,6 +190,7 @@ task UnpackAndOptimizeModified $OOFilesUnpackTasks;
 $version = gitversion /output json /showvariable SemVer
 
 $BuildLibrariesTasks = @();
+$BuildLibContainersTasks = @();
 foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
 	$BuildTaskName = "BuildLib-$LibName";
@@ -192,10 +203,11 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
 		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
 	);
+	$targetFiles = @( $scriptsLibFile ) + $targetFiles;
 
 	task $BuildTaskName `
 		-Inputs $prerequisites `
-		-Outputs ( @( $scriptsLibFile ) + $targetFiles ) `
+		-Outputs $targetFiles `
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
@@ -204,10 +216,44 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
+
+	$BuildLibContainerTaskName = "BuildLibContainer-$LibName";
+	$BuildLibContainersTasks += $BuildLibContainerTaskName;
+	# $prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
+
+	$targetContainer = Join-Path -Path $DestinationLibContainersPath -ChildPath $LibName;
+	$targetContainerBasic = Join-Path -Path $targetContainer -ChildPath 'Basic';
+	$targetContainerScriptsFile = Join-Path -Path $targetContainerBasic -ChildPath 'script-lc.xml';
+	$targetContainerBasicLib = Join-Path -Path $targetContainerBasic -ChildPath $LibName;
+	$targetContainerScriptsLibFile = Join-Path -Path $targetContainerBasicLib -ChildPath 'script-lb.xml';
+	$targetContainerFiles = @(
+		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
+		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
+		| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
+	);
+	$targetContainerMeta = Join-Path -Path $targetContainer -ChildPath 'META-INF';
+	$targetContainerManifest = Join-Path -Path $targetContainerMeta -ChildPath 'manifest.xml';
+
+	task $BuildLibContainerTaskName `
+		-Inputs $targetFiles `
+		-Outputs ( ( $targetContainerManifest, $targetContainerScriptsLibFile, $targetContainerScriptsFile ) `
+			+ $targetContainerFiles	) `
+		-Job $BuildTaskName, `
+	{
+		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
+
+		$LibFolder | .\tools\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
 };
 
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs $BuildLibrariesTasks;
+
+# Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
+task BuildLibContainers $BuildLibContainersTasks;
 
 $BuildTasks = @();
 $BuildAndOpenTasks = @();

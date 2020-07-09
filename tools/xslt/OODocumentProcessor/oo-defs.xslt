@@ -14,6 +14,8 @@
 	<xsl:variable name="p:basic-script-module-in-container-file-name-ext" as="xs:string" static="yes" select="'.xml'" visibility="private"/>
 	<xsl:variable name="p:basic-script-lib-in-container-media-type" as="xs:string" static="yes" select="'text/xml'" visibility="private"/>
 	<xsl:variable name="p:basic-script-lib-in-container-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'script-lb.xml' )" visibility="private"/>
+	<xsl:variable name="p:basic-script-container-media-type" as="xs:string" static="yes" select="'text/xml'" visibility="private"/>
+	<xsl:variable name="p:basic-script-container-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'script-lc.xml' )" visibility="private"/>
 
 	<xsl:variable name="p:basic-script-module-media-type" as="xs:string" static="yes" select="'text/xml'" visibility="private"/>
 	<xsl:variable name="p:basic-script-module-file-name-ext" as="xs:string" static="yes" select="'.xba'" visibility="private"/>
