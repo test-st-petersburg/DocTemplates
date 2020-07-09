@@ -4,6 +4,13 @@
 
 Прочие изменения:
 
+- добавлена возможность подготовки контейнеров библиотек
+  для последующего включения в состав документов, шаблонов документов
+  (команда сборки `BuildLibContainers`)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- добавлена возможность сборки библиотек макросов из "исходных" файлов
+  (команда сборки `BuildLibs`)
+  [#43](https://github.com/test-st-petersburg/DocTemplates/issues/43)
 - метаданные `meta:generator` указываются с учётом RFC 2616
   [#84](https://github.com/test-st-petersburg/DocTemplates/issues/84)
 - метаданные (свойства) документа обновляются при сохранении документа
