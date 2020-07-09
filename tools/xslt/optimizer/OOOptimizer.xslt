@@ -66,6 +66,7 @@
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-abs-size-when-relative" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unimportant-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-thumbnails" as="xs:boolean" static="yes" select="$o:remove-unimportant-files" visibility="private"/>
 	<xsl:variable name="o:remove-config-view-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -296,6 +297,16 @@
 	<!-- удаляем некоторые файлы из манифеста -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-unimportant-files" match="manifest:file-entry[ @manifest:full-path = 'layout-cache' ]"/>
+
+	<!-- удаляем thumbnails -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="manifest:file-entry[ @manifest:full-path = 'Thumbnails/thumbnail.png' ]"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="
+		config:config-item[ @config:name = 'SaveThumbnail' ]/text()
+	">
+		<xsl:value-of select=" false() "/>
+	</xsl:template>
 
 	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
 
