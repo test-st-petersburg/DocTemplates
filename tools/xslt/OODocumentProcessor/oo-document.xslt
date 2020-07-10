@@ -14,6 +14,7 @@
 
 	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
+	xmlns:ood="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
 
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -46,120 +47,120 @@
 	<!-- обработка XML файлов, полученных непосредственно после распаковки документа либо шаблона -->
 
 	<xsl:mode
-		name="p:preparing-after-unpacking"
+		name="ood:preparing-after-unpacking"
 		on-no-match="fail" warning-on-no-match="yes"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
 
-	<xsl:template name="p:prepare-after-unpacking" visibility="final">
+	<xsl:template name="ood:prepare-after-unpacking" visibility="final">
 		<xsl:context-item use="absent"/>
-		<xsl:param name="p:source-directory" as="xs:string" required="yes"/>
+		<xsl:param name="ood:source-directory" as="xs:string" required="yes"/>
 
-		<xsl:source-document validation="lax" href="{ $p:source-directory || $p:manifest-uri }">
-			<xsl:apply-templates select="/" mode="p:preparing-after-unpacking"/>
+		<xsl:source-document validation="lax" href="{ $ood:source-directory || $p:manifest-uri }">
+			<xsl:apply-templates select="/" mode="ood:preparing-after-unpacking"/>
 		</xsl:source-document>
 	</xsl:template>
 
-	<xsl:template mode="p:preparing-after-unpacking" match="/">
+	<xsl:template mode="ood:preparing-after-unpacking" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="ood:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$p:complex-document" mode="p:create-outline-document-files"/>
+		<xsl:apply-templates select="$ood:complex-document" mode="p:create-outline-document-files"/>
 	</xsl:template>
 
 	<xsl:mode
-		name="p:optimizing"
+		name="ood:optimizing"
 		on-no-match="fail" warning-on-no-match="yes"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
 
-	<xsl:template name="p:optimize" visibility="final">
+	<xsl:template name="ood:optimize" visibility="final">
 		<xsl:context-item use="absent"/>
-		<xsl:param name="p:source-directory" as="xs:string" required="yes"/>
+		<xsl:param name="ood:source-directory" as="xs:string" required="yes"/>
 
-		<xsl:source-document validation="lax" href="{ $p:source-directory || $p:manifest-uri }">
-			<xsl:apply-templates select="/" mode="p:optimizing"/>
+		<xsl:source-document validation="lax" href="{ $ood:source-directory || $p:manifest-uri }">
+			<xsl:apply-templates select="/" mode="ood:optimizing"/>
 		</xsl:source-document>
 	</xsl:template>
 
-	<xsl:template mode="p:optimizing" match="/">
+	<xsl:template mode="ood:optimizing" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="ood:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:variable name="p:optimized-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document" mode="o:optimize"/>
+		<xsl:variable name="ood:optimized-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$ood:complex-document" mode="o:optimize"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$p:optimized-document" mode="p:create-outline-document-files"/>
+		<xsl:apply-templates select="$ood:optimized-document" mode="p:create-outline-document-files"/>
 	</xsl:template>
 
 	<!-- обработка XML файлов перед сборкой документа либо шаблона -->
 
 	<xsl:mode
-		name="p:preprocessing"
+		name="ood:preprocessing"
 		on-no-match="fail" warning-on-no-match="yes"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
 
-	<xsl:template name="p:preprocess" visibility="final">
+	<xsl:template name="ood:preprocess" visibility="final">
 		<xsl:context-item use="absent"/>
-		<xsl:param name="p:source-directory" as="xs:string" required="yes"/>
-		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
+		<xsl:param name="ood:source-directory" as="xs:string" required="yes"/>
+		<xsl:param name="ood:version" as="xs:string" required="no" select="''"/>
 
-		<xsl:source-document validation="lax" href="{ $p:source-directory || $p:manifest-uri }">
-			<xsl:apply-templates select="/" mode="p:preprocessing">
-				<xsl:with-param name="p:version" select="$p:version"/>
+		<xsl:source-document validation="lax" href="{ $ood:source-directory || $p:manifest-uri }">
+			<xsl:apply-templates select="/" mode="ood:preprocessing">
+				<xsl:with-param name="ood:version" select="$ood:version"/>
 			</xsl:apply-templates>
 		</xsl:source-document>
 	</xsl:template>
 
-	<xsl:template mode="p:preprocessing" match="/">
+	<xsl:template mode="ood:preprocessing" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
-		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
+		<xsl:param name="ood:version" as="xs:string" required="no" select="''"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="ood:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document" mode="p:update-document-meta">
-				<xsl:with-param name="p:version" select="$p:version" as="xs:string" tunnel="yes"/>
+		<xsl:variable name="ood:updated-complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$ood:complex-document" mode="p:update-document-meta">
+				<xsl:with-param name="ood:version" select="$ood:version" as="xs:string" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:variable>
-		<xsl:variable name="p:preprocessed-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:updated-complex-document" mode="p:preprocess-document"/>
+		<xsl:variable name="ood:preprocessed-complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$ood:updated-complex-document" mode="p:preprocess-document"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$p:preprocessed-complex-document" mode="p:create-outline-document-files"/>
+		<xsl:apply-templates select="$ood:preprocessed-complex-document" mode="p:create-outline-document-files"/>
 	</xsl:template>
 
 	<xsl:mode
-		name="p:preparing-for-packing"
+		name="ood:preparing-for-packing"
 		on-no-match="fail" warning-on-no-match="yes"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
 
-	<xsl:template name="p:prepare-for-packing" visibility="final">
+	<xsl:template name="ood:prepare-for-packing" visibility="final">
 		<xsl:context-item use="absent"/>
-		<xsl:param name="p:source-directory" as="xs:string" required="yes"/>
+		<xsl:param name="ood:source-directory" as="xs:string" required="yes"/>
 
-		<xsl:source-document validation="lax" href="{ $p:source-directory || $p:manifest-uri }">
-			<xsl:apply-templates select="/" mode="p:preparing-for-packing"/>
+		<xsl:source-document validation="lax" href="{ $ood:source-directory || $p:manifest-uri }">
+			<xsl:apply-templates select="/" mode="ood:preparing-for-packing"/>
 		</xsl:source-document>
 	</xsl:template>
 
-	<xsl:template mode="p:preparing-for-packing" match="/">
+	<xsl:template mode="ood:preparing-for-packing" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="ood:complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:merge-document-files"/>
 		</xsl:variable>
-		<xsl:apply-templates select="$p:complex-document" mode="p:create-inline-document-files"/>
+		<xsl:apply-templates select="$ood:complex-document" mode="p:create-inline-document-files"/>
 	</xsl:template>
 
 </xsl:package>
