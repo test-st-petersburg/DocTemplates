@@ -18,9 +18,9 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:import href="oo-defs.xslt"/>
 
-	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
+	<xsl:variable name="p:dont-stop-on-empty-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!--
 		Сбор всех XML файлов документа в единый файл.
@@ -38,19 +38,36 @@
 		<xsl:accept component="mode" names="f:inline" visibility="final"/>
 	</xsl:use-package>
 
+	<xsl:template mode="p:merge-document-files" match="/*" priority="-1">
+		<xsl:copy>
+			<xsl:attribute name="xml:base" select="base-uri()"/>
+			<xsl:apply-templates select="@*" mode="f:inline"/>
+			<xsl:apply-templates select="node()" mode="f:inline"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template mode="p:merge-document-files" match="/manifest:manifest">
+		<xsl:copy>
+			<xsl:attribute name="xml:base" select="base-uri()"/>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:apply-templates select="node()" mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='application/rdf+xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 	]">
 		<xsl:param name="p:document-folder-uri" as="xs:anyURI" select="resolve-uri( '..', base-uri() )" tunnel="yes"/>
+		<!-- TODO: решить проблему с обработкой отсутствующих файлов, указанных в манифесте -->
 		<!-- <xsl:try rollback-output="yes"> -->
 			<xsl:copy>
 				<xsl:apply-templates select="@*" mode="#current"/>
 				<xsl:source-document href="{ iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) ) }"
-					streamable="no" use-accumulators="#all" validation="strip"
+					streamable="no" use-accumulators="#all"
 				>
-					<xsl:apply-templates select="." mode="f:inline"/>
+					<xsl:apply-templates select="." mode="#current"/>
 				</xsl:source-document>
 			</xsl:copy>
 			<!-- <xsl:catch errors="SXXP0003" use-when="$p:dont-stop-on-empty-files"> -->

@@ -47,6 +47,12 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
 		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
+
+		<xsl:override>
+
+			<xsl:template mode="f:outline f:inline" match="/manifest:manifest/manifest:file-entry/*/@xml:base"/>
+
+		</xsl:override>
 	</xsl:use-package>
 
 	<!--  -->
