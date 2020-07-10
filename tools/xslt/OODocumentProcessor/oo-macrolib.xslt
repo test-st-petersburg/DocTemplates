@@ -107,8 +107,8 @@ REM  *****  BASIC  *****
 
 	<!-- сборка контейнера библиотеки сценариев из библиотеки -->
 
-	<xsl:template name="oom:build-macro-library-container" visibility="final">
-		<xsl:context-item use="absent"/>
+	<xsl:template name="oom:get-macro-library-container" as="document-node( element( manifest:manifest ) )" visibility="final">
+		<xsl:context-item use="optional"/>
 		<xsl:param name="oom:source-directory" as="xs:string" required="no" select="''"/>
 
 		<xsl:variable name="oom:script-xlb" as="document-node( element( library:library ) )">
@@ -121,56 +121,63 @@ REM  *****  BASIC  *****
 			'Basic/' || $library:name || '/'
 		"/>
 
-		<xsl:variable name="oom:complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:document>
-				<xsl:element name="manifest:manifest" inherit-namespaces="no">
-					<xsl:attribute name="manifest:version" select="$manifest:version"/>
+		<xsl:document>
+			<xsl:element name="manifest:manifest" inherit-namespaces="no">
+				<xsl:attribute name="manifest:version" select="$manifest:version"/>
 
-					<!-- script-lc.xml -->
-					<xsl:element name="manifest:file-entry" inherit-namespaces="no">
-						<xsl:attribute name="manifest:full-path" select="
-							'Basic/'
-							|| $p:basic-script-container-uri
-						"/>
-						<xsl:attribute name="manifest:media-type" select="$p:basic-script-container-media-type"/>
-						<xsl:element name="library:libraries" inherit-namespaces="no">
-							<xsl:element name="library:library" inherit-namespaces="no">
-								<xsl:attribute name="library:name" select="$library:name"/>
-								<xsl:attribute name="library:link" select=" false() "/>
-							</xsl:element>
+				<!-- script-lc.xml -->
+				<xsl:element name="manifest:file-entry" inherit-namespaces="no">
+					<xsl:attribute name="manifest:full-path" select="
+						'Basic/'
+						|| $p:basic-script-container-uri
+					"/>
+					<xsl:attribute name="manifest:media-type" select="$p:basic-script-container-media-type"/>
+					<xsl:element name="library:libraries" inherit-namespaces="no">
+						<xsl:element name="library:library" inherit-namespaces="no">
+							<xsl:attribute name="library:name" select="$library:name"/>
+							<xsl:attribute name="library:link" select=" false() "/>
 						</xsl:element>
 					</xsl:element>
+				</xsl:element>
 
-					<!-- script-lb.xml -->
+				<!-- script-lb.xml -->
+				<xsl:element name="manifest:file-entry" inherit-namespaces="no">
+					<xsl:attribute name="manifest:full-path" select="
+						$oom:destination-scripts-directory
+						|| $p:basic-script-lib-in-container-uri
+					"/>
+					<xsl:attribute name="manifest:media-type" select="$p:basic-script-lib-in-container-media-type"/>
+					<xsl:copy-of select="$oom:script-xlb" copy-namespaces="yes" validation="lax"/>
+				</xsl:element>
+
+				<!-- файлы модулей -->
+				<xsl:for-each select="$oom:script-xlb/library:library/library:element">
+					<xsl:variable name="script:name" as="xs:string" select=" ./@library:name "/>
 					<xsl:element name="manifest:file-entry" inherit-namespaces="no">
 						<xsl:attribute name="manifest:full-path" select="
 							$oom:destination-scripts-directory
-							|| $p:basic-script-lib-in-container-uri
+							|| $script:name || $p:basic-script-module-in-container-file-name-ext
 						"/>
-						<xsl:attribute name="manifest:media-type" select="$p:basic-script-lib-in-container-media-type"/>
-						<xsl:copy-of select="$oom:script-xlb" copy-namespaces="yes" validation="lax"/>
+						<xsl:attribute name="manifest:media-type" select="$p:basic-script-module-in-container-media-type"/>
+						<xsl:source-document validation="lax"
+							href="{ $oom:source-directory || $script:name || $p:basic-script-module-file-name-ext }"
+						>
+							<xsl:copy-of select="/" copy-namespaces="yes" validation="lax"/>
+						</xsl:source-document>
 					</xsl:element>
+				</xsl:for-each>
+			</xsl:element>
+		</xsl:document>
+	</xsl:template>
 
-					<!-- файлы модулей -->
-					<xsl:for-each select="$oom:script-xlb/library:library/library:element">
-						<xsl:variable name="script:name" as="xs:string" select=" ./@library:name "/>
-						<xsl:element name="manifest:file-entry" inherit-namespaces="no">
-							<xsl:attribute name="manifest:full-path" select="
-								$oom:destination-scripts-directory
-								|| $script:name || $p:basic-script-module-in-container-file-name-ext
-							"/>
-							<xsl:attribute name="manifest:media-type" select="$p:basic-script-module-in-container-media-type"/>
-							<xsl:source-document validation="lax"
-								href="{ $oom:source-directory || $script:name || $p:basic-script-module-file-name-ext }"
-							>
-								<xsl:copy-of select="/" copy-namespaces="yes" validation="lax"/>
-							</xsl:source-document>
-						</xsl:element>
-					</xsl:for-each>
-				</xsl:element>
-			</xsl:document>
+	<xsl:template name="oom:build-macro-library-container" visibility="final">
+		<xsl:context-item use="absent"/>
+		<xsl:param name="oom:source-directory" as="xs:string" required="no" select="''"/>
+		<xsl:variable name="oom:complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:call-template name="oom:get-macro-library-container">
+				<xsl:with-param name="oom:source-directory" select="$oom:source-directory"/>
+			</xsl:call-template>
 		</xsl:variable>
-
 		<xsl:apply-templates select="$oom:complex-document" mode="p:create-outline-document-files"/>
 	</xsl:template>
 
