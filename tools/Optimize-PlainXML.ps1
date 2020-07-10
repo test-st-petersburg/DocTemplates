@@ -22,7 +22,8 @@ begin {
 		'xslt/optimizer/OOOptimizer.xslt', `
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
 		'xslt/OODocumentProcessor/oo-merger.xslt', `
-		'xslt/OODocumentProcessor/oo-preprocessor.xslt' `
+		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
+		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
 		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
@@ -49,14 +50,14 @@ process {
 
 			$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
 			$Params.Add(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',
+				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'source-directory' ),
 				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
 			)
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
 			$null = $saxTransform.CallTemplate(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',
+				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'optimize' )
 			);
 
