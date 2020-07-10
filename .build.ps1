@@ -20,7 +20,7 @@ param(
 	[System.String[]]
 	$DestinationTemplateFile = ( property DestinationTemplateFile @(
 			$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+				Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
 		) ),
 
 	# путь к папке с библиотеками макросов
@@ -39,6 +39,12 @@ param(
 			Join-Path -Path $TempPath -ChildPath 'basic'
 		) ),
 
+	# путь к папке временного хранения препроцессированных XML файлов перед сборкой документов и шаблонов
+	[System.String]
+	$PreprocessedTemplatesPath = ( property PreprocessedTemplatesPath (
+			Join-Path -Path $TempPath -ChildPath 'template'
+		) ),
+
 	# путь к папке с исходными файлами
 	[System.String]
 	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src' ).Path ) ),
@@ -53,7 +59,7 @@ param(
 	[System.String[]]
 	$SourceTemplatesFolder = ( property SourceTemplatesFolder @(
 			$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter $TemplatesFilter.ott | Select-Object -ExpandProperty FullName
+				Get-ChildItem -Directory -Filter $TemplatesFilter.ott | Select-Object -ExpandProperty FullName
 		) ),
 
 	# путь к папке с исходными файлами библиотек макросов
@@ -66,7 +72,7 @@ param(
 	[System.String[]]
 	$SourceLibrariesFolder = ( property SourceLibrariesFolder @(
 			$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
+				Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
 		) ),
 
 	# состояние окна Open Office при открытии документа
@@ -106,21 +112,21 @@ Function Update-FileLastWriteTime {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-			| Out-Null;
+				| Out-Null;
 		};
 	};
 	Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-	| Out-Null;
+		| Out-Null;
 }
 
 if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
 	New-Item -Path $DestinationTemplatesPath -ItemType Directory `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	| Out-Null;
+		| Out-Null;
 };
 
 [System.String] $MarkerFileName = '.dirstate';
@@ -200,8 +206,8 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
 	$targetFiles = @(
 		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
+			| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
+			| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
 	);
 	$targetFiles = @( $scriptsLibFile ) + $targetFiles;
 
@@ -228,8 +234,8 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
 	$targetContainerScriptsLibFile = Join-Path -Path $targetContainerBasicLib -ChildPath 'script-lb.xml';
 	$targetContainerFiles = @(
 		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
+			| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
+			| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
 	);
 	$targetContainerMeta = Join-Path -Path $targetContainer -ChildPath 'META-INF';
 	$targetContainerManifest = Join-Path -Path $targetContainerMeta -ChildPath 'manifest.xml';
@@ -279,7 +285,8 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+			-TempPath $PreprocessedTemplatesPath `
 			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -301,7 +308,8 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\ConvertFrom-PlainXML.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+			-TempPath $PreprocessedTemplatesPath `
 			-Version $version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `

@@ -92,7 +92,7 @@
 		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
 		<!-- TODO: определиться с передачей p:generator-name -->
 		<xsl:param name="p:generator-name" as="xs:string" required="no" tunnel="yes"
-			select="'http://github.com/test-st-petersburg/DocTemplates/tools/ConvertFrom-PlainXML.ps1'"
+			select="'http://github.com/test-st-petersburg/DocTemplates/tools/Build-OODocument.ps1'"
 		/>
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select="@*"/>

@@ -1,4 +1,4 @@
-﻿<#
+<#
 	.SYNOPSIS
 		Создаёт каталог библиотеки макросов из папки с "исходными" файлами
 #>
@@ -61,15 +61,13 @@ process {
 		| Out-Null;
 
 		$saxTransform = $saxExecutable.Load30();
-		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
-		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
-		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-		[System.Uri] $BaseOutputURI = ( [System.Uri] ( $DestinationLibraryPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
-		$saxTransform.BaseOutputURI = $BaseOutputURI;
+		$saxTransform.BaseOutputURI = (
+			[System.Uri] ( $DestinationLibraryPath + [System.IO.Path]::DirectorySeparatorChar )
+		).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
 		$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';

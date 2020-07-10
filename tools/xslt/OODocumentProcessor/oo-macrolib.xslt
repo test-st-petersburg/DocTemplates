@@ -46,7 +46,7 @@ REM  *****  BASIC  *****
 	<!-- сборка библиотеки сценариев из "исходных" файлов -->
 
 	<xsl:template name="p:build-macro-library" visibility="final">
-		<xsl:context-item use="optional"/>
+		<xsl:context-item use="absent"/>
 		<xsl:param name="p:source-directory" as="xs:string" required="no" select="''"/>
 		<xsl:param name="library:name" as="xs:string" required="no" select="u:get-parent-directory-name( xs:anyURI( $p:source-directory ) )"/>
 		<xsl:param name="library:readonly" as="xs:boolean" required="no" select="false()"/>
@@ -109,7 +109,7 @@ REM  *****  BASIC  *****
 	<!-- сборка контейнера библиотеки сценариев из библиотеки -->
 
 	<xsl:template name="p:build-macro-library-container" visibility="final">
-		<xsl:context-item use="optional"/>
+		<xsl:context-item use="absent"/>
 		<xsl:param name="p:source-directory" as="xs:string" required="no" select="''"/>
 
 		<xsl:variable name="p:script-xlb" as="document-node( element( library:library ) )">

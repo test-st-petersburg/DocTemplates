@@ -77,31 +77,33 @@ process {
 			try {
 				if ( $Indented ) {
 					if ( $PSCmdlet.ShouldProcess( $TempXMLFolder, "Format all xml files in Open Office document plain XML directory" ) ) {
-						$saxTransform = $saxExecutable.Load();
-						$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
-						$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
-							'http://github.com/test-st-petersburg/DocTemplates/tools/xslt', 'after-unpack';
+						$saxTransform = $saxExecutable.Load30();
 
-						[System.Uri] $BaseUri = $DestinationTempPathForFile + [System.IO.Path]::DirectorySeparatorChar;
-						# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-						$BaseUri = $BaseUri.AbsoluteUri;
+						[System.String] $BaseUri = ( [System.Uri] ( $DestinationTempPathForFile + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 						Write-Verbose "Source base URI: $( $BaseUri )";
 
 						$FormatterTempXMLFolder = New-Item -ItemType Directory `
 							-Path ( [System.IO.Path]::GetTempPath() ) `
 							-Name ( [System.IO.Path]::GetRandomFileName() );
 						try {
-							$saxTransform.BaseOutputURI = ( [System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+							$saxTransform.BaseOutputURI = (
+								[System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar )
+							).AbsoluteUri.ToString().Replace(' ', '%20');
 							Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-							$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $DestinationTempPathForFile -ChildPath 'META-INF/manifest.xml' ) ).Path;
-							# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-							[System.Uri] $ManifestUri = $ManifestPath;
-							$saxTransform.SetInputStream(
-								( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
-								$ManifestUri );
-							$saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
+							$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+							$Params.Add(
+								( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',
+									'source-directory' ),
+								( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
+							)
+							$saxTransform.SetInitialTemplateParameters( $Params, $false );
+
+							$null = $saxTransform.CallTemplate(
+								( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',
+									'prepare-after-unpacking' )
+							);
 
 							Write-Verbose 'Transformation done';
 
@@ -114,6 +116,7 @@ process {
 								-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 								-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 						};
+
 					};
 				};
 				Copy-Item -Path $DestinationTempPathForFile -Destination $DestinationPath -Recurse `
