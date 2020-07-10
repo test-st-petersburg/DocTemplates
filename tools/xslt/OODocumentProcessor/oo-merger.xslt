@@ -31,7 +31,7 @@
 		name="p:document-files-merging"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
+		visibility="private"
 	/>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">

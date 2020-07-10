@@ -27,7 +27,6 @@
 	<xsl:import href="oo-defs.xslt"/>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="2.3">
-		<xsl:accept component="mode" names="p:document-files-merging" visibility="private"/>
 		<xsl:accept component="template" names="p:merge-document-files" visibility="private"/>
 	</xsl:use-package>
 
