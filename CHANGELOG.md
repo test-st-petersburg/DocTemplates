@@ -45,7 +45,7 @@
 - обновление метаданных документа при сборке
   (`meta:editing-cycles`, `dc:date`)
   выделено в отдельный XSLT пакет
-  (oo-preprocessor.xslt, режим `p:update-document-meta`)
+  (oo-preprocessor.xslt, режим `p:document-meta-updating`)
   [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 - убраны файлы `mimetype` из репозитория
   (добавлена автоматическая их генерация при сборке из манифеста)

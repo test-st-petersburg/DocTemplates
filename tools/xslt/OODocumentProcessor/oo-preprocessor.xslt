@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
 	id="OOPreprocessor"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt"
-	package-version="2.2.0"
+	package-version="2.3.0"
 	declared-modes="yes"
 	expand-text="no"
 	input-type-annotations="strip"
@@ -34,6 +34,7 @@
 	xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
 	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0"
 	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
+	xmlns:library="http://openoffice.org/2000/library"
 	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"
 	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
@@ -57,34 +58,25 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
+	<xsl:import href="oo-defs.xslt"/>
+
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
 	<xsl:mode
-		name="p:update-document-meta"
+		name="p:document-meta-updating"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
 
-	<!--
-		Препроцессирование документа:
-		- включение содержания разделов вместо `<text:section-source>`
-		  #81
-	-->
-	<xsl:mode
-		name="p:preprocess-document"
-		on-no-match="shallow-copy" warning-on-no-match="no"
-		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
-	/>
-
-	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
-
-	<xsl:template mode="p:update-document-meta" use-when="$p:update-document-meta" match="
+	<xsl:template mode="p:document-meta-updating" use-when="$p:update-document-meta" match="
 		office:document-meta/office:meta
 	">
 		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -124,7 +116,16 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- препроцессирование документа -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- препроцессирование документа                                                              -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<xsl:mode
+		name="p:document-preprocessing"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
 
 	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
 
@@ -133,7 +134,7 @@
 		use="@text:name"
 	/>
 
-	<xsl:template mode="p:preprocess-document" use-when="$p:replace-section-source" match="
+	<xsl:template mode="p:document-preprocessing" use-when="$p:replace-section-source" match="
 		text:section/text:section-source[
 			@text:section-name and not( @xlink:href )
 			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed')
@@ -154,7 +155,7 @@
 		(с учётом реквизита `text:section-source/@xlink:title`) #81
 	-->
 
-	<xsl:template mode="p:preprocess-document" use-when="$p:rename-elements-on-insert" match="
+	<xsl:template mode="p:document-preprocessing" use-when="$p:rename-elements-on-insert" match="
 		@table:name
 	">
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -168,7 +169,7 @@
 		</xsl:choose>
 	</xsl:template>
 
-	<xsl:template mode="p:preprocess-document" use-when="$p:rename-elements-on-insert" match="
+	<xsl:template mode="p:document-preprocessing" use-when="$p:rename-elements-on-insert" match="
 		text:section/@text:name | @draw:name
 	">
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -184,7 +185,7 @@
 
 	<!-- удаление атрибутов препроцессора из документа #81 -->
 
-	<xsl:template mode="p:preprocess-document" match="@*[
+	<xsl:template mode="p:document-preprocessing" match="@*[
 		namespace-uri() = 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor'
 	]"/>
 

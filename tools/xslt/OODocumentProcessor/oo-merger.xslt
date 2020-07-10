@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
 	id="OOMerger"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt"
-	package-version="1.5.0"
+	package-version="2.3.0"
 	declared-modes="yes"
 	expand-text="no"
 	input-type-annotations="strip"
@@ -28,7 +28,7 @@
 		Содержимое файлов включаем в элементы манифеста.
 	-->
 	<xsl:mode
-		name="p:merge-document-files"
+		name="p:document-files-merging"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
@@ -38,7 +38,15 @@
 		<xsl:accept component="mode" names="f:inline" visibility="final"/>
 	</xsl:use-package>
 
-	<xsl:template mode="p:merge-document-files" match="/*" priority="-1">
+	<xsl:template name="p:merge-document-files" as="document-node( element( manifest:manifest ) )" visibility="final">
+		<xsl:context-item use="optional"/>
+		<xsl:param name="p:source-directory" as="xs:string" required="yes"/>
+		<xsl:source-document validation="lax" href="{ $p:source-directory || $p:manifest-uri }">
+			<xsl:apply-templates select="/" mode="p:document-files-merging"/>
+		</xsl:source-document>
+	</xsl:template>
+
+	<xsl:template mode="p:document-files-merging" match="/*" priority="-1">
 		<xsl:copy>
 			<xsl:attribute name="xml:base" select="base-uri()"/>
 			<xsl:apply-templates select="@*" mode="f:inline"/>
@@ -46,7 +54,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:merge-document-files" match="/manifest:manifest">
+	<xsl:template mode="p:document-files-merging" match="/manifest:manifest">
 		<xsl:copy>
 			<xsl:attribute name="xml:base" select="base-uri()"/>
 			<xsl:apply-templates select="@*" mode="#current"/>
@@ -54,7 +62,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:document-files-merging" match="/manifest:manifest/manifest:file-entry[
 		( @manifest:media-type='text/xml' )
 		or ( @manifest:media-type='application/rdf+xml' )
 		or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
@@ -77,7 +85,7 @@
 		<!-- </xsl:try> -->
 	</xsl:template>
 
-	<xsl:template mode="p:merge-document-files" match="/manifest:manifest/manifest:file-entry[
+	<xsl:template mode="p:document-files-merging" match="/manifest:manifest/manifest:file-entry[
 		@manifest:full-path = $p:manifest-uri
 	]">
 		<xsl:copy>
