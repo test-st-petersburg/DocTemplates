@@ -36,12 +36,11 @@
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt" package-version="2.3">
-		<xsl:accept component="mode" names="p:document-meta-updating" visibility="final"/>
-		<xsl:accept component="mode" names="p:document-preprocessing" visibility="final"/>
+		<xsl:accept component="mode" names="p:document-preprocessing" visibility="private"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="o:optimize" visibility="final"/>
+		<xsl:accept component="mode" names="o:optimize" visibility="private"/>
 	</xsl:use-package>
 
 	<!-- обработка XML файлов, полученных непосредственно после распаковки документа либо шаблона -->
@@ -82,13 +81,10 @@
 				<xsl:with-param name="p:source-directory" select="$ood:source-directory"/>
 			</xsl:call-template>
 		</xsl:variable>
-		<xsl:variable name="ood:updated-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$ood:complex-document" mode="p:document-meta-updating">
-				<xsl:with-param name="ood:version" select="$ood:version" tunnel="yes"/>
-			</xsl:apply-templates>
-		</xsl:variable>
 		<xsl:variable name="ood:preprocessed-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$ood:updated-complex-document" mode="p:document-preprocessing"/>
+			<xsl:apply-templates select="$ood:complex-document" mode="p:document-preprocessing">
+				<xsl:with-param name="p:version" select="$ood:version"/>
+			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:apply-templates select="$ood:preprocessed-complex-document" mode="p:create-outline-document-files"/>
 	</xsl:template>

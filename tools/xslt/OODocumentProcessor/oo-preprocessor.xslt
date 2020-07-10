@@ -60,10 +60,43 @@
 
 	<xsl:import href="oo-defs.xslt"/>
 
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="2.3">
+		<xsl:accept component="template" names="p:merge-document-files" visibility="private"/>
+	</xsl:use-package>
+
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- препроцессирование документа                                                              -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<xsl:mode
+		name="p:document-preprocessing"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
+
+	<xsl:template mode="p:document-preprocessing" match="/">
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
+		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
+		<!-- добавить этап слияния с внешними объектами -->
+		<!-- этап: раскрытие внутренних ссылок и подстановка содержимого вместо них -->
+		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="." mode="p:internal-links-embedding"/>
+		</xsl:variable>
+		<!-- этап: обновление метаданных документа -->
+		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:document-meta-updating">
+				<xsl:with-param name="p:version" select="$p:version" tunnel="yes"/>
+			</xsl:apply-templates>
+		</xsl:variable>
+		<xsl:copy-of select="$p:updated-complex-document"/>
+	</xsl:template>
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
@@ -73,7 +106,7 @@
 		name="p:document-meta-updating"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
+		visibility="private"
 	/>
 
 	<xsl:template mode="p:document-meta-updating" use-when="$p:update-document-meta" match="
@@ -121,10 +154,10 @@
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<xsl:mode
-		name="p:document-preprocessing"
+		name="p:internal-links-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
+		visibility="private"
 	/>
 
 	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
@@ -134,7 +167,7 @@
 		use="@text:name"
 	/>
 
-	<xsl:template mode="p:document-preprocessing" use-when="$p:replace-section-source" match="
+	<xsl:template mode="p:internal-links-embedding" use-when="$p:replace-section-source" match="
 		text:section/text:section-source[
 			@text:section-name and not( @xlink:href )
 			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed')
@@ -155,7 +188,7 @@
 		(с учётом реквизита `text:section-source/@xlink:title`) #81
 	-->
 
-	<xsl:template mode="p:document-preprocessing" use-when="$p:rename-elements-on-insert" match="
+	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
 		@table:name
 	">
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -169,7 +202,7 @@
 		</xsl:choose>
 	</xsl:template>
 
-	<xsl:template mode="p:document-preprocessing" use-when="$p:rename-elements-on-insert" match="
+	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
 		text:section/@text:name | @draw:name
 	">
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
@@ -185,8 +218,62 @@
 
 	<!-- удаление атрибутов препроцессора из документа #81 -->
 
-	<xsl:template mode="p:document-preprocessing" match="@*[
+	<xsl:template mode="p:internal-links-embedding" match="@*[
 		namespace-uri() = 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor'
 	]"/>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- внедрение дополнительных групп файлов с манифестами                                       -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<!-- <xsl:template name="p:embed-objects-collection" as="document-node( element( manifest:manifest ) )*" visibility="final">
+	</xsl:template> -->
+
+	<xsl:mode
+		name="p:external-objects-embedding"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
+
+	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
+
+	<xsl:template mode="p:external-objects-embedding" use-when="$p:embed-linked-libraries" match="
+		library:libraries/library:library[ @library:link = 'true' ]
+	">
+		<xsl:assert test="exists( @library:name )" select=" 'Library name must be specified.' "/>
+		<xsl:variable name="library:name" as="xs:string" select=" @library:name "/>
+		<xsl:variable name="xlink:href" as="xs:anyURI">
+			<xsl:choose>
+				<xsl:when test="exists( @xlink:href )">
+					<xsl:value-of select="@xlink:href"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select=" resolve-uri(
+						'../../../../output/basic/' || $library:name || '/' || $p:basic-script-lib-uri,
+						base-uri()
+					) "/>
+					<!--
+						Формирую ссылку на подготовленную библиотеку, а не контейнер для включения в состав документа.
+						Потому как такая ссылка может работать и без раскрытия.
+						Поэтому крайне желательно на этом этапе "на лету" сформировать контейнер библиотеки для
+						включения в состав документа.
+					-->
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+
+		<xsl:copy>
+			<xsl:copy-of select=" @library:name "/>
+			<xsl:attribute name="library:link" select=" false() "/>
+			<xsl:attribute name="library:readonly" select="
+				if ( exists( @library:readonly ) )
+					then @library:readonly
+					else true()
+			"/>
+			<xsl:attribute name="xlink:href" select=" $xlink:href "/>
+		</xsl:copy>
+
+	</xsl:template>
 
 </xsl:package>
