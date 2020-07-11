@@ -6,10 +6,6 @@
 	<manifest:file-entry manifest:full-path="Basic/script-lc.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/EventHandlers.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Basic/Standard/script-lb.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Basic/TestStPetersburg/Common.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Basic/TestStPetersburg/script-lb.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Basic/TestStPetersburg/WorkWithLetterheads.xml" manifest:media-type="text/xml"/>
-	<manifest:file-entry manifest:full-path="Basic/TestStPetersburg/WorkWithStyles.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Configurations2/" manifest:media-type="application/vnd.sun.xml.ui.configuration"/>
 	<manifest:file-entry manifest:full-path="Configurations2/images/Bitmaps/lc_userimages.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Configurations2/images/lc_imagelist.xml" manifest:media-type="text/xml"/>

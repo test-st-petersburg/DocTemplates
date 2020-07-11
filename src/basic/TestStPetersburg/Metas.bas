@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?><script:module xmlns:script="http://openoffice.org/2000/script" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" script:name="Metas" script:language="StarBasic" script:moduleType="normal">
-REM  *****  BASIC  *****
-
 rem ----------------------------------------------------------------------
 rem Обновление метаданных документа из его переменных
 rem ----------------------------------------------------------------------
@@ -14,6 +11,4 @@ sub updateDocMetas()
 	document.DocumentProperties.Subject = Common.getDocVariableValue( "Тема" )
 	document.DocumentProperties.Title = Common.getDocVariableValue( "Название" )
 	document.DocumentProperties.Description = Common.getDocVariableValue( "Описание" )
-
 end sub
-</script:module>

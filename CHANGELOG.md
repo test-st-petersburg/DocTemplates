@@ -4,7 +4,21 @@
 
 Прочие изменения:
 
-- восстанавливаются реквизиты `@manifest:media-type` в манифесте
+- библиотека TestStPetersburg удалена из состава шаблонов документов
+  и внедряется на этапе сборки шаблонов документов
+  (на этапе препроцессирования)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- "исходные" файлы документов и шаблонов после препроцессора
+  хранятся в подкаталоге 'tmp/template' рабочего каталога
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- добавлена возможность подготовки контейнеров библиотек
+  для последующего включения в состав документов, шаблонов документов
+  (команда сборки `BuildLibContainers`)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- добавлена возможность сборки библиотек макросов из "исходных" файлов
+  (команда сборки `BuildLibs`)
+  [#43](https://github.com/test-st-petersburg/DocTemplates/issues/43)
+- добавлено восстановление реквизитов `@manifest:media-type` в манифесте
   для раздела `Configurations2`.
   Libre Office генерирует их пустыми.
   [#89](https://github.com/test-st-petersburg/DocTemplates/issues/89)
@@ -35,7 +49,7 @@
 - обновление метаданных документа при сборке
   (`meta:editing-cycles`, `dc:date`)
   выделено в отдельный XSLT пакет
-  (oo-preprocessor.xslt, режим `p:update-document-meta`)
+  (oo-preprocessor.xslt, режим `p:document-meta-updating`)
   [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 - убраны файлы `mimetype` из репозитория
   (добавлена автоматическая их генерация при сборке из манифеста)

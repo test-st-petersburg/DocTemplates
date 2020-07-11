@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?><script:module xmlns:script="http://openoffice.org/2000/script" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" script:name="WorkWithLetterheads" script:language="StarBasic" script:moduleType="normal">
-REM  *****  BASIC  *****
-
 rem ----------------------------------------------------------------------
 rem Подготовка документа к печати на бумаге
 rem ----------------------------------------------------------------------
@@ -8,9 +5,9 @@ sub prepareForPrintingOnPaper
 	dim document as object
 	dim textFrame as object
 	dim frameId as string
-	
+
 	document = ThisComponent
-	
+
 	Common.setDocVariableValue("ПечататьНаБланке", false)
 
 	rem перебираем все врезки (фреймы), наименование которые начинается
@@ -29,9 +26,9 @@ sub prepareForPrintingOnLetterhead
 	dim document as object
 	dim textFrame as object
 	dim frameId as string
-	
+
 	document = ThisComponent
-	
+
 	Common.setDocVariableValue("ПечататьНаБланке", true)
 
 	rem перебираем все врезки (фреймы), наименование которые начинается
@@ -42,4 +39,3 @@ sub prepareForPrintingOnLetterhead
 		end if
 	next
 end sub
-</script:module>

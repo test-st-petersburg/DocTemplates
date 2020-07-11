@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?><script:module xmlns:script="http://openoffice.org/2000/script" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" script:name="Common" script:language="StarBasic" script:moduleType="normal">
-REM  *****  BASIC  *****
-
 rem ----------------------------------------------------------------------
 rem Установка значение переменных документа
 rem ----------------------------------------------------------------------
@@ -8,7 +5,7 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 	dim document as object
 	dim textField as object
 	dim fieldId as string
-	
+
 	document = ThisComponent
 
 	fieldId = "com.sun.star.text.fieldmaster.SetExpression" + "." + name
@@ -17,20 +14,33 @@ sub setDocVariableValue(ByVal name as string, ByVal value)
 			textField.Content = value
 		next
 	end if
-	
-	document.getTextFields().refresh()
 
+	document.getTextFields().refresh()
 end sub
 
 rem ----------------------------------------------------------------------
-rem Обновляем поля при открытии документа
+rem Чтение значения переменных документа
+rem ----------------------------------------------------------------------
+function getDocVariableValue(ByVal name as string)
+	dim document as object
+	dim textField as object
+	dim fieldId as string
+
+	document = ThisComponent
+
+	fieldId = "com.sun.star.text.fieldmaster.SetExpression" + "." + name
+	if document.TextFieldMasters.hasByName(fieldId) then
+		getDocVariableValue = document.TextFieldMasters.getByName(fieldId).dependentTextFields(0).Content
+	end if
+end function
+
+rem ----------------------------------------------------------------------
+rem Обновляем поля
 rem ----------------------------------------------------------------------
 sub updateAllFields()
 	dim document as object
-	
+
 	document = ThisComponent
 
 	document.getTextFields().refresh()
-
 end sub
-</script:module>
