@@ -56,12 +56,17 @@
 	xmlns:toolbar="http://openoffice.org/2001/toolbar"
 
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
+	xmlns:oom="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
 	<xsl:import href="oo-defs.xslt"/>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt" package-version="2.3">
 		<xsl:accept component="template" names="p:merge-document-files" visibility="private"/>
+	</xsl:use-package>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt" package-version="2.3">
+		<xsl:accept component="template" names="oom:get-macro-library-container" visibility="final"/>
 	</xsl:use-package>
 
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -81,15 +86,18 @@
 		visibility="final"
 	/>
 
-	<xsl:template mode="p:document-preprocessing" match="/">
+	<xsl:template mode="p:document-preprocessing" as="document-node( element( manifest:manifest ) )" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
-		<!-- добавить этап слияния с внешними объектами -->
-		<!-- этап: раскрытие внутренних ссылок и подстановка содержимого вместо них -->
-		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="." mode="p:internal-links-embedding"/>
+		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:copy-of select="."/>
 		</xsl:variable>
-		<!-- этап: обновление метаданных документа -->
+		<xsl:variable name="p:complex-document-with-embedded-objects" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:complex-document" mode="p:external-objects-embedding"/>
+		</xsl:variable>
+		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:internal-links-embedding"/>
+		</xsl:variable>
 		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:document-meta-updating">
 				<xsl:with-param name="p:version" select="$p:version" tunnel="yes"/>
@@ -109,9 +117,10 @@
 		visibility="private"
 	/>
 
-	<xsl:template mode="p:document-meta-updating" use-when="$p:update-document-meta" match="
-		office:document-meta/office:meta
-	">
+	<xsl:template mode="p:document-meta-updating"
+		 use-when="$p:update-document-meta"
+		 match=" office:document-meta/office:meta "
+	>
 		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
 		<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы -->
 		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
@@ -175,6 +184,7 @@
 	">
 		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
 		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">begin expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
+		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
 			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
@@ -191,6 +201,7 @@
 	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
 		@table:name
 	">
+		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
 		<xsl:choose>
 			<xsl:when test="$p:embed-link-title">
@@ -205,6 +216,7 @@
 	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
 		text:section/@text:name | @draw:name
 	">
+		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
 		<xsl:choose>
 			<xsl:when test="$p:embed-link-title">
@@ -226,21 +238,78 @@
 	<!-- внедрение дополнительных групп файлов с манифестами                                       -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<!-- <xsl:template name="p:embed-objects-collection" as="document-node( element( manifest:manifest ) )*" visibility="final">
-	</xsl:template> -->
-
 	<xsl:mode
 		name="p:external-objects-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="final"
+		visibility="private"
 	/>
+
+	<xsl:mode
+		name="p:get-embed-objects-collection"
+		on-no-match="shallow-skip" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:mode
+		name="p:external-objects-links-replacing"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:external-objects-embedding" as="document-node( element( manifest:manifest ) )" match="/">
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
+		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+			<xsl:copy-of select="."/>
+		</xsl:variable>
+		<xsl:variable name="p:embed-objects" as="document-node( element( manifest:manifest ) )*">
+			<xsl:apply-templates select="$p:complex-document" mode="p:get-embed-objects-collection"/>
+		</xsl:variable>
+		<xsl:variable name="p:complex-document-with-embedded-objects" as="document-node( element( manifest:manifest ) )">
+			<xsl:document>
+				<xsl:copy select="$p:complex-document/manifest:manifest">
+					<xsl:copy-of select="@*"/>
+					<xsl:merge>
+						<xsl:merge-source name="source-document" for-each-item=" $p:complex-document "
+							select=" /manifest:manifest/manifest:file-entry "
+							sort-before-merge="yes"
+						>
+							<xsl:merge-key select="@manifest:full-path" order="ascending"/>
+						</xsl:merge-source>
+						<xsl:merge-source name="embed-objects" for-each-item=" $p:embed-objects "
+							select=" /manifest:manifest/manifest:file-entry "
+							sort-before-merge="yes"
+						>
+							<xsl:merge-key select="@manifest:full-path" order="ascending"/>
+						</xsl:merge-source>
+						<xsl:merge-action>
+							<xsl:choose>
+								<xsl:when test=" exists( current-merge-group( 'source-document' ) ) ">
+									<xsl:copy-of select=" current-merge-group( 'source-document' ) "/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:copy-of select=" current-merge-group( 'embed-objects' ) "/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:merge-action>
+					</xsl:merge>
+				</xsl:copy>
+			</xsl:document>
+		</xsl:variable>
+		<xsl:variable name="p:complex-document-without-links-to-objects" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:external-objects-links-replacing"/>
+		</xsl:variable>
+		<xsl:copy-of select="$p:complex-document-without-links-to-objects"/>
+	</xsl:template>
 
 	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
 
-	<xsl:template mode="p:external-objects-embedding" use-when="$p:embed-linked-libraries" match="
-		library:libraries/library:library[ @library:link = 'true' ]
-	">
+	<xsl:template mode="p:get-embed-objects-collection" as="document-node( element( manifest:manifest ) )"
+		 use-when="$p:embed-linked-libraries"
+		 match=" library:libraries/library:library[ @library:link = 'true' ] "
+	>
 		<xsl:assert test="exists( @library:name )" select=" 'Library name must be specified.' "/>
 		<xsl:variable name="library:name" as="xs:string" select=" @library:name "/>
 		<xsl:variable name="xlink:href" as="xs:anyURI">
@@ -253,16 +322,17 @@
 						'../../../../output/basic/' || $library:name || '/' || $p:basic-script-lib-uri,
 						base-uri()
 					) "/>
-					<!--
-						Формирую ссылку на подготовленную библиотеку, а не контейнер для включения в состав документа.
-						Потому как такая ссылка может работать и без раскрытия.
-						Поэтому крайне желательно на этом этапе "на лету" сформировать контейнер библиотеки для
-						включения в состав документа.
-					-->
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+		<xsl:call-template name="oom:get-macro-library-container">
+			<xsl:with-param name="oom:source-directory" select=" resolve-uri( './', $xlink:href ) "/>
+		</xsl:call-template>
+	</xsl:template>
 
+	<xsl:template mode="p:external-objects-links-replacing" use-when="$p:embed-linked-libraries" match="
+		library:libraries/library:library[ @library:link = 'true' ]
+	">
 		<xsl:copy>
 			<xsl:copy-of select=" @library:name "/>
 			<xsl:attribute name="library:link" select=" false() "/>
@@ -271,9 +341,7 @@
 					then @library:readonly
 					else true()
 			"/>
-			<xsl:attribute name="xlink:href" select=" $xlink:href "/>
 		</xsl:copy>
-
 	</xsl:template>
 
 </xsl:package>

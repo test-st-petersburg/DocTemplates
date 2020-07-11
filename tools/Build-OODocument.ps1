@@ -40,10 +40,13 @@ begin {
 
 	Push-Location -Path $PSScriptRoot;
 	$saxExecutable = .\Get-XSLTExecutable.ps1 `
-		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+		-PackagePath `
+		'xslt/system/uri.xslt', `
+		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
 		'xslt/optimizer/OOOptimizer.xslt', `
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
 		'xslt/OODocumentProcessor/oo-merger.xslt', `
+		'xslt/OODocumentProcessor/oo-macrolib.xslt', `
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
@@ -144,7 +147,7 @@ process {
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				Get-ChildItem -Path $TempXMLPath -File -Recurse `
 					-Exclude 'mimetype' `
-					| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
+				| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
 					-Format Zip `
 					-CompressionLevel Normal -CompressionMethod Deflate `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
