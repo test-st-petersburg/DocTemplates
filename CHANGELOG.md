@@ -4,6 +4,10 @@
 
 Прочие изменения:
 
+- библиотека TestStPetersburg удалена из состава шаблонов документов
+  и внедряется на этапе сборки шаблонов документов
+  (на этапе препроцессирования)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
 - "исходные" файлы документов и шаблонов после препроцессора
   хранятся в подкаталоге 'tmp/template' рабочего каталога
   [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
