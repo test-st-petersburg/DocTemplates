@@ -18,9 +18,12 @@ begin {
 
 	Push-Location -Path $PSScriptRoot;
 	$saxExecutable = .\Get-XSLTExecutable.ps1 `
-		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+		-PackagePath `
+		'xslt/system/uri.xslt', `
+		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
 		'xslt/optimizer/OOOptimizer.xslt', `
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
+		'xslt/OODocumentProcessor/oo-macrolib.xslt', `
 		'xslt/OODocumentProcessor/oo-merger.xslt', `
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
