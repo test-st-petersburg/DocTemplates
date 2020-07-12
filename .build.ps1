@@ -23,6 +23,16 @@ param(
 			Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
 		) ),
 
+	# путь к папке с .odt файлами
+	[System.String]
+	$DestinationDocumentsPath = ( property DestinationDocumentsPath (
+			Join-Path -Path $DestinationPath -ChildPath 'doc'
+		) ),
+
+	# имя .odt шаблона
+	[System.String]
+	$DocumentsFilter = ( property DocumentsFilter '*.odt' ),
+
 	# путь к папке с библиотеками макросов
 	[System.String]
 	$DestinationLibrariesPath = ( property DestinationLibrariesPath (
@@ -45,6 +55,12 @@ param(
 			Join-Path -Path $TempPath -ChildPath 'template'
 		) ),
 
+	# путь к папке временного хранения препроцессированных XML файлов перед сборкой документов и шаблонов
+	[System.String]
+	$PreprocessedDocumentsPath = ( property PreprocessedDocumentsPath (
+			Join-Path -Path $TempPath -ChildPath 'doc'
+		) ),
+
 	# путь к папке с исходными файлами
 	[System.String]
 	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src' ).Path ) ),
@@ -59,7 +75,20 @@ param(
 	[System.String[]]
 	$SourceTemplatesFolder = ( property SourceTemplatesFolder @(
 			$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter $TemplatesFilter.ott | Select-Object -ExpandProperty FullName
+			Get-ChildItem -Directory -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+		) ),
+
+	# путь к папке с xml папками .odt файлов
+	[System.String]
+	$SourceDocumentsPath = ( property SourceDocumentsPath (
+			Join-Path -Path $SourcePath -ChildPath 'doc'
+		) ),
+
+	# пути к папкам с xml файлами .odt файлов
+	[System.String[]]
+	$SourceDocumentsFolder = ( property SourceDocumentsFolder @(
+			$SourceDocumentsPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -Directory -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
 		) ),
 
 	# путь к папке с исходными файлами библиотек макросов
@@ -121,13 +150,6 @@ Function Update-FileLastWriteTime {
 		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
 	| Out-Null;
 }
-
-if ( -not ( Test-Path -Path $DestinationTemplatesPath ) ) {
-	New-Item -Path $DestinationTemplatesPath -ItemType Directory `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	| Out-Null;
-};
 
 [System.String] $MarkerFileName = '.dirstate';
 
@@ -261,14 +283,14 @@ task BuildLibs $BuildLibrariesTasks;
 # Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
 task BuildLibContainers $BuildLibContainersTasks;
 
-$BuildTasks = @();
-$BuildAndOpenTasks = @();
+$BuildTemplatesTasks = @();
+$BuildAndOpenTemplatesTasks = @();
 foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
 	$BuildTaskName = "Build-$documentName";
-	$BuildTasks += $BuildTaskName;
+	$BuildTemplatesTasks += $BuildTaskName;
 	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
-	$BuildAndOpenTasks += $BuildAndOpenTaskName;
+	$BuildAndOpenTemplatesTasks += $BuildAndOpenTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
 	$target = Join-Path -Path $DestinationTemplatesPath -ChildPath $documentName;
 	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
@@ -331,9 +353,88 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task Build $BuildTasks;
+task BuildTemplates $BuildTemplatesTasks;
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpen $BuildAndOpenTasks;
+task BuildAndOpenTemplates $BuildAndOpenTemplatesTasks;
+
+$BuildDocsTasks = @();
+$BuildAndOpenDocsTasks = @();
+foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
+	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
+	$BuildTaskName = "Build-$documentName";
+	$BuildDocsTasks += $BuildTaskName;
+	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
+	$BuildAndOpenDocsTasks += $BuildAndOpenTaskName;
+	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
+	$target = Join-Path -Path $DestinationDocumentsPath -ChildPath $documentName;
+	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
+
+	task $BuildTaskName `
+		-Inputs $prerequisites `
+		-Outputs @( $target, $marker ) `
+		-Job BuildLibs, `
+	{
+		$localDestinationFile = $Outputs[0];
+		$marker = $Outputs[1];
+		if ( Test-Path -Path $marker ) {
+			Remove-Item -Path $marker `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		};
+		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
+			-TempPath $PreprocessedDocumentsPath `
+			-Version $version `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		Update-FileLastWriteTime -Path $marker `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
+
+	task $BuildAndOpenTaskName `
+		-Inputs $prerequisites `
+		-Outputs @( $target, $marker ) `
+		-Job BuildLibs, `
+	{
+		$localDestinationFile = $Outputs[0];
+		$marker = $Outputs[1];
+		if ( Test-Path -Path $marker ) {
+			Remove-Item -Path $marker `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		};
+		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
+		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
+			-TempPath $PreprocessedDocumentsPath `
+			-Version $version `
+			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		Update-FileLastWriteTime -Path $marker `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
+		$Shell = New-Object -Com 'Shell.Application';
+		$localDestinationFile | Get-Item | ForEach-Object {
+			$verb = 'open';
+			if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) ) {
+				$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
+			};
+		};
+	};
+};
+
+# Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
+task BuildDocs $BuildDocsTasks;
+
+# Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build) и открывает их
+task BuildAndOpenDocs $BuildAndOpenDocsTasks;
+
+task Build BuildTemplates, BuildDocs;
+
+task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
 task . Build;

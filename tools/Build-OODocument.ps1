@@ -61,6 +61,13 @@ process {
 
 	if ( $PSCmdlet.ShouldProcess( $Path, "Create Open Office document from plain XML directory" ) ) {
 
+		if ( -not ( Test-Path -Path $DestinationPath ) ) {
+			New-Item -Path $DestinationPath -ItemType Directory `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			| Out-Null;
+		};
+
 		$PreprocessedXMLPath = Join-Path -Path $TempPath -ChildPath $FileName;
 
 		if ( Test-Path -Path $PreprocessedXMLPath ) {
