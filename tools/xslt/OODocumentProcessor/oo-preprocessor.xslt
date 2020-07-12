@@ -74,6 +74,7 @@
 	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- препроцессирование документа                                                              -->
@@ -290,6 +291,9 @@
 									<xsl:copy-of select=" current-merge-group( 'source-document' ) "/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:assert test=" count( current-merge-group( 'embed-objects' ) ) = 1 " select="
+										'More just one linked object can add same file: ' || current-merge-key() || '.'
+									"/>
 									<xsl:copy-of select=" current-merge-group( 'embed-objects' ) "/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -318,8 +322,9 @@
 					<xsl:value-of select="@xlink:href"/>
 				</xsl:when>
 				<xsl:otherwise>
+					<!-- TODO: путь к собранным библиотекам макросов вынести в константы, а лучше - в параметры -->
 					<xsl:value-of select=" resolve-uri(
-						'../../../../output/basic/' || $library:name || '/' || $p:basic-script-lib-uri,
+						'../../../../output/basic/' || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
 						base-uri()
 					) "/>
 				</xsl:otherwise>
@@ -343,5 +348,32 @@
 			"/>
 		</xsl:copy>
 	</xsl:template>
+
+	<!-- внедрение шаблона документа в документ (`meta:template`) #75 -->
+
+	<xsl:template mode="p:get-embed-objects-collection" as="document-node( element( manifest:manifest ) )"
+		 use-when="$p:embed-linked-templates"
+		 match=" meta:template "
+	>
+		<xsl:assert test="exists( @xlink:title )" select=" 'Template name must be specified.' "/>
+		<xsl:variable name="xlink:href" as="xs:anyURI">
+			<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
+			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
+			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
+			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
+			<xsl:value-of select=" resolve-uri(
+				'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/',
+				base-uri()
+			) "/>
+		</xsl:variable>
+		<xsl:call-template name="p:merge-document-files">
+			<xsl:with-param name="p:source-directory" select=" $xlink:href "/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<!-- <xsl:template mode="p:external-objects-links-replacing" use-when="$embed-linked-templates"
+		 match=" meta:template "
+	>
+	</xsl:template> -->
 
 </xsl:package>
