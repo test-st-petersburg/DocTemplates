@@ -106,14 +106,14 @@
 			<xsl:when test="exists( $o:attributes )">
 				<xsl:copy>
 					<xsl:copy-of select="$o:attributes"/>
-					<xsl:apply-templates select="node()" mode="o:optimize"/>
+					<xsl:apply-templates mode="o:optimize"/>
 				</xsl:copy>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:where-populated>
 					<xsl:copy>
 						<xsl:copy-of select="$o:attributes"/>
-						<xsl:apply-templates select="node()" mode="o:optimize"/>
+						<xsl:apply-templates mode="o:optimize"/>
 					</xsl:copy>
 				</xsl:where-populated>
 			</xsl:otherwise>
@@ -133,7 +133,7 @@
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-text-auto-styles"
 		 match="text:span[ key( 'o:auto-text-styles', @text:style-name ) ]">
-		<xsl:apply-templates select="node()" mode="#current"/>
+		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
 
 	<!-- TODO: убирать автоматические стили только по отношению к базовому стилю символов -->

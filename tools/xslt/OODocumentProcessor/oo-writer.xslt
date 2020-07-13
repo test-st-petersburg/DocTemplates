@@ -109,7 +109,7 @@
 		]"
 	>
 		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OOXmlFile">
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -117,7 +117,7 @@
 		match="/manifest:manifest/manifest:file-entry[ @manifest:media-type='application/rdf+xml' ]"
 	>
 		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OORdfFile">
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -133,7 +133,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="office.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -144,7 +144,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="libraries.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -159,7 +159,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="library.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -170,7 +170,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="image.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -184,7 +184,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="menubar.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -195,7 +195,7 @@
 			format="p:OOXmlFileFormat"
 			doctype-system="toolbar.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 

@@ -50,7 +50,7 @@
 		<xsl:copy>
 			<xsl:attribute name="xml:base" select="base-uri()"/>
 			<xsl:apply-templates select="@*" mode="f:inline"/>
-			<xsl:apply-templates select="node()" mode="f:inline"/>
+			<xsl:apply-templates mode="f:inline"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -58,7 +58,7 @@
 		<xsl:copy>
 			<xsl:attribute name="xml:base" select="base-uri()"/>
 			<xsl:apply-templates select="@*" mode="#current"/>
-			<xsl:apply-templates select="node()" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -72,9 +72,9 @@
 		<!-- <xsl:try rollback-output="yes"> -->
 			<xsl:copy>
 				<xsl:apply-templates select="@*" mode="#current"/>
-				<xsl:source-document href="{ iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) ) }"
-					streamable="no" use-accumulators="#all"
-				>
+				<xsl:source-document streamable="no" use-accumulators="#all" href="{
+					iri-to-uri( resolve-uri( data( @manifest:full-path ), $p:document-folder-uri ) )
+				}">
 					<xsl:apply-templates select="." mode="#current"/>
 				</xsl:source-document>
 			</xsl:copy>
