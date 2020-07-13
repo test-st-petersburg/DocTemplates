@@ -321,7 +321,7 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 	task $BuildAndOpenTaskName `
 		-Inputs $prerequisites `
 		-Outputs @( $target, $marker ) `
-		-Job $JobBuildTemplate, $JobOpenFile;
+		-Job BuildLibs, $JobBuildTemplate, $JobOpenFile;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
@@ -375,7 +375,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
 	task $BuildAndOpenTaskName `
 		-Inputs $prerequisites `
 		-Outputs @( $target, $marker ) `
-		-Job $JobBuildDocument, $JobOpenFile;
+		-Job BuildTemplates, $JobBuildDocument, $JobOpenFile;
 };
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
