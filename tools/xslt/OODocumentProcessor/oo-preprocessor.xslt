@@ -371,9 +371,27 @@
 		</xsl:call-template>
 	</xsl:template>
 
-	<!-- <xsl:template mode="p:external-objects-links-replacing" use-when="$embed-linked-templates"
+	<xsl:template mode="p:external-objects-links-replacing" use-when="$p:embed-linked-templates"
 		 match=" meta:template "
 	>
-	</xsl:template> -->
+		<xsl:assert test="exists( @xlink:title )" select=" 'Template name must be specified.' "/>
+		<xsl:copy>
+			<xsl:attribute name="xlink:type" select=" 'simple' "/>
+			<xsl:copy-of select="@xlink:title"/>
+			<xsl:attribute name="xlink:href">
+				<!-- TODO: путь к собранным шаблонам вынести в константы, а лучше - в параметры -->
+				<!-- TODO: расширение шаблона документа .ott вынести в константы -->
+				<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
+				<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
+				<xsl:value-of select=" '../template/' || iri-to-uri( @xlink:title ) || '.ott' "/>
+			</xsl:attribute>
+			<xsl:attribute name="xlink:actuate" select=" 'onRequest' "/>
+			<!-- TODO: следует указывать время сборки шаблона, а не текущее время, при сборке документ (из данных препроцессированного шаблона) -->
+			<xsl:attribute name="meta:date" select=" format-dateTime(
+				adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
+				'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
+			)"/>
+		</xsl:copy>
+	</xsl:template>
 
 </xsl:package>
