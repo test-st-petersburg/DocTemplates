@@ -57,6 +57,7 @@
 
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 	xmlns:oom="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
+	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
 	<xsl:import href="oo-defs.xslt"/>
@@ -67,6 +68,10 @@
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt" package-version="2.3">
 		<xsl:accept component="template" names="oom:get-macro-library-container" visibility="final"/>
+	</xsl:use-package>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt" package-version="2.3">
+		<xsl:accept component="function" names="fix:doc" visibility="private"/>
 	</xsl:use-package>
 
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -356,16 +361,14 @@
 		 match=" meta:template "
 	>
 		<xsl:assert test="exists( @xlink:title )" select=" 'Template name must be specified.' "/>
-		<xsl:variable name="xlink:href" as="xs:anyURI">
-			<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
-			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
-			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
-			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
-			<xsl:value-of select=" resolve-uri(
-				'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/',
-				base-uri()
-			) "/>
-		</xsl:variable>
+		<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
+		<!-- TODO: расширение шаблона документа .ott вынести в константы -->
+		<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
+		<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
+		<xsl:variable name="xlink:href" as="xs:anyURI" select=" resolve-uri(
+			'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/',
+			base-uri()
+		) "/>
 		<xsl:call-template name="p:merge-document-files">
 			<xsl:with-param name="p:source-directory" select=" $xlink:href "/>
 		</xsl:call-template>
@@ -378,19 +381,28 @@
 		<xsl:copy>
 			<xsl:attribute name="xlink:type" select=" 'simple' "/>
 			<xsl:copy-of select="@xlink:title"/>
-			<xsl:attribute name="xlink:href">
-				<!-- TODO: путь к собранным шаблонам вынести в константы, а лучше - в параметры -->
-				<!-- TODO: расширение шаблона документа .ott вынести в константы -->
-				<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
-				<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
-				<xsl:value-of select=" '../template/' || iri-to-uri( @xlink:title ) || '.ott' "/>
-			</xsl:attribute>
+			<!-- TODO: путь к собранным шаблонам вынести в константы, а лучше - в параметры -->
+			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
+			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
+			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
+			<xsl:attribute name="xlink:href" select=" '../template/' || iri-to-uri( @xlink:title ) || '.ott' "/>
 			<xsl:attribute name="xlink:actuate" select=" 'onRequest' "/>
-			<!-- TODO: следует указывать время сборки шаблона, а не текущее время, при сборке документ (из данных препроцессированного шаблона) -->
-			<xsl:attribute name="meta:date" select=" format-dateTime(
-				adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
-				'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
-			)"/>
+			<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
+			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
+			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
+			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
+			<xsl:attribute name="meta:date" select="
+				format-dateTime(
+					adjust-dateTime-to-timezone(
+						xs:dateTime( fix:doc( resolve-uri(
+							'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/meta.xml',
+							base-uri()
+						) )/office:document-meta/office:meta/dc:date ),
+						xs:dayTimeDuration( 'PT0H' )
+					),
+					'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
+				)
+			"/>
 		</xsl:copy>
 	</xsl:template>
 
