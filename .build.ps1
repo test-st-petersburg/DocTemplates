@@ -120,37 +120,6 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-<#
-	.Synopsis
-		Creates a new file or updates the modified date of an existing file.
-		See 'touch'.
-
-	.Parameter Path
-		The path of the file to create or update.
-#>
-Function Update-FileLastWriteTime {
-	[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
-	Param(
-		[Parameter( Mandatory = $True, Position = 1 )]
-		[System.String] $Path
-	)
-
-	if ( -not [System.Management.Automation.WildcardPattern]::ContainsWildcardCharacters( $Path ) ) {
-		if ( -not ( Test-Path -Path $Path ) ) {
-			New-Item -ItemType File -Path $Path `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-			| Out-Null;
-		};
-	};
-	Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-		-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-	| Out-Null;
-}
-
 [System.String] $MarkerFileName = '.dirstate';
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
@@ -314,7 +283,7 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Update-FileLastWriteTime -Path $marker `
+		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -338,7 +307,7 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Update-FileLastWriteTime -Path $marker `
+		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
@@ -389,7 +358,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Update-FileLastWriteTime -Path $marker `
+		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -413,7 +382,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		Update-FileLastWriteTime -Path $marker `
+		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
