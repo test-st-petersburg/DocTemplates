@@ -138,7 +138,7 @@ foreach ( $OOFile in $DestinationTemplateFile ) {
 		$Outputs | Where-Object { $_ } | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 	};
 
-	$OOUnpackTaskName = "UnpackAndOptimize-$documentName";
+	$OOUnpackTaskName = "Unpack-$documentName";
 	$OOFilesUnpackTasks += $OOUnpackTaskName;
 	$target = Join-Path -Path $targetFolder -ChildPath 'META-INF/manifest.xml';
 	$marker = Join-Path -Path $targetFolder -ChildPath $MarkerFileName;
