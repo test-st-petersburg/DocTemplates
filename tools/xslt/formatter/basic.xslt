@@ -130,7 +130,7 @@
 					<xsl:value-of select="$f:indent"/>
 				</xsl:on-non-empty>
 			</xsl:sequence>
-	</xsl:copy>
+		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template mode="f:outline-child" match="element()">
