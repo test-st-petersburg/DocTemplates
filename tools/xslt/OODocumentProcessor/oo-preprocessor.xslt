@@ -321,20 +321,15 @@
 	>
 		<xsl:assert test="exists( @library:name )" select=" 'Library name must be specified.' "/>
 		<xsl:variable name="library:name" as="xs:string" select=" @library:name "/>
-		<xsl:variable name="xlink:href" as="xs:anyURI">
-			<xsl:choose>
-				<xsl:when test="exists( @xlink:href )">
-					<xsl:value-of select="@xlink:href"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<!-- TODO: путь к собранным библиотекам макросов вынести в константы, а лучше - в параметры -->
-					<xsl:value-of select=" resolve-uri(
-						'../../../../output/basic/' || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
-						base-uri()
-					) "/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
+		<!-- TODO: путь к собранным библиотекам макросов вынести в константы, а лучше - в параметры -->
+		<xsl:variable name="xlink:href" as="xs:anyURI" select="
+			if ( exists( @xlink:href ) )
+				then @xlink:href
+				else resolve-uri(
+					'../../../output/basic/' || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
+					base-uri()
+				)
+		"/>
 		<xsl:call-template name="oom:get-macro-library-container">
 			<xsl:with-param name="oom:source-directory" select=" resolve-uri( './', $xlink:href ) "/>
 		</xsl:call-template>
