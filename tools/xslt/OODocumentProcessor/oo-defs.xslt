@@ -9,6 +9,7 @@
 
 	<xsl:variable name="manifest:version" as="xs:string" static="yes" select="'1.2'" visibility="private"/>
 	<xsl:variable name="p:manifest-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'META-INF/manifest.xml' )" visibility="private"/>
+	<xsl:variable name="p:manifest-binary-uri" as="xs:anyURI" static="yes" select="xs:anyURI( 'META-INF/manifest.binary.xml' )" visibility="private"/>
 
 	<xsl:variable name="p:basic-script-module-in-container-media-type" as="xs:string" static="yes" select="'text/xml'" visibility="private"/>
 	<xsl:variable name="p:basic-script-module-in-container-file-name-ext" as="xs:string" static="yes" select="'.xml'" visibility="private"/>

@@ -37,6 +37,56 @@
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
+	<xsl:mode
+		name="p:create-preprocessed-document-files"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
+	</xsl:use-package>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- запись препроцессированных файлов                                                         -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<xsl:mode
+		name="p:select-manifest-binary"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:create-preprocessed-document-files" match="/">
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
+		<xsl:variable name="p:manifest-binary" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="." mode="p:select-manifest-binary"/>
+		</xsl:variable>
+		<xsl:result-document href="{ $p:manifest-binary-uri }"
+			format="p:OOXmlFileFormat"
+		>
+			<xsl:apply-templates select="$p:manifest-binary" mode="f:outline"/>
+		</xsl:result-document>
+		<xsl:apply-templates select="." mode="p:create-outline-document-files"/>
+	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path = $p:manifest-uri ]"
+	/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry[ exists( * ) ]"/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry/*"/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry[
+		ends-with( @manifest:full-path, '/' )
+	]"/>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- запись файлов                                                                             -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<xsl:mode
 		name="p:select-manifest"
@@ -44,18 +94,6 @@
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
-
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
-
-		<xsl:override>
-
-			<xsl:template mode="f:outline f:inline" match="/manifest:manifest/manifest:file-entry/*/@xml:base"/>
-
-		</xsl:override>
-	</xsl:use-package>
-
-	<!--  -->
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
@@ -80,6 +118,8 @@
 
 	<xsl:template mode="p:select-manifest" match="/manifest:manifest/manifest:file-entry/*"/>
 
+	<xsl:template mode="p:select-manifest" match="@xml:base"/>
+
 	<!--  -->
 
 	<xsl:template mode="p:create-outline-document-files"
@@ -93,6 +133,8 @@
 	>
 		<xsl:apply-templates select="." mode="f:inline"/>
 	</xsl:template>
+
+	<!--  -->
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
 		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='/' ]"

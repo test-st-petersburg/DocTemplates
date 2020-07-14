@@ -62,12 +62,16 @@ process {
 
 	if ( $PSCmdlet.ShouldProcess( $Path, "Create Open Office document from plain XML directory" ) ) {
 
+		#region создание каталога назначения
 		if ( -not ( Test-Path -Path $DestinationPath ) ) {
 			New-Item -Path $DestinationPath -ItemType Directory `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 			| Out-Null;
 		};
+		#endregion
+
+		#region подготовка препроцессирования
 
 		$PreprocessedXMLPath = Join-Path -Path $TempPath -ChildPath $FileName;
 
@@ -79,21 +83,28 @@ process {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
+		# TODO: workaround for https://saxonica.plan.io/issues/4644
+		'', 'Basic', 'Configurations2'  `
+		| ForEach-Object {
+			$null = New-Item -Path ( Join-Path -Path $PreprocessedXMLPath -ChildPath $_ ) -ItemType Directory -Force `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		};
 
 		$saxTransform = $saxExecutable.Load30();
 
-		[System.String] $BaseUri = ( [System.Uri] ( $PreprocessedXMLPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
+		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
-		Copy-Item -Path $Path -Destination $PreprocessedXMLPath -Recurse `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		#endregion
 
 		$TempXMLFolder = New-Item -ItemType Directory `
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
 		$TempXMLPath = $TempXMLFolder.FullName;
 		try {
+
+			#region препроцессирование XML файлов
 
 			$saxTransform.BaseOutputURI = (
 				[System.Uri] ( $TempXMLPath + [System.IO.Path]::DirectorySeparatorChar )
@@ -115,7 +126,7 @@ process {
 			};
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
-			if ( $PSCmdlet.ShouldProcess( $PreprocessedXMLPath, "Preprocess Open Office XML" ) ) {
+			if ( $PSCmdlet.ShouldProcess( $Path, "Preprocess Open Office XML" ) ) {
 				$null = $saxTransform.CallTemplate(
 					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'preprocess' )
@@ -127,17 +138,73 @@ process {
 				Get-ChildItem -Path $TempXMLFolder | Remove-Item -Recurse -Force;
 			};
 
+			#endregion
+
+			#region копирование не XML файлов
+
+			[System.String] $BinaryFilesManifest = Join-Path -Path $PreprocessedXMLPath -ChildPath 'META-INF/manifest.binary.xml';
+			Select-Xml -LiteralPath $BinaryFilesManifest `
+				-XPath 'manifest:manifest/manifest:file-entry' `
+				-Namespace @{ `
+					'manifest' = 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0';
+			} `
+			| Select-Object -ExpandProperty Node `
+			| ForEach-Object {
+				[System.String] $SourceBinFilePath = ( Join-Path -Path ( ( [System.Uri]( $_.base ) ).LocalPath ) -ChildPath ( $_.'full-path' ) );
+				[System.String] $DestinationBinFilePath = ( Join-Path -Path $PreprocessedXMLPath -ChildPath ( $_.'full-path' ) );
+				[System.String] $DestinationBinFileDirectory = ( Split-Path -Path $DestinationBinFilePath -Parent );
+				if ( -not ( Test-Path -Path $DestinationBinFileDirectory -PathType Container ) ) {
+					$null = New-Item -Path $DestinationBinFileDirectory -ItemType Directory -Force;
+				};
+				Copy-Item -LiteralPath $SourceBinFilePath -Destination $DestinationBinFilePath -Force `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			};
+			if ( Test-Path -Path $BinaryFilesManifest ) {
+				Remove-Item -Path $BinaryFilesManifest `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			};
+
+			#endregion
+
 			Get-ChildItem -Path $PreprocessedXMLPath | Copy-Item -Destination $TempXMLPath -Recurse `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
+			#region удаление форматирования из XML файлов
+
 			if ( $PSCmdlet.ShouldProcess( $PreprocessedXMLPath, "Unindent Open Office XML" ) ) {
+
+				[System.String] $PreprocessedUri = (
+					[System.Uri] ( $PreprocessedXMLPath + [System.IO.Path]::DirectorySeparatorChar )
+				).AbsoluteUri.ToString().Replace(' ', '%20');
+
+				$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+				$Params.Add(
+					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+						'source-directory' ),
+					( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $PreprocessedUri )
+				)
+				if ( $Version ) {
+					$Params.Add(
+						( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+							'version' ),
+						( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $Version )
+					)
+				};
+				$saxTransform.SetInitialTemplateParameters( $Params, $false );
 				$null = $saxTransform.CallTemplate(
 					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'prepare-for-packing' )
 				);
+
 				Write-Verbose 'Transformation done';
 			};
+
+			#endregion
+
+			#region архивирование файлов (сборка документов, их шаблонов)
 
 			$TempZIPFileName = (
 				Join-Path `
@@ -173,6 +240,8 @@ process {
 						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 				};
 			};
+
+			#endregion
 
 		}
 		finally {

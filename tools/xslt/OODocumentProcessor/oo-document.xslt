@@ -31,8 +31,11 @@
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="p:create-outline-document-files" visibility="private"/>
-		<xsl:accept component="mode" names="p:create-inline-document-files" visibility="private"/>
+		<xsl:accept component="mode" visibility="private" names="
+			p:create-outline-document-files
+			p:create-inline-document-files
+			p:create-preprocessed-document-files
+		"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt" package-version="2.3">
@@ -86,7 +89,7 @@
 				<xsl:with-param name="p:version" select="$ood:version"/>
 			</xsl:apply-templates>
 		</xsl:variable>
-		<xsl:apply-templates select="$ood:preprocessed-complex-document" mode="p:create-outline-document-files"/>
+		<xsl:apply-templates select="$ood:preprocessed-complex-document" mode="p:create-preprocessed-document-files"/>
 	</xsl:template>
 
 	<xsl:template name="ood:prepare-for-packing" visibility="final">
