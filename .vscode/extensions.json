@@ -21,6 +21,8 @@
 		"streetsidesoftware.code-spell-checker-russian",
 		"knisterpeter.vscode-commitizen",
 		"bewhite.dokd-vscode-preview",
-		"hsse-development.gitversionview"
+		"hsse-development.gitversionview",
+		"kisstkondoros.vscode-gutter-preview",
+		"deltaxml.xslt-xpath",
 	]
 }
