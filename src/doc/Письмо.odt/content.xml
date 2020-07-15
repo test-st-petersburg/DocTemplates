@@ -5,22 +5,7 @@
 	<office:scripts>
 		<office:event-listeners/>
 	</office:scripts>
-	<office:font-face-decls>
-		<style:font-face style:name="Liberation Mono" svg:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed"/>
-		<style:font-face style:name="PT Sans" svg:font-family="'PT Sans'" style:font-adornments="Обычный" style:font-family-generic="swiss" style:font-pitch="variable">
-			<svg:font-face-src>
-				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_1.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="normal">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-				<svg:font-face-uri xlink:href="Fonts/Font_PT_Sans_2.ttf" xlink:type="simple" loext:font-style="normal" loext:font-weight="bold">
-					<svg:font-face-format svg:string="truetype"/>
-				</svg:font-face-uri>
-			</svg:font-face-src>
-		</style:font-face>
-		<style:font-face style:name="Segoe UI" svg:font-family="'Segoe UI'" style:font-family-generic="system" style:font-pitch="variable"/>
-		<style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable"/>
-		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable"/>
-	</office:font-face-decls>
+	<office:font-face-decls/>
 	<office:automatic-styles>
 		<style:style style:name="Подписи" style:family="table">
 			<style:table-properties style:width="17.501cm" table:align="margins" style:may-break-between-rows="false"/>
