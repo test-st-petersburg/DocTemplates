@@ -137,4 +137,34 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template match="office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ]"
+		mode="p:external-objects-files-content-merging"
+ 	>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:copy-of select="@*"/>
+			<xsl:element name="text:p" inherit-namespaces="no">
+				<xsl:attribute name="text:style-name" select=" 'НачалоСлужебнойСтраницы' "/>
+			</xsl:element>
+			<xsl:merge>
+				<xsl:merge-source
+					for-each-item=" ., $p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ] "
+					select=" //text:variable-set "
+					sort-before-merge="yes"
+				>
+					<xsl:merge-key select=" @text:name " order="ascending"/>
+				</xsl:merge-source>
+				<xsl:merge-action>
+					<xsl:element name="text:p" inherit-namespaces="no">
+						<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+						<xsl:copy-of select=" head( current-merge-group() ) "/>
+					</xsl:element>
+				</xsl:merge-action>
+			</xsl:merge>
+			<xsl:element name="text:p" inherit-namespaces="no">
+				<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+			</xsl:element>
+		</xsl:copy>
+	</xsl:template>
+
 </xsl:transform>
