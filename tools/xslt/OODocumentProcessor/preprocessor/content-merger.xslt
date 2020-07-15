@@ -117,4 +117,24 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template match="office:document-content/office:body/office:text/text:sequence-decls"
+		mode="p:external-objects-files-content-merging"
+ 	>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:merge>
+				<xsl:merge-source
+					for-each-item=" $p:embed-objects!office:document-content/office:body/office:text/text:sequence-decls, . "
+					select=" text:sequence-decl "
+					sort-before-merge="yes"
+				>
+					<xsl:merge-key select=" @text:name " order="ascending"/>
+				</xsl:merge-source>
+				<xsl:merge-action>
+					<xsl:copy-of select=" head( current-merge-group() ) "/>
+				</xsl:merge-action>
+			</xsl:merge>
+		</xsl:copy>
+	</xsl:template>
+
 </xsl:transform>

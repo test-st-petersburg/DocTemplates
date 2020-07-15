@@ -35,13 +35,7 @@
 		<office:text>
 			<office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
 			<text:variable-decls/>
-			<text:sequence-decls>
-				<text:sequence-decl text:display-outline-level="0" text:name="Illustration" text:separation-character="."/>
-				<text:sequence-decl text:display-outline-level="10" text:separation-character="." text:name="Table"/>
-				<text:sequence-decl text:display-outline-level="0" text:name="Text" text:separation-character="."/>
-				<text:sequence-decl text:display-outline-level="0" text:name="Drawing" text:separation-character="."/>
-				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
-			</text:sequence-decls>
+			<text:sequence-decls/>
 			<text:section text:style-name="Sect3" text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
