@@ -52,6 +52,8 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
+	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+
 	<xsl:mode
 		name="p:document-meta-updating"
 		on-no-match="shallow-copy" warning-on-no-match="no"

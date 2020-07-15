@@ -52,6 +52,9 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
+	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+
 	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
 
 	<xsl:key name="p:sections" use-when="$p:replace-section-source"
@@ -65,14 +68,10 @@
 			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed')
 		]
 	">
-		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
-		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">begin expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
 			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
-		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
-		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">end expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
 	</xsl:template>
 
 	<!--
