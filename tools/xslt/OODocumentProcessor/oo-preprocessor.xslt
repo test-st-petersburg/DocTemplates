@@ -75,9 +75,6 @@
 	</xsl:use-package>
 
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
@@ -85,8 +82,7 @@
 	<!-- препроцессирование документа                                                              -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:mode
-		name="p:document-preprocessing"
+	<xsl:mode name="p:document-preprocessing"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
@@ -112,154 +108,37 @@
 		<xsl:copy-of select="$p:updated-complex-document"/>
 	</xsl:template>
 
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- обновление метаданных документа (meta.xml) перед сборкой шаблонов документов и документов -->
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<xsl:include href="preprocessor/document-meta-updating.xslt"/>
 
-	<xsl:mode
-		name="p:document-meta-updating"
+	<xsl:mode name="p:internal-links-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
-
-	<xsl:template mode="p:document-meta-updating"
-		 use-when="$p:update-document-meta"
-		 match=" office:document-meta/office:meta "
-	>
-		<xsl:param name="p:version" as="xs:string" required="no" select="''" tunnel="yes"/>
-		<!-- TODO: вынести наименование свойства документа 'Версия шаблона' в локализуемые константы -->
-		<xsl:param name="p:version-meta-name" as="xs:string" required="no" select="'Версия шаблона'" tunnel="yes"/>
-		<!-- TODO: определиться с передачей p:generator-name -->
-		<xsl:param name="p:generator-name" as="xs:string" required="no" tunnel="yes"
-			select="'http://github.com/test-st-petersburg/DocTemplates/tools/Build-OODocument.ps1'"
-		/>
-		<xsl:copy validation="preserve">
-			<xsl:apply-templates mode="#current" select="@*"/>
-			<xsl:apply-templates mode="#current" select="
-				node() except (
-					meta:generator
-					| dc:date
-					| meta:user-defined[ @meta:name = $p:version-meta-name ]
-				)
-			"/>
-			<xsl:element name="meta:generator" inherit-namespaces="no">
-				<xsl:value-of select="$p:generator-name"/>
-				<xsl:if test="$p:version">
-					<xsl:value-of select="concat( '/', $p:version )"/>
-				</xsl:if>
-			</xsl:element>
-			<xsl:element name="dc:date" inherit-namespaces="no">
-				<xsl:value-of select="format-dateTime(
-					adjust-dateTime-to-timezone( current-dateTime(), xs:dayTimeDuration( 'PT0H' ) ),
-					'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01.000000000]'
-				)"/>
-			</xsl:element>
-			<xsl:if test="$p:version">
-				<xsl:element name="meta:user-defined" inherit-namespaces="no">
-					<xsl:attribute name="meta:name" select="$p:version-meta-name"/>
-					<xsl:value-of select="$p:version"/>
-				</xsl:element>
-			</xsl:if>
-		</xsl:copy>
-	</xsl:template>
-
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- препроцессирование документа                                                              -->
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-	<xsl:mode
-		name="p:internal-links-embedding"
-		on-no-match="shallow-copy" warning-on-no-match="no"
-		on-multiple-match="fail" warning-on-multiple-match="yes"
-		visibility="private"
-	/>
-
-	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
-
-	<xsl:key name="p:sections" use-when="$p:replace-section-source"
-		match="text:section"
-		use="@text:name"
-	/>
-
-	<xsl:template mode="p:internal-links-embedding" use-when="$p:replace-section-source" match="
-		text:section/text:section-source[
-			@text:section-name and not( @xlink:href )
-			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed')
-		]
-	">
-		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
-		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">begin expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
-		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
-		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
-			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
-		</xsl:apply-templates>
-		<!-- TODO: localize messages: https://www.codeproject.com/Articles/338731/LocalizeXSLT -->
-		<xsl:comment use-when="$p:comment-preprocessing-results" expand-text="yes">end expanding `text:section-source` with @text:section-name="{ @text:section-name }"</xsl:comment>
-	</xsl:template>
-
-	<!--
-		при подстановке элементов (например - вместо `text:section-source`) переименование вставляемых
-		разделов, таблиц, врезок
-		(с учётом реквизита `text:section-source/@xlink:title`) #81
-	-->
-
-	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
-		@table:name
-	">
-		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
-		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
-		<xsl:choose>
-			<xsl:when test="$p:embed-link-title">
-				<xsl:attribute name="{ name() }" select="concat( data(), $p:embed-link-title )"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:copy/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template mode="p:internal-links-embedding" use-when="$p:rename-elements-on-insert" match="
-		text:section/@text:name | @draw:name
-	">
-		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
-		<xsl:param name="p:embed-link-title" as="xs:string" required="no" select="''" tunnel="yes"/>
-		<xsl:choose>
-			<xsl:when test="$p:embed-link-title">
-				<xsl:attribute name="{ name() }" select="concat( data(), ' (', $p:embed-link-title, ')' )"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:copy/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<!-- удаление атрибутов препроцессора из документа #81 -->
 
 	<xsl:template mode="p:internal-links-embedding" match="@*[
 		namespace-uri() = 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor'
 	]"/>
 
+	<xsl:include href="preprocessor/internal-links-embedding-section-source.xslt"/>
+
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- внедрение дополнительных групп файлов с манифестами                                       -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:mode
-		name="p:external-objects-embedding"
+	<xsl:mode name="p:external-objects-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
 
-	<xsl:mode
-		name="p:get-embed-objects-collection"
+	<xsl:mode name="p:get-embed-objects-collection"
 		on-no-match="shallow-skip" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
 
-	<xsl:mode
-		name="p:external-objects-links-replacing"
+	<xsl:mode name="p:external-objects-links-replacing"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
@@ -292,14 +171,17 @@
 						</xsl:merge-source>
 						<xsl:merge-action>
 							<xsl:choose>
-								<xsl:when test=" exists( current-merge-group( 'source-document' ) ) ">
-									<xsl:copy-of select=" current-merge-group( 'source-document' ) "/>
+								<xsl:when test=" count( current-merge-group() ) = 1 ">
+									<xsl:copy-of select=" current-merge-group() "/>
 								</xsl:when>
 								<xsl:otherwise>
-									<xsl:assert test=" count( current-merge-group( 'embed-objects' ) ) = 1 " select="
-										'More just one linked object can add same file: ' || current-merge-key() || '.'
-									"/>
-									<xsl:copy-of select=" current-merge-group( 'embed-objects' ) "/>
+									<xsl:copy select=" head( current-merge-group() )">
+										<xsl:copy-of select=" head( current-merge-group() )/@* "/>
+										<xsl:apply-templates mode="p:external-objects-files-merging" select=" current-merge-key() ">
+											<xsl:with-param name="p:source-document" select=" current-merge-group( 'source-document' ) "/>
+											<xsl:with-param name="p:embed-objects" select=" current-merge-group( 'embed-objects' ) "/>
+										</xsl:apply-templates>
+									</xsl:copy>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:merge-action>
@@ -312,6 +194,48 @@
 		</xsl:variable>
 		<xsl:copy-of select="$p:complex-document-without-links-to-objects"/>
 	</xsl:template>
+
+	<!-- слияние файлов при наличии во включаемых объектах тех же файлов, что и в основном документе -->
+
+	<xsl:mode name="p:external-objects-files-merging"
+		on-no-match="deep-skip" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:mode name="p:external-objects-files-content-merging"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:external-objects-files-merging" match=" . " priority="-1">
+		<xsl:param name="p:source-document" as=" element( manifest:file-entry )? " required="yes"/>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes"/>
+		<xsl:choose>
+			<xsl:when test=" exists( $p:source-document ) ">
+				<xsl:copy-of select=" $p:source-document/* "/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:assert test=" count( $p:embed-objects ) = 1 " select="
+					'More just one linked object can add same file: ' || . || '.'
+				"/>
+				<xsl:copy-of select=" $p:embed-objects "/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template mode="p:external-objects-files-merging" match=" .[
+		. = 'content.xml'
+	] ">
+		<xsl:param name="p:source-document" as=" element( manifest:file-entry ) " required="yes"/>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes"/>
+		<xsl:apply-templates mode="p:external-objects-files-content-merging" select=" $p:source-document/* ">
+			<xsl:with-param name="p:embed-objects" select=" $p:embed-objects " tunnel="yes"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:include href="preprocessor/content-merger.xslt"/>
 
 	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
 
