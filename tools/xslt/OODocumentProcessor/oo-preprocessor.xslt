@@ -292,14 +292,17 @@
 						</xsl:merge-source>
 						<xsl:merge-action>
 							<xsl:choose>
-								<xsl:when test=" exists( current-merge-group( 'source-document' ) ) ">
-									<xsl:copy-of select=" current-merge-group( 'source-document' ) "/>
+								<xsl:when test=" count( current-merge-group() ) = 1 ">
+									<xsl:copy-of select=" current-merge-group() "/>
 								</xsl:when>
 								<xsl:otherwise>
-									<xsl:assert test=" count( current-merge-group( 'embed-objects' ) ) = 1 " select="
-										'More just one linked object can add same file: ' || current-merge-key() || '.'
-									"/>
-									<xsl:copy-of select=" current-merge-group( 'embed-objects' ) "/>
+									<xsl:copy select=" head( current-merge-group() )">
+										<xsl:copy-of select=" head( current-merge-group() )/@* "/>
+										<xsl:apply-templates mode="p:external-objects-files-merging" select=" current-merge-key() ">
+											<xsl:with-param name="p:source-document" select=" current-merge-group( 'source-document' ) "/>
+											<xsl:with-param name="p:embed-objects" select=" current-merge-group( 'embed-objects' ) "/>
+										</xsl:apply-templates>
+									</xsl:copy>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:merge-action>
@@ -311,6 +314,71 @@
 			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:external-objects-links-replacing"/>
 		</xsl:variable>
 		<xsl:copy-of select="$p:complex-document-without-links-to-objects"/>
+	</xsl:template>
+
+	<!-- слияние файлов при наличии во включаемых объектах тех же файлов, что и в основном документе -->
+
+	<xsl:mode
+		name="p:external-objects-files-merging"
+		on-no-match="deep-skip" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:external-objects-files-merging" match=" . " priority="-1">
+		<xsl:param name="p:source-document" as=" element( manifest:file-entry )? " required="yes"/>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes"/>
+		<xsl:choose>
+			<xsl:when test=" exists( $p:source-document ) ">
+				<xsl:copy-of select=" $p:source-document/* "/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:assert test=" count( $p:embed-objects ) = 1 " select="
+					'More just one linked object can add same file: ' || . || '.'
+				"/>
+				<xsl:copy-of select=" $p:embed-objects "/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template mode="p:external-objects-files-merging" match=" .[ . = 'content.xml' ] ">
+		<xsl:param name="p:source-document" as=" element( manifest:file-entry ) " required="yes"/>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes"/>
+		<xsl:apply-templates mode="p:merging-content" select=" $p:source-document/* ">
+			<xsl:with-param name="p:embed-objects" select=" $p:embed-objects " tunnel="yes"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<!-- слияние content.xml -->
+
+	<xsl:mode
+		name="p:merging-content"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:merging-content" match=" office:document-content/office:scripts/office:event-listeners ">
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:merge>
+				<xsl:merge-source name="source-document" for-each-item=" . "
+					select=" script:event-listener "
+					sort-before-merge="yes"
+				>
+					<xsl:merge-key select=" @script:event-name " order="ascending"/>
+				</xsl:merge-source>
+				<xsl:merge-source name="embed-objects" for-each-item=" $p:embed-objects ! office:document-content/office:scripts/office:event-listeners "
+					select=" script:event-listener "
+					sort-before-merge="yes"
+				>
+					<xsl:merge-key select=" @script:event-name " order="ascending"/>
+				</xsl:merge-source>
+				<xsl:merge-action>
+					<xsl:copy-of select=" head( current-merge-group() ) "/>
+				</xsl:merge-action>
+			</xsl:merge>
+		</xsl:copy >
 	</xsl:template>
 
 	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
