@@ -18,7 +18,8 @@
 	xmlns:p="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 >
 
-	<xsl:variable name="p:manifest-uri" as="xs:string" static="yes" select="'META-INF/manifest.xml'" visibility="private"/>
+	<xsl:import href="oo-defs.xslt"/>
+
 	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<!--
@@ -36,6 +37,56 @@
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="final"
 	/>
+	<xsl:mode
+		name="p:create-preprocessed-document-files"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="final"
+	/>
+
+	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
+		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
+	</xsl:use-package>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- запись препроцессированных файлов                                                         -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<xsl:mode
+		name="p:select-manifest-binary"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="p:create-preprocessed-document-files" match="/">
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
+		<xsl:variable name="p:manifest-binary" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="." mode="p:select-manifest-binary"/>
+		</xsl:variable>
+		<xsl:result-document href="{ $p:manifest-binary-uri }"
+			format="p:OOXmlFileFormat"
+		>
+			<xsl:apply-templates select="$p:manifest-binary" mode="f:outline"/>
+		</xsl:result-document>
+		<xsl:apply-templates select="." mode="p:create-outline-document-files"/>
+	</xsl:template>
+
+	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
+		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path = $p:manifest-uri ]"
+	/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry[ exists( * ) ]"/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry/*"/>
+
+	<xsl:template mode="p:select-manifest-binary" match="/manifest:manifest/manifest:file-entry[
+		ends-with( @manifest:full-path, '/' )
+	]"/>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- запись файлов                                                                             -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<xsl:mode
 		name="p:select-manifest"
@@ -44,21 +95,15 @@
 		visibility="private"
 	/>
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
-	</xsl:use-package>
-
-	<!--  -->
-
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
-		<xsl:context-item use="required" as="document-node()"/>
+		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:manifest" as="document-node()">
+		<xsl:variable name="p:manifest" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="'Manifest.dtd'" use-when="$p:restore-doctype"/>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="''" use-when="not( $p:restore-doctype )"/>
-		<xsl:result-document href="{ iri-to-uri( $p:manifest-uri ) }"
+		<xsl:result-document href="{ $p:manifest-uri }"
 			format="p:OOXmlFileFormat"
 			doctype-system="{ $p:manifest-doctype-system }"
 		>
@@ -72,6 +117,8 @@
 	/>
 
 	<xsl:template mode="p:select-manifest" match="/manifest:manifest/manifest:file-entry/*"/>
+
+	<xsl:template mode="p:select-manifest" match="@xml:base"/>
 
 	<!--  -->
 
@@ -87,6 +134,8 @@
 		<xsl:apply-templates select="." mode="f:inline"/>
 	</xsl:template>
 
+	<!--  -->
+
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
 		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='/' ]"
 	>
@@ -101,16 +150,16 @@
 			or ( @manifest:media-type='' and ends-with( @manifest:full-path, '.xml' ) )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OOXmlFile">
-			<xsl:apply-templates select="*" mode="#current"/>
+		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OOXmlFile">
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
 		match="/manifest:manifest/manifest:file-entry[ @manifest:media-type='application/rdf+xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }" format="p:OORdfFile">
-			<xsl:apply-templates select="*" mode="#current"/>
+		<xsl:result-document href="{ data( @manifest:full-path ) }" format="p:OORdfFile">
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -122,22 +171,22 @@
 			or ( @manifest:full-path='styles.xml' )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="office.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='Basic/script-lc.xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="libraries.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -148,22 +197,22 @@
 		]"
 		 priority="-1"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="library.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[	@manifest:full-path='Configurations2/images/lc_imagelist.xml' ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="image.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
@@ -173,22 +222,22 @@
 			or starts-with( @manifest:full-path, 'Configurations2/popupmenu/' )
 		]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="menubar.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" use-when="$p:restore-doctype"
 		 match="/manifest:manifest/manifest:file-entry[ starts-with( @manifest:full-path, 'Configurations2/toolbar/' ) ]"
 	>
-		<xsl:result-document href="{ iri-to-uri( data( @manifest:full-path ) ) }"
+		<xsl:result-document href="{ data( @manifest:full-path ) }"
 			format="p:OOXmlFileFormat"
 			doctype-system="toolbar.dtd"
 		>
-			<xsl:apply-templates select="*" mode="#current"/>
+			<xsl:apply-templates mode="#current"/>
 		</xsl:result-document>
 	</xsl:template>
 

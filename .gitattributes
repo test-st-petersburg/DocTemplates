@@ -7,3 +7,7 @@
 *.ps1  text  merge=text diff=text eol=crlf
 *.psd1 text  merge=text diff=text eol=crlf
 *.psm1 text  merge=text diff=text eol=crlf
+
+*.bas  text  merge=text diff=text eol=lf
+
+*.{xba,xdl,xlb,xlc}  text  merge=text diff=text eol=lf

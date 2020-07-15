@@ -23,7 +23,7 @@
 			<config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
 			<config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="DoNotJustifyLinesWithManualBreak" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+			<config:config-item config:name="SaveThumbnail" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="SaveGlobalDocumentLinks" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="SmallCapsPercentage66" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="CurrentDatabaseCommandType" config:type="int">0</config:config-item>

@@ -51,6 +51,10 @@
 			"command": "Invoke-Build -Task Clean"
 		},
 		{
+			"label": "Remove sources",
+			"command": "Invoke-Build -Task RemoveSources"
+		},
+		{
 			"label": "Convert Open Office files to plain XML",
 			"command": "Invoke-Build -Task Unpack -Verbose"
 		},
@@ -67,12 +71,12 @@
 			"command": "Invoke-Build -Task UnpackAndOptimizeModified -Verbose"
 		},
 		{
-			"label": "Create Open Office files from plain XML",
+			"label": "Build Open Office files from plain XML",
 			"group": "build",
 			"command": "Invoke-Build -Task Build -Verbose"
 		},
 		{
-			"label": "Create Open Office files from plain XML and open",
+			"label": "Build Open Office files from plain XML and open",
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -80,14 +84,14 @@
 			"command": "Invoke-Build -Task BuildAndOpen -Verbose"
 		},
 		{
-			"label": "Восстановить шаблон Письма из XML и открыть его",
+			"label": "Build Open Office macro libraries",
 			"group": "build",
-			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Письмо ФБУ Тест-С.-Петербург' -Verbose"
+			"command": "Invoke-Build -Task BuildLibs -Verbose"
 		},
 		{
-			"label": "Восстановить шаблон Записки из XML и открыть его",
+			"label": "Build Open Office macro libraries containers",
 			"group": "build",
-			"command": "Invoke-Build -Task 'BuildAndOpen' -Filter 'Записка ФБУ Тест-С.-Петербург' -Verbose"
-		}
+			"command": "Invoke-Build -Task BuildLibContainers -Verbose"
+		},
 	]
 }

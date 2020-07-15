@@ -2,6 +2,50 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.3.0
+
+Прочие изменения:
+
+- в документы и шаблоны включаются только файлы, указанные в манифесте
+  [#74](https://github.com/test-st-petersburg/DocTemplates/issues/74)
+- реализована сборка документов на базе шаблонов репозитория
+  с включением файлов шаблонов в документа.
+  (на этапе препроцессирования).
+  В том числе объединяются разделы следующие разделы content.xml:
+
+  - `office:document-content/office:scripts/office:event-listeners`
+  - `office:document-content/office:font-face-decls`
+  - `office:document-content/office:body/office:text/text:variable-decls`
+  - `office:document-content/office:body/office:text/text:section[@text:name="Служебный"]`
+
+  [#75](https://github.com/test-st-petersburg/DocTemplates/issues/75)
+- библиотека TestStPetersburg удалена из состава шаблонов документов
+  и внедряется на этапе сборки шаблонов документов
+  (на этапе препроцессирования)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- "исходные" файлы документов и шаблонов после препроцессора
+  хранятся в подкаталоге 'tmp/template' рабочего каталога
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- добавлена возможность подготовки контейнеров библиотек
+  для последующего включения в состав документов, шаблонов документов
+  (команда сборки `BuildLibContainers`)
+  [#83](https://github.com/test-st-petersburg/DocTemplates/issues/83)
+- добавлена возможность сборки библиотек макросов из "исходных" файлов
+  (команда сборки `BuildLibs`)
+  [#43](https://github.com/test-st-petersburg/DocTemplates/issues/43)
+- добавлено восстановление реквизитов `@manifest:media-type` в манифесте
+  для раздела `Configurations2`.
+  Libre Office генерирует их пустыми.
+  [#89](https://github.com/test-st-petersburg/DocTemplates/issues/89)
+- исключены thumbnails из репозитория и генерируемых документов
+  и отключена в настройках документов их генерация
+  [#88](https://github.com/test-st-petersburg/DocTemplates/issues/88)
+- метаданные `meta:generator` указываются с учётом RFC 2616
+  [#84](https://github.com/test-st-petersburg/DocTemplates/issues/84)
+- метаданные (свойства) документа обновляются при сохранении документа
+  из его переменных
+  [#82](https://github.com/test-st-petersburg/DocTemplates/issues/82)
+
 ## 2.2.0
 
 Прочие изменения:
@@ -20,7 +64,7 @@
 - обновление метаданных документа при сборке
   (`meta:editing-cycles`, `dc:date`)
   выделено в отдельный XSLT пакет
-  (oo-preprocessor.xslt, режим `p:update-document-meta`)
+  (oo-preprocessor.xslt, режим `p:document-meta-updating`)
   [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 - убраны файлы `mimetype` из репозитория
   (добавлена автоматическая их генерация при сборке из манифеста)

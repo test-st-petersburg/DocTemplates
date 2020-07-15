@@ -21,10 +21,12 @@
         "markdownlint",
         "mimetype",
         "mkdocs",
+        "Paren",
         "precommit",
         "PreRelease",
         "Recurse",
         "repo",
+        "shellcheck",
         "Veyor",
         "xlink"
     ],

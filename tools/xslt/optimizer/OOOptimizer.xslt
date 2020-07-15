@@ -66,6 +66,7 @@
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-abs-size-when-relative" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unimportant-files" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:remove-thumbnails" as="xs:boolean" static="yes" select="$o:remove-unimportant-files" visibility="private"/>
 	<xsl:variable name="o:remove-config-view-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-config-print-params" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-rsid" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -79,6 +80,7 @@
 	<xsl:variable name="o:remove-calculated-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-generator-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-print-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:fix-manifest" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
 	<xsl:mode
 		name="o:optimize"
@@ -104,14 +106,14 @@
 			<xsl:when test="exists( $o:attributes )">
 				<xsl:copy>
 					<xsl:copy-of select="$o:attributes"/>
-					<xsl:apply-templates select="node()" mode="o:optimize"/>
+					<xsl:apply-templates mode="o:optimize"/>
 				</xsl:copy>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:where-populated>
 					<xsl:copy>
 						<xsl:copy-of select="$o:attributes"/>
-						<xsl:apply-templates select="node()" mode="o:optimize"/>
+						<xsl:apply-templates mode="o:optimize"/>
 					</xsl:copy>
 				</xsl:where-populated>
 			</xsl:otherwise>
@@ -131,7 +133,7 @@
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-text-auto-styles"
 		 match="text:span[ key( 'o:auto-text-styles', @text:style-name ) ]">
-		<xsl:apply-templates select="node()" mode="#current"/>
+		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
 
 	<!-- TODO: убирать автоматические стили только по отношению к базовому стилю символов -->
@@ -296,6 +298,36 @@
 	<!-- удаляем некоторые файлы из манифеста -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-unimportant-files" match="manifest:file-entry[ @manifest:full-path = 'layout-cache' ]"/>
+
+	<!-- удаляем thumbnails -->
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="manifest:file-entry[ @manifest:full-path = 'Thumbnails/thumbnail.png' ]"/>
+
+	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="
+		config:config-item[ @config:name = 'SaveThumbnail' ]/text()
+	">
+		<xsl:value-of select=" false() "/>
+	</xsl:template>
+
+	<!-- исправляем `@manifest:media-type` в манифесте для раздела Configurations2 -->
+
+	<xsl:template mode="o:optimize" use-when="$o:fix-manifest" match="
+		/manifest:manifest/manifest:file-entry[
+			( @manifest:media-type = '' )
+			and ( starts-with( @manifest:full-path, 'Configurations2/' ) and ends-with( @manifest:full-path, '.xml' ) )
+		]/@manifest:media-type
+	">
+		<xsl:attribute name="manifest:media-type" select=" 'text/xml' "/>
+	</xsl:template>
+
+	<xsl:template mode="o:optimize" use-when="$o:fix-manifest" match="
+		/manifest:manifest/manifest:file-entry[
+			( @manifest:media-type = '' )
+			and ( starts-with( @manifest:full-path, 'Configurations2/images/Bitmaps/' ) and ends-with( @manifest:full-path, '.png' ) )
+		]/@manifest:media-type
+	">
+		<xsl:attribute name="manifest:media-type" select=" 'image/png' "/>
+	</xsl:template>
 
 	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
 

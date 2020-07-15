@@ -4,8 +4,7 @@ ReleaseNotes.md
 node_modules
 package-lock.json
 Thumbs.db
-template/*.odt
-template/*.odt#
-template/*.ott
-template/*.ott#
+output
+tmp
 src/template/**/mimetype
+src/template/**/Thumbnails

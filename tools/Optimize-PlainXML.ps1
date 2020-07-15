@@ -18,11 +18,16 @@ begin {
 
 	Push-Location -Path $PSScriptRoot;
 	$saxExecutable = .\Get-XSLTExecutable.ps1 `
-		-PackagePath 'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+		-PackagePath `
+		'xslt/system/uri.xslt', `
+		'xslt/system/fix-saxon.xslt', `
+		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
 		'xslt/optimizer/OOOptimizer.xslt', `
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
+		'xslt/OODocumentProcessor/oo-macrolib.xslt', `
 		'xslt/OODocumentProcessor/oo-merger.xslt', `
-		'xslt/OODocumentProcessor/oo-preprocessor.xslt' `
+		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
+		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
 		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
@@ -30,32 +35,35 @@ begin {
 }
 process {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
-		$saxTransform = $saxExecutable.Load();
-		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
-		$saxTransform.InitialMode = New-Object Saxon.Api.QName -ArgumentList `
-			'http://github.com/test-st-petersburg/DocTemplates/tools/xslt',	'optimize';
+		$saxTransform = $saxExecutable.Load30();
 
-		[System.Uri] $BaseUri = ( Resolve-Path -Path $Path ).Path + [System.IO.Path]::DirectorySeparatorChar;
-		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-		$BaseUri = $BaseUri.AbsoluteUri;
+		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		$FormatterTempXMLFolder = New-Item -ItemType Directory `
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
 		try {
-			$saxTransform.BaseOutputURI = ( [System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+			$saxTransform.BaseOutputURI = (
+				[System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar )
+			).AbsoluteUri.ToString().Replace(' ', '%20');
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-			$ManifestPath = ( Resolve-Path -Path ( Join-Path -Path $Path -ChildPath 'META-INF/manifest.xml' ) ).Path;
-			# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-			[System.Uri] $ManifestUri = $ManifestPath;
-			$saxTransform.SetInputStream(
-				( New-Object System.IO.FileStream -ArgumentList $ManifestPath, 'Open' ),
-				$ManifestUri );
-			$saxTransform.Run( ( New-Object Saxon.Api.NullDestination ) );
+			$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+			$Params.Add(
+				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					'source-directory' ),
+				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
+			)
+			$saxTransform.SetInitialTemplateParameters( $Params, $false );
+
+			$null = $saxTransform.CallTemplate(
+				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					'optimize' )
+			);
 
 			Write-Verbose 'Transformation done';
 
@@ -68,5 +76,6 @@ process {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
+
 	};
 }
