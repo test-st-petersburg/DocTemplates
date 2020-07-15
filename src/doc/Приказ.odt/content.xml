@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE office:document-content
+  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "office.dtd">
+<office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
+	<office:automatic-styles>
+		<style:style style:name="Подписи" style:family="table">
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="Подписи.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
+		</style:style>
+		<style:style style:name="Подписи.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
+		</style:style>
+		<style:style style:name="Подписи.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
+		</style:style>
+		<style:style style:name="Подписи.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="Визы" style:family="table">
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="Визы.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
+		</style:style>
+		<style:style style:name="Визы.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
+		</style:style>
+		<style:style style:name="Визы.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
+		</style:style>
+		<style:style style:name="Визы.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="СведенияОбОзнакомлении" style:family="table">
+			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
+		</style:style>
+		<style:style style:name="СведенияОбОзнакомлении.A" style:family="table-column">
+			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
+		</style:style>
+		<style:style style:name="СведенияОбОзнакомлении.B" style:family="table-column">
+			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
+		</style:style>
+		<style:style style:name="СведенияОбОзнакомлении.C" style:family="table-column">
+			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
+		</style:style>
+		<style:style style:name="СведенияОбОзнакомлении.A1" style:family="table-cell">
+			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+		</style:style>
+		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+		</style:style>
+		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="ДатаПодписиГод">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
+			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+		</style:style>
+		<style:style style:name="Sect1" style:family="section">
+			<style:section-properties style:editable="false">
+				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
+			</style:section-properties>
+		</style:style>
+	</office:automatic-styles>
+	<office:body>
+		<office:text text:use-soft-page-breaks="true">
+			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Приказ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string"></text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string"></text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Приказ «о чём-то»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"/>
+			</text:section>
+			<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПриказа" text:protected="true">
+				<text:p text:style-name="БланкОРДПервыйЛистПриказа"/>
+			</text:section>
+			<text:section text:style-name="Sect1" text:name="Содержание">
+				<text:p text:style-name="Основной">В целях развития работ в рамках уставной деятельности ФБУ «Тест‑С.‑Петербург» <text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
+				<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Основной">Создать конструкторско-производственный отдел (далее — Отдел).</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Считать основными функциями Отдела следующие:</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list1755997972" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="Основной">выполнение ОКР и НИОКР по разработке и производству эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">производство эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">реализация производимых ФБУ «Тест‑С.‑Петербург» эталонов единиц величин;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">проведение маркетинговых исследований и выработка требований к производимым ФБУ «Тест‑С.‑Петербург» и планируемым к производству эталонам единиц величин.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list172702699194438" text:continue-list="list1336077129" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Основной">Функционально подчинить Отдел директору Новгородского филиала ФБУ «Тест‑С.‑Петербург» Бетке С.С..</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Утвердить штатное расписание Отдела (Приложение №1).</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Директору Новгородского филиала Бетке С.С.:</text:p>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">подготовить Положение о производственно-коммерческом отделе, должностные инструкции работников отдела, и утвердить их в установленном порядке;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">до 01.06.2020 подготовить и представить на утверждение план мероприятий на 2020 год по организации производства эталонов единиц величин — стационарных расходомерных установок;</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Начальнику сектора планово-экономической работы бухгалтерско-финансового отдела №483 Гарбузовой О.В. внести изменения в организационную структуру и штатное расписание ФБУ «Тест‑С.‑Петербург».</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">Контроль за исполнением настоящего приказа оставляю за собой.</text:p>
+					</text:list-item>
+				</text:list>
+			</text:section>
+			<text:section text:style-name="Sect1" text:name="Подписи">
+				<table:table table:name="Подписи" table:style-name="Подписи">
+					<table:table-column table:style-name="Подписи.A"/>
+					<table:table-column table:style-name="Подписи.B"/>
+					<table:table-column table:style-name="Подписи.C"/>
+					<table:table-row>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="ПодписьМестоДляПодписи"/>
+						</table:table-cell>
+						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+							<text:p text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
+						</table:table-cell>
+					</table:table-row>
+				</table:table>
+			</text:section>
+			<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
+				<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
+				<text:section text:style-name="Sect1" text:name="Визы">
+					<table:table table:name="Визы" table:style-name="Визы">
+						<table:table-column table:style-name="Визы.A"/>
+						<table:table-column table:style-name="Визы.B"/>
+						<table:table-column table:style-name="Визы.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
+								<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
+					<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
+					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
+					<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
+						<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
+						<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Директор Новгородского филиала</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.С. Бетке</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">Е.А. Кузнецова</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка1" text:anchor-type="as-char" draw:z-index="26">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка7" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="27">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка8" text:anchor-type="as-char" draw:z-index="28">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка9" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="29">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка10" text:anchor-type="as-char" draw:z-index="30">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка11" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="31">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">О.В. Гарбузова</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
+								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="Врезка12" text:anchor-type="as-char" draw:z-index="32">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка13" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="33">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка14" text:anchor-type="as-char" draw:z-index="34">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка15" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="35">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame></text:p>
+									</draw:text-box>
+								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка16" text:anchor-type="as-char" draw:z-index="36">
+									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка17" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="37">
+											<draw:text-box fo:min-height="0.041cm">
+												<text:p text:style-name="Подстрочник"><text:s/></text:p>
+											</draw:text-box>
+										</draw:frame>20 <text:s text:c="4"/></text:p>
+									</draw:text-box>
+								</draw:frame> г.</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
+			</text:section>
+		</office:text>
+	</office:body>
+</office:document-content>
