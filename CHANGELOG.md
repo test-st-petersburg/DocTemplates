@@ -7,8 +7,15 @@
 - в документы и шаблоны включаются только файлы, указанные в манифесте
   [#74](https://github.com/test-st-petersburg/DocTemplates/issues/74)
 - реализована сборка документов на базе шаблонов репозитория
-  с включением файлов шаблонов в документа
-  (на этапе препроцессирования)
+  с включением файлов шаблонов в документа.
+  (на этапе препроцессирования).
+  В том числе объединяются разделы следующие разделы content.xml:
+
+  - `office:document-content/office:scripts/office:event-listeners`
+  - `office:document-content/office:font-face-decls`
+  - `office:document-content/office:body/office:text/text:variable-decls`
+  - `office:document-content/office:body/office:text/text:section[@text:name="Служебный"]`
+
   [#75](https://github.com/test-st-petersburg/DocTemplates/issues/75)
 - библиотека TestStPetersburg удалена из состава шаблонов документов
   и внедряется на этапе сборки шаблонов документов
