@@ -44,4 +44,9 @@
 	"powershell.codeFormatting.whitespaceAfterSeparator": true,
 	"powershell.codeFormatting.ignoreOneLineBlock": false,
 	"powershell.codeFormatting.preset": "Custom",
+	"typescript.tsc.autoDetect": "off",
+	"grunt.autoDetect": "off",
+	"jake.autoDetect": "off",
+	"gulp.autoDetect": "off",
+	"task.autoDetect": "off",
 }
