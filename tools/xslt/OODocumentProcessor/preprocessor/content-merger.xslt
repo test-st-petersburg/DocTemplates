@@ -52,118 +52,145 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:template match="office:document-content/office:scripts/office:event-listeners"
+	<xsl:template match="office:document-content"
 		mode="p:external-objects-files-content-merging"
 	>
 		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
 		<xsl:copy>
-			<xsl:merge>
-				<xsl:merge-source name="source-document" for-each-item=" . "
-					select=" script:event-listener "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @script:event-name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-source name="embed-objects" for-each-item=" $p:embed-objects ! office:document-content/office:scripts/office:event-listeners "
-					select=" script:event-listener "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @script:event-name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-action>
-					<xsl:copy-of select=" head( current-merge-group() ) "/>
-				</xsl:merge-action>
-			</xsl:merge>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:document-content/office:font-face-decls"
-		mode="p:external-objects-files-content-merging"
- 	>
-		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
-		<xsl:copy>
-			<xsl:merge>
-				<xsl:merge-source
-					for-each-item=" $p:embed-objects!office:document-content/office:font-face-decls, . "
-					select=" style:font-face "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @style:name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-action>
-					<xsl:copy-of select=" head( current-merge-group() ) "/>
-				</xsl:merge-action>
-			</xsl:merge>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:document-content/office:body/office:text/text:variable-decls"
-		mode="p:external-objects-files-content-merging"
- 	>
-		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
-		<xsl:copy>
-			<xsl:merge>
-				<xsl:merge-source
-					for-each-item=" $p:embed-objects!office:document-content/office:body/office:text/text:variable-decls, . "
-					select=" text:variable-decl "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @text:name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-action>
-					<xsl:copy-of select=" head( current-merge-group() ) "/>
-				</xsl:merge-action>
-			</xsl:merge>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:document-content/office:body/office:text/text:sequence-decls"
-		mode="p:external-objects-files-content-merging"
- 	>
-		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
-		<xsl:copy>
-			<xsl:merge>
-				<xsl:merge-source
-					for-each-item=" $p:embed-objects!office:document-content/office:body/office:text/text:sequence-decls, . "
-					select=" text:sequence-decl "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @text:name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-action>
-					<xsl:copy-of select=" head( current-merge-group() ) "/>
-				</xsl:merge-action>
-			</xsl:merge>
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ]"
-		mode="p:external-objects-files-content-merging"
- 	>
-		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
-		<xsl:copy>
 			<xsl:copy-of select="@*"/>
-			<xsl:element name="text:p" inherit-namespaces="no">
-				<xsl:attribute name="text:style-name" select=" 'НачалоСлужебнойСтраницы' "/>
+
+			<xsl:element name="office:scripts" inherit-namespaces="no">
+				<xsl:element name="office:event-listeners" inherit-namespaces="no">
+					<xsl:merge>
+						<xsl:merge-source name="source-document" for-each-item=" office:scripts/office:event-listeners "
+							select=" script:event-listener "
+							sort-before-merge="yes"
+						>
+							<xsl:merge-key select=" @script:event-name " order="ascending"/>
+						</xsl:merge-source>
+						<xsl:merge-source name="embed-objects" for-each-item=" $p:embed-objects ! office:document-content/office:scripts/office:event-listeners "
+							select=" script:event-listener "
+							sort-before-merge="yes"
+						>
+							<xsl:merge-key select=" @script:event-name " order="ascending"/>
+						</xsl:merge-source>
+						<xsl:merge-action>
+							<xsl:copy-of select=" head( current-merge-group() ) "/>
+						</xsl:merge-action>
+					</xsl:merge>
+				</xsl:element>
 			</xsl:element>
-			<xsl:merge>
-				<xsl:merge-source
-					for-each-item=" ., $p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ] "
-					select=" //text:variable-set "
-					sort-before-merge="yes"
-				>
-					<xsl:merge-key select=" @text:name " order="ascending"/>
-				</xsl:merge-source>
-				<xsl:merge-action>
-					<xsl:element name="text:p" inherit-namespaces="no">
-						<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+
+			<xsl:element name="office:font-face-decls" inherit-namespaces="no">
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							$p:embed-objects!office:document-content/office:font-face-decls,
+							office:font-face-decls
+						"
+						select=" style:font-face "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @style:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
 						<xsl:copy-of select=" head( current-merge-group() ) "/>
-					</xsl:element>
-				</xsl:merge-action>
-			</xsl:merge>
-			<xsl:element name="text:p" inherit-namespaces="no">
-				<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+					</xsl:merge-action>
+				</xsl:merge>
 			</xsl:element>
+
+			<xsl:apply-templates mode="#current" select=" * except ( office:scripts, office:font-face-decls ) "/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="office:document-content/office:body/office:text"
+		mode="p:external-objects-files-content-merging"
+	>
+		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:apply-templates mode="#current" select=" office:forms "/>
+
+			<xsl:element name="text:variable-decls" inherit-namespaces="no">
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							$p:embed-objects!office:document-content/office:body/office:text/text:variable-decls,
+							text:variable-decls
+						"
+						select=" text:variable-decl "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @text:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
+						<xsl:copy-of select=" head( current-merge-group() ) "/>
+					</xsl:merge-action>
+				</xsl:merge>
+			</xsl:element>
+
+			<xsl:element name="text:sequence-decls" inherit-namespaces="no">
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							$p:embed-objects!office:document-content/office:body/office:text/text:sequence-decls,
+							text:sequence-decls
+						"
+						select=" text:sequence-decl "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @text:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
+						<xsl:copy-of select=" head( current-merge-group() ) "/>
+					</xsl:merge-action>
+				</xsl:merge>
+			</xsl:element>
+
+			<xsl:element name="text:section" inherit-namespaces="no">
+				<xsl:attribute name="text:name" select=" 'Служебный' "/>
+				<xsl:attribute name="text:display" select="
+					if ( exists( text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display ) )
+						then text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display
+						else 'none'
+				"/>
+				<xsl:copy-of select="
+					text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@* except (
+						text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:name,
+						text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display
+					)
+				"/>
+				<xsl:element name="text:p" inherit-namespaces="no">
+					<xsl:attribute name="text:style-name" select=" 'НачалоСлужебнойСтраницы' "/>
+				</xsl:element>
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							text:section[ @text:name = 'Служебный' ][ position() = 1 ],
+							$p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ]
+						"
+						select=" //text:variable-set "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @text:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
+						<xsl:element name="text:p" inherit-namespaces="no">
+							<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+							<xsl:copy-of select=" head( current-merge-group() ) "/>
+						</xsl:element>
+					</xsl:merge-action>
+				</xsl:merge>
+				<xsl:element name="text:p" inherit-namespaces="no">
+					<xsl:attribute name="text:style-name" select=" 'Preformatted_20_Text' "/>
+				</xsl:element>
+			</xsl:element>
+
+			<xsl:apply-templates mode="#current" select=" * except (
+				office:forms,
+				text:variable-decls,
+				text:sequence-decls,
+				text:section[ @text:name = 'Служебный' ][ position() = 1 ]
+			)"/>
 		</xsl:copy>
 	</xsl:template>
 
