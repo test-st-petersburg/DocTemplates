@@ -52,9 +52,9 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:template mode="p:external-objects-files-content-merging" match="
-		office:document-content/office:scripts/office:event-listeners
-	">
+	<xsl:template match="office:document-content/office:scripts/office:event-listeners"
+		mode="p:external-objects-files-content-merging"
+	>
 		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
 		<xsl:copy>
 			<xsl:merge>
@@ -77,15 +77,14 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:external-objects-files-content-merging" match=" office:document-content/office:font-face-decls ">
+	<xsl:template match="office:document-content/office:font-face-decls"
+		mode="p:external-objects-files-content-merging"
+ 	>
 		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes" tunnel="yes"/>
 		<xsl:copy>
 			<xsl:merge>
 				<xsl:merge-source
-					for-each-item="
-						.,
-						$p:embed-objects ! office:document-content/office:font-face-decls
-					"
+					for-each-item=" $p:embed-objects!office:document-content/office:font-face-decls, . "
 					select=" style:font-face "
 					sort-before-merge="yes"
 				>
