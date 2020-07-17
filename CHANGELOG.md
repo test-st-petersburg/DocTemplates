@@ -4,6 +4,8 @@
 
 Прочие изменения:
 
+- вступительное обращение в Письме перенесено в шаблон первой страницы
+  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 - шаблон Письмо включен в состав шаблона ОРД v2
   [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 
