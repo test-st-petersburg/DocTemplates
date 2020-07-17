@@ -143,7 +143,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Drawing" text:separation-character="."/>
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
 			</text:sequence-decls>
-			<text:section text:style-name="Sect1" text:name="Пример приказа">
+			<!-- #region Пример приказа -->
 				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Приказ</text:variable-set></text:p>
@@ -428,8 +428,8 @@
 						</table:table>
 					</text:section>
 				</text:section>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Пример положения о подразделении">
+			<!-- #endregion Пример приказа -->
+			<!-- #region Пример положения о подразделении -->
 				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Положение</text:variable-set></text:p>
@@ -1017,8 +1017,8 @@
 						</table:table>
 					</text:section>
 				</text:section>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Пример должностной инструкции">
+			<!-- #endregion Пример положения о подразделении -->
+			<!-- #region Пример должностной инструкции -->
 				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Должностная инструкция</text:variable-set></text:p>
@@ -1570,8 +1570,8 @@
 						</table:table>
 					</text:section>
 				</text:section>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Пример служебной записки">
+			<!-- #endregion Пример должностной инструкции -->
+			<!-- #region Пример служебной записки -->
 				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Служебная записка</text:variable-set></text:p>
@@ -1679,7 +1679,7 @@
 						</table:table-row>
 					</table:table>
 				</text:section>
-			</text:section>
+			<!-- #endregion Пример служебной записки -->
 		</office:text>
 	</office:body>
 </office:document-content>
