@@ -128,7 +128,8 @@ $OOFilesUnpackTasks = @();
 $OORemoveSourcesTasks = @();
 $OOOptimizeTasks = @();
 $OOUnpackAndOptimizeTasks = @();
-foreach ( $OOFile in $DestinationTemplateFile ) {
+foreach ( $OOFile in $DestinationTemplateFile )
+{
 	$documentName = $( Split-Path -Path ( $OOFile ) -Leaf );
 	$OORemoveSourcesTaskName = "RemoveSources-$documentName";
 	$OORemoveSourcesTasks += $OORemoveSourcesTaskName;
@@ -155,12 +156,15 @@ foreach ( $OOFile in $DestinationTemplateFile ) {
 	$OOOptimizeTaskName = "Optimize-$documentName";
 	$OOOptimizeTasks += $OOOptimizeTaskName;
 
-	task $OOOptimizeTaskName -Inputs @( $OOFile ) -Job {
+	task $OOOptimizeTaskName -Inputs @( $OOFile ) -Outputs @( '--unexisting-file--' ) -Job {
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
 		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
 			-WarningAction Continue `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -202,7 +206,8 @@ $version = gitversion /output json /showvariable SemVer
 
 $BuildLibrariesTasks = @();
 $BuildLibContainersTasks = @();
-foreach ( $sourceLibFolder in $SourceLibrariesFolder ) {
+foreach ( $sourceLibFolder in $SourceLibrariesFolder )
+{
 	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
 	$BuildTaskName = "BuildLib-$LibName";
 	$BuildLibrariesTasks += $BuildTaskName;
@@ -273,7 +278,8 @@ $JobOpenFile = {
 	$Shell = New-Object -Com 'Shell.Application';
 	$localDestinationFile | Get-Item | ForEach-Object {
 		$verb = 'open';
-		if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) ) {
+		if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) )
+		{
 			$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
 		};
 	};
@@ -283,7 +289,8 @@ $JobOpenFile = {
 
 $BuildTemplatesTasks = @();
 $BuildAndOpenTemplatesTasks = @();
-foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
+foreach ( $documentXMLFolder in $SourceTemplatesFolder )
+{
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
 	$BuildTaskName = "Build-$documentName";
 	$BuildTemplatesTasks += $BuildTaskName;
@@ -296,7 +303,8 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder ) {
 	$JobBuildTemplate = {
 		$localDestinationFile = $Outputs[0];
 		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker ) {
+		if ( Test-Path -Path $marker )
+		{
 			Remove-Item -Path $marker `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -336,7 +344,8 @@ task BuildAndOpenTemplates $BuildAndOpenTemplatesTasks;
 
 $BuildDocsTasks = @();
 $BuildAndOpenDocsTasks = @();
-foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
+foreach ( $documentXMLFolder in $SourceDocumentsFolder )
+{
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
 	$BuildTaskName = "Build-$documentName";
 	$BuildDocsTasks += $BuildTaskName;
@@ -347,7 +356,8 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder ) {
 	$JobBuildDocument = {
 		$localDestinationFile = $Outputs[0];
 		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker ) {
+		if ( Test-Path -Path $marker )
+		{
 			Remove-Item -Path $marker `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );

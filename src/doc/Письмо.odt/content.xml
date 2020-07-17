@@ -18,7 +18,7 @@
 		<style:style style:name="Подписи.A1" style:family="table-cell">
 			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 		</style:style>
-		<style:style style:name="Sect3" style:family="section">
+		<style:style style:name="Sect1" style:family="section">
 			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:section-properties>
@@ -29,7 +29,7 @@
 	</office:automatic-styles>
 	<office:body>
 		<office:text>
-			<text:section text:style-name="Sect3" text:name="Служебный" text:display="none">
+			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
@@ -39,9 +39,8 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
-			<text:p text:style-name="БланкПисьмоНачало"/>
-			<text:section text:style-name="Sect3" text:name="Вступительное обращение" text:condition="ooow:NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition">
-				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
+			<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПисьма" text:protected="true">
+				<text:p text:style-name="БланкОРДПервыйЛистПисьма"/>
 			</text:section>
 			<text:p text:style-name="Основной">{Содержание}</text:p>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
@@ -56,16 +55,16 @@
 				</text:list-item>
 			</text:list>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-			<text:p text:style-name="Заголовок_20_перечня_20_приложений">Приложения:</text:p>
+			<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
 			<text:list xml:id="list1896758410" text:style-name="Нумерация_20_списка_20_приложений">
 				<text:list-item>
-					<text:p text:style-name="Список_20_приложений">Положение об... на 5 л. в 1 экз.;</text:p>
+					<text:p text:style-name="СписокПриложений">Положение об... на 5 л. в 1 экз.;</text:p>
 				</text:list-item>
 				<text:list-item>
-					<text:p text:style-name="Список_20_приложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
+					<text:p text:style-name="СписокПриложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
 				</text:list-item>
 			</text:list>
-			<text:section text:style-name="Sect3" text:name="Подписи">
+			<text:section text:style-name="Sect1" text:name="Подписи">
 				<table:table table:name="Подписи" table:style-name="Подписи">
 					<table:table-column table:style-name="Подписи.A"/>
 					<table:table-column table:style-name="Подписи.B"/>
