@@ -42,9 +42,6 @@
 			<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПисьма" text:protected="true">
 				<text:p text:style-name="БланкОРДПервыйЛистПисьма"/>
 			</text:section>
-			<text:section text:style-name="Sect1" text:name="Вступительное обращение" text:condition="ooow:NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition">
-				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
-			</text:section>
 			<text:p text:style-name="Основной">{Содержание}</text:p>
 			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 			<text:list xml:id="list1504259466" text:style-name="Numbering_20_123">

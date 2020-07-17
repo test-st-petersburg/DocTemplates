@@ -1807,6 +1807,11 @@
 					<text:p text:style-name="БланкФирменныйАдресат"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
+				<text:section text:style-name="Sect1" text:name="Вступительное обращение (ПБ)">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Salutation"><text:variable-get text:name="ВступительноеОбращение">Уважаемые господа!</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
 			</loext:header-first>
 			<style:footer>
 				<text:p text:style-name="Footer"/>

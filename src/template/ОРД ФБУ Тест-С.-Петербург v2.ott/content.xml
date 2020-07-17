@@ -1691,52 +1691,92 @@
 				</text:section>
 			<!-- #endregion Пример служебной записки -->
 			<!-- #region Пример письма -->
-			<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПисьма" text:protected="true">
-				<text:p text:style-name="БланкОРДПервыйЛистПисьма"/>
-			</text:section>
-			<text:section text:style-name="Sect1" text:name="Вступительное обращение" text:condition="ooow:NOT ( ЭтоПереписка EQ &#34;ИСТИНА&#34; )" text:display="condition">
-				<text:p text:style-name="Salutation"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string">Уважаемые господа</text:variable-set>!</text:p>
-			</text:section>
-			<text:p text:style-name="Основной">{Содержание}</text:p>
-			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-			<text:list xml:id="list1504259466" text:style-name="Numbering_20_123">
-				<text:list-item>
-					<text:p text:style-name="Основной">пример нумерованного списка;</text:p>
-				</text:list-item>
-			</text:list>
-			<text:list xml:id="list365234166" text:style-name="List_20_2">
-				<text:list-item>
-					<text:p text:style-name="Основной">пример маркированного списка.</text:p>
-				</text:list-item>
-			</text:list>
-			<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
-			<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
-			<text:list xml:id="list1896758410" text:style-name="Нумерация_20_списка_20_приложений">
-				<text:list-item>
-					<text:p text:style-name="СписокПриложений">Положение об... на 5 л. в 1 экз.;</text:p>
-				</text:list-item>
-				<text:list-item>
-					<text:p text:style-name="СписокПриложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
-				</text:list-item>
-			</text:list>
-			<text:section text:style-name="Sect1" text:name="Подписи">
-				<table:table table:name="Подписи" table:style-name="Подписи">
-					<table:table-column table:style-name="Подписи.A"/>
-					<table:table-column table:style-name="Подписи.B"/>
-					<table:table-column table:style-name="Подписи.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
-			</text:section>
+				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
+					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ИСТИНА</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Бетке С.С.</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">С.С. Бетке</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">29.05.2020</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаНомер" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВОтветНаДату" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Бетке Сергей Сергеевич</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">+ 7 (911) 649-90-80</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Письмо «о чём-то»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВступительноеОбращение" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"/>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистПисьма" text:protected="true">
+					<text:p text:style-name="БланкОРДПервыйЛистПисьма"/>
+				</text:section>
+				<text:p text:style-name="Основной">{Содержание}</text:p>
+				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:list xml:id="list1504259466" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:p text:style-name="Основной">пример нумерованного списка;</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list365234166" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="Основной">пример маркированного списка.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
+				<text:list xml:id="list1896758410" text:style-name="Нумерация_20_списка_20_приложений">
+					<text:list-item>
+						<text:p text:style-name="СписокПриложений">Положение об... на 5 л. в 1 экз.;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="СписокПриложений">Правила подготовки... на 7 л. в 2 экз.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<table:table table:name="Подписи" table:style-name="Подписи">
+						<table:table-column table:style-name="Подписи.A"/>
+						<table:table-column table:style-name="Подписи.B"/>
+						<table:table-column table:style-name="Подписи.C"/>
+						<table:table-row>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Signature"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_место_20_для_20_подписи"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
+								<text:p text:style-name="Подпись_3a__20_ФИО"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
+				</text:section>
 			<!-- #endregion Пример письма -->
 		</office:text>
 	</office:body>
