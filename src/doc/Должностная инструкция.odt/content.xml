@@ -469,31 +469,9 @@
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Инженер 2 категории</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.Г. Григорьев</text:span></text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame>20 <text:s text:c="4"/></text:p>
-						</draw:text-box>
-					</draw:frame> г.</text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ДИ"/>
+					</text:section>
 				</text:section>
 			</text:section>
 		</office:text>

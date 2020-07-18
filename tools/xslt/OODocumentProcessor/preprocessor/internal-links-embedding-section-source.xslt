@@ -65,12 +65,26 @@
 	<xsl:template mode="p:internal-links-embedding" use-when="$p:replace-section-source" match="
 		text:section/text:section-source[
 			@text:section-name and not( @xlink:href )
-			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed')
+			and ( @xlink:type = 'simple' ) and ( @xlink:show = 'embed' )
+			and ( @xlink:actuate = 'other' )
 		]
 	">
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
 			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template mode="p:internal-links-embedding" use-when="$p:replace-section-source" match="
+		text:section[
+			text:section-source/@text:section-name and not( text:section-source/@xlink:href )
+			and ( text:section-source/@xlink:type = 'simple' ) and ( text:section-source/@xlink:show = 'replace' )
+			and ( text:section-source/@xlink:actuate = 'other' )
+		]
+	">
+		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
+		<xsl:apply-templates select="key( 'p:sections', text:section-source/@text:section-name )/*" mode="#current">
+			<xsl:with-param name="p:embed-link-title" select="text:section-source/@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
 	</xsl:template>
 
