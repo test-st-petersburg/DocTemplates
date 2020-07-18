@@ -59,6 +59,10 @@
 		<xsl:param name="p:embed-objects" as=" element( manifest:file-entry )* " required="yes"/>
 
 		<xsl:element name="office:document-settings">
+			<xsl:namespace name="office" select=" 'urn:oasis:names:tc:opendocument:xmlns:office:1.0' "/>
+			<xsl:namespace name="ooo" select=" 'http://openoffice.org/2004/office' "/>
+			<xsl:namespace name="config" select=" 'urn:oasis:names:tc:opendocument:xmlns:config:1.0' "/>
+			<xsl:namespace name="loext" select=" 'urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0' "/>
 			<xsl:attribute name="office:version" select="1.2"/>
 			<xsl:element name="office:settings" inherit-namespaces="no">
 				<xsl:merge>

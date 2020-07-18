@@ -65,7 +65,7 @@
 			<config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="EmptyDbFieldHidesPara" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="TabOverMargin" config:type="boolean">false</config:config-item>
+			<config:config-item config:name="TabOverMargin" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="TreatSingleColumnBreakAsPageBreak" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="SurroundTextWrapSmall" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="ApplyParagraphMarkFormatToNumbering" config:type="boolean">true</config:config-item>

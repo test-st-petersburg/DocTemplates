@@ -61,7 +61,7 @@
 		</style:style>
 		<style:style style:name="Sender" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
 		<style:style style:name="Signature" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
-			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always" fo:keep-with-next="always"/>
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always"/>
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="ПодписьФИО" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
@@ -83,8 +83,21 @@
 		<style:style style:name="ПодписьДатаГод" style:family="paragraph" style:hidden="true" style:parent-style-name="ПодписьДата" style:class="extra">
 			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
+		<style:style style:name="Подпись2" style:family="paragraph" style:parent-style-name="Signature" style:class="text">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="10.5cm" fo:text-indent="0cm" style:auto-text-indent="false">
+				<style:tab-stops>
+					<style:tab-stop style:position="12cm"/>
+				</style:tab-stops>
+			</style:paragraph-properties>
+		</style:style>
 		<style:style style:name="Виза" style:family="paragraph" style:hidden="true" style:parent-style-name="Signature" style:class="text">
 			<style:paragraph-properties text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="Виза2" style:family="paragraph" style:parent-style-name="Подпись2" style:class="text">
+			<style:paragraph-properties text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="Виза2Дата" style:family="paragraph" style:parent-style-name="ПодписьДата" style:class="text">
+			<style:paragraph-properties fo:margin-left="12cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-indent="0cm" style:auto-text-indent="false"/>
 		</style:style>
 		<style:style style:name="ВизаДолжность" style:family="paragraph" style:parent-style-name="Виза" style:class="text"/>
 		<style:style style:name="ВизаФИО" style:family="paragraph" style:parent-style-name="Виза" style:class="text">
@@ -107,6 +120,10 @@
 			<style:paragraph-properties text:number-lines="false"/>
 			<style:text-properties fo:font-size="9pt"/>
 		</style:style>
+		<style:style style:name="ЗаписьОбОзнакомлении2" style:family="paragraph" style:parent-style-name="Виза2" style:next-style-name="ЗаписьОбОзнакомлении2Дата" style:class="text">
+			<style:paragraph-properties fo:keep-with-next="always"/>
+		</style:style>
+		<style:style style:name="ЗаписьОбОзнакомлении2Дата" style:family="paragraph" style:parent-style-name="Виза2Дата" style:next-style-name="ЗаписьОбОзнакомлении2" style:class="text"/>
 		<style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:hidden="true" style:class="html">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 			<style:text-properties style:font-name="Liberation Mono" fo:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
@@ -518,6 +535,15 @@
 		<style:style style:name="БланкДатаРегистрации" style:family="text" style:hidden="true"/>
 		<style:style style:name="БланкТитульныйЛистМестоСоставления" style:family="text" style:hidden="true"/>
 		<style:style style:name="БланкТитульныйЛистГодИздания" style:family="text" style:hidden="true"/>
+		<style:style style:name="Подпись2Должность" style:family="text"/>
+		<style:style style:name="Подпись2ФИО" style:family="text"/>
+		<style:style style:name="Подпись2МестоДляПодписи" style:family="text"/>
+		<style:style style:name="Виза2Должность" style:family="text"/>
+		<style:style style:name="Виза2ФИО" style:family="text"/>
+		<style:style style:name="Виза2МестоДляПодписи" style:family="text" style:parent-style-name="Подпись2МестоДляПодписи"/>
+		<style:style style:name="ЗаписьОбОзнакомлении2Должность" style:family="text" style:parent-style-name="Виза2Должность"/>
+		<style:style style:name="ЗаписьОбОзнакомлении2ФИО" style:family="text" style:parent-style-name="Виза2ФИО"/>
+		<style:style style:name="ЗаписьОбОзнакомлении2МестоДляПодписи" style:family="text" style:parent-style-name="Виза2МестоДляПодписи"/>
 		<style:style style:name="Frame" style:family="graphic">
 			<style:graphic-properties text:anchor-type="paragraph" style:wrap="parallel" style:number-wrapped-paragraphs="no-limit" style:wrap-contour="false" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content"/>
 		</style:style>

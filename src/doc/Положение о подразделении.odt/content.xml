@@ -3,51 +3,6 @@
   PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "office.dtd">
 <office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
 	<office:automatic-styles>
-		<style:style style:name="Подписи" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="Подписи.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
-		</style:style>
-		<style:style style:name="Подписи.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
-		</style:style>
-		<style:style style:name="Подписи.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
-		</style:style>
-		<style:style style:name="Подписи.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="Визы" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="Визы.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
-		</style:style>
-		<style:style style:name="Визы.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
-		</style:style>
-		<style:style style:name="Визы.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
-		</style:style>
-		<style:style style:name="Визы.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="СведенияОбОзнакомлении" style:family="table">
-			<style:table-properties style:width="18cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="СведенияОбОзнакомлении.A" style:family="table-column">
-			<style:table-column-properties style:column-width="7.505cm" style:rel-column-width="27324*"/>
-		</style:style>
-		<style:style style:name="СведенияОбОзнакомлении.B" style:family="table-column">
-			<style:table-column-properties style:column-width="5.144cm" style:rel-column-width="18725*"/>
-		</style:style>
-		<style:style style:name="СведенияОбОзнакомлении.C" style:family="table-column">
-			<style:table-column-properties style:column-width="5.352cm" style:rel-column-width="19486*"/>
-		</style:style>
-		<style:style style:name="СведенияОбОзнакомлении.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
 		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 		</style:style>
@@ -537,108 +492,43 @@
 				</text:list>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Подписи">
-				<table:table table:name="Подписи" table:style-name="Подписи">
-					<table:table-column table:style-name="Подписи.A"/>
-					<table:table-column table:style-name="Подписи.B"/>
-					<table:table-column table:style-name="Подписи.C"/>
-					<table:table-row>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="Signature"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:p>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="ПодписьМестоДляПодписи"/>
-						</table:table-cell>
-						<table:table-cell table:style-name="Подписи.A1" office:value-type="string">
-							<text:p text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:p>
-						</table:table-cell>
-					</table:table-row>
-				</table:table>
+				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
 				<text:section text:style-name="Sect1" text:name="Визы">
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
-					<table:table table:name="Визы" table:style-name="Визы">
-						<table:table-column table:style-name="Визы.A"/>
-						<table:table-column table:style-name="Визы.B"/>
-						<table:table-column table:style-name="Визы.C"/>
-						<table:table-row>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаДолжность">Начальник юридического отдела</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаМестоДляПодписи"/>
-							</table:table-cell>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаФИО">Е.А. Кузнецова</text:p>
-							</table:table-cell>
-						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаМестоДляПодписи"/>
-							</table:table-cell>
-							<table:table-cell table:style-name="Визы.A1" office:value-type="string">
-								<text:p text:style-name="ВизаФИО">О.В. Гарбузова</text:p>
-							</table:table-cell>
-						</table:table-row>
-					</table:table>
+					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-					<table:table table:name="СведенияОбОзнакомлении" table:style-name="СведенияОбОзнакомлении">
-						<table:table-column table:style-name="СведенияОбОзнакомлении.A"/>
-						<table:table-column table:style-name="СведенияОбОзнакомлении.B"/>
-						<table:table-column table:style-name="СведенияОбОзнакомлении.C"/>
-						<table:table-row>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора по обеспечению функционирования филиала</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-							</table:table-cell>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииФИО">С.Э. Гущин</text:p>
-							</table:table-cell>
-						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииДолжность"/>
-							</table:table-cell>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"/>
-							</table:table-cell>
-							<table:table-cell table:style-name="СведенияОбОзнакомлении.A1" office:value-type="string">
-								<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло3" text:anchor-type="as-char" draw:z-index="3">
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-										<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка23" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="7">
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник"><text:s/></text:p>
-											</draw:text-box>
-										</draw:frame></text:p>
-									</draw:text-box>
-								</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка33" text:anchor-type="as-char" draw:z-index="10">
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-										<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка43" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник"><text:s/></text:p>
-											</draw:text-box>
-										</draw:frame></text:p>
-									</draw:text-box>
-								</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка53" text:anchor-type="as-char" draw:z-index="13">
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-										<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка63" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="20">
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник"><text:s/></text:p>
-											</draw:text-box>
-										</draw:frame>20 <text:s text:c="4"/></text:p>
-									</draw:text-box>
-								</draw:frame> г.</text:p>
-							</table:table-cell>
-						</table:table-row>
-					</table:table>
+					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
 				</text:section>
 			</text:section>
 		</office:text>
