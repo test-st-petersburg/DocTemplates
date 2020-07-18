@@ -1226,10 +1226,10 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка на титульном листе" text:protected="true">
-					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:show="embed" xlink:title="ТЛ"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ТЛ"/>
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения на титульном листе" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:display="condition">
-					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:title="ТЛ"/>
+					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ТЛ"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Заголовок на титульном листе">
 					<text:p text:style-name="ПустойАбзац"><draw:frame draw:style-name="Mfr10" draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="6">
@@ -1412,7 +1412,7 @@
 								</draw:frame></text:p>
 							</text:section>
 							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Наименование организации и подразделения (ДИ)" text:protected="true">
-								<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:show="embed" xlink:title="ДИ"/>
+								<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
 							</text:section>
 						</draw:text-box>
 					</draw:frame></text:p>
@@ -1431,10 +1431,10 @@
 					<text:p text:style-name="БланкРегДанныеРегНомерВн"/>
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения (ДИ)" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;)" text:display="condition">
-					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:title="ДИ"/>
+					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Заголовок документа (ДИ)">
-					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:show="embed" xlink:title="ДИ"/>
+					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
 				</text:section>
 			</loext:header-first>
 		</style:master-page>
@@ -1444,7 +1444,7 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка (СЗ)" text:protected="true">
-					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:show="embed" xlink:title="СЗ"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="СЗ"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Вид документа (СЗ)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
