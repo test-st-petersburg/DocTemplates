@@ -116,7 +116,7 @@
 							</draw:frame>20 <text:s text:c="4"/></text:p>
 						</draw:text-box>
 					</draw:frame> г.</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальнику сектора по работе с клиентами метрологического отдела поверки и калибровки средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">М.С. Комлаткин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по работе с клиентами метрологического отдела поверки и калибровки средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">М.С. Комлаткин</text:span></text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
 							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
