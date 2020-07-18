@@ -91,7 +91,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Служебная записка «о чём-то»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Служебная записка «о чём-то»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВступительноеОбращение" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>

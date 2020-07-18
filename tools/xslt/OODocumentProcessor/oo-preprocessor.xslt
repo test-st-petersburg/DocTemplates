@@ -88,6 +88,11 @@
 		visibility="final"
 	/>
 
+	<xsl:key name="p:document-settings"
+		match=" office:document-settings/office:settings/config:config-item-set/config:config-item "
+		use="@config:name"
+	/>
+
 	<xsl:template mode="p:document-preprocessing" as="document-node( element( manifest:manifest ) )" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
@@ -100,8 +105,18 @@
 		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
 			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:internal-links-embedding"/>
 		</xsl:variable>
+		<xsl:variable name="p:complex-document-after-settings-processing-I" as="document-node( element( manifest:manifest ) )">
+			<xsl:choose>
+				<xsl:when test=" key( 'p:document-settings', 'EmbedFonts' ) = 'true' ">
+					<xsl:copy-of select=" $p:complex-document-with-expanded-links "/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:embedded-fonts-removing"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
 		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:document-meta-updating">
+			<xsl:apply-templates select="$p:complex-document-after-settings-processing-I" mode="p:document-meta-updating">
 				<xsl:with-param name="p:version" select="$p:version" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:variable>
@@ -237,6 +252,8 @@
 
 	<xsl:include href="preprocessor/content-merger.xslt"/>
 
+	<xsl:include href="preprocessor/settings-merger.xslt"/>
+
 	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
 
 	<xsl:template mode="p:get-embed-objects-collection" as="document-node( element( manifest:manifest ) )"
@@ -324,5 +341,23 @@
 			"/>
 		</xsl:copy>
 	</xsl:template>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- обработка документа с учётом его настроек                                                 -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<!-- удаление внедрённых шрифтов в случае запрета внедрения в настройках документа #90 -->
+
+	<xsl:mode name="p:embedded-fonts-removing"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template match=" /manifest:manifest/manifest:file-entry[ starts-with( @manifest:full-path, 'Fonts/' ) ] "
+		mode="p:embedded-fonts-removing"
+	/>
+
+	<xsl:template match=" svg:font-face-src " mode="p:embedded-fonts-removing"/>
 
 </xsl:package>

@@ -9,6 +9,6 @@ sub updateDocMetas()
 	document.DocumentProperties.Author = Common.getDocVariableValue( "ПодготовилПредставлениеВДокументахИП" )
 	document.DocumentProperties.ModifiedBy = Common.getDocVariableValue( "ПодготовилПредставлениеВДокументахИП" )
 	document.DocumentProperties.Subject = Common.getDocVariableValue( "Тема" )
-	document.DocumentProperties.Title = Common.getDocVariableValue( "Название" )
+	document.DocumentProperties.Title = Common.getDocVariableValue( "НазваниеДокумента" )
 	document.DocumentProperties.Description = Common.getDocVariableValue( "Описание" )
 end sub

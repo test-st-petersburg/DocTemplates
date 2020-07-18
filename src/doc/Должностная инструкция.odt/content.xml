@@ -92,7 +92,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">+ 7 (911) 649-90-80</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">Должностная инструкция инженера 2 категории сектора по ремонту средств измерений</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Должностная инструкция инженера 2 категории сектора по ремонту средств измерений</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Должностная инструкция инженера 2 категории сектора по ремонту средств измерений</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>

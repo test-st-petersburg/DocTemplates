@@ -90,7 +90,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Приказ «о чём-то»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Приказ «о чём-то»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>

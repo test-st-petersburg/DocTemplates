@@ -87,7 +87,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">о секторе по обеспечению функционирования филиала</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Название" office:value-type="string">Положение о секторе по обеспечению функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Положение о секторе по обеспечению функционирования филиала</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
