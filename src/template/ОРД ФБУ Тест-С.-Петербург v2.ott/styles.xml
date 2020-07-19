@@ -442,7 +442,7 @@
 		</style:style>
 		<style:style style:name="Штрихкод" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:line-height="100%" fo:text-align="end" fo:keep-together="always"/>
-			<style:text-properties fo:color="#ffffff"/>
+			<style:text-properties fo:color="#ffffff" fo:language="zxx" fo:country="none"/>
 		</style:style>
 		<style:style style:name="БланкИсполнитель" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer"/>
 		<style:style style:name="БланкВДелоПрефикс" style:family="paragraph" style:hidden="true" style:parent-style-name="Footer">
