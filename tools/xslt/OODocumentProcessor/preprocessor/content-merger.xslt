@@ -149,14 +149,14 @@
 			<xsl:element name="text:section" inherit-namespaces="no">
 				<xsl:attribute name="text:name" select=" 'Служебный' "/>
 				<xsl:attribute name="text:display" select="
-					if ( exists( text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display ) )
-						then text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display
+					if ( exists( text:section[ @text:name = 'Служебный' ][ 1 ]/@text:display ) )
+						then text:section[ @text:name = 'Служебный' ][ 1 ]/@text:display
 						else 'none'
 				"/>
 				<xsl:copy-of select="
-					text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@* except (
-						text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:name,
-						text:section[ @text:name = 'Служебный' ][ position() = 1 ]/@text:display
+					text:section[ @text:name = 'Служебный' ][ 1 ]/@* except (
+						text:section[ @text:name = 'Служебный' ][ 1 ]/@text:name,
+						text:section[ @text:name = 'Служебный' ][ 1 ]/@text:display
 					)
 				"/>
 				<xsl:element name="text:p" inherit-namespaces="no">
@@ -165,8 +165,8 @@
 				<xsl:merge>
 					<xsl:merge-source
 						for-each-item="
-							text:section[ @text:name = 'Служебный' ][ position() = 1 ],
-							$p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ position() = 1 ]
+							text:section[ @text:name = 'Служебный' ][ 1 ],
+							$p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'Служебный' ][ 1 ]
 						"
 						select=" //text:variable-set "
 						sort-before-merge="yes"
@@ -189,8 +189,38 @@
 				office:forms,
 				text:variable-decls,
 				text:sequence-decls,
-				text:section[ @text:name = 'Служебный' ][ position() = 1 ]
+				text:section[ @text:name = 'Служебный' ][ 1 ],
+				text:section[ @text:name = 'РазделяемыеКомпоненты' ]
 			)"/>
+
+			<xsl:element name="text:section" inherit-namespaces="no">
+				<xsl:attribute name="text:name" select=" 'РазделяемыеКомпоненты' "/>
+				<xsl:attribute name="text:display" select=" 'none' "/>
+				<xsl:attribute name="text:protected" select=" true() "/>
+
+				<xsl:element name="text:p" inherit-namespaces="no">
+					<xsl:attribute name="text:style-name" select=" 'НачалоСлужебнойСтраницы' "/>
+				</xsl:element>
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							text:section[ @text:name = 'РазделяемыеКомпоненты' ],
+							$p:embed-objects!office:document-content/office:body/office:text/text:section[ @text:name = 'РазделяемыеКомпоненты' ]
+						"
+						select=" text:section "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @text:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
+						<xsl:copy-of select=" head( current-merge-group() ) "/>
+					</xsl:merge-action>
+				</xsl:merge>
+				<xsl:element name="text:p" inherit-namespaces="no">
+					<xsl:attribute name="text:style-name" select=" 'ПустойАбзац' "/>
+				</xsl:element>
+			</xsl:element>
+
 		</xsl:copy>
 	</xsl:template>
 
