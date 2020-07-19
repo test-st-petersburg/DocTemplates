@@ -9,6 +9,8 @@
 
 Исправлены ошибки:
 
+- отключена проверка орфографии для стиля `Штрихкод`
+  [#95](https://github.com/test-st-petersburg/DocTemplates/issues/95)
 - устранена проблема с падением просмотра перед печатью
   распоряжений и приказов
   [#93](https://github.com/test-st-petersburg/DocTemplates/issues/93)
