@@ -42,6 +42,14 @@
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 			</style:section-properties>
 		</style:style>
+		<style:style style:name="Sect2" style:family="section">
+			<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+				<style:columns fo:column-count="2">
+					<style:column style:rel-width="4961*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
+					<style:column style:rel-width="4962*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
+				</style:columns>
+			</style:section-properties>
+		</style:style>
 	</office:automatic-styles>
 	<office:body>
 		<office:text text:use-soft-page-breaks="true">
@@ -233,6 +241,542 @@
 					</text:section>
 				</text:section>
 			<!-- #endregion Пример приказа -->
+			<!-- #region Пример СТО -->
+				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
+					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Руководство по качеству</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Начальник испытательной лаборатории сектора СОУТ</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Себелева В.С.</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">В.С. Себелева</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string">Генеральный директор</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string">Д.И. Кудрявцев</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">СК 02‑11‑19</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомерВнешний" office:value-type="string">СК 30428528‑01.01‑02‑2020/ред.5</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">ПодготовилДолжностьИП</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">ПодготовилТелефон</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">испытательной лаборатории сектора специальной оценки условий труда</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Руководство по качеству испытательной лаборатории сектора специальной оценки условий труда</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"/>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="НачалоДокумента" text:protected="true">
+					<text:p text:style-name="БланкОРДПервыйЛистСТО"/>
+				</text:section>
+				<text:section text:style-name="Sect2" text:name="Подписи на титульном листе (ТЛСТО)">
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ЗаголовокРазработал">Разработал</text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник испытательной лаборатории сектора СОУТ</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">В.С. Себелева</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧислоВПодписиРазработчика" text:anchor-type="as-char">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="ДатаМесяцВПодписиРазработчика" text:anchor-type="as-char">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:style-name="fr2" draw:name="ДатаГодВПодписиРазработчика" text:anchor-type="as-char">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="НачалоСодержанияДокумента" text:protected="true">
+					<text:p text:style-name="КонецСтраницы"/>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Содержание">
+					<text:list xml:id="list4184995224" text:style-name="Numbering_20_123">
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Общие положения</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Сектор по обеспечению функционирования филиала (далее – Сектор) является самостоятельным структурным подразделением Новгородского филиала (далее – Филиал) ФБУ «Тест – С.‑Петербург» (далее – Центр) и подчиняется непосредственно директору Филиала.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Сектор в своей работе руководствуется действующим законодательством, нормативными документами (правилами), приказами Федерального агентства по техническому регулированию и метрологии (Росстандарта), национальными стандартами, документацией системы менеджмента качества Центра, <text:s/>приказами (распоряжениями) по Филиалу, а также настоящим Положением.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Сектор возглавляется начальником Сектора.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+					<text:p text:style-name="Основной">Начальник Сектора назначается на должность и освобождается от занимаемой должности приказом по Центру, по представлению директора Филиала.</text:p>
+					<text:p text:style-name="Основной">На должность начальника Сектора назначается лицо, имеющее высшее образование и стаж работы на инженерно-технических (и руководящих) должностях не менее пяти лет.</text:p>
+					<text:p text:style-name="Основной">В случае временного отсутствия начальника Сектора его замещает лицо, назначаемое в установленном порядке.</text:p>
+					<text:list xml:id="list145315194545245" text:continue-numbering="true" text:style-name="Numbering_20_123">
+						<text:list-item>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Штатное расписание и предложения по изменению штатного расписания Сектора разрабатываются начальником Сектора в соответствии с положением об оплате труда Центра.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Деятельность Сектора осуществляется в соответствии с планом работы подразделений Филиала, утвержденным директором Филиала.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">В ведении Сектора находятся предметы вычислительной и организационной техники (персональные компьютеры, принтеры, оборудования телефонной связи), расходные материалы, канцелярия, автотранспортные средства.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">При осуществлении своей деятельности Сектор соблюдает установленные требования по вопросам обеспечения информационной безопасности.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Основные задачи</text:h>
+						</text:list-item>
+					</text:list>
+					<text:p text:style-name="Основной">Основные задачи Сектора:</text:p>
+					<text:list xml:id="list145314949391612" text:continue-numbering="true" text:style-name="Numbering_20_123">
+						<text:list-item>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">обеспечение снабжения Филиала энергоресурсами, связью, расходными материалами;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">обеспечение необходимых и безопасных условий труда в Филиале;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">обеспечение правильной технической эксплуатации, бесперебойной работы компьютеров и отдельных устройств в Филиале;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">содействие в исполнении <text:s/>работниками Филиала противопожарных мероприятий, соблюдении ими норм электро- и пожарной безопасности и охраны окружающей среды;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">организация автотранспортных перевозок в Филиале;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">организация эксплуатации автотранспорта Филиала, технического обслуживания и ремонта автотранспорта Филиала;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">обеспечение технического надзора за состоянием автотранспорта Филиала на линии;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">выполнение работ по ремонту средств измерений и вспомогательного оборудования Филиала и сторонних организаций;</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">осуществление технического обслуживания средств измерений и вспомогательного оборудования Филиала и сторонних организаций.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Организационная структура</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Сектор не имеет структурных звеньев.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Функции</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Общие функции:</text:p>
+									<text:list>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение снабжения Филиала энергоресурсами, связью, расходными материалами;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение необходимых и безопасных условий труда в Филиале;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение правильной технической эксплуатации, бесперебойной работы компьютеров и отдельных устройств;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">содействие в исполнении <text:s/>работниками Филиала противопожарных мероприятий, соблюдения ими норм электро- и пожарной безопасности и охраны окружающей среды;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организация обучения требованиям пожарной безопасности, электробезопасности, техники безопасности и прочих видов обучения;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">проведение инструктажа по охране труда, пожарной безопасности, электробезопасности и технике безопасности;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">консультирование персонала филиала по ИТ-вопросам, решение ИТ-проблем и ИТ-инцидентов;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">эксплуатация, техническое обслуживание и организация ремонта вычислительной техники Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">техническое обслуживание и обеспечение расходными материалами, организация ремонта копировально-множительной техники Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">внедрение, эксплуатация программных продуктов на вычислительной технике Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">контроль соблюдения авторских прав при хранении и эксплуатации программных продуктов на вычислительной технике Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществление ежедневного технического осмотра автотранспортных средств Филиала, выходящих на линию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">проведение инструктажа водителей автотранспортных средств Филиала перед выпуском на линию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществление контроля за соблюдением водителями автотранспортного средства Филиала правил технической эксплуатации автотранспортных средств;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организация и контроль прохождения водителями автотранспортного средства Филиала предрейсовых осмотров и своевременностью медицинских переосвидетельствований;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществление по установленным формам учета наличия, движения, технического обслуживания, ремонта подвижного состава и агрегатов, пробега автомобильных шин, расхода горюче-смазочных материалов;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение горюче-смазочными материалами автотранспортных средств Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществление хранения вторых экземпляров ключей, запасных частей, резины (по сезону) автотранспортных средств Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">выполнение мероприятий по постановке на учёт автотранспортных средств Филиала и по снятию с учёта;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">оформление путевых листов и других документов, отражающих выполненную водителями работу и правильность их оформления и расчета в путевых листах технико-эксплуатационных показателей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">составление и выполнение плана-графика технического обслуживания автотранспорта Филиала, заключение с автосервисными организациями договоров на техническое обслуживание и ремонт автотранспортных средств Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществление ремонтных работ средств измерений и вспомогательного оборудования для Филиала и сторонних организаций;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">проводить техническое обслуживание средств измерений Филиала и сторонних организаций;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">определение и удовлетворение потребности в запасных частях для ремонта средств измерений и вспомогательного оборудования;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">разработка мероприятий по совершенствованию обслуживания и ремонта средств измерений и вспомогательного оборудования, по снижению трудоемкости и стоимости ремонтных работ, улучшению их качества;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">изготовление полимерных клише для поверительных и калибровочных клейм для нужд метрологического отдела поверки и калибровки средств измерений Новгородского Филиала.</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Возложение на Сектор функций, не предусмотренных настоящим положением, кроме специальных (адресных) поручений директора Филиала, не допускается.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Обязанности начальника Сектора</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора обязан:</text:p>
+									<text:list>
+										<text:list-item>
+											<text:p text:style-name="Основной">осуществлять руководство деятельностью Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">планировать деятельность Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организовывать работу и распределять её с учетом наилучшего использования знаний и опыта работников в целях повышения эффективности труда;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">анализировать работу Сектора и организовывать работу по подготовке отчетов о деятельности Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организовывать ведение делопроизводства в Секторе;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организовывать проведение инвентаризации имущества, закрепленного за Сектором;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать распределение функций, ответственности и взаимодействия персонала Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать надлежащее выполнение всеми работниками Сектора установленных для них должностных обязанностей, а также правил внутреннего трудового распорядка;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать взаимодействие Сектора с другими структурными подразделениями Центра и Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">контролировать выполнение мероприятий по вопросам, относящимся к компетенции Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">контролировать выполнение условий и сроков договоров, заключаемых по направлению деятельности Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">принимать меры по созданию необходимых условий работы в Секторе;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">своевременно составлять заявку на внесение в план финансово-хозяйственной деятельности;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать работников Филиала необходимыми расходными материалами, осуществлять контроль над их рациональным расходованием;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">создавать условия для повышения квалификации работников Сектора, способствовать улучшению условий их работы;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">консультировать персонал филиала по ИТ-вопросам;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">решать ИТ-проблемы и ИТ-инциденты;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">контролировать работу по ведению табельного учета фактического времени пребывания работников в Секторе;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">принимать участие в разработке и осуществлении мероприятий по укреплению трудовой дисциплины, регулированию социально-трудовых отношений;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">вносить согласно установленному порядку директору Филиала (его заместителю) предложения о направлении работников Сектора в служебные командировки;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">организовывать совместно с отделом кадров работу по повышению квалификации работников в соответствии с установленным планом;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать выполнение работниками Сектора противопожарных мероприятий, соблюдение норм пожарной безопасности и охраны окружающей среды;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">проводить с работниками Сектора инструктаж по охране труда, пожарной безопасности, электробезопасности и технике безопасности на рабочих местах;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">заключить договор о полной индивидуальной материальной ответственности и соблюдать его условия;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">систематически повышать собственную профессиональную компетентность и квалификацию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать установленный порядок хранения документов и материальных ценностей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">эффективно использовать персональные компьютеры, оргтехнику и другое оборудование, экономно и рационально расходовать материалы и энергию, другие материальные ресурсы;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать установленные требования по вопросам обеспечения информационной безопасности, в т.ч. при обработке персональных данных;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать правила внутреннего трудового распорядка Центра и Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать в своей деятельности требования системы менеджмента качества, установленные в Руководстве по качеству и документированных процедурах системы менеджмента;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдать конфиденциальность любой информации, полученной в процессе выполнения работ;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">сообщать руководству о любой известной ситуации, которая может привести к конфликту интересов;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">поддерживать систему менеджмента качества Филиала и вносить предложения по её усовершенствованию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечивать проведение ремонтных работ СИ и потребность в запасных частях для ремонта СИ и обеспечиванию ими Филиала.</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора должен знать:</text:p>
+									<text:list>
+										<text:list-item>
+											<text:p text:style-name="Основной">профиль, структуру Филиала, перспективы развития Филиала, организацию финансово-хозяйственной деятельности Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">функции подразделений Филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">общие принципы системы менеджмента качества в соответствии со стандартами ГОСТ Р ИСО 9001; ИСО/МЭК 27001;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">политику в области качества, Руководство по качеству, документированные процедуры системы менеджмента;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">приказы и распоряжения Филиала, регулирующие вопросы, входящие в компетенцию сектора по обеспечению функционирования филиала;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">основы трудового законодательства, охраны труда;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">основы экономики, планирования, организации производства, труда и управления;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">правила делового общения;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">правила пользования средствами вычислительной техники, коммуникаций и связи;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">внутренний трудовой распорядок Центра и Филиала.</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора в установленном порядке проходит аттестацию на соответствие занимаемой должности и переподготовку по плану Центра один раз в 5 лет.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Права</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Права Сектора осуществляются начальником сектора и, в соответствии с установленным в должностных инструкциях распределением обязанностей, другими работниками Сектора.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора имеет право:</text:p>
+									<text:list>
+										<text:list-item>
+											<text:p text:style-name="Основной">закреплять оборудование и технические средства за конкретными работниками Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">участвовать в подборе, расстановке кадров в Секторе, вносить на рассмотрение директору Филиала предложения о численности Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">вносить на рассмотрение директору Филиала представления о назначении, перемещении и увольнении подчиненных ему работников;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">принимать участие в совещаниях, проводимых директором Филиала (его заместителем) при рассмотрении вопросов, отнесенных к компетенции Сектора;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">вносить в соответствии с установленным порядком предложения о применении в отношении работников Сектора мер поощрения или дисциплинарного воздействия;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">запрашивать и получать в установленном порядке от структурных подразделений Филиала материалы и сведения, необходимые для выполнения своих должностных обязанностей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">привлекать с согласия руководителей структурных подразделений Филиала работников для разработки и осуществления мероприятий, проводимых в соответствии с возложенными на него обязанностями;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">вести переписку по вопросам, относящимся к его компетенции;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">требовать от каждого работника Сектора своевременного и качественного выполнения полученного производственного задания;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">требовать от каждого работника Сектора строгого соблюдения трудовой и производственной дисциплины, правил внутреннего трудового распорядка Центра, а также бережного отношения к закрепленному за Сектором и оборудованию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">представлять Филиал в других предприятиях и организациях в пределах делегированных полномочий;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обращаться по организационным вопросам к директору Филиала, участвовать в обсуждении вопросов, касающихся исполняемых им профессиональных обязанностей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">вносить на рассмотрение директора Филиала предложения по улучшению качества выполнения своей работы;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обращаться к директору Филиала за оказанием содействия в исполнении своих профессиональных обязанностей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">принимать участие в общих собраниях трудового коллектива Центра и Филиала и вносить свои предложения;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">принимать решения в пределах своей компетенции;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">запрашивать от соответствующих структурных подразделений предприятия предоставления информации и документов, необходимых для осуществления деятельности, входящей в его компетенцию;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">визировать проекты документов, подготовленные Сектором, а также иные документы, поступившие на согласование из других структурных подразделений Филиала.</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+						<text:list-item>
+							<text:h text:style-name="Heading_20_1">Ответственность</text:h>
+							<text:list>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора несет ответственность за:</text:p>
+									<text:list>
+										<text:list-item>
+											<text:p text:style-name="Основной">невыполнение и ненадлежащее выполнение функций, возложенных на Сектор, и своих должностных обязанностей;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">правильность и полноту использование предоставленных ему прав;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение выполнения плановых заданий или плановых показателей, закрепленных за Сектором;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">низкую исполнительскую дисциплину в Секторе;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение соответствия должностных инструкций работников положению о Секторе;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">доведение до каждого работника политики в области качества и функционирование в Секторе системы менеджмента качества;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">разглашение ставших ему известным в связи с исполнением должностных обязанностей сведений, составляющих охраняемую законом тайну;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">нарушение информационной безопасности, в т.ч. при обработке персональных данных;</text:p>
+										</text:list-item>
+										<text:list-item>
+											<text:p text:style-name="Основной">соблюдение правил внутреннего трудового распорядка.</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Начальник сектора несет в установленном порядке материальную ответственность за причиненный Филиалу ущерб в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">Ответственность других работников Сектора устанавливается должностными инструкциями.</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Подписи">
+					<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				</text:section>
+				<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
+					<text:p text:style-name="БланкОРДЛистСогласования"/>
+					<text:section text:style-name="Sect1" text:name="Визы">
+						<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
+						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					</text:section>
+					<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
+						<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
+						<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ПП"/>
+						</text:section>
+					</text:section>
+				</text:section>
+			<!-- #endregion Пример СТО -->
 			<!-- #region Пример положения о подразделении -->
 				<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 					<text:p text:style-name="НачалоСлужебнойСтраницы"/>
