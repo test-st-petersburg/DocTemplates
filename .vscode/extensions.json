@@ -15,8 +15,6 @@
 		"timonwong.shellcheck",
 		"DavidAnson.vscode-markdownlint",
 		"bierner.markdown-preview-github-styles",
-		"ms-vsliveshare.vsliveshare",
-		"ms-vsliveshare.vsliveshare-audio",
 		"streetsidesoftware.code-spell-checker",
 		"streetsidesoftware.code-spell-checker-russian",
 		"knisterpeter.vscode-commitizen",
@@ -24,5 +22,6 @@
 		"hsse-development.gitversionview",
 		"kisstkondoros.vscode-gutter-preview",
 		"deltaxml.xslt-xpath",
+		"alefragnani.bookmarks",
 	]
 }
