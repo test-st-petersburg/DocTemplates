@@ -46,10 +46,10 @@
 		</style:style>
 		<style:style style:name="Hanging_20_indent" style:display-name="Hanging indent" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text"/>
 		<style:style style:name="Marginalia" style:family="paragraph" style:hidden="true" style:parent-style-name="Text_20_body" style:class="text"/>
-		<style:style style:name="РеквизитыДокумента" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="text"/>
 		<style:style style:name="Основной_20_текст_20_документа" style:display-name="Основной текст документа" style:family="paragraph" style:hidden="true" style:parent-style-name="First_20_line_20_indent" style:class="text">
 			<style:paragraph-properties fo:text-align="justify" style:justify-single-word="false"/>
 		</style:style>
+		<style:style style:name="РеквизитыДокумента" style:family="paragraph" style:parent-style-name="Основной_20_текст_20_документа" style:list-style-name="НумерацияРеквизитовДокумента" style:list-level="1" style:class="text"/>
 		<style:style style:name="ЗнакОхраныАвторскогоПрава" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="extra">
 			<style:paragraph-properties fo:margin-top="1cm" loext:contextual-spacing="true" fo:text-align="justify" style:justify-single-word="false"/>
 			<style:text-properties fo:font-weight="bold"/>
@@ -259,7 +259,7 @@
 		</style:style>
 		<style:style style:name="ЗаголовокПрочий" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокРаздела" style:list-style-name="" style:class="extra"/>
 		<style:style style:name="ЗаголовокВнеОглавления" style:family="paragraph" style:hidden="true" style:parent-style-name="ЗаголовокПрочий" style:default-outline-level="" style:class="extra"/>
-		<style:style style:name="ЗаголовокПредисловия" style:family="paragraph" style:parent-style-name="ЗаголовокВнеОглавления" style:class="text">
+		<style:style style:name="ЗаголовокПредисловия" style:family="paragraph" style:parent-style-name="ЗаголовокВнеОглавления" style:next-style-name="РеквизитыДокумента" style:class="text">
 			<style:text-properties fo:letter-spacing="3pt"/>
 		</style:style>
 		<style:style style:name="Title" style:family="paragraph" style:hidden="true" style:parent-style-name="Heading" style:next-style-name="Subtitle" style:class="chapter"/>
@@ -859,6 +859,13 @@
 				</style:list-level-properties>
 			</text:list-level-style-number>
 			<text:list-level-style-number text:level="10" style:num-suffix="." style:num-format="1" text:display-levels="1">
+				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
+				</style:list-level-properties>
+			</text:list-level-style-number>
+		</text:list-style>
+		<text:list-style style:name="НумерацияРеквизитовДокумента">
+			<text:list-level-style-number text:level="1" style:num-format="1" text:display-levels="1">
 				<style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
 					<style:list-level-label-alignment text:label-followed-by="space" fo:text-indent="1.251cm"/>
 				</style:list-level-properties>

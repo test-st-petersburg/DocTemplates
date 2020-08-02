@@ -88,8 +88,17 @@
 			</text:section>
 			<text:section text:name="Предисловие">
 				<text:h text:style-name="ЗаголовокПредисловия">Предисловие</text:h>
-				<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Вводится в действие</text:span>: <text:variable-get text:name="ГодИздания">2020</text:variable-get> г.</text:p>
-				<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Взамен</text:span>: Руководства по качеству испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» СК 02‑11‑19 редакция 2, утвержденного 30.10.2019.</text:p>
+				<text:list text:style-name="НумерацияРеквизитовДокумента">
+					<text:list-item>
+						<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Разработан</text:span> <text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Утверждён и введён в действие</text:span> <text:variable-get text:name="ГодИздания">2020</text:variable-get> г.</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Взамен</text:span> Руководства по качеству испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» СК 02‑11‑19 редакция 2, утвержденного 30.10.2019</text:p>
+					</text:list-item>
+				</text:list>
 				<text:p text:style-name="ЗнакОхраныАвторскогоПрава">© <text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get>, <text:variable-get text:name="ГодИздания">2020</text:variable-get>. Руководство по качеству является конфиденциальным документом. Воспроизведение и распространение (в том числе частичное) запрещается без разрешения.</text:p>
 			</text:section>
 			<text:section text:name="НачалоСодержанияДокумента" text:protected="true">
