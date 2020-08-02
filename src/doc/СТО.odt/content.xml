@@ -85,6 +85,94 @@
 						</draw:frame>20 <text:s text:c="4"/></text:p>
 					</draw:text-box>
 				</draw:frame> г.</text:p>
+				<!-- 
+				<text:p text:style-name="ЗаголовокРазделаНаТитульномЛистеСкрытый"/>
+				<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник испытательной лаборатории сектора СОУТ</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">В.С. Себелева</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧислоВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+						<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="ДатаМесяцВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+						<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame> <draw:frame draw:style-name="fr2" draw:name="ДатаГодВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+						<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame>20 <text:s text:c="4"/></text:p>
+					</draw:text-box>
+				</draw:frame> г.</text:p>
+
+				<text:p text:style-name="ЗаголовокРазделаНаТитульномЛистеСкрытый"/>
+				<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник испытательной лаборатории сектора СОУТ</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">В.С. Себелева</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧислоВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+						<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="ДатаМесяцВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+						<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame> <draw:frame draw:style-name="fr2" draw:name="ДатаГодВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+						<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame>20 <text:s text:c="4"/></text:p>
+					</draw:text-box>
+				</draw:frame> г.</text:p>
+
+				<text:p text:style-name="ЗаголовокРазделаНаТитульномЛистеСкрытый"/>
+				<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник испытательной лаборатории сектора СОУТ</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">В.С. Себелева</text:variable-get></text:p>
+				<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧислоВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+						<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="ДатаМесяцВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+						<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame></text:p>
+					</draw:text-box>
+				</draw:frame> <draw:frame draw:style-name="fr2" draw:name="ДатаГодВПодписиРазработчика" text:anchor-type="as-char">
+					<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+						<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+							<draw:text-box fo:min-height="0.041cm">
+								<text:p text:style-name="Подстрочник"><text:s/></text:p>
+							</draw:text-box>
+						</draw:frame>20 <text:s text:c="4"/></text:p>
+					</draw:text-box>
+				</draw:frame> г.</text:p>
+				-->
 			</text:section>
 			<text:section text:name="Предисловие">
 				<text:h text:style-name="ЗаголовокПредисловия">Предисловие</text:h>
@@ -99,10 +187,9 @@
 						<text:p text:style-name="РеквизитыДокумента"><text:span text:style-name="РеквизитДокумента">Взамен</text:span> Руководства по качеству испытательной лаборатории сектора специальной оценки условий труда Новгородского филиала ФБУ «Тест‑С. – Петербург» СК 02‑11‑19 редакция 2, утвержденного 30.10.2019</text:p>
 					</text:list-item>
 				</text:list>
-				<text:p text:style-name="ЗнакОхраныАвторскогоПрава">© <text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get>, <text:variable-get text:name="ГодИздания">2020</text:variable-get>. Руководство по качеству является конфиденциальным документом. Воспроизведение и распространение (в том числе частичное) запрещается без разрешения.</text:p>
 			</text:section>
 			<text:section text:name="НачалоСодержанияДокумента" text:protected="true">
-				<text:p text:style-name="КонецСтраницы"/>
+				<text:p text:style-name="БланкОРДПервыйЛистСодержанияДокумента"/>
 			</text:section>
 			<text:section text:name="Содержание">
 				<text:list xml:id="list4184995224" text:style-name="Numbering_20_123">
