@@ -7,7 +7,7 @@
 		"**/.~lock.*": true,
 	},
 	"shellcheck.exclude": [
-		1017
+		"1017"
 	],
 	"[xml]": {
 		"editor.formatOnSave": false,
