@@ -56,6 +56,8 @@
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
+				<text:variable-decl office:value-type="string" text:name="ДолжностьДляДИРП"/>
+				<text:variable-decl office:value-type="string" text:name="КодПодразделенияДляДИ"/>
 				<text:variable-decl office:value-type="string" text:name="КодФормыДокумента"/>
 				<text:variable-decl office:value-type="string" text:name="МестоСоставления"/>
 				<text:variable-decl office:value-type="string" text:name="НазваниеДокумента"/>
@@ -83,6 +85,7 @@
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВПодписиИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
+				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляДИ"/>
 				<text:variable-decl office:value-type="string" text:name="Получатели"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизации"/>
 				<text:variable-decl office:value-type="string" text:name="РасчетныйСчетОрганизацииБанк"/>
@@ -754,6 +757,9 @@
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Метрологический отдел поверки и калибровки средств изменений</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
+					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">инженера</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
 					<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
@@ -816,6 +822,9 @@
 							<text:list>
 								<text:list-item>
 									<text:p text:style-name="Основной">Инженер осуществляет свою работу на основании трудового договора, Положения о Секторе и настоящей должностной инструкции.</text:p>
+								</text:list-item>
+								<text:list-item>
+									<text:p text:style-name="Основной">У Инженера подчинённых нет.</text:p>
 								</text:list-item>
 								<text:list-item>
 									<text:p text:style-name="Основной">Инженер назначается на должность и освобождается от занимаемой должности приказом по ФБУ «Тест‑С.‑Петербург» по представлению директора Филиала.</text:p>
@@ -1165,6 +1174,9 @@
 											<text:p text:style-name="Основной">правильность и полноту использования предоставленных ему прав;</text:p>
 										</text:list-item>
 										<text:list-item>
+											<text:p text:style-name="Основной">обеспечение выполнения плановых заданий;</text:p>
+										</text:list-item>
+										<text:list-item>
 											<text:p text:style-name="Основной">несоблюдение требований системы менеджмента качества;</text:p>
 										</text:list-item>
 										<text:list-item>
@@ -1176,7 +1188,7 @@
 									</text:list>
 								</text:list-item>
 								<text:list-item>
-									<text:p text:style-name="Основной">Инженер несёт в установленном порядке материальную ответственность за ущерб, причиненный Центру, в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
+									<text:p text:style-name="Основной">Инженер несёт в установленном порядке материальную ответственность за ущерб, причинённый Центру, в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
 								</text:list-item>
 							</text:list>
 						</text:list-item>
