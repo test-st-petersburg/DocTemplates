@@ -350,6 +350,13 @@
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
+		<style:style style:name="БланкДИНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
+			<style:paragraph-properties fo:text-align="center" fo:margin-top="2.05cm" fo:margin-bottom="0cm" fo:line-height="150%" loext:contextual-spacing="true" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:text-properties fo:font-style="italic" fo:font-weight="bold" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="БланкДИКодСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкДИНаименованиеСтруктурногоПодразделения" style:class="extra">
+			<style:paragraph-properties fo:margin-top="0.2cm" fo:margin-bottom="0cm"/>
+		</style:style>
 		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:line-height="90%"/>
 			<style:text-properties fo:font-size="7pt" style:letter-kerning="true"/>
@@ -436,6 +443,7 @@
 			<style:paragraph-properties fo:text-align="center" fo:keep-together="always" text:number-lines="false"/>
 			<style:text-properties fo:font-style="italic" fo:font-weight="normal" fo:hyphenate="false"/>
 		</style:style>
+		<style:style style:name="БланкДИДолжностьДляЗаголовкаДокумента" style:family="paragraph" style:parent-style-name="БланкЗаголовокДокумента" style:class="extra"/>
 		<style:style style:name="БланкГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" text:number-lines="false"/>
 			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%" fo:hyphenate="false"/>
@@ -463,6 +471,10 @@
 		</style:style>
 		<style:style style:name="БланкВидДокументаВоВнутреннейПереписке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
 			<style:paragraph-properties fo:text-align="start"/>
+		</style:style>
+		<style:style style:name="БланкДИВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
+			<style:paragraph-properties fo:margin-top="1cm" loext:contextual-spacing="false"/>
+			<style:text-properties fo:font-size="14pt"/>
 		</style:style>
 		<style:style style:name="ГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" style:shadow="none" text:number-lines="false"/>
@@ -1437,11 +1449,6 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа (ДИ)" text:protected="true">
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокумента"/>
-					<text:p text:style-name="ПустойАбзац"/>
-				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа (ДИ)" text:protected="true">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн"/>
 					<text:p text:style-name="КонецКолонки"/>
@@ -1450,10 +1457,51 @@
 					<text:p text:style-name="БланкРегДанныеРегНомерВн"/>
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения (ДИ)">
-					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкДИНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляДИ">Метрологический отдел поверки и калибровки средств измерений</text:variable-get></text:p>
+					<text:p text:style-name="БланкДИКодСтруктурногоПодразделения"><text:variable-get text:name="КодПодразделенияДляДИ">460</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="КонецКолонки"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:style-name="Mfr5" draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="Mfr6" draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:style-name="Mfr7" draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="Mfr6" draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:style-name="Mfr8" draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="Mfr9" draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:style-name="MSect1" text:name="Вид документа (ДИ)" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкДИВидДокумента"><text:variable-get text:name="ВидДокумента">Должностная инструкция</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Заголовок документа (ДИ)">
-					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкДИДолжностьДляЗаголовкаДокумента"><text:variable-get text:name="ДолжностьДляДИРП">инженера</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 			</loext:header-first>
 		</style:master-page>
