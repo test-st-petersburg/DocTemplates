@@ -75,7 +75,7 @@ module.exports = {
   allowBreakingChanges: ["feat", "fix"],
 
   // Префикс для нижнего колонтитула
-  footerPrefix: "МЕТАДАННЫЕ:",
+  // footerPrefix: "МЕТАДАННЫЕ:",
 
   // limit subject length
   subjectLimit: 72
