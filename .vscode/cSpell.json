@@ -15,14 +15,17 @@
         "Документооборот",
         "расширения",
         "рефакторинг",
+        "Штрихкод",
         "betke",
         "codecov",
         "commitlint",
         "markdownlint",
         "mimetype",
         "mkdocs",
+        "opendocument",
         "Paren",
         "precommit",
+        "preprocess",
         "PreRelease",
         "Recurse",
         "repo",
@@ -39,5 +42,8 @@
         "репозитори(й|я|ю|ем|и)",
         "\\.gitattributes",
         "\\[.*?\\]\\(.*?\\)"
+    ],
+    "enableFiletypes": [
+        "xslt"
     ]
 }
