@@ -464,6 +464,10 @@
 		<style:style style:name="БланкВидДокументаВоВнутреннейПереписке" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
 			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
+		<style:style style:name="БланкДИВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
+			<style:paragraph-properties fo:margin-top="1cm" loext:contextual-spacing="false"/>
+			<style:text-properties fo:font-size="14pt"/>
+		</style:style>
 		<style:style style:name="ГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:text-align="end" fo:keep-together="always" style:shadow="none" text:number-lines="false"/>
 			<style:text-properties fo:text-transform="uppercase" style:text-scale="50%"/>
@@ -1437,11 +1441,6 @@
 					</draw:frame></text:p>
 					<text:p text:style-name="БланкПослеШапки"/>
 				</text:section>
-				<text:section text:style-name="MSect1" text:name="Вид документа (ДИ)" text:protected="true">
-					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокумента"/>
-					<text:p text:style-name="ПустойАбзац"/>
-				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа (ДИ)" text:protected="true">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн"/>
 					<text:p text:style-name="КонецКолонки"/>
@@ -1451,6 +1450,11 @@
 				</text:section>
 				<text:section text:style-name="MSect2" text:name="Гриф утверждения (ДИ)">
 					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
+				</text:section>
+				<text:section text:style-name="MSect1" text:name="Вид документа (ДИ)" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкДИВидДокумента"><text:variable-get text:name="ВидДокумента">Должностная инструкция</text:variable-get></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Заголовок документа (ДИ)">
 					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:show="embed" xlink:actuate="other" xlink:title="ДИ"/>
