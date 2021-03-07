@@ -39,7 +39,11 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">29.05.2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">ДИ 460/96.4-2020/ред.1</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Сектор по ремонту средств измерений</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">инженера 2 категории</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Бетке Сергей Сергеевич</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
@@ -90,6 +94,9 @@
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Инженер осуществляет свою работу на основании трудового договора, Положения о Секторе и настоящей должностной инструкции.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">У Инженера подчинённых нет.</text:p>
 							</text:list-item>
 							<text:list-item>
 								<text:p text:style-name="Основной">Инженер назначается на должность и освобождается от занимаемой должности приказом по ФБУ «Тест‑С.‑Петербург» по представлению директора Филиала.</text:p>
@@ -439,6 +446,9 @@
 										<text:p text:style-name="Основной">правильность и полноту использования предоставленных ему прав;</text:p>
 									</text:list-item>
 									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение выполнения плановых заданий;</text:p>
+									</text:list-item>
+									<text:list-item>
 										<text:p text:style-name="Основной">несоблюдение требований системы менеджмента качества;</text:p>
 									</text:list-item>
 									<text:list-item>
@@ -450,21 +460,27 @@
 								</text:list>
 							</text:list-item>
 							<text:list-item>
-								<text:p text:style-name="Основной">Инженер несёт в установленном порядке материальную ответственность за ущерб, причиненный Центру, в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
+								<text:p text:style-name="Основной">Инженер несёт в установленном порядке материальную ответственность за ущерб, причинённый Центру, в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
 							</text:list-item>
 						</text:list>
 					</text:list-item>
 				</text:list>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Подписи">
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.С. Бетке</text:variable-get></text:span></text:p>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="Визы и сведения об ознакомлении">
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
 				<text:section text:style-name="Sect1" text:name="Визы">
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ДИ"/>
+					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ДИ"/>
+					</text:section>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
