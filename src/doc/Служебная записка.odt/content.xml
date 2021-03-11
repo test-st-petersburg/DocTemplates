@@ -11,6 +11,12 @@
 	</office:automatic-styles>
 	<office:body>
 		<office:text text:use-soft-page-breaks="true">
+			<text:variable-decls>
+				<!-- #region Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
+				<!-- #endregion Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
+			</text:variable-decls>
 			<text:section text:style-name="Sect1" text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Служебная записка</text:variable-set></text:p>
@@ -37,6 +43,11 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Служебная записка «о чём-то»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВступительноеОбращение" office:value-type="string">Уважаемые коллеги!</text:variable-set></text:p>
+				<!-- #region Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
+				<text:p text:style-name="Preformatted_20_Text">Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов):</text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string"/></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string"/></text:p>
+				<!-- #endregion Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
 			<text:section text:style-name="Sect1" text:name="БланкОРДПервыйЛистЗаписки" text:protected="true">
