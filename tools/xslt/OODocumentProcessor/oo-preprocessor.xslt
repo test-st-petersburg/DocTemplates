@@ -94,27 +94,30 @@
 	<xsl:template mode="p:document-preprocessing" as="document-node( element( manifest:manifest ) )" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="p:document-aux-1" as="document-node( element( manifest:manifest ) )">
 			<xsl:copy-of select="."/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-with-embedded-objects" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document" mode="p:external-objects-embedding"/>
+		<xsl:variable name="p:document-aux-2" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-1" mode="p:external-objects-embedding"/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:internal-links-embedding"/>
+		<xsl:variable name="p:document-aux-3" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-2" mode="p:internal-links-embedding"/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-after-settings-processing-I" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="p:document-aux-4" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-3" mode="p:graphics-auto-styles-generation"/>
+		</xsl:variable>
+		<xsl:variable name="p:document-aux-5" as="document-node( element( manifest:manifest ) )">
 			<xsl:choose>
 				<xsl:when test=" key( 'p:document-settings', 'EmbedFonts' ) = 'true' ">
-					<xsl:copy-of select=" $p:complex-document-with-expanded-links "/>
+					<xsl:copy-of select=" $p:document-aux-4 "/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:embedded-fonts-removing"/>
+					<xsl:apply-templates select="$p:document-aux-4" mode="p:embedded-fonts-removing"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document-after-settings-processing-I" mode="p:document-meta-updating">
+			<xsl:apply-templates select="$p:document-aux-5" mode="p:document-meta-updating">
 				<xsl:with-param name="p:version" select="$p:version" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:variable>
@@ -141,6 +144,17 @@
 	<xsl:include href="preprocessor/internal-links-embedding-section-source.xslt"/>
 
 	<?endregion internal links embedding ?>
+	<?region graphics auto styles generation #62 ?>
+
+	<xsl:mode name="p:graphics-auto-styles-generation"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:include href="preprocessor/graphics-auto-styles-generation.xslt"/>
+
+	<?endregion graphics auto styles generation #62 ?>
 	<?region внедрение дополнительных групп файлов с манифестами ?>
 
 	<xsl:mode name="p:external-objects-embedding"

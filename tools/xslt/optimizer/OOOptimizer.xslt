@@ -197,7 +197,8 @@
 	<?endregion удаляем неиспользуемые автоматические стили таблиц в content.xml ?>
 	<?region удаляем неиспользуемые автоматические стили врезок и графики в content.xml ?>
 
-	<xsl:key name="o:auto-graphic-styles" use-when="$o:remove-unused-graphic-auto-styles"
+	<xsl:key name="o:auto-graphic-styles"
+		use-when="$o:remove-unused-graphic-auto-styles or $o:expand-graphic-auto-styles-links"
 		match="office:automatic-styles/style:style[ @style:family='graphic' ]"
 		use="@style:name"
 	/>
@@ -215,6 +216,34 @@
 	"/>
 
 	<?endregion удаляем неиспользуемые автоматические стили врезок и графики в content.xml ?>
+	<?region заменяем ссылки на автоматические стили врезок и графики на описание стиля #62 ?>
+
+	<xsl:mode
+		name="o:expand-graphic-auto-styles-links"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match="
+		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+	">
+		<xsl:copy validation="preserve">
+			<xsl:apply-templates select=" @* " mode="#current"/>
+			<xsl:apply-templates select=" key( 'o:auto-graphic-styles', @draw:style-name ) " mode="o:expand-graphic-auto-styles-links"/>
+			<xsl:apply-templates select=" node() " mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match=" @draw:style-name "/>
+
+	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match="
+		office:automatic-styles/style:style[ @style:family='graphic' ]
+	"/>
+
+	<xsl:template mode="o:expand-graphic-auto-styles-links" use-when="$o:expand-graphic-auto-styles-links" match=" @style:name "/>
+
+	<?endregion заменяем ссылки на автоматические стили врезок и графики на описание стиля #62 ?>
 	<?region удаляем неиспользуемые автоматические стили разделов в content.xml ?>
 
 	<xsl:key name="o:auto-section-styles" use-when="$o:remove-unused-section-auto-styles"
