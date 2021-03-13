@@ -499,7 +499,8 @@
 		| text:h/@text:level[ . = '1' ]
 		| toolbar:toolbaritem/@toolbar:visible[ . = 'true' ]
 		| @xlink:actuate[ . = 'onRequest' ]
-		| @xlink:show[ . = 'replace' ]
+		| @xlink:show[ . = 'embed' ]
+		| @style:auto-update[ . = 'false' ]
 	)"/>
 
 	<?endregion удаляем аттрибуты со значениями по умолчанию ?>

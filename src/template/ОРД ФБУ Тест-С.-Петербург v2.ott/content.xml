@@ -204,7 +204,7 @@
 				<text:section text:style-name="Sect1" text:name="Визы">
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
@@ -214,15 +214,15 @@
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Директор Новгородского филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.С. Бетке</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 			</text:section>
@@ -719,18 +719,18 @@
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПП"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПП" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 			</text:section>
@@ -1200,18 +1200,18 @@
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Инженер 2 категории</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.Г. Григорьев</text:span></text:p>
 					<text:section text:style-name="MSect1" text:name="Поле даты">
-						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ"/>
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 			</text:section>
@@ -1294,7 +1294,7 @@
 				<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
 				<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Инженер по метрологии</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.И. Иванов</text:span></text:p>
 				<text:section text:style-name="MSect1" text:name="Поле даты">
-					<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Согласие1"/>
+					<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Согласие1" xlink:show="replace"/>
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример служебной записки -->
@@ -1379,12 +1379,12 @@
 				<!-- #region Заготовка поля даты в сведениях об ознакомлении -->
 				<text:section text:style-name="Sect1" text:name="Шаблон: поле даты в сведениях об ознакомлении">
 					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
 							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1393,12 +1393,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame>» <draw:frame draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1407,12 +1407,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame> <draw:frame draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
 							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">

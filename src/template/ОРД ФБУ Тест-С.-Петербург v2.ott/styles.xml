@@ -1177,7 +1177,7 @@
 				</text:section>
 				<text:section text:style-name="MSect1" text:name="Заголовок (ТЛ)">
 					<text:p text:style-name="ПустойАбзац"><draw:frame draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="6">
-						<style:style style:family="graphic" style:parent-style-name="БланкТЛЗаголовокДокумента" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкТЛЗаголовокДокумента">
 							<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="1cm">
@@ -1203,19 +1203,19 @@
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка" text:protected="true">
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:name="Бланк: Шапка" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
-						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="1.7cm">
 							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Логоблок, наименование организации и подразделения" text:protected="true">
 								<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Логотип, гриф, штрихкод и код формы" text:protected="true">
 									<text:p text:style-name="Header"><draw:frame draw:name="Бланк: Логотип, гриф, штрихкод и код формы" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="21">
-										<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+										<style:style style:family="graphic" style:parent-style-name="Frame">
 											<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
 										</style:style>
 										<draw:text-box fo:min-height="1.7cm">
 											<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Штрихкод, гриф, код формы" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="24">
-												<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+												<style:style style:family="graphic" style:parent-style-name="Frame">
 													<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
 														<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 													</style:graphic-properties>
@@ -1243,7 +1243,7 @@
 													</table:table>
 												</draw:text-box>
 											</draw:frame><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="26">
-												<style:style style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке" style:auto-update="false">
+												<style:style style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 													<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
 												</style:style>
 												<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
@@ -1273,12 +1273,12 @@
 				</text:section>
 				<text:section text:style-name="MSect3" text:name="Регистрационные данные документа">
 					<text:p text:style-name="БланкРегДанныеДатаРегистрацииВн">от <draw:frame draw:name="Поле ДатаРегистрацииВн" text:anchor-type="as-char" draw:z-index="28">
-						<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ДатаРегистрацииВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="30">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1291,12 +1291,12 @@
 					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:p>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="32">
-						<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля РегистрационныйНомерВн" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="34">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1334,12 +1334,12 @@
 					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
 							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1348,12 +1348,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1362,12 +1362,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
 							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1390,18 +1390,18 @@
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка (ДИ)" text:protected="true">
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:name="Бланк: Шапка (ДИ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
-						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="1.7cm">
 							<text:section text:style-name="MSect1" text:name="Бланк: Шапка: Логотип, гриф, штрихкод и код формы (ДИ)" text:protected="true">
 								<text:p text:style-name="Header"><draw:frame draw:name="Бланк: Логотип, гриф, штрихкод и код формы (ДИ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="21">
-									<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="Frame">
 										<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
 									</style:style>
 									<draw:text-box fo:min-height="1.7cm">
 										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Штрихкод, гриф, код формы (ДИ)" text:anchor-type="paragraph" style:rel-width="100%" svg:height="1.7cm" draw:z-index="24">
-											<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="Frame">
 												<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
 													<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 												</style:graphic-properties>
@@ -1457,12 +1457,12 @@
 					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
 							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1471,12 +1471,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
 							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1485,12 +1485,12 @@
 							</draw:frame></text:p>
 						</draw:text-box>
 					</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
 							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
 							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
@@ -1562,73 +1562,73 @@
 						</table:table-row>
 					</table:table>
 					<text:p text:style-name="БланкЗаголовокДокументаВПереписке"><draw:frame draw:name="Заголовок документа (СЗ)" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="10">
-						<style:style style:family="graphic" style:parent-style-name="БланкПолеЗаголовокДокументаВПереписке" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкПолеЗаголовокДокументаВПереписке">
 							<style:graphic-properties style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="2cm">
 							<draw:g text:anchor-type="frame" draw:z-index="15">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="0cm" svg:y1="1.999cm" svg:x2="0.2cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="13">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="7.495cm" svg:y1="1.799cm" svg:x2="7.495cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="7.297cm" svg:y1="1.999cm" svg:x2="7.497cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="12">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="0cm" svg:y1="0cm" svg:x2="0cm" svg:y2="0.2cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="0cm" svg:y1="0cm" svg:x2="0.2cm" svg:y2="0cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="11">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="7.495cm" svg:y1="0cm" svg:x2="7.495cm" svg:y2="0.2cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="7.297cm" svg:y1="0cm" svg:x2="7.497cm" svg:y2="0cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
@@ -1663,12 +1663,12 @@
 						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Сведения о деле (СЗ)">
 								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:name="Поле ВДело" text:anchor-type="as-char" draw:z-index="76">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.199cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:name="Бланк: оформление поля ВДело" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="77">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1677,12 +1677,12 @@
 										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
 								</draw:frame><text:s/>за <draw:frame draw:name="Поле ДелоГод" text:anchor-type="as-char" draw:z-index="78">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
 										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:name="Бланк: оформление поля ДелоГод" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="79">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1692,12 +1692,12 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Поле ПодписьДелопроизводителя" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="60">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
 										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Бланк: оформление поля ПодписьДелопроизводителя" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="61">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1719,7 +1719,7 @@
 										</table:table-cell>
 										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
 											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:name="Бланк: оформление поля ДатаРегистрации исх." text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="7">
-												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 													<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 												</style:style>
 												<draw:text-box fo:min-height="0.041cm">
@@ -1734,7 +1734,7 @@
 										</table:table-cell>
 										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
 											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:name="Бланк: оформление поля РегистрационныйНомер исх." text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="3">
-												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 													<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
 												</style:style>
 												<draw:text-box fo:min-height="0.041cm">
@@ -1778,12 +1778,12 @@
 						<table:table-cell table:style-name="ПодвалНаЛистеСогласования.A1" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Сведения о деле (ЛС)">
 								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:name="Поле ВДело (ЛС)" text:anchor-type="as-char" draw:z-index="36">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.199cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:name="Бланк: оформление поля ВДело (ЛС)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="41">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1792,12 +1792,12 @@
 										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
 								</draw:frame><text:s/>за <draw:frame draw:name="Поле ДелоГод (ЛС)" text:anchor-type="as-char" draw:z-index="42">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
 										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:name="Бланк: оформление поля ДелоГод (ЛС)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="43">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1807,12 +1807,12 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Поле ПодписьДелопроизводителя (ЛС)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="64">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
 										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Бланк: оформление поля ПодписьДелопроизводителя (ЛС)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="65">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -1840,7 +1840,7 @@
 			<loext:header-first>
 				<text:section text:style-name="MSect1" text:name="Шапка (ПБ)" text:protected="true">
 					<text:p text:style-name="Header"><draw:frame draw:name="Бланк: Шапка (ПБ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
 							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="2cm">
@@ -1851,7 +1851,7 @@
 								<table:table-row table:style-name="БланкФирменныйТаблицаСЛоготипами.1">
 									<table:table-cell table:style-name="БланкФирменныйТаблицаСЛоготипами.A1" office:value-type="string">
 										<text:p text:style-name="БланкФирменныйЛоготипыВШапкеРСТ"><draw:frame draw:name="Бланк: лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="15">
-											<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="Frame">
 												<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
 											</style:style>
 											<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
@@ -1864,7 +1864,7 @@
 									</table:table-cell>
 									<table:table-cell table:style-name="БланкФирменныйТаблицаСЛоготипами.A1" office:value-type="string">
 										<text:p text:style-name="БланкФирменныйЛоготипыВШапкеТест"><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="16">
-											<style:style style:family="graphic" style:parent-style-name="Frame" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="Frame">
 												<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
 													<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 												</style:graphic-properties>
@@ -1900,7 +1900,7 @@
 						<table:table-row>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ДатаРегистрации (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="6">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 									</style:style>
 									<draw:text-box>
@@ -1910,7 +1910,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ДатаРегистрации (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="8">
-									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm">
@@ -1920,7 +1920,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля РегистрационныйНомер (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="7">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 									</style:style>
 									<draw:text-box>
@@ -1930,7 +1930,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля РегистрационныйНомер (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="9">
-									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm">
@@ -1942,7 +1942,7 @@
 						<table:table-row>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ВОтветНаНомер (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="10">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 									</style:style>
 									<draw:text-box>
@@ -1952,7 +1952,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ВОтветНаНомер (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
-									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm">
@@ -1962,7 +1962,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ВОтветНаДату (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="12">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
 									</style:style>
 									<draw:text-box>
@@ -1972,7 +1972,7 @@
 							</table:table-cell>
 							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ВОтветНаДату (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="13">
-									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm">
@@ -1983,73 +1983,73 @@
 						</table:table-row>
 					</table:table>
 					<text:p text:style-name="БланкЗаголовокДокументаВПереписке"><draw:frame draw:name="Заголовок документа (ПБ)" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="10">
-						<style:style style:family="graphic" style:parent-style-name="БланкПолеЗаголовокДокументаВПереписке" style:auto-update="false">
+						<style:style style:family="graphic" style:parent-style-name="БланкПолеЗаголовокДокументаВПереписке">
 							<style:graphic-properties style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="2cm">
 							<draw:g text:anchor-type="frame" draw:z-index="15">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="0cm" svg:y1="1.799cm" svg:x2="0cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="0cm" svg:y1="1.999cm" svg:x2="0.2cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="13">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="bottom" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page-content" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="7.495cm" svg:y1="1.799cm" svg:x2="7.495cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="7.297cm" svg:y1="1.999cm" svg:x2="7.497cm" svg:y2="1.999cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="12">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="from-left" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="0cm" svg:y1="0cm" svg:x2="0cm" svg:y2="0.2cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="0cm" svg:y1="0cm" svg:x2="0.2cm" svg:y2="0cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 							</draw:g>
 							<draw:g text:anchor-type="frame" draw:z-index="11">
-								<style:style style:family="graphic" style:auto-update="false">
+								<style:style style:family="graphic">
 									<style:graphic-properties style:protect="position size" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="frame-content" style:horizontal-pos="right" style:horizontal-rel="page" draw:wrap-influence-on-position="once-concurrent" style:flow-with-text="false"/>
 								</style:style>
 								<draw:line draw:name="Вертикальная линия уголка" svg:x1="7.495cm" svg:y1="0cm" svg:x2="7.495cm" svg:y2="0.2cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
 								</draw:line>
 								<draw:line draw:name="Горизонтальная линия уголка" svg:x1="7.297cm" svg:y1="0cm" svg:x2="7.497cm" svg:y2="0cm">
-									<style:style style:family="graphic" style:auto-update="false">
+									<style:style style:family="graphic">
 										<style:graphic-properties svg:stroke-color="#000000" style:run-through="foreground"/>
 									</style:style>
 									<text:p/>
@@ -2087,12 +2087,12 @@
 						<table:table-cell table:style-name="БланкФирменныйПодвал.A1" office:value-type="string">
 							<text:section text:style-name="MSect1" text:name="Сведения о деле (ПБ)">
 								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:name="Поле ВДело (ПБ)" text:anchor-type="as-char" draw:z-index="76">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.199cm">
 										<text:p text:style-name="БланкВДело"><draw:frame draw:name="Бланк: оформление поля ВДело (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="77">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -2101,12 +2101,12 @@
 										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
 									</draw:text-box>
 								</draw:frame><text:s/>за <draw:frame draw:name="Поле ДелоГод (ПБ)" text:anchor-type="as-char" draw:z-index="78">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
 										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:name="Бланк: оформление поля ДелоГод (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="79">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
@@ -2116,12 +2116,12 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Поле ПодписьДелопроизводителя (ПБ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="60">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте" style:auto-update="false">
+									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
 										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 									</style:style>
 									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
 										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Бланк: оформление поля ПодписьДелопроизводителя (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="61">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 											</style:style>
 											<draw:text-box fo:min-height="0.041cm">
