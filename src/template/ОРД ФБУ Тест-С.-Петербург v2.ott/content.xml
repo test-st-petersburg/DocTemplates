@@ -215,9 +215,12 @@
 					<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
 					<text:section text:style-name="Sect1" text:name="Визы">
 						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						</text:section>
 					</text:section>
 					<text:section text:style-name="Sect1" text:name="Сведения об экземплярах">
-						<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – канц.478</text:p>
+						<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – дело _____</text:p>
 					</text:section>
 					<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 						<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
@@ -727,7 +730,13 @@
 					<text:section text:style-name="Sect1" text:name="Визы">
 						<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						</text:section>
 						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ПЭО"/>
+						</text:section>
 					</text:section>
 					<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 						<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
@@ -1202,7 +1211,13 @@
 					<text:section text:style-name="Sect1" text:name="Визы">
 						<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ЮрОтд"/>
+						</text:section>
 						<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+						<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+							<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ПЭО"/>
+						</text:section>
 					</text:section>
 					<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 						<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
@@ -1273,7 +1288,7 @@
 							<text:p text:style-name="Основной">пример маркированного списка.</text:p>
 						</text:list-item>
 					</text:list>
-					<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+					<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац.</text:p>
 					<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
 					<text:list xml:id="list4122313332" text:style-name="Нумерация_20_списка_20_приложений">
 						<text:list-item>
@@ -1290,6 +1305,9 @@
 				<text:section text:style-name="Sect1" text:name="Визы">
 					<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Инженер по метрологии</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.И. Иванов</text:span></text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Согласие1"/>
+					</text:section>
 				</text:section>
 			<!-- #endregion Пример служебной записки -->
 			<!-- #region Пример письма -->

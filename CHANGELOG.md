@@ -2,6 +2,13 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.5.3
+
+Исправлены ошибки:
+
+- В визах должна быть указана дата
+  [#66](https://github.com/test-st-petersburg/DocTemplates/issues/66)
+
 ## 2.5.2
 
 Исправлены ошибки:
@@ -15,13 +22,13 @@
 Новые возможности:
 
 - исправлена заготовка должностной инструкции
-  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/101)
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 
 Исправлены ошибки:
 
 - титульный лист должностной инструкции приведён в соответствие с требованиями
   СТО организации
-  [#95](https://github.com/test-st-petersburg/DocTemplates/issues/101)
+  [#95](https://github.com/test-st-petersburg/DocTemplates/issues/95)
 
 ## 2.5.0
 

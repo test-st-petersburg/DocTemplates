@@ -499,7 +499,13 @@
 				<text:section text:style-name="Sect1" text:name="Визы">
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ЮрОтд"/>
+					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:section text:style-name="MSect1" text:name="Поле даты" text:protected="false">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ПЭО"/>
+					</text:section>
 				</text:section>
 				<text:section text:style-name="Sect1" text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
