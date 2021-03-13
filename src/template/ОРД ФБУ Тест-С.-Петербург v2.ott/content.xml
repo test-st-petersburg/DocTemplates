@@ -25,18 +25,6 @@
 		<style:font-face style:name="Times New Roman" svg:font-family="'Times New Roman'" style:font-adornments="Обычный" style:font-family-generic="roman" style:font-pitch="variable"/>
 	</office:font-face-decls>
 	<office:automatic-styles>
-		<style:style style:name="fr1" style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-			<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-		</style:style>
-		<style:style style:name="fr2" style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-		</style:style>
-		<style:style style:name="fr3" style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-		</style:style>
-		<style:style style:name="fr4" style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-			<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-		</style:style>
 		<style:style style:name="Sect1" style:family="section">
 			<style:section-properties style:editable="false">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
@@ -1390,25 +1378,43 @@
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<!-- #region Заготовка поля даты в сведениях об ознакомлении -->
 				<text:section text:style-name="Sect1" text:name="Шаблон: поле даты в сведениях об ознакомлении">
-					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:style-name="fr4" draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло" style:auto-update="false">
+							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:style-name="fr1" draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="Врезка2" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="17">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
 									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
 							</draw:frame></text:p>
 						</draw:text-box>
-					</draw:frame>» <draw:frame draw:style-name="fr3" draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+					</draw:frame>» <draw:frame draw:name="Врезка31" text:anchor-type="as-char" draw:z-index="18">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц" style:auto-update="false">
+							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:style-name="fr1" draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="Врезка4" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="19">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
 									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
 							</draw:frame></text:p>
 						</draw:text-box>
-					</draw:frame> <draw:frame draw:style-name="fr2" draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
+					</draw:frame> <draw:frame draw:name="Врезка51" text:anchor-type="as-char" draw:z-index="24">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод" style:auto-update="false">
+							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
 						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:style-name="fr1" draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="Врезка6" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="25">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте" style:auto-update="false">
+									<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+								</style:style>
 								<draw:text-box fo:min-height="0.041cm">
 									<text:p text:style-name="Подстрочник"><text:s/></text:p>
 								</draw:text-box>
