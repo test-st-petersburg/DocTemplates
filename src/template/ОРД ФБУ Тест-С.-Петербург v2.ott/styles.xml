@@ -94,7 +94,7 @@
 			<style:paragraph-properties text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="Виза2" style:family="paragraph" style:parent-style-name="Подпись2" style:class="text">
-			<style:paragraph-properties text:number-lines="false"/>
+			<style:paragraph-properties text:number-lines="false" fo:keep-with-next="always"/>
 		</style:style>
 		<style:style style:name="Виза2Дата" style:family="paragraph" style:parent-style-name="ПодписьДата" style:class="text">
 			<style:paragraph-properties fo:margin-left="12cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-indent="0cm" style:auto-text-indent="false"/>
