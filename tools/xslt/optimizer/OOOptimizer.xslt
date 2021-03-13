@@ -56,10 +56,12 @@
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
 >
 
+	<!-- #region Параметры преобразования -->
 	<xsl:variable name="o:remove-text-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-para-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-table-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-graphic-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:expand-graphic-auto-styles-links" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-section-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -81,6 +83,7 @@
 	<xsl:variable name="o:remove-generator-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-print-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:fix-manifest" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<!-- #endregion Параметры преобразования -->
 
 	<xsl:mode
 		name="o:optimize"
@@ -120,7 +123,7 @@
 		</xsl:choose>
 	</xsl:template>
 
-	<!-- удаляем автоматические стили символов -->
+	<!-- #region удаляем автоматические стили символов -->
 
 	<xsl:key name="o:auto-text-styles"
 		match="office:automatic-styles/style:style[ @style:family='text' ]"
@@ -139,7 +142,8 @@
 	<!-- TODO: убирать автоматические стили только по отношению к базовому стилю символов -->
 	<!-- TODO: для автоматических стилей по отношению к другим стилям символов устанавливать ссылку на исходный стиль -->
 
-	<!-- удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+	<!-- #endregion удаляем автоматические стили символов -->
+	<!-- #region удаляем неиспользуемые автоматические стили абзацев в content.xml -->
 
 	<xsl:key name="o:auto-paragraph-styles" use-when="$o:remove-unused-para-auto-styles"
 		match="office:automatic-styles/style:style[ @style:family='paragraph' ]"
@@ -161,7 +165,8 @@
 		]
 	"/>
 
-	<!-- удаляем неиспользуемые автоматические стили таблиц в content.xml -->
+	<!-- #endregion удаляем неиспользуемые автоматические стили абзацев в content.xml -->
+	<!-- #region удаляем неиспользуемые автоматические стили таблиц в content.xml -->
 
 	<xsl:key name="o:auto-table-styles" use-when="$o:remove-unused-table-auto-styles"
 		match="office:automatic-styles/style:style[ @style:family='table' ]"
@@ -189,7 +194,8 @@
 		]
 	"/>
 
-	<!-- удаляем неиспользуемые автоматические стили врезок и графики в content.xml -->
+	<!-- #endregion удаляем неиспользуемые автоматические стили таблиц в content.xml -->
+	<!-- #region удаляем неиспользуемые автоматические стили врезок и графики в content.xml -->
 
 	<xsl:key name="o:auto-graphic-styles" use-when="$o:remove-unused-graphic-auto-styles"
 		match="office:automatic-styles/style:style[ @style:family='graphic' ]"
@@ -208,7 +214,8 @@
 		]
 	"/>
 
-	<!-- удаляем неиспользуемые автоматические стили разделов в content.xml -->
+	<!-- #endregion удаляем неиспользуемые автоматические стили врезок и графики в content.xml -->
+	<!-- #region удаляем неиспользуемые автоматические стили разделов в content.xml -->
 
 	<xsl:key name="o:auto-section-styles" use-when="$o:remove-unused-section-auto-styles"
 		match="office:automatic-styles/style:style[ @style:family='section' ]"
@@ -227,7 +234,8 @@
 		]
 	"/>
 
-	<!-- удаляем определения некоторых неиспользуемых стандартных стилей -->
+	<!-- #endregion удаляем неиспользуемые автоматические стили разделов в content.xml -->
+	<!-- #region удаляем определения некоторых неиспользуемых стандартных стилей -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-hidden-list-styles" match="
 		text:list-style[ @style:hidden ]
@@ -237,7 +245,8 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- удаляем лишние элементы -->
+	<!-- #endregion удаляем определения некоторых неиспользуемых стандартных стилей -->
+	<!-- #region удаляем лишние элементы -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-empty-format-nodes" match="(
 		style:background-image
@@ -295,11 +304,13 @@
 		| *[ @style:horizontal-rel ]/@svg:x
 	"/>
 
-	<!-- удаляем некоторые файлы из манифеста -->
+	<!-- #endregion удаляем лишние элементы -->
+	<!-- #region удаляем некоторые файлы из манифеста -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-unimportant-files" match="manifest:file-entry[ @manifest:full-path = 'layout-cache' ]"/>
 
-	<!-- удаляем thumbnails -->
+	<!-- #endregion удаляем некоторые файлы из манифеста -->
+	<!-- #region удаляем thumbnails -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-thumbnails" match="manifest:file-entry[ @manifest:full-path = 'Thumbnails/thumbnail.png' ]"/>
 
@@ -309,7 +320,8 @@
 		<xsl:value-of select=" false() "/>
 	</xsl:template>
 
-	<!-- исправляем `@manifest:media-type` в манифесте для раздела Configurations2 -->
+	<!-- #endregion удаляем thumbnails -->
+	<!-- #region исправляем `@manifest:media-type` в манифесте для раздела Configurations2 -->
 
 	<xsl:template mode="o:optimize" use-when="$o:fix-manifest" match="
 		/manifest:manifest/manifest:file-entry[
@@ -329,7 +341,8 @@
 		<xsl:attribute name="manifest:media-type" select=" 'image/png' "/>
 	</xsl:template>
 
-	<!-- удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
+	<!-- #endregion исправляем `@manifest:media-type` в манифесте для раздела Configurations2 -->
+	<!-- #region удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
 
 	<xsl:variable name="o:common-fonts" as="map( xs:string, xs:boolean )" static="yes" visibility="private" select='
 		map:merge(
@@ -355,7 +368,8 @@
 		manifest:file-entry[ key( 'o:common-font-face-uris', @manifest:full-path ) ]
 	"/>
 
-	<!-- удаляем некоторые параметры конфигурации просмотра и печати -->
+	<!-- #endregion удаляем доступные на рабочих станциях шрифты из встроенных в шаблон -->
+	<!-- #region удаляем некоторые параметры конфигурации просмотра и печати -->
 
 	<xsl:variable name="o:removed-config-params" as="map( xs:string, xs:boolean )" static="yes" visibility="private" select='
 		map:merge(
@@ -374,11 +388,13 @@
 		config:config-item[ map:contains( $o:removed-config-params, @config:name ) ]
 	"/>
 
-	<!-- удаляем некоторые несущественные элементы -->
+	<!-- #endregion удаляем некоторые параметры конфигурации просмотра и печати -->
+	<!-- #region удаляем некоторые несущественные элементы -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-soft-page-breaks" match="text:soft-page-break"/>
 
-	<!-- удаляем лишние аттрибуты -->
+	<!-- #endregion удаляем некоторые несущественные элементы -->
+	<!-- #region удаляем лишние аттрибуты -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-foreign-language-attributes" match="(
 		@style:language-asian | @style:language-complex
@@ -395,7 +411,8 @@
 		| office:automatic-styles/style:style/style:text-properties/@fo:country
 	)"/>
 
-	<!-- удаляем параметры разметки страницы при отключенной разметке -->
+	<!-- #endregion удаляем лишние аттрибуты -->
+	<!-- #region удаляем параметры разметки страницы при отключенной разметке -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
 		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-color"/>
@@ -412,7 +429,8 @@
 	<xsl:template mode="o:optimize" use-when="$o:remove-layout-params" match="
 		style:page-layout-properties[ @style:layout-grid-mode = 'none' ]/@style:layout-grid-display"/>
 
-	<!-- удаляем аттрибуты со значениями по умолчанию -->
+	<!-- #endregion удаляем параметры разметки страницы при отключенной разметке -->
+	<!-- #region удаляем аттрибуты со значениями по умолчанию -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-attributes-with-default-values" match="(
 		@style:auto-update[ . = 'false' ]
@@ -455,7 +473,8 @@
 		| @xlink:show[ . = 'replace' ]
 	)"/>
 
-	<!-- удаляем упоминания о сессии, в которой внесены изменения -->
+	<!-- #endregion удаляем аттрибуты со значениями по умолчанию -->
+	<!-- #region удаляем упоминания о сессии, в которой внесены изменения -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-rsid" match="(
 		style:text-properties/@officeooo:paragraph-rsid
@@ -466,7 +485,8 @@
 		config:config-item[ @config:name = 'Rsid' ]
 	"/>
 
-	<!-- правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
+	<!-- #endregion удаляем упоминания о сессии, в которой внесены изменения -->
+	<!-- #region правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
 
 	<xsl:template mode="o:optimize" use-when="$o:sort-sortable-nodes" match="office:font-face-decls">
 		<xsl:copy>
@@ -495,7 +515,8 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- сброс номера страницы в колонтитулах мастер-страниц -->
+	<!-- #endregion правила для элементов с сортировкой потомков (для минимизации изменений при сохранении OO файлов) -->
+	<!-- #region сброс номера страницы в колонтитулах мастер-страниц -->
 
 	<xsl:template mode="o:optimize" use-when="$o:reset-page-number-in-headers-and-footers" match="
 		style:master-page//text:page-number[ @text:select-page = 'current' ]/text()
@@ -503,7 +524,8 @@
 		<xsl:text>0</xsl:text>
 	</xsl:template>
 
-	<!-- удаление из meta.xml вычисляемых при сборке метаданных -->
+	<!-- #endregion сброс номера страницы в колонтитулах мастер-страниц -->
+	<!-- #region удаление из meta.xml вычисляемых при сборке метаданных -->
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-calculated-meta" match="
 		office:meta/meta:editing-cycles
@@ -518,5 +540,7 @@
 	"/>
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-generator-meta" match="office:meta/meta:generator"/>
+
+	<!-- #endregion удаление из meta.xml вычисляемых при сборке метаданных -->
 
 </xsl:package>
