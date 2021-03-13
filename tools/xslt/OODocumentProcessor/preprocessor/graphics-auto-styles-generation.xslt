@@ -52,7 +52,12 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:template match="office:document-content" mode="p:graphics-auto-styles-generation">
+	<xsl:key name="p:used-graphic-styles"
+		match="office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]"
+		use="@draw:style-name"
+	/>
+
+	<xsl:template mode="p:graphics-auto-styles-generation" match="office:document-content">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select=" @* "/>
 			<xsl:apply-templates mode="#current" select=" office:scripts | office:font-face-decls "/>
@@ -75,7 +80,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="office:document-styles" mode="p:graphics-auto-styles-generation">
+	<xsl:template mode="p:graphics-auto-styles-generation" match="office:document-styles">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select=" @* "/>
 			<xsl:apply-templates mode="#current" select=" office:font-face-decls | office:styles "/>
@@ -97,6 +102,13 @@
 			<xsl:apply-templates mode="#current" select=" * except ( office:font-face-decls, office:styles, office:automatic-styles ) "/>
 		</xsl:copy>
 	</xsl:template>
+
+	<xsl:template mode="p:graphics-auto-styles-generation" match="
+		office:document-content/office:automatic-styles/style:style[
+		 	@style:family='graphic'
+			and not( key( 'p:used-graphic-styles', @style:name ) )
+		]
+	"/>
 
 	<xsl:template mode="p:graphics-auto-styles-generation" match="
 		*[
