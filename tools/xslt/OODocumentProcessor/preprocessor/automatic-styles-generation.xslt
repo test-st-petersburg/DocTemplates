@@ -53,18 +53,29 @@
 >
 
 	<xsl:key name="p:used-graphic-styles"
-		match="office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]"
-		use="@draw:style-name"
+		match="
+			office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+		"
+		use=" @draw:style-name "
 	/>
 
 	<xsl:key name="p:used-section-styles"
-		match=" office:document-content/office:body/office:text//text:section "
-		use="@text:style-name"
+		match="
+			office:document-content/office:body/office:text//text:section
+		"
+		use=" @text:style-name "
 	/>
 
 	<xsl:key name="p:used-table-styles"
-		match="office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]"
-		use="@table:style-name"
+		match="
+			office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
+		"
+		use=" @table:style-name "
+	/>
+
+	<xsl:key name="p:used-page-layouts"
+		match=" office:document-styles/office:master-styles/style:master-page "
+		use=" @style:page-layout-name "
 	/>
 
 	<xsl:template mode="p:automatic-styles-generation" match="office:document-content">
@@ -75,11 +86,21 @@
 			<xsl:element name="office:automatic-styles" inherit-namespaces="no">
 				<xsl:apply-templates mode="#current" select=" office:automatic-styles/node() "/>
 				<!-- генерируем автоматические стили -->
-				<xsl:for-each select=" office:body/office:text//(
-					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
-					| text:section
-					| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
-				)/style:style ">
+				<xsl:for-each select=" office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]/style:style ">
+					<xsl:copy validation="preserve">
+						<xsl:attribute name="style:name" select=" generate-id() "/>
+						<xsl:apply-templates mode="#current" select=" @* "/>
+						<xsl:apply-templates mode="#current" select=" node() "/>
+					</xsl:copy>
+				</xsl:for-each>
+				<xsl:for-each select=" office:body/office:text//text:section/style:style ">
+					<xsl:copy validation="preserve">
+						<xsl:attribute name="style:name" select=" generate-id() "/>
+						<xsl:apply-templates mode="#current" select=" @* "/>
+						<xsl:apply-templates mode="#current" select=" node() "/>
+					</xsl:copy>
+				</xsl:for-each>
+				<xsl:for-each select=" office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]/style:style ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
 						<xsl:apply-templates mode="#current" select=" @* "/>
@@ -100,11 +121,28 @@
 			<xsl:element name="office:automatic-styles" inherit-namespaces="no">
 				<xsl:apply-templates mode="#current" select=" office:automatic-styles/node() "/>
 				<!-- генерируем автоматические стили -->
-				<xsl:for-each select=" office:master-styles/style:master-page//(
-					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
-					| text:section
-					| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
-				)/style:style ">
+				<xsl:for-each select=" office:master-styles/style:master-page//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]/style:style ">
+					<xsl:copy validation="preserve">
+						<xsl:attribute name="style:name" select=" generate-id() "/>
+						<xsl:apply-templates mode="#current" select=" @* "/>
+						<xsl:apply-templates mode="#current" select=" node() "/>
+					</xsl:copy>
+				</xsl:for-each>
+				<xsl:for-each select=" office:master-styles/style:master-page//text:section/style:style ">
+					<xsl:copy validation="preserve">
+						<xsl:attribute name="style:name" select=" generate-id() "/>
+						<xsl:apply-templates mode="#current" select=" @* "/>
+						<xsl:apply-templates mode="#current" select=" node() "/>
+					</xsl:copy>
+				</xsl:for-each>
+				<xsl:for-each select=" office:master-styles/style:master-page//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]/style:style ">
+					<xsl:copy validation="preserve">
+						<xsl:attribute name="style:name" select=" generate-id() "/>
+						<xsl:apply-templates mode="#current" select=" @* "/>
+						<xsl:apply-templates mode="#current" select=" node() "/>
+					</xsl:copy>
+				</xsl:for-each>
+				<xsl:for-each select=" office:master-styles/style:master-page/style:page-layout ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
 						<xsl:apply-templates mode="#current" select=" @* "/>
@@ -124,6 +162,9 @@
 			or ( ( @style:family='table' or @style:family='table-column' or @style:family='table-row' or @style:family='table-cell' )
 				and not( key( 'p:used-table-styles', @style:name ) )
 			)
+		]
+		| office:document-content/office:automatic-styles/style:page-layout[
+		 	not( key( 'p:used-page-layouts', @style:name ) )
 		]
 	"/>
 
@@ -157,10 +198,22 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template mode="p:automatic-styles-generation" match="
+		style:master-page[ style:page-layout ]
+	">
+		<xsl:copy validation="preserve">
+			<xsl:attribute name="style:page-layout-name" select=" generate-id( style:page-layout ) "/>
+			<xsl:apply-templates mode="#current" select=" @* "/>
+			<xsl:apply-templates mode="#current" select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template mode="p:automatic-styles-generation" match=" (
 		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
 		| text:section
 		| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
 	)/style:style "/>
+
+	<xsl:template mode="p:automatic-styles-generation" match=" style:master-page/style:page-layout "/>
 
 </xsl:transform>
