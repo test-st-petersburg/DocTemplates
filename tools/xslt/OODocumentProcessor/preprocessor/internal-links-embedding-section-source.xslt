@@ -70,7 +70,7 @@
 		]
 	">
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
-		<xsl:apply-templates select="key( 'p:sections', @text:section-name )/*" mode="#current">
+		<xsl:apply-templates select=" key( 'p:sections', @text:section-name )/( * except style:style ) " mode="#current">
 			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
 	</xsl:template>
@@ -83,7 +83,7 @@
 		]
 	">
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
-		<xsl:apply-templates select="key( 'p:sections', text:section-source/@text:section-name )/*" mode="#current">
+		<xsl:apply-templates select="key( 'p:sections', text:section-source/@text:section-name )/( * except style:style )" mode="#current">
 			<xsl:with-param name="p:embed-link-title" select="text:section-source/@xlink:title" as="xs:string" tunnel="yes"/>
 		</xsl:apply-templates>
 	</xsl:template>
