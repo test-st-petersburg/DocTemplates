@@ -847,195 +847,6 @@
 		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5" text:count-empty-lines="true" text:count-in-floating-frames="false"/>
 	</office:styles>
 	<office:automatic-styles>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами" style:family="table">
-			<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.B" style:family="table-column">
-			<style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.C" style:family="table-column">
-			<style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.1" style:family="table-row">
-			<style:table-row-properties fo:keep-together="auto"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.A1" style:family="table-cell">
-			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйТаблицаСЛоготипами.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал" style:family="table">
-			<style:table-properties style:width="17.501cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал.A" style:family="table-column">
-			<style:table-column-properties style:column-width="10.694cm" style:rel-column-width="6236*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал.B" style:family="table-column">
-			<style:table-column-properties style:column-width="2.917cm" style:rel-column-width="1701*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал.C" style:family="table-column">
-			<style:table-column-properties style:column-width="3.889cm" style:rel-column-width="2268*"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.7cm"/>
-		</style:style>
-		<style:style style:name="БланкФирменныйПодвал.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица" style:family="table">
-			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.199cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.2" style:family="table-row">
-			<style:table-row-properties style:row-height="0.499cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2" style:family="table">
-			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.199cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.2" style:family="table-row">
-			<style:table-row-properties style:row-height="0.499cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица2.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3" style:family="table">
-			<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.A" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.199cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.2" style:family="table-row">
-			<style:table-row-properties style:row-height="0.499cm"/>
-		</style:style>
-		<style:style style:name="ШтрихкодГрифКодФормыТаблица3.A2" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="РегДанные" style:family="table">
-			<style:table-properties style:width="7.498cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="РегДанные.A" style:family="table-column">
-			<style:table-column-properties style:column-width="0.991cm" style:rel-column-width="8668*"/>
-		</style:style>
-		<style:style style:name="РегДанные.B" style:family="table-column">
-			<style:table-column-properties style:column-width="2.757cm" style:rel-column-width="24098*"/>
-		</style:style>
-		<style:style style:name="РегДанные.C" style:family="table-column">
-			<style:table-column-properties style:column-width="0.739cm" style:rel-column-width="6453*"/>
-		</style:style>
-		<style:style style:name="РегДанные.D" style:family="table-column">
-			<style:table-column-properties style:column-width="3.011cm" style:rel-column-width="26316*"/>
-		</style:style>
-		<style:style style:name="РегДанные.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="РегДанные.B1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ" style:family="table">
-			<style:table-properties style:width="6.001cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ.A" style:family="table-column">
-			<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ.B" style:family="table-column">
-			<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ.C" style:family="table-column">
-			<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ.D" style:family="table-column">
-			<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
-		</style:style>
-		<style:style style:name="РегДанныеПБ.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="Подвал" style:family="table">
-			<style:table-properties style:width="18cm" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="Подвал.A" style:family="table-column">
-			<style:table-column-properties style:column-width="11cm"/>
-		</style:style>
-		<style:style style:name="Подвал.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="Подвал.C" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="Подвал.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.7cm"/>
-		</style:style>
-		<style:style style:name="Подвал.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="РегДанныеИсх" style:family="table">
-			<style:table-properties style:width="4.001cm" table:align="margins" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="РегДанныеИсх.A" style:family="table-column">
-			<style:table-column-properties style:column-width="0.665cm" style:rel-column-width="10903*"/>
-		</style:style>
-		<style:style style:name="РегДанныеИсх.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3.336cm" style:rel-column-width="54632*"/>
-		</style:style>
-		<style:style style:name="РегДанныеИсх.A1" style:family="table-cell">
-			<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования" style:family="table">
-			<style:table-properties style:width="18cm" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования.A" style:family="table-column">
-			<style:table-column-properties style:column-width="11cm"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования.B" style:family="table-column">
-			<style:table-column-properties style:column-width="3cm"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования.C" style:family="table-column">
-			<style:table-column-properties style:column-width="4.001cm"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования.1" style:family="table-row">
-			<style:table-row-properties style:row-height="1.7cm"/>
-		</style:style>
-		<style:style style:name="ПодвалНаЛистеСогласования.A1" style:family="table-cell">
-			<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
-		</style:style>
 		<style:page-layout style:name="Mpm1" style:page-usage="mirrored">
 			<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 				<style:columns fo:column-count="1" fo:column-gap="0cm"/>
@@ -1214,22 +1025,48 @@
 													</style:graphic-properties>
 												</style:style>
 												<draw:text-box>
-													<table:table table:name="ШтрихкодГрифКодФормыТаблица" table:style-name="ШтрихкодГрифКодФормыТаблица2">
-														<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.A"/>
-														<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.B"/>
+													<table:table table:name="ШтрихкодГрифКодФормыТаблица">
+														<style:style style:family="table">
+															<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
+														</style:style>
+														<table:table-column>
+															<style:style style:family="table-column">
+																<style:table-column-properties style:column-width="4.001cm"/>
+															</style:style>
+														</table:table-column>
+														<table:table-column>
+															<style:style style:family="table-column">
+																<style:table-column-properties style:column-width="3cm"/>
+															</style:style>
+														</table:table-column>
 														<table:table-header-rows>
-															<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.1">
-																<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A1" table:number-columns-spanned="2" office:value-type="string">
+															<table:table-row>
+																<style:style style:family="table-row">
+																	<style:table-row-properties style:row-height="1.199cm"/>
+																</style:style>
+																<table:table-cell table:number-columns-spanned="2" office:value-type="string">
+																	<style:style style:family="table-cell">
+																		<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+																	</style:style>
 																	<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
 																</table:table-cell>
 																<table:covered-table-cell/>
 															</table:table-row>
 														</table:table-header-rows>
-														<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.2">
-															<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<table:table-row>
+															<style:style style:family="table-row">
+																<style:table-row-properties style:row-height="0.499cm"/>
+															</style:style>
+															<table:table-cell office:value-type="string">
+																<style:style style:family="table-cell">
+																	<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+																</style:style>
 																<text:p text:style-name="ГрифОграниченияДоступа"/>
 															</table:table-cell>
-															<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+															<table:table-cell office:value-type="string">
+																<style:style style:family="table-cell">
+																	<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+																</style:style>
 																<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
 															</table:table-cell>
 														</table:table-row>
@@ -1476,22 +1313,48 @@
 												</style:graphic-properties>
 											</style:style>
 											<draw:text-box>
-												<table:table table:name="ШтрихкодГрифКодФормыТаблицаДИ" table:style-name="ШтрихкодГрифКодФормыТаблица2">
-													<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.A"/>
-													<table:table-column table:style-name="ШтрихкодГрифКодФормыТаблица2.B"/>
+												<table:table table:name="ШтрихкодГрифКодФормыТаблицаДИ">
+													<style:style style:family="table">
+														<style:table-properties style:width="7.001cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
+													</style:style>
+													<table:table-column>
+														<style:style style:family="table-column">
+															<style:table-column-properties style:column-width="4.001cm"/>
+														</style:style>
+													</table:table-column>
+													<table:table-column>
+														<style:style style:family="table-column">
+															<style:table-column-properties style:column-width="3cm"/>
+														</style:style>
+													</table:table-column>
 													<table:table-header-rows>
-														<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.1">
-															<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A1" table:number-columns-spanned="2" office:value-type="string">
+														<table:table-row>
+															<style:style style:family="table-row">
+																<style:table-row-properties style:row-height="1.199cm"/>
+															</style:style>
+															<table:table-cell table:number-columns-spanned="2" office:value-type="string">
+																<style:style style:family="table-cell">
+																	<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+																</style:style>
 																<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
 															</table:table-cell>
 															<table:covered-table-cell/>
 														</table:table-row>
 													</table:table-header-rows>
-													<table:table-row table:style-name="ШтрихкодГрифКодФормыТаблица2.2">
-														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+													<table:table-row>
+														<style:style style:family="table-row">
+															<style:table-row-properties style:row-height="0.499cm"/>
+														</style:style>
+														<table:table-cell office:value-type="string">
+															<style:style style:family="table-cell">
+																<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+															</style:style>
 															<text:p text:style-name="ГрифОграниченияДоступа"/>
 														</table:table-cell>
-														<table:table-cell table:style-name="ШтрихкодГрифКодФормыТаблица2.A2" office:value-type="string">
+														<table:table-cell office:value-type="string">
+															<style:style style:family="table-cell">
+																<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+															</style:style>
 															<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
 														</table:table-cell>
 													</table:table-row>
@@ -1646,36 +1509,79 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<table:table table:name="РегДанные" table:style-name="РегДанные">
-						<table:table-column table:style-name="РегДанные.A"/>
-						<table:table-column table:style-name="РегДанные.B"/>
-						<table:table-column table:style-name="РегДанные.C"/>
-						<table:table-column table:style-name="РегДанные.D"/>
+					<table:table table:name="РегДанные">
+						<style:style style:family="table">
+							<style:table-properties style:width="7.498cm" table:align="margins" style:may-break-between-rows="false"/>
+						</style:style>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="0.991cm" style:rel-column-width="8668*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="2.757cm" style:rel-column-width="24098*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="0.739cm" style:rel-column-width="6453*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="3.011cm" style:rel-column-width="26316*"/>
+							</style:style>
+						</table:table-column>
 						<table:table-row>
-							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">29.05.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
-							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс">На №</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанные.B1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
@@ -1776,15 +1682,39 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<table:table table:name="Подвал" table:style-name="Подвал">
-					<table:table-column table:style-name="Подвал.A"/>
-					<table:table-column table:style-name="Подвал.B"/>
-					<table:table-column table:style-name="Подвал.C"/>
-					<table:table-row table:style-name="Подвал.1">
-						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+				<table:table table:name="Подвал">
+					<style:style style:family="table">
+						<style:table-properties style:width="18cm" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
+					</style:style>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="11cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="3cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="4.001cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-row>
+						<style:style style:family="table-row">
+							<style:table-row-properties style:row-height="1.7cm"/>
+						</style:style>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
 						</table:table-cell>
-						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:section text:name="Сведения о деле (СЗ)">
 								<style:style style:family="section">
 									<style:section-properties style:editable="false">
@@ -1837,21 +1767,41 @@
 								</draw:frame></text:p>
 							</text:section>
 						</table:table-cell>
-						<table:table-cell table:style-name="Подвал.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:section text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &#34;ИСТИНА&#34; ) AND ( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; ) )" text:display="condition">
 								<style:style style:family="section">
 									<style:section-properties style:editable="false">
 										<style:columns fo:column-count="1" fo:column-gap="0cm"/>
 									</style:section-properties>
 								</style:style>
-								<table:table table:name="РегДанныеИсх" table:style-name="РегДанныеИсх">
-									<table:table-column table:style-name="РегДанныеИсх.A"/>
-									<table:table-column table:style-name="РегДанныеИсх.B"/>
+								<table:table table:name="РегДанныеИсх">
+									<style:style style:family="table">
+										<style:table-properties style:width="4.001cm" table:align="margins" style:may-break-between-rows="false"/>
+									</style:style>
+									<table:table-column>
+										<style:style style:family="table-column">
+											<style:table-column-properties style:column-width="0.665cm" style:rel-column-width="10903*"/>
+										</style:style>
+									</table:table-column>
+									<table:table-column>
+										<style:style style:family="table-column">
+											<style:table-column-properties style:column-width="3.336cm" style:rel-column-width="54632*"/>
+										</style:style>
+									</table:table-column>
 									<table:table-row>
-										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+										<table:table-cell office:value-type="string">
+											<style:style style:family="table-cell">
+												<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+											</style:style>
 											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">от</text:p>
 										</table:table-cell>
-										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+										<table:table-cell office:value-type="string">
+											<style:style style:family="table-cell">
+												<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+											</style:style>
 											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:name="Бланк: оформление поля ДатаРегистрации исх." text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="7">
 												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 													<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
@@ -1863,10 +1813,16 @@
 										</table:table-cell>
 									</table:table-row>
 									<table:table-row>
-										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+										<table:table-cell office:value-type="string">
+											<style:style style:family="table-cell">
+												<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+											</style:style>
 											<text:p text:style-name="БланкРегДанныеВПодвалеПрефикс">№</text:p>
 										</table:table-cell>
-										<table:table-cell table:style-name="РегДанныеИсх.A1" office:value-type="string">
+										<table:table-cell office:value-type="string">
+											<style:style style:family="table-cell">
+												<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+											</style:style>
 											<text:p text:style-name="БланкРегДанныеВПодвалеПоля"><draw:frame draw:name="Бланк: оформление поля РегистрационныйНомер исх." text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="3">
 												<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 													<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
@@ -1901,15 +1857,39 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<table:table table:name="ПодвалНаЛистеСогласования" table:style-name="ПодвалНаЛистеСогласования">
-					<table:table-column table:style-name="ПодвалНаЛистеСогласования.A"/>
-					<table:table-column table:style-name="ПодвалНаЛистеСогласования.B"/>
-					<table:table-column table:style-name="ПодвалНаЛистеСогласования.C"/>
-					<table:table-row table:style-name="ПодвалНаЛистеСогласования.1">
-						<table:table-cell table:style-name="ПодвалНаЛистеСогласования.A1" office:value-type="string">
+				<table:table table:name="ПодвалНаЛистеСогласования">
+					<style:style style:family="table">
+						<style:table-properties style:width="18cm" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
+					</style:style>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="11cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="3cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="4.001cm"/>
+						</style:style>
+					</table:table-column>
+					<table:table-row>
+						<style:style style:family="table-row">
+							<style:table-row-properties style:row-height="1.7cm"/>
+						</style:style>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
-						<table:table-cell table:style-name="ПодвалНаЛистеСогласования.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:section text:name="Сведения о деле (ЛС)">
 								<style:style style:family="section">
 									<style:section-properties style:editable="false">
@@ -1962,7 +1942,10 @@
 								</draw:frame></text:p>
 							</text:section>
 						</table:table-cell>
-						<table:table-cell table:style-name="ПодвалНаЛистеСогласования.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:p text:style-name="ПустойАбзац"/>
 						</table:table-cell>
 					</table:table-row>
@@ -1988,12 +1971,33 @@
 							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
 						</style:style>
 						<draw:text-box fo:min-height="2cm">
-							<table:table table:name="БланкФирменныйТаблицаСЛоготипами" table:style-name="БланкФирменныйТаблицаСЛоготипами">
-								<table:table-column table:style-name="БланкФирменныйТаблицаСЛоготипами.A"/>
-								<table:table-column table:style-name="БланкФирменныйТаблицаСЛоготипами.B"/>
-								<table:table-column table:style-name="БланкФирменныйТаблицаСЛоготипами.C"/>
-								<table:table-row table:style-name="БланкФирменныйТаблицаСЛоготипами.1">
-									<table:table-cell table:style-name="БланкФирменныйТаблицаСЛоготипами.A1" office:value-type="string">
+							<table:table table:name="БланкФирменныйТаблицаСЛоготипами">
+								<style:style style:family="table">
+									<style:table-properties style:width="17.501cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:break-before="auto" fo:break-after="auto" table:align="margins" fo:keep-with-next="auto" style:may-break-between-rows="false" table:border-model="collapsing"/>
+								</style:style>
+								<table:table-column>
+									<style:style style:family="table-column">
+										<style:table-column-properties style:column-width="4.279cm" style:rel-column-width="16023*"/>
+									</style:style>
+								</table:table-column>
+								<table:table-column>
+									<style:style style:family="table-column">
+										<style:table-column-properties style:column-width="9.523cm" style:rel-column-width="35660*"/>
+									</style:style>
+								</table:table-column>
+								<table:table-column>
+									<style:style style:family="table-column">
+										<style:table-column-properties style:column-width="3.699cm" style:rel-column-width="13852*"/>
+									</style:style>
+								</table:table-column>
+								<table:table-row>
+									<style:style style:family="table-row">
+										<style:table-row-properties fo:keep-together="auto"/>
+									</style:style>
+									<table:table-cell office:value-type="string">
+										<style:style style:family="table-cell">
+											<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+										</style:style>
 										<text:p text:style-name="БланкФирменныйЛоготипыВШапкеРСТ"><draw:frame draw:name="Бланк: лого РСТ в шапке" text:anchor-type="as-char" svg:width="4.399cm" svg:height="2.499cm" draw:z-index="15">
 											<style:style style:family="graphic" style:parent-style-name="Frame">
 												<style:graphic-properties fo:margin-top="0cm" fo:margin-bottom="0cm" style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
@@ -2002,11 +2006,17 @@
 											<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 										</draw:frame></text:p>
 									</table:table-cell>
-									<table:table-cell table:style-name="БланкФирменныйТаблицаСЛоготипами.B1" office:value-type="string">
+									<table:table-cell office:value-type="string">
+										<style:style style:family="table-cell">
+											<style:table-cell-properties style:vertical-align="middle" fo:padding="0cm" fo:border="none"/>
+										</style:style>
 										<text:p text:style-name="БланкФирменныйНаименованиеОрганизацииВЛогоблоке"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get></text:p>
 										<text:p text:style-name="БланкФирменныйНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">Новгородский филиал</text:variable-get></text:p>
 									</table:table-cell>
-									<table:table-cell table:style-name="БланкФирменныйТаблицаСЛоготипами.A1" office:value-type="string">
+									<table:table-cell office:value-type="string">
+										<style:style style:family="table-cell">
+											<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
+										</style:style>
 										<text:p text:style-name="БланкФирменныйЛоготипыВШапкеТест"><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="3.671cm" svg:height="2.48cm" draw:z-index="16">
 											<style:style style:family="graphic" style:parent-style-name="Frame">
 												<style:graphic-properties style:run-through="foreground" style:protect="content size position" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="top" style:vertical-rel="paragraph-content" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" draw:opacity="0%" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top">
@@ -2054,13 +2064,35 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<table:table table:name="РегДанныеПБ" table:style-name="РегДанныеПБ">
-						<table:table-column table:style-name="РегДанныеПБ.A"/>
-						<table:table-column table:style-name="РегДанныеПБ.B"/>
-						<table:table-column table:style-name="РегДанныеПБ.C"/>
-						<table:table-column table:style-name="РегДанныеПБ.D"/>
+					<table:table table:name="РегДанныеПБ">
+						<style:style style:family="table">
+							<style:table-properties style:width="6.001cm" table:align="margins" style:may-break-between-rows="false"/>
+						</style:style>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="0.794cm" style:rel-column-width="8668*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="2.207cm" style:rel-column-width="24098*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="0.591cm" style:rel-column-width="6453*"/>
+							</style:style>
+						</table:table-column>
+						<table:table-column>
+							<style:style style:family="table-column">
+								<style:table-column-properties style:column-width="2.409cm" style:rel-column-width="26316*"/>
+							</style:style>
+						</table:table-column>
 						<table:table-row>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ДатаРегистрации (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="6">
 									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
@@ -2070,7 +2102,10 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ДатаРегистрации (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="8">
 									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -2080,7 +2115,10 @@
 									</draw:text-box>
 								</draw:frame><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля РегистрационныйНомер (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="7">
 									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
@@ -2090,7 +2128,10 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля РегистрационныйНомер (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="9">
 									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -2102,7 +2143,10 @@
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ВОтветНаНомер (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="10">
 									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
@@ -2112,7 +2156,10 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ВОтветНаНомер (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="11">
 									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -2122,7 +2169,10 @@
 									</draw:text-box>
 								</draw:frame><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПрефикс"><draw:frame draw:name="Бланк: префикс поля ВОтветНаДату (ПБ)" text:anchor-type="paragraph" style:rel-width="100%" style:rel-height="100%" draw:z-index="12">
 									<style:style style:family="graphic" style:parent-style-name="БланкПолеВБланке">
 										<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:flow-with-text="false" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
@@ -2132,7 +2182,10 @@
 									</draw:text-box>
 								</draw:frame></text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="РегДанныеПБ.A1" office:value-type="string">
+							<table:table-cell office:value-type="string">
+								<style:style style:family="table-cell">
+									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
+								</style:style>
 								<text:p text:style-name="БланкРегДанныеПоля"><draw:frame draw:name="Бланк: оформление поля ВОтветНаДату (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="13">
 									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
 										<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
@@ -2243,15 +2296,39 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
 			<loext:footer-first>
-				<table:table table:name="БланкФирменныйПодвал" table:style-name="БланкФирменныйПодвал">
-					<table:table-column table:style-name="БланкФирменныйПодвал.A"/>
-					<table:table-column table:style-name="БланкФирменныйПодвал.B"/>
-					<table:table-column table:style-name="БланкФирменныйПодвал.C"/>
-					<table:table-row table:style-name="БланкФирменныйПодвал.1">
-						<table:table-cell table:style-name="БланкФирменныйПодвал.A1" office:value-type="string">
+				<table:table table:name="БланкФирменныйПодвал">
+					<style:style style:family="table">
+						<style:table-properties style:width="17.501cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
+					</style:style>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="10.694cm" style:rel-column-width="6236*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="2.917cm" style:rel-column-width="1701*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="3.889cm" style:rel-column-width="2268*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-row>
+						<style:style style:family="table-row">
+							<style:table-row-properties style:row-height="1.7cm"/>
+						</style:style>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
 						</table:table-cell>
-						<table:table-cell table:style-name="БланкФирменныйПодвал.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:section text:name="Сведения о деле (ПБ)">
 								<style:style style:family="section">
 									<style:section-properties style:editable="false">
@@ -2304,7 +2381,10 @@
 								</draw:frame></text:p>
 							</text:section>
 						</table:table-cell>
-						<table:table-cell table:style-name="БланкФирменныйПодвал.A1" office:value-type="string">
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
 							<text:p text:style-name="Footer"/>
 						</table:table-cell>
 					</table:table-row>
