@@ -447,6 +447,7 @@
 		| @style:num-letter-sync[ . = 'false' ]
 		| @style:type[ . = 'left' ]
 		| @style:vertical-align[ . = 'top' ]
+		| @style:auto-update[ . = 'false' ]
 		| text:variable-set/@text:display[ . = 'value' ]
 		| text:variable-get/@text:display[ . = 'value' ]
 		| @number:display-factor[ . = '1' ]
