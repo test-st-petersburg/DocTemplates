@@ -208,7 +208,6 @@
 		use="@style:name"
 	/>
 
-
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
 		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
 		| text:section[ not (
@@ -216,6 +215,7 @@
 			and ( text:section-source/@xlink:type = 'simple' ) and ( text:section-source/@xlink:show = 'replace' )
 			and ( text:section-source/@xlink:actuate = 'other' )
 		) ]
+		| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
 	">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates select=" @* " mode="#current"/>
@@ -229,12 +229,14 @@
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
 		@draw:style-name
 		| text:section/@text:style-name
+		| @table:style-name
 	"/>
 
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
 		office:automatic-styles/style:style[
 			@style:family='graphic'
 			or @style:family='section'
+			or @style:family='table' or @style:family='table-column' or @style:family='table-row' or @style:family='table-cell'
 		]
 	"/>
 

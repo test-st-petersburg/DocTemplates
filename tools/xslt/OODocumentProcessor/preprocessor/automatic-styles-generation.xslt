@@ -62,6 +62,11 @@
 		use="@text:style-name"
 	/>
 
+	<xsl:key name="p:used-table-styles"
+		match="office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]"
+		use="@table:style-name"
+	/>
+
 	<xsl:template mode="p:automatic-styles-generation" match="office:document-content">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select=" @* "/>
@@ -73,6 +78,7 @@
 				<xsl:for-each select=" office:body/office:text//(
 					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
 					| text:section
+					| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
 				)/style:style ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
@@ -97,6 +103,7 @@
 				<xsl:for-each select=" office:master-styles/style:master-page//(
 					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
 					| text:section
+					| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
 				)/style:style ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
@@ -114,6 +121,9 @@
 		office:document-content/office:automatic-styles/style:style[
 		 	( @style:family='graphic' and not( key( 'p:used-graphic-styles', @style:name ) ) )
 			or ( @style:family='section' and not( key( 'p:used-section-styles', @style:name ) ) )
+			or ( ( @style:family='table' or @style:family='table-column' or @style:family='table-row' or @style:family='table-cell' )
+				and not( key( 'p:used-table-styles', @style:name ) )
+			)
 		]
 	"/>
 
@@ -137,9 +147,20 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template mode="p:automatic-styles-generation" match="
+		*[ ( namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ) and ( style:style ) ]
+	">
+		<xsl:copy validation="preserve">
+			<xsl:attribute name="table:style-name" select=" generate-id( style:style ) "/>
+			<xsl:apply-templates mode="#current" select=" @* "/>
+			<xsl:apply-templates mode="#current" select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template mode="p:automatic-styles-generation" match=" (
 		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
 		| text:section
+		| *[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0' ]
 	)/style:style "/>
 
 </xsl:transform>
