@@ -57,7 +57,12 @@
 		use="@draw:style-name"
 	/>
 
-	<xsl:template mode="p:graphics-auto-styles-generation" match="office:document-content">
+	<xsl:key name="p:used-section-styles"
+		match=" office:document-content/office:body/office:text//text:section "
+		use="@text:style-name"
+	/>
+
+	<xsl:template mode="p:automatic-styles-generation" match="office:document-content">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select=" @* "/>
 			<xsl:apply-templates mode="#current" select=" office:scripts | office:font-face-decls "/>
@@ -65,9 +70,10 @@
 			<xsl:element name="office:automatic-styles" inherit-namespaces="no">
 				<xsl:apply-templates mode="#current" select=" office:automatic-styles/node() "/>
 				<!-- генерируем автоматические стили -->
-				<xsl:for-each select=" office:body/office:text//*[
-					namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0'
-				]/style:style ">
+				<xsl:for-each select=" office:body/office:text//(
+					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+					| text:section
+				)/style:style ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
 						<xsl:apply-templates mode="#current" select=" @* "/>
@@ -80,7 +86,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:graphics-auto-styles-generation" match="office:document-styles">
+	<xsl:template mode="p:automatic-styles-generation" match="office:document-styles">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates mode="#current" select=" @* "/>
 			<xsl:apply-templates mode="#current" select=" office:font-face-decls | office:styles "/>
@@ -88,9 +94,10 @@
 			<xsl:element name="office:automatic-styles" inherit-namespaces="no">
 				<xsl:apply-templates mode="#current" select=" office:automatic-styles/node() "/>
 				<!-- генерируем автоматические стили -->
-				<xsl:for-each select=" office:master-styles/style:master-page//*[
-					namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0'
-				]/style:style ">
+				<xsl:for-each select=" office:master-styles/style:master-page//(
+					*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+					| text:section
+				)/style:style ">
 					<xsl:copy validation="preserve">
 						<xsl:attribute name="style:name" select=" generate-id() "/>
 						<xsl:apply-templates mode="#current" select=" @* "/>
@@ -103,18 +110,15 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:graphics-auto-styles-generation" match="
+	<xsl:template mode="p:automatic-styles-generation" match="
 		office:document-content/office:automatic-styles/style:style[
-		 	@style:family='graphic'
-			and not( key( 'p:used-graphic-styles', @style:name ) )
+		 	( @style:family='graphic' and not( key( 'p:used-graphic-styles', @style:name ) ) )
+			or ( @style:family='section' and not( key( 'p:used-section-styles', @style:name ) ) )
 		]
 	"/>
 
-	<xsl:template mode="p:graphics-auto-styles-generation" match="
-		*[
-			( namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' )
-			and empty ( @draw:style-name )
-		]
+	<xsl:template mode="p:automatic-styles-generation" match="
+		*[ ( namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ) and ( style:style ) ]
 	">
 		<xsl:copy validation="preserve">
 			<xsl:attribute name="draw:style-name" select=" generate-id( style:style ) "/>
@@ -123,8 +127,19 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="p:graphics-auto-styles-generation" match="
-		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]/style:style
-	"/>
+	<xsl:template mode="p:automatic-styles-generation" match="
+		text:section[ style:style ]
+	">
+		<xsl:copy validation="preserve">
+			<xsl:attribute name="text:style-name" select=" generate-id( style:style ) "/>
+			<xsl:apply-templates mode="#current" select=" @* "/>
+			<xsl:apply-templates mode="#current" select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template mode="p:automatic-styles-generation" match=" (
+		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+		| text:section
+	)/style:style "/>
 
 </xsl:transform>

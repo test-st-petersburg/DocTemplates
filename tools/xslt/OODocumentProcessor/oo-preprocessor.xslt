@@ -104,7 +104,7 @@
 			<xsl:apply-templates select="$p:document-aux-2" mode="p:internal-links-embedding"/>
 		</xsl:variable>
 		<xsl:variable name="p:document-aux-4" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:document-aux-3" mode="p:graphics-auto-styles-generation"/>
+			<xsl:apply-templates select="$p:document-aux-3" mode="p:automatic-styles-generation"/>
 		</xsl:variable>
 		<xsl:variable name="p:document-aux-5" as="document-node( element( manifest:manifest ) )">
 			<xsl:choose>
@@ -144,17 +144,17 @@
 	<xsl:include href="preprocessor/internal-links-embedding-section-source.xslt"/>
 
 	<?endregion internal links embedding ?>
-	<?region graphics auto styles generation #62 ?>
+	<?region automatic styles generation #62 ?>
 
-	<xsl:mode name="p:graphics-auto-styles-generation"
+	<xsl:mode name="p:automatic-styles-generation"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
 
-	<xsl:include href="preprocessor/graphics-auto-styles-generation.xslt"/>
+	<xsl:include href="preprocessor/automatic-styles-generation.xslt"/>
 
-	<?endregion graphics auto styles generation #62 ?>
+	<?endregion automatic styles generation #62 ?>
 	<?region внедрение дополнительных групп файлов с манифестами ?>
 
 	<xsl:mode name="p:external-objects-embedding"

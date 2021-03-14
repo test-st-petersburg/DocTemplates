@@ -60,9 +60,7 @@
 	<xsl:variable name="o:remove-text-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-para-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-table-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="o:remove-unused-graphic-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="o:expand-graphic-auto-styles-links" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="o:remove-unused-section-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:variable name="o:expand-auto-styles-links" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-foreign-language-attributes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -195,75 +193,54 @@
 	"/>
 
 	<?endregion удаляем неиспользуемые автоматические стили таблиц в content.xml ?>
-	<?region удаляем неиспользуемые автоматические стили врезок и графики в content.xml ?>
-
-	<xsl:key name="o:auto-graphic-styles"
-		use-when="$o:remove-unused-graphic-auto-styles or $o:expand-graphic-auto-styles-links"
-		match="office:automatic-styles/style:style[ @style:family='graphic' ]"
-		use="@style:name"
-	/>
-
-	<xsl:key name="o:used-graphic-styles" use-when="$o:remove-unused-graphic-auto-styles"
-		match="office:document-content/office:body/office:text//*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]"
-		use="@draw:style-name"
-	/>
-
-	<xsl:template mode="o:optimize" use-when="$o:remove-unused-graphic-auto-styles" match="
-		office:document-content/office:automatic-styles/style:style[
-		 	@style:family='graphic'
-			and not( key( 'o:used-graphic-styles', @style:name ) )
-		]
-	"/>
-
-	<?endregion удаляем неиспользуемые автоматические стили врезок и графики в content.xml ?>
-	<?region заменяем ссылки на автоматические стили врезок и графики на описание стиля #62 ?>
+	<?region заменяем ссылки на автоматические стили на описание стиля #62 ?>
 
 	<xsl:mode
-		name="o:expand-graphic-auto-styles-links"
+		name="o:expand-auto-styles-links"
 		on-no-match="shallow-copy" warning-on-no-match="no"
 		on-multiple-match="fail" warning-on-multiple-match="yes"
 		visibility="private"
 	/>
 
-	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match="
+	<xsl:key name="o:automatic-styles"
+		use-when="$o:expand-auto-styles-links"
+		match="office:automatic-styles/style:style"
+		use="@style:name"
+	/>
+
+
+	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
 		*[ namespace-uri(.) = 'urn:oasis:names:tc:opendocument:xmlns:drawing:1.0' ]
+		| text:section[ not (
+			text:section-source/@text:section-name and not( text:section-source/@xlink:href )
+			and ( text:section-source/@xlink:type = 'simple' ) and ( text:section-source/@xlink:show = 'replace' )
+			and ( text:section-source/@xlink:actuate = 'other' )
+		) ]
 	">
 		<xsl:copy validation="preserve">
 			<xsl:apply-templates select=" @* " mode="#current"/>
-			<xsl:apply-templates select=" key( 'o:auto-graphic-styles', @draw:style-name ) " mode="o:expand-graphic-auto-styles-links"/>
+			<xsl:apply-templates select=" key( 'o:automatic-styles', attribute()[ local-name(.)='style-name' ] ) "
+				mode="o:expand-auto-styles-links"
+			/>
 			<xsl:apply-templates select=" node() " mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match=" @draw:style-name "/>
-
-	<xsl:template mode="o:optimize" use-when="$o:expand-graphic-auto-styles-links" match="
-		office:automatic-styles/style:style[ @style:family='graphic' ]
+	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
+		@draw:style-name
+		| text:section/@text:style-name
 	"/>
 
-	<xsl:template mode="o:expand-graphic-auto-styles-links" use-when="$o:expand-graphic-auto-styles-links" match=" @style:name "/>
-
-	<?endregion заменяем ссылки на автоматические стили врезок и графики на описание стиля #62 ?>
-	<?region удаляем неиспользуемые автоматические стили разделов в content.xml ?>
-
-	<xsl:key name="o:auto-section-styles" use-when="$o:remove-unused-section-auto-styles"
-		match="office:automatic-styles/style:style[ @style:family='section' ]"
-		use="@style:name"
-	/>
-
-	<xsl:key name="o:used-section-styles" use-when="$o:remove-unused-section-auto-styles"
-		match="office:document-content/office:body/office:text//text:section"
-		use="@text:style-name"
-	/>
-
-	<xsl:template mode="o:optimize" use-when="$o:remove-unused-section-auto-styles" match="
-		office:document-content/office:automatic-styles/style:style[
-		 	@style:family='section'
-			and not( key( 'o:used-section-styles', @style:name ) )
+	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
+		office:automatic-styles/style:style[
+			@style:family='graphic'
+			or @style:family='section'
 		]
 	"/>
 
-	<?endregion удаляем неиспользуемые автоматические стили разделов в content.xml ?>
+	<xsl:template mode="o:expand-auto-styles-links" use-when="$o:expand-auto-styles-links" match=" @style:name "/>
+
+	<?endregion заменяем ссылки на автоматические стили врезок и графики на описание стиля #62 ?>
 	<?region удаляем определения некоторых неиспользуемых стандартных стилей ?>
 
 	<xsl:template mode="o:optimize" use-when="$o:remove-hidden-list-styles" match="
