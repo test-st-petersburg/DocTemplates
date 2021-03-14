@@ -203,9 +203,9 @@
 	/>
 
 	<xsl:key name="o:automatic-styles"
-		use-when="$o:expand-auto-styles-links"
-		match="office:automatic-styles/style:style"
-		use="@style:name"
+		use-when=" $o:expand-auto-styles-links "
+		match=" office:automatic-styles/style:* "
+		use=" @style:name "
 	/>
 
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
@@ -226,10 +226,21 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match=" style:master-page ">
+		<xsl:copy validation="preserve">
+			<xsl:apply-templates select=" @* " mode="#current"/>
+			<xsl:apply-templates select=" key( 'o:automatic-styles', @style:page-layout-name ) "
+				mode="o:expand-auto-styles-links"
+			/>
+			<xsl:apply-templates select=" node() " mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
 		@draw:style-name
 		| text:section/@text:style-name
 		| @table:style-name
+		| @style:page-layout-name
 	"/>
 
 	<xsl:template mode="o:optimize" use-when="$o:expand-auto-styles-links" match="
@@ -238,6 +249,7 @@
 			or @style:family='section'
 			or @style:family='table' or @style:family='table-column' or @style:family='table-row' or @style:family='table-cell'
 		]
+		| office:automatic-styles/style:page-layout
 	"/>
 
 	<xsl:template mode="o:expand-auto-styles-links" use-when="$o:expand-auto-styles-links" match=" @style:name "/>
