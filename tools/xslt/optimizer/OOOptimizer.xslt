@@ -59,7 +59,6 @@
 	<?region Параметры преобразования?>
 	<xsl:variable name="o:remove-text-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-unused-para-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="o:remove-unused-table-auto-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:expand-auto-styles-links" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-hidden-list-styles" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="o:remove-empty-format-nodes" as="xs:boolean" static="yes" select="true()" visibility="private"/>
@@ -164,35 +163,6 @@
 	"/>
 
 	<?endregion удаляем неиспользуемые автоматические стили абзацев в content.xml ?>
-	<?region удаляем неиспользуемые автоматические стили таблиц в content.xml ?>
-
-	<xsl:key name="o:auto-table-styles" use-when="$o:remove-unused-table-auto-styles"
-		match="office:automatic-styles/style:style[ @style:family='table' ]"
-		use="@style:name"
-	/>
-
-	<xsl:key name="o:used-table-styles" use-when="$o:remove-unused-table-auto-styles"
-		match="office:document-content/office:body/office:text//table:table"
-		use="@table:style-name"
-	/>
-
-	<xsl:template mode="o:optimize" use-when="$o:remove-unused-table-auto-styles" match="
-		office:document-content/office:automatic-styles/style:style[
-		 	@style:family='table'
-			and not( key( 'o:used-table-styles', @style:name ) )
-		]
-	"/>
-	<xsl:template mode="o:optimize" use-when="$o:remove-unused-table-auto-styles" match="
-		office:document-content/office:automatic-styles/style:style[
-		 	(
-			 	( @style:family='table-column' )
-				or ( @style:family='table-row' )
-				or ( @style:family='table-cell' )
-			) and not( key( 'o:used-table-styles', substring-before( @style:name, '.' ) ) )
-		]
-	"/>
-
-	<?endregion удаляем неиспользуемые автоматические стили таблиц в content.xml ?>
 	<?region заменяем ссылки на автоматические стили на описание стиля #62 ?>
 
 	<xsl:mode
