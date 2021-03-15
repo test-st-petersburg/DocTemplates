@@ -1030,7 +1030,7 @@
 												</draw:text-box>
 											</draw:frame><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="2.129cm" svg:height="1.3cm" draw:z-index="26">
 												<style:style style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
-													<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+													<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none"/>
 												</style:style>
 												<draw:image xlink:href="Pictures/1000070C000069D5000040CDC320EEC2A8A857B8.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 												<draw:image xlink:href="Pictures/10000201000003880000022964DEC239BCBF4702.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
@@ -2365,7 +2365,7 @@
 					<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 				</draw:frame><draw:frame draw:name="ШкалаРСТ" text:anchor-type="as-char" svg:width="15.499cm" svg:height="0.45cm" draw:z-index="48">
 					<style:style style:family="graphic" style:parent-style-name="Graphics">
-						<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+						<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline"/>
 					</style:style>
 					<draw:image xlink:href="Pictures/100059880000445C000001F40C1CC8FB405B6F2D.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 					<draw:image xlink:href="Pictures/1000020100000295000000132B4037E1B5C859B0.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
