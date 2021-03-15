@@ -94,7 +94,7 @@
 			<style:paragraph-properties text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="Виза2" style:family="paragraph" style:parent-style-name="Подпись2" style:class="text">
-			<style:paragraph-properties text:number-lines="false" fo:keep-with-next="always"/>
+			<style:paragraph-properties fo:keep-with-next="always" text:number-lines="false"/>
 		</style:style>
 		<style:style style:name="Виза2Дата" style:family="paragraph" style:parent-style-name="ПодписьДата" style:class="text">
 			<style:paragraph-properties fo:margin-left="12cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-indent="0cm" style:auto-text-indent="false"/>
@@ -351,11 +351,11 @@
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
 		<style:style style:name="БланкДИНаименованиеСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
-			<style:paragraph-properties fo:text-align="center" fo:margin-top="2.05cm" fo:margin-bottom="0cm" fo:line-height="150%" loext:contextual-spacing="true" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
+			<style:paragraph-properties fo:margin-top="2.05cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:line-height="150%" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:font-style="italic" fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="БланкДИКодСтруктурногоПодразделения" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкДИНаименованиеСтруктурногоПодразделения" style:class="extra">
-			<style:paragraph-properties fo:margin-top="0.2cm" fo:margin-bottom="0cm"/>
+			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
 		</style:style>
 		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:line-height="90%"/>
@@ -473,7 +473,7 @@
 			<style:paragraph-properties fo:text-align="start"/>
 		</style:style>
 		<style:style style:name="БланкДИВидДокумента" style:family="paragraph" style:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
-			<style:paragraph-properties fo:margin-top="1cm" loext:contextual-spacing="false"/>
+			<style:paragraph-properties fo:margin-top="1cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
 			<style:text-properties fo:font-size="14pt"/>
 		</style:style>
 		<style:style style:name="ГрифОграниченияДоступа" style:family="paragraph" style:hidden="true" style:parent-style-name="Standard" style:class="extra">
