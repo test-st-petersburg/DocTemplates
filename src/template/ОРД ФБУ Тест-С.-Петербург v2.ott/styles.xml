@@ -187,6 +187,9 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" style:border-line-width-bottom="0cm 0.004cm 0.002cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" style:join-border="false"/>
 			<style:text-properties fo:font-size="6pt"/>
 		</style:style>
+		<style:style style:name="ПустойАбзацСАвтоВысотой" style:family="paragraph" style:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra">
+			<style:text-properties fo:font-size="1pt"/>
+		</style:style>
 		<style:style style:name="ПустойАбзац" style:family="paragraph" style:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra">
 			<style:paragraph-properties fo:line-height="0.049cm"/>
 		</style:style>
@@ -1958,7 +1961,7 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистПисьма" style:next-style-name="БланкОРДПоследующиеЛистыПисьма">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.5cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
@@ -2332,7 +2335,7 @@
 					</table:table-column>
 					<table:table-row>
 						<style:style style:family="table-row">
-							<style:table-row-properties style:row-height="1.7cm"/>
+							<style:table-row-properties style:min-row-height="1cm"/>
 						</style:style>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
@@ -2344,57 +2347,7 @@
 							<style:style style:family="table-cell">
 								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
 							</style:style>
-							<text:section text:name="Сведения о деле (ПБ)">
-								<style:style style:family="section">
-									<style:section-properties style:editable="false">
-										<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-									</style:section-properties>
-								</style:style>
-								<text:p text:style-name="БланкВДелоПрефикс">В дело <draw:frame draw:name="Поле ВДело (ПБ)" text:anchor-type="as-char" draw:z-index="76">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-									</style:style>
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="1.199cm">
-										<text:p text:style-name="БланкВДело"><draw:frame draw:name="Бланк: оформление поля ВДело (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="77">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-											</style:style>
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник">индекс дела</text:p>
-											</draw:text-box>
-										</draw:frame><text:s/><text:variable-get text:name="Дело"> </text:variable-get><text:s/></text:p>
-									</draw:text-box>
-								</draw:frame><text:s/>за <draw:frame draw:name="Поле ДелоГод (ПБ)" text:anchor-type="as-char" draw:z-index="78">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-									</style:style>
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="0.499cm">
-										<text:p text:style-name="БланкВДелоПрефикс"><draw:frame draw:name="Бланк: оформление поля ДелоГод (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="79">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-											</style:style>
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник">год</text:p>
-											</draw:text-box>
-										</draw:frame><text:s/><text:variable-get text:name="ДелоГод"> </text:variable-get><text:s/></text:p>
-									</draw:text-box>
-								</draw:frame></text:p>
-								<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Поле ПодписьДелопроизводителя (ПБ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="60">
-									<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
-										<style:graphic-properties style:vertical-pos="top" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-									</style:style>
-									<draw:text-box fo:min-height="0.041cm" fo:min-width="2.916cm">
-										<text:p text:style-name="БланкПодписьДелопроизводителя"><draw:frame draw:name="Бланк: оформление поля ПодписьДелопроизводителя (ПБ)" text:anchor-type="char" svg:x="0cm" style:rel-width="100%" draw:z-index="61">
-											<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-												<style:graphic-properties style:print-content="true" style:vertical-pos="below" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-											</style:style>
-											<draw:text-box fo:min-height="0.041cm">
-												<text:p text:style-name="Подстрочник">подпись, дата</text:p>
-											</draw:text-box>
-										</draw:frame><text:s/></text:p>
-									</draw:text-box>
-								</draw:frame></text:p>
-							</text:section>
+							<text:p text:style-name="Footer"/>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
@@ -2404,6 +2357,19 @@
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
+				<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="QRкодURLСайтаУчреждения" text:anchor-type="paragraph" svg:width="1.499cm" svg:height="1.499cm" draw:z-index="134">
+					<style:style style:family="graphic" style:parent-style-name="Graphics">
+						<style:graphic-properties fo:margin-left="0.499cm" fo:margin-right="0cm" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
+					</style:style>
+					<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+					<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+				</draw:frame><draw:frame draw:name="ШкалаРСТ" text:anchor-type="as-char" svg:width="15.499cm" svg:height="0.45cm" draw:z-index="48">
+					<style:style style:family="graphic" style:parent-style-name="Graphics">
+						<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+					</style:style>
+					<draw:image xlink:href="Pictures/100059880000445C000001F40C1CC8FB405B6F2D.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+					<draw:image xlink:href="Pictures/1000020100000295000000132B4037E1B5C859B0.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+				</draw:frame></text:p>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПоследующиеЛистыПисьма">
