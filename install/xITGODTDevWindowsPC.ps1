@@ -76,5 +76,11 @@ configuration xITGODTDevWindowsPC
 			MaximumVersion = '9.8.999'
 		}
 
+		PackageManagement QRCoder {
+			Ensure         = 'Present'
+			Name           = 'QRCoder'
+			Source         = 'NuGet'
+		}
+
 	}
 }
