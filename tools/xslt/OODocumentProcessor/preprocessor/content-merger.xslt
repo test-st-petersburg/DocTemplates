@@ -99,7 +99,25 @@
 				</xsl:merge>
 			</xsl:element>
 
-			<xsl:apply-templates mode="#current" select=" * except ( office:scripts, office:font-face-decls ) "/>
+			<xsl:element name="office:automatic-styles" inherit-namespaces="no">
+				<xsl:merge>
+					<xsl:merge-source
+						for-each-item="
+							$p:embed-objects!office:document-content/office:automatic-styles,
+							office:automatic-styles
+						"
+						select=" style:style "
+						sort-before-merge="yes"
+					>
+						<xsl:merge-key select=" @style:name " order="ascending"/>
+					</xsl:merge-source>
+					<xsl:merge-action>
+						<xsl:copy-of select=" head( current-merge-group() ) "/>
+					</xsl:merge-action>
+				</xsl:merge>
+			</xsl:element>
+
+			<xsl:apply-templates mode="#current" select=" * except ( office:scripts, office:font-face-decls, office:automatic-styles ) "/>
 		</xsl:copy>
 	</xsl:template>
 

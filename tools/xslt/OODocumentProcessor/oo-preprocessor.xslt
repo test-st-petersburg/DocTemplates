@@ -78,9 +78,7 @@
 	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- препроцессирование документа                                                              -->
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<?region препроцессирование документа ?>
 
 	<xsl:mode name="p:document-preprocessing"
 		on-no-match="shallow-copy" warning-on-no-match="no"
@@ -96,34 +94,42 @@
 	<xsl:template mode="p:document-preprocessing" as="document-node( element( manifest:manifest ) )" match="/">
 		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
 		<xsl:param name="p:version" as="xs:string" required="no" select="''"/>
-		<xsl:variable name="p:complex-document" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="p:document-aux-1" as="document-node( element( manifest:manifest ) )">
 			<xsl:copy-of select="."/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-with-embedded-objects" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document" mode="p:external-objects-embedding"/>
+		<xsl:variable name="p:document-aux-2" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-1" mode="p:external-objects-embedding"/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-with-expanded-links" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document-with-embedded-objects" mode="p:internal-links-embedding"/>
+		<xsl:variable name="p:document-aux-3" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-2" mode="p:internal-links-embedding"/>
 		</xsl:variable>
-		<xsl:variable name="p:complex-document-after-settings-processing-I" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="p:document-aux-4" as="document-node( element( manifest:manifest ) )">
+			<xsl:apply-templates select="$p:document-aux-3" mode="p:automatic-styles-generation"/>
+		</xsl:variable>
+		<xsl:variable name="p:document-aux-5" as="document-node( element( manifest:manifest ) )">
 			<xsl:choose>
 				<xsl:when test=" key( 'p:document-settings', 'EmbedFonts' ) = 'true' ">
-					<xsl:copy-of select=" $p:complex-document-with-expanded-links "/>
+					<xsl:copy-of select=" $p:document-aux-4 "/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:apply-templates select="$p:complex-document-with-expanded-links" mode="p:embedded-fonts-removing"/>
+					<xsl:apply-templates select="$p:document-aux-4" mode="p:embedded-fonts-removing"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:variable name="p:updated-complex-document" as="document-node( element( manifest:manifest ) )">
-			<xsl:apply-templates select="$p:complex-document-after-settings-processing-I" mode="p:document-meta-updating">
+			<xsl:apply-templates select="$p:document-aux-5" mode="p:document-meta-updating">
 				<xsl:with-param name="p:version" select="$p:version" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:copy-of select="$p:updated-complex-document"/>
 	</xsl:template>
 
+	<?endregion препроцессирование документа ?>
+	<?region document meta updating ?>
 	<xsl:include href="preprocessor/document-meta-updating.xslt"/>
+
+	<?endregion document meta updating ?>
+	<?region internal links embedding ?>
 
 	<xsl:mode name="p:internal-links-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
@@ -137,9 +143,19 @@
 
 	<xsl:include href="preprocessor/internal-links-embedding-section-source.xslt"/>
 
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- внедрение дополнительных групп файлов с манифестами                                       -->
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<?endregion internal links embedding ?>
+	<?region automatic styles generation #62 ?>
+
+	<xsl:mode name="p:automatic-styles-generation"
+		on-no-match="shallow-copy" warning-on-no-match="no"
+		on-multiple-match="fail" warning-on-multiple-match="yes"
+		visibility="private"
+	/>
+
+	<xsl:include href="preprocessor/automatic-styles-generation.xslt"/>
+
+	<?endregion automatic styles generation #62 ?>
+	<?region внедрение дополнительных групп файлов с манифестами ?>
 
 	<xsl:mode name="p:external-objects-embedding"
 		on-no-match="shallow-copy" warning-on-no-match="no"
@@ -210,7 +226,8 @@
 		<xsl:copy-of select="$p:complex-document-without-links-to-objects"/>
 	</xsl:template>
 
-	<!-- слияние файлов при наличии во включаемых объектах тех же файлов, что и в основном документе -->
+	<?endregion внедрение дополнительных групп файлов с манифестами ?>
+	<?region слияние файлов при наличии во включаемых объектах тех же файлов, что и в основном документе ?>
 
 	<xsl:mode name="p:external-objects-files-merging"
 		on-no-match="deep-skip" warning-on-no-match="no"
@@ -254,7 +271,8 @@
 
 	<xsl:include href="preprocessor/settings-merger.xslt"/>
 
-	<!-- внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 -->
+	<?endregion слияние файлов при наличии во включаемых объектах тех же файлов, что и в основном документе ?>
+	<?region внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 ?>
 
 	<xsl:template mode="p:get-embed-objects-collection" as="document-node( element( manifest:manifest ) )"
 		 use-when="$p:embed-linked-libraries"
@@ -290,7 +308,8 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- внедрение шаблона документа в документ (`meta:template`) #75 -->
+	<?endregion внедрение связанных библиотек (`library:library[ @library:link = 'true' ]`) #83 ?>
+	<?region внедрение шаблона документа в документ (`meta:template`) #75 ?>
 
 	<xsl:template mode="p:get-embed-objects-collection" as="document-node( element( manifest:manifest ) )"
 		 use-when="$p:embed-linked-templates"
@@ -342,11 +361,8 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- обработка документа с учётом его настроек                                                 -->
-	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-	<!-- удаление внедрённых шрифтов в случае запрета внедрения в настройках документа #90 -->
+	<?endregion внедрение шаблона документа в документ (`meta:template`) #75 ?>
+	<?region удаление внедрённых шрифтов в случае запрета внедрения в настройках документа #90 ?>
 
 	<xsl:mode name="p:embedded-fonts-removing"
 		on-no-match="shallow-copy" warning-on-no-match="no"
@@ -359,5 +375,7 @@
 	/>
 
 	<xsl:template match=" svg:font-face-src " mode="p:embedded-fonts-removing"/>
+
+	<?endregion удаление внедрённых шрифтов в случае запрета внедрения в настройках документа #90 ?>
 
 </xsl:package>
