@@ -298,7 +298,7 @@ $JobBuildUriQRCode = {
 	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
 	Write-Verbose "Source URL `"$SourceURL`"";
 
-	$SourceURL | .\tools\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+	$SourceURL | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
