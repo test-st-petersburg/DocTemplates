@@ -20,14 +20,22 @@
         "apos",
         "betke",
         "calcext",
+        "Choco",
+        "chocolately",
         "codecov",
         "commitlint",
         "concat",
         "datastyle",
         "documentfoundation",
         "drawooo",
+        "environment",
         "formx",
+        "gitversion",
         "grddl",
+        "ITGDSC",
+        "ITGODT",
+        "itgps",
+        "libreoffice",
         "loext",
         "macrolib",
         "markdownlint",
@@ -47,6 +55,7 @@
         "PreRelease",
         "readonly",
         "Recurse",
+        "Remoting",
         "repo",
         "rsid",
         "Segoe",
@@ -54,6 +63,7 @@
         "tableooo",
         "Tahoma",
         "toolbaritem",
+        "VCARD",
         "Veyor",
         "xforms",
         "xlink"
@@ -69,6 +79,7 @@
         "\\[.*?\\]\\(.*?\\)"
     ],
     "enableFiletypes": [
+        "powershell",
         "xslt"
     ]
 }
