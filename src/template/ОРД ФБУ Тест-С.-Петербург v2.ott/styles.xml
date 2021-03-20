@@ -2357,12 +2357,11 @@
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
-				<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="QRкодURLСайтаУчреждения" text:anchor-type="paragraph" svg:width="1.499cm" svg:height="1.499cm" draw:z-index="134">
+				<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="QRкодURLСайтаУчреждения" text:anchor-type="paragraph" svg:width="1.529cm" svg:height="1.529cm" draw:z-index="31">
 					<style:style style:family="graphic" style:parent-style-name="Graphics">
-						<style:graphic-properties fo:margin-left="0.499cm" fo:margin-right="0cm" style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
+						<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" fo:clip="rect(0cm, 0.101cm, 0.101cm, 0cm)"/>
 					</style:style>
-					<draw:image xlink:href="Pictures/100013C00000177000000DAC2E35843D901844B7.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
-					<draw:image xlink:href="Pictures/10000201000000E300000084919C7A2C886277CE.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+					<draw:image xlink:href="Pictures/1000000000000025000000257FD278A9E707D95C.png" xlink:type="simple" xlink:actuate="onLoad" draw:mime-type="image/png"/>
 				</draw:frame><draw:frame draw:name="ШкалаРСТ" text:anchor-type="as-char" svg:width="15.499cm" svg:height="0.45cm" draw:z-index="48">
 					<style:style style:family="graphic" style:parent-style-name="Graphics">
 						<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline"/>

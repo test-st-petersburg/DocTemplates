@@ -104,6 +104,19 @@ param(
 			Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
 		) ),
 
+	# путь к папке с .url файлами для генерации QR кодов
+	[System.String]
+	$SourceURIsPath = ( property SourceURIsPath (
+			Join-Path -Path $SourcePath -ChildPath 'QRCodes\URIs'
+		) ),
+
+	# пути к .url файлам для генерации QR кодов
+	[System.String[]]
+	$SourceURIsFiles = ( property SourceURIsFiles @(
+			$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -Directory -Filter '.url' | Select-Object -ExpandProperty FullName
+		) ),
+
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
 	# 0  Open the application with a hidden window.
@@ -273,6 +286,38 @@ task BuildLibContainers $BuildLibContainersTasks;
 
 #endregion
 
+#region генерация QR кодов
+
+$JobBuildUriQRCode = {
+	$DestinationQRCodeFile = $Outputs[0];
+	$SourceURLFile = $Inputs[0];
+
+	Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceURLFile`"";
+	$SourceURL = Get-Content -LiteralPath $SourceURLFile `
+	| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
+	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
+	Write-Verbose "Source URL `"$SourceURL`"";
+
+	$SourceURL | .\tools\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+};
+
+task 'Build-org-site.png' `
+	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
+	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
+	-Job $JobBuildUriQRCode;
+
+# Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
+task BuildURIsQRCodes 'Build-org-site.png';
+
+# Synopsis: Создаёт файлы с изображениями QR кодов
+task BuildQRCodes BuildURIsQRCodes;
+
+#endregion
+
+#region сборка шаблонов
+
 $JobOpenFile = {
 	$localDestinationFile = $Outputs[0];
 	$Shell = New-Object -Com 'Shell.Application';
@@ -284,8 +329,6 @@ $JobOpenFile = {
 		};
 	};
 };
-
-#region сборка шаблонов
 
 $BuildTemplatesTasks = @();
 $BuildAndOpenTemplatesTasks = @();
@@ -324,12 +367,12 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 	task $BuildTaskName `
 		-Inputs $prerequisites `
 		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, $JobBuildTemplate;
+		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate;
 
 	task $BuildAndOpenTaskName `
 		-Inputs $prerequisites `
 		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, $JobBuildTemplate, $JobOpenFile;
+		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate, $JobOpenFile;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)

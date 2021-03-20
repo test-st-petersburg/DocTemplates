@@ -18,6 +18,7 @@
 	<manifest:file-entry manifest:full-path="Fonts/Font_PT_Sans_2.ttf" manifest:media-type="application/x-font-ttf"/>
 	<manifest:file-entry manifest:full-path="manifest.rdf" manifest:media-type="application/rdf+xml"/>
 	<manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
+	<manifest:file-entry manifest:full-path="Pictures/1000000000000025000000257FD278A9E707D95C.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Pictures/10000201000000C30000008400B6937B49C29E66.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Pictures/10000201000000E300000084919C7A2C886277CE.png" manifest:media-type="image/png"/>
 	<manifest:file-entry manifest:full-path="Pictures/1000020100000295000000132B4037E1B5C859B0.png" manifest:media-type="image/png"/>
