@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+			xCard schema (http://tools.ietf.org/html/rfc6351).
+		</xsd:documentation>
+		<xsd:documentation xml:lang="ru">
+			xCard схема (см. http://tools.ietf.org/html/rfc6351, http://tools.ietf.org/html/rfc6350).
+			Пока требуется конкретный порядок элементов в vcard, что не обязательно.
+			И не предусмотрены расширения.
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:simpleType name="iana-token">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Identifier registered with IANA.
+				(https://tools.ietf.org/html/rfc6350#section-3.3)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9-]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="x-name">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Names that begin with "x-" or "X-" are reserved for experimental use, not intended for released
+				products, or for use in bilateral agreements.
+				(https://tools.ietf.org/html/rfc6350#section-3.3).
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[xX]-[a-zA-Z0-9][a-zA-Z0-9-]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- [Section 4](https://tools.ietf.org/html/rfc6350#section-4 "vCard Format Specification") -->
+
+	<!-- [Section 4.1](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification") -->
+
+	<xsd:simpleType name="text">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:group name="value-text-elements">
+		<xsd:sequence>
+			<xsd:element name="text" type="xcard:text"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-text">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				The "text" value type should be used to identify values that contain human-readable text.
+				As for the language, it is controlled by the LANGUAGE property parameter.
+				(https://tools.ietf.org/html/rfc6350#section-4.1).
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="xcard:value-text-elements"/>
+	</xsd:complexType>
+
+	<xsd:group name="value-text-list-elements">
+		<xsd:sequence>
+			<xsd:element name="text" type="xcard:text" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-text-list">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				The "text" values type should be used to identify values that contain human-readable text.
+				(https://tools.ietf.org/html/rfc6350#section-4.1).
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="xcard:value-text-list-elements"/>
+	</xsd:complexType>
+
+	<!-- [Section 4.2](https://tools.ietf.org/html/rfc6350#section-4.2 "vCard Format Specification") -->
+
+	<xsd:group name="value-uri-elements">
+		<xsd:sequence>
+			<xsd:element name="uri" type="xsd:anyURI"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-uri">
+		<xsd:group ref="xcard:value-uri-elements"/>
+	</xsd:complexType>
+
+	<!-- [Section 4.3.1](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification") -->
+
+	<xsd:simpleType name="date">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{8}|\d{4}-\d\d|--\d\d(\d\d)?|---\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-date-elements">
+		<xsd:sequence>
+			<xsd:element name="date" type="xcard:date"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-date">
+		<xsd:group ref="xcard:value-date-elements"/>
+	</xsd:complexType>
+
+	<!-- [Section 4.3.2](https://tools.ietf.org/html/rfc6350#section-4.3.2 "vCard Format Specification") -->
+
+	<xsd:simpleType name="time">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\d\d(\d\d(\d\d)?)?|-\d\d(\d\d?)|--\d\d)(Z|[+\-]\d\d(\d\d)?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-time-elements">
+		<xsd:sequence>
+			<xsd:element name="time" type="xcard:time"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-time">
+		<xsd:group ref="xcard:value-time-elements"/>
+	</xsd:complexType>
+
+	<!-- [Section 4.3.3](https://tools.ietf.org/html/rfc6350#section-4.3.3 "vCard Format Specification") -->
+
+	<xsd:simpleType name="date-time">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\d{8}|--\d{4}|---\d\d)T\d\d(\d\d(\d\d)?)?(Z|[+\-]\d\d(\d\d)?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-date-time-elements">
+		<xsd:sequence>
+			<xsd:element name="date-time" type="xcard:date-time"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-date-time">
+		<xsd:group ref="xcard:value-date-time-elements"/>
+	</xsd:complexType>
+
+	<!-- [Section 4.3.4](https://tools.ietf.org/html/rfc6350#section-4.3.4 "vCard Format Specification") -->
+
+	<xsd:group name="value-date-and-or-time">
+		<xsd:choice>
+			<xsd:group ref="xcard:value-date-elements"/>
+			<xsd:group ref="xcard:value-time-elements"/>
+			<xsd:group ref="xcard:value-date-time-elements"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:group name="value-date-and-or-time-or-text">
+		<xsd:choice>
+			<xsd:group ref="xcard:value-date-and-or-time"/>
+			<xsd:group ref="xcard:value-text-elements"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<!-- [Section 4.3.5](https://tools.ietf.org/html/rfc6350#section-4.3.5 "vCard Format Specification") -->
+
+	<xsd:element name="timestamp">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{8}T\d{6}(Z|[+\-]\d\d(\d\d)?)?"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:complexType name="value-timestamp">
+		<xsd:sequence>
+			<xsd:element ref="xcard:timestamp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 4.4](https://tools.ietf.org/html/rfc6350#section-4.4 "vCard Format Specification") -->
+
+	<xsd:element name="boolean" type="xsd:boolean"/>
+
+	<xsd:complexType name="value-boolean">
+		<xsd:sequence>
+			<xsd:element ref="xcard:boolean"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 4.5](https://tools.ietf.org/html/rfc6350#section-4.5 "vCard Format Specification") -->
+
+	<xsd:element name="integer" type="xsd:integer"/>
+
+	<xsd:complexType name="value-integer">
+		<xsd:sequence>
+			<xsd:element ref="xcard:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 4.6](https://tools.ietf.org/html/rfc6350#section-4.6 "vCard Format Specification") -->
+
+	<xsd:element name="float" type="xsd:float"/>
+
+	<xsd:complexType name="value-float">
+		<xsd:sequence>
+			<xsd:element ref="xcard:float"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 4.7](https://tools.ietf.org/html/rfc6350#section-4.7 "vCard Format Specification") -->
+
+	<xsd:element name="utc-offset">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[+\-]\d\d(\d\d)?"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:complexType name="value-utc-offset">
+		<xsd:sequence>
+			<xsd:element ref="xcard:utc-offset"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 4.8](https://tools.ietf.org/html/rfc6350#section-4.8 "vCard Format Specification") -->
+
+	<xsd:element name="language-tag">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="([a-z]{2,3}((-[a-z]{3}){0,3})?|[a-z]{4,8})(-[a-z]{4})?(-([a-z]{2}|\d{3}))?(-([0-9a-z]{5,8}|\d[0-9a-z]{3}))*(-[0-9a-wyz](-[0-9a-z]{2,8})+)*(-x(-[0-9a-z]{1,8})+)?|x(-[0-9a-z]{1,8})+|[a-z]{1,3}(-[0-9a-z]{2,8}){1,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:complexType name="value-language-tag">
+		<xsd:sequence>
+			<xsd:element ref="xcard:language-tag"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.1](https://tools.ietf.org/html/rfc6350#section-5.1 "vCard Format Specification") -->
+
+	<xsd:element name="language" type="xcard:value-language-tag"/>
+
+	<xsd:complexType name="param-language">
+		<xsd:sequence>
+			<xsd:element ref="xcard:language" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.2](https://tools.ietf.org/html/rfc6350#section-5.2 "vCard Format Specification") -->
+
+	<xsd:element name="pref">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="integer">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+							<xsd:minInclusive value="1"/>
+							<xsd:maxInclusive value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="param-pref">
+		<xsd:sequence>
+			<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.4](https://tools.ietf.org/html/rfc6350#section-5.4 "vCard Format Specification") -->
+
+	<xsd:element name="altid" type="xcard:value-text"/>
+
+	<xsd:complexType name="param-altid">
+		<xsd:sequence>
+			<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.5](https://tools.ietf.org/html/rfc6350#section-5.5 "vCard Format Specification") -->
+
+	<xsd:element name="pid">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:pattern value="\d+(\.\d+)?"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="param-pid">
+		<xsd:sequence>
+			<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.6](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification") -->
+
+	<xsd:element name="type">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="work"/>
+							<xsd:enumeration value="home"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="param-type">
+		<xsd:sequence>
+			<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.7](https://tools.ietf.org/html/rfc6350#section-5.7 "vCard Format Specification") -->
+
+	<xsd:element name="mediatype" type="xcard:value-text"/>
+
+	<xsd:complexType name="param-mediatype">
+		<xsd:sequence>
+			<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.8](https://tools.ietf.org/html/rfc6350#section-5.8 "vCard Format Specification") -->
+
+	<xsd:element name="calscale">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="text">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="gregorian"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="param-calscale">
+		<xsd:sequence>
+			<xsd:element ref="xcard:calscale" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.9](https://tools.ietf.org/html/rfc6350#section-5.9 "vCard Format Specification") -->
+
+	<xsd:element name="sort-as" type="xcard:value-text-list"/>
+
+	<xsd:complexType name="param-sort-as">
+		<xsd:sequence>
+			<xsd:element ref="xcard:sort-as" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.10](https://tools.ietf.org/html/rfc6350#section-5.10 "vCard Format Specification") -->
+
+	<xsd:complexType name="param-geo">
+		<xsd:sequence>
+			<xsd:element name="geo" type="xcard:value-uri" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 5.11](https://tools.ietf.org/html/rfc6350#section-5.11 "vCard Format Specification") -->
+
+	<xsd:complexType name="param-tz">
+		<xsd:sequence>
+			<xsd:element name="tz" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="text" type="xsd:string"/>
+						<xsd:element name="uri" type="xsd:anyURI"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 6](https://tools.ietf.org/html/rfc6350#section-6 "vCard Format Specification") -->
+
+	<xsd:element name="source" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.1.4](https://tools.ietf.org/html/rfc6350#section-6.1.4 "vCard Format Specification") -->
+
+	<xsd:element name="kind">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="text" minOccurs="0" maxOccurs="unbounded" default="individual">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="individual"/>
+							<xsd:enumeration value="group"/>
+							<xsd:enumeration value="org"/>
+							<xsd:enumeration value="location"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.2](https://tools.ietf.org/html/rfc6350#section-6.2 "vCard Format Specification") -->
+
+	<xsd:group name="ids-pref">
+		<xsd:sequence>
+			<xsd:element ref="xcard:altid" minOccurs="0"/>
+			<xsd:element ref="xcard:pid" minOccurs="0"/>
+			<xsd:element ref="xcard:pref" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="ids-pref-type">
+		<xsd:sequence>
+			<xsd:group ref="xcard:ids-pref"/>
+			<xsd:element ref="xcard:type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="property-value-text">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="xcard:ids-pref-type"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="xcard:value-text-elements"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="property-value-text-with-language">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="xcard:language" minOccurs="0"/>
+						<xsd:group ref="xcard:ids-pref-type"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		<xsd:group ref="xcard:value-text-elements"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="property-value-date">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="xcard:altid" minOccurs="0"/>
+						<xsd:element ref="xcard:calscale" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="xcard:value-date-and-or-time-or-text"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="property-value-url">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="xcard:value-uri-elements"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="property-value-url-with-language">
+		<!-- <extension base="xcard:property-value-url">
+			<sequence>
+				<element name="country" type="string"/>
+			</sequence>
+		</extension> -->
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="xcard:language" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="xcard:value-uri-elements"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- [Section 6.2.1](https://tools.ietf.org/html/rfc6350#section-6.2.1 "vCard Format Specification") -->
+
+	<xsd:element name="fn" type="xcard:property-value-text-with-language"/>
+
+	<!-- [Section 6.2.2](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification") -->
+
+	<xsd:element name="surname" type="xsd:string"/>
+	<xsd:element name="given" type="xsd:string"/>
+	<xsd:element name="additional" type="xsd:string"/>
+	<xsd:element name="prefix" type="xsd:string"/>
+	<xsd:element name="suffix" type="xsd:string"/>
+
+	<xsd:element name="n">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:language" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:sort-as" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="xcard:surname" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="xcard:given" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="xcard:additional" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="xcard:prefix" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="xcard:suffix" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.2.3](https://tools.ietf.org/html/rfc6350#section-6.2.3 "vCard Format Specification") -->
+
+	<xsd:element name="nickname" type="xcard:property-value-text-with-language"/>
+
+	<!-- [Section 6.2.4](https://tools.ietf.org/html/rfc6350#section-6.2.4 "vCard Format Specification") -->
+
+	<xsd:element name="photo" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.2.5](https://tools.ietf.org/html/rfc6350#section-6.2.5 "vCard Format Specification") -->
+
+	<xsd:element name="bday" type="xcard:property-value-date"/>
+
+	<!-- [Section 6.2.6](https://tools.ietf.org/html/rfc6350#section-6.2.6 "vCard Format Specification") -->
+
+	<xsd:element name="anniversary" type="xcard:property-value-date"/>
+
+	<!-- [Section 6.2.7](https://tools.ietf.org/html/rfc6350#section-6.2.7 "vCard Format Specification") -->
+
+	<xsd:element name="gender">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="sex">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value=""/>
+							<xsd:enumeration value="M"/>
+							<xsd:enumeration value="F"/>
+							<xsd:enumeration value="O"/>
+							<xsd:enumeration value="N"/>
+							<xsd:enumeration value="U"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="identity" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.3.1](https://tools.ietf.org/html/rfc6350#section-6.3.1 "vCard Format Specification") -->
+
+	<xsd:element name="label" type="xcard:value-text"/>
+
+	<xsd:complexType name="param-label">
+		<xsd:sequence>
+			<xsd:element ref="xcard:label" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="adr">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:language" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:geo" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:tz" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:label" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="pobox" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="ext" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="street" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="locality" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="region" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="code" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="country" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.4.1](https://tools.ietf.org/html/rfc6350#section-6.4.1 "vCard Format Specification") -->
+
+	<xsd:element name="tel">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="type" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="work"/>
+													<xsd:enumeration value="home"/>
+													<xsd:enumeration value="text"/>
+													<xsd:enumeration value="voice"/>
+													<xsd:enumeration value="fax"/>
+													<xsd:enumeration value="cell"/>
+													<xsd:enumeration value="video"/>
+													<xsd:enumeration value="pager"/>
+													<xsd:enumeration value="textphone"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:choice>
+					<xsd:group ref="xcard:value-text-elements"/>
+					<xsd:group ref="xcard:value-uri-elements"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.4.2](https://tools.ietf.org/html/rfc6350#section-6.4.2 "vCard Format Specification") -->
+
+	<xsd:element name="email" type="xcard:property-value-text"/>
+
+	<!-- [Section 6.4.3](https://tools.ietf.org/html/rfc6350#section-6.4.3 "vCard Format Specification") -->
+
+	<xsd:element name="impp" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.4.4](https://tools.ietf.org/html/rfc6350#section-6.4.4 "vCard Format Specification") -->
+
+	<xsd:element name="lang">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="xcard:language-tag"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.5.1](https://tools.ietf.org/html/rfc6350#section-6.5.1 "vCard Format Specification") -->
+
+	<xsd:element name="tz">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:choice>
+					<xsd:group ref="xcard:value-text-elements"/>
+					<xsd:group ref="xcard:value-uri-elements"/>
+					<xsd:element ref="xcard:utc-offset"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.5.2](https://tools.ietf.org/html/rfc6350#section-6.5.2 "vCard Format Specification") -->
+
+	<xsd:element name="geo" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.6.1](https://tools.ietf.org/html/rfc6350#section-6.6.1 "vCard Format Specification") -->
+
+	<xsd:element name="title" type="xcard:property-value-text-with-language"/>
+
+	<!-- [Section 6.6.2](https://tools.ietf.org/html/rfc6350#section-6.6.2 "vCard Format Specification") -->
+
+	<xsd:element name="role" type="xcard:property-value-text-with-language"/>
+
+	<!-- [Section 6.6.3](https://tools.ietf.org/html/rfc6350#section-6.6.3 "vCard Format Specification") -->
+
+	<xsd:element name="logo" type="xcard:property-value-url-with-language"/>
+
+	<!-- [Section 6.6.4](https://tools.ietf.org/html/rfc6350#section-6.6.4 "vCard Format Specification") -->
+
+	<xsd:element name="org">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:language" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:sort-as" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="xcard:value-text-list-elements"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.6.5](https://tools.ietf.org/html/rfc6350#section-6.6.5 "vCard Format Specification") -->
+
+	<xsd:element name="member" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.6.6](https://tools.ietf.org/html/rfc6350#section-6.6.6 "vCard Format Specification") -->
+
+	<xsd:element name="related">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="type" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="work"/>
+													<xsd:enumeration value="home"/>
+													<xsd:enumeration value="contact"/>
+													<xsd:enumeration value="acquaintance"/>
+													<xsd:enumeration value="friend"/>
+													<xsd:enumeration value="met"/>
+													<xsd:enumeration value="co-worker"/>
+													<xsd:enumeration value="colleague"/>
+													<xsd:enumeration value="co-resident"/>
+													<xsd:enumeration value="neighbor"/>
+													<xsd:enumeration value="child"/>
+													<xsd:enumeration value="parent"/>
+													<xsd:enumeration value="sibling"/>
+													<xsd:enumeration value="spouse"/>
+													<xsd:enumeration value="kin"/>
+													<xsd:enumeration value="muse"/>
+													<xsd:enumeration value="crush"/>
+													<xsd:enumeration value="date"/>
+													<xsd:enumeration value="sweetheart"/>
+													<xsd:enumeration value="me"/>
+													<xsd:enumeration value="agent"/>
+													<xsd:enumeration value="emergency"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:choice>
+					<xsd:group ref="xcard:value-text-elements"/>
+					<xsd:group ref="xcard:value-uri-elements"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.7.1](https://tools.ietf.org/html/rfc6350#section-6.7.1 "vCard Format Specification") -->
+
+	<xsd:element name="categories">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="xcard:value-text-list-elements"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.7.2](https://tools.ietf.org/html/rfc6350#section-6.7.2 "vCard Format Specification") -->
+
+	<xsd:element name="note" type="xcard:property-value-text-with-language"/>
+
+	<!-- [Section 6.7.3](https://tools.ietf.org/html/rfc6350#section-6.7.3 "vCard Format Specification") -->
+
+	<xsd:element name="prodid" type="xcard:value-text"/>
+
+	<!-- [Section 6.7.4](https://tools.ietf.org/html/rfc6350#section-6.7.4 "vCard Format Specification") -->
+
+	<xsd:element name="rev" type="xcard:value-timestamp"/>
+
+	<!-- [Section 6.7.5](https://tools.ietf.org/html/rfc6350#section-6.7.5 "vCard Format Specification") -->
+
+	<xsd:element name="sound" type="xcard:property-value-url-with-language"/>
+
+	<!-- [Section 6.7.6](https://tools.ietf.org/html/rfc6350#section-6.7.6 "vCard Format Specification") -->
+
+	<xsd:element name="uid" type="xcard:value-uri"/>
+
+	<!-- [Section 6.7.7](https://tools.ietf.org/html/rfc6350#section-6.7.7 "vCard Format Specification") -->
+
+	<xsd:element name="clientpidmap">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="sourceid" type="xsd:positiveInteger"/>
+				<xsd:group ref="xcard:value-uri-elements"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.7.8](https://tools.ietf.org/html/rfc6350#section-6.7.8 "vCard Format Specification") -->
+
+	<xsd:element name="url" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.8.1](https://tools.ietf.org/html/rfc6350#section-6.8.1 "vCard Format Specification") -->
+
+	<xsd:element name="key">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+							<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:choice>
+					<xsd:group ref="xcard:value-text-elements"/>
+					<xsd:group ref="xcard:value-uri-elements"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- [Section 6.9.1](https://tools.ietf.org/html/rfc6350#section-6.9.1 "vCard Format Specification") -->
+
+	<xsd:element name="fburl" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.9.2](https://tools.ietf.org/html/rfc6350#section-6.9.2 "vCard Format Specification") -->
+
+	<xsd:element name="caladruri" type="xcard:property-value-url"/>
+
+	<!-- [Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification") -->
+
+	<xsd:element name="caluri" type="xcard:property-value-url"/>
+
+
+	<xsd:element name="vcard">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="xcard:source" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:kind" minOccurs="0"/>
+				<xsd:element ref="xcard:fn" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:n" minOccurs="0"/>
+				<xsd:element ref="xcard:nickname" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:photo" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:bday" minOccurs="0"/>
+				<xsd:element ref="xcard:anniversary" minOccurs="0"/>
+				<xsd:element ref="xcard:gender" minOccurs="0"/>
+
+				<xsd:element ref="xcard:adr" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:tel" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:email" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:impp" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:lang" minOccurs="0" maxOccurs="unbounded"/>
+
+				<xsd:element ref="xcard:tz" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:geo" minOccurs="0" maxOccurs="unbounded"/>
+
+				<xsd:element ref="xcard:title" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:role" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:logo" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:org" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:member" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:related" minOccurs="0" maxOccurs="unbounded"/>
+
+				<xsd:element ref="xcard:categories" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:note" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:prodid" minOccurs="0"/>
+				<xsd:element ref="xcard:rev" minOccurs="0"/>
+				<xsd:element ref="xcard:sound" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:uid" minOccurs="0"/>
+				<xsd:element ref="xcard:clientpidmap" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:url" minOccurs="0" maxOccurs="unbounded"/>
+
+				<xsd:element ref="xcard:key" minOccurs="0" maxOccurs="unbounded"/>
+
+				<xsd:element ref="xcard:fburl" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:caladruri" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="xcard:caluri" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="vcards">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="xcard:vcard" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

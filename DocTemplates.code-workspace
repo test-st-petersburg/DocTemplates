@@ -60,6 +60,9 @@
 				"path": "tools/xslt/optimizer/OOOptimizer.xslt"
 			},
 		],
+		"xml.catalogs": [
+			".vscode/xml-schemas.xml"
+		],
 	},
 	"extensions": {
 		// See http://go.microsoft.com/fwlink/?LinkId=827846
