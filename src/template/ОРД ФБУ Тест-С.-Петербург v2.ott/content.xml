@@ -85,6 +85,10 @@
 				<text:variable-decl office:value-type="string" text:name="ЭтоДоговор"/>
 				<text:variable-decl office:value-type="string" text:name="ЭтоИсходящийДокумент"/>
 				<text:variable-decl office:value-type="string" text:name="ЭтоПереписка"/>
+				<!-- #region Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
+				<!-- #endregion Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
 			</text:variable-decls>
 			<text:sequence-decls>
 				<text:sequence-decl text:display-outline-level="0" text:name="Illustration" text:separation-character="."/>
@@ -135,11 +139,17 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">ПодготовилПочта</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Получатели" office:value-type="string">Кому</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О чём?</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Приказ «о чём-то»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"/></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГодИздания" office:value-type="string">2020</text:variable-set></text:p>
+				<!-- #region Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
+				<text:p text:style-name="Preformatted_20_Text">Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов):</text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string"/></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПолучателиВОбращении" office:value-type="string"/></text:p>
+				<!-- #endregion Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
 				<text:p text:style-name="Preformatted_20_Text"/>
 			</text:section>
 			<text:section text:name="БланкОРДПервыйЛистПриказа" text:protected="true">
