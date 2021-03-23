@@ -2358,24 +2358,17 @@
 					</table:table-row>
 				</table:table>
 				<text:section text:name="ШкалаСQRКодомВПодвале" text:protected="true">
-					<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="Бланк: Шкала с QR кодом в подвале" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="21">
-						<style:style style:family="graphic" style:parent-style-name="Frame">
-							<style:graphic-properties style:protect="content size position" style:wrap="none" style:vertical-pos="top" style:vertical-rel="line" style:horizontal-pos="center" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph" draw:textarea-vertical-align="top"/>
+					<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="Бланк: QRкодURLСайтаУчреждения" text:anchor-type="paragraph" svg:width="1.529cm" svg:height="1.529cm" draw:z-index="31">
+						<style:style style:family="graphic" style:parent-style-name="Graphics">
+							<style:graphic-properties style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" fo:clip="rect(0cm, 0.101cm, 0.101cm, 0cm)"/>
 						</style:style>
-						<draw:text-box>
-							<text:p text:style-name="ПустойАбзацСАвтоВысотой"><draw:frame draw:name="Бланк: QRкодURLСайтаУчреждения" text:anchor-type="paragraph" svg:width="1.529cm" svg:height="1.529cm" draw:z-index="31">
-								<style:style style:family="graphic" style:parent-style-name="Graphics">
-									<style:graphic-properties style:protect="content size position" style:vertical-pos="bottom" style:vertical-rel="paragraph-content" style:horizontal-pos="right" style:horizontal-rel="paragraph-content" fo:clip="rect(0cm, 0.101cm, 0.101cm, 0cm)"/>
-								</style:style>
-								<draw:image xlink:href="Pictures/1000000000000025000000257FD278A9E707D95C.png" xlink:type="simple" xlink:actuate="onLoad" draw:mime-type="image/png"/>
-							</draw:frame><draw:frame draw:name="Бланк: ШкалаРСТ" text:anchor-type="as-char" svg:width="15.499cm" svg:height="0.45cm" draw:z-index="48">
-								<style:style style:family="graphic" style:parent-style-name="Graphics">
-									<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline"/>
-								</style:style>
-								<draw:image xlink:href="Pictures/100059880000445C000001F40C1CC8FB405B6F2D.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
-								<draw:image xlink:href="Pictures/1000020100000295000000132B4037E1B5C859B0.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
-							</draw:frame></text:p>
-						</draw:text-box>
+						<draw:image xlink:href="Pictures/1000000000000025000000257FD278A9E707D95C.png" xlink:type="simple" xlink:actuate="onLoad" draw:mime-type="image/png"/>
+					</draw:frame><draw:frame draw:name="Бланк: ШкалаРСТ" text:anchor-type="as-char" svg:width="15.499cm" svg:height="0.45cm" draw:z-index="48">
+						<style:style style:family="graphic" style:parent-style-name="Graphics">
+							<style:graphic-properties style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline"/>
+						</style:style>
+						<draw:image xlink:href="Pictures/100059880000445C000001F40C1CC8FB405B6F2D.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
+						<draw:image xlink:href="Pictures/1000020100000295000000132B4037E1B5C859B0.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 					</draw:frame></text:p>
 				</text:section>
 			</loext:footer-first>
