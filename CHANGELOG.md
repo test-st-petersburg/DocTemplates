@@ -4,6 +4,8 @@
 
 Новые возможности:
 
+- добавлена заготовка доверенности на фирменном бланке
+  [#45](https://github.com/test-st-petersburg/DocTemplates/issues/45)
 - добавлен шаблон доверенности на фирменном бланке
   [#45](https://github.com/test-st-petersburg/DocTemplates/issues/45)
 
