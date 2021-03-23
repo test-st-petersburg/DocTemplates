@@ -107,6 +107,7 @@
 	"powershell.codeFormatting.ignoreOneLineBlock": false,
 	"powershell.codeFormatting.preset": "Custom",
 	"typescript.tsc.autoDetect": "off",
+	"xml.validation.resolveExternalEntities": true,
 	"grunt.autoDetect": "off",
 	"jake.autoDetect": "off",
 	"gulp.autoDetect": "off",

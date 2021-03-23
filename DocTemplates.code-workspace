@@ -63,6 +63,7 @@
 		"xml.catalogs": [
 			".vscode/xml-schemas.xml"
 		],
+		"xml.validation.resolveExternalEntities": true,
 	},
 	"extensions": {
 		// See http://go.microsoft.com/fwlink/?LinkId=827846
