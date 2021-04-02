@@ -7,6 +7,14 @@
 - реализован иной подход к нумерации заголовков и параграфов
   [#99](https://github.com/test-st-petersburg/DocTemplates/issues/99)
 
+## 2.6.8
+
+Исправлены ошибки:
+
+- Убрать ошибочное определение в качестве ошибки сообщения
+  "Skipping up-to-date output..."
+  [#106](https://github.com/test-st-petersburg/DocTemplates/issues/106)
+
 ## 2.6.7
 
 Прочие изменения:
