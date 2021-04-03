@@ -218,6 +218,10 @@
 		<style:style style:name="БланкОРДПервыйЛистПисьма" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьма">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистНаБланке" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистНаБланке">
+			<style:paragraph-properties style:page-number="1"/>
+		</style:style>
+		<style:style style:name="БланкОРДПервыйЛистДоверенности" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистНаБланке" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
@@ -2370,6 +2374,103 @@
 						<draw:image xlink:href="Pictures/100059880000445C000001F40C1CC8FB405B6F2D.wmf" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/x-wmf"/>
 						<draw:image xlink:href="Pictures/1000020100000295000000132B4037E1B5C859B0.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 					</draw:frame></text:p>
+				</text:section>
+			</loext:footer-first>
+		</style:master-page>
+		<style:master-page style:name="БланкОРДПервыйЛистНаБланке" style:next-style-name="БланкОРДПоследующиеЛистыПисьма">
+			<style:page-layout style:page-usage="mirrored">
+				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.5cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style>
+					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+				</style:footer-style>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<style:header-left>
+				<text:p text:style-name="Header"/>
+			</style:header-left>
+			<loext:header-first>
+				<text:section text:name="Шапка (ВнБ)" text:protected="true">
+					<text:section-source text:section-name="Шапка (ПБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+				</text:section>
+				<text:section text:name="Вид документа (ВнБ)" text:protected="true">
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+				</text:section>
+				<text:section text:name="Регистрационные данные документа (ВнБ)" text:protected="true">
+					<style:style style:family="section">
+						<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+							<style:columns fo:column-count="3">
+								<style:column style:rel-width="3118*" fo:start-indent="0cm" fo:end-indent="0.499cm"/>
+								<style:column style:rel-width="3685*" fo:start-indent="0.499cm" fo:end-indent="0.499cm"/>
+								<style:column style:rel-width="3118*" fo:start-indent="0.499cm" fo:end-indent="0cm"/>
+							</style:columns>
+						</style:section-properties>
+					</style:style>
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+				</text:section>
+				<text:section text:name="Заголовок документа (ВнБ)" text:protected="true">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкЗаголовокДокумента"/>
+				</text:section>
+			</loext:header-first>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+			<style:footer-left>
+				<text:p text:style-name="Footer"/>
+			</style:footer-left>
+			<loext:footer-first>
+				<table:table table:name="БланкФирменныйПодвалВнБ">
+					<style:style style:family="table">
+						<style:table-properties style:width="17.501cm" style:rel-width="100%" fo:break-before="page" table:align="left" style:may-break-between-rows="false"/>
+					</style:style>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="10.694cm" style:rel-column-width="6236*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="2.917cm" style:rel-column-width="1701*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-column>
+						<style:style style:family="table-column">
+							<style:table-column-properties style:column-width="3.889cm" style:rel-column-width="2268*"/>
+						</style:style>
+					</table:table-column>
+					<table:table-row>
+						<style:style style:family="table-row">
+							<style:table-row-properties style:min-row-height="1cm"/>
+						</style:style>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
+							<text:p text:style-name="БланкИсполнитель"/>
+						</table:table-cell>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
+							<text:p text:style-name="Footer"/>
+						</table:table-cell>
+						<table:table-cell office:value-type="string">
+							<style:style style:family="table-cell">
+								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+							</style:style>
+							<text:p text:style-name="Footer"/>
+						</table:table-cell>
+					</table:table-row>
+				</table:table>
+				<text:section text:name="ШкалаСQRКодомВПодвале (ВнБ)" text:protected="true">
+					<text:section-source text:section-name="ШкалаСQRКодомВПодвале" xlink:type="simple" xlink:actuate="other" xlink:title="Дов"/>
 				</text:section>
 			</loext:footer-first>
 		</style:master-page>

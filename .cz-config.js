@@ -29,6 +29,7 @@ module.exports = {
   // Область. Она характеризует фрагмент кода, которую затронули изменения
   scopes: [
     { name: "ott" },
+    { name: "odt" },
     { name: "build" },
     { name: "design" },
     { name: "git" },

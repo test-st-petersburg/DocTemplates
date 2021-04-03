@@ -36,6 +36,7 @@
 				<text:variable-decl office:value-type="string" text:name="ГодИздания"/>
 				<text:variable-decl office:value-type="string" text:name="ГрифДоступа"/>
 				<text:variable-decl office:value-type="string" text:name="ДатаРегистрации"/>
+				<text:variable-decl office:value-type="string" text:name="ДействуетДоДаты"/>
 				<text:variable-decl office:value-type="string" text:name="Дело"/>
 				<text:variable-decl office:value-type="string" text:name="ДелоГод"/>
 				<text:variable-decl office:value-type="string" text:name="ДолжностьДляДИРП"/>
@@ -66,6 +67,15 @@
 				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахИП"/>
 				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВПодписиИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДолжностьРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПодписалДокументОснованиеРП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйДолжностьИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйПредставлениеВДокументахИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйПредставлениеВПодписиИП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйДолжностьДП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйФИОДП"/>
+				<text:variable-decl office:value-type="string" text:name="ПоверенныйРеквизитыУдостоверенияЛичности"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляБланка"/>
 				<text:variable-decl office:value-type="string" text:name="ПодразделениеДляДИ"/>
 				<text:variable-decl office:value-type="string" text:name="Получатели"/>
@@ -86,7 +96,6 @@
 				<text:variable-decl office:value-type="string" text:name="ЭтоИсходящийДокумент"/>
 				<text:variable-decl office:value-type="string" text:name="ЭтоПереписка"/>
 				<!-- #region Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
-				<text:variable-decl office:value-type="string" text:name="ПодписалПредставлениеВДокументахРП"/>
 				<text:variable-decl office:value-type="string" text:name="ПолучателиВОбращении"/>
 				<!-- #endregion Устаревшие переменные (для совместимости правил автозаполнения со старыми версиями файлов) -->
 			</text:variable-decls>
@@ -1587,6 +1596,89 @@
 				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 			</text:section>
 			<!-- #endregion Пример письма -->
+			<!-- #region Пример доверенности на бланке -->
+			<text:section text:name="Служебный" text:display="none">
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Доверенность</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Бетке С.С.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">С.С. Бетке</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьРП" office:value-type="string">директора Новгородского филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахРП" office:value-type="string">Бетке С.С.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДокументОснованиеРП" office:value-type="string">Устава</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйДолжностьИП" office:value-type="string">Начальник сектора по работе с клиентами</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйПредставлениеВДокументахИП" office:value-type="string">Комлаткин М.С.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйПредставлениеВПодписиИП" office:value-type="string">М.С. Комлаткин</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйДолжностьДП" office:value-type="string">начальнику сектора по работе с клиентами</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйФИОДП" office:value-type="string">Комлаткину Максиму Сергеевичу</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПоверенныйРеквизитыУдостоверенияЛичности" office:value-type="string">(паспорт №_________, выдан кем когда, код подразделения ______)</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">29.05.2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДействуетДоДаты" office:value-type="string">31.12.2021</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Доверенность</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"/></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"/>
+			</text:section>
+			<text:section text:name="БланкОРДПервыйЛистДоверенности" text:protected="true">
+				<text:p text:style-name="БланкОРДПервыйЛистДоверенности"/>
+			</text:section>
+			<text:section text:name="Содержание">
+				<text:p text:style-name="Основной"><text:variable-get text:name="ОрганизацияНаименованиеПолное">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-get> 
+					(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get>),
+					именуемое далее Доверитель,
+					в лице
+					<text:variable-get text:name="ПодписалДолжностьРП">директора Новгородского филиала</text:variable-get>
+					<text:variable-get text:name="ПодписалПредставлениеВДокументахРП">Бетке С.С.</text:variable-get>,
+					действующего на основании
+					<text:variable-get text:name="ПодписалДокументОснованиеРП">Устава</text:variable-get>,
+					доверяет
+					<text:variable-get text:name="ПоверенныйДолжностьДП">начальнику сектора по работе с клиентами</text:variable-get>
+					<text:variable-get text:name="ПоверенныйФИОДП">Комлаткину Максиму Сергеевичу</text:variable-get>
+					<text:variable-get text:name="ПоверенныйРеквизитыУдостоверенияЛичности">(паспорт №_________, выдан кем когда, код подразделения ______)</text:variable-get>,
+					именуемому далее Поверенный,
+					{Полномочия}, а именно:</text:p>
+				<text:list xml:id="list365234166" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="Основной">представлять	Доверителя
+						в судах общей юрисдикции и у мировых судей, арбитражных судах, в нотариате, органах прокуратуры,
+						налоговых органах, органах внутренних дел, иных государственных органах и органах местного самоуправления;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">заключать (изменять, расторгать) от имени Доверителя договоры (контракты);</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">подписывать соответствующие акты сдачи-приемки, счета и счета-фактуры;</text:p>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной">Доверенность действительна до
+					<text:variable-get text:name="ДействуетДоДаты">31.12.2021</text:variable-get>.</text:p>
+			</text:section>
+			<text:section text:name="Подписи">
+				<text:p text:style-name="Подпись2">Образец подписи Поверенного<text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПоверенныйПредставлениеВПодписиИП">М.С. Комлаткин</text:variable-get></text:span></text:p>
+				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+			</text:section>
+			<!-- #endregion Пример доверенности на бланке -->
 			<!-- #region Разделяемые компоненты в скрытом разделе -->
 			<text:section text:name="РазделяемыеКомпоненты" text:display="none">
 				<style:style style:family="section">
