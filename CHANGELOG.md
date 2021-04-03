@@ -9,6 +9,14 @@
 - добавлен шаблон доверенности на фирменном бланке
   [#45](https://github.com/test-st-petersburg/DocTemplates/issues/45)
 
+## 2.6.8
+
+Исправлены ошибки:
+
+- Убрать ошибочное определение в качестве ошибки сообщения
+  "Skipping up-to-date output..."
+  [#106](https://github.com/test-st-petersburg/DocTemplates/issues/106)
+
 ## 2.6.7
 
 Прочие изменения:
