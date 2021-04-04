@@ -106,7 +106,7 @@
 				<text:sequence-decl text:display-outline-level="0" text:name="Drawing" text:separation-character="."/>
 				<text:sequence-decl text:display-outline-level="0" text:name="Figure" text:separation-character="."/>
 			</text:sequence-decls>
-			<!-- #region Пример приказа -->
+			<!-- #region(collapsed) Пример приказа -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
@@ -300,7 +300,7 @@
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример приказа -->
-			<!-- #region Пример положения о подразделении -->
+			<!-- #region(collapsed) Пример положения о подразделении -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
@@ -858,7 +858,7 @@
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример положения о подразделении -->
-			<!-- #region Пример должностной инструкции -->
+			<!-- #region(collapsed) Пример должностной инструкции -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
@@ -1389,7 +1389,7 @@
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример должностной инструкции -->
-			<!-- #region Пример служебной записки -->
+			<!-- #region(collapsed) Пример служебной записки -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
@@ -1501,7 +1501,7 @@
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример служебной записки -->
-			<!-- #region Пример письма -->
+			<!-- #region(collapsed) Пример письма -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
@@ -1596,7 +1596,7 @@
 				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 			</text:section>
 			<!-- #endregion Пример письма -->
-			<!-- #region Пример доверенности на бланке -->
+			<!-- #region(collapsed) Пример доверенности на бланке -->
 			<text:section text:name="Служебный" text:display="none">
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Доверенность</text:variable-set></text:p>
@@ -1679,7 +1679,7 @@
 				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 			</text:section>
 			<!-- #endregion Пример доверенности на бланке -->
-			<!-- #region Разделяемые компоненты в скрытом разделе -->
+			<!-- #region(collapsed) Разделяемые компоненты в скрытом разделе -->
 			<text:section text:name="РазделяемыеКомпоненты" text:display="none">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false">
