@@ -222,6 +222,7 @@
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="БланкОРДПервыйЛистДоверенности" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистНаБланке" style:next-style-name="Основной" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистСправки" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистНаБланке" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
