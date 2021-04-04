@@ -2,6 +2,19 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.8.0
+
+Новые возможности:
+
+- добавлена заготовка справки на фирменном бланке
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
+- добавлен шаблон справки на фирменном бланке
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
+- добавлена заготовка профессиональной инструкции
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
+- добавлен шаблон профессиональной инструкции
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
+
 ## 2.7.1
 
 Исправлены ошибки:
