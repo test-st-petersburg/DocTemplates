@@ -12,3 +12,4 @@ jobs:
         uses: Microsoft/ps-rule@main
         with:
           modules: PSRule.Rules.GitHub
+          prerelease: true
