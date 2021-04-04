@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE office:document-meta
+  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "office.dtd">
+<office:document-meta xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:script="http://openoffice.org/2000/script" xmlns:style="http://openoffice.org/2000/style" xmlns:text="http://openoffice.org/2000/text" xmlns:table="http://openoffice.org/2000/table" xmlns:draw="http://openoffice.org/2000/drawing" xmlns:chart="http://openoffice.org/2000/chart" xmlns:number="http://openoffice.org/2000/datastyle" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dr3d="http://openoffice.org/2000/dr3d" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="http://openoffice.org/2000/form" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
+	<office:meta>
+		<meta:initial-creator>Сергей Сергеевич Бетке</meta:initial-creator>
+		<meta:creation-date>2021-04-04T15:30:00</meta:creation-date>
+		<dc:subject>Профессиональная инструкция</dc:subject>
+		<dc:language>ru-RU</dc:language>
+		<dc:creator>Сергей Сергеевич Бетке</dc:creator>
+		<meta:template xlink:type="simple" xlink:title="ОРД ФБУ Тест-С.-Петербург v2"/>
+	</office:meta>
+</office:document-meta>

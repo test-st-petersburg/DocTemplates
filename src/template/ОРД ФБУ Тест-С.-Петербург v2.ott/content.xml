@@ -1410,7 +1410,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Сектор обеспечения функционирования филиала</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">электромонтёра по ремонту и обслуживанию электрооборудования 2&#160;разряда</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
@@ -1428,8 +1428,8 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2&#160;разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2&#160;разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"/></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"/>
@@ -1443,7 +1443,7 @@
 						<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
 						<text:list>
 							<text:list-item>
-								<text:p text:style-name="Основной">Электромонтёр по ремонту и обслуживанию электрооборудования 2-го разряда
+								<text:p text:style-name="Основной">Электромонтёр по ремонту и обслуживанию электрооборудования 2&#160;разряда
 								(далее — Работник) непосредственно подчиняется
 								начальнику
 								сектора по обеспечению функционирования филиала (далее — Сектор)
@@ -1749,7 +1749,7 @@
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Электромонтёр по ремонту и обслуживанию электрооборудования 2 разряда</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.А. Васяшин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Электромонтёр по ремонту и обслуживанию электрооборудования 2&#160;разряда</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.А. Васяшин</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
 					</text:section>

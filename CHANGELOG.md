@@ -4,6 +4,8 @@
 
 Новые возможности:
 
+- добавлена заготовка профессиональной инструкции
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 - добавлен шаблон профессиональной инструкции
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 
