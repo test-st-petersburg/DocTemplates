@@ -1,0 +1,14 @@
+name: Check repository
+on: [push]
+jobs:
+  analyze:
+    name: Analyze repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Run PSRule analysis
+        uses: Microsoft/ps-rule@main
+        with:
+          modules: PSRule.Rules.GitHub
