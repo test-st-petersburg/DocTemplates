@@ -101,4 +101,21 @@
 	"jake.autoDetect": "off",
 	"gulp.autoDetect": "off",
 	"task.autoDetect": "off",
+	"conventionalCommits.autoCommit": false,
+	// "conventionalCommits.emojiFormat": "",
+	"conventionalCommits.gitmoji": true,
+	"conventionalCommits.lineBreak": "\n",
+	"conventionalCommits.promptBody": true,
+	"conventionalCommits.promptFooter": true,
+	"conventionalCommits.promptScopes": true,
+	"conventionalCommits.scopes": [
+		"ott",
+		"odt",
+		"design",
+		"git",
+		"other",
+		"changelog",
+		"readme"
+	],
+	"conventionalCommits.showEditor": false
 }
