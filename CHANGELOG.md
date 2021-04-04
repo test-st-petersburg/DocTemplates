@@ -4,6 +4,8 @@
 
 Новые возможности:
 
+- добавлена заготовка справки на фирменном бланке
+  [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 - добавлен шаблон справки на фирменном бланке
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 - добавлена заготовка профессиональной инструкции
