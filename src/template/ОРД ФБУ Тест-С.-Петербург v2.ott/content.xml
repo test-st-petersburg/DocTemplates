@@ -1389,6 +1389,373 @@
 				</text:section>
 			</text:section>
 			<!-- #endregion Пример должностной инструкции -->
+			<!-- #region(collapsed) Пример профессиональной инструкции -->
+			<text:section text:name="Служебный" text:display="none">
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Профессиональная инструкция</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоДоговор" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоПереписка" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Начальник сектора обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Гущин С.Э.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">С.Э. Гущин</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string">С.С. Бетке</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">29.05.2020</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">ДИ 460/96.4-2020/ред.1</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Тест-С.-Петербург»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Сектор обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (8162) 60-77-27</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (8162) 60-77-27 доб.9999</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">mail@csm.nov.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">http://rustest.spb.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1027810289286</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">7809018702</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">783901001</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Бетке Сергей Сергеевич</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">+ 7 (911) 649-90-80</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Профессиональная инструкция электромонтёра по ремонту и обслуживанию электрооборудования 2 разряда сектора обеспечения функционирования филиала</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"/></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ГрифДоступа" office:value-type="string">Общедоступно</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"/>
+			</text:section>
+			<text:section text:name="БланкОРДПервыйЛистПрофессиональнойИнструкции" text:protected="true">
+				<text:p text:style-name="БланкОРДПервыйЛистПрофессиональнойИнструкции"/>
+			</text:section>
+			<text:section text:name="Содержание">
+				<text:list xml:id="list1839347498" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Электромонтёр по ремонту и обслуживанию электрооборудования 2-го разряда
+								(далее — Работник) непосредственно подчиняется
+								начальнику
+								сектора по обеспечению функционирования филиала (далее — Сектор)
+								Новгородского филиала (далее — Филиал)
+								Федерального бюджетного учреждения «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области» (далее – Центр).</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Основными задачами Работника являются:</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list1189657802" text:style-name="List_20_2">
+					<text:list-item>
+						<text:p text:style-name="Основной">монтаж, содержание и ремонт сетей электроснабжения;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">монтаж, содержание и ремонт систем защитного заземления;</text:p>
+					</text:list-item>
+					<text:list-item>
+						<text:p text:style-name="Основной">монтаж, содержание и ремонт систем технологического учёта потребляемых ресурсов.</text:p>
+					</text:list-item>
+				</text:list>
+				<text:list xml:id="list112539374208425" text:continue-list="list1839347498" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник осуществляет свою работу на основании трудового договора, Положения о
+								Секторе
+								и настоящей должностной инструкции.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">У Работника подчинённых нет.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник назначается на должность и освобождается от занимаемой должности приказом по
+								ФБУ «Тест‑С.‑Петербург»
+								по представлению директора Филиала.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Квалификационные требования</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">На должность назначается лицо, имеющее имеющее среднее профессиональное образование и специальную подготовку без предъявления требований к стажу работы.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник должен знать и уметь применять на практике:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила устройства электроустановок;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">устройство и принцип работы электродвигателей, генераторов, трансформаторов, коммутационной и пускорегулирующей аппаратуры, аккумуляторов и электроприборов;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">основные виды электротехнических материалов, их свойства и назначение;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила, способы монтажа и ремонта электрооборудования;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">наименование, назначение и правила использования применяемых рабочих и контрольно-измерительных инструментов;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">приёмы и способы замены, сращивания и пайки проводов низкого напряжения;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы выявления и устранения неисправности электрооборудования;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы обслуживания и ремонта электроустановок, в том числе — ВРУ;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок использования пневмо- и электроинструмента;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок подключения и отключения электрооборудования, выполнять измерения параметров электрической энергии;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок измерения параметров электрической энергии;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок разделки, сращивания, изолирования и пайки проводов напряжением до 1000&#160;В;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок монтажа и ремонта распределительных коробок, клеммников, предохранительных щитков и осветительной арматуры;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы чистить контактов и контактных поверхностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и способы прокладки кабелей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы выполнения простых слесарных, монтажных и плотницких работ при ремонте электрооборудования;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы измерения сопротивления изоляции распределительных сетей, статоров и роторов электродвигателей, обмоток трансформаторов, вводов и выводов кабелей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">порядок и методы определения сопротивления заземляющих устройств;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила оказания первой помощи при поражении электрическим током;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила техники безопасности при обслуживании электроустановок в объеме квалификационной III&#160;группы;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">внутренний трудовой распорядок Центра.</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">профиль и структуру Центра и Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">основные функции подразделений Центра и Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">приказы и распоряжения Центра, регулирующие вопросы, входящие в компетенцию Филиала;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">документы системы менеджмента Центра и Филиала.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник в установленном порядке проходит тарификацию и повышение квалификации согласно плану Центра.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник в установленном порядке проходит аттестацию на группу допуска по электробезопасности не реже, чем один раз в год.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Обязанности</text:h>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной_20_текст_20_документа">Работник обязан:</text:p>
+				<text:list xml:id="list112538802144528" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">выявлять и устранять неисправности электрооборудования и сетей электроснабжения, систем защитного и функционального заземления;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">обслуживать и ремонтировать электроустановки, в том числе — выполнять работы на ВРУ, монтировать и ремонтировать электрощиты;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">подключать и отключать электрооборудование;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">выполнять измерения параметров электрической энергии;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">разделывать, сращивать, изолировать и паять провода напряжением до 1000&#160;В;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">монтировать и ремонтировать распределительные коробки, клеммники, предохранительные щитки и осветительную арматуру;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">чистить контакты и контактные поверхности;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">прокладывать кабели;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">выполнять простые слесарные, монтажные и плотничные работы при ремонте электрооборудования;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">измерять сопротивления изоляции распределительных сетей, статоров и роторов электродвигателей, обмоток трансформаторов, вводов и выводов кабелей;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">определять сопротивление заземляющих устройств;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать правила техники безопасности при обслуживании электроустановок;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">выполнять корректирующие мероприятия;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">поддерживать своевременное внесение записей в документацию подразделения;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">систематически повышать собственную профессиональную компетентность и квалификацию;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать установленный порядок хранения документов и материальных ценностей;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать правила и нормы охраны труда, производственной санитарии, электробезопасности и пожарной безопасности;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать установленные требования по вопросам обеспечения информационной безопасности, в том числе при обработке персональных данных;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать правила внутреннего трудового распорядка.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать в своей деятельности требования системы менеджмента качества, установленные в Руководстве по качеству и документированных процедурах системы менеджмента;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">соблюдать нормы этики делового общения;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">занимать активную позицию в борьбе с профессиональной недобросовестностью;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">не создавать конфликтные ситуации на рабочем месте;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">не совершать действий, которые дискредитируют профессию и репутацию коллег;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">не допускать клевету и распространение сведений, порочащих Центр, иные организации и коллег.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Права</text:h>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной_20_текст_20_документа">Работник имеет право:</text:p>
+				<text:list xml:id="list112540159702221" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">требовать прекращения работы на неисправном оборудовании, а также в случае несоблюдения техники безопасности и противопожарной защиты;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">знакомиться с приказами и распоряжениями, касающимися его деятельности;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">участвовать в обсуждении вопросов, касающихся исполняемых им обязанностей;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">запрашивать от соответствующих структурных подразделений Филиала и Центра предоставления информации и документов, необходимых для осуществления деятельности, входящей в его компетенцию;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">вносить предложения руководителю Сектора по улучшению деятельности;</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">принимать участие в общих собраниях трудового коллектива Центра и вносить свои предложения.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Ответственность</text:h>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник несёт ответственность за:</text:p>
+								<text:list>
+									<text:list-item>
+										<text:p text:style-name="Основной">непринятие мер по пресечению выявленных нарушений правил техники безопасности, противопожарных и других правил, создающих угрозу деятельности учреждения и его работникам;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">невыполнение и ненадлежащее выполнение своих обязанностей;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">выполнение требований к качеству работ и услуг в соответствии с должностными обязанностями;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">правильность и полноту использования предоставленных ему прав;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">обеспечение выполнения плановых заданий;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдение требований системы менеджмента качества;</text:p>
+									</text:list-item>
+									<text:list-item>
+										<text:p text:style-name="Основной">соблюдение правил внутреннего трудового распорядка Центра.</text:p>
+									</text:list-item>
+								</text:list>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Работник несёт в установленном порядке материальную ответственность за ущерб, причинённый Центру, в соответствии с трудовым и уголовным законодательством Российской Федерации.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+			</text:section>
+			<text:section text:name="Подписи">
+				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник сектора обеспечения функционирования филиала</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.Э. Гущин</text:variable-get></text:span></text:p>
+			</text:section>
+			<text:section text:name="Визы и сведения об ознакомлении">
+				<text:p text:style-name="БланкОРДЛистСогласования"/>
+				<text:section text:name="Визы">
+					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
+					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:section text:name="Поле даты">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
+					</text:section>
+					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:section text:name="Поле даты">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
+					</text:section>
+				</text:section>
+				<text:section text:name="Сведения об ознакомлении">
+					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Электромонтёр по ремонту и обслуживанию электрооборудования 2 разряда</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.А. Васяшин</text:span></text:p>
+					<text:section text:name="Поле даты">
+						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
+					</text:section>
+				</text:section>
+			</text:section>
+			<!-- #endregion Пример профессиональной инструкции -->
 			<!-- #region(collapsed) Пример служебной записки -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
