@@ -13,3 +13,6 @@ jobs:
         with:
           modules: PSRule.Rules.GitHub, PSRule.Rules.MSFT.OSS
           prerelease: true
+
+      - name: Check License Lines
+        uses: kt3k/license_checker@master
