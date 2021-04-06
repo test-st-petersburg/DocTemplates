@@ -1,3 +1,6 @@
+# Copyright © 2020 Sergei S. Betke
+# Author: Sergei S. Betke.
+
 <#
 	.SYNOPSIS
 		Создаёт каталог библиотеки макросов из папки с "исходными" файлами

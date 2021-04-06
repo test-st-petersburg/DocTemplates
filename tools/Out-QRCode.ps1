@@ -1,4 +1,7 @@
-﻿#Requires -Version 5.0
+﻿# Copyright © 2020 Sergei S. Betke
+# Author: Sergei S. Betke.
+
+#Requires -Version 5.0
 
 <#
 	.SYNOPSIS

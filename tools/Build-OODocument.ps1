@@ -1,4 +1,7 @@
-﻿<#
+﻿# Copyright © 2020 Sergei S. Betke
+# Author: Sergei S. Betke.
+
+<#
 	.SYNOPSIS
 		Создаёт open office файлы из папки с xml файлами
 #>

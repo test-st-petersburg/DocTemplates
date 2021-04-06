@@ -1,4 +1,7 @@
-﻿<#
+﻿# Copyright © 2020 Sergei S. Betke
+# Author: Sergei S. Betke.
+
+<#
 	.SYNOPSIS
 		Возвращает исполняемый объект XSLT трансформации на базе Saxon HE.
 #>

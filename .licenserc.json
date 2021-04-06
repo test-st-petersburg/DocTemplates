@@ -1,4 +1,10 @@
 {
-    "NOTICE": "Copyright © 2020 Sergei S. Betke\nAuthor: Sergei S. Betke.",
-    "tools/*.ps1": "# Copyright © 2020 Sergei S. Betke\n# Author: Sergei S. Betke."
+    "NOTICE": [
+        "Copyright © 2020 Sergei S. Betke",
+        "Author: Sergei S. Betke."
+    ],
+    "tools/*.ps1": [
+        "# Copyright © 2020 Sergei S. Betke",
+        "# Author: Sergei S. Betke."
+    ]
 }
