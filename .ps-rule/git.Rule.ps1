@@ -1,6 +1,4 @@
-#Requires -Modules PSRule
-
-# Synopsis: Check for recommended community files
-Rule 'GitHub.Community' -Type 'PSRule.Data.RepositoryInfo' {
+Rule 'Git.Repo.Files' -Type 'PSRule.Data.RepositoryInfo' {
+	Recommend '.gitattributes file must be exists'
 	$Assert.FilePath($TargetObject, 'FullName', @( '.gitattributes' ));
 }

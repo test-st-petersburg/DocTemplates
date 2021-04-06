@@ -1,6 +1,4 @@
-#Requires -Modules PSRule
-
-# Synopsis: Check for recommended community files
-Rule 'GitHub.Community' -Type 'PSRule.Data.RepositoryInfo' {
+Rule 'Invoke-Build.Config' -Type 'PSRule.Data.RepositoryInfo' {
+	Recommend 'Invoke-Build .build.ps1 file must be exists'
 	$Assert.FilePath($TargetObject, 'FullName', @( '.build.ps1' ));
 }
