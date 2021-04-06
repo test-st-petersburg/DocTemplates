@@ -11,5 +11,5 @@ jobs:
       - name: Run PSRule analysis
         uses: Microsoft/ps-rule@main
         with:
-          modules: PSRule.Rules.GitHub
+          modules: PSRule.Rules.GitHub, PSRule.Rules.MSFT.OSS
           prerelease: true
