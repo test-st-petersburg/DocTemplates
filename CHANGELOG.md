@@ -6,6 +6,8 @@
 
 Исправлены ошибки:
 
+- после абзаца со стилем "ЗаголовокВиз" должен следовать абзац со стилем визы (Виза2)
+  [#112](https://github.com/test-st-petersburg/DocTemplates/issues/112)
 - заменены в шаблоне распоряжения слова "приказываю" на "обязываю" либо "предлагаю".
   [#113](https://github.com/test-st-petersburg/DocTemplates/issues/113)
 
