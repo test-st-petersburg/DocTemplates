@@ -48,7 +48,7 @@
 				<text:p text:style-name="Основной">В связи с разработкой
 					<text:variable-get text:name="ВводитВДействиеРегистрационныйНомер">СК 04/460‑01.02‑31‑2020/ред.1</text:variable-get>
 					«<text:variable-get text:name="ВводитВДействиеТема">Положение об обеспечении средствами индивидуальной защиты работников Новгородского филиала</text:variable-get>»
-					<text:span text:style-name="Приказываю">приказываю</text:span>:</text:p>
+					<text:span text:style-name="Приказываю">обязываю</text:span>:</text:p>
 				<text:list xml:id="list1336077129" text:style-name="Numbering_20_123">
 					<text:list-item>
 						<text:p text:style-name="Основной">Утвердить
@@ -62,7 +62,7 @@
 							<text:variable-get text:name="ВводитВДействиеСДаты">20.07.2020</text:variable-get>.</text:p>
 					</text:list-item>
 					<text:list-item>
-						<text:p text:style-name="Основной">Инженеру Черемисиновой В.Н. ознакомить в СЭД работников Новгородского филиала с
+						<text:p text:style-name="Основной">Инженера Черемисинову В.Н. ознакомить в СЭД работников Новгородского филиала с
 							<text:variable-get text:name="ВводитВДействиеРегистрационныйНомер">СК 04/460‑01.02‑31‑2020/ред.1</text:variable-get>
 							«<text:variable-get text:name="ВводитВДействиеТема">Положение об обеспечении средствами индивидуальной защиты работников Новгородского филиала</text:variable-get>»
 							в срок до <text:variable-get text:name="ВводитВДействиеОзнакомитьДоДаты">30.07.2020</text:variable-get>.</text:p>
