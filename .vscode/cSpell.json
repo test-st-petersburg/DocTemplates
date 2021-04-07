@@ -27,6 +27,7 @@
         "codecov",
         "codeql",
         "commitlint",
+        "compat",
         "concat",
         "datastyle",
         "dirstate",
