@@ -1,0 +1,36 @@
+name: Static Scan
+
+on: [push, pull_request]
+
+jobs:
+  static-scan:
+    # https://github.com/github/codeql-action
+    name: Static Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+
+      # - name: Run Codacy Analysis CLI
+      #   uses: codacy/codacy-analysis-cli-action@master
+      #   with:
+      #     output: results.sarif
+      #     format: sarif
+      #     gh-code-scanning-compat: true
+      #     max-allowed-issues: 2147483647
+
+      # - name: Upload SARIF results file
+      #   uses: github/codeql-action/upload-sarif@main
+      #   with:
+      #     sarif_file: results.sarif
+
+      - name: Check License Lines
+        uses: kt3k/license_checker@master
