@@ -1,4 +1,4 @@
-name: Check repository
+name: Build and test
 on: [push]
 jobs:
   analyze:
@@ -10,7 +10,7 @@ jobs:
 
       - name: Install required PowerShell modules
         uses: Amadevus/pwsh-script@v2
-        id: script
+        id: InstallDependencies
         with:
           script: |
             Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
@@ -19,7 +19,7 @@ jobs:
 
       - name: Build .ott and .odt files
         uses: Amadevus/pwsh-script@v2
-        id: script
+        id: Build
         with:
           script: |
             Import-Module -Name InvokeBuild;
