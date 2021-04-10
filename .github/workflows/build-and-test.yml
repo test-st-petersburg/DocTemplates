@@ -23,7 +23,7 @@ jobs:
             Install-Module PowerShellModule;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
-            Install-Package -Name Saxon-HE -MinimumVersion '10.2' -MaximumVersion '10.2.999' -Verbose;
+            Install-Package -Name Saxon-HE -Source nuget.org -SkipValidate;
             # Install-Package -Name QRCoder;
 
       - name: Install choco packages
