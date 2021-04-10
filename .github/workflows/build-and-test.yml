@@ -1,9 +1,9 @@
 name: Build and test
 on: [push]
 jobs:
-  analyze:
-    name: Analyze repository
-    runs-on: ubuntu-latest
+  build-and-test:
+    name: Build and test
+    runs-on: windows-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,6 +16,13 @@ jobs:
             Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
+
+      - name: Install choco packages
+        uses: Amadevus/pwsh-script@v2
+        id: InstallChocoPackages
+        with:
+          script: |
+            choco install gitversion.portable -y
 
       - name: Build .ott and .odt files
         uses: Amadevus/pwsh-script@v2
