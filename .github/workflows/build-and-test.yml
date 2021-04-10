@@ -14,7 +14,7 @@ jobs:
         with:
           script: |
             Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-            Add-PackageSource -Name nuget.org -ProviderName NuGet -Location 'https://api.nuget.org/v3/index.json' -Trusted;
+            Register-PackageSource -Name nuget.org -ProviderName NuGet -Location 'https://api.nuget.org/v3/index.json' -Trusted;
             [Net.ServicePointManager]::SecurityProtocol =
               [Net.SecurityProtocolType]::Tls12 -bor `
               [Net.SecurityProtocolType]::Tls11 -bor `
