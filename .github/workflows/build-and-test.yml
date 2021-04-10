@@ -16,7 +16,7 @@ jobs:
             Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
-            Install-Package -Name Saxon-HE -Verbose;
+            Install-Package -Name Saxon-HE -ProviderName NuGet -Verbose;
 
       - name: Install choco packages
         uses: Amadevus/pwsh-script@v2
