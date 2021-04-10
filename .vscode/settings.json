@@ -6,6 +6,9 @@
 		"Thumbs.db": true,
 		"**/.~lock.*": true
 	},
+	"files.associations": {
+		"**/packages.config": "xml"
+	},
 	"shellcheck.exclude": [
 		"1017"
 	],
