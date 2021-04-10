@@ -1,0 +1,19 @@
+name: Check repository
+on: [push]
+jobs:
+  analyze:
+    name: Analyze repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Checkout repository
+        uses: Amadevus/pwsh-script@v2
+        id: script
+        with:
+          script: |
+            Import-Module -Name InvokeBuild -Verbose;
+            Import-Module -Name 7Zip4Powershell -Verbose;
+
+            Invoke-Build -Task Build -Verbose;
