@@ -13,7 +13,7 @@ jobs:
         id: script
         with:
           script: |
-            Import-Module -Name InvokeBuild -Verbose;
-            Import-Module -Name 7Zip4Powershell -Verbose;
+            Install-Module -Name InvokeBuild -Verbose;
+            Install-Module -Name 7Zip4Powershell -Verbose;
 
             Invoke-Build -Task Build -Verbose;
