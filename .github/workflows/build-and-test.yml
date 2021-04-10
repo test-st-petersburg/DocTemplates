@@ -8,12 +8,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Checkout repository
+      - name: Install required PowerShell modules
         uses: Amadevus/pwsh-script@v2
         id: script
         with:
           script: |
+            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
 
+      - name: Build .ott and .odt files
+        uses: Amadevus/pwsh-script@v2
+        id: script
+        with:
+          script: |
+            Import-Module -Name InvokeBuild;
             Invoke-Build -Task Build -Verbose;
