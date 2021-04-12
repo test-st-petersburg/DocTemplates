@@ -27,11 +27,16 @@ jobs:
             # Install-Package -Name QRCoder;
 
       - name: Install choco packages
-        uses: Amadevus/pwsh-script@v2
-        id: InstallChocoPackages
+        run: |
+          choco install gitversion.portable -y
+
+      - name: Install NuGet
+        uses: nuget/setup-nuget@v1
         with:
-          script: |
-            choco install gitversion.portable -y
+          nuget-version: "latest"
+
+      - name: Install NuGet packages
+        run: nuget restore tools\packages.config -NonInteractive -PackagesDirectory tools\packages
 
       - name: Build .ott and .odt files
         uses: Amadevus/pwsh-script@v2
