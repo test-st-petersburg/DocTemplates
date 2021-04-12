@@ -14,7 +14,7 @@ jobs:
         with:
           script: |
             Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-            Register-PackageSource -Name nuget.org -ProviderName NuGet -Location 'https://api.nuget.org/v3/index.json' -Trusted;
+            # Register-PackageSource -Name nuget.org -ProviderName NuGet -Location 'https://api.nuget.org/v3/index.json' -Trusted;
             [Net.ServicePointManager]::SecurityProtocol =
               [Net.SecurityProtocolType]::Tls12 -bor `
               [Net.SecurityProtocolType]::Tls11 -bor `
@@ -23,7 +23,7 @@ jobs:
             Install-Module PowerShellModule;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
-            Install-Package -Name Saxon-HE -Source nuget.org | Out-Null;
+            # Install-Package -Name Saxon-HE -Source nuget.org | Out-Null;
             # Install-Package -Name QRCoder;
 
       - name: Install choco packages
