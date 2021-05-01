@@ -27,6 +27,9 @@ jobs:
         run: |
           choco install gitversion.portable -y
 
+      - name: set up Java machine
+        uses: actions/setup-java@v1
+
       - name: Install NuGet
         uses: nuget/setup-nuget@v1
         with:
