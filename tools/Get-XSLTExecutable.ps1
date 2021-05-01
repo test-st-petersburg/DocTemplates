@@ -114,11 +114,7 @@ try
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	$saxonLibPath = Join-Path -Path ( Split-Path -Path ( $saxonPackage.Source ) -Parent ) `
-		-ChildPath 'lib\net40\saxon9he-api.dll';
+	$saxonLibPath = Join-Path -Path $PSScriptRoot -ChildPath 'packages\Saxon-HE.9.8.0.15\lib\net40\saxon9he-api.dll';
 	Add-Type -Path $saxonLibPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -147,7 +143,7 @@ try
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XLST package' ) )
+				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
 				{
 					$saxCompiler.ImportPackage( $saxPackage );
 				};
