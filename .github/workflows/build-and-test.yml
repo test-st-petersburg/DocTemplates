@@ -33,7 +33,7 @@ jobs:
           nuget-version: "latest"
 
       - name: Install NuGet packages
-        run: nuget restore tools\packages.config -NonInteractive -PackagesDirectory tools\packages
+        run: nuget restore tools\packages.config -NonInteractive -PackagesDirectory tools\packages -Source https://api.nuget.org/v3/index.json
 
       - name: Build .ott and .odt files
         uses: Amadevus/pwsh-script@v2
