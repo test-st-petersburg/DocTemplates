@@ -8,11 +8,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup DotNet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "4.0.x"
-
       - name: Install required PowerShell modules
         uses: Amadevus/pwsh-script@v2
         id: InstallDependencies
@@ -34,7 +29,7 @@ jobs:
 
       - uses: actions/setup-java@v2
         with:
-          distribution: "zulu"
+          distribution: "adopt"
           java-version: "11"
           check-latest: true
 
