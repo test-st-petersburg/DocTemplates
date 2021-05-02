@@ -29,8 +29,8 @@ jobs:
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
             Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose;
-            Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet;
-            # Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies;
+            Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet | Out-Null;
+            # Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies | Out-Null;
 
       - name: Install choco packages
         run: |
