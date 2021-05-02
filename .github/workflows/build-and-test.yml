@@ -14,40 +14,28 @@ jobs:
           java-version: "8"
           check-latest: true
 
-      - name: Install required PowerShell and NuGet modules
-        uses: Amadevus/pwsh-script@v2
-        id: InstallDependencies
-        with:
-          script: |
-            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-            [Net.ServicePointManager]::SecurityProtocol =
-              [Net.SecurityProtocolType]::Tls12 -bor `
-              [Net.SecurityProtocolType]::Tls11 -bor `
-              [Net.SecurityProtocolType]::Tls;
-            Install-Module PackageManagement -RequiredVersion 1.3.1 | Out-Null;
-            Install-Module PowerShellModule | Out-Null;
-            Install-Module -Name InvokeBuild -Verbose | Out-Null;
-            Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
-            Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
-            Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
-            Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies -Verbose | Out-Null;
-
       - name: Install choco packages
         run: |
           choco install gitversion.portable -y
 
+      - name: Install required PowerShell and NuGet modules
+        shell: powershell
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+          [Net.ServicePointManager]::SecurityProtocol =
+            [Net.SecurityProtocolType]::Tls12 -bor `
+            [Net.SecurityProtocolType]::Tls11 -bor `
+            [Net.SecurityProtocolType]::Tls;
+          Install-Module PackageManagement -RequiredVersion 1.3.1 | Out-Null;
+          Install-Module PowerShellModule | Out-Null;
+          Install-Module -Name InvokeBuild -Verbose | Out-Null;
+          Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
+          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
+          Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
+          Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies -Verbose | Out-Null;
+
       - name: Build .ott and .odt files
-        uses: Amadevus/pwsh-script@v2
-        id: Build
-        with:
-          script: |
-            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-            [Net.ServicePointManager]::SecurityProtocol =
-              [Net.SecurityProtocolType]::Tls12 -bor `
-              [Net.SecurityProtocolType]::Tls11 -bor `
-              [Net.SecurityProtocolType]::Tls;
-            Install-Module PackageManagement -RequiredVersion 1.3.1 | Out-Null;
-            Install-Module PowerShellModule | Out-Null;
-            Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
-            Import-Module -Name InvokeBuild | Out-Null;
-            Invoke-Build -Task Build -Verbose;
+        shell: powershell
+        run: |
+          Import-Module -Name InvokeBuild | Out-Null;
+          Invoke-Build -Task Build -Verbose;
