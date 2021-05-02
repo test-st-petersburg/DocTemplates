@@ -41,10 +41,6 @@ jobs:
         id: Build
         with:
           script: |
-            Import-Module -Name InvokeBuild;
-            if ( ( Get-PackageProvider -ListAvailable | Where-Object { $_.Name -eq 'NuGet' } ).Count -eq 0 )
-            {
-              Install-PackageProvider -Name NuGet -Force | Out-Null;
-              Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
-            };
+            Import-Module -Name InvokeBuild | Out-Null;
+            Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
             Invoke-Build -Task Build -Verbose;
