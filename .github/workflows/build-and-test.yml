@@ -22,9 +22,9 @@ jobs:
         shell: powershell
         run: |
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-          Set-PackageSource -Name nuget -Trusted;
           Install-Module -Name InvokeBuild -Verbose | Out-Null;
           Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
+          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
           Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies -Verbose | Out-Null;
 
