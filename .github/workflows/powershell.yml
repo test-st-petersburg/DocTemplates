@@ -1,7 +1,7 @@
 # https://github.com/microsoft/psscriptanalyzer-action
 # https://github.com/PowerShell/PSScriptAnalyzer
 
-name: PSScriptAnalyzer
+name: Check PowerShell code quality
 
 on: [push, pull_request]
 
