@@ -19,7 +19,7 @@ jobs:
           # The below set up runs PSScriptAnalyzer to your entire repository and runs some basic security rules.
           includeDefaultRules: true
           severity: '"Error", "Warning"'
-          path: .\tools
+          path: .\tools\
           recurse: true
           output: results.sarif
 
