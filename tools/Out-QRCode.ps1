@@ -33,6 +33,7 @@ begin
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$QRCoderPackage = Get-Package -Name 'QRCoder' `
+		-ProviderName NuGet `
 		-SkipDependencies `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );

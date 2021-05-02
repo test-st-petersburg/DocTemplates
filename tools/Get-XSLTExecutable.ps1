@@ -115,6 +115,7 @@ try
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
+		-ProviderName NuGet `
 		-SkipDependencies `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
