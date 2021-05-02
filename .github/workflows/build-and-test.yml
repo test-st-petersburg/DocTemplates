@@ -21,6 +21,8 @@ jobs:
       - name: Install required PowerShell and NuGet modules
         shell: powershell
         run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+          Set-PackageSource -Name 'nuget.org' -Trusted;
           Install-Module -Name InvokeBuild -Verbose | Out-Null;
           Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
