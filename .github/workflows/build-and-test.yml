@@ -8,7 +8,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install required PowerShell modules
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "8"
+          check-latest: true
+
+      - name: Install required PowerShell and NuGet modules
         uses: Amadevus/pwsh-script@v2
         id: InstallDependencies
         with:
@@ -22,24 +28,12 @@ jobs:
             Install-Module PowerShellModule;
             Install-Module -Name InvokeBuild -Verbose;
             Install-Module -Name 7Zip4Powershell -Verbose;
+            Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet;
+            Install-Package -Name 'QRCoder' -ProviderName NuGet;
 
       - name: Install choco packages
         run: |
           choco install gitversion.portable -y
-
-      - uses: actions/setup-java@v2
-        with:
-          distribution: "adopt"
-          java-version: "8"
-          check-latest: true
-
-      - name: Install NuGet
-        uses: nuget/setup-nuget@v1
-        with:
-          nuget-version: "latest"
-
-      - name: Install NuGet packages
-        run: nuget restore tools\packages.config -NonInteractive -PackagesDirectory tools\packages -Source https://api.nuget.org/v3/index.json
 
       - name: Build .ott and .odt files
         uses: Amadevus/pwsh-script@v2

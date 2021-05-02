@@ -32,7 +32,12 @@ begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$LibPath = Join-Path -Path $PSScriptRoot -ChildPath 'packages\QRCoder.1.4.1\lib\net40\QRCoder.dll';
+	$QRCoderPackage = Get-Package -Name 'QRCoder' `
+		-SkipDependencies `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	$LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
+		-ChildPath 'lib\net40\QRCoder.dll';
 	Add-Type -Path $LibPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
