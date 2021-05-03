@@ -45,3 +45,17 @@ jobs:
           Import-Module -Name InvokeBuild | Out-Null;
           Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
           Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}' -Verbose;
+
+      - name: Upload .ott files
+        uses: actions/upload-artifact@v2
+        with:
+          name: doc-templates
+          path: "${{ github.workspace }}/output/template/*.ott"
+          if-no-files-found: warn
+
+      - name: Upload .odt files
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: "${{ github.workspace }}/output/doc/*.odt"
+          if-no-files-found: warn
