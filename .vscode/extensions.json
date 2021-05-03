@@ -4,6 +4,7 @@
 	"recommendations": [
 		"cschleiden.vscode-github-actions",
 		"gimenete.github-linker",
+		"jasonnutter.vscode-codeowners",
 		"ymotongpoo.licenser",
 		"eamodio.gitlens",
 		"vector-of-bool.gitflow",
