@@ -1,4 +1,6 @@
-﻿<#
+﻿# Copyright © 2020 Sergei S. Betke
+
+<#
 	.SYNOPSIS
 		Удаляет мусур в content.xml файлах open office документов
 #>

@@ -2,6 +2,9 @@
 	// See http://go.microsoft.com/fwlink/?LinkId=827846
 	// for the documentation about the extensions.json format
 	"recommendations": [
+		"cschleiden.vscode-github-actions",
+		"gimenete.github-linker",
+		"jasonnutter.vscode-codeowners",
 		"ymotongpoo.licenser",
 		"eamodio.gitlens",
 		"vector-of-bool.gitflow",
@@ -22,6 +25,6 @@
 		"hsse-development.gitversionview",
 		"kisstkondoros.vscode-gutter-preview",
 		"deltaxml.xslt-xpath",
-		"eg2.vscode-npm-script",
+		"eg2.vscode-npm-script"
 	]
 }
