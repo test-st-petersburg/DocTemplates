@@ -11,8 +11,8 @@ on:
 permissions:
   actions: read
   contents: read
-  deployments: read|write
-  issues: read
+  deployments: write
+  issues: write
 
 jobs:
   release:
