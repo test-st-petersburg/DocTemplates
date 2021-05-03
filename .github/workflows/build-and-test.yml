@@ -1,8 +1,10 @@
 name: Build and test
+
 on: [push]
+
 jobs:
-  build-and-test:
-    name: Build and test
+  build:
+    name: Build
     runs-on: windows-latest
     steps:
       - name: Checkout repository
