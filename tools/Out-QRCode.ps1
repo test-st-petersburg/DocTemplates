@@ -1,4 +1,6 @@
-﻿#Requires -Version 5.0
+﻿# Copyright © 2020 Sergei S. Betke
+
+#Requires -Version 5.0
 
 <#
 	.SYNOPSIS
@@ -26,10 +28,13 @@ Param(
 	$Force
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$QRCoderPackage = Get-Package -Name 'QRCoder' `
+		-ProviderName NuGet `
+		-SkipDependencies `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	$LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
@@ -40,7 +45,8 @@ begin {
 
 	[QRCoder.QRCodeGenerator] $QRGenerator = New-Object -TypeName QRCoder.QRCodeGenerator;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode($Input, [QRCoder.QRCodeGenerator+ECCLevel]::Q);
@@ -48,12 +54,16 @@ process {
 	$ImageData = $QRCode.GetGraphic( $Width );
 
 	[System.String] $FullFilePath;
-	if ( [System.IO.Path]::IsPathRooted( $FilePath ) ) {
+	if ( [System.IO.Path]::IsPathRooted( $FilePath ) )
+	{
 		$FullFilePath = $FilePath;
-	} else {
+	}
+	else
+	{
 		$FullFilePath = Join-Path -Path ( ( Get-Location -PSProvider FileSystem ).Path ) -ChildPath $FilePath;
 	};
-	if ( $PSCmdlet.ShouldProcess( $FullFilePath, 'Write QRCode to file' ) ){
+	if ( $PSCmdlet.ShouldProcess( $FullFilePath, 'Write QRCode to file' ) )
+	{
 		[System.IO.File]::WriteAllBytes( $FullFilePath, $ImageData );
 	};
 }

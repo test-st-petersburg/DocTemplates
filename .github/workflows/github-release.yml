@@ -1,0 +1,75 @@
+name: Release to GihHub
+
+on:
+  push:
+    branches:
+      - master
+
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  actions: read
+  contents: read
+  deployments: read|write
+  issues: read
+
+jobs:
+  release:
+    name: Release to GihHub
+    # needs: []
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "8"
+          check-latest: true
+
+      - name: Install required PowerShell and NuGet modules
+        shell: powershell
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+          Install-Module -Name InvokeBuild -Verbose | Out-Null;
+          Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
+          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
+          Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
+          Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies -Verbose | Out-Null;
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.9
+        with:
+          versionSpec: "5.x"
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.9
+        with:
+          useConfigFile: true
+
+      - name: Build .ott and .odt files
+        shell: powershell
+        run: |
+          Import-Module -Name InvokeBuild | Out-Null;
+          Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
+          Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}' -Verbose;
+
+      - name: Install GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/setup@v0.9.9
+        with:
+          versionSpec: "0.11.x"
+
+      - name: Create release with GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/create@v0.9.9
+        with:
+          token: ${{ github.token }}
+          owner: ${{ github.repository_owner }}
+          repository: ${{ github.repository.name }}
+          assets: |
+            ${{ github.workspace }}/output/template/*.ott
+            ${{ github.workspace }}/output/doc/*.odt

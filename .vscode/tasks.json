@@ -9,7 +9,7 @@
 		"focus": false,
 		"echo": true,
 		"panel": "shared",
-		"clear": true,
+		"clear": true
 	},
 	"problemMatcher": {
 		"owner": "custom",
@@ -92,6 +92,6 @@
 			"label": "Build Open Office macro libraries containers",
 			"group": "build",
 			"command": "Invoke-Build -Task BuildLibContainers -Verbose"
-		},
+		}
 	]
 }

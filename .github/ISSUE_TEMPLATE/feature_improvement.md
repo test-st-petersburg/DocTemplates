@@ -1,8 +1,8 @@
 ---
-name: Запрос возможности
-about: Предложите улучшения
+name: Улучшение функционала
+about: Предложение улучшения существующего функционала
 title: ''
-labels: Feature
+labels: Improvement
 assignees: ''
 
 ---

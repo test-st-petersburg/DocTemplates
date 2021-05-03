@@ -1,0 +1,44 @@
+# https://github.com/microsoft/psscriptanalyzer-action
+# https://github.com/PowerShell/PSScriptAnalyzer
+
+name: Check PowerShell code quality
+
+on:
+  push:
+    paths:
+      - "tools/**/*.ps1"
+      - "tools/**/*.psm1"
+      - "tools/**/*.psd1"
+
+  pull_request:
+    paths:
+      - "tools/**/*.ps1"
+      - "tools/**/*.psm1"
+      - "tools/**/*.psd1"
+
+jobs:
+  analyze:
+    name: PSScriptAnalyzer
+    runs-on: windows-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run PSScriptAnalyzer
+        uses: microsoft/psscriptanalyzer-action@v1.0
+        with:
+          # Check https://github.com/microsoft/psscriptanalyzer-action for more info about the options.
+          # The below set up runs PSScriptAnalyzer to your entire repository and runs some basic security rules.
+          includeDefaultRules: true
+          severity: '"Error", "Warning"'
+          path: .\tools\
+          recurse: true
+          output: results.sarif
+
+      - name: Upload SARIF results file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: results.sarif
