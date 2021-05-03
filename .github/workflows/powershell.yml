@@ -3,7 +3,18 @@
 
 name: Check PowerShell code quality
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "tools/**/*.ps1"
+      - "tools/**/*.psm1"
+      - "tools/**/*.psd1"
+
+  pull_request:
+    paths:
+      - "tools/**/*.ps1"
+      - "tools/**/*.psm1"
+      - "tools/**/*.psd1"
 
 jobs:
   analyze:
