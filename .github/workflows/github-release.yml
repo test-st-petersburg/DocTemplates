@@ -2,8 +2,8 @@ name: Release to GihHub
 
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
 
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
@@ -69,7 +69,7 @@ jobs:
         with:
           token: ${{ github.token }}
           owner: ${{ github.repository_owner }}
-          repository: ${{ github.repository.name }}
+          repository: ${{ github.event.repository.name }}
           assets: |
             ${{ github.workspace }}/output/template/*.ott
             ${{ github.workspace }}/output/doc/*.odt
