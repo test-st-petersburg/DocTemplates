@@ -1,6 +1,19 @@
 name: Build and test
 
-on: [push]
+on:
+  push:
+    paths:
+      - ".github/workflows/build-and-test.yml"
+      - "src/**"
+      - "tools/**"
+      - ".build.ps1"
+
+  pull_request:
+    paths:
+      - ".github/workflows/build-and-test.yml"
+      - "src/**"
+      - "tools/**"
+      - ".build.ps1"
 
 jobs:
   build:
