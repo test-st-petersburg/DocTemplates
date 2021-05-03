@@ -70,6 +70,7 @@ jobs:
           token: ${{ github.token }}
           owner: ${{ github.repository_owner }}
           repository: ${{ github.event.repository.name }}
+          inputFilePath: CHANGELOG.md
           assets: |
             output/template/*.ott
             output/doc/*.odt
