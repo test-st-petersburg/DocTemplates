@@ -71,5 +71,5 @@ jobs:
           owner: ${{ github.repository_owner }}
           repository: ${{ github.event.repository.name }}
           assets: |
-            ${{ github.workspace }}/output/template/*.ott
-            ${{ github.workspace }}/output/doc/*.odt
+            output/template/*.ott
+            output/doc/*.odt
