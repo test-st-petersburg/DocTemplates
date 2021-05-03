@@ -30,7 +30,10 @@ module.exports = {
       "ott",
       "odt",
       "design",
+      "vscode",
       "git",
+      "github",
+      "github-actions",
       "other",
       "changelog",
       "readme"

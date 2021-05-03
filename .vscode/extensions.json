@@ -3,6 +3,7 @@
 	// for the documentation about the extensions.json format
 	"recommendations": [
 		"cschleiden.vscode-github-actions",
+		"gimenete.github-linker",
 		"ymotongpoo.licenser",
 		"eamodio.gitlens",
 		"vector-of-bool.gitflow",
