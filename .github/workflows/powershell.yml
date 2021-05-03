@@ -6,9 +6,13 @@ name: Check PowerShell code quality
 on: [push, pull_request]
 
 jobs:
-  build:
+  analyze:
     name: PSScriptAnalyzer
     runs-on: windows-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     steps:
       - uses: actions/checkout@v2
 
