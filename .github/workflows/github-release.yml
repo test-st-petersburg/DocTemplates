@@ -84,9 +84,10 @@ jobs:
             }
           ) -join "`r`n";
           $releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
-          echo "::set-output name=releaseNotesPath::$releaseNotesPath"
+          echo "::set-output name=releaseNotesPath::$releaseNotesPath";
 
       - name: Create GitHub Release
+        id: release
         shell: powershell
         run: |
           Import-Module -Name PowerShellForGitHub | Out-Null;
@@ -106,6 +107,8 @@ jobs:
             -Body $releaseDescription `
             -Committish '${{ github.sha }}' `
             -Verbose;
+          echo "::set-output name=url::$( $release.url )";
+          echo "::set-output name=tag_name::$( $release.tag_name )";
           Write-Verbose 'Adding produced files...';
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path '${{ steps.build.outputs.assetsContainerPath }}' -Verbose;
           # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
@@ -127,7 +130,10 @@ jobs:
             -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}';
           $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
           if ( $currentMilestone ) {
-            $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+            $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+            $releaseDescription = "Данный этап закрыт в рамках выпуска " +
+              "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-2.3.8-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
+              ".`r`n`r`n" + $releaseNotes;
             Set-GitHubMilestone `
               -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
               -Milestone ( $currentMilestone.MilestoneNumber ) `

@@ -28,6 +28,7 @@
         "codecov",
         "codeql",
         "commitlint",
+        "Committish",
         "compat",
         "concat",
         "datastyle",
