@@ -68,7 +68,23 @@ jobs:
         shell: powershell
         run: |
           $releaseNotesPath = 'tmp/ReleaseNotes.md';
-          Copy-Item -Path './CHANGELOG.md' -Destination $releaseNotesPath -Verbose;
+          $ChangeLog = ( Get-Content -Path './CHANGELOG.md' -Encoding UTF8 );
+          $releaseNotes = @( $ChangeLog | ForEach-Object `
+            -Begin {
+              $isExpectedSection = $false;
+            } `
+            -Process {
+              $isReleaseSectionHeader = ( $_ -match '##\s+(\d+\.\d+\.\d+)' );
+              if ( $isReleaseSectionHeader ) {
+                $releaseVersion = $Matches[1];
+                $isExpectedSection = ( $releaseVersion -eq '${{ steps.gitversion.outputs.semVer }}' );
+              } else {
+                if ( $isExpectedSection ) { return $_; };
+              };
+            }
+          ) -join "`r`n";
+          $releaseNotes = $releaseNotes -replace "(?sm)^\s+", '';
+          $releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
           echo "::set-output name=releaseNotesPath::$releaseNotesPath"
 
       - name: Create GitHub Release

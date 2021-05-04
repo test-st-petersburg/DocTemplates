@@ -2,10 +2,13 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
-## 2.8.2
+## 2.8.3
 
-Новые возможности:
+### Новые возможности
 
+- автоматизировано создание выпуска (release) на GitHub Releases
+  и заполнение его информацией
+  [#37](https://github.com/test-st-petersburg/DocTemplates/issues/37)
 - настроена сборка файлов через GitHub Actions и их публикация
   в GitHub Releases
   [#37](https://github.com/test-st-petersburg/DocTemplates/issues/37)
