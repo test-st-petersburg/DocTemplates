@@ -10,9 +10,8 @@ on:
 
 permissions:
   actions: read
-  contents: read
+  contents: write
   deployments: write
-  packages: write
   issues: write
 
 jobs:
