@@ -118,7 +118,10 @@ jobs:
           $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
           if ( $currentMilestone ) {
             $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-            $currentMilestone | Set-GitHubMilestone `
+            Set-GitHubMilestone `
+              -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
+              -Milestone ( $currentMilestone.MilestoneNumber ) `
+              -Title '${{ steps.gitversion.outputs.semVer }}' `
               -State Closed `
               -Description $releaseDescription `
               -DueOn ( Get-Date ) `
