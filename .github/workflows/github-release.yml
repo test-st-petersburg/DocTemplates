@@ -37,6 +37,7 @@ jobs:
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
           Install-Module -Name InvokeBuild | Out-Null;
           Install-Module -Name 7Zip4Powershell | Out-Null;
+          Install-Module -Name PowerShellForGitHub | Out-Null;
           Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet | Out-Null;
           Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies | Out-Null;
@@ -59,14 +60,24 @@ jobs:
           Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}';
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: true
-          prerelease: true
-          body_path: ${{ github.workspace }}/CHANGELOG.md
-          files: |
-            output/template/*.ott
-            output/doc/*.odt
-          # fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        shell: powershell
+        run: |
+          Import-Module -Name PowerShellForGitHub | Out-Null;
+          Write-Verbose 'Configure PowerShellForGitHub...';
+          $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
+          Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
+          Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          Write-Verbose 'Generate release description...';
+          $releaseDescription = ( Get-Content -Path './CHANGELOG.md' -Encoding UTF8 -Raw );
+          Write-Verbose 'Create release description...';
+          $release = New-GitHubRelease -Tag '${{ steps.gitversion.outputs.semVer }}' -Draft -Body $releaseDescription -Committish '${{ github.sha }}' -Verbose;
+          Write-Verbose 'Adding produced files...';
+          $assetsContainerPath = 'tmp/templatesAndDocs.zip';
+          Compress-Archive -Path 'output' -DestinationPath $assetsContainerPath -Verbose;
+          $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path $assetsContainerPath -Verbose;
+          # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
+          #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text-template' -Verbose;
+          # };
+          # Get-ChildItem -Path 'output/doc'-Recurse -Filter '*.odt' | ForEach-Object {
+          #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text' -Verbose;
+          # };
