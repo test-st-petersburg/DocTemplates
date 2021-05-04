@@ -95,7 +95,17 @@ jobs:
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
           $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-          $release = New-GitHubRelease -Tag '${{ steps.gitversion.outputs.semVer }}' -Body $releaseDescription -Committish '${{ github.sha }}' -Verbose;
+          $release = Get-GitHubRelease `
+            -Tag '${{ steps.gitversion.outputs.semVer }}';
+          if ( $release ) {
+            Remove-GitHubRelease -Release ( $release.ID ) -Force;
+          };
+          $release = New-GitHubRelease `
+            -Tag '${{ steps.gitversion.outputs.semVer }}' `
+            -Name '${{ steps.gitversion.outputs.semVer }}' `
+            -Body $releaseDescription `
+            -Committish '${{ github.sha }}' `
+            -Verbose;
           Write-Verbose 'Adding produced files...';
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path '${{ steps.build.outputs.assetsContainerPath }}' -Verbose;
           # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
