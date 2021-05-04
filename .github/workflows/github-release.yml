@@ -59,18 +59,15 @@ jobs:
           Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
           Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}' -Verbose;
 
-      - name: Install GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/setup@v0.9.9
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          versionSpec: "0.11.x"
-
-      - name: Create release with GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/create@v0.9.9
-        with:
-          token: ${{ github.token }}
-          owner: ${{ github.repository_owner }}
-          repository: ${{ github.event.repository.name }}
-          inputFilePath: ${{ github.workspace }}/CHANGELOG.md
-          assets: |
+          draft: true
+          prerelease: true
+          body_path: ${{ github.workflow }}/CHANGELOG.txt
+          files: |
             output/template/*.ott
             output/doc/*.odt
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
