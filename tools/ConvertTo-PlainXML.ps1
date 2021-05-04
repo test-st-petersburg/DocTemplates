@@ -1,4 +1,6 @@
-﻿<#
+﻿# Copyright © 2020 Sergei S. Betke
+
+<#
 	.SYNOPSIS
 		Преобразовать open office файлов в папки с xml файлами для последующего
 		хранения в git репозиториях

@@ -11,6 +11,7 @@
 	<manifest:file-entry manifest:full-path="Configurations2/images/lc_imagelist.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Configurations2/menubar/menubar.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Configurations2/popupmenu/text.xml" manifest:media-type="text/xml"/>
+	<manifest:file-entry manifest:full-path="Configurations2/toolbar/test_spb_forms.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Configurations2/toolbar/standardbar.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="Configurations2/toolbar/textobjectbar.xml" manifest:media-type="text/xml"/>
 	<manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>

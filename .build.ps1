@@ -128,7 +128,11 @@ param(
 	# 7  Open the application with a minimized window. The active window remains active.
 	# 10 Open the application with its window in the default state specified by the application.
 	[System.Int16]
-	$OOWindowState = ( property OOWindowState 10 )
+	$OOWindowState = ( property OOWindowState 10 ),
+
+	# версия шаблонов и файлов
+	[System.String]
+	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
@@ -213,8 +217,6 @@ task Clean {
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-$version = gitversion /output json /showvariable SemVer
-
 #region сборка библиотек макросов
 
 $BuildLibrariesTasks = @();
@@ -355,7 +357,7 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
-			-Version $version `
+			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -408,7 +410,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
-			-Version $version `
+			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );

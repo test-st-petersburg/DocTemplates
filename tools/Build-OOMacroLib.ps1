@@ -1,3 +1,5 @@
+﻿# Copyright © 2020 Sergei S. Betke
+
 <#
 	.SYNOPSIS
 		Создаёт каталог библиотеки макросов из папки с "исходными" файлами
@@ -23,7 +25,8 @@ param(
 	$Force
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
@@ -39,17 +42,21 @@ begin {
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$LibraryName = Split-Path -Path $Path -Leaf;
 
-	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library from source directory" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library from source directory" ) )
+	{
 
 		$DestinationLibraryPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
 
-		if ( Test-Path -Path $DestinationLibraryPath ) {
-			if ( -not $Force ) {
+		if ( Test-Path -Path $DestinationLibraryPath )
+		{
+			if ( -not $Force )
+			{
 				Write-Error -Message "Destination library path ""$DestinationLibraryPath"" exists.";
 			};
 			Remove-Item -Path $DestinationLibraryPath -Recurse -Force `
@@ -84,6 +91,6 @@ process {
 				'build-macro-library' )
 		);
 
-		Write-Verbose "Macroses library $LibraryName is ready in ""$DestinationLibraryPath"".";
+		Write-Verbose "Macros library $LibraryName is ready in ""$DestinationLibraryPath"".";
 	};
 };

@@ -1,4 +1,6 @@
-﻿<#
+﻿# Copyright © 2020 Sergei S. Betke
+
+<#
 	.SYNOPSIS
 		Возвращает исполняемый объект XSLT трансформации на базе Saxon HE.
 #>
@@ -25,7 +27,8 @@ Param(
 
 )
 
-Function Write-CompilerWarningAndErrors {
+Function Write-CompilerWarningAndErrors
+{
 	[CmdletBinding()]
 	Param(
 		# список ошибок
@@ -39,14 +42,18 @@ Function Write-CompilerWarningAndErrors {
 	)
 
 	[int] $ErrorsCount = 0;
-	foreach ( $Error in $ErrorList ) {
-		if ( $Error.ModuleUri.LocalPath.Length -eq 0 ) {
+	foreach ( $Error in $ErrorList )
+ {
+		if ( $Error.ModuleUri.LocalPath.Length -eq 0 )
+		{
 			[System.Uri] $ModuleUriAux = $ModuleUri;
 		}
-		else {
+		else
+		{
 			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
 		};
-		if ( $Error.isWarning ) {
+		if ( $Error.isWarning )
+		{
 			Write-Warning `
 				-Message @"
 
@@ -54,7 +61,8 @@ $($Error.Message)
 $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
 "@;
 		}
-		else {
+		else
+		{
 			$ErrorsCount++;
 			Write-Error `
 				-Message @"
@@ -65,40 +73,50 @@ $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber
 				-ErrorAction Continue;
 		};
 	};
-	if ( $ErrorsCount ) {
+	if ( $ErrorsCount )
+	{
 		Write-Error -Message "Compiler errors total: $ErrorsCount";
 	};
 
 }
 
-class OOXmlResolver: System.Xml.XmlUrlResolver {
+class OOXmlResolver: System.Xml.XmlUrlResolver
+{
 
 	[System.String] $DtdPath
 
-	OOXmlResolver( [System.String] $DtdPath ) {
+	OOXmlResolver( [System.String] $DtdPath )
+	{
 		$this.DtdPath = $DtdPath;
 	}
 
 	[System.Uri]
-	ResolveUri ( [System.Uri] $baseUri, [System.String] $relativeUri ) {
-		If ( -not $this.DtdPath ) {
+	ResolveUri ( [System.Uri] $baseUri, [System.String] $relativeUri )
+	{
+		If ( -not $this.DtdPath )
+		{
 			return ( [System.Xml.XmlUrlResolver] $this ).ResolveUri( $baseUri, $relativeUri );
 		};
 		[System.Uri] $DtdFileUri = Join-Path -Path $this.DtdPath -ChildPath $relativeUri;
-		If ( Test-Path -Path ( $DtdFileUri.LocalPath ) ) {
+		If ( Test-Path -Path ( $DtdFileUri.LocalPath ) )
+		{
 			return $DtdFileUri;
 		}
-		else {
+		else
+		{
 			return ( [System.Xml.XmlUrlResolver] $this ).ResolveUri( $baseUri, $relativeUri );
 		};
 	}
 
 };
 
-try {
+try
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
+		-ProviderName NuGet `
+		-SkipDependencies `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	$saxonLibPath = Join-Path -Path ( Split-Path -Path ( $saxonPackage.Source ) -Parent ) `
@@ -117,10 +135,13 @@ try {
 	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
-	foreach ( $Package in $PackagePath ) {
+	foreach ( $Package in $PackagePath )
+	{
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
-		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) ) {
-			try {
+		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
+		{
+			try
+			{
 				$saxCompiler.BaseUri = $XSLTPackagePath;
 				$saxPackage = $saxCompiler.CompilePackage(
 					( New-Object System.IO.FileStream -ArgumentList $XSLTPackagePath, 'Open' )
@@ -128,11 +149,13 @@ try {
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XLST package' ) ) {
+				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
+				{
 					$saxCompiler.ImportPackage( $saxPackage );
 				};
 			}
-			catch {
+			catch
+			{
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
@@ -142,14 +165,17 @@ try {
 	};
 
 	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
-	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) ) {
-		try {
+	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
+	{
+		try
+		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
 			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 		}
-		catch {
+		catch
+		{
 			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
@@ -158,7 +184,8 @@ try {
 		return $saxExecutable;
 	};
 }
-catch {
+catch
+{
 	Write-Error -ErrorRecord $_;
 	throw;
 };

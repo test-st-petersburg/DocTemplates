@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE image:imagescontainer
-  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "image.dtd">
-<image:imagescontainer xmlns:image="http://openoffice.org/2001/image" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0">
-	<image:images xlink:type="simple" xlink:href="Bitmaps/lc_userimages.png" image:maskcolor="#0" image:maskmode="maskcolor">
-		<image:entry image:bitmap-index="0" image:command=".uno:StyleApply?Style:string=Пункты документа&amp;FamilyName:string=NumberingStyles"/>
-		<image:entry image:bitmap-index="1" image:command=".uno:StyleApply?Style:string=Перечисление&amp;FamilyName:string=NumberingStyles"/>
-	</image:images>
-</image:imagescontainer>

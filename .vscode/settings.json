@@ -4,7 +4,10 @@
 		"node_modules/": true,
 		"**/Thumbs.db": true,
 		"Thumbs.db": true,
-		"**/.~lock.*": true,
+		"**/.~lock.*": true
+	},
+	"files.associations": {
+		"**/packages.config": "xml"
 	},
 	"shellcheck.exclude": [
 		"1017"
@@ -12,7 +15,7 @@
 	"[xml]": {
 		"editor.formatOnSave": false,
 		"files.trimTrailingWhitespace": false,
-		"files.insertFinalNewline": false,
+		"files.insertFinalNewline": false
 	},
 	"xmlComplete.schemaMapping": [
 		{
@@ -30,7 +33,7 @@
 		"editor.formatOnPaste": false,
 		"editor.formatOnType": false,
 		"files.trimTrailingWhitespace": true,
-		"files.insertFinalNewline": false,
+		"files.insertFinalNewline": false
 	},
 	"XSLT.resources.xsltPackages": [
 		{
@@ -82,12 +85,12 @@
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt",
 			"version": "1.5.0",
 			"path": "tools/xslt/optimizer/OOOptimizer.xslt"
-		},
+		}
 	],
 	"[powershell]": {
 		"editor.formatOnSave": true,
 		"files.trimTrailingWhitespace": true,
-		"files.insertFinalNewline": true,
+		"files.insertFinalNewline": true
 	},
 	"editor.folding": true,
 	"editor.foldingHighlight": true,
@@ -112,4 +115,24 @@
 	"jake.autoDetect": "off",
 	"gulp.autoDetect": "off",
 	"task.autoDetect": "off",
+	"conventionalCommits.autoCommit": false,
+	// "conventionalCommits.emojiFormat": "",
+	"conventionalCommits.gitmoji": true,
+	"conventionalCommits.lineBreak": "\n",
+	"conventionalCommits.promptBody": true,
+	"conventionalCommits.promptFooter": true,
+	"conventionalCommits.promptScopes": true,
+	"conventionalCommits.scopes": [
+		"ott",
+		"odt",
+		"design",
+		"vscode",
+		"git",
+		"github",
+		"github-actions",
+		"other",
+		"changelog",
+		"readme"
+	],
+	"conventionalCommits.showEditor": false
 }

@@ -1,6 +1,8 @@
 # Libre Office шаблоны документов
 
-[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates?sort=semver&style=plastic)](https://github.com/test-st-petersburg/DocTemplates/releases)
+[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&style=plastic)](https://github.com/test-st-petersburg/DocTemplates/releases)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=plastic)](https://conventionalcommits.org)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?&style=plastic)](http://commitizen.github.io/cz-cli/)
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
