@@ -107,7 +107,7 @@ jobs:
             -Body $releaseDescription `
             -Committish '${{ github.sha }}' `
             -Verbose;
-          echo "::set-output name=url::$( $release.url )";
+          echo "::set-output name=url::$( $release.html_url )";
           echo "::set-output name=tag_name::$( $release.tag_name )";
           Write-Verbose 'Adding produced files...';
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path '${{ steps.build.outputs.assetsContainerPath }}' -Verbose;
@@ -133,7 +133,7 @@ jobs:
             $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
             $releaseDescription = `
               "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-2.3.8-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
-              ".`r`n`r`n" + $releaseNotes;
+              "`r`n`r`n" + $releaseNotes;
             Set-GitHubMilestone `
               -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
               -Milestone ( $currentMilestone.MilestoneNumber ) `
