@@ -101,8 +101,8 @@ jobs:
           if ( $currentMilestone ) {
             echo "::set-output name=exists::true";
             echo "::set-output name=url::$( $currentMilestone.html_url )";
-            echo "::set-output name=title::$( $release.title )";
-            echo "::set-output name=MilestoneNumber::$( $release.MilestoneNumber )";
+            echo "::set-output name=title::$( $currentMilestone.title )";
+            echo "::set-output name=number::$( $currentMilestone.MilestoneNumber )";
           } else {
             echo "::set-output name=exists::false";
           };
@@ -161,7 +161,7 @@ jobs:
             "`r`n`r`n" + $releaseNotes;
           Set-GitHubMilestone `
             -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
-            -Milestone ${{ steps.milestone_search.outputs.MilestoneNumber }} `
+            -Milestone ${{ steps.milestone_search.outputs.number }} `
             -Title '${{ steps.gitversion.outputs.semVer }}' `
             -State Closed `
             -Description $releaseDescription `
