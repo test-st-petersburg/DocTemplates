@@ -86,6 +86,27 @@ jobs:
           $releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
           echo "::set-output name=releaseNotesPath::$releaseNotesPath";
 
+      - name: Search GitHub Milestone
+        id: milestone_search
+        shell: powershell
+        run: |
+          Import-Module -Name PowerShellForGitHub | Out-Null;
+          Write-Verbose 'Configure PowerShellForGitHub...';
+          $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
+          Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
+          Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          $milestones = Get-GitHubMilestone `
+            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}';
+          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
+          if ( $currentMilestone ) {
+            echo "::set-output name=exists::true";
+            echo "::set-output name=url::$( $currentMilestone.html_url )";
+            echo "::set-output name=title::$( $release.title )";
+            echo "::set-output name=MilestoneNumber::$( $release.MilestoneNumber )";
+          } else {
+            echo "::set-output name=exists::false";
+          };
+
       - name: Create GitHub Release
         id: release
         shell: powershell
@@ -95,7 +116,14 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
-          $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+          if ( $${{ steps.milestone_search.outputs.exists }} ) {
+            $releaseDescription = `
+              "[![${{ steps.milestone_search.outputs.title }}](https://img.shields.io/badge/milestone-${{ steps.milestone_search.outputs.title }}-blue?style=plastic&logo=github)](${{ steps.milestone_search.outputs.url }})" +
+              "`r`n`r`n" + $releaseNotes;
+          } else {
+            $releaseDescription = $releaseNotes;
+          };
           $release = Get-GitHubRelease `
             -Tag '${{ steps.gitversion.outputs.semVer }}';
           if ( $release ) {
@@ -119,6 +147,7 @@ jobs:
           # };
 
       - name: Close GitHub Milestone
+        if: ${{ steps.milestone_search.outputs.exists }}
         shell: powershell
         run: |
           Import-Module -Name PowerShellForGitHub | Out-Null;
@@ -126,20 +155,15 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
-          $milestones = Get-GitHubMilestone `
-            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}';
-          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
-          if ( $currentMilestone ) {
-            $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-            $releaseDescription = `
-              "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-2.3.8-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
-              "`r`n`r`n" + $releaseNotes;
-            Set-GitHubMilestone `
-              -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
-              -Milestone ( $currentMilestone.MilestoneNumber ) `
-              -Title '${{ steps.gitversion.outputs.semVer }}' `
-              -State Closed `
-              -Description $releaseDescription `
-              -DueOn ( Get-Date ) `
-              -Verbose;
-          };
+          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+          $releaseDescription = `
+            "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-${{ steps.release.outputs.tag_name }}-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
+            "`r`n`r`n" + $releaseNotes;
+          Set-GitHubMilestone `
+            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
+            -Milestone ${{ steps.milestone_search.outputs.MilestoneNumber }} `
+            -Title '${{ steps.gitversion.outputs.semVer }}' `
+            -State Closed `
+            -Description $releaseDescription `
+            -DueOn ( Get-Date ) `
+            -Verbose;
