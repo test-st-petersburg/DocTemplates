@@ -83,7 +83,6 @@ jobs:
               };
             }
           ) -join "`r`n";
-          $releaseNotes = $releaseNotes -replace "(?sm)^\s+", '';
           $releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
           echo "::set-output name=releaseNotesPath::$releaseNotesPath"
 
@@ -96,7 +95,7 @@ jobs:
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
           $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-          $release = New-GitHubRelease -Tag '${{ steps.gitversion.outputs.semVer }}' -Draft -Body $releaseDescription -Committish '${{ github.sha }}' -Verbose;
+          $release = New-GitHubRelease -Tag '${{ steps.gitversion.outputs.semVer }}' -Body $releaseDescription -Committish '${{ github.sha }}' -Verbose;
           Write-Verbose 'Adding produced files...';
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path '${{ steps.build.outputs.assetsContainerPath }}' -Verbose;
           # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
@@ -105,3 +104,26 @@ jobs:
           # Get-ChildItem -Path 'output/doc'-Recurse -Filter '*.odt' | ForEach-Object {
           #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text' -Verbose;
           # };
+
+      - name: Close GitHub Milestone
+        shell: powershell
+        run: |
+          Import-Module -Name PowerShellForGitHub | Out-Null;
+          Write-Verbose 'Configure PowerShellForGitHub...';
+          $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
+          Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
+          Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          $milestones = Get-GitHubMilestone `
+            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}';
+          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
+          if ( $currentMilestone ) {
+            $releaseDescription = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+            Set-GitHubMilestone `
+              -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
+              -Milestone ( $currentMilestone.MilestoneId ) `
+              -Title '${{ steps.gitversion.outputs.semVer }}' `
+              -State Closed `
+              -Description $releaseDescription `
+              -DueOn ( Get-Date ) `
+              -Verbose;
+          };
