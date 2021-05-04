@@ -96,15 +96,16 @@ jobs:
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
           $milestones = Get-GitHubMilestone `
-            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}';
+            -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
+            -State All;
           $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
           if ( $currentMilestone ) {
-            echo "::set-output name=exists::true";
+            echo "::set-output name=exists::${{ true }}";
             echo "::set-output name=url::$( $currentMilestone.html_url )";
             echo "::set-output name=title::$( $currentMilestone.title )";
             echo "::set-output name=number::$( $currentMilestone.MilestoneNumber )";
           } else {
-            echo "::set-output name=exists::false";
+            echo "::set-output name=exists::${{ false }}";
           };
 
       - name: Create GitHub Release
