@@ -63,7 +63,7 @@ jobs:
         with:
           draft: true
           prerelease: true
-          body_path: ${{ github.workflow }}/CHANGELOG.txt
+          body_path: ${{ github.workspace }}/CHANGELOG.txt
           files: |
             output/template/*.ott
             output/doc/*.odt
