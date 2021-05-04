@@ -131,7 +131,7 @@ jobs:
           $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
           if ( $currentMilestone ) {
             $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-            $releaseDescription = "Данный этап закрыт в рамках выпуска " +
+            $releaseDescription = `
               "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-2.3.8-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
               ".`r`n`r`n" + $releaseNotes;
             Set-GitHubMilestone `
