@@ -859,110 +859,212 @@
 
 	<xsd:element name="sound" type="xcard:property-value-url-with-language"/>
 
-	<!-- [Section 6.7.6](https://tools.ietf.org/html/rfc6350#section-6.7.6 "vCard Format Specification") -->
+	<xsd:element name="uid" type="xcard:value-uri">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To specify a value that represents a globally unique
+					identifier corresponding to the entity associated with the vCard.
 
-	<xsd:element name="uid" type="xcard:value-uri"/>
+				Special notes:  This property is used to uniquely identify the object
+					that the vCard represents.  The "uuid" URN namespace defined in
+					[RFC 4122](https://tools.ietf.org/html/rfc4122)
+					is particularly well suited to this task, but other URI
+					schemes MAY be used.  Free-form text MAY also be used.
 
-	<!-- [Section 6.7.7](https://tools.ietf.org/html/rfc6350#section-6.7.7 "vCard Format Specification") -->
+				[RFC 6350 Section 6.7.6](https://tools.ietf.org/html/rfc6350#section-6.7.6 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 
-	<xsd:element name="clientpidmap">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element name="sourceid" type="xsd:positiveInteger"/>
+	<xsd:element name="clientpidmap" type="xcard:clientpidmap">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To give a global meaning to a local PID source identifier.
+
+				Value type:  A semicolon-separated pair of values.  The first field
+				   is a small integer corresponding to the second field of a PID
+				   parameter instance.  The second field is a URI.  The "uuid" URN
+				   namespace defined in [RFC4122] is particularly well suited to this
+				   task, but other URI schemes MAY be used.
+
+				Special notes:  PID source identifiers (the source identifier is the
+				   second field in a PID parameter instance) are small integers that
+				   only have significance within the scope of a single vCard
+				   instance.  Each distinct source identifier present in a vCard MUST
+				   have an associated CLIENTPIDMAP.  See Section 7 for more details
+				   on the usage of CLIENTPIDMAP.
+
+				   PID source identifiers MUST be strictly positive.  Zero is not
+				   allowed.
+
+				   As a special exception, the PID parameter MUST NOT be applied to
+				   this property.
+
+				[RFC 6350 Section 6.7.7](https://tools.ietf.org/html/rfc6350#section-6.7.7 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="clientpidmap" block="#all">
+		<xsd:sequence>
+			<xsd:element name="sourceid" type="xsd:positiveInteger"/>
+			<xsd:group ref="xcard:value-uri-elements"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="url" type="xcard:property-value-url">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To specify a uniform resource locator associated with the
+				object to which the vCard refers. Examples for individuals
+				include personal web sites, blogs, and social networking site
+				identifiers.
+
+				[RFC 6350 Section 6.7.8](https://tools.ietf.org/html/rfc6350#section-6.7.8 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="key" type="xcard:key">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To specify a public key or authentication certificate
+				associated with the object that the vCard represents.
+
+				[RFC 6350 Section 6.8.1](https://tools.ietf.org/html/rfc6350#section-6.8.1 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="key" block="#all">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
+						<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:choice>
+				<xsd:group ref="xcard:value-text-elements"/>
 				<xsd:group ref="xcard:value-uri-elements"/>
-			</xsd:sequence>
-		</xsd:complexType>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="fburl" type="xcard:property-value-url">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To specify the URI for the busy time associated with the
+				object that the vCard represents.
+
+				Special notes: The FTP or HTTP type of URI points to an iCalendar
+				[RFC5545](https://tools.ietf.org/html/rfc5545) object associated with a snapshot of the next few weeks
+				or months of busy time data.  If the iCalendar object is
+				represented as a file or document, its file extension should be
+				".ifb".
+
+				[RFC 6350 Section 6.9.1](https://tools.ietf.org/html/rfc6350#section-6.9.1 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
 	</xsd:element>
 
-	<!-- [Section 6.7.8](https://tools.ietf.org/html/rfc6350#section-6.7.8 "vCard Format Specification") -->
+	<xsd:element name="caladruri" type="xcard:property-value-url">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose:  To specify the calendar user address [RFC5545](https://tools.ietf.org/html/rfc5545) to which a
+				scheduling request [RFC5546](https://tools.ietf.org/html/rfc5546) should be sent for the object
+				represented by the vCard.
 
-	<xsd:element name="url" type="xcard:property-value-url"/>
-
-	<!-- [Section 6.8.1](https://tools.ietf.org/html/rfc6350#section-6.8.1 "vCard Format Specification") -->
-
-	<xsd:element name="key">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element name="parameters" minOccurs="0" maxOccurs="1">
-					<xsd:complexType>
-						<xsd:sequence>
-							<xsd:element ref="xcard:altid" minOccurs="0" maxOccurs="1"/>
-							<xsd:element ref="xcard:pid" minOccurs="0" maxOccurs="1"/>
-							<xsd:element ref="xcard:pref" minOccurs="0" maxOccurs="1"/>
-							<xsd:element ref="xcard:type" minOccurs="0" maxOccurs="1"/>
-							<xsd:element ref="xcard:mediatype" minOccurs="0" maxOccurs="1"/>
-						</xsd:sequence>
-					</xsd:complexType>
-				</xsd:element>
-				<xsd:choice>
-					<xsd:group ref="xcard:value-text-elements"/>
-					<xsd:group ref="xcard:value-uri-elements"/>
-				</xsd:choice>
-			</xsd:sequence>
-		</xsd:complexType>
+				[RFC 6350 Section 6.9.2](https://tools.ietf.org/html/rfc6350#section-6.9.2 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
 	</xsd:element>
 
-	<!-- [Section 6.9.1](https://tools.ietf.org/html/rfc6350#section-6.9.1 "vCard Format Specification") -->
+	<xsd:element name="caluri" type="xcard:property-value-url">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Purpose: To specify the URI for a calendar associated with the
+				object represented by the vCard.
 
-	<xsd:element name="fburl" type="xcard:property-value-url"/>
+				Special notes: The property should contain a URI pointing to an iCalendar
+				[RFC5545](https://tools.ietf.org/html/rfc5545)
+				object associated with a snapshot of the user's calendar store.
+				If the iCalendar object is represented as a file or document, its
+				file extension should be ".ics"
 
-	<!-- [Section 6.9.2](https://tools.ietf.org/html/rfc6350#section-6.9.2 "vCard Format Specification") -->
-
-	<xsd:element name="caladruri" type="xcard:property-value-url"/>
-
-	<!-- [Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification") -->
-
-	<xsd:element name="caluri" type="xcard:property-value-url"/>
-
-
-	<xsd:element name="vcard">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element ref="xcard:source" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:kind" minOccurs="0"/>
-				<xsd:element ref="xcard:fn" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:n" minOccurs="0"/>
-				<xsd:element ref="xcard:nickname" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:photo" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:bday" minOccurs="0"/>
-				<xsd:element ref="xcard:anniversary" minOccurs="0"/>
-				<xsd:element ref="xcard:gender" minOccurs="0"/>
-
-				<xsd:element ref="xcard:adr" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:tel" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:email" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:impp" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:lang" minOccurs="0" maxOccurs="unbounded"/>
-
-				<xsd:element ref="xcard:tz" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:geo" minOccurs="0" maxOccurs="unbounded"/>
-
-				<xsd:element ref="xcard:title" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:role" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:logo" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:org" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:member" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:related" minOccurs="0" maxOccurs="unbounded"/>
-
-				<xsd:element ref="xcard:categories" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:note" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:prodid" minOccurs="0"/>
-				<xsd:element ref="xcard:rev" minOccurs="0"/>
-				<xsd:element ref="xcard:sound" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:uid" minOccurs="0"/>
-				<xsd:element ref="xcard:clientpidmap" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:url" minOccurs="0" maxOccurs="unbounded"/>
-
-				<xsd:element ref="xcard:key" minOccurs="0" maxOccurs="unbounded"/>
-
-				<xsd:element ref="xcard:fburl" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:caladruri" minOccurs="0" maxOccurs="unbounded"/>
-				<xsd:element ref="xcard:caluri" minOccurs="0" maxOccurs="unbounded"/>
-			</xsd:sequence>
-		</xsd:complexType>
+				[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
 	</xsd:element>
+
+	<xsd:element name="vcard" type="xcard:vcard">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">
+				Элемент, представляющий отдельный контакт.
+
+				[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="vcard" block="#all">
+		<xsd:sequence>
+			<xsd:element ref="xcard:source" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:kind" minOccurs="0"/>
+			<xsd:element ref="xcard:fn" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:n" minOccurs="0"/>
+			<xsd:element ref="xcard:nickname" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:photo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:bday" minOccurs="0"/>
+			<xsd:element ref="xcard:anniversary" minOccurs="0"/>
+			<xsd:element ref="xcard:gender" minOccurs="0"/>
+
+			<xsd:element ref="xcard:adr" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:tel" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:email" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:impp" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:lang" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xsd:element ref="xcard:tz" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:geo" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xsd:element ref="xcard:title" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:role" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:logo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:org" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:member" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:related" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xsd:element ref="xcard:categories" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:note" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:prodid" minOccurs="0"/>
+			<xsd:element ref="xcard:rev" minOccurs="0"/>
+			<xsd:element ref="xcard:sound" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:uid" minOccurs="0"/>
+			<xsd:element ref="xcard:clientpidmap" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:url" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xsd:element ref="xcard:key" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xsd:element ref="xcard:fburl" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:caladruri" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="xcard:caluri" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 
 	<xsd:element name="vcards">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">
+				Коллекция визитных карт.
+
+				[RFC 6351](http://tools.ietf.org/html/rfc6351#section-4 "xCard: vCard XML Representation")
+			</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:element ref="xcard:vcard" minOccurs="1" maxOccurs="unbounded"/>
