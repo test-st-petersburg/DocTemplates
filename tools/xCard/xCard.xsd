@@ -7,12 +7,20 @@
 >
 
 	<xsd:annotation>
-		<xsd:documentation xml:lang="en">
-			xCard schema (http://tools.ietf.org/html/rfc6351).
+		<xsd:documentation xml:lang="en" source="http://tools.ietf.org/html/rfc6351">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			xCard: vCard XML Representation
 		</xsd:documentation>
+		<xsd:documentation xml:lang="ru" source="http://tools.ietf.org/html/rfc6351">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			xCard: vCard XML Representation
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:annotation>
 		<xsd:documentation xml:lang="ru">
-			xCard схема (см. http://tools.ietf.org/html/rfc6351, http://tools.ietf.org/html/rfc6350).
-			Пока требуется конкретный порядок элементов в vcard, что не обязательно.
+			P.S. Пока требуется конкретный порядок элементов в vcard, что не обязательно.
 			И не предусмотрены расширения.
 		</xsd:documentation>
 	</xsd:annotation>
@@ -287,9 +295,14 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<!-- [Section 5.5](https://tools.ietf.org/html/rfc6350#section-5.5 "vCard Format Specification") -->
-
 	<xsd:element name="pid">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-5.5">
+				Элемент, представляющий отдельный контакт.
+
+				[RFC 6350 Section 5.5](https://tools.ietf.org/html/rfc6350#section-5.5 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
@@ -861,7 +874,7 @@
 
 	<xsd:element name="uid" type="xcard:value-uri">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.7.6">
 				Purpose:  To specify a value that represents a globally unique
 					identifier corresponding to the entity associated with the vCard.
 
@@ -878,7 +891,7 @@
 
 	<xsd:element name="clientpidmap" type="xcard:clientpidmap">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.7.7">
 				Purpose:  To give a global meaning to a local PID source identifier.
 
 				Value type:  A semicolon-separated pair of values.  The first field
@@ -914,7 +927,7 @@
 
 	<xsd:element name="url" type="xcard:property-value-url">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.7.8">
 				Purpose:  To specify a uniform resource locator associated with the
 				object to which the vCard refers. Examples for individuals
 				include personal web sites, blogs, and social networking site
@@ -927,7 +940,7 @@
 
 	<xsd:element name="key" type="xcard:key">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.8.1">
 				Purpose:  To specify a public key or authentication certificate
 				associated with the object that the vCard represents.
 
@@ -958,7 +971,7 @@
 
 	<xsd:element name="fburl" type="xcard:property-value-url">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.9.1">
 				Purpose:  To specify the URI for the busy time associated with the
 				object that the vCard represents.
 
@@ -975,7 +988,7 @@
 
 	<xsd:element name="caladruri" type="xcard:property-value-url">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.9.2">
 				Purpose:  To specify the calendar user address [RFC5545](https://tools.ietf.org/html/rfc5545) to which a
 				scheduling request [RFC5546](https://tools.ietf.org/html/rfc5546) should be sent for the object
 				represented by the vCard.
@@ -987,7 +1000,7 @@
 
 	<xsd:element name="caluri" type="xcard:property-value-url">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.9.3">
 				Purpose: To specify the URI for a calendar associated with the
 				object represented by the vCard.
 
@@ -1009,7 +1022,117 @@
 
 				[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
 			</xsd:documentation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.9.3">
+				[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+			</xsd:documentation>
 		</xsd:annotation>
+
+		<xsd:unique	name="source-pid">
+			<xsd:selector xpath="xcard:source/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="fn-pid">
+			<xsd:selector xpath="xcard:fn/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="nickname-pid">
+			<xsd:selector xpath="xcard:nickname/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="photo-pid">
+			<xsd:selector xpath="xcard:photo/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="adr-pid">
+			<xsd:selector xpath="xcard:adr/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="tel-pid">
+			<xsd:selector xpath="xcard:tel/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="email-pid">
+			<xsd:selector xpath="xcard:email/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="impp-pid">
+			<xsd:selector xpath="xcard:impp/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="lang-pid">
+			<xsd:selector xpath="xcard:lang/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="tz-pid">
+			<xsd:selector xpath="xcard:tz/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="geo-pid">
+			<xsd:selector xpath="xcard:geo/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="title-pid">
+			<xsd:selector xpath="xcard:title/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="role-pid">
+			<xsd:selector xpath="xcard:role/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="logo-pid">
+			<xsd:selector xpath="xcard:logo/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="org-pid">
+			<xsd:selector xpath="xcard:org/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="member-pid">
+			<xsd:selector xpath="xcard:member/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="related-pid">
+			<xsd:selector xpath="xcard:related/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="categories-pid">
+			<xsd:selector xpath="xcard:categories/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="note-pid">
+			<xsd:selector xpath="xcard:note/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="sound-pid">
+			<xsd:selector xpath="xcard:sound/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+
+		<xsd:unique	name="clientpidmap-sourceid">
+			<xsd:selector xpath="xcard:clientpidmap"/>
+			<xsd:field xpath="xcard:sourceid"/>
+		</xsd:unique>
+
+		<xsd:unique	name="url-pid">
+			<xsd:selector xpath="xcard:url/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="key-pid">
+			<xsd:selector xpath="xcard:key/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="fburl-pid">
+			<xsd:selector xpath="xcard:fburl/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="fburl-caladruri">
+			<xsd:selector xpath="xcard:caladruri/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
+		<xsd:unique	name="fburl-caluri">
+			<xsd:selector xpath="xcard:caluri/xcard:parameters/xcard:pid/xcard:text"/>
+			<xsd:field xpath="."/>
+		</xsd:unique>
 	</xsd:element>
 
 	<xsd:complexType name="vcard" block="#all">
@@ -1059,7 +1182,7 @@
 
 	<xsd:element name="vcards">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="ru">
+			<xsd:documentation xml:lang="ru" source="http://tools.ietf.org/html/rfc6351#section-4">
 				Коллекция визитных карт.
 
 				[RFC 6351](http://tools.ietf.org/html/rfc6351#section-4 "xCard: vCard XML Representation")

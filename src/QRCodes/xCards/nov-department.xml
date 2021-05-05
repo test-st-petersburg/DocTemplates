@@ -30,6 +30,10 @@
 		</adr>
 		<tel>
 			<parameters>
+				<pid>
+					<text>1</text>
+					<text>3</text>
+				</pid>
 				<type>
 					<text>work</text>
 					<text>voice</text>
@@ -39,6 +43,7 @@
 		</tel>
 		<tel>
 			<parameters>
+				<pid><text>2</text></pid>
 				<type>
 					<text>work</text>
 					<text>text</text>
@@ -51,6 +56,7 @@
 		</tel>
 		<email>
 			<parameters>
+				<pid><text>1</text></pid>
 				<type>
 					<text>work</text>
 				</type>

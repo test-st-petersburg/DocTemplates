@@ -69,6 +69,7 @@
         "preprocess",
         "PreRelease",
         "pwsh",
+        "qrcode",
         "readonly",
         "Recurse",
         "Remoting",

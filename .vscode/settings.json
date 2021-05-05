@@ -125,6 +125,8 @@
 	"conventionalCommits.scopes": [
 		"ott",
 		"odt",
+		"qrcode",
+		"vcard",
 		"design",
 		"vscode",
 		"git",
