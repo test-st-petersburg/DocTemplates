@@ -27,9 +27,10 @@
 
 	<xsd:simpleType name="iana-token">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-3.3">
 				Identifier registered with IANA.
-				(https://tools.ietf.org/html/rfc6350#section-3.3)
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -39,20 +40,17 @@
 
 	<xsd:simpleType name="x-name">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-3.3">
 				Names that begin with "x-" or "X-" are reserved for experimental use, not intended for released
 				products, or for use in bilateral agreements.
-				(https://tools.ietf.org/html/rfc6350#section-3.3).
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="[xX]-[a-zA-Z0-9][a-zA-Z0-9-]*"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-
-	<!-- [Section 4](https://tools.ietf.org/html/rfc6350#section-4 "vCard Format Specification") -->
-
-	<!-- [Section 4.1](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification") -->
 
 	<xsd:simpleType name="text">
 		<xsd:restriction base="xsd:string"/>
@@ -66,10 +64,11 @@
 
 	<xsd:complexType name="value-text">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-4.1">
 				The "text" value type should be used to identify values that contain human-readable text.
 				As for the language, it is controlled by the LANGUAGE property parameter.
-				(https://tools.ietf.org/html/rfc6350#section-4.1).
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:group ref="xcard:value-text-elements"/>
@@ -83,9 +82,10 @@
 
 	<xsd:complexType name="value-text-list">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-4.1">
 				The "text" values type should be used to identify values that contain human-readable text.
-				(https://tools.ietf.org/html/rfc6350#section-4.1).
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:group ref="xcard:value-text-list-elements"/>
@@ -473,7 +473,7 @@
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-		<xsd:group ref="xcard:value-text-elements"/>
+			<xsd:group ref="xcard:value-text-elements"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
