@@ -58,79 +58,75 @@
 							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 						</xsd:documentation>
 					</xsd:annotation>
-					<xsd:complexContent>
-						<xsd:restriction base="xcard:value-text">
-							<xsd:sequence>
-								<xsd:element name="text" minOccurs="0" default="individual" block="restriction">
-									<xsd:simpleType>
-										<xsd:restriction base="xcard:text">
-											<xsd:enumeration value="individual">
-												<xsd:annotation>
-													<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
-														for a vCard representing a single person or entity.
-														This is the default kind of vCard.
-													</xsd:documentation>
-												</xsd:annotation>
-											</xsd:enumeration>
-											<xsd:enumeration value="group">
-												<xsd:annotation>
-													<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
-														for a vCard representing a group of persons or entities.
-														The group's member entities can be other vCards or other types
-														of entities, such as email addresses or web sites.  A group
-														vCard will usually contain MEMBER properties to specify the
-														members of the group, but it is not required to.  A group vCard
-														without MEMBER properties can be considered an abstract
-														grouping, or one whose members are known empirically (perhaps
-														"IETF Participants" or "Republican U.S. Senators").
-														All properties in a group vCard apply to the group as a whole,
-														and not to any particular MEMBER.  For example, an EMAIL
-														property might specify the address of a mailing list associated
-														with the group, and an IMPP property might refer to a group
-														chat room.
-													</xsd:documentation>
-												</xsd:annotation>
-											</xsd:enumeration>
-											<xsd:enumeration value="org">
-												<xsd:annotation>
-													<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
-														for a vCard representing an organization.  An organization
-														vCard will not (in fact, MUST NOT) contain MEMBER properties,
-														and so these are something of a cross between "individual" and
-														"group".  An organization is a single entity, but not a person.
-														It might represent a business or government, a department or
-														division within a business or government, a club, an
-														association, or the like.
-														All properties in an organization vCard apply to the
-														organization as a whole, as is the case with a group vCard.
-														For example, an EMAIL property might specify the address of a
-														contact point for the organization.
-													</xsd:documentation>
-												</xsd:annotation>
-											</xsd:enumeration>
-											<xsd:enumeration value="location">
-												<xsd:annotation>
-													<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
-														for a named geographical place.  A location vCard will
-														usually contain a GEO property, but it is not required to.  A
-														location vCard without a GEO property can be considered an
-														abstract location, or one whose definition is known empirically
-														(perhaps "New England" or "The Seashore").
-														All properties in a location vCard apply to the location
-														itself, and not with any entity that might exist at that
-														location.  For example, in a vCard for an office building, an
-														ADR property might give the mailing address for the building,
-														and a TEL property might specify the telephone number of the
-														receptionist.
-													</xsd:documentation>
-												</xsd:annotation>
-											</xsd:enumeration>
-										</xsd:restriction>
-									</xsd:simpleType>
-								</xsd:element>
-							</xsd:sequence>
-						</xsd:restriction>
-					</xsd:complexContent>
+					<xsd:sequence>
+						<xsd:element name="text" minOccurs="0" default="individual">
+							<xsd:simpleType>
+								<xsd:restriction base="xcard:text">
+									<xsd:enumeration value="individual">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
+												for a vCard representing a single person or entity.
+												This is the default kind of vCard.
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="group">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
+												for a vCard representing a group of persons or entities.
+												The group's member entities can be other vCards or other types
+												of entities, such as email addresses or web sites.  A group
+												vCard will usually contain MEMBER properties to specify the
+												members of the group, but it is not required to.  A group vCard
+												without MEMBER properties can be considered an abstract
+												grouping, or one whose members are known empirically (perhaps
+												"IETF Participants" or "Republican U.S. Senators").
+												All properties in a group vCard apply to the group as a whole,
+												and not to any particular MEMBER.  For example, an EMAIL
+												property might specify the address of a mailing list associated
+												with the group, and an IMPP property might refer to a group
+												chat room.
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="org">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
+												for a vCard representing an organization.  An organization
+												vCard will not (in fact, MUST NOT) contain MEMBER properties,
+												and so these are something of a cross between "individual" and
+												"group".  An organization is a single entity, but not a person.
+												It might represent a business or government, a department or
+												division within a business or government, a club, an
+												association, or the like.
+												All properties in an organization vCard apply to the
+												organization as a whole, as is the case with a group vCard.
+												For example, an EMAIL property might specify the address of a
+												contact point for the organization.
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="location">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-6.1.4">
+												for a named geographical place.  A location vCard will
+												usually contain a GEO property, but it is not required to.  A
+												location vCard without a GEO property can be considered an
+												abstract location, or one whose definition is known empirically
+												(perhaps "New England" or "The Seashore").
+												All properties in a location vCard apply to the location
+												itself, and not with any entity that might exist at that
+												location.  For example, in a vCard for an office building, an
+												ADR property might give the mailing address for the building,
+												and a TEL property might specify the telephone number of the
+												receptionist.
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
