@@ -1,4 +1,4 @@
-﻿# Copyright © 2020 Sergei S. Betke
+﻿# Copyright © 2021 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -10,6 +10,8 @@
 		Create QR code with selected data
 #>
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
+[OutputType([System.Void])]
+
 Param(
 	# Данные для QR
 	[Parameter( Mandatory = $True, ValueFromPipeline = $True )]
