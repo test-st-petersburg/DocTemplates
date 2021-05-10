@@ -21,10 +21,10 @@
 			<xsd:element name="adr">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify the components of the delivery address for the
+						**Purpose**:  To specify the components of the delivery address for the
 						vCard object.
 
-						Special notes:  The structured type value consists of a sequence of
+						**Special notes**:  The structured type value consists of a sequence of
 						address components.  The component values MUST be specified in
 						their corresponding position.  The structured type value
 						corresponds, in sequence, to
@@ -45,15 +45,14 @@
 						interoperability issues.  To ensure maximal interoperability,
 						their values SHOULD be empty.
 
-						Example: In this example, the post office box and the extended
+						**Examples**: In this example, the post office box and the extended
 						address are absent.
-
-						ADR;GEO="geo:12.3457,78.910";LABEL="Mr. John Q. Public, Esq.\n
-							Mail Drop: TNE QB\n123 Main Street\nAny Town, CA  91921-1234\n
-							U.S.A.":;;123 Main Street;Any Town;CA;91921-1234;U.S.A.
+							ADR;GEO="geo:12.3457,78.910";LABEL="Mr. John Q. Public, Esq.\n
+								Mail Drop: TNE QB\n123 Main Street\nAny Town, CA  91921-1234\n
+								U.S.A.":;;123 Main Street;Any Town;CA;91921-1234;U.S.A.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.3.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>

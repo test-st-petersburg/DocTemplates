@@ -21,10 +21,10 @@
 			<xsd:element name="source" type="xcard:parametrized-value-uri">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To identify the source of directory information contained
+						**Purpose**:  To identify the source of directory information contained
 						in the content type.
 
-						Special notes:  The SOURCE property is used to provide the means by
+						**Special notes**: The SOURCE property is used to provide the means by
 						which applications knowledgable in the given directory service
 						protocol can obtain additional or more up-to-date information from
 						the directory service.  It contains a URI as defined in [RFC3986]
@@ -34,13 +34,12 @@
 						considers to be the best source, or multiple SOURCE properties can
 						be included.
 
-						Examples:
-
-						SOURCE:ldap://ldap.example.com/cn=Babs%20Jensen,%20o=Babsco,%20c=US
-						SOURCE:http://directory.example.com/addressbooks/jdoe/Jean%20Dupont.vcf
+						**Examples**:
+							SOURCE:ldap://ldap.example.com/cn=Babs%20Jensen,%20o=Babsco,%20c=US
+							SOURCE:http://directory.example.com/addressbooks/jdoe/Jean%20Dupont.vcf
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.1.3 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -53,59 +52,10 @@
 				<xsd:complexType>
 					<xsd:annotation>
 						<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-							Purpose:  To specify the kind of object the vCard represents.
-							Special notes:  The value may be one of the following:
-							"individual"  for a vCard representing a single person or entity.
-								This is the default kind of vCard.
-							"group"  for a vCard representing a group of persons or entities.
-								The group's member entities can be other vCards or other types
-								of entities, such as email addresses or web sites.  A group
-								vCard will usually contain MEMBER properties to specify the
-								members of the group, but it is not required to.  A group vCard
-								without MEMBER properties can be considered an abstract
-								grouping, or one whose members are known empirically (perhaps
-								"IETF Participants" or "Republican U.S. Senators").
-								All properties in a group vCard apply to the group as a whole,
-								and not to any particular MEMBER.  For example, an EMAIL
-								property might specify the address of a mailing list associated
-								with the group, and an IMPP property might refer to a group
-								chat room.
-							"org"  for a vCard representing an organization.  An organization
-								vCard will not (in fact, MUST NOT) contain MEMBER properties,
-								and so these are something of a cross between "individual" and
-								"group".  An organization is a single entity, but not a person.
-								It might represent a business or government, a department or
-								division within a business or government, a club, an
-								association, or the like.
-								All properties in an organization vCard apply to the
-								organization as a whole, as is the case with a group vCard.
-								For example, an EMAIL property might specify the address of a
-								contact point for the organization.
-							"location"  for a named geographical place.  A location vCard will
-								usually contain a GEO property, but it is not required to.  A
-								location vCard without a GEO property can be considered an
-								abstract location, or one whose definition is known empirically
-								(perhaps "New England" or "The Seashore").
-								All properties in a location vCard apply to the location
-								itself, and not with any entity that might exist at that
-								location.  For example, in a vCard for an office building, an
-								ADR property might give the mailing address for the building,
-								and a TEL property might specify the telephone number of the
-								receptionist.
-							An x-name.  vCards MAY include private or experimental values for
-								KIND.  Remember that x-name values are not intended for general
-								use and are unlikely to interoperate.
-							An iana-token.  Additional values may be registered with IANA (see
-								Section 10.3.4).  A new value's specification document MUST
-								specify which properties make sense for that new kind of vCard
-								and which do not.
-
-							Implementations MUST support the specific string values defined
-							above.  If this property is absent, "individual" MUST be assumed
-							as the default.
+							**Purpose**: To specify the kind of object the vCard represents.
 
 							[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.1.4 "vCard Format Specification")
-							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 						</xsd:documentation>
 					</xsd:annotation>
 					<xsd:complexContent>

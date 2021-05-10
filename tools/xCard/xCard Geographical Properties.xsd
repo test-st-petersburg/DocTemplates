@@ -21,10 +21,10 @@
 			<xsd:element name="tz">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify information related to the time zone of the
+						**Purpose**:  To specify information related to the time zone of the
 						object the vCard represents.
 
-						Special notes:  It is expected that names from the public-domain
+						**Special notes**:  It is expected that names from the public-domain
 						Olson database [TZ-DB] will be used, but this is not a
 						restriction.  See also [IANA-TZ].
 
@@ -34,13 +34,13 @@
 						regions will "re-base" their overall offset.  The actual offset
 						may be +/- 1 hour (or perhaps a little more) than the one given.
 
-						Examples:
+						**Examples**:
 							TZ:Raleigh/North America
 							TZ;VALUE=utc-offset:-0500
 								; Note: utc-offset format is NOT RECOMMENDED.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.5.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
@@ -108,18 +108,18 @@
 			<xsd:element name="geo" type="xcard:parametrized-value-uri-with-type">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify information related to the global positioning of
+						**Purpose**:  To specify information related to the global positioning of
 						the object the vCard represents.
 
-						Special notes:  The "geo" URI scheme [RFC5870] is particularly well
+						**Special notes**:  The "geo" URI scheme [RFC5870] is particularly well
 							suited for this property, but other schemes MAY be used.
 
-						Example:
+						**Examples**:
 							GEO:geo:37.386013,-122.082932
 
 						[RFC 5870](https://tools.ietf.org/html/rfc5870)
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.5.2 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>

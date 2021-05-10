@@ -28,12 +28,12 @@
 						language tag as defined in
 						[Section 2 of RFC 5646](https://tools.ietf.org/html/rfc5646#section-2).
 
-						Examples:
+						**Examples**:
 
 						ROLE;LANGUAGE=tr:hoca
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -63,7 +63,7 @@
 						instances.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.3 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
@@ -150,7 +150,7 @@
 							PHOTO;ALTID=1;data:image/jp2;base64,...
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.4 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -168,12 +168,10 @@
 						appear more than once in a given property.  It MUST NOT appear on
 						properties that may have only one instance per vCard.  Its value is
 						either a single small positive integer or a pair of small positive
-						integers separated by a dot.  Multiple values may be encoded in a
-						single PID parameter by separating the values with a comma ",".  See
-						Section 7 for more details on its usage.
+						integers separated by a dot.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.5 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
@@ -213,23 +211,62 @@
 				"individual", or to none in other cases.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="work"/>
-			<xsd:enumeration value="home"/>
+			<xsd:enumeration value="work">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The "work" value implies that the property is related to an individual's work place.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="home">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The "home" value implies that the property is related to an individual's
+						personal life.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
 		</xsd:restriction>
 	</xsd:simpleType>
 
 	<xsd:group name="param-type">
 		<xsd:sequence>
 			<xsd:element name="type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The TYPE parameter has multiple, different uses.  In general, it is a
+						way of specifying class characteristics of the associated property.
+						Most of the time, its value is a comma-separated subset of a
+						predefined enumeration.  In this document, the following properties
+						make use of this parameter: FN, NICKNAME, PHOTO, ADR, TEL, EMAIL,
+						IMPP, LANG, TZ, GEO, TITLE, ROLE, LOGO, ORG, RELATED, CATEGORIES,
+						NOTE, SOUND, URL, KEY, FBURL, CALADRURI, and CALURI.  The TYPE
+						parameter MUST NOT be applied on other properties defined in this
+						document.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="text" type="xcard:type-value" minOccurs="1" maxOccurs="unbounded"/>
 					</xsd:sequence>
 				</xsd:complexType>
+				<xsd:unique name="type-must-be-unique">
+					<xsd:selector xpath="text"/>
+					<xsd:field xpath="."/>
+				</xsd:unique>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
@@ -258,7 +295,7 @@
 				TYPE="voice,fax".
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.1 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -331,12 +368,23 @@
 	<xsd:group name="param-type-tel">
 		<xsd:sequence>
 			<xsd:element name="type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The property can include the parameter "TYPE" to specify intended
+						use for the telephone number.
+
+						The default type is "voice".
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="text" type="xcard:type-value-tel" default="voice" minOccurs="1" maxOccurs="unbounded"/>
 					</xsd:sequence>
 				</xsd:complexType>
-				<xsd:unique name="tel-type-must-be-unique">
+				<xsd:unique name="type-tel-must-be-unique">
 					<xsd:selector xpath="text"/>
 					<xsd:field xpath="."/>
 				</xsd:unique>
@@ -357,7 +405,7 @@
 				associated with the vCard.
 				emergency:  indicates an emergency contact
 
-				Examples:
+				**Examples**:
 
 				RELATED;TYPE=friend:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
 				RELATED;TYPE=contact:http://example.com/directory/jdoe.vcf
@@ -365,7 +413,7 @@
 				Doe for any inquiries.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.6 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -421,7 +469,7 @@
 						functionality (e.g., "ftp" [RFC1738]).
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.7 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -444,7 +492,7 @@
 						not understand.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.8 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
@@ -477,7 +525,7 @@
 						many or fewer elements as the corresponding property value has
 						components.  This parameter's value is case-sensitive.
 
-						Examples: For the case of surname and given name sorting, the
+						**Examples**: For the case of surname and given name sorting, the
 						following examples define common sort string usage with the N
 						property.
 
@@ -517,7 +565,7 @@
 								Robert Pau Shou Chang
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.9 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -534,7 +582,7 @@
 						that of the GEO property.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.10 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -551,7 +599,7 @@
 						property.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.11 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
@@ -576,7 +624,7 @@
 						as \n, as they are for property values.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.3.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>

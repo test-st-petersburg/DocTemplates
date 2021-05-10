@@ -21,15 +21,15 @@
 			<xsd:element name="categories" type="xcard:parametrized-value-text-list">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify application category information about the
+						**Purpose**:  To specify application category information about the
 						vCard, also known as "tags".
 
-						Example:
+						**Examples**:
 								CATEGORIES:TRAVEL AGENT
 								CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -41,17 +41,17 @@
 			<xsd:element name="note" type="xcard:parametrized-value-text-with-language">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify supplemental information or a comment that is
+						**Purpose**:  To specify supplemental information or a comment that is
 						associated with the vCard.
 
-						Special notes:  The property is based on the X.520 Description
+						**Special notes**:  The property is based on the X.520 Description
 							attribute [CCITT.X520.1988].
 
-						Example:
+						**Examples**:
 							NOTE:This fax number is operational 0800 to 1715 EST\, Mon-Fri.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.2 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -63,20 +63,20 @@
 			<xsd:element name="prodid" type="xcard:value-text">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify the identifier for the product that created the
+						**Purpose**:  To specify the identifier for the product that created the
 						vCard object.
 
-						Special notes:  Implementations SHOULD use a method such as that
+						**Special notes**:  Implementations SHOULD use a method such as that
 						specified for Formal Public Identifiers in [ISO9070] or for
 						Universal Resource Names in [RFC3406] to ensure that the text
 						value is unique.
 
-						Example:
+						**Examples**:
 							PRODID:-//ONLINE DIRECTORY//NONSGML Version 1//EN
 
 						[RFC 3406](https://tools.ietf.org/html/rfc3406)
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.3 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -88,16 +88,16 @@
 			<xsd:element name="rev" type="xcard:value-timestamp">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify revision information about the current vCard.
+						**Purpose**:  To specify revision information about the current vCard.
 
-						Special notes:  The value distinguishes the current revision of the
+						**Special notes**:  The value distinguishes the current revision of the
 						information in this vCard for other renditions of the information.
 
-						Example:
+						**Examples**:
 							REV:19951031T222710Z
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.4 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -109,13 +109,13 @@
 			<xsd:element name="sound" type="xcard:parametrized-value-uri-with-type-language">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify a digital sound content information that
+						**Purpose**:  To specify a digital sound content information that
 						annotates some aspect of the vCard.  This property is often used
 						to specify the proper pronunciation of the name property value of
 						the vCard.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.5 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -127,19 +127,19 @@
 			<xsd:element name="uid" type="xcard:value-uri-or-text">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify a value that represents a globally unique
+						**Purpose**:  To specify a value that represents a globally unique
 						identifier corresponding to the entity associated with the vCard.
 
-						Special notes:  This property is used to uniquely identify the object
+						**Special notes**:  This property is used to uniquely identify the object
 						that the vCard represents.  The "uuid" URN namespace defined in
 						[RFC4122] is particularly well suited to this task, but other URI
 						schemes MAY be used.  Free-form text MAY also be used.
 
-						Example:
+						**Examples**:
 							UID:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.6 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -151,7 +151,7 @@
 			<xsd:element name="clientpidmap">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To give a global meaning to a local PID source identifier.
+						**Purpose**:  To give a global meaning to a local PID source identifier.
 
 						The first field is a small integer corresponding to the second field of a PID
 						parameter instance.
@@ -159,7 +159,7 @@
 						namespace defined in [RFC4122] is particularly well suited to this
 						task, but other URI schemes MAY be used.
 
-						Special notes:  PID source identifiers (the source identifier is the
+						**Special notes**:  PID source identifiers (the source identifier is the
 						second field in a PID parameter instance) are small integers that
 						only have significance within the scope of a single vCard
 						instance.  Each distinct source identifier present in a vCard MUST
@@ -172,14 +172,14 @@
 						As a special exception, the PID parameter MUST NOT be applied to
 						this property.
 
-						Example:
+						**Examples**:
 							TEL;PID=3.1,4.2;VALUE=uri:tel:+1-555-555-5555
 							EMAIL;PID=4.1,5.2:jdoe@example.com
 							CLIENTPIDMAP:1;urn:uuid:3df403f4-5924-4bb7-b077-3c711d9eb34b
 							CLIENTPIDMAP:2;urn:uuid:d89c9c7a-2e1b-4832-82de-7e992d95faa5
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.7 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 				<!-- TODO: добавить key и keyref для контроля наличия связи между uri и sourceid -->
@@ -198,16 +198,16 @@
 			<xsd:element name="url" type="xcard:parametrized-value-uri-with-type">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						Purpose:  To specify a uniform resource locator associated with the
+						**Purpose**:  To specify a uniform resource locator associated with the
 						object to which the vCard refers. Examples for individuals
 						include personal web sites, blogs, and social networking site
 						identifiers.
 
-						Example:
+						**Examples**:
 							URL:http://example.org/restaurant.french/~chezchic.html
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.8 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>

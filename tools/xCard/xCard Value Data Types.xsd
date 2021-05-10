@@ -20,7 +20,7 @@
 				Identifier registered with IANA.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -35,7 +35,7 @@
 				products, or for use in bilateral agreements.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -52,8 +52,7 @@
 				contain human-readable text.  As for the language, it is controlled
 				by the LANGUAGE property parameter defined in Section 5.1.
 
-				Examples for "text":
-
+				**Examples**:
 					this is a text value
 					this is one value,this is another
 					this is a single value\, with a comma encoded
@@ -64,13 +63,11 @@
 				is, "\n" or "\N".
 
 				For example, a multiple line NOTE value of:
-
 					Mythical Manager
 					Hyjinx Software Division
 					BabsCo, Inc.
 
 				could be represented as:
-
 					NOTE:Mythical Manager\nHyjinx Software Division\n
 						BabsCo\, Inc.\n
 
@@ -89,40 +86,12 @@
 			<xsd:element name="text" type="xcard:text">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-						For xCard we using xsd:string, but for vCard:
-
-						"text": The "text" value type should be used to identify values that
+						The "text" value type should be used to identify values that
 						contain human-readable text.  As for the language, it is controlled
 						by the LANGUAGE property parameter defined in Section 5.1.
 
-						Examples for "text":
-
-							this is a text value
-							this is one value,this is another
-							this is a single value\, with a comma encoded
-
-						A formatted text line break in a text value type MUST be represented
-						as the character sequence backslash (U+005C) followed by a Latin
-						small letter n (U+006E) or a Latin capital letter N (U+004E), that
-						is, "\n" or "\N".
-
-						For example, a multiple line NOTE value of:
-
-							Mythical Manager
-							Hyjinx Software Division
-							BabsCo, Inc.
-
-						could be represented as:
-
-							NOTE:Mythical Manager\nHyjinx Software Division\n
-								BabsCo\, Inc.\n
-
-						demonstrating the \n literal formatted line break technique, the
-						CRLF-followed-by-space line folding technique, and the backslash
-						escape technique.
-
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -153,13 +122,12 @@
 						Note that the value of a property of type "uri" is what the URI points to,
 						not the URI itself.
 
-						Examples for "uri":
-
+						**Examples**:
 							http://www.example.com/my/picture.jpg
 							ldap://ldap.example.com/cn=babs%20jensen
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.2 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -209,7 +177,7 @@
 				of the extended format.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -247,7 +215,7 @@
 						of the extended format.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -286,7 +254,7 @@
 						  102200-0800
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.2 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -324,7 +292,7 @@
 						of the extended format.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -353,7 +321,7 @@
 						---22T14
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.3 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -391,7 +359,7 @@
 						of the extended format.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -428,7 +396,7 @@
 						19961022T140000-0500
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.5 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -452,7 +420,7 @@
 								  19961022T140000-0500
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.5 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -467,14 +435,14 @@
 						"boolean": The "boolean" value type is used to express boolean
 						values.  These values are case-insensitive.
 
-						Examples:
+						**Examples**:
 
 							TRUE
 							false
 							True
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.4 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -494,14 +462,14 @@
 						These limits correspond to a signed 64-bit integer using two's-
 						complement arithmetic.
 
-						Examples:
+						**Examples**:
 
 							1234567890
 							-1234556790
 							+1234556790,432109876
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.5 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -523,14 +491,14 @@
 						Note: Scientific notation is disallowed.  Implementers wishing to
 						use their favorite language's %f formatting should be careful.
 
-						Examples:
+						**Examples**:
 
 							20.30
 							1000000.0000001
 							1.333,3.14
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.6 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -554,7 +522,7 @@
 				MUST be used.
 
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.7 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -581,7 +549,7 @@
 						MUST be used.
 
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.7 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -598,7 +566,7 @@
 				"language-tag": A single language tag, as defined in
 				[RFC 5646](https://tools.ietf.org/html/rfc5646).
 				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.8 "vCard Format Specification")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:language"/>
@@ -617,7 +585,7 @@
 						"language-tag": A single language tag, as defined in
 						[RFC 5646](https://tools.ietf.org/html/rfc5646).
 						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.8 "vCard Format Specification")
-						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
