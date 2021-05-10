@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-title">
+		<xsd:sequence>
+			<xsd:element name="title" type="xcard:parametrized-value-text-with-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the position or job of the object the vCard
+						represents.
+
+						Special notes:  This property is based on the X.520 Title attribute
+							[CCITT.X520.1988].
+
+						Example:
+							TITLE:Research Scientist
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-role">
+		<xsd:sequence>
+			<xsd:element name="role" type="xcard:parametrized-value-text-with-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the function or part played in a particular
+						situation by the object the vCard represents.
+
+						Special notes:  This property is based on the X.520 Business Category
+						explanatory attribute [CCITT.X520.1988].  This property is
+						included as an organizational type to avoid confusion with the
+						semantics of the TITLE property and incorrect usage of that
+						property when the semantics of this property is intended.
+
+						Example:
+							ROLE:Project Leader
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-logo">
+		<xsd:sequence>
+			<xsd:element name="logo" type="xcard:parametrized-value-uri-with-type-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify a graphic image of a logo associated with the
+						object the vCard represents.
+
+						Examples:
+							LOGO:http://www.example.com/pub/logos/abccorp.jpg
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-org">
+		<xsd:sequence>
+			<xsd:element name="org" type="xcard:parametrized-value-text-list-with-language-sort-as">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the organizational name and units associated
+						with the vCard.
+
+						Special notes:  The property is based on the X.520 Organization Name
+						and Organization Unit attributes [CCITT.X520.1988].  The property
+						value is a structured type consisting of the organization name,
+						followed by zero or more levels of organizational unit names.
+
+						Example: A property value consisting of an organizational name,
+						organizational unit #1 name, and organizational unit #2 name.
+								ORG:ABC\, Inc.;North American Division;Marketing
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-member">
+		<xsd:sequence>
+			<xsd:element name="member" type="xcard:parametrized-value-uri">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To include a member in the group this vCard represents.
+
+						Value type:  A single URI.  It MAY refer to something other than a
+						vCard object.  For example, an email distribution list could
+						employ the "mailto" URI scheme [RFC6068] for efficiency.
+
+						Special notes:  This property MUST NOT be present unless the value of
+						the KIND property is "group".
+
+						Examples:
+							MEMBER:urn:uuid:03a0e51f-d1aa-4385-8a53-e29025acd8af
+							MEMBER:mailto:subscriber1@example.com
+							MEMBER:xmpp:subscriber2@example.com
+							MEMBER:sip:subscriber3@example.com
+							MEMBER:tel:+1-418-555-5555
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-related">
+		<xsd:sequence>
+			<xsd:element name="related">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify a relationship between another entity and the
+						entity represented by this vCard.
+
+						Examples:
+							RELATED;TYPE=friend:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+							RELATED;TYPE=contact:http://example.com/directory/jdoe.vcf
+							RELATED;TYPE=co-worker;VALUE=text:Please contact my assistant Jane
+								Doe for any inquiries.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type-related" minOccurs="0"/>
+						<xsd:choice>
+							<xsd:group ref="xcard:value-uri-content"/>
+							<xsd:group ref="xcard:value-text-content"/>
+						</xsd:choice>
+					</xsd:sequence>
+					<!-- TODO: Возможно, придётся переделать choice на assert. Но для этого придётся дождаться поддержки XSD 1.1
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="parameters" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:group ref="xcard:param-altid"/>
+										<xsd:group ref="xcard:param-pid"/>
+										<xsd:group ref="xcard:param-pref"/>
+										<xsd:group ref="xcard:param-type-related"/>
+										<xsd:group ref="xcard:param-mediatype"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:group ref="xcard:value-uri-content"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="parameters" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:group ref="xcard:param-language"/>
+										<xsd:group ref="xcard:param-altid"/>
+										<xsd:group ref="xcard:param-pid"/>
+										<xsd:group ref="xcard:param-pref"/>
+										<xsd:group ref="xcard:param-type-related"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:group ref="xcard:value-text-content"/>
+						</xsd:sequence>
+					</xsd:choice>
+					-->
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

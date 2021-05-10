@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Value Data Types.xsd"/>
+
+	<xsd:group name="param-language">
+		<xsd:sequence>
+			<xsd:element name="language" type="xcard:value-language-tag" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The LANGUAGE property parameter is used to identify data in multiple
+						languages.  There is no concept of "default" language, except as
+						specified by any "Content-Language" MIME header parameter that is
+						present [RFC3282].  The value of the LANGUAGE property parameter is a
+						language tag as defined in
+						[Section 2 of RFC 5646](https://tools.ietf.org/html/rfc5646#section-2).
+
+						Examples:
+
+						ROLE;LANGUAGE=tr:hoca
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-pref">
+		<xsd:sequence>
+			<xsd:element name="pref" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The PREF parameter is OPTIONAL and is used to indicate that the
+						corresponding instance of a property is preferred by the vCard
+						author.  Its value MUST be an integer between 1 and 100 that
+						quantifies the level of preference.  Lower values correspond to a
+						higher level of preference, with 1 being most preferred.
+
+						When the parameter is absent, the default MUST be to interpret the
+						property instance as being least preferred.
+
+						Note that the value of this parameter is to be interpreted only in
+						relation to values assigned to other instances of the same property
+						in the same vCard.  A given value, or the absence of a value, MUST
+						NOT be interpreted on its own.
+
+						This parameter MAY be applied to any property that allows multiple
+						instances.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="integer" default="100">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:integer">
+									<xsd:minInclusive value="1"/>
+									<xsd:maxInclusive value="100"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-altid">
+		<xsd:sequence>
+			<xsd:element name="altid" type="xcard:value-text" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The ALTID parameter is used to "tag" property instances as being
+						alternative representations of the same logical property.  For
+						example, translations of a property in multiple languages generates
+						multiple property instances having different LANGUAGE (Section 5.1)
+						parameter that are tagged with the same ALTID value.
+
+						This parameter's value is treated as an opaque string.  Its sole
+						purpose is to be compared for equality against other ALTID parameter
+						values.
+
+						Two property instances are considered alternative representations of
+						the same logical property if and only if their names as well as the
+						value of their ALTID parameters are identical.  Property instances
+						without the ALTID parameter MUST NOT be considered an alternative
+						representation of any other property instance.  Values for the ALTID
+						parameter are not globally unique: they MAY be reused for different
+						property names.
+
+						Property instances having the same ALTID parameter value count as 1
+						toward cardinality.  Therefore, since N (Section 6.2.2) has
+						cardinality *1 and TITLE (Section 6.6.1) has cardinality *, these
+						three examples would be legal:
+
+							N;ALTID=1;LANGUAGE=jp:aaa;;;
+							N;ALTID=1;LANGUAGE=en:Yamada;Taro;;;
+
+							TITLE;ALTID=1;LANGUAGE=fr:Patron
+							TITLE;ALTID=1;LANGUAGE=en:Boss
+
+							TITLE;ALTID=1;LANGUAGE=fr:Patron
+							TITLE;ALTID=1;LANGUAGE=en:Boss
+							TITLE;ALTID=2;LANGUAGE=en:Chief vCard Evangelist
+
+						while this one would not:
+
+							N;ALTID=1;LANGUAGE=jp:aaa;;;
+							N:Yamada;Taro;;;
+							(Two instances of the N property.)
+
+						and these three would be legal but questionable:
+
+							TITLE;ALTID=1;LANGUAGE=fr:Patron
+							TITLE;ALTID=2;LANGUAGE=en:Boss
+							(Should probably have the same ALTID value.)
+
+							TITLE;ALTID=1;LANGUAGE=fr:Patron
+							TITLE:LANGUAGE=en:Boss
+							(Second line should probably have ALTID=1.)
+
+							N;ALTID=1;LANGUAGE=jp:aaa;;;
+							N;ALTID=1;LANGUAGE=en:Yamada;Taro;;;
+							N;ALTID=1;LANGUAGE=en:Smith;John;;;
+							(The last line should probably have ALTID=2.  But that would be
+							illegal because N has cardinality *1.)
+
+						The ALTID property MAY also be used in may contexts other than with
+						the LANGUAGE parameter.  Here's an example with two representations
+						of the same photo in different file formats:
+
+							PHOTO;ALTID=1:data:image/jpeg;base64,...
+							PHOTO;ALTID=1;data:image/jp2;base64,...
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-pid">
+		<xsd:sequence>
+			<xsd:element name="pid" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The PID parameter is used to identify a specific property among
+						multiple instances.  It plays a role analogous to the UID property
+						(Section 6.7.6) on a per-property instead of per-vCard basis.  It MAY
+						appear more than once in a given property.  It MUST NOT appear on
+						properties that may have only one instance per vCard.  Its value is
+						either a single small positive integer or a pair of small positive
+						integers separated by a dot.  Multiple values may be encoded in a
+						single PID parameter by separating the values with a comma ",".  See
+						Section 7 for more details on its usage.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="text" minOccurs="1" maxOccurs="unbounded">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:pattern value="\d+(\.\d+)?"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:simpleType name="type-value">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				The TYPE parameter has multiple, different uses.  In general, it is a
+				way of specifying class characteristics of the associated property.
+				Most of the time, its value is a comma-separated subset of a
+				predefined enumeration.  In this document, the following properties
+				make use of this parameter: FN, NICKNAME, PHOTO, ADR, TEL, EMAIL,
+				IMPP, LANG, TZ, GEO, TITLE, ROLE, LOGO, ORG, RELATED, CATEGORIES,
+				NOTE, SOUND, URL, KEY, FBURL, CALADRURI, and CALURI.  The TYPE
+				parameter MUST NOT be applied on other properties defined in this
+				document.
+
+				The "work" and "home" values act like tags.  The "work" value implies
+				that the property is related to an individual's work place, while the
+				"home" value implies that the property is related to an individual's
+				personal life.  When neither "work" nor "home" is present, it is
+				implied that the property is related to both an individual's work
+				place and personal life in the case that the KIND property's value is
+				"individual", or to none in other cases.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.6 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="work"/>
+			<xsd:enumeration value="home"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="param-type">
+		<xsd:sequence>
+			<xsd:element name="type" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="text" type="xcard:type-value" minOccurs="1" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:simpleType name="type-value-tel">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				The property can include the parameter "TYPE" to specify intended
+				use for the telephone number.  The predefined values for the TYPE
+				parameter are:
+
+				text - Indicates that the telephone number supports text messages (SMS).
+				voice - Indicates a voice telephone number.
+				fax - Indicates a facsimile telephone number.
+				cell - Indicates a cellular or mobile telephone number.
+				video - Indicates a video conferencing telephone number.
+				pager - Indicates a paging device telephone number.
+				textphone - Indicates a telecommunication device for people with hearing or speech difficulties.
+
+				The default type is "voice".  These type parameter values can be
+				specified as a parameter list (e.g., TYPE=text;TYPE=voice) or as a
+				value list (e.g., TYPE="text,voice").  The default can be
+				overridden to another set of values by specifying one or more
+				alternate values.  For example, the default TYPE of "voice" can be
+				reset to a VOICE and FAX telephone number by the value list
+				TYPE="voice,fax".
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.1 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="work">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates the telephone number at work.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="home">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates the telephone number at home.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a telecommunication device for people with hearing or speech difficulties.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="voice">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a voice telephone number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="fax">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a facsimile telephone number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="cell">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a cellular or mobile telephone number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="video">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a video conferencing telephone number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="pager">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a paging device telephone number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="textphone">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Indicates a telecommunication device for people with hearing or speech difficulties.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="param-type-tel">
+		<xsd:sequence>
+			<xsd:element name="type" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="text" type="xcard:type-value-tel" default="voice" minOccurs="1" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+				<xsd:unique name="tel-type-must-be-unique">
+					<xsd:selector xpath="text"/>
+					<xsd:field xpath="."/>
+				</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:simpleType name="type-value-related">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				The TYPE parameter MAY be used to characterize the
+				related entity.  It contains a comma-separated list of values that
+				are registered with IANA as described in Section 10.2.  The
+				registry is pre-populated with the values defined in [xfn].  This
+				document also specifies two additional values:
+
+				agent:  an entity who may sometimes act on behalf of the entity
+				associated with the vCard.
+				emergency:  indicates an emergency contact
+
+				Examples:
+
+				RELATED;TYPE=friend:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+				RELATED;TYPE=contact:http://example.com/directory/jdoe.vcf
+				RELATED;TYPE=co-worker;VALUE=text:Please contact my assistant Jane
+				Doe for any inquiries.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.6.6 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="contact"/>
+			<xsd:enumeration value="acquaintance"/>
+			<xsd:enumeration value="friend"/>
+			<xsd:enumeration value="met"/>
+			<xsd:enumeration value="co-worker"/>
+			<xsd:enumeration value="colleague"/>
+			<xsd:enumeration value="co-resident"/>
+			<xsd:enumeration value="neighbor"/>
+			<xsd:enumeration value="child"/>
+			<xsd:enumeration value="parent"/>
+			<xsd:enumeration value="sibling"/>
+			<xsd:enumeration value="spouse"/>
+			<xsd:enumeration value="kin"/>
+			<xsd:enumeration value="muse"/>
+			<xsd:enumeration value="crush"/>
+			<xsd:enumeration value="date"/>
+			<xsd:enumeration value="sweetheart"/>
+			<xsd:enumeration value="me"/>
+			<xsd:enumeration value="agent"/>
+			<xsd:enumeration value="emergency"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="param-type-related">
+		<xsd:sequence>
+			<xsd:element name="type" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="text" type="xcard:type-value-related" minOccurs="1" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-mediatype">
+		<xsd:sequence>
+			<xsd:element name="mediatype" type="xcard:value-text" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The MEDIATYPE parameter is used with properties whose value is a URI.
+						Its use is OPTIONAL.  It provides a hint to the vCard consumer
+						application about the media type [RFC2046] of the resource identified
+						by the URI.  Some URI schemes do not need this parameter.  For
+						example, the "data" scheme allows the media type to be explicitly
+						indicated as part of the URI [RFC2397].  Another scheme, "http",
+						provides the media type as part of the URI resolution process, with
+						the Content-Type HTTP header [RFC2616].  The MEDIATYPE parameter is
+						intended to be used with URI schemes that do not provide such
+						functionality (e.g., "ftp" [RFC1738]).
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.7 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-calscale">
+		<xsd:sequence>
+			<xsd:element name="calscale" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The CALSCALE parameter is identical to the CALSCALE property in
+						iCalendar (see [RFC5545], Section 3.7.1).  It is used to define the
+						calendar system in which a date or date-time value is expressed.  The
+						only value specified by iCalendar is "gregorian", which stands for
+						the Gregorian system.  It is the default when the parameter is
+						absent.  Additional values may be defined in extension documents and
+						registered with IANA (see Section 10.3.4).  A vCard implementation
+						MUST ignore properties with a CALSCALE parameter value that it does
+						not understand.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.8 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="text">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="gregorian"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-sort-as">
+		<xsd:sequence>
+			<xsd:element name="sort-as" type="xcard:value-text-list" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The "sort-as" parameter is used to specify the string to be used for
+						national-language-specific sorting.  Without this information,
+						sorting algorithms could incorrectly sort this vCard within a
+						sequence of sorted vCards.  When this property is present in a vCard,
+						then the given strings are used for sorting the vCard.
+
+						This parameter's value is a comma-separated list that MUST have as
+						many or fewer elements as the corresponding property value has
+						components.  This parameter's value is case-sensitive.
+
+						Examples: For the case of surname and given name sorting, the
+						following examples define common sort string usage with the N
+						property.
+
+								FN:Rene van der Harten
+								N;SORT-AS="Harten,Rene":van der Harten;Rene,J.;Sir;R.D.O.N.
+
+								FN:Robert Pau Shou Chang
+								N;SORT-AS="Pau Shou Chang,Robert":Shou Chang;Robert,Pau;;
+
+								FN:Osamu Koura
+								N;SORT-AS="Koura,Osamu":Koura;Osamu;;
+
+								FN:Oscar del Pozo
+								N;SORT-AS="Pozo,Oscar":del Pozo Triscon;Oscar;;
+
+								FN:Chistine d'Aboville
+								N;SORT-AS="Aboville,Christine":d'Aboville;Christine;;
+								FN:H. James de Mann
+								N;SORT-AS="Mann,James":de Mann;Henry,James;;
+
+						If sorted by surname, the results would be:
+
+								Christine d'Aboville
+								Rene van der Harten
+								Osamu Koura
+								H. James de Mann
+								Robert Pau Shou Chang
+								Oscar del Pozo
+
+						If sorted by given name, the results would be:
+
+								Christine d'Aboville
+								H. James de Mann
+								Osamu Koura
+								Oscar del Pozo
+								Rene van der Harten
+								Robert Pau Shou Chang
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.9 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-geo">
+		<xsd:sequence>
+			<xsd:element name="geo" type="xcard:value-uri" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The GEO parameter can be used to indicate global positioning
+						information that is specific to an address.  Its value is the same as
+						that of the GEO property.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.10 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-tz">
+		<xsd:sequence>
+			<xsd:element name="tz" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The TZ parameter can be used to indicate time zone information that
+						is specific to an address.  Its value is the same as that of the TZ
+						property.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-5.11 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:group ref="xcard:value-text-content"/>
+						<xsd:group ref="xcard:value-uri-content"/>
+						<xsd:group ref="xcard:value-utc-offset-content"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="param-label">
+		<xsd:sequence>
+			<xsd:element name="label" type="xcard:value-text" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The "adr" property can also include a "LABEL" parameter to present a
+						delivery address label for the address.  Its value is a plain-text
+						string representing the formatted address.  Newlines are encoded
+						as \n, as they are for property values.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.3.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-tel">
+		<xsd:sequence>
+			<xsd:element name="tel" type="xcard:parametrized-value-uri-or-text-with-type-tel">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the telephone number for telephony communication
+						with the object the vCard represents.
+
+						Value type:  By default, it is a single free-form text value (for
+						backward compatibility with vCard 3), but it SHOULD be reset to a
+						URI value.  It is expected that the URI scheme will be "tel", as
+						specified in [RFC3966], but other schemes MAY be used.
+
+						The default type is "voice".  These type parameter values can be
+						specified as a parameter list (e.g., TYPE=text;TYPE=voice) or as a
+						value list (e.g., TYPE="text,voice").  The default can be
+						overridden to another set of values by specifying one or more
+						alternate values.  For example, the default TYPE of "voice" can be
+						reset to a VOICE and FAX telephone number by the value list
+						TYPE="voice,fax".
+
+						Example:
+							TEL;VALUE=uri;PREF=1;TYPE="voice,home":tel:+1-555-555-5555;ext=5555
+							TEL;VALUE=uri;TYPE=home:tel:+33-01-23-45-67
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-email">
+		<xsd:sequence>
+			<xsd:element name="email" type="xcard:parametrized-value-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the electronic mail address for communication
+						with the object the vCard represents.
+
+						Special notes:  The property can include tye "PREF" parameter to
+						indicate a preferred-use email address when more than one is
+						specified.
+
+						Even though the value is free-form UTF-8 text, it is likely to be
+						interpreted by a Mail User Agent (MUA) as an "addr-spec", as
+						defined in [RFC5322], Section 3.4.1.  Readers should also be aware
+						of the current work toward internationalized email addresses
+						[RFC5335bis].
+
+						Example:
+								EMAIL;TYPE=work:jqpublic@xyz.example.com
+								EMAIL;PREF=1:jane_doe@example.com
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-impp">
+		<xsd:sequence>
+			<xsd:element name="impp" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the URI for instant messaging and presence
+						protocol communications with the object the vCard represents.
+
+						Example:
+							IMPP;PREF=1:xmpp:alice@example.com
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-lang">
+		<xsd:sequence>
+			<xsd:element name="lang">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the language(s) that may be used for contacting
+						the entity associated with the vCard.
+
+						Example:
+							LANG;TYPE=work;PREF=1:en
+							LANG;TYPE=work;PREF=2:fr
+							LANG;TYPE=home:fr
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.4.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="parameters" type="xcard:parameters-type-with-type" minOccurs="0"/>
+						<xsd:group ref="xcard:value-language-tag-content"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

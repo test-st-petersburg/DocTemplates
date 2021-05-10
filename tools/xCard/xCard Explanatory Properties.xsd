@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-categories">
+		<xsd:sequence>
+			<xsd:element name="categories" type="xcard:parametrized-value-text-list">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify application category information about the
+						vCard, also known as "tags".
+
+						Example:
+								CATEGORIES:TRAVEL AGENT
+								CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-note">
+		<xsd:sequence>
+			<xsd:element name="note" type="xcard:parametrized-value-text-with-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify supplemental information or a comment that is
+						associated with the vCard.
+
+						Special notes:  The property is based on the X.520 Description
+							attribute [CCITT.X520.1988].
+
+						Example:
+							NOTE:This fax number is operational 0800 to 1715 EST\, Mon-Fri.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-prodid">
+		<xsd:sequence>
+			<xsd:element name="prodid" type="xcard:value-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify the identifier for the product that created the
+						vCard object.
+
+						Special notes:  Implementations SHOULD use a method such as that
+						specified for Formal Public Identifiers in [ISO9070] or for
+						Universal Resource Names in [RFC3406] to ensure that the text
+						value is unique.
+
+						Example:
+							PRODID:-//ONLINE DIRECTORY//NONSGML Version 1//EN
+
+						[RFC 3406](https://tools.ietf.org/html/rfc3406)
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-rev">
+		<xsd:sequence>
+			<xsd:element name="rev" type="xcard:value-timestamp">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify revision information about the current vCard.
+
+						Special notes:  The value distinguishes the current revision of the
+						information in this vCard for other renditions of the information.
+
+						Example:
+							REV:19951031T222710Z
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-sound">
+		<xsd:sequence>
+			<xsd:element name="sound" type="xcard:parametrized-value-uri-with-type-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify a digital sound content information that
+						annotates some aspect of the vCard.  This property is often used
+						to specify the proper pronunciation of the name property value of
+						the vCard.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-uid">
+		<xsd:sequence>
+			<xsd:element name="uid" type="xcard:value-uri-or-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify a value that represents a globally unique
+						identifier corresponding to the entity associated with the vCard.
+
+						Special notes:  This property is used to uniquely identify the object
+						that the vCard represents.  The "uuid" URN namespace defined in
+						[RFC4122] is particularly well suited to this task, but other URI
+						schemes MAY be used.  Free-form text MAY also be used.
+
+						Example:
+							UID:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-clientpidmap">
+		<xsd:sequence>
+			<xsd:element name="clientpidmap">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To give a global meaning to a local PID source identifier.
+
+						The first field is a small integer corresponding to the second field of a PID
+						parameter instance.
+						The second field is a URI. The "uuid" URN
+						namespace defined in [RFC4122] is particularly well suited to this
+						task, but other URI schemes MAY be used.
+
+						Special notes:  PID source identifiers (the source identifier is the
+						second field in a PID parameter instance) are small integers that
+						only have significance within the scope of a single vCard
+						instance.  Each distinct source identifier present in a vCard MUST
+						have an associated CLIENTPIDMAP.  See Section 7 for more details
+						on the usage of CLIENTPIDMAP.
+
+						PID source identifiers MUST be strictly positive.  Zero is not
+						allowed.
+
+						As a special exception, the PID parameter MUST NOT be applied to
+						this property.
+
+						Example:
+							TEL;PID=3.1,4.2;VALUE=uri:tel:+1-555-555-5555
+							EMAIL;PID=4.1,5.2:jdoe@example.com
+							CLIENTPIDMAP:1;urn:uuid:3df403f4-5924-4bb7-b077-3c711d9eb34b
+							CLIENTPIDMAP:2;urn:uuid:d89c9c7a-2e1b-4832-82de-7e992d95faa5
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.7 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+				<!-- TODO: добавить key и keyref для контроля наличия связи между uri и sourceid -->
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sourceid" type="xsd:positiveInteger"/>
+						<xsd:group ref="xcard:value-uri-content"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-url">
+		<xsd:sequence>
+			<xsd:element name="url" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						Purpose:  To specify a uniform resource locator associated with the
+						object to which the vCard refers. Examples for individuals
+						include personal web sites, blogs, and social networking site
+						identifiers.
+
+						Example:
+							URL:http://example.org/restaurant.french/~chezchic.html
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.7.8 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

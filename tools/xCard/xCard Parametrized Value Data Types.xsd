@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parameters.xsd"/>
+
+	<xsd:complexType name="parameters-type" abstract="true" block="restriction"/>
+
+	<xsd:complexType name="parameters-type-basic" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type">
+				<xsd:sequence>
+					<!-- TODO: порядок параметров не важен -->
+					<xsd:group ref="xcard:param-altid"/>
+					<xsd:group ref="xcard:param-pid"/>
+					<xsd:group ref="xcard:param-pref"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-type" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-basic">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-type"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-type-language" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-type">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-language"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-type-language-sort-as" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-type-language">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-sort-as"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-type-language-geo-tz-label" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-type-language">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-geo"/>
+					<xsd:group ref="xcard:param-tz"/>
+					<xsd:group ref="xcard:param-label"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-mediatype" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-basic">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-mediatype"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-mediatype-type-tel">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-mediatype">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-type-tel"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-mediatype-type-related">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-mediatype">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-type-related"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-mediatype-type">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-mediatype">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-type"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameters-type-with-mediatype-type-language" block="restriction">
+		<xsd:complexContent>
+			<xsd:extension base="xcard:parameters-type-with-mediatype-type">
+				<xsd:sequence>
+					<xsd:group ref="xcard:param-language"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="parametrized-value-text">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="xcard:parameters-type-with-type" minOccurs="0"/>
+			<xsd:group ref="xcard:value-text-content"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-text-with-language">
+		<xsd:complexContent>
+			<xsd:restriction base="xcard:parametrized-value-text">
+				<xsd:sequence>
+					<xsd:element name="parameters" type="xcard:parameters-type-with-type-language" minOccurs="0"/>
+					<xsd:group ref="xcard:value-text-content"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-text-list">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="xcard:parameters-type-with-type" minOccurs="0"/>
+			<xsd:group ref="xcard:value-text-content" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-text-list-with-language">
+		<xsd:complexContent>
+			<xsd:restriction base="xcard:parametrized-value-text-list">
+				<xsd:sequence>
+					<xsd:element name="parameters" type="xcard:parameters-type-with-type-language" minOccurs="0"/>
+					<xsd:group ref="xcard:value-text-content" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-text-list-with-language-sort-as">
+		<xsd:complexContent>
+			<xsd:restriction base="xcard:parametrized-value-text-list-with-language">
+				<xsd:sequence>
+					<xsd:element name="parameters" type="xcard:parameters-type-with-type-language-sort-as" minOccurs="0"/>
+					<xsd:group ref="xcard:value-text-content" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-uri">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype" minOccurs="0"/>
+			<xsd:group ref="xcard:value-uri-content"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-uri-with-type">
+		<xsd:complexContent>
+			<xsd:restriction base="xcard:parametrized-value-uri">
+				<xsd:sequence>
+					<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type" minOccurs="0"/>
+					<xsd:group ref="xcard:value-uri-content"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-uri-with-type-language">
+		<xsd:complexContent>
+			<xsd:restriction base="xcard:parametrized-value-uri-with-type">
+				<xsd:sequence>
+					<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type-language" minOccurs="0"/>
+					<xsd:group ref="xcard:value-uri-content"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-date-or-text" final="#all">
+		<xsd:sequence>
+			<xsd:element name="parameters" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="xcard:param-altid"/>
+						<xsd:group ref="xcard:param-calscale"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:choice>
+				<xsd:group ref="xcard:value-date-and-or-time-content"/>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:choice>
+		</xsd:sequence>
+		<!-- TODO: Возможно, придётся переделать choice на assert. Но для этого придётся дождаться поддержки XSD 1.1
+		<xsd:choice>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:group ref="xcard:param-altid"/>
+							<xsd:group ref="xcard:param-calscale"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="xcard:value-date-and-or-time-content"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="parameters" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:group ref="xcard:param-altid"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:sequence>
+		</xsd:choice>
+		-->
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-uri-or-text-with-type" final="#all">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:group ref="xcard:value-uri-content"/>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:choice>
+		</xsd:sequence>
+		<!-- TODO: Возможно, придётся переделать choice на assert. Но для этого придётся дождаться поддержки XSD 1.1
+		<xsd:choice>
+			<xsd:sequence>
+				<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type" minOccurs="0"/>
+				<xsd:group ref="xcard:value-uri-content"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="parameters" type="xcard:parameters-type-with-type" minOccurs="0"/>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:sequence>
+		</xsd:choice>
+		-->
+	</xsd:complexType>
+
+	<xsd:complexType name="parametrized-value-uri-or-text-with-type-tel" final="#all">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type-tel" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:group ref="xcard:value-uri-content"/>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:choice>
+		</xsd:sequence>
+		<!-- TODO: Возможно, придётся переделать choice на assert. Но для этого придётся дождаться поддержки XSD 1.1
+		<xsd:choice>
+			<xsd:sequence>
+				<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type-tel" minOccurs="0"/>
+				<xsd:group ref="xcard:value-uri-content"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="parameters" type="xcard:parameters-type-with-type-tel" minOccurs="0"/>
+				<xsd:group ref="xcard:value-text-content"/>
+			</xsd:sequence>
+		</xsd:choice>
+		-->
+	</xsd:complexType>
+
+</xsd:schema>
