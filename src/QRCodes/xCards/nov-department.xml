@@ -1,113 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vcards xmlns="urn:ietf:params:xml:ns:vcard-4.0">
 	<vcard>
-		<kind><text>individual</text></kind>
-
-		<fn><text>Simon Perreault</text></fn>
-		<n>
-			<surname>Perreault</surname>
-			<given>Simon</given>
-			<suffix>ing. jr</suffix>
-			<suffix>M.Sc.</suffix>
-		</n>
-		<bday><date>--0203</date></bday>
-		<anniversary><date-time>20090808T1430-0500</date-time></anniversary>
-		<gender><sex>M</sex></gender>
+		<kind><text>org</text></kind>
+		<fn>
+			<parameters>
+				<language><language-tag>ru</language-tag></language>
+			</parameters>
+			<text>Тест-С.-Петербург, ФБУ, Новгородский филиал</text>
+		</fn>
 		<adr>
 			<parameters>
-				<type>
-					<text>work</text>
-				</type>
-				<label>
-					<text>Simon Perreault 2875 boul. Laurier, suite D2-630 Quebec, QC, Canada G1V 2M2</text>
-				</label>
+				<type><text>work</text></type>
+				<language><language-tag>ru</language-tag></language>
+				<geo><uri>geo:58.545932,31.237971</uri></geo>
 			</parameters>
-			<street>2875 boul. Laurier, suite D2-630</street>
-			<locality>Quebec</locality>
-			<region>QC</region>
-			<code>G1V 2M2</code>
-			<country>Canada</country>
+			<street>пр-кт Александра Корсунова, д.32</street>
+			<locality>Великий Новгород</locality>
+			<region>Новгородская область</region>
+			<code>173024</code>
+			<country>Россия</country>
 		</adr>
 		<tel>
 			<parameters>
-				<pid>
-					<text>1</text>
-					<text>3</text>
-				</pid>
+				<pref><integer>1</integer></pref>
 				<type>
 					<text>work</text>
 					<text>voice</text>
 				</type>
 			</parameters>
-			<uri>tel:+1-418-656-9254;ext=102</uri>
+			<uri>tel:+7-816-2-60-77-27</uri>
 		</tel>
 		<tel>
 			<parameters>
-				<pid><text>2</text></pid>
+				<pref><integer>90</integer></pref>
 				<type>
 					<text>work</text>
-					<text>text</text>
-					<text>voice</text>
-					<text>cell</text>
-					<text>video</text>
+					<text>fax</text>
 				</type>
 			</parameters>
-			<uri>tel:+1-418-262-6501</uri>
+			<uri>tel:+7-816-2-60-77-27;ext=9999</uri>
 		</tel>
 		<email>
 			<parameters>
-				<pid><text>1</text></pid>
-				<type>
-					<text>work</text>
-				</type>
-			</parameters>
-			<text>simon.perreault@viagenie.ca</text>
-		</email>
-		<lang>
-			<parameters>
 				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
 			</parameters>
-			<language-tag>fr</language-tag>
-		</lang>
-		<lang>
-			<parameters>
-				<pref><integer>2</integer></pref>
-			</parameters>
-			<language-tag>en</language-tag>
-		</lang>
-		<tz><text>America/Montreal</text></tz>
+			<text>mail@csm.nov.ru</text>
+		</email>
+		<lang><language-tag>ru</language-tag></lang>
+		<tz><text>Europe/Moscow</text></tz>
 		<geo>
-			<parameters>
-				<type>
-					<text>work</text>
-				</type>
-			</parameters>
-			<uri>geo:46.766336,-71.28955</uri>
+			<uri>geo:58.545932,31.237971</uri>
 		</geo>
 		<org>
 			<parameters>
-				<type>
-					<text>work</text>
-				</type>
+				<language><language-tag>ru</language-tag></language>
+				<sort-as>
+					<text>Тест-С.-Петербург</text>
+					<text>Новгородский филиал</text>
+				</sort-as>
 			</parameters>
-			<text>Viagenie</text>
-			<text>Marketing</text>
+			<text>Тест-С.-Петербург, ФБУ</text>
+			<text>Новгородский филиал</text>
 		</org>
 		<url>
 			<parameters>
-				<type>
-					<text>home</text>
-				</type>
+				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
 			</parameters>
-			<uri>http://nomis80.org</uri>
+			<uri>http://rustest.spb.ru/contacts/nov</uri>
 		</url>
-		<key>
-			<parameters>
-				<type>
-					<text>work</text>
-				</type>
-			</parameters>
-			<uri>http://www.viagenie.ca/simon.perreault/simon.asc</uri>
-		</key>
 	</vcard>
 </vcards>
