@@ -128,7 +128,7 @@ try
 	Write-Verbose 'Создание SAX процессора.';
 	$saxProcessor = New-Object Saxon.Api.Processor;
 
-	if ( $PSCmdlet.MyInvocation.BoundParameters.DtdPath.IsPresent )
+	if ( $PSCmdlet.MyInvocation.BoundParameters.ContainsKey('DtdPath') )
 	{
 		$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
 		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
