@@ -36,8 +36,8 @@
 			<xsd:documentation xml:lang="ru">
 				Коллекция визитных карт.
 
-				[RFC 6351](http://tools.ietf.org/html/rfc6351#section-4 "xCard: vCard XML Representation")
-				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+				RFC 6351 [vCard XML Representation](http://tools.ietf.org/html/rfc6351#section-4 "xCard: vCard XML Representation"),
+				[Relax NG Schema](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -47,11 +47,11 @@
 						<xsd:documentation xml:lang="ru">
 							Элемент, представляющий отдельный контакт.
 
-							[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+							[RFC 6350 Section 6](https://tools.ietf.org/html/rfc6350#section-6 "vCard Format Specification")
 							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 						</xsd:documentation>
 						<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
-							[RFC 6350 Section 6.9.3](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+							[RFC 6350 Section 6](https://tools.ietf.org/html/rfc6350#section-6 "vCard Format Specification")
 							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
 						</xsd:documentation>
 					</xsd:annotation>
