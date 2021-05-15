@@ -136,5 +136,9 @@
 		"changelog",
 		"readme"
 	],
-	"conventionalCommits.showEditor": false
+	"conventionalCommits.showEditor": false,
+	"licenser.license": "AL2",
+	"licenser.author": "Sergei S. Betke",
+	"licenser.projectName": "Шаблоны документов ФБУ \"Тест-С.-Петербург\"",
+	"licenser.useSingleLineStyle": true
 }
