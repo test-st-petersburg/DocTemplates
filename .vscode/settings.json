@@ -20,7 +20,7 @@
 	"xmlComplete.schemaMapping": [
 		{
 			"xmlns": "urn:ietf:params:xml:ns:vcard-4.0",
-			"xsdUri": "tools/xCard/xCard.xsd",
+			"xsdUri": "tools/xCard/xsd/xCard.xsd",
 			"strict": true
 		}
 	],
