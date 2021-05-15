@@ -54,6 +54,7 @@
         "markdownlint",
         "mimetype",
         "mkdocs",
+        "MSXML",
         "NMTOKEN",
         "Nuget",
         "officedocument",
@@ -88,7 +89,9 @@
         "toolbaritem",
         "unexisting",
         "VCARD",
+        "vcards",
         "Veyor",
+        "xcard",
         "xforms",
         "xlink"
     ],
