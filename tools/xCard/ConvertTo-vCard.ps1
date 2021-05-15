@@ -1,4 +1,4 @@
-﻿# Copyright © 2021 Sergei S. Betke
+﻿# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -20,15 +20,16 @@ Param(
 			$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xCard.xsd' );
 			$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null; ;
 			$_.Schemas = $Schemas;
-			# try
-			# {
-			$_.Validate( $null );
-			return $true;
-			# }
-			# catch
-			# {
-			# 	return $false;
-			# };
+			try
+			{
+				$_.Validate( $null );
+				return $true;
+			}
+			catch
+			{
+				Write-Verbose $_.Exception.Message;
+				return $false;
+			};
 		} ) ]
 	[System.Xml.XmlDocument]
 	$Input,
@@ -43,5 +44,5 @@ process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	return '';
+	return 'bbbb';
 }
