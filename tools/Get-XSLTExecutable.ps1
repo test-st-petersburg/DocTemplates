@@ -43,7 +43,7 @@ Function Write-CompilerWarningAndErrors
 
 	[int] $ErrorsCount = 0;
 	foreach ( $Error in $ErrorList )
- {
+	{
 		if ( $Error.ModuleUri.LocalPath.Length -eq 0 )
 		{
 			[System.Uri] $ModuleUriAux = $ModuleUri;
@@ -127,8 +127,12 @@ try
 
 	Write-Verbose 'Создание SAX процессора.';
 	$saxProcessor = New-Object Saxon.Api.Processor;
-	$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
-	$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+
+	if ( $PSCmdlet.MyInvocation.BoundParameters.DtdPath.IsPresent )
+	{
+		$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
+		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	};
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
 
