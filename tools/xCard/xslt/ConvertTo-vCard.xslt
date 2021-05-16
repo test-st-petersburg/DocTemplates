@@ -62,7 +62,14 @@
 			<xsl:text>;</xsl:text>
 			<xsl:value-of select=" upper-case( local-name(.) ) "/>
 			<xsl:text>=</xsl:text>
-			<xsl:apply-templates mode="t:property-parameter-value" select=" * "/>
+			<xsl:variable name="t:property-parameter-values" as=" xsd:string* ">
+				<xsl:apply-templates mode="t:property-parameter-value" select=" * "/>
+			</xsl:variable>
+			<xsl:value-of select=" $t:property-parameter-values[1] "/>
+			<xsl:for-each select=" $t:property-parameter-values[ position()>1 ] ">
+				<xsl:text>,</xsl:text>
+				<xsl:value-of select=" . "/>
+			</xsl:for-each>
 		</xsl:for-each>
 		<!-- значение свойства -->
 		<xsl:text>:</xsl:text>
