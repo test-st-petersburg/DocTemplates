@@ -46,12 +46,11 @@
 	<xsl:template name="t:process-property">
 		<!-- TODO: выполнить разделение строк https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<!-- наименование свойства -->
-		<!-- <xsl:value-of select=" upper-case( local-name(.) ) "/> -->
 		<xsl:value-of select=" upper-case( local-name(.) ) "/>
 		<!-- параметры свойства -->
 		<xsl:apply-templates mode="t:parameters" select=" xcard:parameters/* "/>
 		<!-- TODO: проверить корректное выделение первого значения при наличии параметров -->
-		<xsl:apply-templates mode="t:property-type" select=" ( * except xcard:parameters )[0] "/>
+		<xsl:apply-templates mode="t:property-type" select=" ( * except xcard:parameters )[1] "/>
 		<!-- значение свойства -->
 		<xsl:text>:</xsl:text>
 		<xsl:apply-templates mode="t:properties" select=" . "/>
@@ -70,8 +69,8 @@
 
 	<xsl:template mode="t:properties" match=" * ">
 		<xsl:variable name="t:property-value-components" select=" * except xcard:parameters "/>
-		<xsl:apply-templates mode="t:property-value-component" select=" $t:property-value-components[ position() = 0 ] "/>
-		<xsl:for-each select=" $t:property-value-components[ position() > 0 ] ">
+		<xsl:apply-templates mode="t:property-value-component" select=" $t:property-value-components[ position() = 1 ] "/>
+		<xsl:for-each select=" $t:property-value-components[ position() > 1 ] ">
 			<xsl:text>;</xsl:text>
 			<xsl:apply-templates mode="t:property-value-component" select=" . "/>
 		</xsl:for-each>
