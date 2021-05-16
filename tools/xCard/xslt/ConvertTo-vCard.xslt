@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:ms="urn:schemas-microsoft-com:xslt"
 
 	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
@@ -16,10 +16,11 @@
 	<xsl:mode name="t:head" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="false"/>
 	<xsl:mode name="t:body" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:properties" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
-	<xsl:mode name="t:properties-values" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property-type" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:parameters" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:parameters-values" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
+	<xsl:mode name="t:property-value-component" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:property-value-component-values" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 
 	<xsl:template match="/">
 		<xsl:apply-templates select="xcard:vcards/xcard:vcard"/>
@@ -40,6 +41,8 @@
 		<xsl:value-of select="$t:new-line"/>
 	</xsl:template>
 
+	<?region обработка свойств ?>
+
 	<xsl:template name="t:process-property">
 		<!-- TODO: выполнить разделение строк https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<!-- наименование свойства -->
@@ -47,7 +50,8 @@
 		<xsl:value-of select=" upper-case( local-name(.) ) "/>
 		<!-- параметры свойства -->
 		<xsl:apply-templates mode="t:parameters" select=" xcard:parameters/* "/>
-		<xsl:apply-templates mode="t:property-type" select=" ( * except xcard:parameters )[1] "/>
+		<!-- TODO: проверить корректное выделение первого значения при наличии параметров -->
+		<xsl:apply-templates mode="t:property-type" select=" ( * except xcard:parameters )[0] "/>
 		<!-- значение свойства -->
 		<xsl:text>:</xsl:text>
 		<xsl:apply-templates mode="t:properties" select=" . "/>
@@ -64,9 +68,40 @@
 		<xsl:call-template name="t:process-property"/>
 	</xsl:template>
 
-	<xsl:template mode="t:values" match=" xcard:text ">
-		<xsl:value-of select=" text() "/>
+	<xsl:template mode="t:properties" match=" * ">
+		<xsl:variable name="t:property-value-components" select=" * except xcard:parameters "/>
+		<xsl:apply-templates mode="t:property-value-component" select=" $t:property-value-components[ position() = 0 ] "/>
+		<xsl:for-each select=" $t:property-value-components[ position() > 0 ] ">
+			<xsl:text>;</xsl:text>
+			<xsl:apply-templates mode="t:property-value-component" select=" . "/>
+		</xsl:for-each>
 	</xsl:template>
+
+	<xsl:template mode="t:properties" match=" xcard:n ">
+		<xsl:call-template name="t:process-property-value-component">
+			<xsl:with-param name="t:property-value-component-values" select="xcard:surname"/>
+		</xsl:call-template>
+		<xsl:text>;</xsl:text>
+		<xsl:call-template name="t:process-property-value-component">
+			<xsl:with-param name="t:property-value-component-values" select="xcard:given"/>
+		</xsl:call-template>
+		<xsl:text>;</xsl:text>
+		<xsl:call-template name="t:process-property-value-component">
+			<xsl:with-param name="t:property-value-component-values" select="xcard:additional"/>
+		</xsl:call-template>
+		<xsl:text>;</xsl:text>
+		<xsl:call-template name="t:process-property-value-component">
+			<xsl:with-param name="t:property-value-component-values" select="xcard:prefix"/>
+		</xsl:call-template>
+		<xsl:text>;</xsl:text>
+		<xsl:call-template name="t:process-property-value-component">
+			<xsl:with-param name="t:property-value-component-values" select="xcard:suffix"/>
+		</xsl:call-template>
+	</xsl:template>
+
+	<?endregion обработка свойств ?>
+
+	<?region обработка параметров свойств ?>
 
 	<xsl:template mode="t:parameters" match=" * ">
 		<xsl:value-of select=" concat( ';', upper-case( local-name(.) ), '=' ) "/>
@@ -81,6 +116,8 @@
 		<xsl:value-of select=" text() "/>
 	</xsl:template>
 
+	<?endregion обработка параметров свойств ?>
+
 	<?region обработка типа свойств ?>
 
 	<xsl:template mode="t:property-type" match=" * ">
@@ -94,32 +131,35 @@
 		| xcard:n/*
 	"/>
 
-	<?endregion ?>
+	<?endregion обработка типа свойств ?>
 
 	<?region обработка значений свойств ?>
 
-	<xsl:template mode="t:properties" match=" xcard:n ">
-		<xsl:apply-templates mode="t:properties-values" select="xcard:surname"/>
-		<xsl:text>;</xsl:text>
-		<xsl:apply-templates mode="t:properties-values" select="xcard:given"/>
-		<xsl:text>;</xsl:text>
-		<xsl:apply-templates mode="t:properties-values" select="xcard:additional"/>
-		<xsl:text>;</xsl:text>
-		<xsl:apply-templates mode="t:properties-values" select="xcard:prefix"/>
-		<xsl:text>;</xsl:text>
-		<xsl:apply-templates mode="t:properties-values" select="xcard:suffix"/>
+	<xsl:template mode="t:property-value-component" match=" * ">
+		<xsl:value-of select=" text() "/>
 	</xsl:template>
 
-	<xsl:template mode="t:properties" match=" * ">
-		<xsl:variable name="t:property-value-parts" select=" * except xcard:parameters "/>
-		<xsl:apply-templates mode="t:properties-values" select=" $t:property-value-parts[ position() = 1 ] "/>
-		<xsl:for-each select=" $t:property-value-parts[ position() > 1 ] ">
-			<xsl:text>;</xsl:text>
-			<xsl:apply-templates mode="t:properties-values" select=" . "/>
+	<xsl:template name="t:process-property-value-component">
+		<xsl:param name="t:property-value-component-values"/>
+		<xsl:apply-templates mode="t:property-value-component-values" select=" $t:property-value-component-values[ position()=1 ] "/>
+		<xsl:for-each select=" $t:property-value-component-values[ position() > 1 ] ">
+			<xsl:text>,</xsl:text>
+			<xsl:apply-templates mode="t:property-value-component-values" select=" . "/>
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:function name="t:escape-property-value">
+	<xsl:template mode="t:property-value-component-values" match=" * ">
+		<xsl:value-of select=" text() "/>
+	</xsl:template>
+
+	<xsl:template mode="t:property-value-component-values" match="
+		xcard:text
+		| xcard:n/xcard:*
+	">
+		<xsl:value-of select=" t:escape-property-value-component-value( text() ) "/>
+	</xsl:template>
+
+	<xsl:function name="t:escape-property-value-component-value">
 		<xsl:param name="input"/>
 		<xsl:value-of select="
 			replace(
@@ -136,14 +176,6 @@
 			)
 		"/>
 	</xsl:function>
-
-	<xsl:template mode="t:properties-values" match=" xcard:text ">
-		<xsl:value-of select=" t:escape-property-value( text() ) "/>
-	</xsl:template>
-
-	<xsl:template mode="t:properties-values" match=" * ">
-		<xsl:value-of select=" text() "/>
-	</xsl:template>
 
 	<?endregion ?>
 
