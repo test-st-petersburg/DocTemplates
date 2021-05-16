@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="2.0"
+<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:ms="urn:schemas-microsoft-com:xslt"
@@ -6,7 +6,6 @@
 	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
 
 	xmlns:t="http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard"
-	xmlns:tf="http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard/xPath-3.0-compatibility"
 >
 
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes" media-type="text/x-vcard"/>
@@ -22,40 +21,6 @@
 	<xsl:mode name="t:parameters" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:parameters-values" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 
-	<?region Замена upper-case для XSLT 1.0 ?>
-
-	<xsl:variable name="tf:upper" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
-	<xsl:variable name="tf:lower" select="'abcdefghijklmnopqrstuvwxyz'"/>
-
-	<?endregion ?>
-
-
-	<?region Замена replace для XSLT 1.0 ?>
-
-	<xsl:template name="tf:replace">
-		<xsl:param name="input" />
-		<xsl:param name="pattern" />
-		<xsl:param name="replacement" />
-		<xsl:choose>
-			<xsl:when test=" contains( $input, $pattern ) ">
-				<xsl:value-of select="concat(
-					substring-before( $input, $pattern ),
-					$replacement
-				)" />
-				<xsl:call-template name="tf:replace">
-					<xsl:with-param name="input" select=" substring-after( $input, $pattern ) "/>
-					<xsl:with-param name="pattern" select="$pattern"/>
-					<xsl:with-param name="replacement" select="$replacement"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="$input" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<?endregion ?>
-
 	<xsl:template match="/">
 		<xsl:apply-templates select="xcard:vcards/xcard:vcard"/>
 	</xsl:template>
@@ -66,11 +31,10 @@
 		<xsl:text>VERSION:4.0</xsl:text>
 		<xsl:value-of select="$t:new-line"/>
 
-		<xsl:apply-templates select="xcard:kind" mode="t:head"/>
-		<xsl:apply-templates select="xcard:source" mode="t:head"/>
+		<xsl:apply-templates mode="t:head" select="xcard:kind"/>
+		<xsl:apply-templates mode="t:head" select="xcard:source"/>
 
-		<!-- <xsl:apply-templates select="* except xcard:kind"/> -->
-		<xsl:apply-templates select="*[ not( self::xcard:kind | self::xcard:source ) ]" mode="t:body"/>
+		<xsl:apply-templates mode="t:body" select=" * except xcard:kind, xcard:source "/>
 
 		<xsl:text>END:VCARD</xsl:text>
 		<xsl:value-of select="$t:new-line"/>
@@ -80,10 +44,10 @@
 		<!-- TODO: выполнить разделение строк https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<!-- наименование свойства -->
 		<!-- <xsl:value-of select=" upper-case( local-name(.) ) "/> -->
-		<xsl:value-of select=" translate( local-name(.), $tf:lower, $tf:upper ) "/>
+		<xsl:value-of select=" upper-case( local-name(.) ) "/>
 		<!-- параметры свойства -->
 		<xsl:apply-templates mode="t:parameters" select=" xcard:parameters/* "/>
-		<xsl:apply-templates mode="t:property-type" select=" *[ not( self::xcard:parameters ) ][1] "/>
+		<xsl:apply-templates mode="t:property-type" select=" ( * except xcard:parameters )[1] "/>
 		<!-- значение свойства -->
 		<xsl:text>:</xsl:text>
 		<xsl:apply-templates mode="t:properties" select=" . "/>
@@ -105,9 +69,7 @@
 	</xsl:template>
 
 	<xsl:template mode="t:parameters" match=" * ">
-		<xsl:text>;</xsl:text>
-		<xsl:value-of select=" translate( local-name(.), $tf:lower, $tf:upper ) "/>
-		<xsl:text>=</xsl:text>
+		<xsl:value-of select=" concat( ';', upper-case( local-name(.) ), '=' ) "/>
 		<xsl:apply-templates mode="t:parameters-values" select=" * "/>
 	</xsl:template>
 
@@ -149,7 +111,7 @@
 	</xsl:template>
 
 	<xsl:template mode="t:properties" match=" * ">
-		<xsl:variable name="t:property-value-parts" select=" *[ not( self::xcard:parameters ) ] "/>
+		<xsl:variable name="t:property-value-parts" select=" * except xcard:parameters "/>
 		<xsl:apply-templates mode="t:properties-values" select=" $t:property-value-parts[ position() = 1 ] "/>
 		<xsl:for-each select=" $t:property-value-parts[ position() > 1 ] ">
 			<xsl:text>;</xsl:text>
@@ -157,43 +119,26 @@
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template name="t:escape-property-value">
+	<xsl:function name="t:escape-property-value">
 		<xsl:param name="input"/>
-		<xsl:call-template name="tf:replace">
-			<xsl:with-param name="input">
-				<xsl:call-template name="tf:replace">
-					<xsl:with-param name="input">
-						<xsl:call-template name="tf:replace">
-							<xsl:with-param name="input">
-								<xsl:call-template name="tf:replace">
-									<xsl:with-param name="input">
-										<xsl:call-template name="tf:replace">
-											<xsl:with-param name="input" select=" $input "/>
-											<xsl:with-param name="pattern" select=" '\' "/>
-											<xsl:with-param name="replacement" select=" '\\' "/>
-										</xsl:call-template>
-									</xsl:with-param>
-									<xsl:with-param name="pattern" select=" ',' "/>
-									<xsl:with-param name="replacement" select=" '\,' "/>
-								</xsl:call-template>
-							</xsl:with-param>
-							<xsl:with-param name="pattern" select=" ';' "/>
-							<xsl:with-param name="replacement" select=" '\;' "/>
-						</xsl:call-template>
-					</xsl:with-param>
-					<xsl:with-param name="pattern" select=" $t:new-line "/>
-					<xsl:with-param name="replacement" select=" '\n' "/>
-				</xsl:call-template>
-			</xsl:with-param>
-			<xsl:with-param name="pattern" select=" '&#xa;' "/>
-			<xsl:with-param name="replacement" select=" '\n' "/>
-		</xsl:call-template>
-	</xsl:template>
+		<xsl:value-of select="
+			replace(
+				replace(
+					replace(
+						replace(
+							replace(
+								$input,
+								'\\', '\\'
+							), ',', '\\,'
+						), ';', '\\;'
+					), $t:new-line, '\\n'
+				), '&#xa;', '\\n'
+			)
+		"/>
+	</xsl:function>
 
 	<xsl:template mode="t:properties-values" match=" xcard:text ">
-		<xsl:call-template name="t:escape-property-value">
-			<xsl:with-param name="input" select=" text() "/>
-		</xsl:call-template>
+		<xsl:value-of select=" t:escape-property-value( text() ) "/>
 	</xsl:template>
 
 	<xsl:template mode="t:properties-values" match=" * ">
