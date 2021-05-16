@@ -10,6 +10,24 @@
 			<suffix>ing. jr</suffix>
 			<suffix>M.Sc.</suffix>
 		</n>
+		<nickname>
+			<text>nicname1</text>
+			<text>nicname2</text>
+		</nickname>
+		<photo>
+			<parameters>
+				<pref><integer>10</integer></pref>
+				<type><text>work</text></type>
+			</parameters>
+			<uri>http://www.example.com/pub/photos/jqpublic.gif</uri>
+		</photo>
+		<photo>
+			<parameters>
+				<pref><integer>90</integer></pref>
+				<type><text>home</text></type>
+			</parameters>
+			<uri>http://www.example.com/pub/photos/jqpublic2.gif</uri>
+		</photo>
 		<bday><date>--0203</date></bday>
 		<anniversary><date-time>20090808T1430-0500</date-time></anniversary>
 		<gender><sex>M</sex></gender>

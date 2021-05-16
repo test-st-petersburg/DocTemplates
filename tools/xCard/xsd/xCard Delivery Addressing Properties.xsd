@@ -59,6 +59,7 @@
 					<xsd:sequence>
 						<xsd:element name="parameters" type="xcard:parameters-type-with-type-language-geo-tz-label" minOccurs="0"/>
 						<xsd:element name="pobox" type="xcard:text" minOccurs="0">
+							<!-- TODO: добавить предупреждение при заполнении adr/pobox -->
 							<xsd:annotation>
 								<xsd:documentation xml:lang="en">
 									the post office box.
@@ -67,6 +68,7 @@
 							</xsd:annotation>
 						</xsd:element>
 						<xsd:element name="ext" type="xcard:text" minOccurs="0">
+							<!-- TODO: добавить предупреждение при заполнении adr/ext -->
 							<xsd:annotation>
 								<xsd:documentation xml:lang="en">
 									the extended address (e.g., apartment or suite number).
