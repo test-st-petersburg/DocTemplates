@@ -1,4 +1,4 @@
-﻿# Copyright © 2020 Sergei S. Betke
+# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -49,10 +49,16 @@ begin
 	$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 
 	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\..\Get-XSLTExecutable.ps1 `
-		-Path 'xslt\ConvertTo-vCard.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	Pop-Location;
+	try
+	{
+		$saxExecutable = .\..\Get-XSLTExecutable.ps1 `
+			-Path 'xslt\ConvertTo-vCard.xslt' `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+	}
+	finally
+	{
+		Pop-Location;
+	};
 }
 process
 {
