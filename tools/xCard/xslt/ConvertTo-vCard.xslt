@@ -26,7 +26,7 @@
 	<xsl:mode name="t:property-type-aux" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-type-by-value" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 
-	<xsl:template match="/" as=" xsd:string ">
+	<xsl:template match="/" as=" xsd:string* ">
 		<xsl:apply-templates select="xcard:vcards/xcard:vcard"/>
 	</xsl:template>
 
