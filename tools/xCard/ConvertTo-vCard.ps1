@@ -9,12 +9,12 @@
 	.DESCRIPTION
 		Convert input xCard (XML) to vCard (string)
 #>
-[CmdletBinding()]
+[CmdletBinding( DefaultParameterSetName = 'Path' )]
 [OutputType( [System.String] )]
 
 Param(
 	# Исходный xCard
-	[Parameter( Mandatory = $True, ValueFromPipeline = $True )]
+	[Parameter( ParameterSetName = 'Xml', Mandatory = $True, ValueFromPipeline = $True, Position = 0 )]
 	[ValidateScript( {
 			[System.Xml.Schema.XmlSchemaSet] $Schemas = New-Object System.Xml.Schema.XmlSchemaSet;
 			$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xsd/xCard.xsd' );
@@ -33,6 +33,14 @@ Param(
 		} ) ]
 	[System.Xml.XmlDocument]
 	$xCard,
+
+	# xCard filenames
+	[Parameter( ParameterSetName = 'Path', Mandatory = $True, Position = 0 )]
+	[System.String[]] $Path,
+
+	# xCard single filename
+	[Parameter( ParameterSetName = 'LiteralPath', Mandatory = $true, ValueFromPipeline = $true, Position = 0 )]
+	[System.String] $LiteralPath,
 
 	# Версия формата vCard
 	[Parameter( Mandatory = $False )]
@@ -64,21 +72,40 @@ process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxTransform = $saxExecutable.Load30();
+	if ( $PSCmdlet.ParameterSetName -eq 'Path' )
+	{
+		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
+		$null = $parameters.Remove( 'Path' );
+		$Path | Resolve-Path | Select-Object -ExpandProperty Path | ForEach-Object {
+			. $PSCmdlet.MyInvocation.MyCommand -LiteralPath $_ @parameters;
+		};
+	}
+	elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )
+	{
+		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
+		$null = $parameters.Remove( 'LiteralPath' );
+		$xCard = [System.Xml.XmlDocument]::new();
+		$xCard.Load( $LiteralPath );
+		. $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
+	}
+	elseif ( $PSCmdlet.ParameterSetName -eq 'Xml' )
+	{
+		$saxTransform = $saxExecutable.Load30();
 
-	$xCard.Schemas = $Schemas;
-	$xCardStream = [System.IO.MemoryStream]::new();
-	$xCardStreamWriter = [System.IO.StreamWriter]::new( $xCardStream, [System.Text.Encoding]::UTF8 );
-	$xCardStreamWriter.Write( $xCard.InnerXml );
-	$xCardStreamWriter.Flush();
-	$xCardStream.Position = 0;
+		$xCard.Schemas = $Schemas;
+		$xCardStream = [System.IO.MemoryStream]::new();
+		$xCardStreamWriter = [System.IO.StreamWriter]::new( $xCardStream, [System.Text.Encoding]::UTF8 );
+		$xCardStreamWriter.Write( $xCard.InnerXml );
+		$xCardStreamWriter.Flush();
+		$xCardStream.Position = 0;
 
-	$vCardStreamWriter = [System.IO.StringWriter]::new();
-	$vCardSerializer = [Saxon.Api.Serializer]::new();
-	$vCardSerializer.SetOutputWriter( $vCardStreamWriter );
+		$vCardStreamWriter = [System.IO.StringWriter]::new();
+		$vCardSerializer = [Saxon.Api.Serializer]::new();
+		$vCardSerializer.SetOutputWriter( $vCardStreamWriter );
 
-	$saxTransform.ApplyTemplates( $xCardStream, $vCardSerializer );
+		$saxTransform.ApplyTemplates( $xCardStream, $vCardSerializer );
 
-	$vCardStreamWriter.Flush();
-	return $vCardStreamWriter.ToString();
+		$vCardStreamWriter.Flush();
+		return $vCardStreamWriter.ToString();
+	};
 }
