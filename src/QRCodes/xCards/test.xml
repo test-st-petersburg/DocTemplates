@@ -49,7 +49,7 @@
 		<tel>
 			<parameters>
 				<pid>
-					<text>1</text>
+					<text>1.1</text>
 					<text>3</text>
 				</pid>
 				<type>
@@ -81,15 +81,32 @@
 			</parameters>
 			<text>simon.perreault@viagenie.ca</text>
 		</email>
+		<impp>
+			<parameters>
+				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
+				<type>
+					<text>work</text>
+				</type>
+			</parameters>
+			<uri>xmpp:alice@example.com</uri>
+		</impp>
 		<lang>
 			<parameters>
 				<pref><integer>1</integer></pref>
+				<type>
+					<text>work</text>
+					<text>home</text>
+				</type>
 			</parameters>
 			<language-tag>fr</language-tag>
 		</lang>
 		<lang>
 			<parameters>
 				<pref><integer>2</integer></pref>
+				<type>
+					<text>work</text>
+				</type>
 			</parameters>
 			<language-tag>en</language-tag>
 		</lang>
@@ -102,15 +119,68 @@
 			</parameters>
 			<uri>geo:46.766336,-71.28955</uri>
 		</geo>
+		<title>
+			<parameters>
+				<type><text>work</text></type>
+				<language><language-tag>en</language-tag></language>
+			</parameters>
+			<text>Research Scientist</text>
+		</title>
+		<title>
+			<parameters>
+				<type><text>work</text></type>
+				<language><language-tag>ru</language-tag></language>
+			</parameters>
+			<text>Учёный исследователь</text>
+		</title>
+		<role>
+			<parameters>
+				<language><language-tag>en</language-tag></language>
+			</parameters>
+			<text>Project, Leader</text>
+		</role>
+		<role>
+			<parameters>
+				<language><language-tag>ru</language-tag></language>
+			</parameters>
+			<text>Рук. проекта</text>
+		</role>
+		<logo>
+			<uri>http://www.example.com/pub/logos/abccorp.jpg</uri>
+		</logo>
 		<org>
 			<parameters>
-				<type>
-					<text>work</text>
-				</type>
+				<language><language-tag>ru</language-tag></language>
 			</parameters>
-			<text>Viagenie</text>
-			<text>Marketing</text>
+			<text>Тест-С.-Петербург, ФБУ</text>
+			<text>Новгородский филиала</text>
+			<text>Метрологический отдел</text>
 		</org>
+		<related>
+			<parameters>
+				<type><text>emergency</text></type>
+			</parameters>
+			<text>My emergency contact</text>
+		</related>
+		<categories>
+			<text>СОУТ</text>
+		</categories>
+		<note>
+			<parameters>
+				<language><language-tag>en</language-tag></language>
+			</parameters>
+			<text>This fax number is operational 0800 to 1715 EST, Mon-Fri.</text>
+		</note>
+		<rev>
+			<timestamp>19951031T222710Z</timestamp>
+		</rev>
+		<uid>
+			<uri>urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6</uri>
+		</uid>
+		<clientpidmap>
+			<sourceid>1</sourceid>
+			<uri>urn:uuid:3df403f4-5924-4bb7-b077-3c711d9eb34b</uri>
+		</clientpidmap>
 		<url>
 			<parameters>
 				<type>
@@ -127,5 +197,37 @@
 			</parameters>
 			<uri>http://www.viagenie.ca/simon.perreault/simon.asc</uri>
 		</key>
+		<fburl>
+			<parameters>
+				<pref><integer>1</integer></pref>
+				<mediatype><text>text/calendar</text></mediatype>
+			</parameters>
+			<uri>ftp://example.com/busy/project-a.ifb</uri>
+		</fburl>
+		<caladruri>
+			<parameters>
+				<pref><integer>1</integer></pref>
+			</parameters>
+			<uri>http://example.com/calendar/jdoe</uri>
+		</caladruri>
+		<caladruri>
+			<parameters>
+				<pref><integer>2</integer></pref>
+			</parameters>
+			<uri>mailto:janedoe@example.com</uri>
+		</caladruri>
+		<caluri>
+			<parameters>
+				<pref><integer>1</integer></pref>
+			</parameters>
+			<uri>http://cal.example.com/calA</uri>
+		</caluri>
+		<caluri>
+			<parameters>
+				<pref><integer>2</integer></pref>
+				<mediatype><text>text/calendar</text></mediatype>
+			</parameters>
+			<uri>ftp://ftp.example.com/calA.ics</uri>
+		</caluri>
 	</vcard>
 </vcards>
