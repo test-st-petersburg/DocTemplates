@@ -141,17 +141,17 @@
 
 	<xsl:template mode="t:property-type-aux" match=" * " as=" text()? ">
 		<xsl:context-item as=" element() " use="required"/>
-		<xsl:where-populated>
-	  		<xsl:value-of separator="">
-				<xsl:text>VALUE</xsl:text>
-				<xsl:text>=</xsl:text>
-				<xsl:apply-templates mode="t:property-type" select=" . "/>
-			</xsl:value-of>
-		</xsl:where-populated>
+		<xsl:value-of separator="">
+			<xsl:on-non-empty>
+				<xsl:text>VALUE=</xsl:text>
+			</xsl:on-non-empty>
+			<xsl:apply-templates mode="t:property-type" select=" . "/>
+		</xsl:value-of>
 	</xsl:template>
 
 	<xsl:template mode="t:property-type" match="
 		xcard:kind
+		| xcard:clientpidmap
 	" as=" text()? "/>
 
 	<xsl:template mode="t:property-type" match="
