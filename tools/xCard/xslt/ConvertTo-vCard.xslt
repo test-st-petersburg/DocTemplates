@@ -220,6 +220,15 @@
 		</xsl:choose>
 	</xsl:template>
 
+	<xsl:template mode="t:property-value-components" match=" xcard:org " as=" item()* ">
+		<xsl:for-each select=" * except xcard:parameters ">
+			<!-- лишний элемент добавляю для корректного слияния через сепаратор в xsl:value-of -->
+			<xsl:element name="t:property-value-component">
+				<xsl:apply-templates mode="t:property-value-component-values" select="." />
+			</xsl:element>
+		</xsl:for-each>
+	</xsl:template>
+
 	<xsl:template mode="t:property-value-required-components" match=" xcard:n ">
 		<xsl:element name="xcard:surname"/>
 		<xsl:element name="xcard:given"/>
