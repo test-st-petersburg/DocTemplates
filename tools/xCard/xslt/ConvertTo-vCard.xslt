@@ -39,21 +39,48 @@
 				<xsl:text>VERSION:4.0</xsl:text>
 			</xsl:element>
 
-			<xsl:call-template name="t:process-property-with-default">
-				<xsl:with-param name="t:result">
-					<xsl:apply-templates mode="t:property" select="xcard:kind"/>
+			<xsl:call-template name="t:out-property">
+				<xsl:with-param name="t:vcard-property-content">
+					<xsl:call-template name="t:process-property-with-default">
+						<xsl:with-param name="t:result">
+							<xsl:apply-templates mode="t:property" select="xcard:kind"/>
+						</xsl:with-param>
+						<xsl:with-param name="t:name" select=" 'KIND' "/>
+						<xsl:with-param name="t:default" select=" 'individual' "/>
+					</xsl:call-template>
 				</xsl:with-param>
-				<xsl:with-param name="t:name" select=" 'KIND' "/>
-				<xsl:with-param name="t:default" select=" 'individual' "/>
 			</xsl:call-template>
-			<xsl:apply-templates mode="t:property" select="xcard:source"/>
-			<xsl:apply-templates mode="t:property" select=" * except xcard:kind, xcard:source "/>
+			<xsl:for-each select=" xcard:source ">
+				<xsl:call-template name="t:out-property">
+					<xsl:with-param name="t:vcard-property-content">
+						<xsl:apply-templates mode="t:property" select="."/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:for-each>
+			<xsl:for-each select=" * except xcard:kind, xcard:source ">
+				<xsl:call-template name="t:out-property">
+					<xsl:with-param name="t:vcard-property-content">
+						<xsl:apply-templates mode="t:property" select="."/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:for-each>
 
 			<xsl:element name="t:footer">
 				<xsl:text>END:VCARD</xsl:text>
 			</xsl:element>
 		</xsl:value-of>
 	</xsl:template>
+
+	<?region дополнительная обработка при генерации vCard ?>
+
+	<xsl:template name="t:out-property" as=" xsd:string? ">
+		<!-- strings folding: https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
+		<xsl:context-item use="optional"/>
+		<xsl:param name="t:vcard-property-content" as=" xsd:string? " required="yes"/>
+		<xsl:value-of select=" replace( $t:vcard-property-content, '(.{75})', concat( '$1', $t:new-line, ' ' ) )"/>
+	</xsl:template>
+
+	<?endregion дополнительная обработка при генерации vCard ?>
 
 	<?region обработка свойств ?>
 
@@ -63,7 +90,6 @@
 		<xsl:param name="t:name" as=" xsd:string " select=" upper-case( local-name(.) ) " required="false"/>
 		<xsl:param name="t:default" as=" xsd:string " select=" '' " required="false"/>
 
-		<!-- TODO: выполнить разделение строк https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<xsl:choose>
 			<xsl:when test=" $t:result != null ">
 				<xsl:value-of select=" $t:result "/>
@@ -80,8 +106,6 @@
 
 	<xsl:template name="t:process-property" as=" text() ">
 		<xsl:context-item use="required"/>
-
-		<!-- TODO: выполнить разделение строк https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<xsl:value-of separator="">
 			<xsl:value-of separator=";">
 				<!-- наименование свойства -->
