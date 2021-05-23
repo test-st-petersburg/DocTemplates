@@ -8,9 +8,13 @@
 	xmlns:t="http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard"
 >
 
+	<?region Параметры преобразования?>
+	<xsl:variable name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes" visibility="private"/>
+	<?endregion Параметры преобразования ?>
+
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes" media-type="text/x-vcard"/>
 
-	<xsl:variable name="t:new-line" select="'&#xd;&#xa;'"/>
+	<xsl:variable name="t:new-line" select="'&#xd;&#xa;'" static="yes" visibility="private"/>
 
 	<xsl:mode default-validation="preserve" on-multiple-match="fail" on-no-match="shallow-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
@@ -23,8 +27,10 @@
 	<xsl:mode name="t:property-parameter-aux" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-parameter-value" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-type" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
-	<xsl:mode name="t:property-type-aux" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:property-type-non-default" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:property-type-parameter" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-type-by-value" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:property-type-default" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="no"/>
 
 	<xsl:template match="/" as=" xsd:string* ">
 		<xsl:apply-templates select="xcard:vcards/xcard:vcard"/>
@@ -111,7 +117,7 @@
 				<!-- наименование свойства -->
 				<xsl:apply-templates mode="t:property-name" select="."/>
 				<!-- параметры свойства -->
-				<xsl:apply-templates mode="t:property-type-aux" select="."/>
+				<xsl:apply-templates mode="t:property-type-parameter" select="."/>
 				<xsl:apply-templates mode="t:property-parameters-aux" select="."/>
 			</xsl:value-of>
 			<!-- значение свойства -->
@@ -163,14 +169,33 @@
 
 	<?region обработка типа свойств ?>
 
-	<xsl:template mode="t:property-type-aux" match=" * " as=" text()? ">
+	<xsl:template mode="t:property-type-parameter" match=" * " as=" text()? ">
 		<xsl:context-item as=" element() " use="required"/>
 		<xsl:value-of separator="">
 			<xsl:on-non-empty>
 				<xsl:text>VALUE=</xsl:text>
 			</xsl:on-non-empty>
-			<xsl:apply-templates mode="t:property-type" select=" . "/>
+			<xsl:apply-templates mode="t:property-type" select=" . " use-when=" not( $t:remove-default-types ) "/>
+			<xsl:apply-templates mode="t:property-type-non-default" select=" . " use-when=" $t:remove-default-types "/>
 		</xsl:value-of>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-non-default" match=" * " as=" text()? ">
+		<xsl:variable name="t:type" as=" text()? ">
+			<xsl:apply-templates mode="t:property-type" select=" . "/>
+		</xsl:variable>
+		<xsl:variable name="t:default-type" as=" text()? ">
+			<xsl:apply-templates mode="t:property-type-default" select=" . "/>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test=" not( string( $t:type ) = string( $t:default-type ) ) ">
+				<xsl:copy-of select=" $t:type "/>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type" match=" * " as=" text()? ">
+		<xsl:apply-templates mode="t:property-type-by-value" select=" ( * except xcard:parameters )[1] "/>
 	</xsl:template>
 
 	<xsl:template mode="t:property-type" match="
@@ -186,12 +211,67 @@
 		<xsl:text>text</xsl:text>
 	</xsl:template>
 
-	<xsl:template mode="t:property-type" match=" * " as=" text()? ">
-		<xsl:apply-templates mode="t:property-type-by-value" select=" ( * except xcard:parameters )[1] "/>
-	</xsl:template>
-
 	<xsl:template mode="t:property-type-by-value" match=" * " as=" text()? ">
 		<xsl:value-of select=" local-name(.) "/>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-default" match="
+		xcard:kind
+		| xcard:fn
+		| xcard:n
+		| xcard:nickname
+		| xcard:gender
+		| xcard:adr
+		| xcard:tel
+		| xcard:email
+		| xcard:tz
+		| xcard:title
+		| xcard:role
+		| xcard:org
+		| xcard:categories
+		| xcard:note
+		| xcard:prodid
+		| xcard:version
+	" as=" text() ">
+		<xsl:text>text</xsl:text>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-default" match="
+		xcard:source
+		| xcard:photo
+		| xcard:impp
+		| xcard:geo
+		| xcard:logo
+		| xcard:member
+		| xcard:related
+		| xcard:sound
+		| xcard:uid
+		| xcard:url
+		| xcard:key
+		| xcard:fburl
+		| xcard:caladruri
+		| xcard:caluri
+	" as=" text() ">
+		<xsl:text>uri</xsl:text>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-default" match="
+		xcard:bday
+		| xcard:anniversary
+	" as=" text() ">
+		<xsl:text>date-and-or-time</xsl:text>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-default" match="
+		xcard:rev
+	" as=" text() ">
+		<xsl:text>timestamp</xsl:text>
+	</xsl:template>
+
+	<xsl:template mode="t:property-type-default" match="
+		xcard:lang
+	" as=" text() ">
+		<xsl:text>language-tag</xsl:text>
 	</xsl:template>
 
 	<?endregion обработка типа свойств ?>
