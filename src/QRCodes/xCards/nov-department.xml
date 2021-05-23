@@ -10,7 +10,7 @@
 		</fn>
 		<adr>
 			<parameters>
-				<!-- <type><text>work</text></type> -->
+				<type><text>work</text></type>
 				<language><language-tag>ru</language-tag></language>
 				<!-- <geo><uri>geo:58.545932,31.237971</uri></geo> -->
 			</parameters>
@@ -28,7 +28,8 @@
 					<!-- <text>voice</text> -->
 				</type>
 			</parameters>
-			<uri>tel:+7-816-2-60-77-27</uri>
+			<!-- <uri>tel:+7-816-2-60-77-27</uri> -->
+			<text>+7-816-2-60-77-27</text>
 		</tel>
 		<tel>
 			<parameters>
@@ -38,7 +39,8 @@
 					<text>fax</text>
 				</type>
 			</parameters>
-			<uri>tel:+7-816-2-60-77-27;ext=9999</uri>
+			<!-- <uri>tel:+7-816-2-60-77-27;ext=9999</uri> -->
+			<text>+7-816-2-60-77-27,9999</text>
 		</tel>
 		<email>
 			<parameters>
