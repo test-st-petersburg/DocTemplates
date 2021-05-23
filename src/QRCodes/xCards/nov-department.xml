@@ -1,74 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xcard:vcards xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0">
-	<xcard:vcard>
-		<xcard:kind><xcard:text>org</xcard:text></xcard:kind>
-		<xcard:fn>
-			<xcard:parameters>
-				<xcard:language><xcard:language-tag>ru</xcard:language-tag></xcard:language>
-			</xcard:parameters>
-			<xcard:text>Тест-С.-Петербург, ФБУ, Новгородский филиал</xcard:text>
-		</xcard:fn>
-		<xcard:adr>
-			<xcard:parameters>
-				<xcard:type><xcard:text>work</xcard:text></xcard:type>
-				<xcard:language><xcard:language-tag>ru</xcard:language-tag></xcard:language>
-				<xcard:geo><xcard:uri>geo:58.545932,31.237971</xcard:uri></xcard:geo>
-			</xcard:parameters>
-			<xcard:street>пр-кт Александра Корсунова, д.32</xcard:street>
-			<xcard:locality>Великий Новгород</xcard:locality>
-			<xcard:region>Новгородская область</xcard:region>
-			<xcard:code>173024</xcard:code>
-			<xcard:country>Россия</xcard:country>
-		</xcard:adr>
-		<xcard:tel>
-			<xcard:parameters>
-				<xcard:pref><xcard:integer>1</xcard:integer></xcard:pref>
-				<xcard:type>
-					<xcard:text>work</xcard:text>
-					<xcard:text>voice</xcard:text>
-				</xcard:type>
-			</xcard:parameters>
-			<xcard:uri>tel:+7-816-2-60-77-27</xcard:uri>
-		</xcard:tel>
-		<xcard:tel>
-			<xcard:parameters>
-				<xcard:pref><xcard:integer>90</xcard:integer></xcard:pref>
-				<xcard:type>
-					<xcard:text>work</xcard:text>
-					<xcard:text>fax</xcard:text>
-				</xcard:type>
-			</xcard:parameters>
-			<xcard:uri>tel:+7-816-2-60-77-27;ext=9999</xcard:uri>
-		</xcard:tel>
-		<xcard:email>
-			<xcard:parameters>
-				<xcard:pref><xcard:integer>1</xcard:integer></xcard:pref>
-				<xcard:type><xcard:text>work</xcard:text></xcard:type>
-			</xcard:parameters>
-			<xcard:text>mail@csm.nov.ru</xcard:text>
-		</xcard:email>
-		<xcard:lang><xcard:language-tag>ru</xcard:language-tag></xcard:lang>
-		<xcard:tz><xcard:text>Europe/Moscow</xcard:text></xcard:tz>
-		<xcard:geo>
-			<xcard:uri>geo:58.545932,31.237971</xcard:uri>
-		</xcard:geo>
-		<xcard:org>
-			<xcard:parameters>
-				<xcard:language><xcard:language-tag>ru</xcard:language-tag></xcard:language>
-				<xcard:sort-as>
-					<xcard:text>Тест-С.-Петербург</xcard:text>
-					<xcard:text>Новгородский филиал</xcard:text>
-				</xcard:sort-as>
-			</xcard:parameters>
-			<xcard:text>Тест-С.-Петербург, ФБУ</xcard:text>
-			<xcard:text>Новгородский филиал</xcard:text>
-		</xcard:org>
-		<xcard:url>
-			<xcard:parameters>
-				<xcard:pref><xcard:integer>1</xcard:integer></xcard:pref>
-				<xcard:type><xcard:text>work</xcard:text></xcard:type>
-			</xcard:parameters>
-			<xcard:uri>http://rustest.spb.ru/contacts/nov</xcard:uri>
-		</xcard:url>
-	</xcard:vcard>
-</xcard:vcards>
+<vcards xmlns="urn:ietf:params:xml:ns:vcard-4.0">
+	<vcard>
+		<kind><text>org</text></kind>
+		<fn>
+			<parameters>
+				<language><language-tag>ru</language-tag></language>
+			</parameters>
+			<text>Тест-С.-Петербург, ФБУ, Новгородский филиал</text>
+		</fn>
+		<adr>
+			<parameters>
+				<!-- <type><text>work</text></type> -->
+				<language><language-tag>ru</language-tag></language>
+				<!-- <geo><uri>geo:58.545932,31.237971</uri></geo> -->
+			</parameters>
+			<street>пр-кт Александра Корсунова, д.32</street>
+			<locality>Великий Новгород</locality>
+			<region>Новгородская область</region>
+			<code>173024</code>
+			<country>Россия</country>
+		</adr>
+		<tel>
+			<parameters>
+				<pref><integer>1</integer></pref>
+				<type>
+					<text>work</text>
+					<!-- <text>voice</text> -->
+				</type>
+			</parameters>
+			<uri>tel:+7-816-2-60-77-27</uri>
+		</tel>
+		<tel>
+			<parameters>
+				<pref><integer>90</integer></pref>
+				<type>
+					<text>work</text>
+					<text>fax</text>
+				</type>
+			</parameters>
+			<uri>tel:+7-816-2-60-77-27;ext=9999</uri>
+		</tel>
+		<email>
+			<parameters>
+				<!-- <pref><integer>1</integer></pref> -->
+				<type><text>work</text></type>
+			</parameters>
+			<text>mail@csm.nov.ru</text>
+		</email>
+		<lang><language-tag>ru</language-tag></lang>
+		<tz><text>Europe/Moscow</text></tz>
+		<geo>
+			<uri>geo:58.545932,31.237971</uri>
+		</geo>
+		<logo>
+			<uri>https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/teststpetersburg.svg</uri>
+		</logo>
+		<org>
+			<parameters>
+				<language><language-tag>ru</language-tag></language>
+				<sort-as>
+					<text>Тест-С.-Петербург</text>
+					<text>Новгородский филиал</text>
+				</sort-as>
+			</parameters>
+			<text>Тест-С.-Петербург, ФБУ</text>
+			<text>Новгородский филиал</text>
+		</org>
+		<categories>
+			<text>Метрология</text>
+			<text>СОУТ</text>
+			<text>Сертификация</text>
+		</categories>
+		<!-- <note>
+			<parameters>
+				<language><language-tag>en</language-tag></language>
+			</parameters>
+			<text>This fax number is operational 0800 to 1715 EST, Mon-Fri.</text>
+		</note> -->
+		<rev>
+			<timestamp>20210523T014800Z</timestamp>
+		</rev>
+		<uid>
+			<uri>urn:uuid:89939fbd-18be-4f8e-9e65-4f020c2027fb</uri>
+		</uid>
+		<url>
+			<!-- <parameters>
+				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
+			</parameters> -->
+			<uri>http://rustest.spb.ru/contacts/nov</uri>
+		</url>
+	</vcard>
+</vcards>
