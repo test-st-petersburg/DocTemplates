@@ -51,7 +51,13 @@ process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode($Input, [QRCoder.QRCodeGenerator+ECCLevel]::Q);
+	# [QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode($Input, [QRCoder.QRCodeGenerator+ECCLevel]::L);
+	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode( $Input,
+		[QRCoder.QRCodeGenerator+ECCLevel]::L,
+		$true,
+		$false,
+		[QRCoder.QRCodeGenerator+EciMode]::Utf8
+	);
 	$QRCode = New-Object -TypeName QRCoder.PngByteQRCode -ArgumentList $QRCodeData;
 	$ImageData = $QRCode.GetGraphic( $Width );
 
