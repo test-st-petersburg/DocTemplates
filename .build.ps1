@@ -1,4 +1,4 @@
-#Requires -Version 5.0
+﻿#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
 param(
@@ -115,6 +115,31 @@ param(
 	$SourceURIsFiles = ( property SourceURIsFiles @(
 			$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
 			Get-ChildItem -File -Filter '*.url' | Select-Object -ExpandProperty FullName
+		) ),
+
+	# путь к временной папке со сгенерированными изображениями QR кодов
+	[System.String]
+	$DestinationQRCodesPath = ( property DestinationQRCodesPath (
+			Join-Path -Path $TempPath -ChildPath 'QRCodes'
+		) ),
+
+	# путь к папке с xCard .xml файлами для генерации QR кодов
+	[System.String]
+	$SourceXCardPath = ( property SourceXCardPath (
+			Join-Path -Path $SourcePath -ChildPath 'QRCodes\xCards'
+		) ),
+
+	# пути к .url файлам для генерации QR кодов
+	[System.String[]]
+	$SourceXCardsFiles = ( property SourceXCardsFiles @(
+			$SourceXCardPath | Where-Object { Test-Path -Path $_ } |
+			Get-ChildItem -File -Filter '*.xml' | Select-Object -ExpandProperty FullName
+		) ),
+
+	# путь к временной папке со сгенерированными vCard
+	[System.String]
+	$DestinationVCardPath = ( property DestinationVCardPath (
+			Join-Path -Path $TempPath -ChildPath 'vCards'
 		) ),
 
 	# состояние окна Open Office при открытии документа
@@ -290,31 +315,104 @@ task BuildLibContainers $BuildLibContainersTasks;
 
 #region генерация QR кодов
 
-$JobBuildUriQRCode = {
-	$DestinationQRCodeFile = $Outputs[0];
-	$SourceURLFile = $Inputs[0];
+$BuildUriQRCodesTasks = @();
+foreach ( $SourceURIFile in $SourceURIsFiles )
+{
+	$UriName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceURIFile );
+	$UriQRCodeName = "$UriName.png";
+	$BuildTaskName = "BuildLib-$UriQRCodeName";
+	$BuildUriQRCodesTasks += $BuildTaskName;
+	$prerequisites = $SourceURIFile;
+	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $UriQRCodeName;
 
-	Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceURLFile`"";
-	$SourceURL = Get-Content -LiteralPath $SourceURLFile `
-	| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
-	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
-	Write-Verbose "Source URL `"$SourceURL`"";
+	task $BuildTaskName `
+		-Inputs $prerequisites `
+		-Outputs $target `
+	{
+		$DestinationQRCodeFile = $Outputs;
+		$SourceUriFile = $Inputs[0];
 
-	$SourceURL | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceUriFile`"";
+		$SourceURL = Get-Content -LiteralPath $SourceUriFile `
+		| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
+		| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
+		Write-Verbose "Source URL `"$SourceURL`"";
+
+		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
+		{
+			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			| Out-Null;
+		};
+
+		$SourceURL | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
 };
 
-task 'Build-org-site.png' `
+# TODO: временно. Найти другое решение для размещения QR кодов в документах
+task 'Build-org-site-in-ott.png' `
 	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
 	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
 	-Job $JobBuildUriQRCode;
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
-task BuildURIsQRCodes 'Build-org-site.png';
+# task BuildUriQRCodes @( $BuildUriQRCodesTasks, 'Build-org-site-in-ott.png' );
+task BuildUriQRCodes $BuildUriQRCodesTasks;
+
+$BuildVCardQRCodesTasks = @();
+foreach ( $SourceXCardFile in $SourceXCardsFiles )
+{
+	$cardName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceXCardFile );
+	$QRCodeName = "$cardName.png";
+	$BuildTaskName = "BuildLib-$QRCodeName";
+	$BuildVCardQRCodesTasks += $BuildTaskName;
+	$prerequisites = $SourceXCardFile;
+	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $QRCodeName;
+	$vCardName = "$cardName.vcf";
+	$vCardTarget = Join-Path -Path $DestinationVCardPath -ChildPath $vCardName;
+
+	task $BuildTaskName `
+		-Inputs $prerequisites `
+		-Outputs $target, $vCardTarget `
+	{
+		$DestinationQRCodeFile = $Outputs[0];
+		$vCardFile = $Outputs[1];
+		$SourceXCardFile = $Inputs[0];
+
+		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from xCard `"$SourceXCardFile`"";
+		if ( -not ( Test-Path -Path $DestinationVCardPath ) )
+		{
+			New-Item -Path $DestinationVCardPath -ItemType Directory `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			| Out-Null;
+		};
+		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
+		{
+			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			| Out-Null;
+		};
+
+		$vCard = .\tools\xCard\ConvertTo-vCard.ps1 -LiteralPath $SourceXCardFile `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		$vCard | Out-File -LiteralPath $vCardFile -Encoding utf8;
+		$vCard | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
+};
+
+# Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
+task BuildVCardQRCodes $BuildVCardQRCodesTasks;
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
-task BuildQRCodes BuildURIsQRCodes;
+task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
 #endregion
 

@@ -18,8 +18,10 @@ Param(
 	[ValidateScript( {
 			[System.Xml.Schema.XmlSchemaSet] $Schemas = New-Object System.Xml.Schema.XmlSchemaSet;
 			$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xsd/xCard.xsd' );
-			$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null; ;
+			$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 			$_.Schemas = $Schemas;
+			# TODO: восстановить проверку xCard по схеме
+			return $true;
 			try
 			{
 				$_.Validate( $null );
@@ -27,7 +29,7 @@ Param(
 			}
 			catch
 			{
-				Write-Verbose $_.Exception.Message;
+				Write-Error $_.Exception.Message -ErrorAction Continue;
 				return $false;
 			};
 		} ) ]
