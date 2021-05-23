@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.0
+#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
 param(
@@ -114,7 +114,7 @@ param(
 	[System.String[]]
 	$SourceURIsFiles = ( property SourceURIsFiles @(
 			$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter '.url' | Select-Object -ExpandProperty FullName
+			Get-ChildItem -File -Filter '*.url' | Select-Object -ExpandProperty FullName
 		) ),
 
 	# состояние окна Open Office при открытии документа
