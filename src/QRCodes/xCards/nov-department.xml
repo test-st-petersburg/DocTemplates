@@ -14,6 +14,7 @@
 		<adr>
 			<parameters>
 				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
 				<type><text>work</text></type>
 				<language><language-tag>ru-RU</language-tag></language>
 				<geo><uri>geo:58.545932,31.237971</uri></geo>
@@ -51,7 +52,7 @@
 		<email>
 			<parameters>
 				<pid><text>1</text></pid>
-				<!-- <pref><integer>1</integer></pref> -->
+				<pref><integer>1</integer></pref>
 				<type><text>work</text></type>
 			</parameters>
 			<text>mail@csm.nov.ru</text>
@@ -87,15 +88,9 @@
 		<android:x-group-membership><text>PREDEFINED_HUAWEI_GROUP_CCARD</text></android:x-group-membership>
 		<note>
 			<parameters>
-				<language><language-tag>en</language-tag></language>
-			</parameters>
-			<text>This fax number is operational 0800 to 1715 EST, Mon-Fri.</text>
-		</note>
-		<note>
-			<parameters>
 				<language><language-tag>ru-RU</language-tag></language>
 			</parameters>
-			<text>Этот факс работает с 08:00 to 17:15, с понедельника по пятницу.</text>
+			<text>Специальная оценка условий труда, оценка профессиональных рисков, производственный контроль</text>
 		</note>
 		<rev>
 			<timestamp>20210523T014800Z</timestamp>
@@ -106,7 +101,7 @@
 		<url>
 			<parameters>
 				<pid><text>1</text></pid>
-				<!-- <pref><integer>1</integer></pref> -->
+				<pref><integer>1</integer></pref>
 				<type><text>work</text></type>
 			</parameters>
 			<uri>http://rustest.spb.ru/contacts/nov</uri>
