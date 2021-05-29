@@ -23,6 +23,7 @@
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes" media-type="text/x-vcard"/>
 
 	<xsl:variable name="t:new-line" select="'&#xd;&#xa;'" static="yes" visibility="private"/>
+	<xsl:variable name="t:folding-line-separator" select=" concat( $t:new-line, '&#x9;' ) " static="yes" visibility="private"/>
 
 	<xsl:mode default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:vcard" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
@@ -143,7 +144,7 @@
 		<!-- strings folding: https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<xsl:context-item use="optional"/>
 		<xsl:param name="t:vcard-property-content" as=" xsd:string? " required="yes"/>
-		<xsl:value-of separator="{ concat( $t:new-line, ' ' ) }">
+		<xsl:value-of separator="{ $t:folding-line-separator }">
 			<xsl:for-each-group
 				select=" string-to-codepoints( $t:vcard-property-content ) "
 				group-adjacent=" ( position() - 1 ) idiv $t:max-string-length "
