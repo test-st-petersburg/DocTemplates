@@ -391,10 +391,9 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		.\tools\xCard\ConvertTo-vCard.ps1 -LiteralPath $SourceXCardFile `
+		.\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-		| Out-File -LiteralPath $vCardFile -Encoding utf8;
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
 
 	task $BuildTaskName `
@@ -414,7 +413,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		Get-Content -LiteralPath $vCardFile -Encoding utf8 -Raw `
+		Get-Content -LiteralPath $vCardFile -Raw `
 		| .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
