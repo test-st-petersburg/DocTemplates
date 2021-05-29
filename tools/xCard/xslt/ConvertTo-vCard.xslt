@@ -20,7 +20,9 @@
 
 	<xsl:variable name="t:new-line" select="'&#xd;&#xa;'" static="yes" visibility="private"/>
 
-	<xsl:mode default-validation="preserve" on-multiple-match="fail" on-no-match="shallow-skip" warning-on-no-match="true"/>
+	<xsl:mode default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:vcard" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:vcard-prepare-for-android" default-validation="preserve" on-multiple-match="fail" on-no-match="shallow-copy" warning-on-no-match="no"/>
 	<xsl:mode name="t:property" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property-value" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property-value-components" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
@@ -37,10 +39,36 @@
 	<xsl:mode name="t:property-type-default" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="no"/>
 
 	<xsl:template match="/" as=" xsd:string* ">
-		<xsl:apply-templates select="xcard:vcards/xcard:vcard"/>
+		<xsl:variable name="t:vcards-for-android" as=" document-node() ">
+			<xsl:apply-templates mode="t:vcard-prepare-for-android" select="/"/>
+		</xsl:variable>
+		<xsl:apply-templates mode="t:vcard" select=" $t:vcards-for-android/xcard:vcards/xcard:vcard "/>
 	</xsl:template>
 
-	<xsl:template match="/xcard:vcards/xcard:vcard" as=" xsd:string ">
+	<?region подготовка для Android ?>
+
+	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match="
+		xcard:categories
+	" />
+
+	<!-- TODO: преобразование categories в x-group-membership не дало результатов при импорте в Android -->
+	<!-- <xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match=" xcard:categories " as=" element()+ ">
+		<xsl:copy>
+			<xsl:apply-templates mode="#current" select="@*"/>
+			<xsl:apply-templates mode="#current" select="*"/>
+		</xsl:copy>
+		<xsl:for-each select=" * except xcard:parameters ">
+			<xsl:element name="xcard-android:x-group-membership">
+				<xsl:apply-templates mode="#current" select="."/>
+			</xsl:element>
+		</xsl:for-each>
+	</xsl:template> -->
+
+	<?endregion подготовка для Android ?>
+
+	<?region обработка vCard ?>
+
+	<xsl:template mode="t:vcard" match="/xcard:vcards/xcard:vcard" as=" xsd:string ">
 		<xsl:value-of separator="{$t:new-line}">
 			<xsl:element name="t:header">
 				<xsl:text>BEGIN:VCARD</xsl:text>
@@ -80,6 +108,8 @@
 			</xsl:element>
 		</xsl:value-of>
 	</xsl:template>
+
+	<?endregion обработка vCard ?>
 
 	<?region дополнительная обработка при генерации vCard ?>
 

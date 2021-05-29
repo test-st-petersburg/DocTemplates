@@ -2,6 +2,18 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+### Новые возможности
+
+- добавлен дополнительный этап обработки в XSLT при подготовке для Android
+  [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
+- добавлена в XML схему (XSD) для визитных карт (xCard)
+  поддержка `X-GROUP-MEMBERSHIP`
+  [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
+- добавлена XML схема (XSD) для визитных карт (xCard)
+  [#117](https://github.com/test-st-petersburg/DocTemplates/issues/117)
+- добавлена конвертация xCard в vCard версии 4.0
+  [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
+
 ## 2.8.3
 
 ### Новые возможности
