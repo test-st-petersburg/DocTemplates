@@ -367,22 +367,22 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 {
 	$cardName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceXCardFile );
 	$QRCodeName = "$cardName.png";
-	$BuildTaskName = "BuildLib-$QRCodeName";
+	$BuildTaskName = "Build-$QRCodeName";
 	$BuildVCardQRCodesTasks += $BuildTaskName;
 	$prerequisites = $SourceXCardFile;
 	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $QRCodeName;
 	$vCardName = "$cardName.vcf";
+	$BuildVCardTaskName = "Build-$vCardName";
 	$vCardTarget = Join-Path -Path $DestinationVCardPath -ChildPath $vCardName;
 
-	task $BuildTaskName `
+	task $BuildVCardTaskName `
 		-Inputs $prerequisites `
-		-Outputs $target, $vCardTarget `
+		-Outputs $vCardTarget `
 	{
-		$DestinationQRCodeFile = $Outputs[0];
-		$vCardFile = $Outputs[1];
+		$vCardFile = $Outputs;
 		$SourceXCardFile = $Inputs[0];
 
-		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from xCard `"$SourceXCardFile`"";
+		Write-Verbose "Generate vCard `"$vCardFile`" from xCard `"$SourceXCardFile`"";
 		if ( -not ( Test-Path -Path $DestinationVCardPath ) )
 		{
 			New-Item -Path $DestinationVCardPath -ItemType Directory `
@@ -390,6 +390,22 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 			| Out-Null;
 		};
+
+		.\tools\xCard\ConvertTo-vCard.ps1 -LiteralPath $SourceXCardFile `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		| Out-File -LiteralPath $vCardFile -Encoding utf8;
+	};
+
+	task $BuildTaskName `
+		-Inputs $vCardTarget `
+		-Outputs $target `
+		-Jobs $BuildVCardTaskName,
+	{
+		$DestinationQRCodeFile = $Outputs;
+		$vCardFile = $Inputs[0];
+
+		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from vCard `"$vCardFile`"";
 		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
 		{
 			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
@@ -398,11 +414,8 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		$vCard = .\tools\xCard\ConvertTo-vCard.ps1 -LiteralPath $SourceXCardFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		$vCard | Out-File -LiteralPath $vCardFile -Encoding utf8;
-		$vCard | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+		Get-Content -LiteralPath $vCardFile -Encoding utf8 -Raw `
+		| .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
