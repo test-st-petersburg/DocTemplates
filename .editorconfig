@@ -70,3 +70,10 @@ indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 charset = utf-8
+
+[*.vcf]
+indent_style = space
+indent_size = 1
+end_of_line = crlf
+insert_final_newline = true
+charset = utf-8
