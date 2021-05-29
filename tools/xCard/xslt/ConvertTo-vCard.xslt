@@ -16,6 +16,7 @@
 	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" true() " static="yes"/>
 	<xsl:param name="t:current-lang" as=" xsd:language " select=" xsd:language( 'ru-RU' ) " static="yes"/>
 	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
+	<xsl:param name="t:filter-pid" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 
 	<?endregion Параметры преобразования ?>
 
@@ -69,6 +70,11 @@
 
 	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-properties-by-language " match="
 		xcard:vcard/*/xcard:parameters/xcard:language
+	" />
+
+	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-pid " match="
+		xcard:vcard/*/xcard:parameters/xcard:pid
+		| xcard:clientpidmap
 	" />
 
 	<!-- TODO: преобразование categories в x-group-membership не дало результатов при импорте в Android -->
