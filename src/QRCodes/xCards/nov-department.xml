@@ -35,7 +35,7 @@
 			<parameters>
 				<pref><integer>90</integer></pref>
 				<type>
-					<text>work</text>
+					<!-- <text>work</text> -->
 					<text>fax</text>
 				</type>
 			</parameters>
@@ -55,7 +55,8 @@
 			<uri>geo:58.545932,31.237971</uri>
 		</geo>
 		<logo>
-			<uri>https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/teststpetersburg.svg</uri>
+			<!-- <uri>https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/teststpetersburg.svg</uri> -->
+			<uri>https://s.gravatar.com/avatar/faddf9873a2c883845418fb3001749af?s=80</uri>
 		</logo>
 		<org>
 			<parameters>
