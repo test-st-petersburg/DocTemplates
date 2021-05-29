@@ -14,6 +14,8 @@
 	<xsl:param name="t:max-string-length" as=" xsd:integer " select=" 75 " static="yes"/>
 	<xsl:param name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes"/>
 	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" true() " static="yes"/>
+	<xsl:param name="t:current-lang" as=" xsd:language " select=" xsd:language( 'ru-RU' ) " static="yes"/>
+	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 
 	<?endregion Параметры преобразования ?>
 
@@ -49,7 +51,24 @@
 	<?region подготовка для Android ?>
 
 	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match="
-		xcard:categories
+		xcard:adr/xcard:parameters/xcard:geo
+		| xcard:lang
+		| xcard:tz
+		| xcard:geo
+		| xcard:categories
+		| xcard-android:x-group-membership
+		| xcard:rev
+	" />
+
+	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-properties-by-language " match="
+		xcard:vcard/*[
+			exists( xcard:parameters/xcard:language )
+			and ( xcard:parameters/xcard:language/xcard:language-tag/text() != $t:current-lang )
+		]
+	" />
+
+	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-properties-by-language " match="
+		xcard:vcard/*/xcard:parameters/xcard:language
 	" />
 
 	<!-- TODO: преобразование categories в x-group-membership не дало результатов при импорте в Android -->

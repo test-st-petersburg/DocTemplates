@@ -7,15 +7,16 @@
 		<kind><text>org</text></kind>
 		<fn>
 			<parameters>
-				<language><language-tag>ru</language-tag></language>
+				<language><language-tag>ru-RU</language-tag></language>
 			</parameters>
 			<text>Тест-С.-Петербург, ФБУ, Новгородский филиал</text>
 		</fn>
 		<adr>
 			<parameters>
+				<pid><text>1</text></pid>
 				<type><text>work</text></type>
-				<language><language-tag>ru</language-tag></language>
-				<!-- <geo><uri>geo:58.545932,31.237971</uri></geo> -->
+				<language><language-tag>ru-RU</language-tag></language>
+				<geo><uri>geo:58.545932,31.237971</uri></geo>
 			</parameters>
 			<street>пр-кт Александра Корсунова, д.32</street>
 			<locality>Великий Новгород</locality>
@@ -25,10 +26,11 @@
 		</adr>
 		<tel>
 			<parameters>
+				<pid><text>1</text></pid>
 				<pref><integer>1</integer></pref>
 				<type>
 					<text>work</text>
-					<!-- <text>voice</text> -->
+					<text>voice</text>
 				</type>
 			</parameters>
 			<!-- <uri>tel:+7-816-2-60-77-27</uri> -->
@@ -36,9 +38,10 @@
 		</tel>
 		<tel>
 			<parameters>
+				<pid><text>2</text></pid>
 				<pref><integer>90</integer></pref>
 				<type>
-					<!-- <text>work</text> -->
+					<text>work</text>
 					<text>fax</text>
 				</type>
 			</parameters>
@@ -47,23 +50,27 @@
 		</tel>
 		<email>
 			<parameters>
+				<pid><text>1</text></pid>
 				<!-- <pref><integer>1</integer></pref> -->
 				<type><text>work</text></type>
 			</parameters>
 			<text>mail@csm.nov.ru</text>
 		</email>
-		<lang><language-tag>ru</language-tag></lang>
+		<lang><language-tag>ru-RU</language-tag></lang>
 		<tz><text>Europe/Moscow</text></tz>
 		<geo>
 			<uri>geo:58.545932,31.237971</uri>
 		</geo>
 		<logo>
+			<parameters>
+				<pid><text>1</text></pid>
+			</parameters>
 			<!-- <uri>https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/teststpetersburg.svg</uri> -->
 			<uri>https://s.gravatar.com/avatar/faddf9873a2c883845418fb3001749af?s=80</uri>
 		</logo>
 		<org>
 			<parameters>
-				<language><language-tag>ru</language-tag></language>
+				<language><language-tag>ru-RU</language-tag></language>
 				<sort-as>
 					<text>Тест-С.-Петербург</text>
 					<text>Новгородский филиал</text>
@@ -78,12 +85,18 @@
 			<text>Сертификация</text>
 		</categories>
 		<android:x-group-membership><text>PREDEFINED_HUAWEI_GROUP_CCARD</text></android:x-group-membership>
-		<!-- <note>
+		<note>
 			<parameters>
 				<language><language-tag>en</language-tag></language>
 			</parameters>
 			<text>This fax number is operational 0800 to 1715 EST, Mon-Fri.</text>
-		</note> -->
+		</note>
+		<note>
+			<parameters>
+				<language><language-tag>ru-RU</language-tag></language>
+			</parameters>
+			<text>Этот факс работает с 08:00 to 17:15, с понедельника по пятницу.</text>
+		</note>
 		<rev>
 			<timestamp>20210523T014800Z</timestamp>
 		</rev>
@@ -91,10 +104,11 @@
 			<uri>urn:uuid:89939fbd-18be-4f8e-9e65-4f020c2027fb</uri>
 		</uid>
 		<url>
-			<!-- <parameters>
-				<pref><integer>1</integer></pref>
+			<parameters>
+				<pid><text>1</text></pid>
+				<!-- <pref><integer>1</integer></pref> -->
 				<type><text>work</text></type>
-			</parameters> -->
+			</parameters>
 			<uri>http://rustest.spb.ru/contacts/nov</uri>
 		</url>
 	</vcard>
