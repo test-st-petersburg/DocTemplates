@@ -65,8 +65,8 @@
 			<parameters>
 				<pid><text>1</text></pid>
 			</parameters>
-			<!-- <uri>https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/teststpetersburg.svg</uri> -->
-			<uri>https://s.gravatar.com/avatar/faddf9873a2c883845418fb3001749af?s=80</uri>
+			<!-- <uri>https://s.gravatar.com/avatar/faddf9873a2c883845418fb3001749af?s=80</uri> -->
+			<uri>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAABXAQMAAAAOKyToAAAABlBMVEX///8AgMj7/gG3AAABh0lEQVQ4y9XTsU7DMBAG4LOM5AXJL1CRV2Bkoq/CI3TsgJRIvFg2lj4CgzfWsGWwfOT3XZImB1LFhgfb/XI+30ku/TbuLN3/G4qXZfsiS+BLy4NuhY58YR7rtuEei2NQ1q9JgkGlEkuCphLrgVGCQTWJ1wQslJBDyCkhSZScXmlEWqGglCUtI1gJn1uhRgl7XY4zdeSUEPzBtTC/p0RhPZ/vuRYWhRzmA24ZqVkog+K0tEIeJx5QcSHmT6WeDnV1zO+ggIIONcEbc1AiELVTSKm/Ipp71i6yUp4itNfxijp6jKgWVEsk7ukU0JPSIOTR+UI4eEZn3YZOhGaUklLLReiodJ52eUsZd8/U40aXKfKwkqsUOG3IM3nuF0KuiRzThlwhKrRPT6+WnhZKEw0guiJ0XIS0R3kLWwqgbiW8hRtolLfAeaY4Ee8pWyp7wmSp2xHel6W0If1X6lip7AjXJUs6hpnaK9JxtNRYijeRt+RWqjNsoa+FWkuNpWDJW6IfKFpyhv42vgG6VM8/YZIeVQAAAABJRU5ErkJggg==</uri>
 		</logo>
 		<org>
 			<parameters>

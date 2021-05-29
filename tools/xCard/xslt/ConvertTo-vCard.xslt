@@ -53,9 +53,11 @@
 	<?region подготовка для Android ?>
 
 	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match="
-		xcard:adr/xcard:parameters/xcard:geo
+		xcard:photo
+		| xcard:adr/xcard:parameters/xcard:geo
 		| xcard:lang
 		| xcard:tz
+		| xcard:logo
 		| xcard:geo
 		| xcard:categories
 		| xcard-android:x-group-membership
