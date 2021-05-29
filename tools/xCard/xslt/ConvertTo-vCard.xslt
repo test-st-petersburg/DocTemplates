@@ -11,6 +11,7 @@
 
 	<?region Параметры преобразования?>
 
+	<xsl:param name="t:max-string-length" as=" xsd:integer " select=" 75 " static="yes"/>
 	<xsl:param name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes"/>
 	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" true() " static="yes"/>
 
@@ -117,7 +118,14 @@
 		<!-- strings folding: https://datatracker.ietf.org/doc/html/rfc6350#section-3.2 -->
 		<xsl:context-item use="optional"/>
 		<xsl:param name="t:vcard-property-content" as=" xsd:string? " required="yes"/>
-		<xsl:value-of select=" replace( $t:vcard-property-content, '(.{75})', concat( '$1', $t:new-line, ' ' ) )"/>
+		<xsl:value-of separator="{ concat( $t:new-line, ' ' ) }">
+			<xsl:for-each-group
+				select=" string-to-codepoints( $t:vcard-property-content ) "
+				group-adjacent=" ( position() - 1 ) idiv $t:max-string-length "
+			>
+				<xsl:sequence select=" codepoints-to-string( current-group() ) "/>
+			</xsl:for-each-group>
+		</xsl:value-of>
 	</xsl:template>
 
 	<?endregion дополнительная обработка при генерации vCard ?>
