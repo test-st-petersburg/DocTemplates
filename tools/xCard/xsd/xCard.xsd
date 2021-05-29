@@ -2,6 +2,7 @@
 <xsd:schema
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	xmlns:xcard-android="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
 	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
 	elementFormDefault="qualified"
 >
@@ -29,6 +30,8 @@
 	<xsd:include schemaLocation="xCard Explanatory Properties.xsd"/>
 	<xsd:include schemaLocation="xCard Security Properties.xsd"/>
 	<xsd:include schemaLocation="xCard Calendar Properties.xsd"/>
+
+	<xsd:import namespace="https://github.com/test-st-petersburg/DocTemplates/xCard/Android" schemaLocation="xCard%20Android%20Properties.xsd"/>
 
 	<xsd:element name="vcards">
 		<xsd:annotation>
@@ -86,6 +89,7 @@
 							<xsd:group ref="xcard:property-related" minOccurs="0" maxOccurs="unbounded"/>
 
 							<xsd:group ref="xcard:property-categories" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard-android:property-x-group-membership" minOccurs="0" maxOccurs="unbounded"/>
 							<xsd:group ref="xcard:property-note" minOccurs="0" maxOccurs="unbounded"/>
 							<xsd:group ref="xcard:property-prodid" minOccurs="0"/>
 							<xsd:group ref="xcard:property-rev" minOccurs="0"/>

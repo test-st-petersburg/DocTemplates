@@ -4,6 +4,7 @@
 	xmlns:ms="urn:schemas-microsoft-com:xslt"
 
 	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	xmlns:xcard-android="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
 
 	xmlns:t="http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard"
 >
@@ -229,6 +230,7 @@
 		| xcard:role
 		| xcard:org
 		| xcard:categories
+		| xcard-android:x-group-membership
 		| xcard:note
 		| xcard:prodid
 		| xcard:version
