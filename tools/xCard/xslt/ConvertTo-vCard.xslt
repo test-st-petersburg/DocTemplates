@@ -10,7 +10,10 @@
 >
 
 	<?region Параметры преобразования?>
-	<xsl:variable name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes" visibility="private"/>
+
+	<xsl:param name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes"/>
+	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" true() " static="yes"/>
+
 	<?endregion Параметры преобразования ?>
 
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes" media-type="text/x-vcard"/>
@@ -24,7 +27,7 @@
 	<xsl:mode name="t:property-value-required-components" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip"/>
 	<xsl:mode name="t:property-value-component-values" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-name" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
-	<xsl:mode name="t:property-parameters-aux" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
+	<xsl:mode name="t:property-parameters" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-parameter-aux" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-parameter-value" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:property-type" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
@@ -113,17 +116,26 @@
 
 	<xsl:template name="t:process-property" as=" text() ">
 		<xsl:context-item use="required"/>
+		<xsl:param name="t:name" as=" xsd:NCName ">
+			<xsl:apply-templates mode="t:property-name" select="."/>
+		</xsl:param>
+		<xsl:param name="t:type" as=" text() ">
+			<xsl:apply-templates mode="t:property-type-parameter" select="."/>
+		</xsl:param>
+		<xsl:param name="t:parameters" as=" xsd:string* ">
+			<xsl:apply-templates mode="t:property-parameters" select="."/>
+		</xsl:param>
+		<xsl:param name="t:value" as=" xsd:string ">
+			<xsl:apply-templates mode="t:property-value" select="."/>
+		</xsl:param>
 		<xsl:value-of separator="">
 			<xsl:value-of separator=";">
-				<!-- наименование свойства -->
-				<xsl:apply-templates mode="t:property-name" select="."/>
-				<!-- параметры свойства -->
-				<xsl:apply-templates mode="t:property-type-parameter" select="."/>
-				<xsl:apply-templates mode="t:property-parameters-aux" select="."/>
+				<xsl:copy-of select=" $t:name "/>
+				<xsl:copy-of select=" $t:type "/>
+				<xsl:copy-of select=" $t:parameters "/>
 			</xsl:value-of>
-			<!-- значение свойства -->
 			<xsl:text>:</xsl:text>
-			<xsl:apply-templates mode="t:property-value" select="."/>
+			<xsl:copy-of select=" $t:value "/>
 		</xsl:value-of>
 	</xsl:template>
 
@@ -131,7 +143,7 @@
 		<xsl:call-template name="t:process-property"/>
 	</xsl:template>
 
-	<xsl:template mode="t:property-name" match=" * " as=" xsd:token ">
+	<xsl:template mode="t:property-name" match=" * " as=" xsd:NCName ">
 		<xsl:value-of select=" upper-case( local-name(.) ) "/>
 	</xsl:template>
 
@@ -139,7 +151,7 @@
 
 	<?region обработка параметров свойств ?>
 
-	<xsl:template mode="t:property-parameters-aux" match=" * " as=" xsd:string* ">
+	<xsl:template mode="t:property-parameters" match=" * " as=" xsd:string* ">
 		<xsl:context-item as=" element() " use="required"/>
 		<xsl:apply-templates mode="t:property-parameter-aux" select=" xcard:parameters/* "/>
 	</xsl:template>
