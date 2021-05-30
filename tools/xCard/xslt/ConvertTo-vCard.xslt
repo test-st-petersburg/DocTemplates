@@ -18,6 +18,7 @@
 	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 	<xsl:param name="t:filter-pid" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 	<xsl:param name="t:filter-pref-for-unique-property" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
+	<xsl:param name="t:convert-tel-to-text" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 
 	<?endregion Параметры преобразования ?>
 
@@ -92,6 +93,53 @@
 			count( key( 't:properties-by-name', ( ../../.., name( ../.. ) ) ) ) = 1
 		]
 	" />
+
+	<?region конвертация TEL URI в текст ?>
+
+	<!-- TODO: поддержать внутренние номера с phone-context -->
+	<xsl:variable name="t:tel-uri-digits-separator-regexp" as=" xsd:string " select=" '[- ]?' "/>
+	<xsl:variable name="t:tel-uri-digits-regexp" as=" xsd:string " select=" concat( '(?:',
+		'\d+(?:', $t:tel-uri-digits-separator-regexp, '\d+)*',
+	')' ) "/>
+	<xsl:variable name="t:tel-uri-digits-group-regexp" as=" xsd:string " select=" concat( '(?:',
+		'\(', $t:tel-uri-digits-regexp, '\)',
+	')' ) "/>
+	<xsl:variable name="t:tel-uri-number-digits-regexp" as=" xsd:string " select=" concat( '(?:',
+		'(?:', $t:tel-uri-digits-regexp, '|', $t:tel-uri-digits-group-regexp, ')',
+		'(?:', $t:tel-uri-digits-separator-regexp,
+			'(?:', $t:tel-uri-digits-regexp, '|', $t:tel-uri-digits-group-regexp, ')',
+		')*',
+	')' ) "/>
+	<xsl:variable name="t:tel-uri-number-regexp" as=" xsd:string " select=" concat( '(',
+		'\+?', $t:tel-uri-number-digits-regexp,
+	')' ) "/>
+	<xsl:variable name="t:tel-uri-ext-regexp" as=" xsd:string " select=" concat( '(?:',
+		'ext=', '(', $t:tel-uri-number-digits-regexp, ')',
+	')' ) "/>
+	<!-- <xsl:variable name="t:tel-uri-regexp" as=" xsd:string " select="
+		'^tel:((?:\+[\d().-]*\d[\d().-]*|[0-9A-F*#().-]*[0-9A-F*#][0-9A-F*#().-]*(?:;[a-z\d-]+(?:=(?:[a-z\d\[\]\/:&amp;+$_!~*&#39;().-]|%[\dA-F]{2})+)?)*;phone-context=(?:\+[\d().-]*\d[\d().-]*|(?:[a-z0-9]\.|[a-z0-9][a-z0-9-]*[a-z0-9]\.)*(?:[a-z]|[a-z][a-z0-9-]*[a-z0-9])))(?:;[a-z\d-]+(?:=(?:[a-z\d\[\]\/:&amp;+$_!~*&#39;().-]|%[\dA-F]{2})+)?)*(?:,(?:\+[\d().-]*\d[\d().-]*|[0-9A-F*#().-]*[0-9A-F*#][0-9A-F*#().-]*(?:;[a-z\d-]+(?:=(?:[a-z\d\[\]\/:&amp;+$_!~*&#39;().-]|%[\dA-F]{2})+)?)*;phone-context=\+[\d().-]*\d[\d().-]*)(?:;[a-z\d-]+(?:=(?:[a-z\d\[\]\/:&amp;+$_!~*&#39;().-]|%[\dA-F]{2})+)?)*)*)$'
+	"/> -->
+	<xsl:variable name="t:tel-uri-regexp" as=" xsd:string " select=" concat(
+		'^tel:',
+			$t:tel-uri-number-regexp,
+			'(?:', ';', $t:tel-uri-ext-regexp, ')?',
+		'$'
+	) "/>
+
+	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:convert-tel-to-text " match=" xcard:tel/xcard:uri " >
+		<xsl:element name="xcard:text">
+			<xsl:analyze-string select=" text() " regex="{ $t:tel-uri-regexp }">
+				<xsl:matching-substring>
+					<xsl:value-of select=" string-join( ( regex-group(1), regex-group(2) )[ . != '' ], ',' ) "/>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<xsl:value-of select="."/>
+				</xsl:non-matching-substring>
+			</xsl:analyze-string>
+		</xsl:element>
+	</xsl:template>
+
+	<?endregion конвертация TEL URI в текст ?>
 
 	<!-- TODO: преобразование categories в x-group-membership не дало результатов при импорте в Android -->
 	<!-- <xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match=" xcard:categories " as=" element()+ ">

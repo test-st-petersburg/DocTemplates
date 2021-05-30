@@ -9,7 +9,7 @@
 			<parameters>
 				<language><language-tag>ru-RU</language-tag></language>
 			</parameters>
-			<text>Тест-С.-Петербург, ФБУ, Новгородский филиал</text>
+			<text>Тест-С-Петербург</text>
 		</fn>
 		<adr>
 			<parameters>
@@ -34,8 +34,7 @@
 					<text>voice</text>
 				</type>
 			</parameters>
-			<!-- <uri>tel:+7-816-2-60-77-27</uri> -->
-			<text>+7-816-2-60-77-27</text>
+			<uri>tel:+7-(8162)-60-77-27</uri>
 		</tel>
 		<tel>
 			<parameters>
@@ -46,8 +45,7 @@
 					<text>fax</text>
 				</type>
 			</parameters>
-			<!-- <uri>tel:+7-816-2-60-77-27;ext=9999</uri> -->
-			<text>+7-816-2-60-77-27,9999</text>
+			<uri>tel:+7-(8162)-60-77-27;ext=9999</uri>
 		</tel>
 		<email>
 			<parameters>
@@ -77,7 +75,7 @@
 					<text>Новгородский филиал</text>
 				</sort-as>
 			</parameters>
-			<text>Тест-С.-Петербург, ФБУ</text>
+			<text>ФБУ "Тест-С.-Петербург"</text>
 			<text>Новгородский филиал</text>
 		</org>
 		<categories>
@@ -90,7 +88,7 @@
 			<parameters>
 				<language><language-tag>ru-RU</language-tag></language>
 			</parameters>
-			<text>Специальная оценка условий труда, оценка профессиональных рисков, производственный контроль</text>
+			<text>Поверка и калибровка СИ, аттестация испытательного оборудования, сертификация, СОУТ, оценка профессиональных рисков, производственный контроль</text>
 		</note>
 		<rev>
 			<timestamp>20210523T014800Z</timestamp>
