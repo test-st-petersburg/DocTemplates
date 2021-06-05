@@ -13,7 +13,7 @@
 
 	<xsl:param name="t:max-string-length" as=" xsd:integer " select=" 75 " static="yes"/>
 	<xsl:param name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes"/>
-	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" true() " static="yes"/>
+	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" false() " static="yes"/>
 	<xsl:param name="t:current-lang" as=" xsd:language " select=" xsd:language( 'ru-RU' ) " static="yes"/>
 	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
 	<xsl:param name="t:filter-pid" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>

@@ -1,4 +1,4 @@
-# Copyright © 2020 Sergei S. Betke
+﻿# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -46,8 +46,15 @@ Param(
 
 	# Версия формата vCard
 	[Parameter( Mandatory = $False )]
-	[System.Int16]
-	$Version = 4
+	[ValidateSet( '4.0' )]
+	[System.Version]
+	$Version = '4.0',
+
+	# Параметры совместимости генерируемого vCard
+	[Parameter( Mandatory = $False )]
+	[ValidateSet( 'Android', 'iOS' )]
+	[System.String]
+	$Compatibility
 )
 
 begin
@@ -61,7 +68,24 @@ begin
 	Push-Location -Path $PSScriptRoot;
 	try
 	{
+		$saxProcessor = .\..\xslt\Get-XSLTProcessor.ps1 `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
+		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
+		$saxCompiler = $saxProcessor.NewXsltCompiler();
+
+		$TransformerNamespace = 'http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard';
+		if ( $Compatibility -eq 'Android' )
+		{
+			$saxCompiler.SetParameter(
+				( [Saxon.Api.QName]::new( $TransformerNamespace, 'max-android-compatibility' ) ),
+				( [Saxon.Api.XdmAtomicValue]::new( $true ) )
+			);
+		};
+
 		$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
+			-saxCompiler $saxCompiler `
 			-Path 'xslt\ConvertTo-vCard.xslt' `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	}

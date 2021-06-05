@@ -50,8 +50,15 @@ Param(
 
 	# Версия формата vCard
 	[Parameter( Mandatory = $False )]
-	[System.Int16]
-	$Version = 4
+	[ValidateSet( '4.0' )]
+	[System.Version]
+	$Version = '4.0',
+
+	# Параметры совместимости генерируемого vCard
+	[Parameter( Mandatory = $False )]
+	[ValidateSet( 'Android', 'iOS' )]
+	[System.String]
+	$Compatibility
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;

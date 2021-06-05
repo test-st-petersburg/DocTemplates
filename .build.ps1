@@ -391,7 +391,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		.\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
+		.\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile -Compatibility 'Android' `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};

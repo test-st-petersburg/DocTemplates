@@ -10,10 +10,15 @@
 [CmdletBinding()]
 
 Param(
+
 	# путь к файлу XSLT
 	[Parameter( Mandatory = $True, Position = 0 )]
 	[System.String]
 	$Path,
+
+	# компилятор XSLT
+	[Parameter( Mandatory = $False )]
+	$saxCompiler,
 
 	# массив путей к пакетам XSLT, необходимых для компиляции трансформации
 	[Parameter( Mandatory = $False )]
@@ -114,30 +119,33 @@ try
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxonPackage = Get-Package -Name 'Saxon-HE' -MinimumVersion 9.8 -MaximumVersion 9.8.999 `
-		-ProviderName NuGet `
-		-SkipDependencies `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	$saxonLibPath = Join-Path -Path ( Split-Path -Path ( $saxonPackage.Source ) -Parent ) `
-		-ChildPath 'lib\net40\saxon9he-api.dll';
-	Add-Type -Path $saxonLibPath `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	if ( $null -eq $saxCompiler )
+	{
+		Push-Location -Path $PSScriptRoot;
+		try
+		{
+			$saxProcessor = .\Get-XSLTProcessor.ps1 `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		}
+		finally
+		{
+			Pop-Location;
+		};
 
-	Write-Verbose 'Создание SAX процессора.';
-	$saxProcessor = New-Object Saxon.Api.Processor;
+		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
+		$saxCompiler = $saxProcessor.NewXsltCompiler();
+	};
+
+	$saxProcessor = $saxCompiler.Processor;
 
 	if ( $PSCmdlet.MyInvocation.BoundParameters.ContainsKey('DtdPath') )
 	{
-		$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
+		$XmlResolverWithCachedDTD = [OOXmlResolver]::new( ( ( Resolve-Path -Path $DtdPath ).Path ) );
 		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
 	};
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
-
-	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
-	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
 	foreach ( $Package in $PackagePath )
 	{
