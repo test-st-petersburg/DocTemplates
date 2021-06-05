@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#value-data-types">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#value-data-types)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:simpleType name="iana-token">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				Identifier registered with IANA.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="x-name">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				Names that begin with "x-" or "X-" are reserved for experimental use, not intended for released
+				products, or for use in bilateral agreements.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-3.3 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[xX]-[a-zA-Z0-9][a-zA-Z0-9\-]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="text">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6350#section-4.1">
+				For xCard we using xsd:string, but for vCard:
+
+				"text": The "text" value type should be used to identify values that
+				contain human-readable text.  As for the language, it is controlled
+				by the LANGUAGE property parameter defined in Section 5.1.
+
+				**Examples**:
+					this is a text value
+					this is one value,this is another
+					this is a single value\, with a comma encoded
+
+				A formatted text line break in a text value type MUST be represented
+				as the character sequence backslash (U+005C) followed by a Latin
+				small letter n (U+006E) or a Latin capital letter N (U+004E), that
+				is, "\n" or "\N".
+
+				For example, a multiple line NOTE value of:
+					Mythical Manager
+					Hyjinx Software Division
+					BabsCo, Inc.
+
+				could be represented as:
+					NOTE:Mythical Manager\nHyjinx Software Division\n
+						BabsCo\, Inc.\n
+
+				demonstrating the \n literal formatted line break technique, the
+				CRLF-followed-by-space line folding technique, and the backslash
+				escape technique.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:group name="value-text-content">
+		<xsd:sequence>
+			<xsd:element name="text" type="xcard:text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						The "text" value type should be used to identify values that
+						contain human-readable text.  As for the language, it is controlled
+						by the LANGUAGE property parameter defined in Section 5.1.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-text">
+		<xsd:group ref="xcard:value-text-content"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="value-text-list">
+		<xsd:group ref="xcard:value-text-content" maxOccurs="unbounded"/>
+	</xsd:complexType>
+
+	<xsd:group name="value-uri-content">
+		<xsd:sequence>
+			<xsd:element name="uri" type="xsd:anyURI">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						For xCard we using xsd:anyURI:
+
+						"uri": The "uri" value type should be used to identify values that
+						are referenced by a Uniform Resource Identifier (URI) instead of
+						encoded in-line.  These value references might be used if the value
+						is too large, or otherwise undesirable to include directly.  The
+						format for the URI is as defined in
+						[Section 3 of RFC 3986](https://tools.ietf.org/html/rfc3986#section-3).
+						Note that the value of a property of type "uri" is what the URI points to,
+						not the URI itself.
+
+						**Examples**:
+							http://www.example.com/my/picture.jpg
+							ldap://ldap.example.com/cn=babs%20jensen
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-uri">
+		<xsd:group ref="xcard:value-uri-content"/>
+	</xsd:complexType>
+
+	<xsd:group name="value-uri-or-text-content">
+		<xsd:choice>
+			<xsd:group ref="xcard:value-uri-content"/>
+			<xsd:group ref="xcard:value-text-content"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:complexType name="value-uri-or-text">
+		<xsd:group ref="xcard:value-uri-or-text-content"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="date" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				A calendar date as specified in [ISO.8601.2004], Section 4.1.2.
+
+				Reduced accuracy, as specified in [ISO.8601.2004], Sections 4.1.2.3
+				a) and b), but not c), is permitted.
+
+				Expanded representation, as specified in [ISO.8601.2004], Section
+				4.1.4, is forbidden.
+
+				Truncated representation, as specified in [ISO.8601.2000], Sections
+				5.2.1.3 d), e), and f), is permitted.
+
+				Examples for "date":
+
+							19850412
+							1985-04
+							1985
+							--0412
+							---12
+
+				Note the use of YYYY-MM in the second example above.  YYYYMM is
+				disallowed to prevent confusion with YYMMDD.  Note also that
+				YYYY-MM-DD is disallowed since we are using the basic format instead
+				of the extended format.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{8}|\d{4}-\d\d|--\d\d(\d\d)?|---\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-date-content">
+		<xsd:sequence>
+			<xsd:element name="date" type="xcard:date">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						A calendar date as specified in [ISO.8601.2004], Section 4.1.2.
+
+						Reduced accuracy, as specified in [ISO.8601.2004], Sections 4.1.2.3
+						a) and b), but not c), is permitted.
+
+						Expanded representation, as specified in [ISO.8601.2004], Section
+						4.1.4, is forbidden.
+
+						Truncated representation, as specified in [ISO.8601.2000], Sections
+						5.2.1.3 d), e), and f), is permitted.
+
+						Examples for "date":
+
+									19850412
+									1985-04
+									1985
+									--0412
+									---12
+
+						Note the use of YYYY-MM in the second example above.  YYYYMM is
+						disallowed to prevent confusion with YYMMDD.  Note also that
+						YYYY-MM-DD is disallowed since we are using the basic format instead
+						of the extended format.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-date">
+		<xsd:group ref="xcard:value-date-content"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="time" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				A time of day as specified in [ISO.8601.2004], Section 4.2.
+
+				Reduced accuracy, as specified in [ISO.8601.2004], Section 4.2.2.3,
+				is permitted.
+
+				Representation with decimal fraction, as specified in
+				[ISO.8601.2004], Section 4.2.2.4, is forbidden.
+
+				The midnight hour is always represented by 00, never 24 (see
+				[ISO.8601.2004], Section 4.2.3).
+
+				Truncated representation, as specified in [ISO.8601.2000], Sections
+				5.3.1.4 a), b), and c), is permitted.
+
+				Examples for "time":
+
+						  102200
+						  1022
+						  10
+						  -2200
+						  --00
+						  102200Z
+						  102200-0800
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.2 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\d\d(\d\d(\d\d)?)?|-\d\d(\d\d)?|--\d\d)(Z|[+\-]\d\d(\d\d)?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-time-content">
+		<xsd:sequence>
+			<xsd:element name="time" type="xcard:time">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						A calendar date as specified in [ISO.8601.2004], Section 4.1.2.
+
+						Reduced accuracy, as specified in [ISO.8601.2004], Sections 4.1.2.3
+						a) and b), but not c), is permitted.
+
+						Expanded representation, as specified in [ISO.8601.2004], Section
+						4.1.4, is forbidden.
+
+						Truncated representation, as specified in [ISO.8601.2000], Sections
+						5.2.1.3 d), e), and f), is permitted.
+
+						Examples for "date":
+
+									19850412
+									1985-04
+									1985
+									--0412
+									---12
+
+						Note the use of YYYY-MM in the second example above.  YYYYMM is
+						disallowed to prevent confusion with YYMMDD.  Note also that
+						YYYY-MM-DD is disallowed since we are using the basic format instead
+						of the extended format.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-time">
+		<xsd:group ref="xcard:value-time-content"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="date-time" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				For xCard we using xsd:dateTime, but for vCard:
+
+				A date and time of day combination as specified in [ISO.8601.2004],
+				Section 4.3.
+
+				Truncation of the date part, as specified in [ISO.8601.2000], Section
+				5.4.2 c), is permitted.
+
+				Examples for "date-time":
+
+						19961022T140000
+						--1022T1400
+						---22T14
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.3 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\d{8}|--\d{4}|---\d\d)T\d\d(\d\d(\d\d)?)?(Z|[+\-]\d\d(\d\d)?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-date-time-content">
+		<xsd:sequence>
+			<xsd:element name="date-time" type="xcard:date-time">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						A calendar date as specified in [ISO.8601.2004], Section 4.1.2.
+
+						Reduced accuracy, as specified in [ISO.8601.2004], Sections 4.1.2.3
+						a) and b), but not c), is permitted.
+
+						Expanded representation, as specified in [ISO.8601.2004], Section
+						4.1.4, is forbidden.
+
+						Truncated representation, as specified in [ISO.8601.2000], Sections
+						5.2.1.3 d), e), and f), is permitted.
+
+						Examples for "date":
+
+									19850412
+									1985-04
+									1985
+									--0412
+									---12
+
+						Note the use of YYYY-MM in the second example above.  YYYYMM is
+						disallowed to prevent confusion with YYMMDD.  Note also that
+						YYYY-MM-DD is disallowed since we are using the basic format instead
+						of the extended format.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-date-time">
+		<xsd:group ref="xcard:value-date-time-content"/>
+	</xsd:complexType>
+
+	<xsd:group name="value-date-and-or-time-content">
+		<xsd:choice>
+			<xsd:group ref="xcard:value-date-content"/>
+			<xsd:group ref="xcard:value-time-content"/>
+			<xsd:group ref="xcard:value-date-time-content"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:complexType name="value-date-and-or-time">
+		<xsd:group ref="xcard:value-date-and-or-time-content"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="timestamp" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				A complete date and time of day combination as specified in
+				[ISO.8601.2004], Section 4.3.2.
+
+				Examples for "timestamp":
+
+						19961022T140000
+						19961022T140000Z
+						19961022T140000-05
+						19961022T140000-0500
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.5 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{8}T\d{6}(Z|[+\-]\d\d(\d\d)?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="value-timestamp">
+		<xsd:sequence>
+			<xsd:element name="timestamp" type="xcard:timestamp">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						A complete date and time of day combination as specified in
+						[ISO.8601.2004], Section 4.3.2.
+
+						Examples for "timestamp":
+
+								  19961022T140000
+								  19961022T140000Z
+								  19961022T140000-05
+								  19961022T140000-0500
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.3.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="value-boolean">
+		<xsd:sequence>
+			<xsd:element name="boolean" type="xsd:boolean" block="#all">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						"boolean": The "boolean" value type is used to express boolean
+						values.  These values are case-insensitive.
+
+						**Examples**:
+
+							TRUE
+							false
+							True
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="value-integer">
+		<xsd:sequence>
+			<xsd:element name="integer" type="xsd:integer">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						"integer": The "integer" value type is used to express signed
+						integers in decimal format.  If sign is not specified, the value is
+						assumed positive "+".  Multiple "integer" values can be specified
+						using the comma-separated notation.  The maximum value is
+						9223372036854775807, and the minimum value is -9223372036854775808.
+						These limits correspond to a signed 64-bit integer using two's-
+						complement arithmetic.
+
+						**Examples**:
+
+							1234567890
+							-1234556790
+							+1234556790,432109876
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- TODO: Multiple "integer" values - as value-text-list ? -->
+
+	<xsd:complexType name="value-float">
+		<xsd:sequence>
+			<xsd:element name="float" type="xsd:float">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						"float": The "float" value type is used to express real numbers.  If
+						sign is not specified, the value is assumed positive "+".  Multiple
+						"float" values can be specified using the comma-separated notation.
+						Implementations MUST support a precision equal or better than that of
+						the IEEE "binary64" format [IEEE.754.2008].
+
+						Note: Scientific notation is disallowed.  Implementers wishing to
+						use their favorite language's %f formatting should be careful.
+
+						**Examples**:
+
+							20.30
+							1000000.0000001
+							1.333,3.14
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- TODO: Multiple "float" values - as value-text-list ? -->
+
+	<xsd:simpleType name="utc-offset" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				"utc-offset": The "utc-offset" value type specifies that the property
+				value is a signed offset from UTC.  This value type can be specified
+				in the TZ property.
+
+				The value type is an offset from Coordinated Universal Time (UTC).
+				It is specified as a positive or negative difference in units of
+				hours and minutes (e.g., +hhmm).  The time is specified as a 24-hour
+				clock.  Hour values are from 00 to 23, and minute values are from 00
+				to 59.  Hour and minutes are 2 digits with high-order zeroes required
+				to maintain digit count.  The basic format for ISO 8601 UTC offsets
+				MUST be used.
+
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.7 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[+-](([01]\d)|2[0-3])([0-5]\d)?"/>
+			<!-- RFC 6351: [+\-]\d\d(\d\d)? -->
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:group name="value-utc-offset-content">
+		<xsd:sequence>
+			<xsd:element name="utc-offset" type="xcard:utc-offset">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						"utc-offset": The "utc-offset" value type specifies that the property
+						value is a signed offset from UTC.  This value type can be specified
+						in the TZ property.
+
+						The value type is an offset from Coordinated Universal Time (UTC).
+						It is specified as a positive or negative difference in units of
+						hours and minutes (e.g., +hhmm).  The time is specified as a 24-hour
+						clock.  Hour values are from 00 to 23, and minute values are from 00
+						to 59.  Hour and minutes are 2 digits with high-order zeroes required
+						to maintain digit count.  The basic format for ISO 8601 UTC offsets
+						MUST be used.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.7 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-utc-offset">
+		<xsd:group ref="xcard:value-utc-offset-content"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="language-tag" final="#all">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+				"language-tag": A single language tag, as defined in
+				[RFC 5646](https://tools.ietf.org/html/rfc5646).
+				[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.8 "vCard Format Specification")
+				[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:language"/>
+		<!-- RFC 6351:
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([a-z]{2,3}((-[a-z]{3}){0,3})?|[a-z]{4,8})(-[a-z]{4})?(-([a-z]{2}|\d{3}))?(-([0-9a-z]{5,8}|\d[0-9a-z]{3}))*(-[0-9a-wyz](-[0-9a-z]{2,8})+)*(-x(-[0-9a-z]{1,8})+)?|x(-[0-9a-z]{1,8})+|[a-z]{1,3}(-[0-9a-z]{2,8}){1,2}"/>
+		</xsd:restriction>
+		 -->
+	</xsd:simpleType>
+
+	<xsd:group name="value-language-tag-content">
+		<xsd:sequence>
+			<xsd:element name="language-tag" type="xcard:language-tag">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						"language-tag": A single language tag, as defined in
+						[RFC 5646](https://tools.ietf.org/html/rfc5646).
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-4.8 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:complexType name="value-language-tag">
+		<xsd:group ref="xcard:value-language-tag-content"/>
+	</xsd:complexType>
+
+</xsd:schema>

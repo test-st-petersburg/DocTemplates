@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	xmlns:xcard-android="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
+	targetNamespace="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
+	elementFormDefault="qualified"
+>
+
+	<xsd:import namespace="urn:ietf:params:xml:ns:vcard-4.0" schemaLocation="xCard.xsd"/>
+
+	<xsd:group name="property-x-group-membership">
+		<!-- TODO: найти описание параметра X-GROUP-MEMBERSHIP и разобраться с его типом -->
+		<xsd:sequence>
+			<xsd:element name="x-group-membership" type="xcard:value-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						**Purpose**:  To specify contact group for Android.
+
+						**Examples**:
+							X-GROUP-MEMBERSHIP:My Contacts
+							X-GROUP-MEMBERSHIP:PREDEFINED_HUAWEI_GROUP_CCARD
+
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

@@ -22,13 +22,15 @@ module.exports = {
       "ci",
       "test",
       "revert",
-      "WIP",
+      "wip",
       "init"
     ]],
     "scope-case": [2, "always", "lower-case"],
     "scope-enum": [1, "always", [
       "ott",
       "odt",
+      "qrcode",
+      "vcard",
       "design",
       "vscode",
       "git",

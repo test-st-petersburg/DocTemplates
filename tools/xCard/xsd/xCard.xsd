@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	xmlns:xcard-android="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="http://tools.ietf.org/html/rfc6351">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			xCard: vCard XML Representation
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="ru">
+			P.S. Пока требуется конкретный порядок элементов в vcard, что не обязательно.
+			И не предусмотрены расширения.
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard General Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Identification Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Delivery Addressing Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Communications Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Geographical Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Organizational Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Explanatory Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Security Properties.xsd"/>
+	<xsd:include schemaLocation="xCard Calendar Properties.xsd"/>
+
+	<xsd:import namespace="https://github.com/test-st-petersburg/DocTemplates/xCard/Android" schemaLocation="xCard%20Android%20Properties.xsd"/>
+
+	<xsd:element name="vcards">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A"/>
+			<xsd:documentation xml:lang="ru">
+				Коллекция визитных карт.
+
+				RFC 6351 [vCard XML Representation](http://tools.ietf.org/html/rfc6351#section-4 "xCard: vCard XML Representation"),
+				[Relax NG Schema](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="vcard" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="ru">
+							Элемент, представляющий отдельный контакт.
+
+							[RFC 6350 Section 6](https://tools.ietf.org/html/rfc6350#section-6 "vCard Format Specification")
+							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+						</xsd:documentation>
+						<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+							[RFC 6350 Section 6](https://tools.ietf.org/html/rfc6350#section-6 "vCard Format Specification")
+							[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+						</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:group ref="xcard:property-kind" minOccurs="0"/>
+							<xsd:group ref="xcard:property-source" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-fn" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-n" minOccurs="0"/>
+
+							<xsd:group ref="xcard:property-nickname" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-photo" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-bday" minOccurs="0"/>
+							<xsd:group ref="xcard:property-anniversary" minOccurs="0"/>
+							<xsd:group ref="xcard:property-gender" minOccurs="0"/>
+
+							<xsd:group ref="xcard:property-adr" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-tel" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-email" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-impp" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-lang" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-tz" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-geo" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-title" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-role" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-logo" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-org" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-member" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-related" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-categories" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard-android:property-x-group-membership" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-note" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-prodid" minOccurs="0"/>
+							<xsd:group ref="xcard:property-rev" minOccurs="0"/>
+							<xsd:group ref="xcard:property-sound" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-uid" minOccurs="0"/>
+							<xsd:group ref="xcard:property-clientpidmap" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-url" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-key" minOccurs="0" maxOccurs="unbounded"/>
+
+							<xsd:group ref="xcard:property-fburl" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-caladruri" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:group ref="xcard:property-caluri" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+					<xsd:unique	name="source-pid-must-be-unique">
+						<xsd:selector xpath="xcard:source/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="fn-pid-must-be-unique">
+						<xsd:selector xpath="xcard:fn/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="nickname-pid-must-be-unique">
+						<xsd:selector xpath="xcard:nickname/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="photo-pid-must-be-unique">
+						<xsd:selector xpath="xcard:photo/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="adr-pid-must-be-unique">
+						<xsd:selector xpath="xcard:adr/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="tel-pid-must-be-unique">
+						<xsd:selector xpath="xcard:tel/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="email-pid-must-be-unique">
+						<xsd:selector xpath="xcard:email/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="impp-pid-must-be-unique">
+						<xsd:selector xpath="xcard:impp/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="lang-pid-must-be-unique">
+						<xsd:selector xpath="xcard:lang/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="tz-pid-must-be-unique">
+						<xsd:selector xpath="xcard:tz/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="geo-pid-must-be-unique">
+						<xsd:selector xpath="xcard:geo/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="title-pid-must-be-unique">
+						<xsd:selector xpath="xcard:title/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="role-pid-must-be-unique">
+						<xsd:selector xpath="xcard:role/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="logo-pid-must-be-unique">
+						<xsd:selector xpath="xcard:logo/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="org-pid-must-be-unique">
+						<xsd:selector xpath="xcard:org/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="member-pid-must-be-unique">
+						<xsd:selector xpath="xcard:member/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="related-pid-must-be-unique">
+						<xsd:selector xpath="xcard:related/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="categories-pid-must-be-unique">
+						<xsd:selector xpath="xcard:categories/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="note-pid-must-be-unique">
+						<xsd:selector xpath="xcard:note/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="sound-pid-must-be-unique">
+						<xsd:selector xpath="xcard:sound/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+
+					<xsd:unique	name="clientpidmap-sourceid-must-be-unique">
+						<xsd:selector xpath="xcard:clientpidmap"/>
+						<xsd:field xpath="xcard:sourceid"/>
+					</xsd:unique>
+
+					<xsd:unique	name="url-pid-must-be-unique">
+						<xsd:selector xpath="xcard:url/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="key-pid-must-be-unique">
+						<xsd:selector xpath="xcard:key/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="fburl-pid-must-be-unique">
+						<xsd:selector xpath="xcard:fburl/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="caladruri-pid-must-be-unique">
+						<xsd:selector xpath="xcard:caladruri/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+					<xsd:unique	name="caluri-pid-must-be-unique">
+						<xsd:selector xpath="xcard:caluri/xcard:parameters/xcard:pid/xcard:text"/>
+						<xsd:field xpath="."/>
+					</xsd:unique>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

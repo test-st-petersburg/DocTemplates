@@ -3,6 +3,19 @@
 	// for the documentation about the tasks.json format
 	"version": "2.0.0",
 	"type": "shell",
+	"windows": {
+		"options": {
+			"shell": {
+				"executable": "powershell.exe",
+				"args": [
+					"-NoProfile",
+					"-ExecutionPolicy",
+					"Bypass",
+					"-Command"
+				]
+			}
+		}
+	},
 	"request": "launch",
 	"presentation": {
 		"reveal": "silent",
@@ -92,6 +105,11 @@
 			"label": "Build Open Office macro libraries containers",
 			"group": "build",
 			"command": "Invoke-Build -Task BuildLibContainers -Verbose"
+		},
+		{
+			"label": "Build QR codes",
+			"group": "build",
+			"command": "Invoke-Build -Task BuildQRCodes -Verbose"
 		}
 	]
 }

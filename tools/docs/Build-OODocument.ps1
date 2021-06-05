@@ -37,11 +37,12 @@ param(
 	$Force
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\Get-XSLTExecutable.ps1 `
+	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
 		-PackagePath `
 		'xslt/system/uri.xslt', `
 		'xslt/system/fix-saxon.xslt', `
@@ -57,15 +58,18 @@ begin {
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[System.String]	$FileName = ( Split-Path -Path $Path -Leaf );
 
-	if ( $PSCmdlet.ShouldProcess( $Path, "Create Open Office document from plain XML directory" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $Path, "Create Open Office document from plain XML directory" ) )
+	{
 
 		#region создание каталога назначения
-		if ( -not ( Test-Path -Path $DestinationPath ) ) {
+		if ( -not ( Test-Path -Path $DestinationPath ) )
+		{
 			New-Item -Path $DestinationPath -ItemType Directory `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
@@ -77,8 +81,10 @@ process {
 
 		$PreprocessedXMLPath = Join-Path -Path $TempPath -ChildPath $FileName;
 
-		if ( Test-Path -Path $PreprocessedXMLPath ) {
-			if ( -not $Force ) {
+		if ( Test-Path -Path $PreprocessedXMLPath )
+		{
+			if ( -not $Force )
+			{
 				Write-Error -Message "Preprocessed XML files path ""$PreprocessedXMLPath"" exists.";
 			};
 			Remove-Item -Path $PreprocessedXMLPath -Recurse -Force `
@@ -104,7 +110,8 @@ process {
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
 		$TempXMLPath = $TempXMLFolder.FullName;
-		try {
+		try
+		{
 
 			#region препроцессирование XML файлов
 
@@ -119,7 +126,8 @@ process {
 					'source-directory' ),
 				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
 			)
-			if ( $Version ) {
+			if ( $Version )
+			{
 				$Params.Add(
 					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'version' ),
@@ -128,7 +136,8 @@ process {
 			};
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
-			if ( $PSCmdlet.ShouldProcess( $Path, "Preprocess Open Office XML" ) ) {
+			if ( $PSCmdlet.ShouldProcess( $Path, "Preprocess Open Office XML" ) )
+			{
 				$null = $saxTransform.CallTemplate(
 					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'preprocess' )
@@ -155,14 +164,16 @@ process {
 				[System.String] $SourceBinFilePath = ( Join-Path -Path ( ( [System.Uri]( $_.base ) ).LocalPath ) -ChildPath ( $_.'full-path' ) );
 				[System.String] $DestinationBinFilePath = ( Join-Path -Path $PreprocessedXMLPath -ChildPath ( $_.'full-path' ) );
 				[System.String] $DestinationBinFileDirectory = ( Split-Path -Path $DestinationBinFilePath -Parent );
-				if ( -not ( Test-Path -Path $DestinationBinFileDirectory -PathType Container ) ) {
+				if ( -not ( Test-Path -Path $DestinationBinFileDirectory -PathType Container ) )
+				{
 					$null = New-Item -Path $DestinationBinFileDirectory -ItemType Directory -Force;
 				};
 				Copy-Item -LiteralPath $SourceBinFilePath -Destination $DestinationBinFilePath -Force `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 			};
-			if ( Test-Path -Path $BinaryFilesManifest ) {
+			if ( Test-Path -Path $BinaryFilesManifest )
+			{
 				Remove-Item -Path $BinaryFilesManifest `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -176,7 +187,8 @@ process {
 
 			#region удаление форматирования из XML файлов
 
-			if ( $PSCmdlet.ShouldProcess( $PreprocessedXMLPath, "Unindent Open Office XML" ) ) {
+			if ( $PSCmdlet.ShouldProcess( $PreprocessedXMLPath, "Unindent Open Office XML" ) )
+			{
 
 				[System.String] $PreprocessedUri = (
 					[System.Uri] ( $PreprocessedXMLPath + [System.IO.Path]::DirectorySeparatorChar )
@@ -188,7 +200,8 @@ process {
 						'source-directory' ),
 					( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $PreprocessedUri )
 				)
-				if ( $Version ) {
+				if ( $Version )
+				{
 					$Params.Add(
 						( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 							'version' ),
@@ -213,7 +226,8 @@ process {
 					-Path ( [System.IO.Path]::GetTempPath() ) `
 					-ChildPath ( [System.IO.Path]::GetRandomFileName() ) `
 			) + '.zip';
-			try {
+			try
+			{
 				# по требованиям Open Office первым добавляем **без сжатия** файл mimetype
 				Compress-7Zip -ArchiveFileName $TempZIPFileName `
 					-Path $TempXMLPath `
@@ -235,8 +249,10 @@ process {
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 			}
-			finally {
-				if ( Test-Path -Path $TempZIPFileName ) {
+			finally
+			{
+				if ( Test-Path -Path $TempZIPFileName )
+				{
 					Remove-Item -Path $TempZIPFileName `
 						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -246,7 +262,8 @@ process {
 			#endregion
 
 		}
-		finally {
+		finally
+		{
 			Remove-Item -Path $TempXMLPath -Recurse `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );

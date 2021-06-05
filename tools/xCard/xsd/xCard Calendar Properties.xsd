@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-fburl">
+		<xsd:sequence>
+			<xsd:element name="fburl" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the URI for the busy time associated with the
+						object that the vCard represents.
+
+						**Special notes**: The FTP or HTTP type of URI points to an iCalendar
+						[RFC5545](https://tools.ietf.org/html/rfc5545) object associated with a snapshot of the next few weeks
+						or months of busy time data.  If the iCalendar object is
+						represented as a file or document, its file extension should be
+						".ifb".
+
+						[RFC 5545](https://tools.ietf.org/html/rfc5545)
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.9.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-caladruri">
+		<xsd:sequence>
+			<xsd:element name="caladruri" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the calendar user address [RFC 5545](https://tools.ietf.org/html/rfc5545) to which a
+						scheduling request [RFC 5546](https://tools.ietf.org/html/rfc5546) should be sent for the object
+						represented by the vCard.
+
+						**Examples**:
+							CALADRURI;PREF=1:mailto:janedoe@example.com
+							CALADRURI:http://example.com/calendar/jdoe
+
+						[RFC 5545](https://tools.ietf.org/html/rfc5545)
+						[RFC 5546](https://tools.ietf.org/html/rfc5546)
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.9.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-caluri">
+		<xsd:sequence>
+			<xsd:element name="caluri" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**: To specify the URI for a calendar associated with the
+						object represented by the vCard.
+
+						**Special notes**: The property should contain a URI pointing to an iCalendar
+						[RFC 5545](https://tools.ietf.org/html/rfc5545)
+						object associated with a snapshot of the user's calendar store.
+						If the iCalendar object is represented as a file or document, its
+						file extension should be ".ics"
+
+						**Examples**:
+							CALURI;PREF=1:http://cal.example.com/calA
+							CALURI;MEDIATYPE=text/calendar:ftp://ftp.example.com/calA.ics
+
+						[RFC 5545](https://tools.ietf.org/html/rfc5545)
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.9.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

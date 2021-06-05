@@ -17,6 +17,16 @@
 		"files.trimTrailingWhitespace": false,
 		"files.insertFinalNewline": false
 	},
+	"xmlComplete.schemaMapping": [
+		{
+			"xmlns": "urn:ietf:params:xml:ns:vcard-4.0",
+			"xsdUri": "tools/xCard/xsd/xCard.xsd",
+			"strict": true
+		}
+	],
+	"xml.catalogs": [
+		".vscode/xml-schemas.xml"
+	],
 	"[xslt]": {
 		"editor.defaultFormatter": "deltaxml.xslt-xpath",
 		"editor.formatOnSave": false,
@@ -100,6 +110,7 @@
 	"powershell.codeFormatting.ignoreOneLineBlock": false,
 	"powershell.codeFormatting.preset": "Custom",
 	"typescript.tsc.autoDetect": "off",
+	"xml.validation.resolveExternalEntities": true,
 	"grunt.autoDetect": "off",
 	"jake.autoDetect": "off",
 	"gulp.autoDetect": "off",
@@ -114,6 +125,8 @@
 	"conventionalCommits.scopes": [
 		"ott",
 		"odt",
+		"qrcode",
+		"vcard",
 		"design",
 		"vscode",
 		"git",
@@ -123,5 +136,9 @@
 		"changelog",
 		"readme"
 	],
-	"conventionalCommits.showEditor": false
+	"conventionalCommits.showEditor": false,
+	"licenser.license": "AL2",
+	"licenser.author": "Sergei S. Betke",
+	"licenser.projectName": "Шаблоны документов ФБУ \"Тест-С.-Петербург\"",
+	"licenser.useSingleLineStyle": true
 }

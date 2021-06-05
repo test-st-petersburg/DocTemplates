@@ -7,7 +7,8 @@
 	"settings": {
 		"licenser.license": "AL2",
 		"licenser.author": "Sergei S. Betke",
-		"licenser.projectName": "Test-St-Petersburg document templates",
+		"licenser.projectName": "Шаблоны документов ФБУ \"Тест-С.-Петербург\"",
+		"licenser.useSingleLineStyle": true,
 		"XSLT.resources.xsltPackages": [
 			{
 				"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt",
@@ -60,6 +61,10 @@
 				"path": "tools/xslt/optimizer/OOOptimizer.xslt"
 			},
 		],
+		"xml.catalogs": [
+			".vscode/xml-schemas.xml"
+		],
+		"xml.validation.resolveExternalEntities": true
 	},
 	"extensions": {
 		// See http://go.microsoft.com/fwlink/?LinkId=827846

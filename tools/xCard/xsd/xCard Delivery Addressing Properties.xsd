@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-adr">
+		<xsd:sequence>
+			<xsd:element name="adr">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the components of the delivery address for the
+						vCard object.
+
+						**Special notes**:  The structured type value consists of a sequence of
+						address components.  The component values MUST be specified in
+						their corresponding position.  The structured type value
+						corresponds, in sequence, to
+							the post office box;
+							the extended address (e.g., apartment or suite number);
+							the street address;
+							the locality (e.g., city);
+							the region (e.g., state or province);
+							the postal code;
+							the country name (full name in the language specified in
+							Section 5.1).
+
+						When a component value is missing, the associated component
+						separator MUST still be specified.
+
+						Experience with vCard 3 has shown that the first two components
+						(post office box and extended address) are plagued with many
+						interoperability issues.  To ensure maximal interoperability,
+						their values SHOULD be empty.
+
+						**Examples**: In this example, the post office box and the extended
+						address are absent.
+							ADR;GEO="geo:12.3457,78.910";LABEL="Mr. John Q. Public, Esq.\n
+								Mail Drop: TNE QB\n123 Main Street\nAny Town, CA  91921-1234\n
+								U.S.A.":;;123 Main Street;Any Town;CA;91921-1234;U.S.A.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.3.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="parameters" type="xcard:parameters-type-with-type-language-geo-tz-label" minOccurs="0"/>
+						<xsd:element name="pobox" type="xcard:text" minOccurs="0">
+							<!-- TODO: добавить предупреждение при заполнении adr/pobox -->
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the post office box.
+									To ensure maximal interoperability SHOULD be empty.
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ext" type="xcard:text" minOccurs="0">
+							<!-- TODO: добавить предупреждение при заполнении adr/ext -->
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the extended address (e.g., apartment or suite number).
+									To ensure maximal interoperability SHOULD be empty.
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="street" type="xcard:text" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the street address.
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="locality" type="xcard:text" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the locality (e.g., city).
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="region" type="xcard:text" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the region (e.g., state or province).
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="code" type="xcard:text" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the postal code.
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="country" type="xcard:text" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en">
+									the country name.
+									Full name in the language specified in Section 5.1.
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>
