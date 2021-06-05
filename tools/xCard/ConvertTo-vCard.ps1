@@ -54,7 +54,11 @@ Param(
 	[Parameter( Mandatory = $False )]
 	[ValidateSet( 'Android', 'iOS' )]
 	[System.String]
-	$Compatibility
+	$Compatibility,
+
+	# Минимизировать vCard
+	[switch]
+	$Minimize
 )
 
 begin
@@ -83,6 +87,10 @@ begin
 				( [Saxon.Api.XdmAtomicValue]::new( $true ) )
 			);
 		};
+		$saxCompiler.SetParameter(
+			( [Saxon.Api.QName]::new( $TransformerNamespace, 'minimize' ) ),
+			( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
+		);
 
 		$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
 			-saxCompiler $saxCompiler `

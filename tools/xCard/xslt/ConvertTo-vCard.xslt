@@ -11,14 +11,15 @@
 
 	<?region Параметры преобразования?>
 
-	<xsl:param name="t:max-string-length" as=" xsd:integer " select=" 75 " static="yes"/>
-	<xsl:param name="t:remove-default-types" as=" xsd:boolean " select=" true() " static="yes"/>
-	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " select=" false() " static="yes"/>
-	<xsl:param name="t:current-lang" as=" xsd:language " select=" xsd:language( 'ru-RU' ) " static="yes"/>
-	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
-	<xsl:param name="t:filter-pid" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
-	<xsl:param name="t:filter-pref-for-unique-property" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
-	<xsl:param name="t:convert-tel-to-text" as=" xsd:boolean " select=" $t:max-android-compatibility " static="yes"/>
+	<xsl:param name="t:max-string-length" as=" xsd:integer " static="yes" select=" 75 "/>
+	<xsl:param name="t:remove-default-types" as=" xsd:boolean " static="yes" select=" true() "/>
+	<xsl:param name="t:max-android-compatibility" as=" xsd:boolean " static="yes" select=" false() "/>
+	<xsl:param name="t:minimize" as=" xsd:boolean " static="yes" select=" false() "/>
+	<xsl:param name="t:current-lang" as=" xsd:language " static="yes" select=" xsd:language( 'ru-RU' ) "/>
+	<xsl:param name="t:filter-properties-by-language" as=" xsd:boolean " static="yes" select=" $t:max-android-compatibility or $t:minimize "/>
+	<xsl:param name="t:filter-pid" as=" xsd:boolean " static="yes" select=" $t:max-android-compatibility "/>
+	<xsl:param name="t:filter-pref-for-unique-property" as=" xsd:boolean " static="yes" select=" $t:minimize "/>
+	<xsl:param name="t:convert-tel-to-text" as=" xsd:boolean " static="yes" select=" $t:max-android-compatibility "/>
 
 	<?endregion Параметры преобразования ?>
 
@@ -29,7 +30,7 @@
 
 	<xsl:mode default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
 	<xsl:mode name="t:vcard" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
-	<xsl:mode name="t:vcard-prepare-for-android" default-validation="preserve" on-multiple-match="fail" on-no-match="shallow-copy" warning-on-no-match="no"/>
+	<xsl:mode name="t:vcard-preprocessing" default-validation="preserve" on-multiple-match="fail" on-no-match="shallow-copy" warning-on-no-match="no"/>
 	<xsl:mode name="t:property" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property-value" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="true"/>
 	<xsl:mode name="t:property-value-components" default-validation="preserve" on-multiple-match="fail" on-no-match="fail"/>
@@ -46,17 +47,20 @@
 	<xsl:mode name="t:property-type-default" default-validation="preserve" on-multiple-match="fail" on-no-match="deep-skip" warning-on-no-match="no"/>
 
 	<xsl:template match="/" as=" xsd:string* ">
-		<xsl:variable name="t:vcards-for-android" as=" document-node() ">
-			<xsl:apply-templates mode="t:vcard-prepare-for-android" select="/"/>
+		<xsl:variable name="t:vcards-aux" as=" document-node() ">
+			<xsl:apply-templates mode="t:vcard-preprocessing" select="/"/>
 		</xsl:variable>
-		<xsl:apply-templates mode="t:vcard" select=" $t:vcards-for-android/xcard:vcards/xcard:vcard "/>
+		<xsl:apply-templates mode="t:vcard" select=" $t:vcards-aux/xcard:vcards/xcard:vcard "/>
 	</xsl:template>
 
 	<?region подготовка для Android ?>
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match="
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:max-android-compatibility " match="
+		xcard:adr/xcard:parameters/xcard:geo
+	" />
+
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:minimize " match="
 		xcard:photo
-		| xcard:adr/xcard:parameters/xcard:geo
 		| xcard:lang
 		| xcard:tz
 		| xcard:logo
@@ -66,18 +70,18 @@
 		| xcard:rev
 	" />
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-properties-by-language " match="
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:filter-properties-by-language " match="
 		xcard:vcard/*[
 			exists( xcard:parameters/xcard:language )
 			and ( xcard:parameters/xcard:language/xcard:language-tag/text() != $t:current-lang )
 		]
 	" />
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-properties-by-language " match="
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:filter-properties-by-language " match="
 		xcard:vcard/*/xcard:parameters/xcard:language
 	" />
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-pid " match="
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:filter-pid " match="
 		xcard:vcard/*/xcard:parameters/xcard:pid
 		| xcard:clientpidmap
 	" />
@@ -88,7 +92,7 @@
 		use=" .., name() "
 	/>
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:filter-pref-for-unique-property " match="
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:filter-pref-for-unique-property " match="
 		xcard:vcard/*/xcard:parameters/xcard:pref[
 			count( key( 't:properties-by-name', ( ../../.., name( ../.. ) ) ) ) = 1
 		]
@@ -126,7 +130,7 @@
 		'$'
 	) "/>
 
-	<xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:convert-tel-to-text " match=" xcard:tel/xcard:uri " >
+	<xsl:template mode="t:vcard-preprocessing" use-when=" $t:convert-tel-to-text " match=" xcard:tel/xcard:uri " >
 		<xsl:element name="xcard:text">
 			<xsl:analyze-string select=" text() " regex="{ $t:tel-uri-regexp }">
 				<xsl:matching-substring>
@@ -142,7 +146,7 @@
 	<?endregion конвертация TEL URI в текст ?>
 
 	<!-- TODO: преобразование categories в x-group-membership не дало результатов при импорте в Android -->
-	<!-- <xsl:template mode="t:vcard-prepare-for-android" use-when=" $t:max-android-compatibility " match=" xcard:categories " as=" element()+ ">
+	<!-- <xsl:template mode="t:vcard-preprocessing" use-when=" $t:max-android-compatibility " match=" xcard:categories " as=" element()+ ">
 		<xsl:copy>
 			<xsl:apply-templates mode="#current" select="@*"/>
 			<xsl:apply-templates mode="#current" select="*"/>

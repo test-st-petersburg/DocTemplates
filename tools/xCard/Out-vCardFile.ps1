@@ -58,7 +58,11 @@ Param(
 	[Parameter( Mandatory = $False )]
 	[ValidateSet( 'Android', 'iOS' )]
 	[System.String]
-	$Compatibility
+	$Compatibility,
+
+	# Минимизировать vCard
+	[switch]
+	$Minimize
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
