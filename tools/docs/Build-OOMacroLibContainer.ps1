@@ -1,4 +1,4 @@
-﻿# Copyright © 2020 Sergei S. Betke
+# Copyright © 2020 Sergei S. Betke
 
 <#
 	.SYNOPSIS
@@ -30,7 +30,7 @@ begin {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\Get-XSLTExecutable.ps1 `
+	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
 		-PackagePath `
 		'xslt/system/uri.xslt', `
 		'xslt/system/fix-saxon.xslt', `

@@ -1,4 +1,4 @@
-﻿# Copyright © 2020 Sergei S. Betke
+# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -61,7 +61,7 @@ begin
 	Push-Location -Path $PSScriptRoot;
 	try
 	{
-		$saxExecutable = .\..\Get-XSLTExecutable.ps1 `
+		$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
 			-Path 'xslt\ConvertTo-vCard.xslt' `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	}

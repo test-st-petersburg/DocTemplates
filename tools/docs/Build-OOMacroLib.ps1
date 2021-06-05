@@ -30,7 +30,7 @@ begin
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\Get-XSLTExecutable.ps1 `
+	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
 		-PackagePath `
 		'xslt/system/uri.xslt', `
 		'xslt/system/fix-saxon.xslt', `
