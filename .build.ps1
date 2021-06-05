@@ -4,7 +4,7 @@
 param(
 	# путь к папке с генерируемыми файлами
 	[System.String]
-	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'output' ) ),
+	$DestinationPath = ( property DestinationPath ( Join-Path -Path $PSScriptRoot -ChildPath 'output' ) ),
 
 	# путь к папке с .ott файлами
 	[System.String]
@@ -41,7 +41,7 @@ param(
 
 	# путь к папке с генерируемыми файлами, используемыми только для выполнения других задач
 	[System.String]
-	$TempPath = ( property TempPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'tmp' ) ),
+	$TempPath = ( property TempPath ( Join-Path -Path $PSScriptRoot -ChildPath 'tmp' ) ),
 
 	# путь к папке с контейнерами библиотек макросов
 	[System.String]
