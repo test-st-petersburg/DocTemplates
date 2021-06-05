@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.0
+#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
 param(
@@ -188,7 +188,7 @@ foreach ( $OOFile in $DestinationTemplateFile )
 
 	task $OOUnpackTaskName -Inputs @( $OOFile ) -Outputs @( $marker ) -Job $OORemoveSourcesTaskName, {
 		$localOOFile = $Inputs[0];
-		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
+		$localOOFile | .\tools\docs\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -202,7 +202,7 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
-		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
+		$localOOXMLFolder | .\tools\docs\Optimize-PlainXML.ps1 `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -267,7 +267,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$SourceLibFolder | .\tools\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
+		$SourceLibFolder | .\tools\docs\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -298,7 +298,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$LibFolder | .\tools\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
+		$LibFolder | .\tools\docs\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -465,7 +465,7 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | .\tools\docs\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
@@ -518,7 +518,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
+		$localXMLFolder | .\tools\docs\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
 			-Version $Version `
 			-WarningAction Continue `
