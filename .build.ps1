@@ -170,10 +170,12 @@ $BuildScriptsParams = @{
 $LibrariesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourceLibrariesPath -ChildPath '.build.ps1' ) ).Path );
 $URIsQRCodesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourcePath -ChildPath 'QRCodes\URIs.build.ps1' ) ).Path );
 $vCardsQRCodesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourcePath -ChildPath 'QRCodes\xCards.build.ps1' ) ).Path );
+$DocTemplatesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourceTemplatesPath -ChildPath '.build.ps1' ) ).Path );
 $BuildScripts = @(
 	$LibrariesBuildScript,
 	$URIsQRCodesBuildScript,
-	$vCardsQRCodesBuildScript
+	$vCardsQRCodesBuildScript,
+	$DocTemplatesBuildScript
 );
 
 [System.String] $MarkerFileName = '.dirstate';
@@ -271,7 +273,10 @@ task BuildUriQRCodes Version, { Invoke-Build BuildUriQRCodes $URIsQRCodesBuildSc
 task BuildVCardQRCodes Version, { Invoke-Build BuildVCardQRCodes $vCardsQRCodesBuildScript @BuildScriptsParams; };
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
-#region сборка шаблонов
+task BuildTemplates Version, BuildLibs, BuildQRCodes, { Invoke-Build BuildTemplates $DocTemplatesBuildScript @BuildScriptsParams; };
+task BuildAndOpenTemplates Version, BuildLibs, BuildQRCodes, { Invoke-Build BuildAndOpenTemplates $DocTemplatesBuildScript @BuildScriptsParams; };
+
+#region сборка документов
 
 $JobOpenFile = {
 	$localDestinationFile = $Outputs[0];
@@ -284,61 +289,6 @@ $JobOpenFile = {
 		};
 	};
 };
-
-$BuildTemplatesTasks = @();
-$BuildAndOpenTemplatesTasks = @();
-foreach ( $documentXMLFolder in $SourceTemplatesFolder )
-{
-	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentName";
-	$BuildTemplatesTasks += $BuildTaskName;
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
-	$BuildAndOpenTemplatesTasks += $BuildAndOpenTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationTemplatesPath -ChildPath $documentName;
-	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
-
-	$JobBuildTemplate = {
-		$localDestinationFile = $Outputs[0];
-		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker )
-		{
-			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		};
-		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\docs\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
-			-TempPath $PreprocessedTemplatesPath `
-			-Version $Version `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate;
-
-	task $BuildAndOpenTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate, $JobOpenFile;
-};
-
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task BuildTemplates $BuildTemplatesTasks;
-
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpenTemplates $BuildAndOpenTemplatesTasks;
-
-#endregion
-
-#region сборка документов
 
 $BuildDocsTasks = @();
 $BuildAndOpenDocsTasks = @();
