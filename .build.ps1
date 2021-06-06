@@ -265,72 +265,7 @@ task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript 
 # task BuildUriQRCodes @( $BuildUriQRCodesTasks, 'Build-org-site-in-ott.png' );
 
 task BuildUriQRCodes { Invoke-Build BuildUriQRCodes $URIsQRCodesBuildScript @BuildScriptsParams; };
-
-
-
-$BuildVCardQRCodesTasks = @();
-foreach ( $SourceXCardFile in $SourceXCardsFiles )
-{
-	$cardName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceXCardFile );
-	$QRCodeName = "$cardName.png";
-	$BuildTaskName = "Build-$QRCodeName";
-	$BuildVCardQRCodesTasks += $BuildTaskName;
-	$prerequisites = $SourceXCardFile;
-	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $QRCodeName;
-	$vCardName = "$cardName.vcf";
-	$BuildVCardTaskName = "Build-$vCardName";
-	$vCardTarget = Join-Path -Path $DestinationVCardPath -ChildPath $vCardName;
-
-	task $BuildVCardTaskName `
-		-Inputs $prerequisites `
-		-Outputs $vCardTarget `
-	{
-		$vCardFile = $Outputs;
-		$SourceXCardFile = $Inputs[0];
-
-		Write-Verbose "Generate vCard `"$vCardFile`" from xCard `"$SourceXCardFile`"";
-		if ( -not ( Test-Path -Path $DestinationVCardPath ) )
-		{
-			New-Item -Path $DestinationVCardPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-			| Out-Null;
-		};
-
-		.\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
-			-Compatibility 'Android' -Minimize `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $vCardTarget `
-		-Outputs $target `
-		-Jobs $BuildVCardTaskName,
-	{
-		$DestinationQRCodeFile = $Outputs;
-		$vCardFile = $Inputs[0];
-
-		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from vCard `"$vCardFile`"";
-		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
-		{
-			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-			| Out-Null;
-		};
-
-		Get-Content -LiteralPath $vCardFile -Raw `
-		| .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-};
-
-# Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
-task BuildVCardQRCodes $BuildVCardQRCodesTasks;
-
-# Synopsis: Создаёт файлы с изображениями QR кодов
+task BuildVCardQRCodes { Invoke-Build BuildVCardQRCodes $vCardsQRCodesBuildScript @BuildScriptsParams; };
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
 #region сборка шаблонов
