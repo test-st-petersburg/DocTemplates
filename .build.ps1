@@ -155,19 +155,23 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-$LibrariesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourceLibrariesPath -ChildPath '.build.ps1' ) ).Path );
-$BuildScripts = @(
-	$LibrariesBuildScript
-);
-
-[System.String] $MarkerFileName = '.dirstate';
-
 $BuildScriptsParams = @{
 	DestinationPath = $DestinationPath;
 	TempPath = $TempPath;
 	SourcePath = $SourcePath;
 	Version = $Version;
 };
+
+$LibrariesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourceLibrariesPath -ChildPath '.build.ps1' ) ).Path );
+$URIsQRCodesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourcePath -ChildPath 'QRCodes\URIs.build.ps1' ) ).Path );
+$vCardsQRCodesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourcePath -ChildPath 'QRCodes\xCards.build.ps1' ) ).Path );
+$BuildScripts = @(
+	$LibrariesBuildScript,
+	$URIsQRCodesBuildScript,
+	$vCardsQRCodesBuildScript
+);
+
+[System.String] $MarkerFileName = '.dirstate';
 
 #region задачи распаковки и оптимизации .ott файлов в XML
 
@@ -253,54 +257,16 @@ task Clean {
 task BuildLibs { Invoke-Build BuildLibs $LibrariesBuildScript @BuildScriptsParams; };
 task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript @BuildScriptsParams; };
 
-#region генерация QR кодов
-
-$BuildUriQRCodesTasks = @();
-foreach ( $SourceURIFile in $SourceURIsFiles )
-{
-	$UriName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceURIFile );
-	$UriQRCodeName = "$UriName.png";
-	$BuildTaskName = "BuildLib-$UriQRCodeName";
-	$BuildUriQRCodesTasks += $BuildTaskName;
-	$prerequisites = $SourceURIFile;
-	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $UriQRCodeName;
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs $target `
-	{
-		$DestinationQRCodeFile = $Outputs;
-		$SourceUriFile = $Inputs[0];
-
-		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceUriFile`"";
-		$SourceURL = Get-Content -LiteralPath $SourceUriFile `
-		| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
-		| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
-		Write-Verbose "Source URL `"$SourceURL`"";
-
-		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
-		{
-			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-			| Out-Null;
-		};
-
-		$SourceURL | .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-};
-
 # TODO: временно. Найти другое решение для размещения QR кодов в документах
-task 'Build-org-site-in-ott.png' `
-	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
-	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
-	-Job $JobBuildUriQRCode;
-
-# Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
+# task 'Build-org-site-in-ott.png' `
+# 	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
+# 	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
+# 	-Job $JobBuildUriQRCode;
 # task BuildUriQRCodes @( $BuildUriQRCodesTasks, 'Build-org-site-in-ott.png' );
-task BuildUriQRCodes $BuildUriQRCodesTasks;
+
+task BuildUriQRCodes { Invoke-Build BuildUriQRCodes $URIsQRCodesBuildScript @BuildScriptsParams; };
+
+
 
 $BuildVCardQRCodesTasks = @();
 foreach ( $SourceXCardFile in $SourceXCardsFiles )
@@ -366,8 +332,6 @@ task BuildVCardQRCodes $BuildVCardQRCodesTasks;
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
-
-#endregion
 
 #region сборка шаблонов
 
