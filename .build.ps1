@@ -97,13 +97,6 @@ param(
 			Join-Path -Path $SourcePath -ChildPath 'basic'
 		) ),
 
-	# пути к папкам с "исходными" файлами библиотек макросов
-	[System.String[]]
-	$SourceLibrariesFolder = ( property SourceLibrariesFolder @(
-			$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
-		) ),
-
 	# путь к папке с .url файлами для генерации QR кодов
 	[System.String]
 	$SourceURIsPath = ( property SourceURIsPath (
@@ -168,6 +161,13 @@ $BuildScripts = @(
 );
 
 [System.String] $MarkerFileName = '.dirstate';
+
+$BuildScriptsParams = @{
+	DestinationPath = $DestinationPath;
+	TempPath = $TempPath;
+	SourcePath = $SourcePath;
+	Version = $Version;
+};
 
 #region задачи распаковки и оптимизации .ott файлов в XML
 
@@ -245,13 +245,13 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 task Clean {
 	foreach ( $BuildScript in $BuildScripts )
 	{
-		Invoke-Build Clean $BuildScript;
+		Invoke-Build Clean $BuildScript @BuildScriptsParams;
 	};
-	$DestinationPath, $TempPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	remove $DestinationPath, $TempPath;
 };
 
-task BuildLibs { Invoke-Build BuildLibs $LibrariesBuildScript; };
-task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript; };
+task BuildLibs { Invoke-Build BuildLibs $LibrariesBuildScript @BuildScriptsParams; };
+task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript @BuildScriptsParams; };
 
 #region генерация QR кодов
 
