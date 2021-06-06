@@ -74,11 +74,7 @@ $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 # Synopsis: Удаляет каталоги с временными и собранными файлами
 task Clean {
-	$DestinationLibrariesPath, $DestinationLibContainersPath `
-	| Where-Object { Test-Path -Path $_ } `
-	| Remove-Item -Recurse -Force `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	remove $DestinationLibrariesPath, $DestinationLibContainersPath;
 };
 
 #region сборка библиотек макросов
