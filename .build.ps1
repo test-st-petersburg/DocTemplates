@@ -149,11 +149,16 @@ param(
 	$OOWindowState = ( property OOWindowState 10 ),
 
 	# версия шаблонов и файлов
+	[ AllowEmptyString() ]
 	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
+	$Version
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
+task Version -If { [System.String]::IsNullOrEmpty( $Version ) } {
+	$script:Version = ( exec { gitversion /output json /showvariable SemVer } );
+};
 
 $BuildScriptsParams = @{
 	DestinationPath = $DestinationPath;
@@ -243,8 +248,6 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 #endregion
 
-#region задачи сборки шаблонов, документов, библиотек макросов
-
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
 	foreach ( $BuildScript in $BuildScripts )
@@ -254,8 +257,8 @@ task Clean {
 	remove $DestinationPath, $TempPath;
 };
 
-task BuildLibs { Invoke-Build BuildLibs $LibrariesBuildScript @BuildScriptsParams; };
-task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript @BuildScriptsParams; };
+task BuildLibs Version, { Invoke-Build BuildLibs $LibrariesBuildScript @BuildScriptsParams; };
+task BuildLibContainers Version, { Invoke-Build BuildLibContainers $LibrariesBuildScript @BuildScriptsParams; };
 
 # TODO: временно. Найти другое решение для размещения QR кодов в документах
 # task 'Build-org-site-in-ott.png' `
@@ -264,8 +267,8 @@ task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript 
 # 	-Job $JobBuildUriQRCode;
 # task BuildUriQRCodes @( $BuildUriQRCodesTasks, 'Build-org-site-in-ott.png' );
 
-task BuildUriQRCodes { Invoke-Build BuildUriQRCodes $URIsQRCodesBuildScript @BuildScriptsParams; };
-task BuildVCardQRCodes { Invoke-Build BuildVCardQRCodes $vCardsQRCodesBuildScript @BuildScriptsParams; };
+task BuildUriQRCodes Version, { Invoke-Build BuildUriQRCodes $URIsQRCodesBuildScript @BuildScriptsParams; };
+task BuildVCardQRCodes Version, { Invoke-Build BuildVCardQRCodes $vCardsQRCodesBuildScript @BuildScriptsParams; };
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
 #region сборка шаблонов
@@ -396,5 +399,3 @@ task Build BuildTemplates, BuildDocs;
 task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
 task . Build;
-
-#endregion

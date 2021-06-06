@@ -65,7 +65,7 @@ param(
 
 	# версия шаблонов и файлов
 	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
+	$Version
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
