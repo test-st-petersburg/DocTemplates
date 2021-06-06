@@ -162,6 +162,11 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+$LibrariesBuildScript = ( ( Resolve-Path -Path ( Join-Path -Path $SourceLibrariesPath -ChildPath '.build.ps1' ) ).Path );
+$BuildScripts = @(
+	$LibrariesBuildScript
+);
+
 [System.String] $MarkerFileName = '.dirstate';
 
 #region задачи распаковки и оптимизации .ott файлов в XML
@@ -238,80 +243,15 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
+	foreach ( $BuildScript in $BuildScripts )
+	{
+		Invoke-Build Clean $BuildScript;
+	};
 	$DestinationPath, $TempPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-#region сборка библиотек макросов
-
-$BuildLibrariesTasks = @();
-$BuildLibContainersTasks = @();
-foreach ( $sourceLibFolder in $SourceLibrariesFolder )
-{
-	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
-	$BuildTaskName = "BuildLib-$LibName";
-	$BuildLibrariesTasks += $BuildTaskName;
-	$prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-	$target = Join-Path -Path $DestinationLibrariesPath -ChildPath $LibName;
-	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
-	$targetFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
-	);
-	$targetFiles = @( $scriptsLibFile ) + $targetFiles;
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs $targetFiles `
-	{
-		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
-
-		$SourceLibFolder | .\tools\docs\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	$BuildLibContainerTaskName = "BuildLibContainer-$LibName";
-	$BuildLibContainersTasks += $BuildLibContainerTaskName;
-	# $prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-
-	$targetContainer = Join-Path -Path $DestinationLibContainersPath -ChildPath $LibName;
-	$targetContainerBasic = Join-Path -Path $targetContainer -ChildPath 'Basic';
-	$targetContainerScriptsFile = Join-Path -Path $targetContainerBasic -ChildPath 'script-lc.xml';
-	$targetContainerBasicLib = Join-Path -Path $targetContainerBasic -ChildPath $LibName;
-	$targetContainerScriptsLibFile = Join-Path -Path $targetContainerBasicLib -ChildPath 'script-lb.xml';
-	$targetContainerFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
-	);
-	$targetContainerMeta = Join-Path -Path $targetContainer -ChildPath 'META-INF';
-	$targetContainerManifest = Join-Path -Path $targetContainerMeta -ChildPath 'manifest.xml';
-
-	task $BuildLibContainerTaskName `
-		-Inputs $targetFiles `
-		-Outputs ( ( $targetContainerManifest, $targetContainerScriptsLibFile, $targetContainerScriptsFile ) `
-			+ $targetContainerFiles	) `
-		-Job $BuildTaskName, `
-	{
-		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
-
-		$LibFolder | .\tools\docs\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-};
-
-# Synopsis: Создаёт библиотеки макросов Open Office
-task BuildLibs $BuildLibrariesTasks;
-
-# Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
-task BuildLibContainers $BuildLibContainersTasks;
-
-#endregion
+task BuildLibs { Invoke-Build BuildLibs $LibrariesBuildScript; };
+task BuildLibContainers { Invoke-Build BuildLibContainers $LibrariesBuildScript; };
 
 #region генерация QR кодов
 
