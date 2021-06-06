@@ -64,6 +64,8 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+use '.\..\..\tools\QRCode' Out-QRCode.ps1;
+
 # Synopsis: Удаляет каталоги с временными и собранными файлами
 task Clean {
 	remove $DestinationQRCodesPath;
@@ -100,7 +102,7 @@ foreach ( $SourceURIFile in $SourceURIsFiles )
 			| Out-Null;
 		};
 
-		$SourceURL | .\..\..\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+		$SourceURL | Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};

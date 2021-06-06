@@ -77,7 +77,8 @@ task Clean {
 	remove $DestinationLibrariesPath, $DestinationLibContainersPath;
 };
 
-#region сборка библиотек макросов
+use '.\..\..\tools\docs' Build-OOMacroLib.ps1;
+use '.\..\..\tools\docs' Build-OOMacroLibContainer.ps1;
 
 $BuildLibrariesTasks = @();
 $BuildLibContainersTasks = @();
@@ -102,7 +103,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$SourceLibFolder | .\..\..\tools\docs\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
+		$SourceLibFolder | Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -133,7 +134,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$LibFolder | .\..\..\tools\docs\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
+		$LibFolder | Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -145,8 +146,6 @@ task BuildLibs $BuildLibrariesTasks;
 
 # Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
 task BuildLibContainers $BuildLibContainersTasks;
-
-#endregion
 
 task Build BuildLibs, BuildLibContainers;
 

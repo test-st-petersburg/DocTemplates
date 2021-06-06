@@ -70,6 +70,9 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+use '.\..\..\tools\xCard' Out-vCardFile.ps1;
+use '.\..\..\tools\QRCode' Out-QRCode.ps1;
+
 # Synopsis: Удаляет каталоги с временными и собранными файлами
 task Clean {
 	remove $DestinationVCardPath, $DestinationQRCodesPath;
@@ -104,7 +107,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		.\..\..\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
+		Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
 			-Compatibility 'Android' -Minimize `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -128,7 +131,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		};
 
 		Get-Content -LiteralPath $vCardFile -Raw `
-		| .\..\..\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+		| Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
