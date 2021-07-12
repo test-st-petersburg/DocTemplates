@@ -126,7 +126,8 @@ jobs:
             $releaseDescription = $releaseNotes;
           };
           $release = Get-GitHubRelease `
-            -Tag '${{ steps.gitversion.outputs.semVer }}';
+            -Tag '${{ steps.gitversion.outputs.semVer }}' `
+            -ErrorAction SilentlyContinue;
           if ( $release ) {
             Remove-GitHubRelease -Release ( $release.ID ) -Force;
           };
