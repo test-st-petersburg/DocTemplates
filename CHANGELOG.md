@@ -14,6 +14,14 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+## 2.8.4
+
+Исправлены ошибки:
+
+- отключен Static Scan GitHub Action для Dependabot "push" событий.
+  Оставлена активация только для Dependabot "pull_request" событий
+  [#137](https://github.com/test-st-petersburg/DocTemplates/issues/137)
+
 ## 2.8.3
 
 ### Новые возможности
