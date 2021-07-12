@@ -14,6 +14,13 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+## 2.8.5
+
+Исправлены ошибки:
+
+- убраны из readme упоминания о работе без GIT.
+  [#136](https://github.com/test-st-petersburg/DocTemplates/issues/136)
+
 ## 2.8.4
 
 Исправлены ошибки:

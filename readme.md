@@ -24,6 +24,7 @@
 
 Под Windows:
 
+- [Git][]
 - текстовый редактор, настоятельно рекомендую [VSCode][]
 - [LibreOffice][]
 - [7Zip4Powershell][]
@@ -32,12 +33,9 @@
 
 Для [VSCode][] рекомендую установить расширения, указанные в рабочей области.
 
-Существенно удобнее будет работать с репозиторием, имея установленный `git`.
-
-Далее следует скопировать репозиторий проекта либо как zip архив из [последнего
-релиза](https://github.com/test-st-petersburg/DocTemplates), либо клонировав
-git репозиторий.
-Последнее - предпочтительнее.
+Далее следует скопировать исходные файлы проекта, клонировав git репозиторий.
+Для сборки документов используется [GitVersion][], а он требует наличия именно
+репозитория со всей историей.
 
 Для подготовки среды (установки необходимых приложений)
 следует воспользоваться сценарием `prepare.ps1` (запускать от имени администратора):
@@ -137,6 +135,7 @@ git репозиторий.
 При необходимости внесения изменений в сам проект предложите Pull Request в основной
 репозиторий в ветку `develop`.
 
+[Git]: https://github.com/git-guides/install-git#install-git-on-windows "Install Git on Windows"
 [VSCode]: https://code.visualstudio.com/ "Visual Studio Code"
 [PowerShellCore]: https://github.com/PowerShell/PowerShell "PowerShell Core"
 [LibreOffice]: https://ru.libreoffice.org "Libre Office"
