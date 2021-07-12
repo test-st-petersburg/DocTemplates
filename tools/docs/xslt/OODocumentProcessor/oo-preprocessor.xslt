@@ -74,9 +74,13 @@
 		<xsl:accept component="function" names="fix:doc" visibility="private"/>
 	</xsl:use-package>
 
+	<!-- TODO: переделать в параметры. Пусть и в static -->
 	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
 	<xsl:variable name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+
+	<!-- TODO: задавать путь к каталогу библиотек при запуске трансформации -->
+	<xsl:param name="p:libraries-root-directory" as="xs:anyURI" static="no" required="no" select=" xs:anyURI( '../../../../output/basic/' ) "/>
 
 	<?region препроцессирование документа ?>
 
@@ -280,12 +284,11 @@
 	>
 		<xsl:assert test="exists( @library:name )" select=" 'Library name must be specified.' "/>
 		<xsl:variable name="library:name" as="xs:string" select=" @library:name "/>
-		<!-- TODO: путь к собранным библиотекам макросов вынести в константы, а лучше - в параметры -->
 		<xsl:variable name="xlink:href" as="xs:anyURI" select="
 			if ( exists( @xlink:href ) )
 				then @xlink:href
 				else resolve-uri(
-					'../../../output/basic/' || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
+					$p:libraries-root-directory || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
 					base-uri()
 				)
 		"/>
