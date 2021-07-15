@@ -14,6 +14,13 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+## 2.8.7
+
+Исправлены ошибки:
+
+- исправлено оформление подписи в письме на бланке (курсив, полужирный)
+  [#135](https://github.com/test-st-petersburg/DocTemplates/issues/135)
+
 ## 2.8.6
 
 Исправлены ошибки:
