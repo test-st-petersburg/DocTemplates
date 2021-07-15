@@ -558,8 +558,15 @@
 		<style:style style:name="БланкТитульныйЛистМестоСоставления" style:family="text" style:hidden="true"/>
 		<style:style style:name="БланкТитульныйЛистГодИздания" style:family="text" style:hidden="true"/>
 		<style:style style:name="Подпись2Должность" style:family="text"/>
+		<style:style style:name="ПодписьНаБланкеДолжность" style:family="text" style:parent-style-name="Подпись2Должность">
+			<style:text-properties fo:font-style="italic" fo:font-weight="bold"/>
+		</style:style>
 		<style:style style:name="Подпись2ФИО" style:family="text"/>
+		<style:style style:name="ПодписьНаБланкеФИО" style:family="text" style:parent-style-name="Подпись2ФИО">
+			<style:text-properties fo:font-style="italic" fo:font-weight="bold"/>
+		</style:style>
 		<style:style style:name="Подпись2МестоДляПодписи" style:family="text"/>
+		<style:style style:name="ПодписьНаБланкеМестоДляПодписи" style:family="text" style:parent-style-name="Подпись2МестоДляПодписи"/>
 		<style:style style:name="Виза2Должность" style:family="text"/>
 		<style:style style:name="Виза2ФИО" style:family="text"/>
 		<style:style style:name="Виза2МестоДляПодписи" style:family="text" style:parent-style-name="Подпись2МестоДляПодписи"/>
