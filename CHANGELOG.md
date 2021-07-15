@@ -14,6 +14,10 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+Исправлены ошибки:
+
+- fix XSLT.resources.xsltPackages paths
+
 ## 2.8.7
 
 Исправлены ошибки:
