@@ -18,6 +18,13 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## 2.8.8
+
+Новые возможности
+
+- добавлена проверка комментариев к commit для запросов слияния
+  [#141](https://github.com/test-st-petersburg/DocTemplates/issues/141)
+
 ## 2.8.7
 
 Исправлены ошибки:
