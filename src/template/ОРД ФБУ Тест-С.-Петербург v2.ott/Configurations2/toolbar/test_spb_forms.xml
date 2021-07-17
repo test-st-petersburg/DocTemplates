@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE toolbar:toolbar
-  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "toolbar.dtd">
 <toolbar:toolbar xmlns:toolbar="http://openoffice.org/2001/toolbar" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" toolbar:uiname="Бланки">
 	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:TestStPetersburg.WorkWithLetterheads.prepareForPrintingOnLetterhead?language=Basic&amp;location=document" toolbar:text="Для печати на бланке"/>
 	<toolbar:toolbaritem xlink:href="vnd.sun.star.script:TestStPetersburg.WorkWithLetterheads.prepareForPrintingOnPaper?language=Basic&amp;location=document" toolbar:text="Для печати на бумаге"/>

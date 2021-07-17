@@ -2,6 +2,15 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
+## 2.8.9
+
+Исправлены ошибки:
+
+- удалены декларации DOCTYPE из XML файлов документов
+  [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
+- заменена проверка XML файлов документов с DTD на Relax NG
+  [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
+
 ## 2.8.8
 
 ### Новые возможности
