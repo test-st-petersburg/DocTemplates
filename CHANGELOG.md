@@ -2,18 +2,24 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
-## 2.8.9
-
 Исправлены ошибки:
 
 - удалены декларации DOCTYPE из XML файлов документов
   [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
-- заменена проверка XML файлов документов с DTD на Relax NG
+- добавлена Relax NG схема .odt файлов и .ott файлов
   [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
+
+## 2.8.9
+
+Исправлены ошибки:
+
+- исправлена конфигурация в commitlint.config.js,
+  для исправления ошибок проверки сообщений dependabot
+  [#144](https://github.com/test-st-petersburg/DocTemplates/issues/144)
 
 ## 2.8.8
 
-### Новые возможности
+Новые возможности:
 
 - добавлена проверка комментариев к commit для запросов слияния
   [#141](https://github.com/test-st-petersburg/DocTemplates/issues/141)
@@ -49,7 +55,7 @@
 
 ## 2.8.3
 
-### Новые возможности
+Новые возможности:
 
 - автоматизировано создание выпуска (release) на GitHub Releases
   и заполнение его информацией
