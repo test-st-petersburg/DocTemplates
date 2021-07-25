@@ -2,7 +2,7 @@
 
 ## Неопубликованные изменения (не вошедшие в релиз)
 
-### Новые возможности
+Новые возможности:
 
 - добавлен дополнительный этап обработки в XSLT при подготовке для Android
   [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
@@ -18,9 +18,17 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## 2.8.9
+
+Исправлены ошибки:
+
+- исправлена конфигурация в commitlint.config.js,
+  для исправления ошибок проверки сообщений dependabot
+  [#144](https://github.com/test-st-petersburg/DocTemplates/issues/144)
+
 ## 2.8.8
 
-Новые возможности
+Новые возможности:
 
 - добавлена проверка комментариев к commit для запросов слияния
   [#141](https://github.com/test-st-petersburg/DocTemplates/issues/141)
@@ -56,7 +64,7 @@
 
 ## 2.8.3
 
-### Новые возможности
+Новые возможности:
 
 - автоматизировано создание выпуска (release) на GitHub Releases
   и заполнение его информацией
