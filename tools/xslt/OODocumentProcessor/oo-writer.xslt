@@ -20,7 +20,7 @@
 
 	<xsl:import href="oo-defs.xslt"/>
 
-	<xsl:variable name="p:restore-doctype" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:param name="p:restore-doctype" as="xs:boolean" static="yes" select=" false() "/>
 
 	<!--
 		Разбор единого XML файла в отдельные XML файлы с форматированием.
@@ -139,7 +139,7 @@
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files"
 		match="/manifest:manifest/manifest:file-entry[ @manifest:full-path='/' ]"
 	>
-		<xsl:result-document href="mimetype" format="p:OOmimetypeFileFormat">
+		<xsl:result-document href="mimetype" format="p:OOMimeTypeFileFormat">
 			<xsl:value-of select="@manifest:media-type"/>
 		</xsl:result-document>
 	</xsl:template>
@@ -243,7 +243,7 @@
 
 	<!-- Описание форматов генерируемых файлов  -->
 
-	<xsl:output name="p:OOmimetypeFileFormat"
+	<xsl:output name="p:OOMimeTypeFileFormat"
 		media-type="text/plain"
 		method="text"
 		encoding="UTF-8" byte-order-mark="no"
