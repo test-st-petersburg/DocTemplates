@@ -7,7 +7,7 @@ module.exports = {
     "footer-leading-blank": [2, "always"],
     "footer-max-line-length": [2, "always", 72],
     "header-max-length": [1, "always", 72],
-    "header-case": [2, "always", "lower-case"],
+    "header-case": [0, "always", "sentence-case"],
     "type-case": [2, "always", "lower-case"],
     "type-empty": [2, "never"],
     "type-enum": [2, "always", [
