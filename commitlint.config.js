@@ -34,6 +34,7 @@ module.exports = {
       "git",
       "github",
       "github-actions",
+      "deps",
       "other",
       "changelog",
       "readme"
