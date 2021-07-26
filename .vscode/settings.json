@@ -132,5 +132,6 @@
 		"changelog",
 		"readme"
 	],
-	"conventionalCommits.showEditor": false
+	"conventionalCommits.showEditor": false,
+	"licenser.author": "Sergei S. Betke"
 }
