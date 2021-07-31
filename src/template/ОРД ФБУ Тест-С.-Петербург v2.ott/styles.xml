@@ -1703,13 +1703,13 @@
 						</style:style>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:section text:name="Сведения о деле (СЗ)">
 								<style:style style:family="section">
@@ -1765,7 +1765,7 @@
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:section text:name="Регистрационные данные (в переписке с Центром)" text:condition="ooow:NOT( ( ЭтоПереписка EQ &#34;ИСТИНА&#34; ) AND ( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; ) )" text:display="condition">
 								<style:style style:family="section">
@@ -1900,13 +1900,13 @@
 						</style:style>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">ПодготовилПредставлениеВДокументахИП</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ПодготовилПодразделениеИП</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">ПодготовилДолжностьИП</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">ПодготовилТелефон</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">ПодготовилПочта</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:section text:name="Сведения о деле (ЛС)">
 								<style:style style:family="section">
@@ -1962,7 +1962,7 @@
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="ПустойАбзац"/>
 						</table:table-cell>
@@ -2351,19 +2351,19 @@
 							</style:style>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
-									<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+									<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 								</style:style>
 								<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
-									<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+									<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 								</style:style>
 								<text:p text:style-name="Footer"/>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
-									<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+									<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 								</style:style>
 								<text:p text:style-name="Footer"/>
 							</table:table-cell>
@@ -2460,19 +2460,19 @@
 						</style:style>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="БланкИсполнитель"/>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="Footer"/>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
-								<style:table-cell-properties style:vertical-align="" fo:padding="0cm" fo:border="none"/>
+								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
 							<text:p text:style-name="Footer"/>
 						</table:table-cell>
