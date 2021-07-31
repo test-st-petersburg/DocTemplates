@@ -858,7 +858,7 @@
 		</text:list-style>
 		<text:notes-configuration text:note-class="footnote" text:citation-style-name="Footnote_20_Symbol" text:citation-body-style-name="Footnote_20_anchor" style:num-format="1" text:start-value="0" text:footnotes-position="page" text:start-numbering-at="document"/>
 		<text:notes-configuration text:note-class="endnote" style:num-format="i" text:start-value="0"/>
-		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5" text:count-empty-lines="true" text:count-in-floating-frames="false"/>
+		<text:linenumbering-configuration text:number-lines="false" text:offset="0.499cm" style:num-format="1" text:number-position="left" text:increment="5" text:count-empty-lines="true"/>
 	</office:styles>
 	<office:automatic-styles/>
 	<office:master-styles>
