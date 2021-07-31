@@ -14,6 +14,7 @@
 	],
 	"[xml]": {
 		"editor.formatOnSave": false,
+		"editor.autoClosingBrackets": "never",
 		"files.trimTrailingWhitespace": false,
 		"files.insertFinalNewline": false
 	},
@@ -32,9 +33,17 @@
 		"editor.formatOnSave": false,
 		"editor.formatOnPaste": false,
 		"editor.formatOnType": false,
+		"editor.autoClosingBrackets": "never",
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": false
 	},
+	"editor.autoClosingTags": false,
+	"editor.linkedEditing": true,
+	"xml.autoCloseTags.enabled": true,
+	"xml.validation.enabled": true,
+	"xml.validation.schema.enabled": "always",
+	"xml.validation.disallowDocTypeDecl": true,
+	"xml.validation.noGrammar": "ignore",
 	"XSLT.resources.xsltPackages": [
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt",

@@ -27,6 +27,9 @@
 		"deltaxml.xslt-xpath",
 		"eg2.vscode-npm-script",
 		"cstrachan.vcard",
-		"redhat.vscode-xml"
+		"redhat.vscode-xml",
+		"raffazizzi.sxml",
+		"russillglover.rnc",
+		"tomoki1207.pdf"
 	]
 }

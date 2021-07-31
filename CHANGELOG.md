@@ -18,6 +18,15 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## 2.8.10
+
+Исправлены ошибки:
+
+- удалены декларации DOCTYPE из XML файлов документов
+  [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
+- добавлена Relax NG схема .odt файлов и .ott файлов
+  [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
+
 ## 2.8.9
 
 Исправлены ошибки:

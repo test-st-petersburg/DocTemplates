@@ -14,6 +14,7 @@
     "words": [
         "Документооборот",
         "препроцессированным",
+        "препроцессированными",
         "препроцессированных",
         "расширения",
         "рефакторинг",
@@ -50,6 +51,7 @@
         "gittools",
         "gitversion",
         "grddl",
+        "imagelist",
         "idiv",
         "impp",
         "ITGDSC",
@@ -74,6 +76,7 @@
         "openoffice",
         "Paren",
         "passwordprotected",
+        "popupmenu",
         "pobox",
         "precommit",
         "preprocess",

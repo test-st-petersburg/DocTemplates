@@ -54,7 +54,6 @@ begin
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
@@ -120,26 +119,26 @@ process
 			).AbsoluteUri.ToString().Replace(' ', '%20');
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-			$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+			$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 			$Params.Add(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'source-directory' ),
-				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
-			)
+				[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+			);
 			if ( $Version )
 			{
 				$Params.Add(
-					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'version' ),
-					( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $Version )
-				)
+					[Saxon.Api.XdmAtomicValue]::new( $Version )
+				);
 			};
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
 			if ( $PSCmdlet.ShouldProcess( $Path, "Preprocess Open Office XML" ) )
 			{
 				$null = $saxTransform.CallTemplate(
-					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'preprocess' )
 				);
 				Get-ChildItem -Path $TempXMLPath | Copy-Item -Destination $PreprocessedXMLPath -Recurse -Force `
@@ -194,23 +193,23 @@ process
 					[System.Uri] ( $PreprocessedXMLPath + [System.IO.Path]::DirectorySeparatorChar )
 				).AbsoluteUri.ToString().Replace(' ', '%20');
 
-				$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+				$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 				$Params.Add(
-					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'source-directory' ),
-					( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $PreprocessedUri )
-				)
+					[Saxon.Api.XdmAtomicValue]::new( $PreprocessedUri )
+				);
 				if ( $Version )
 				{
 					$Params.Add(
-						( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+						[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 							'version' ),
-						( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $Version )
-					)
+						[Saxon.Api.XdmAtomicValue]::new( $Version )
+					);
 				};
 				$saxTransform.SetInitialTemplateParameters( $Params, $false );
 				$null = $saxTransform.CallTemplate(
-					( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'prepare-for-packing' )
 				);
 

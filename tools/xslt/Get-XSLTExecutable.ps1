@@ -148,7 +148,7 @@ try
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
 
 	foreach ( $Package in $PackagePath )
-	{
+ {
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
 		{
@@ -156,7 +156,7 @@ try
 			{
 				$saxCompiler.BaseUri = $XSLTPackagePath;
 				$saxPackage = $saxCompiler.CompilePackage(
-					( New-Object System.IO.FileStream -ArgumentList $XSLTPackagePath, 'Open' )
+					( [System.IO.FileStream]::new( $XSLTPackagePath, 'Open' ) )
 				);
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
@@ -178,7 +178,7 @@ try
 
 	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
-	{
+ {
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );

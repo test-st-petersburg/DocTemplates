@@ -2,7 +2,7 @@
 
 <#
 	.SYNOPSIS
-		Удаляет мусур в content.xml файлах open office документов
+		Удаляет мусор в content.xml файлах open office документов
 #>
 
 #Requires -Version 5.0
@@ -32,7 +32,6 @@ begin
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
@@ -42,7 +41,6 @@ process
 
 	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) )
 	{
-
 		$saxTransform = $saxExecutable.Load30();
 
 		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
@@ -58,16 +56,16 @@ process
 			).AbsoluteUri.ToString().Replace(' ', '%20');
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-			$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+			$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 			$Params.Add(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'source-directory' ),
-				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
-			)
+				[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+			);
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
 			$null = $saxTransform.CallTemplate(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'optimize' )
 			);
 
