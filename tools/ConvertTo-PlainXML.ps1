@@ -108,16 +108,16 @@ process
 							).AbsoluteUri.ToString().Replace(' ', '%20');
 							Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-							$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+							$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 							$Params.Add(
-								( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+								[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 									'source-directory' ),
-								( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
-							)
+								[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+							);
 							$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
 							$null = $saxTransform.CallTemplate(
-								( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+								[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 									'prepare-after-unpacking' )
 							);
 

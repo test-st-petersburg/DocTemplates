@@ -43,14 +43,14 @@ begin
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
-	[QRCoder.QRCodeGenerator] $QRGenerator = New-Object -TypeName QRCoder.QRCodeGenerator;
+	[QRCoder.QRCodeGenerator] $QRGenerator = [QRCoder.QRCodeGenerator]::new();
 }
 process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode($Input, [QRCoder.QRCodeGenerator+ECCLevel]::Q);
-	$QRCode = New-Object -TypeName QRCoder.PngByteQRCode -ArgumentList $QRCodeData;
+	$QRCode = [QRCoder.PngByteQRCode]::new( $QRCodeData );
 	$ImageData = $QRCode.GetGraphic( $Width );
 
 	[System.String] $FullFilePath;
