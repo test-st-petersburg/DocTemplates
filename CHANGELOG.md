@@ -18,6 +18,13 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## 2.8.11
+
+Исправлены ошибки:
+
+- исправлены ошибки проверки [ODF Validator](https://odfvalidator.org)
+  [#147](https://github.com/test-st-petersburg/DocTemplates/issues/147)
+
 ## 2.8.10
 
 Исправлены ошибки:

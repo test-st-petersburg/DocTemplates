@@ -357,7 +357,7 @@
 				</style:style>
 				<text:list xml:id="list4184995225" text:style-name="Numbering_20_123">
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Общие положения</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Сектор по обеспечению функционирования филиала (далее – Сектор) <text:s/>является самостоятельным структурным подразделением Новгородского филиала (далее – Филиал) ФБУ «Тест – С.‑Петербург» (далее – Центр) и подчиняется непосредственно директору Филиала.</text:p>
@@ -392,7 +392,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Основные задачи</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Основные задачи</text:h>
 					</text:list-item>
 				</text:list>
 				<text:p text:style-name="Основной">Основные задачи Сектора:</text:p>
@@ -429,7 +429,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Организационная структура</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Организационная структура</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Сектор не имеет структурных звеньев.</text:p>
@@ -437,7 +437,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Функции</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Функции</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Общие функции:</text:p>
@@ -528,7 +528,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Обязанности начальника Сектора</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Обязанности начальника Сектора</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Начальник сектора обязан:</text:p>
@@ -684,7 +684,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Права</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Права</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Права Сектора осуществляются начальником сектора и, в соответствии с установленным в должностных инструкциях распределением обязанностей, другими работниками Сектора.</text:p>
@@ -751,7 +751,7 @@
 						</text:list>
 					</text:list-item>
 					<text:list-item>
-						<text:h text:style-name="Heading_20_1">Ответственность</text:h>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Ответственность</text:h>
 						<text:list>
 							<text:list-item>
 								<text:p text:style-name="Основной">Начальник сектора несет ответственность за:</text:p>
@@ -1453,7 +1453,7 @@
 						</text:list>
 					</text:list-item>
 				</text:list>
-				<text:list xml:id="list1189657802" text:style-name="List_20_2">
+				<text:list xml:id="list1189657803" text:style-name="List_20_2">
 					<text:list-item>
 						<text:p text:style-name="Основной">монтаж, содержание и ремонт сетей электроснабжения;</text:p>
 					</text:list-item>
@@ -1464,7 +1464,7 @@
 						<text:p text:style-name="Основной">монтаж, содержание и ремонт систем технологического учёта потребляемых ресурсов.</text:p>
 					</text:list-item>
 				</text:list>
-				<text:list xml:id="list112539374208425" text:continue-list="list1839347498" text:style-name="Numbering_20_123">
+				<text:list xml:id="list112539374208426" text:continue-list="list1839347498" text:style-name="Numbering_20_123">
 					<text:list-item>
 						<text:list>
 							<text:list-item>
@@ -1584,7 +1584,7 @@
 					</text:list-item>
 				</text:list>
 				<text:p text:style-name="Основной_20_текст_20_документа">Работник обязан:</text:p>
-				<text:list xml:id="list112538802144528" text:continue-numbering="true" text:style-name="Numbering_20_123">
+				<text:list xml:id="list112538802144529" text:continue-numbering="true" text:style-name="Numbering_20_123">
 					<text:list-item>
 						<text:list>
 							<text:list-item>
@@ -1669,7 +1669,7 @@
 					</text:list-item>
 				</text:list>
 				<text:p text:style-name="Основной_20_текст_20_документа">Работник имеет право:</text:p>
-				<text:list xml:id="list112540159702221" text:continue-numbering="true" text:style-name="Numbering_20_123">
+				<text:list xml:id="list112540159702222" text:continue-numbering="true" text:style-name="Numbering_20_123">
 					<text:list-item>
 						<text:list>
 							<text:list-item>
@@ -2022,7 +2022,7 @@
 					<text:variable-get text:name="ПоверенныйРеквизитыУдостоверенияЛичности">(паспорт №_________, выдан кем когда, код подразделения ______)</text:variable-get>,
 					именуемому далее Поверенный,
 					{Полномочия}, а именно:</text:p>
-				<text:list xml:id="list365234166" text:style-name="List_20_2">
+				<text:list xml:id="list365234167" text:style-name="List_20_2">
 					<text:list-item>
 						<text:p text:style-name="Основной">представлять	Доверителя
 						в судах общей юрисдикции и у мировых судей, арбитражных судах, в нотариате, органах прокуратуры,
