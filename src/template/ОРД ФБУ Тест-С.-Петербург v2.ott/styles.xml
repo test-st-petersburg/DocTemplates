@@ -181,7 +181,7 @@
 			<style:text-properties fo:font-size="10pt"/>
 		</style:style>
 		<style:style style:name="Horizontal_20_Line" style:display-name="Horizontal Line" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="html">
-			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" style:border-line-width-bottom="0cm 0.004cm 0.002cm" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" style:join-border="false"/>
+			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.499cm" loext:contextual-spacing="false" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.14pt double #808080" text:number-lines="false" style:join-border="false"/>
 			<style:text-properties fo:font-size="6pt"/>
 		</style:style>
 		<style:style style:name="ПустойАбзацСАвтоВысотой" style:family="paragraph" loext:hidden="true" style:parent-style-name="СпециальныйБазовый" style:class="extra">
