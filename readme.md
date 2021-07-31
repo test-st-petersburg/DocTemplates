@@ -6,7 +6,6 @@
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-v1.0.0-yellow.svg?logo=git)](https://conventionalcommits.org)
 
-
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
 В качестве формата документов и шаблонов используется
