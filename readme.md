@@ -7,6 +7,10 @@
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
+В качестве формата документов и шаблонов используется
+формат Open Document для офисных приложений (OpenDocument)
+([ГОСТ Р ИСО/МЭК 26300-2010][]).
+
 ## Документация
 
 Описание решений по данному проекту расширения формируется с помощью сервиса [ReadTheDocs][].
@@ -145,3 +149,4 @@
 [ReadTheDocs]: https://readthedocs.org
 [OASIS]: https://docs.oasis-open.org/office/OpenDocument/v1.3/cs01/part3-schema/OpenDocument-v1.3-cs01-part3-schema.html "Open Document Format for Office Applications (OpenDocument) Version 1.3. Part 3: OpenDocument Schema"
 [GitVersion]: https://github.com/GitTools/GitVersion "Easy Semantic Versioning for projects using Git"
+[ГОСТ Р ИСО/МЭК 26300-2010]: http://protect.gost.ru/document.aspx?control=7&id=177075 "Информационная технология. Формат Open Document для офисных приложений (OpenDocument) v1.0"
