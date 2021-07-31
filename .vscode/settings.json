@@ -28,6 +28,7 @@
 		"files.insertFinalNewline": false
 	},
 	"editor.autoClosingTags": false,
+	"editor.linkedEditing": true,
 	"xml.autoCloseTags.enabled": true,
 	"xml.validation.enabled": true,
 	"xml.validation.schema.enabled": "always",
