@@ -126,9 +126,12 @@ try
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
 	Write-Verbose 'Создание SAX процессора.';
-	$saxProcessor = New-Object Saxon.Api.Processor;
-	$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
-	$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	$saxProcessor = [Saxon.Api.Processor]::new();
+	if ( $DtdPath )
+	{
+		$XmlResolverWithCachedDTD = [OOXmlResolver]::new( ( Resolve-Path -Path $DtdPath ).Path );
+		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	};
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
 
@@ -136,7 +139,7 @@ try
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
 	foreach ( $Package in $PackagePath )
-	{
+ {
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
 		{
@@ -144,7 +147,7 @@ try
 			{
 				$saxCompiler.BaseUri = $XSLTPackagePath;
 				$saxPackage = $saxCompiler.CompilePackage(
-					( New-Object System.IO.FileStream -ArgumentList $XSLTPackagePath, 'Open' )
+					( [System.IO.FileStream]::new( $XSLTPackagePath, 'Open' ) )
 				);
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
@@ -166,7 +169,7 @@ try
 
 	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
-	{
+ {
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );

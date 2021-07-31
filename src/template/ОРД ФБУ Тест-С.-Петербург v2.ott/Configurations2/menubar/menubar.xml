@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE menu:menubar
-  PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "menubar.dtd">
-<menu:menubar xmlns:menu="http://openoffice.org/2001/menu" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" menu:id="menubar">
+<?xml version="1.0" encoding="UTF-8"?><menu:menubar xmlns:menu="http://openoffice.org/2001/menu" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" menu:id="menubar">
 	<menu:menu menu:id=".uno:PickList">
 		<menu:menupopup>
 			<menu:menuitem menu:id=".uno:AddDirect"/>

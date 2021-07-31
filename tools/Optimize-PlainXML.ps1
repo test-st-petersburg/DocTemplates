@@ -15,7 +15,8 @@ param(
 	$Path
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
@@ -31,14 +32,15 @@ begin {
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) )
+ {
 
 		$saxTransform = $saxExecutable.Load30();
 
@@ -48,22 +50,23 @@ process {
 		$FormatterTempXMLFolder = New-Item -ItemType Directory `
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
-		try {
+		try
+		{
 			$saxTransform.BaseOutputURI = (
 				[System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar )
 			).AbsoluteUri.ToString().Replace(' ', '%20');
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
-			$Params = New-Object 'System.Collections.Generic.Dictionary[ [Saxon.Api.QName], [Saxon.Api.XdmValue] ]';
+			$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 			$Params.Add(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'source-directory' ),
-				( New-Object Saxon.Api.XdmAtomicValue -ArgumentList $BaseUri )
-			)
+				[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+			);
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
 			$null = $saxTransform.CallTemplate(
-				( New-Object Saxon.Api.QName -ArgumentList 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 					'optimize' )
 			);
 
@@ -73,7 +76,8 @@ process {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		}
-		finally {
+		finally
+		{
 			Remove-Item -Path $FormatterTempXMLFolder -Recurse `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
