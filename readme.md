@@ -1,8 +1,9 @@
 # Libre Office шаблоны документов
 
-[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&style=plastic)](https://github.com/test-st-petersburg/DocTemplates/releases)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=plastic)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?&style=plastic)](http://commitizen.github.io/cz-cli/)
+[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&logo=github)](https://github.com/test-st-petersburg/DocTemplates/releases)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?logo=git)](https://conventionalcommits.org)
+
+[![Build and Test Status](https://github.com/test-st-petersburg/DocTemplates/workflows/Build%20and%20test/badge.svg)](https://github.com/test-st-petersburg/DocTemplates/actions/workflows/build-and-test.yml)
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
 
@@ -10,7 +11,7 @@
 
 Описание решений по данному проекту расширения формируется с помощью сервиса [ReadTheDocs][].
 
-[![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master&style=plastic)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
+[![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
 
 Исходные файлы документации размещены в репозитории в каталоге
 [docs](/docs).
