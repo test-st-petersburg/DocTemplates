@@ -127,8 +127,11 @@ try
 
 	Write-Verbose 'Создание SAX процессора.';
 	$saxProcessor = New-Object Saxon.Api.Processor;
-	$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
-	$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	if ( $DtdPath )
+	{
+		$XmlResolverWithCachedDTD = New-Object OOXmlResolver -ArgumentList ( ( Resolve-Path -Path $DtdPath ).Path );
+		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
+	};
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
 

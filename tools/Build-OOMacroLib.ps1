@@ -38,7 +38,6 @@ begin
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
 		'xslt/OODocumentProcessor/oo-macrolib.xslt' `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }

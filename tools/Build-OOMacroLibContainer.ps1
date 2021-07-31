@@ -26,7 +26,8 @@ param(
 	$Force
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
@@ -38,21 +39,24 @@ begin {
 		'xslt/OODocumentProcessor/oo-writer.xslt', `
 		'xslt/OODocumentProcessor/oo-macrolib.xslt' `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$LibraryName = Split-Path -Path $Path -Leaf;
 
-	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) )
+ {
 
 		$DestinationContainerPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
 
-		if ( Test-Path -Path $DestinationContainerPath ) {
-			if ( -not $Force ) {
+		if ( Test-Path -Path $DestinationContainerPath )
+		{
+			if ( -not $Force )
+			{
 				Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
 			};
 			Remove-Item -Path $DestinationContainerPath -Recurse -Force `

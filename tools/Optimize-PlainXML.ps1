@@ -15,7 +15,8 @@ param(
 	$Path
 )
 
-begin {
+begin
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	Push-Location -Path $PSScriptRoot;
@@ -31,14 +32,15 @@ begin {
 		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 		'xslt/OODocumentProcessor/oo-document.xslt' `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-DtdPath 'dtd/officedocument/1_0/' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 	Pop-Location;
 }
-process {
+process
+{
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) ) {
+	if ( $PSCmdlet.ShouldProcess( $Path, "Optimize Open Office XML files" ) )
+ {
 
 		$saxTransform = $saxExecutable.Load30();
 
@@ -48,7 +50,8 @@ process {
 		$FormatterTempXMLFolder = New-Item -ItemType Directory `
 			-Path ( [System.IO.Path]::GetTempPath() ) `
 			-Name ( [System.IO.Path]::GetRandomFileName() );
-		try {
+		try
+		{
 			$saxTransform.BaseOutputURI = (
 				[System.Uri] ( $FormatterTempXMLFolder.FullName + [System.IO.Path]::DirectorySeparatorChar )
 			).AbsoluteUri.ToString().Replace(' ', '%20');
@@ -73,7 +76,8 @@ process {
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		}
-		finally {
+		finally
+		{
 			Remove-Item -Path $FormatterTempXMLFolder -Recurse `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
