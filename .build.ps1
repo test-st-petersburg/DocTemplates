@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.0
+#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
 param(
@@ -117,6 +117,65 @@ param(
 			Get-ChildItem -Directory -Filter '.url' | Select-Object -ExpandProperty FullName
 		) ),
 
+	# путь к папке с инструментами для сборки
+	[System.String]
+	$ToolsPath = ( property ToolsPath ( ( Resolve-Path -Path '.\tools' ).Path ) ),
+
+	# путь к папке со вспомогательными инструментами
+	[System.String]
+	$BuildToolsPath = ( property BuildToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'build'
+		) ),
+
+	# путь к инструменту аналогу touch
+	[System.String]
+	$UpdateFileLastWriteTimePath = ( property UpdateFileLastWriteTimePath (
+			Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1'
+		) ),
+
+	# путь к папке с инструментами для документов
+	[System.String]
+	$DocsToolsPath = ( property DocsToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'docs'
+		) ),
+
+	# путь к инструменту распаковки документов в XML
+	[System.String]
+	$ConvertToPlainXMLPath = ( property ConvertToPlainXMLPath (
+			Join-Path -Path $ToolsPath -ChildPath 'ConvertTo-PlainXML.ps1'
+		) ),
+
+	# путь к инструменту оптимизации XML файлов документов
+	[System.String]
+	$OptimizePlainXMLPath = ( property OptimizePlainXMLPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Optimize-PlainXML.ps1'
+		) ),
+
+	# путь к инструменту оптимизации XML файлов документов
+	[System.String]
+	$BuildOODocumentPath = ( property BuildOODocumentPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OODocument.ps1'
+		) ),
+
+	# путь к инструменту сборки библиотек макрокоманд
+	[System.String]
+	$BuildOOMacroLibPath = ( property BuildOOMacroLibPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLib.ps1'
+		) ),
+
+	# путь к инструменту сборки контейнеров библиотек макрокоманд
+	[System.String]
+	$BuildOOMacroLibContainerPath = ( property BuildOOMacroLibContainerPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
+		) ),
+
+	# путь к инструменту подготовки QR кодов
+	[System.String]
+	$OutQRCodePath = ( property OutQRCodePath (
+			Join-Path -Path $ToolsPath -ChildPath 'Out-QRCode.ps1'
+		) ),
+
+	# путь к папке с ODF validator
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
 	# 0  Open the application with a hidden window.
@@ -163,7 +222,7 @@ foreach ( $OOFile in $DestinationTemplateFile )
 
 	task $OOUnpackTaskName -Inputs @( $OOFile ) -Outputs @( $marker ) -Job $OORemoveSourcesTaskName, {
 		$localOOFile = $Inputs[0];
-		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
+		$localOOFile | . $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -177,11 +236,11 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
-		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
+		$localOOXMLFolder | . $OptimizePlainXMLPath `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -213,7 +272,7 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationPath, $TempPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	$DestinationPath, $TempPath, $ODFValidatorPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
@@ -242,7 +301,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$SourceLibFolder | .\tools\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
+		$SourceLibFolder | . $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -273,7 +332,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$LibFolder | .\tools\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
+		$LibFolder | . $BuildOOMacroLibContainerPath -DestinationPath $DestinationLibContainersPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -300,7 +359,7 @@ $JobBuildUriQRCode = {
 	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
 	Write-Verbose "Source URL `"$SourceURL`"";
 
-	$SourceURL | .\tools\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+	$SourceURL | . $OutQRCodePath -FilePath $DestinationQRCodeFile `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -355,13 +414,13 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -408,13 +467,13 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
+		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
