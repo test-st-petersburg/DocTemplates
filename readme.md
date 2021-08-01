@@ -1,16 +1,22 @@
 # Libre Office шаблоны документов
 
-[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&style=plastic)](https://github.com/test-st-petersburg/DocTemplates/releases)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=plastic)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?&style=plastic)](http://commitizen.github.io/cz-cli/)
+[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&logo=github)](https://github.com/test-st-petersburg/DocTemplates/releases)
+[![Build and Test Status](https://github.com/test-st-petersburg/DocTemplates/workflows/Build%20and%20test/badge.svg)](https://github.com/test-st-petersburg/DocTemplates/actions/workflows/build-and-test.yml)
+
+[![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-v1.0.0-yellow.svg?logo=git)](https://conventionalcommits.org)
 
 Данный проект - Шаблоны внутренних и исходящих документов учреждения.
+
+В качестве формата документов и шаблонов используется
+формат Open Document для офисных приложений (OpenDocument)
+([ГОСТ Р ИСО/МЭК 26300-2010][]).
 
 ## Документация
 
 Описание решений по данному проекту расширения формируется с помощью сервиса [ReadTheDocs][].
 
-[![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master&style=plastic)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
+[![Documentation Status](https://readthedocs.org/projects/doctemplates/badge/?version=master)](https://doctemplates.readthedocs.io/ru/master/?badge=master)
 
 Исходные файлы документации размещены в репозитории в каталоге
 [docs](/docs).
@@ -144,3 +150,4 @@
 [ReadTheDocs]: https://readthedocs.org
 [OASIS]: https://docs.oasis-open.org/office/OpenDocument/v1.3/cs01/part3-schema/OpenDocument-v1.3-cs01-part3-schema.html "Open Document Format for Office Applications (OpenDocument) Version 1.3. Part 3: OpenDocument Schema"
 [GitVersion]: https://github.com/GitTools/GitVersion "Easy Semantic Versioning for projects using Git"
+[ГОСТ Р ИСО/МЭК 26300-2010]: http://protect.gost.ru/document.aspx?control=7&id=177075 "Информационная технология. Формат Open Document для офисных приложений (OpenDocument) v1.0"

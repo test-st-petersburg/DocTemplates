@@ -1,8 +1,14 @@
 # Журнал изменений
 
-## Неопубликованные изменения (не вошедшие в релиз)
+Формат этого файла базируется на рекомендациях
+[Keep a Changelog](https://keepachangelog.com/ru/1.0.0/).
 
-Новые возможности:
+Этот проект придерживается
+[![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html).
+
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+### Добавлено
 
 - добавлен дополнительный этап обработки в XSLT при подготовке для Android
   [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
@@ -14,73 +20,73 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
-Исправлены ошибки:
+### Исправлено
 
 - fix XSLT.resources.xsltPackages paths
 
-## 2.8.11
+## [2.8.11]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлены ошибки проверки [ODF Validator](https://odfvalidator.org)
   [#147](https://github.com/test-st-petersburg/DocTemplates/issues/147)
 
-## 2.8.10
+## [2.8.10]
 
-Исправлены ошибки:
+### Исправлено
 
 - удалены декларации DOCTYPE из XML файлов документов
   [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
 - добавлена Relax NG схема .odt файлов и .ott файлов
   [#110](https://github.com/test-st-petersburg/DocTemplates/issues/110)
 
-## 2.8.9
+## [2.8.9]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлена конфигурация в commitlint.config.js,
   для исправления ошибок проверки сообщений dependabot
   [#144](https://github.com/test-st-petersburg/DocTemplates/issues/144)
 
-## 2.8.8
+## [2.8.8]
 
-Новые возможности:
+### Добавлено
 
 - добавлена проверка комментариев к commit для запросов слияния
   [#141](https://github.com/test-st-petersburg/DocTemplates/issues/141)
 
-## 2.8.7
+## [2.8.7]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлено оформление подписи в письме на бланке (курсив, полужирный)
   [#135](https://github.com/test-st-petersburg/DocTemplates/issues/135)
 
-## 2.8.6
+## [2.8.6]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлено поведение Release to GitHub при отсутствии опубликованного релиза
   [#140](https://github.com/test-st-petersburg/DocTemplates/issues/140)
 
-## 2.8.5
+## [2.8.5]
 
-Исправлены ошибки:
+### Исправлено
 
 - убраны из readme упоминания о работе без GIT.
   [#136](https://github.com/test-st-petersburg/DocTemplates/issues/136)
 
-## 2.8.4
+## [2.8.4]
 
-Исправлены ошибки:
+### Исправлено
 
 - отключен Static Scan GitHub Action для Dependabot "push" событий.
   Оставлена активация только для Dependabot "pull_request" событий
   [#137](https://github.com/test-st-petersburg/DocTemplates/issues/137)
 
-## 2.8.3
+## [2.8.3]
 
-Новые возможности:
+### Добавлено
 
 - автоматизировано создание выпуска (release) на GitHub Releases
   и заполнение его информацией
@@ -89,18 +95,18 @@
   в GitHub Releases
   [#37](https://github.com/test-st-petersburg/DocTemplates/issues/37)
 
-## 2.8.1
+## [2.8.1]
 
-Исправлены ошибки:
+### Исправлено
 
 - после абзаца со стилем "ЗаголовокВиз" должен следовать абзац со стилем визы (Виза2)
   [#112](https://github.com/test-st-petersburg/DocTemplates/issues/112)
 - заменены в шаблоне распоряжения слова "приказываю" на "обязываю" либо "предлагаю".
   [#113](https://github.com/test-st-petersburg/DocTemplates/issues/113)
 
-## 2.8.0
+## [2.8.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка справки на фирменном бланке
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
@@ -111,96 +117,96 @@
 - добавлен шаблон профессиональной инструкции
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 
-## 2.7.1
+## [2.7.1]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлена конфигурация commitizen
   (ради восстановления записи номеров issues в текст сообщения)
 
-## 2.7.0
+## [2.7.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка доверенности на фирменном бланке
   [#45](https://github.com/test-st-petersburg/DocTemplates/issues/45)
 - добавлен шаблон доверенности на фирменном бланке
   [#45](https://github.com/test-st-petersburg/DocTemplates/issues/45)
 
-## 2.6.8
+## [2.6.8]
 
-Исправлены ошибки:
+### Исправлено
 
 - Убрать ошибочное определение в качестве ошибки сообщения
   "Skipping up-to-date output..."
   [#106](https://github.com/test-st-petersburg/DocTemplates/issues/106)
 
-## 2.6.7
+## [2.6.7]
 
-Прочие изменения:
+### Изменено
 
 - при подготовке для печати на типографский бланк отключаем печать не только для
   врезок (текстовых фреймов), но и для графики, наименование которой начинается
   с префикса "Бланки:"
 
-## 2.6.6
+## [2.6.6]
 
-Исправлены ошибки:
+### Исправлено
 
 - отключен вывод "шкалы" РСТ и QR кода в подвале на печать
   при печати на типографском бланке
   [#105](https://github.com/test-st-petersburg/DocTemplates/issues/105)
 
-Прочие изменения:
+### Изменено
 
 - восстановлена панель инструментов "Бланки" в ОРД
   (для подготовки документов к печати на типографском фирменном бланке)
 
-## 2.6.5
+## [2.6.5]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка сопроводительного письма (со связанным документом)
 
-## 2.6.4
+## [2.6.4]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка письма сопроводительного к актам сверки
 
-## 2.6.3
+## [2.6.3]
 
-Исправлены ошибки:
+### Исправлено
 
 - в "заготовки" писем добавлены переменные из устаревших
   версий шаблона ОРД (для обеспечения совместимости новых версий
   правил автозаполнения со старыми версиями файлов)
   [#109](https://github.com/test-st-petersburg/DocTemplates/issues/109)
 
-## 2.6.2
+## [2.6.2]
 
-Исправлены ошибки:
+### Исправлено
 
 - "шкала" РСТ и QR код в подвале защищены от изменений
   [#105](https://github.com/test-st-petersburg/DocTemplates/issues/105)
 
-## 2.6.1
+## [2.6.1]
 
-Исправлены ошибки:
+### Исправлено
 
 - Убрать ошибочное определение в качестве ошибки сообщения
   "Skipping up-to-date output..."
   [#106](https://github.com/test-st-petersburg/DocTemplates/issues/106)
 
-## 2.6.0
+## [2.6.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка письма о коммерческом предложении
   на работы в сфере обеспечения единства измерений
   [#104](https://github.com/test-st-petersburg/DocTemplates/issues/104)
 
-Прочие изменения:
+### Изменено
 
 - изменена форма фирменного бланка в соответствии с требованиями
   приказа ФБУ "Тест-С.-Петербург" от 05.03.2021 № 35/ахд
@@ -213,42 +219,42 @@
   При сборке - автоматически генерируем автоматические стили
   [#62](https://github.com/test-st-petersburg/DocTemplates/issues/62)
 
-## 2.5.3
+## [2.5.3]
 
-Исправлены ошибки:
+### Исправлено
 
 - В визах должна быть указана дата
   [#66](https://github.com/test-st-petersburg/DocTemplates/issues/66)
 
-## 2.5.2
+## [2.5.2]
 
-Исправлены ошибки:
+### Исправлено
 
 - в "заготовку" служебной записки добавлены переменные из устаревших
   версий шаблона ОРД (для обеспечения совместимости новых версий
   правил автозаполнения со старыми версиями файлов)
 
-## 2.5.1
+## [2.5.1]
 
-Новые возможности:
+### Добавлено
 
 - исправлена заготовка должностной инструкции
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 
-Исправлены ошибки:
+### Исправлено
 
 - титульный лист должностной инструкции приведён в соответствие с требованиями
   СТО организации
   [#95](https://github.com/test-st-petersburg/DocTemplates/issues/95)
 
-## 2.5.0
+## [2.5.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена заготовка распоряжения
   [#92](https://github.com/test-st-petersburg/DocTemplates/issues/92)
 
-Исправлены ошибки:
+### Исправлено
 
 - отключена проверка орфографии для стиля `Штрихкод`
   [#95](https://github.com/test-st-petersburg/DocTemplates/issues/95)
@@ -256,7 +262,7 @@
   распоряжений и приказов
   [#93](https://github.com/test-st-petersburg/DocTemplates/issues/93)
 
-Прочие изменения:
+### Изменено
 
 - добавлен шаблон страницы `БланкОРДПервыйЛистСГрифомУтверждения`,
   из шаблона страницы `БланкОРДПервыйЛист` убран гриф утверждения
@@ -269,9 +275,9 @@
   (замещается кодом при сборке шаблонов и документов)
   [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
 
-## 2.4.0
+## [2.4.0]
 
-Новые возможности:
+### Добавлено
 
 - при сборке документа из него удаляются внедрённые шрифты,
   если в настройках установлен запрет внедрения шрифтов
@@ -281,7 +287,7 @@
 - добавление слияние настроек документа и шаблона при сборке документов
   [#90](https://github.com/test-st-petersburg/DocTemplates/issues/90)
 
-Прочие изменения:
+### Изменено
 
 - оформление даты сведений об ознакомлении реализовано
   без таблиц, с помощью позиций табуляции
@@ -298,9 +304,9 @@
 - шаблон Письмо включен в состав шаблона ОРД v2
   [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 
-## 2.3.0
+## [2.3.0]
 
-Прочие изменения:
+### Изменено
 
 - в документы и шаблоны включаются только файлы, указанные в манифесте
   [#74](https://github.com/test-st-petersburg/DocTemplates/issues/74)
@@ -342,9 +348,9 @@
   из его переменных
   [#82](https://github.com/test-st-petersburg/DocTemplates/issues/82)
 
-## 2.2.0
+## [2.2.0]
 
-Прочие изменения:
+### Изменено
 
 - вычисляемые при сборке метаданных убираем из `meta.xml`
   [#64](https://github.com/test-st-petersburg/DocTemplates/issues/64)
@@ -366,15 +372,15 @@
   (добавлена автоматическая их генерация при сборке из манифеста)
   [#80](https://github.com/test-st-petersburg/DocTemplates/issues/80)
 
-## 2.1.0
+## [2.1.0]
 
-Исправлены ошибки:
+### Исправлено
 
 - добавлен отдельный стиль страницы для должностной инструкции
   (в соответствии с СТО СК 03-07-16)
   [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
 
-Прочие изменения:
+### Изменено
 
 - добавлены отдельные стили первого абзаца для каждого вида документа
   [#76](https://github.com/test-st-petersburg/DocTemplates/issues/76)
@@ -387,13 +393,13 @@
   таблиц, графики, врезок, разделов
   [#72](https://github.com/test-st-petersburg/DocTemplates/issues/72)
 
-## 2.0.0
+## [2.0.0]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлены поля страниц и размеры полей в соответствии с ГОСТ Р 7.0.97-2016
 
-Прочие изменения:
+### Изменено
 
 - убран промежуток между верхним колонтитулом на первых страницах
   и текстом. Все интервалы должны определяться стилями абзацев
@@ -420,35 +426,35 @@
 - удаляются `style:layout-*` при `style:layout-grid-mode="none"`
   [#70](https://github.com/test-st-petersburg/DocTemplates/issues/70)
 
-## 1.8.2
+## [1.8.2]
 
-Исправлены ошибки:
+### Исправлено
 
 - на с/з в Центр восстановлен вывод регистрационных данных в подвале
   [#60](https://github.com/test-st-petersburg/DocTemplates/issues/60)
 
-## 1.8.1
+## [1.8.1]
 
-Исправлены ошибки:
+### Исправлено
 
 - добавлено место составление документа на титульный лист
   (см. ГОСТ Р 7.0.97-2016, Приложение А)
   [#69](https://github.com/test-st-petersburg/DocTemplates/issues/69)
 
-## 1.8.0
+## [1.8.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлен гриф утверждения в шаблон Внутренних документов
   [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
 
-Прочие изменения:
+### Изменено
 
 - стили Внутреннего документа унифицированы со стилями Документа СМК
 
-## 1.7.0
+## [1.7.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлен шаблон Документ системы менеджмента
   (основа для Положений о подразделениях, Должностных инструкций,
@@ -456,173 +462,173 @@
   В настоящее время обеспечена подготовка только Положений о подразделениях
   [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
 
-## 1.6.17
+## [1.6.17]
 
-Исправлены ошибки:
+### Исправлено
 
 - ошибка при обновлении стилей из шаблона (Записка)
   [#52](https://github.com/test-st-petersburg/DocTemplates/issues/52)
 
-Прочие изменения:
+### Изменено
 
 - все поля обновляются перед сохранением и печатью
   (Записка, Внутренний документ, Письмо)
   [#52](https://github.com/test-st-petersburg/DocTemplates/issues/52)
 
-## 1.6.16
+## [1.6.16]
 
-Исправлены ошибки:
-
-- некорректно определяются файлы, подлежащие сборке и разборке
-  [#61](https://github.com/test-st-petersburg/DocTemplates/issues/61)
-
-## 1.6.15
-
-Исправлены ошибки:
+### Исправлено
 
 - некорректно определяются файлы, подлежащие сборке и разборке
   [#61](https://github.com/test-st-petersburg/DocTemplates/issues/61)
 
-## 1.6.14
+## [1.6.15]
 
-Исправлены ошибки:
+### Исправлено
+
+- некорректно определяются файлы, подлежащие сборке и разборке
+  [#61](https://github.com/test-st-petersburg/DocTemplates/issues/61)
+
+## [1.6.14]
+
+### Исправлено
 
 - сведения о подписанте сбрасываются в "0" во Внутренних документах
 
-## 1.6.13
+## [1.6.13]
 
-Исправлены ошибки:
+### Исправлено
 
 - не обновляется приветствие в Письмах
   [#59](https://github.com/test-st-petersburg/DocTemplates/issues/59)
 
-## 1.6.12
+## [1.6.12]
 
-Исправлены ошибки:
+### Исправлено
 
 - ошибка при обновлении стилей из шаблона Внутреннего документа
   [#52](https://github.com/test-st-petersburg/DocTemplates/issues/52)
 
-## 1.6.11
+## [1.6.11]
 
-Исправлены ошибки:
+### Исправлено
 
 - поле Получатель в письме не укладывается в поля бланка
   [#55](https://github.com/test-st-petersburg/DocTemplates/issues/55)
 - поле Исполнитель в письме не укладывается в поля бланка
 
-## 1.6.10
+## [1.6.10]
 
-Исправлены ошибки:
+### Исправлено
 
 - переносы не должны допускаться в поле Получатель в Письмах
   [#54](https://github.com/test-st-petersburg/DocTemplates/issues/54)
 
-## 1.6.9
+## [1.6.9]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлено описание `@menu:style` в menubar.dtd
   [#42](https://github.com/test-st-petersburg/DocTemplates/issues/42)
 
-Прочие изменения:
+### Изменено
 
 - опционально восстанавливаем DTD в XML файлах документов
   [#42](https://github.com/test-st-petersburg/DocTemplates/issues/42)
 
-## 1.6.8
+## [1.6.8]
 
-Прочие изменения:
+### Изменено
 
 - при сборке документа обновляется количество циклов редактирования
   (`meta:editing-cycles`), [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 
-## 1.6.7
+## [1.6.7]
 
-Прочие изменения:
+### Изменено
 
 - при сборке документа устанавливается дата и время в метаданных
   (`dc:date`), [#47](https://github.com/test-st-petersburg/DocTemplates/issues/47)
 
-## 1.6.6
+## [1.6.6]
 
-Исправлены ошибки:
+### Исправлено
 
 - восстановлено обновление стилей из шаблона документа при открытии документа
   (выдаётся запрос на обновление в случае изменения шаблона с последнего
   сохранения документа, #44)
 
-## 1.6.5
+## [1.6.5]
 
-Исправлены ошибки:
+### Исправлено
 
 - дата регистрации с/з в Центр не помещалась при печати на листе (#40)
 
-## 1.6.4
+## [1.6.4]
 
-Исправлены ошибки:
+### Исправлено
 
 - обработка DTD в XML файлах документов
 
-## 1.6.3
+## [1.6.3]
 
-Исправлены ошибки:
+### Исправлено
 
 - при открытии Внутреннего документа выполняем обновление полей (ради подписи)
 
-## 1.6.2
+## [1.6.2]
 
-Исправлены ошибки:
+### Исправлено
 
 - исправлен иерархический список в Записке
 - исправлен иерархический список в Письме
 
-## 1.6.1
+## [1.6.1]
 
-Исправлены ошибки:
+### Исправлено
 
 - убраны лишние переменные в шаблоне Внутренних документов
 
-## 1.6.0
+## [1.6.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлен шаблон Внутренний документ
 
-## 1.5.6
+## [1.5.6]
 
-Исправлены ошибки:
+### Исправлено
 
 - изменено расстояние между символами в наименовании организации в шапке Записки
   в соответствии с СТО
 
-## 1.5.5
+## [1.5.5]
 
-Исправлены ошибки:
+### Исправлено
 
 - в сведениях об исполнителе в Письме должны быть пробелы после знаков препинания
 
-## 1.5.4
+## [1.5.4]
 
-Исправлены ошибки:
+### Исправлено
 
 - при заполнении с/з в Центр регистрационные данные в шапке не должны отображаться
 - при заполнении с/з в Центр регистрационные данные должны отображаться в подвале
 - аналогичные изменения обработки условий в Письма
 
-## 1.5.1
+## [1.5.1]
 
-Прочие изменения:
+### Изменено
 
 - дополнено описание шаблона Записки
 
-## 1.5.0
+## [1.5.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлен шаблон Записка
 
-Прочие изменения:
+### Изменено
 
 - оформление бланка внутренних записок (служебных, докладных, объяснительных).
   Шаблон Записки переделан на базе шаблона Письма
@@ -632,38 +638,38 @@
   - все файлы одного документа обрабатываются одной XSLT трансформацией
   - XSLT трансформации разделены на модули (packages)
 
-## 1.4.3
+## [1.4.3]
 
-Прочие изменения:
+### Изменено
 
 - добавлен вывод подробных ошибок компиляции XSLT
 - настроен problem matcher в VSCode для фиксации ошибок компиляции XSLT
 
-## 1.4.2
+## [1.4.2]
 
-Прочие изменения:
+### Изменено
 
 - дополнено описание шаблона Письмо описанием механизма печати на бланках
 
-## 1.4.1
+## [1.4.1]
 
-Прочие изменения:
+### Изменено
 
 - несущественные правки readme.md
 
-## 1.4.0
+## [1.4.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена генерация документации на ReadTheDocs
 
-Прочие изменения:
+### Изменено
 
 - переоформлены поля в шаблоне Письмо с помощью подстрочника
 
-## 1.3.0
+## [1.3.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлена иерархия шаблонов
 - добавлен шаблон Справки (на бланке)
@@ -671,51 +677,121 @@
   стилей из шаблона подключены макрокоманды, выполняемые при открытии и
   создании документа
 
-Прочие изменения:
+### Изменено
 
 - для задач VSCode использован Invoke-Build
 - переименованы стили (убрано наименование документа, утвердившего формы бланков)
 
-## 1.2.0
+## [1.2.0]
 
-Исправлены ошибки:
+### Исправлено
 
 - оформление бланка Письма полностью перенесено в колонтитулы,
   что позволяет при обновлении стилей полностью обновлять оформление бланка
 - устранена потеря данных в шапке и подвале бланка Письма при обновлении
   стилей из шаблона (все переменные перенесены в служебную страницу)
 
-Прочие изменения:
+### Изменено
 
 - Шаблон Записка переименован в Письмо
 
-## 1.1.0
+## [1.1.0]
 
-Исправлены ошибки:
+### Исправлено
 
 - внедрены шрифты в шаблоны документов
 - реализована проверка DTD в XML
 
-## 1.0.0
+## [1.0.0]
 
-Новые возможности:
+### Добавлено
 
 - для работы с XML использован Saxon HE
 - форматирование атрибутов
 - нормализация пробелов и пустых строк в модулях макросов
 
-## 0.2.0
+## [0.2.0]
 
-Новые возможности:
+### Добавлено
 
 - добавлены инструменты для "чистки" xml
 - очищен XML и удалены неиспользуемые стили
 
-## 0.1.0
+## [0.1.0]
 
-Новые возможности:
+### Добавлено
 
 - шаблон стандарта учреждения (СТО).
   Он применим и для документированных процедур системы менеджмента
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
+
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.11...HEAD
+[2.8.11]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.10...2.8.11
+[2.8.10]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.9...2.8.10
+[2.8.9]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.8...2.8.9
+[2.8.8]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.7...2.8.8
+[2.8.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.6...2.8.7
+[2.8.6]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.5...2.8.6
+[2.8.5]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.4...2.8.5
+[2.8.4]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.3...2.8.4
+[2.8.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.2...2.8.3
+[2.8.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.0...2.8.1
+[2.8.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.7.1...2.8.0
+[2.7.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.7.0...2.7.1
+[2.7.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.8...2.7.0
+[2.6.8]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.7...2.6.8
+[2.6.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.6...2.6.7
+[2.6.6]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.5...2.6.6
+[2.6.5]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.4...2.6.5
+[2.6.4]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.3...2.6.4
+[2.6.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.2...2.6.3
+[2.6.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.1...2.6.2
+[2.6.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.6.0...2.6.1
+[2.6.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.5.3...2.6.0
+[2.5.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.5.2...2.5.3
+[2.5.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.5.1...2.5.2
+[2.5.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.5.0...2.5.1
+[2.5.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.4.0...2.5.0
+[2.4.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.3.0...2.4.0
+[2.3.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.2.0...2.3.0
+[2.2.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.1.0...2.2.0
+[2.1.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.0.0...2.1.0
+[2.0.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.8.2...2.0.0
+[1.8.2]: https://github.com/test-st-petersburg/DocTemplates/compare/1.8.1...1.8.2
+[1.8.1]: https://github.com/test-st-petersburg/DocTemplates/compare/1.8.0...1.8.1
+[1.8.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.7.0...1.8.0
+[1.7.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.17...1.7.0
+[1.6.17]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.16...1.6.17
+[1.6.16]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.15...1.6.16
+[1.6.15]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.14...1.6.15
+[1.6.14]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.13...1.6.14
+[1.6.13]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.12...1.6.13
+[1.6.12]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.11...1.6.12
+[1.6.11]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.10...1.6.11
+[1.6.10]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.9...1.6.10
+[1.6.9]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.8...1.6.9
+[1.6.8]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.7...1.6.8
+[1.6.7]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.6...1.6.7
+[1.6.6]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.5...1.6.6
+[1.6.5]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.4...1.6.5
+[1.6.4]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.3...1.6.4
+[1.6.3]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.2...1.6.3
+[1.6.2]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.1...1.6.2
+[1.6.1]: https://github.com/test-st-petersburg/DocTemplates/compare/1.6.0...1.6.1
+[1.6.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.5.6...1.6.0
+[1.5.6]: https://github.com/test-st-petersburg/DocTemplates/compare/1.5.5...1.5.6
+[1.5.5]: https://github.com/test-st-petersburg/DocTemplates/compare/1.5.4...1.5.5
+[1.5.4]: https://github.com/test-st-petersburg/DocTemplates/compare/1.5.1...1.5.4
+[1.5.1]: https://github.com/test-st-petersburg/DocTemplates/compare/1.5.0...1.5.1
+[1.5.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.4.3...1.5.0
+[1.4.3]: https://github.com/test-st-petersburg/DocTemplates/compare/1.4.2...1.4.3
+[1.4.2]: https://github.com/test-st-petersburg/DocTemplates/compare/1.4.1...1.4.2
+[1.4.1]: https://github.com/test-st-petersburg/DocTemplates/compare/1.4.0...1.4.1
+[1.4.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.3.0...1.4.0
+[1.3.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.2.0...1.3.0
+[1.2.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.1.0...1.2.0
+[1.1.0]: https://github.com/test-st-petersburg/DocTemplates/compare/1.0.0...1.1.0
+[1.0.0]: https://github.com/test-st-petersburg/DocTemplates/compare/0.2.0...1.0.0
+[0.2.0]: https://github.com/test-st-petersburg/DocTemplates/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/test-st-petersburg/DocTemplates/releases/tag/0.1.0
