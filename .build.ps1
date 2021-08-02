@@ -427,7 +427,7 @@ task Prepare-ODFValidator `
 
 	# TODO: вынести AccessToken в переменную. Возможно - переменную окружения. Попробовать получить токен из установленных расширений
 	Get-GitHubRelease -OwnerName 'tdf' -RepositoryName 'ODFToolkit' `
-		-AccessToken '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' `
+		-AccessToken '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' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 	| Get-GitHubReleaseAsset `
@@ -576,6 +576,15 @@ task Build BuildTemplates, BuildDocs;
 
 task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
-task . Build;
+#region тестирование собранных шаблонов и файлов
+
+task Test Prepare-ODFValidator, Build, {
+	chcp 866
+	java -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
+};
+
+#endregion
+
+task . Test;
 
 #endregion
