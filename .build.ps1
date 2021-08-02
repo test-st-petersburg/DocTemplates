@@ -272,7 +272,7 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationPath, $TempPath, $ODFValidatorPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	Remove-BuildItem $DestinationPath, $TempPath, $ODFValidatorPath;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
