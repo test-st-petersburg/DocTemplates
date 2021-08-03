@@ -43,7 +43,7 @@ Function Write-CompilerWarningAndErrors
 
 	[int] $ErrorsCount = 0;
 	foreach ( $Error in $ErrorList )
- {
+	{
 		if ( $Error.ModuleUri.LocalPath.Length -eq 0 )
 		{
 			[System.Uri] $ModuleUriAux = $ModuleUri;
@@ -139,7 +139,7 @@ try
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
 
 	foreach ( $Package in $PackagePath )
- {
+	{
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
 		{
@@ -169,7 +169,7 @@ try
 
 	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
- {
+	{
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
