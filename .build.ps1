@@ -580,7 +580,7 @@ task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
 task Test Prepare-ODFValidator, Build, {
 	chcp 866
-	java -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
+	java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
 };
 
 #endregion
