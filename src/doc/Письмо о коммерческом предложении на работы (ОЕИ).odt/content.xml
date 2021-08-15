@@ -29,8 +29,8 @@
 				<text:p text:style-name="Основной">В ответ на Ваш запрос направляю Вам коммерческое предложение на работы в сфере обеспечения единства измерений (прилагаю).</text:p>
 				<text:p text:style-name="Основной">Дополнительно сообщаю Вам о том, что сектор специальной оценки условий труда Новгородского филиала
 					ФБУ&#160;«Тест&#8209;С.&#8209;Петербург»
-					(тел.&#160;<text:a xlink:href="tel:+7-8162-60-77-47"><!-- http://tools.ietf.org/html/rfc3966 -->+7&#160;(8162)&#160;60&#8209;77&#8209;47</text:a>,
-					<text:a xlink:href="mailto:sout@csm.nov.ru"><!-- http://tools.ietf.org/html/rfc2368 -->sout@csm.nov.ru</text:a>)
+					(тел.&#160;<text:a xlink:href="tel:+7-8162-60-77-47" xlink:type="simple"><!-- http://tools.ietf.org/html/rfc3966 -->+7&#160;(8162)&#160;60&#8209;77&#8209;47</text:a>,
+					<text:a xlink:href="mailto:sout@csm.nov.ru" xlink:type="simple"><!-- http://tools.ietf.org/html/rfc2368 -->sout@csm.nov.ru</text:a>)
 					оказывает услуги:</text:p>
 				<text:list xml:id="list365234166" text:style-name="List_20_2">
 					<text:list-item>

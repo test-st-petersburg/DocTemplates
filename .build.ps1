@@ -117,6 +117,82 @@ param(
 			Get-ChildItem -Directory -Filter '.url' | Select-Object -ExpandProperty FullName
 		) ),
 
+	# путь к папке с инструментами для сборки
+	[System.String]
+	$ToolsPath = ( property ToolsPath ( ( Resolve-Path -Path '.\tools' ).Path ) ),
+
+	# путь к папке со вспомогательными инструментами
+	[System.String]
+	$BuildToolsPath = ( property BuildToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'build'
+		) ),
+
+	# путь к инструменту аналогу touch
+	[System.String]
+	$UpdateFileLastWriteTimePath = ( property UpdateFileLastWriteTimePath (
+			Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1'
+		) ),
+
+	# путь к папке с инструментами для документов
+	[System.String]
+	$DocsToolsPath = ( property DocsToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'docs'
+		) ),
+
+	# путь к инструменту распаковки документов в XML
+	[System.String]
+	$ConvertToPlainXMLPath = ( property ConvertToPlainXMLPath (
+			Join-Path -Path $ToolsPath -ChildPath 'ConvertTo-PlainXML.ps1'
+		) ),
+
+	# путь к инструменту оптимизации XML файлов документов
+	[System.String]
+	$OptimizePlainXMLPath = ( property OptimizePlainXMLPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Optimize-PlainXML.ps1'
+		) ),
+
+	# путь к инструменту оптимизации XML файлов документов
+	[System.String]
+	$BuildOODocumentPath = ( property BuildOODocumentPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OODocument.ps1'
+		) ),
+
+	# путь к инструменту сборки библиотек макрокоманд
+	[System.String]
+	$BuildOOMacroLibPath = ( property BuildOOMacroLibPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLib.ps1'
+		) ),
+
+	# путь к инструменту сборки контейнеров библиотек макрокоманд
+	[System.String]
+	$BuildOOMacroLibContainerPath = ( property BuildOOMacroLibContainerPath (
+			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
+		) ),
+
+	# путь к инструменту подготовки QR кодов
+	[System.String]
+	$OutQRCodePath = ( property OutQRCodePath (
+			Join-Path -Path $ToolsPath -ChildPath 'Out-QRCode.ps1'
+		) ),
+
+	# путь к папке с ODF validator
+	[System.String]
+	$ODFValidatorPath = ( property ODFValidatorPath (
+			Join-Path -Path $DocsToolsPath -ChildPath 'ODFValidator'
+		) ),
+
+	# путь к ODF validator JAR файлу
+	[System.String]
+	$ODFValidatorJarPath = ( property ODFValidatorJarPath (
+			Join-Path -Path $ODFValidatorPath -ChildPath 'ODFValidator.jar'
+		) ),
+
+	# путь к временной папке с ODF toolkit
+	[System.String]
+	$ODFToolkitPath = ( property ODFToolkitPath (
+			Join-Path -Path $ODFValidatorPath -ChildPath 'ODFToolkit'
+		) ),
+
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
 	# 0  Open the application with a hidden window.
@@ -132,7 +208,11 @@ param(
 
 	# версия шаблонов и файлов
 	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
+	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) ),
+
+	# токен для доступа к GitHub
+	[System.Security.SecureString]
+	$GitHubToken
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
@@ -163,7 +243,7 @@ foreach ( $OOFile in $DestinationTemplateFile )
 
 	task $OOUnpackTaskName -Inputs @( $OOFile ) -Outputs @( $marker ) -Job $OORemoveSourcesTaskName, {
 		$localOOFile = $Inputs[0];
-		$localOOFile | .\tools\ConvertTo-PlainXML.ps1 -DestinationPath $SourceTemplatesPath `
+		$localOOFile | . $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -177,11 +257,11 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
-		$localOOXMLFolder | .\tools\Optimize-PlainXML.ps1 `
+		$localOOXMLFolder | . $OptimizePlainXMLPath `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -213,7 +293,7 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	$DestinationPath, $TempPath | Where-Object { Test-Path -Path $_ } | Remove-Item -Recurse -Force;
+	Remove-BuildItem $DestinationPath, $TempPath, $ODFValidatorPath;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
@@ -242,7 +322,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$SourceLibFolder | .\tools\Build-OOMacroLib.ps1 -DestinationPath $DestinationLibrariesPath -Force `
+		$SourceLibFolder | . $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -273,7 +353,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$LibFolder | .\tools\Build-OOMacroLibContainer.ps1 -DestinationPath $DestinationLibContainersPath -Force `
+		$LibFolder | . $BuildOOMacroLibContainerPath -DestinationPath $DestinationLibContainersPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -300,7 +380,7 @@ $JobBuildUriQRCode = {
 	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
 	Write-Verbose "Source URL `"$SourceURL`"";
 
-	$SourceURL | .\tools\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+	$SourceURL | . $OutQRCodePath -FilePath $DestinationQRCodeFile `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 };
@@ -315,6 +395,63 @@ task BuildURIsQRCodes 'Build-org-site.png';
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildURIsQRCodes;
+
+#endregion
+
+#region загрузка и подготовка ODF validator
+
+task Prepare-ODFValidator `
+	-Outputs @( $ODFValidatorJarPath ) `
+	-If { -not ( Test-Path -Path $ODFValidatorJarPath ) } `
+	-Job {
+
+	if ( -not ( Test-Path -Path $ODFValidatorPath ) )
+	{
+		New-Item -Path $ODFValidatorPath -ItemType Directory `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		| Out-Null;
+	};
+	if ( -not ( Test-Path -Path $ODFToolkitPath ) )
+	{
+		New-Item -Path $ODFToolkitPath -ItemType Directory `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		| Out-Null;
+	};
+	$ODFToolkitZIPPath = ( Join-Path -Path $ODFToolkitPath -ChildPath 'ODFToolkit-bin.zip' );
+	if ( Test-Path -Path $ODFToolkitZIPPath )
+	{
+		Remove-Item -Path $ODFToolkitZIPPath -Force `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	};
+
+	Import-Module -Name PowerShellForGitHub | Out-Null;
+
+	Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		-SessionOnly;
+	Get-GitHubRelease -OwnerName 'tdf' -RepositoryName 'ODFToolkit' `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+	| Get-GitHubReleaseAsset `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+	| Where-Object { ( $_.Name -match '^ODFToolkit-.*-bin\.zip$' ) } `
+	| Get-GitHubReleaseAsset -Path $ODFToolkitZIPPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+	| Expand-Archive -DestinationPath $ODFToolkitPath -Force `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
+	Get-ChildItem -LiteralPath $ODFToolkitPath -Filter 'ODFValidator-*.jar' -File `
+	| Copy-Item -Destination $ODFValidatorJarPath -Force `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+};
 
 #endregion
 
@@ -355,13 +492,13 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -408,13 +545,13 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | .\tools\Build-OODocument.ps1 -DestinationPath $DestinationDocumentsPath -Force `
+		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		.\tools\build\Update-FileLastWriteTime.ps1 -Path $marker `
+		. $UpdateFileLastWriteTimePath -Path $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -445,6 +582,27 @@ task Build BuildTemplates, BuildDocs;
 
 task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
-task . Build;
+#region тестирование собранных шаблонов и файлов
+
+task Test Prepare-ODFValidator, Build, {
+	# $PSNotApplyErrorActionToStderr = $false;
+	chcp 866 > $null;
+	try
+	{
+		java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
+		if ( $LASTEXITCODE -ne 0 )
+		{
+			Write-Error -Message 'Validation failed!';
+		};
+	}
+	finally
+	{
+		chcp 65001 > $null;
+	}
+};
+
+#endregion
+
+task . Test;
 
 #endregion
