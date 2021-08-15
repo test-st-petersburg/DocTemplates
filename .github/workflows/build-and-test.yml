@@ -46,7 +46,9 @@ jobs:
         shell: powershell
         run: |
           Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build -Task Prepare-ODFValidator -Verbose;
+          Invoke-Build -Task Prepare-ODFValidator `
+            -GitHubToken ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force ) `
+            -Verbose;
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10

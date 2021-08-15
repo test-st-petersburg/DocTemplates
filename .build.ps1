@@ -208,7 +208,12 @@ param(
 
 	# версия шаблонов и файлов
 	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
+	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) ),
+
+	# токен для доступа к GitHub
+	# TODO: вынести AccessToken в переменную. Возможно - переменную окружения. Попробовать получить токен из установленных расширений
+	[System.Security.SecureString]
+	$GitHubToken = ( property GitHubToken ( ConvertTo-SecureString -String '01000000d08c9ddf0115d1118c7a00c04fc297eb01000000864d26a789b8f0428da15574642920c00000000002000000000003660000c000000010000000ce9bf9be198eb22099db09b1ac15bd380000000004800000a000000010000000ef2d6dbae3871de476396608d90a57d1580000005c464959fc998a4476c1b13b0a3ccd676cc9862151560e10d8a80822b4301ca864b6a85dd315dca7fe1ab79e39ccbac6a9c9fa4720e690fad557ec9a584d58258789ea0978d6d53fc6ec88c853eb76edb2a08ecf828bb5e5140000001010b3c3b5f4bd550c2649ea439ef2ae4073565d' ) )
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
@@ -425,9 +430,11 @@ task Prepare-ODFValidator `
 
 	Import-Module -Name PowerShellForGitHub | Out-Null;
 
-	# TODO: вынести AccessToken в переменную. Возможно - переменную окружения. Попробовать получить токен из установленных расширений
+	Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+		-SessionOnly;
 	Get-GitHubRelease -OwnerName 'tdf' -RepositoryName 'ODFToolkit' `
-		-AccessToken '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' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
 	| Get-GitHubReleaseAsset `
