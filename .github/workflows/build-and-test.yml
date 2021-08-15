@@ -59,6 +59,12 @@ jobs:
           Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
           Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}' -Verbose;
 
+      - name: Validate .ott and .odt files
+        shell: powershell
+        run: |
+          Import-Module -Name InvokeBuild | Out-Null;
+          Invoke-Build -Task Test -Verbose;
+
       - name: Upload .ott files
         uses: actions/upload-artifact@v2
         with:
