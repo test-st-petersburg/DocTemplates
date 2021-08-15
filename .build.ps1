@@ -167,31 +167,31 @@ param(
 	# путь к инструменту распаковки документов в XML
 	[System.String]
 	$ConvertToPlainXMLPath = ( property ConvertToPlainXMLPath (
-			Join-Path -Path $ToolsPath -ChildPath 'ConvertTo-PlainXML.ps1'
+			Join-Path -Path $DocsToolsPath -ChildPath 'ConvertTo-PlainXML.ps1'
 		) ),
 
 	# путь к инструменту оптимизации XML файлов документов
 	[System.String]
 	$OptimizePlainXMLPath = ( property OptimizePlainXMLPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Optimize-PlainXML.ps1'
+			Join-Path -Path $DocsToolsPath -ChildPath 'Optimize-PlainXML.ps1'
 		) ),
 
 	# путь к инструменту оптимизации XML файлов документов
 	[System.String]
 	$BuildOODocumentPath = ( property BuildOODocumentPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OODocument.ps1'
+			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OODocument.ps1'
 		) ),
 
 	# путь к инструменту сборки библиотек макрокоманд
 	[System.String]
 	$BuildOOMacroLibPath = ( property BuildOOMacroLibPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLib.ps1'
+			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLib.ps1'
 		) ),
 
 	# путь к инструменту сборки контейнеров библиотек макрокоманд
 	[System.String]
 	$BuildOOMacroLibContainerPath = ( property BuildOOMacroLibContainerPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
+			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
 		) ),
 
 	# путь к папке с инструментами для документов
