@@ -74,9 +74,9 @@ jobs:
               $isExpectedSection = $false;
             } `
             -Process {
-              $isReleaseSectionHeader = ( $_ -match '##\s+(\d+\.\d+\.\d+)' );
+              $isReleaseSectionHeader = ( $_ -match '##\s+(?:(?<version>\d+\.\d+\.\d+)|\[(?<version>\d+\.\d+\.\d+)\])' );
               if ( $isReleaseSectionHeader ) {
-                $releaseVersion = $Matches[1];
+                $releaseVersion = $Matches[ 'version' ];
                 $isExpectedSection = ( $releaseVersion -eq '${{ steps.gitversion.outputs.semVer }}' );
               } else {
                 if ( $isExpectedSection ) { return $_; };
