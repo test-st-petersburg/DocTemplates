@@ -194,10 +194,28 @@ param(
 			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
 		) ),
 
+	# путь к папке с инструментами для документов
+	[System.String]
+	$QRCodeToolsPath = ( property QRCodeToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'QRCode'
+		) ),
+
 	# путь к инструменту подготовки QR кодов
 	[System.String]
 	$OutQRCodePath = ( property OutQRCodePath (
-			Join-Path -Path $ToolsPath -ChildPath 'Out-QRCode.ps1'
+			Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1'
+		) ),
+
+	# путь к папке с инструментами для документов
+	[System.String]
+	$vCardToolsPath = ( property vCardToolsPath (
+			Join-Path -Path $ToolsPath -ChildPath 'xCard'
+		) ),
+
+	# путь к инструменту подготовки QR кодов
+	[System.String]
+	$OutVCardPath = ( property OutVCardPath (
+			Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1'
 		) ),
 
 	# путь к папке с ODF validator
@@ -472,7 +490,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		.\tools\xCard\Out-vCardFile.ps1 -LiteralPath $SourceXCardFile -Destination $vCardFile `
+		. $OutVCardPath -LiteralPath $SourceXCardFile -Destination $vCardFile `
 			-Compatibility 'Android' -Minimize `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -496,7 +514,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		};
 
 		Get-Content -LiteralPath $vCardFile -Raw `
-		| .\tools\QRCode\Out-QRCode.ps1 -FilePath $DestinationQRCodeFile `
+		| . $OutQRCodePath -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
