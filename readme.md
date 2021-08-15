@@ -36,6 +36,7 @@
 - [7Zip4Powershell][]
 - [Saxon HE][]
 - [GitVersion][]
+- [ODFValidator][]
 
 Для [VSCode][] рекомендую установить расширения, указанные в рабочей области.
 
@@ -149,5 +150,6 @@
 [Saxon HE]: https://saxonica.com/products/products.xml "Saxon Home Edition"
 [ReadTheDocs]: https://readthedocs.org
 [OASIS]: https://docs.oasis-open.org/office/OpenDocument/v1.3/cs01/part3-schema/OpenDocument-v1.3-cs01-part3-schema.html "Open Document Format for Office Applications (OpenDocument) Version 1.3. Part 3: OpenDocument Schema"
+[ODFValidator]: https://odftoolkit.org/conformance/ODFValidator.html "ODF Validator"
 [GitVersion]: https://github.com/GitTools/GitVersion "Easy Semantic Versioning for projects using Git"
 [ГОСТ Р ИСО/МЭК 26300-2010]: http://protect.gost.ru/document.aspx?control=7&id=177075 "Информационная технология. Формат Open Document для офисных приложений (OpenDocument) v1.0"

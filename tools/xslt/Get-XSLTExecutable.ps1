@@ -148,7 +148,7 @@ try
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/preferJaxpParser', 'false' );
 
 	foreach ( $Package in $PackagePath )
- {
+	{
 		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
 		{
@@ -178,7 +178,7 @@ try
 
 	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
- {
+	{
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );

@@ -24,6 +24,13 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## [2.8.12]
+
+### Добавлено
+
+- добавлена проверка собранных файлов документов с помощью ODF Validator
+  [#146](https://github.com/test-st-petersburg/DocTemplates/issues/146)
+
 ## [2.8.11]
 
 ### Исправлено
@@ -727,6 +734,7 @@
   служебных, докладных и объяснительных записок)
 
 [Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.11...HEAD
+[2.8.12]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.11...2.8.12
 [2.8.11]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.10...2.8.11
 [2.8.10]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.9...2.8.10
 [2.8.9]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.8...2.8.9
