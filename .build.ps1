@@ -586,7 +586,7 @@ task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
 task Test Prepare-ODFValidator, Build, {
 	# $PSNotApplyErrorActionToStderr = $false;
-	chcp 866
+	chcp 866 > $null;
 	try
 	{
 		java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
@@ -597,7 +597,7 @@ task Test Prepare-ODFValidator, Build, {
 	}
 	finally
 	{
-		chcp 65001
+		chcp 65001 > $null;
 	}
 };
 
