@@ -579,8 +579,20 @@ task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 #region тестирование собранных шаблонов и файлов
 
 task Test Prepare-ODFValidator, Build, {
+	# $PSNotApplyErrorActionToStderr = $false;
 	chcp 866
-	java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
+	try
+	{
+		java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
+		if ( $LASTEXITCODE -ne 0 )
+		{
+			Write-Error -Message 'Validation failed!';
+		};
+	}
+	finally
+	{
+		chcp 65001
+	}
 };
 
 #endregion
