@@ -94,7 +94,23 @@
 				"Build Open Office files"
 			],
 			"group": "test",
-			"command": "Invoke-Build -Task Test -Verbose"
+			"command": "Invoke-Build -Task Test -Verbose",
+			"problemMatcher": {
+				"owner": "custom",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": [
+					{
+						"regexp": "^((\\w:.+?)/(.+?))\\[(\\d+),(\\d+)\\]:  (Fatal|Error|Warning|Info): (.*)$",
+						"file": 1,
+						"line": 4,
+						"column": 5,
+						"severity": 6,
+						"message": 7
+					}
+				]
+			},
 		},
 		{
 			"label": "Build and open Open Office files",
