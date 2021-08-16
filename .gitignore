@@ -2,7 +2,6 @@ ReleaseNotes.md
 .dirstate
 *.mof
 node_modules
-package-lock.json
 Thumbs.db
 output
 tmp

@@ -11,3 +11,5 @@
 *.bas  text  merge=text diff=text eol=lf
 
 *.{xba,xdl,xlb,xlc}  text  merge=text diff=text eol=lf
+
+*.json text  merge=json diff=text eol=lf
