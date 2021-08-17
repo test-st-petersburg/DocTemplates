@@ -10,6 +10,13 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.8.14]
+
+### Исправлено
+
+- исправлены ошибки при создании релиза без соответствующей вехи
+  [#153](https://github.com/test-st-petersburg/DocTemplates/issues/153)
+
 ## [2.8.13]
 
 ### Исправлено
@@ -725,7 +732,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.13...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...HEAD
+[2.8.14]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.13...2.8.14
 [2.8.13]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.12...2.8.13
 [2.8.12]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.11...2.8.12
 [2.8.11]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.10...2.8.11

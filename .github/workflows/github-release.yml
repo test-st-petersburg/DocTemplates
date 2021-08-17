@@ -118,7 +118,7 @@ jobs:
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
           $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
-          if ( $${{ steps.milestone_search.outputs.exists }} ) {
+          if ( $${{ steps.milestone_search.outputs.exists == 'true' }} ) {
             $releaseDescription = `
               "[![${{ steps.milestone_search.outputs.title }}](https://img.shields.io/badge/milestone-${{ steps.milestone_search.outputs.title }}-blue?style=plastic&logo=github)](${{ steps.milestone_search.outputs.url }})" +
               "`r`n`r`n" + $releaseNotes;
@@ -149,7 +149,7 @@ jobs:
           # };
 
       - name: Close GitHub Milestone
-        if: ${{ steps.milestone_search.outputs.exists }}
+        if: steps.milestone_search.outputs.exists == 'true'
         shell: powershell
         run: |
           Import-Module -Name PowerShellForGitHub | Out-Null;
