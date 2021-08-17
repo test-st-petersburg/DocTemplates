@@ -77,6 +77,16 @@ configuration xITGODTDevWindowsPC
 			Module_Name = 'InvokeBuild'
 		}
 
+		PSModuleResource PowerShellForGitHub
+		{
+			Module_Name = 'PowerShellForGitHub'
+		}
+
+		PSModuleResource Pester
+		{
+			Module_Name = 'Pester'
+		}
+
 		PackageManagement SaxonHE
 		{
 			Ensure = 'Present'
