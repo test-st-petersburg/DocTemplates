@@ -29,6 +29,10 @@
 
 - добавлена проверка собранных файлов документов с помощью ODF Validator
   [#146](https://github.com/test-st-petersburg/DocTemplates/issues/146)
+- добавлено тестирование через Pester,
+  в том числе - и через [ODF Validator](https://odfvalidator.org)
+  [#156](https://github.com/test-st-petersburg/DocTemplates/issues/147)
+
 
 ## [2.8.11]
 
