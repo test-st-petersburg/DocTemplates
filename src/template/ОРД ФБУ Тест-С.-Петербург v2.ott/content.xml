@@ -1952,12 +1952,7 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подписи">
-				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
-				</style:style>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример письма -->
 			<!-- #region(collapsed) Пример доверенности -->
@@ -2040,7 +2035,9 @@
 			</text:section>
 			<text:section text:name="Подписи">
 				<text:p text:style-name="Подпись2">Образец подписи Поверенного<text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПоверенныйПредставлениеВПодписиИП">М.С. Комлаткин</text:variable-get></text:span></text:p>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				<text:section text:name="Подпись">
+					<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				</text:section>
 			</text:section>
 			<text:p text:style-name="КонецСтраницы"/>
 			<text:p text:style-name="КонецСтраницы"/>
@@ -2087,7 +2084,7 @@
 				<text:p text:style-name="Основной">Справка дана по месту требования.</text:p>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример справки -->
 			<!-- #region(collapsed) Разделяемые компоненты в скрытом разделе -->
@@ -2149,7 +2146,12 @@
 						</draw:text-box>
 					</draw:frame> г.</text:p>
 				</text:section>
-				<!-- #endregion  Заготовка поля даты в сведениях об ознакомлении -->
+				<!-- #endregion Заготовка поля даты в сведениях об ознакомлении -->
+				<!-- #region Заготовка подписи на бланке письма -->
+				<text:section text:name="Шаблон: подпись на фирменном бланке">
+					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				</text:section>
+				<!-- #endregion Заготовка подписи на бланке письма -->
 				<text:p text:style-name="ПустойАбзац"/>
 			</text:section>
 			<!-- #endregion Разделяемые компоненты в скрытом разделе -->

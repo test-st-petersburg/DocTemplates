@@ -24,6 +24,22 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## [2.8.16]
+
+### Изменено
+
+- разделы подписи в документах на фирменном бланке заменены
+  ссылкой (`text:section-source`) в целях нормализации
+  [#135](https://github.com/test-st-petersburg/DocTemplates/issues/135)
+
+### Исправлено
+
+- исправлена ошибка сборки документов для случая, когда
+  `text:section-source[ not @xlink:title ]`
+- восстановление включение разделов (`text:section-source`)
+  во время сборки документов и шаблонов
+  [#81](https://github.com/test-st-petersburg/DocTemplates/issues/81)
+
 ## [2.8.15]
 
 ### Исправлено
@@ -764,7 +780,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...HEAD
+[2.8.16]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...2.8.16
 [2.8.15]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...2.8.15
 [2.8.14]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.13...2.8.14
 [2.8.13]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.12...2.8.13
