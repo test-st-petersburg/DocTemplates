@@ -1,5 +1,5 @@
 ﻿#Requires -Version 5.0
-# Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
+#Requires -Modules @{ ModuleName = 'Pester'; ModuleVersion = '5.2.0' }
 
 param(
 	# путь к папке с генерируемыми файлами
@@ -44,22 +44,17 @@ Describe 'Open Document template' {
 		$DestinationTemplateFile | Get-Item |
 		ForEach-Object { @{ Name = $_.Name; FullName = $_.FullName } }
 	) {
-		It 'is valid (by ODFValidator)' {
+		It 'is valid (by ODFValidator)' -Tag 'ODFValidator' {
+			# chcp 866 > $null;
+			try
 			{
-				# chcp 866 > $null;
-				try
-				{
-					java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w $FullName
-					if ( $LASTEXITCODE -ne 0 )
-					{
-						Write-Error -Message 'Validation failed!' -ErrorAction 'Stop';
-					};
-				}
-				finally
-				{
-					# chcp 65001 > $null;
-				}
-			} | Should -Not -Throw
+				java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w $FullName
+			}
+			finally
+			{
+				# chcp 65001 > $null;
+			}
+			$LASTEXITCODE | Should -Be 0;
 		}
 	}
 }
