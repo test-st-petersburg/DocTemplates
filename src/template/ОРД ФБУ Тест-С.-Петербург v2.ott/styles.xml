@@ -899,12 +899,7 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:name="Шапка (ТЛ)" text:protected="true">
-					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
-					</style:style>
-					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛ"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Гриф утверждения (ТЛ)" text:condition="ooow:(УтвердилПредставлениеВПодписиИП EQ &#34;&#34;) OR (ЭтоПереписка EQ &#34;ИСТИНА&#34;)" text:display="condition">
 					<style:style style:family="section">
@@ -915,7 +910,7 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛ"/>
+					<text:section-source text:section-name="Гриф утверждения" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛ" xlink:show="embed"/>
 				</text:section>
 				<text:section text:name="Заголовок (ТЛ)">
 					<style:style style:family="section">
@@ -1159,20 +1154,10 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:name="Шапка (ПЛсГУ)" text:protected="true">
-					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
-					</style:style>
-					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Вид документа (ПЛсГУ)" text:protected="true">
-					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
-					</style:style>
-					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ"/>
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Регистрационные данные документа (ПЛсГУ)" text:protected="true">
 					<style:style style:family="section">
@@ -1184,7 +1169,7 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ"/>
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ" xlink:show="embed"/>
 				</text:section>
 				<text:section text:name="Гриф утверждения">
 					<style:style style:family="section">
@@ -1246,12 +1231,7 @@
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:name="Заголовок документа (ПЛсГУ)">
-					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
-					</style:style>
-					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ"/>
+					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛсГУ" xlink:show="replace"/>
 				</text:section>
 			</loext:header-first>
 		</style:master-page>
@@ -1350,12 +1330,7 @@
 								</draw:frame></text:p>
 							</text:section>
 							<text:section text:name="Бланк: Шапка: Наименование организации и подразделения (ДИ)" text:protected="true">
-								<style:style style:family="section">
-									<style:section-properties style:editable="false">
-										<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-									</style:section-properties>
-								</style:style>
-								<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ"/>
+								<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
 							</text:section>
 						</draw:text-box>
 					</draw:frame></text:p>
@@ -1479,12 +1454,7 @@
 			</style:header>
 			<loext:header-first>
 				<text:section text:name="Шапка (СЗ)" text:protected="true">
-					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
-					</style:style>
-					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="СЗ"/>
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="СЗ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Вид документа (СЗ)" text:protected="true">
 					<style:style style:family="section">
@@ -2406,10 +2376,10 @@
 			</style:header-left>
 			<loext:header-first>
 				<text:section text:name="Шапка (ВнБ)" text:protected="true">
-					<text:section-source text:section-name="Шапка (ПБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+					<text:section-source text:section-name="Шапка (ПБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Вид документа (ВнБ)" text:protected="true">
-					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Регистрационные данные документа (ВнБ)" text:protected="true">
 					<style:style style:family="section">
@@ -2421,7 +2391,7 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ" xlink:show="embed"/>
 				</text:section>
 				<text:section text:name="Заголовок документа (ВнБ)" text:protected="true">
 					<text:p text:style-name="ПустойАбзац"/>
@@ -2478,8 +2448,8 @@
 						</table:table-cell>
 					</table:table-row>
 				</table:table>
-				<text:section text:name="ШкалаСQRКодомВПодвале (ВнБ)" text:protected="true">
-					<text:section-source text:section-name="ШкалаСQRКодомВПодвале" xlink:type="simple" xlink:actuate="other" xlink:title="Дов"/>
+				<text:section text:name="ШкалаСQRКодомВПодвале (Дов)" text:protected="true">
+					<text:section-source text:section-name="ШкалаСQRКодомВПодвале" xlink:type="simple" xlink:actuate="other" xlink:title="Дов" xlink:show="replace"/>
 				</text:section>
 			</loext:footer-first>
 		</style:master-page>
@@ -2503,10 +2473,10 @@
 			</style:header-left>
 			<loext:header-first>
 				<text:section text:name="Шапка (ВнБ)" text:protected="true">
-					<text:section-source text:section-name="Шапка (ПБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+					<text:section-source text:section-name="Шапка (ПБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Вид документа (ВнБ)" text:protected="true">
-					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ"/>
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБ" xlink:show="replace"/>
 				</text:section>
 				<text:section text:name="Регистрационные данные документа (ВнБСИсп)" text:protected="true">
 					<style:style style:family="section">
@@ -2518,10 +2488,10 @@
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБСИсп"/>
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБСИсп" xlink:show="embed"/>
 				</text:section>
 				<text:section text:name="Заголовок документа (ВнБСИсп)" text:protected="true">
-					<text:section-source text:section-name="Заголовок документа (ВнБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБСИсп"/>
+					<text:section-source text:section-name="Заголовок документа (ВнБ)" xlink:type="simple" xlink:actuate="other" xlink:title="ВнБСИсп" xlink:show="replace"/>
 				</text:section>
 			</loext:header-first>
 			<style:footer>
@@ -2531,8 +2501,8 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer-left>
 			<loext:footer-first>
-				<text:section text:name="БланкФирменныйПодвал (Справка)">
-					<text:section-source text:section-name="БланкФирменныйПодвал" xlink:type="simple" xlink:actuate="other" xlink:title="Спр"/>
+				<text:section text:name="БланкФирменныйПодвал (Спр)">
+					<text:section-source text:section-name="БланкФирменныйПодвал" xlink:type="simple" xlink:actuate="other" xlink:title="Спр" xlink:show="replace"/>
 				</text:section>
 			</loext:footer-first>
 		</style:master-page>
