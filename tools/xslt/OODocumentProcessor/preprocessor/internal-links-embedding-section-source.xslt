@@ -52,8 +52,8 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:param name="p:replace-section-source" as="xs:boolean" static="yes" select="true()"/>
+	<xsl:param name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()"/>
 
 	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
 

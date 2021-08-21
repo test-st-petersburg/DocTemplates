@@ -52,7 +52,7 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:variable name="p:update-document-meta" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:param name="p:update-document-meta" as="xs:boolean" static="yes" select="true()"/>
 
 	<xsl:mode
 		name="p:document-meta-updating"

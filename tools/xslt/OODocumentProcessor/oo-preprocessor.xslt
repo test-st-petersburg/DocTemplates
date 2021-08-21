@@ -74,9 +74,9 @@
 		<xsl:accept component="function" names="fix:doc" visibility="private"/>
 	</xsl:use-package>
 
-	<xsl:variable name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:param name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()"/>
+	<xsl:param name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()"/>
+	<xsl:param name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()"/>
 
 	<?region препроцессирование документа ?>
 
