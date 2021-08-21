@@ -25,61 +25,82 @@ configuration xITGODTDevWindowsPC
 	Node $ComputerName
 	{
 
-		cChocoInstaller choco {
+		cChocoInstaller choco
+		{
 			InstallDir = "${env:SystemDrive}\choco"
 		}
 
-		Environment chocolatelyInstall {
-			Name      = 'chocolatelyInstall'
-			value     = "${env:SystemDrive}\choco\bin"
+		Environment chocolatelyInstall
+		{
+			Name = 'chocolatelyInstall'
+			value = "${env:SystemDrive}\choco\bin"
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller VSCode {
-			Name      = 'vscode'
+		cChocoPackageInstaller VSCode
+		{
+			Name = 'vscode'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller git {
-			Name      = 'git.install'
+		cChocoPackageInstaller git
+		{
+			Name = 'git.install'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller NodeJS {
-			Name      = 'nodejs'
+		cChocoPackageInstaller NodeJS
+		{
+			Name = 'nodejs'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller LibreOffice {
-			Name      = 'libreoffice-still'
+		cChocoPackageInstaller LibreOffice
+		{
+			Name = 'libreoffice-still'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller GitVersion {
-			Name      = 'gitversion.portable'
+		cChocoPackageInstaller GitVersion
+		{
+			Name = 'gitversion.portable'
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		PSModuleResource 7Zip4Powershell {
+		PSModuleResource 7Zip4Powershell
+		{
 			Module_Name = '7Zip4Powershell'
 		}
 
-		PSModuleResource InvokeBuild {
+		PSModuleResource InvokeBuild
+		{
 			Module_Name = 'InvokeBuild'
 		}
 
-		PackageManagement SaxonHE {
-			Ensure         = 'Present'
-			Name           = 'Saxon-HE'
-			Source         = 'NuGet'
+		PSModuleResource PowerShellForGitHub
+		{
+			Module_Name = 'PowerShellForGitHub'
+		}
+
+		PSModuleResource Pester
+		{
+			Module_Name = 'Pester'
+		}
+
+		PackageManagement SaxonHE
+		{
+			Ensure = 'Present'
+			Name = 'Saxon-HE'
+			Source = 'NuGet'
 			MinimumVersion = '9.8'
 			MaximumVersion = '9.8.999'
 		}
 
-		PackageManagement QRCoder {
-			Ensure         = 'Present'
-			Name           = 'QRCoder'
-			Source         = 'NuGet'
+		PackageManagement QRCoder
+		{
+			Ensure = 'Present'
+			Name = 'QRCoder'
+			Source = 'NuGet'
 		}
 
 	}
