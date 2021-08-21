@@ -51,7 +51,7 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 		</office:text>
 	</office:body>

@@ -52,8 +52,8 @@
 	xmlns:fix="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix"
 >
 
-	<xsl:variable name="p:replace-section-source" as="xs:boolean" static="yes" select="true()" visibility="private"/>
-	<xsl:variable name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()" visibility="private"/>
+	<xsl:param name="p:replace-section-source" as="xs:boolean" static="yes" select="true()"/>
+	<xsl:param name="p:rename-elements-on-insert" as="xs:boolean" static="yes" select="true()"/>
 
 	<!-- замещение `<text:section-source>` содержанием разделов #81 -->
 
@@ -71,7 +71,7 @@
 	">
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:apply-templates select=" key( 'p:sections', @text:section-name )/( * except style:style ) " mode="#current">
-			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string" tunnel="yes"/>
+			<xsl:with-param name="p:embed-link-title" select="@xlink:title" as="xs:string?" tunnel="yes"/>
 		</xsl:apply-templates>
 	</xsl:template>
 
@@ -84,7 +84,7 @@
 	">
 		<!-- TODO: переделать параметр `p:embed-link-title` на аккумулятор -->
 		<xsl:apply-templates select="key( 'p:sections', text:section-source/@text:section-name )/( * except style:style )" mode="#current">
-			<xsl:with-param name="p:embed-link-title" select="text:section-source/@xlink:title" as="xs:string" tunnel="yes"/>
+			<xsl:with-param name="p:embed-link-title" select="text:section-source/@xlink:title" as="xs:string?" tunnel="yes"/>
 		</xsl:apply-templates>
 	</xsl:template>
 
