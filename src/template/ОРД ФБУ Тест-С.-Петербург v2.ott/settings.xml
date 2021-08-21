@@ -35,7 +35,7 @@
 			<config:config-item config:name="UseOldNumbering" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="DoNotResetParaAttrsForNumFont" config:type="boolean">false</config:config-item>
-			<config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">false</config:config-item>
+			<config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="UseFormerLineSpacing" config:type="boolean">false</config:config-item>
 			<config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
 			<config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
