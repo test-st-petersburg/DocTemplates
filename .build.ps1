@@ -1,5 +1,6 @@
 ﻿#Requires -Version 5.0
 #Requires -Modules InvokeBuild
+#Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
 param(
 	# путь к папке с генерируемыми файлами
@@ -715,20 +716,7 @@ task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 #region тестирование собранных шаблонов и файлов
 
 task Test Prepare-ODFValidator, Build, {
-	# $PSNotApplyErrorActionToStderr = $false;
-	chcp 866 > $null;
-	try
-	{
-		java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w -r $DestinationTemplatesPath, $DestinationDocumentsPath
-		if ( $LASTEXITCODE -ne 0 )
-		{
-			Write-Error -Message 'Validation failed!';
-		};
-	}
-	finally
-	{
-		chcp 65001 > $null;
-	}
+	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
 };
 
 #endregion
