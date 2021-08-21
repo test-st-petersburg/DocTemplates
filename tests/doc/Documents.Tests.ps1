@@ -1,24 +1,24 @@
 ﻿#Requires -Version 5.0
-#Requires -Modules @{ ModuleName = 'Pester'; ModuleVersion = '5.2.0' }
+#Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
 param(
 	# путь к папке с генерируемыми файлами
 	[System.String]
 	$DestinationPath = ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'output' ),
 
-	# путь к папке с .ott файлами
+	# путь к папке с .odt файлами
 	[System.String]
-	$DestinationTemplatesPath = ( Join-Path -Path $DestinationPath -ChildPath 'template' ),
+	$DestinationDocumentsPath = ( Join-Path -Path $DestinationPath -ChildPath 'doc' ),
 
-	# имя .ott шаблона
+	# имя .odt шаблона
 	[System.String]
-	$TemplatesFilter = '*.ott',
+	$DocumentsFilter = '*.odt',
 
-	# пути к .ott файлам
+	# пути к .odt файлам
 	[System.String[]]
-	$DestinationTemplateFile = @(
-		$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
-		Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+	$DestinationDocFile = @(
+		$DestinationDocumentsPath | Where-Object { Test-Path -Path $_ } |
+		Get-ChildItem -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
 	),
 
 	# путь к папке с инструментами для сборки
@@ -39,9 +39,9 @@ param(
 
 chcp 65001 > $null;
 
-Describe 'Open Document template' {
+Describe 'Open Documents' {
 	Describe '<Name>' -ForEach @(
-		$DestinationTemplateFile | Get-Item |
+		$DestinationDocFile | Get-Item |
 		ForEach-Object { @{ Name = $_.Name; FullName = $_.FullName } }
 	) {
 		It 'is valid (by ODFValidator)' -Tag 'ODFValidator' {
