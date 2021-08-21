@@ -6,21 +6,6 @@ param(
 	[System.String]
 	$DestinationPath = ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'output' ),
 
-	# путь к папке с .ott файлами
-	[System.String]
-	$DestinationTemplatesPath = ( Join-Path -Path $DestinationPath -ChildPath 'template' ),
-
-	# имя .ott шаблона
-	[System.String]
-	$TemplatesFilter = '*.ott',
-
-	# пути к .ott файлам
-	[System.String[]]
-	$DestinationTemplateFile = @(
-		$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
-		Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
-	),
-
 	# путь к папке с .odt файлами
 	[System.String]
 	$DestinationDocumentsPath = ( Join-Path -Path $DestinationPath -ChildPath 'doc' ),
@@ -53,31 +38,6 @@ param(
 )
 
 chcp 65001 > $null;
-
-Describe 'Open Document template' {
-	Describe '<Name>' -ForEach @(
-		$DestinationTemplateFile | Get-Item |
-		ForEach-Object { @{ Name = $_.Name; FullName = $_.FullName } }
-	) {
-		It 'is valid (by ODFValidator)' {
-			{
-				# chcp 866 > $null;
-				try
-				{
-					java -D"file.encoding=UTF-8" -jar $ODFValidatorJarPath -e -w $FullName
-					if ( $LASTEXITCODE -ne 0 )
-					{
-						Write-Error -Message 'Validation failed!' -ErrorAction 'Stop';
-					};
-				}
-				finally
-				{
-					# chcp 65001 > $null;
-				}
-			} | Should -Not -Throw
-		}
-	}
-}
 
 Describe 'Open Document' {
 	Describe '<Name>' -ForEach @(
