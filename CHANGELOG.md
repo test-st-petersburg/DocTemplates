@@ -17,6 +17,12 @@
 - исправлены ошибки при создании релиза без соответствующей вехи
   [#153](https://github.com/test-st-petersburg/DocTemplates/issues/153)
 
+### Изменено
+
+- изменено тестирование через Pester,
+  обеспечена поддержка консоли тестирования в VSCode
+  [#156](https://github.com/test-st-petersburg/DocTemplates/issues/156)
+
 ## [2.8.13]
 
 ### Исправлено
@@ -31,7 +37,7 @@
   [#146](https://github.com/test-st-petersburg/DocTemplates/issues/146)
 - добавлено тестирование через Pester,
   в том числе - и через [ODF Validator](https://odfvalidator.org)
-  [#156](https://github.com/test-st-petersburg/DocTemplates/issues/147)
+  [#156](https://github.com/test-st-petersburg/DocTemplates/issues/156)
 
 ## [2.8.11]
 
