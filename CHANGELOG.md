@@ -10,6 +10,15 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.8.15]
+
+### Исправлено
+
+- исправлена ошибка выравнивания при использовании нумерованного списка
+  для заголовков
+  (исключено использование отступа для первой строки из стилей списков)
+  [#111](https://github.com/test-st-petersburg/DocTemplates/issues/111)
+
 ## [2.8.14]
 
 ### Исправлено
@@ -741,7 +750,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...HEAD
+[2.8.15]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...2.8.15
 [2.8.14]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.13...2.8.14
 [2.8.13]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.12...2.8.13
 [2.8.12]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.11...2.8.12
