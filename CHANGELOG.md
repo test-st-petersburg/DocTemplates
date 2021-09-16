@@ -10,6 +10,13 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.8.17]
+
+### Изменено
+
+- ODF Validator загружается при помощи maven и pom.xml
+  [#159](https://github.com/test-st-petersburg/DocTemplates/issues/159)
+
 ## [2.8.16]
 
 ### Изменено
@@ -766,7 +773,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...HEAD
+[2.8.17]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...2.8.17
 [2.8.16]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...2.8.16
 [2.8.15]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...2.8.15
 [2.8.14]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.13...2.8.14

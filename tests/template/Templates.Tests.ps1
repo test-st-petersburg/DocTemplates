@@ -27,19 +27,21 @@ param(
 
 	# путь к папке с инструментами для документов
 	[System.String]
-	$DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' ),
-
-	[System.String]
-	$ODFValidatorPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'ODFValidator' ),
-
-	# путь к ODF validator JAR файлу
-	[System.String]
-	$ODFValidatorJarPath = ( Join-Path -Path $ODFValidatorPath -ChildPath 'ODFValidator.jar' )
+	$DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' )
 )
 
-chcp 65001 > $null;
+BeforeAll {
+	chcp 65001 > $null;
+}
+
+BeforeAll {
+	. $PSScriptRoot/../Prepare-ODFValidator.ps1;
+	[System.String] $ODFValidatorPath = ( Join-Path -Path $PSScriptRoot -ChildPath '../java/dependency' );
+	[System.String] $ODFValidatorJarPath = ( Get-ChildItem -LiteralPath $ODFValidatorPath -Filter 'ODFValidator-*.jar' -File )[0].FullName;
+}
 
 Describe 'Open Document templates' {
+
 	Describe '<Name>' -ForEach @(
 		$DestinationTemplateFile | Get-Item |
 		ForEach-Object { @{ Name = $_.Name; FullName = $_.FullName } }

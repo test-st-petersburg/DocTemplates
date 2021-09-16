@@ -176,24 +176,6 @@ param(
 			Join-Path -Path $ToolsPath -ChildPath 'Out-QRCode.ps1'
 		) ),
 
-	# путь к папке с ODF validator
-	[System.String]
-	$ODFValidatorPath = ( property ODFValidatorPath (
-			Join-Path -Path $DocsToolsPath -ChildPath 'ODFValidator'
-		) ),
-
-	# путь к ODF validator JAR файлу
-	[System.String]
-	$ODFValidatorJarPath = ( property ODFValidatorJarPath (
-			Join-Path -Path $ODFValidatorPath -ChildPath 'ODFValidator.jar'
-		) ),
-
-	# путь к временной папке с ODF toolkit
-	[System.String]
-	$ODFToolkitPath = ( property ODFToolkitPath (
-			Join-Path -Path $ODFValidatorPath -ChildPath 'ODFToolkit'
-		) ),
-
 	# состояние окна Open Office при открытии документа
 	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
 	# 0  Open the application with a hidden window.
@@ -209,11 +191,7 @@ param(
 
 	# версия шаблонов и файлов
 	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) ),
-
-	# токен для доступа к GitHub
-	[System.Security.SecureString]
-	$GitHubToken
+	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
 )
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
@@ -294,7 +272,7 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	Remove-BuildItem $DestinationPath, $TempPath, $ODFValidatorPath;
+	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
@@ -396,63 +374,6 @@ task BuildURIsQRCodes 'Build-org-site.png';
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildURIsQRCodes;
-
-#endregion
-
-#region загрузка и подготовка ODF validator
-
-task Prepare-ODFValidator `
-	-Outputs @( $ODFValidatorJarPath ) `
-	-If { -not ( Test-Path -Path $ODFValidatorJarPath ) } `
-	-Job {
-
-	if ( -not ( Test-Path -Path $ODFValidatorPath ) )
-	{
-		New-Item -Path $ODFValidatorPath -ItemType Directory `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-		| Out-Null;
-	};
-	if ( -not ( Test-Path -Path $ODFToolkitPath ) )
-	{
-		New-Item -Path $ODFToolkitPath -ItemType Directory `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-		| Out-Null;
-	};
-	$ODFToolkitZIPPath = ( Join-Path -Path $ODFToolkitPath -ChildPath 'ODFToolkit-bin.zip' );
-	if ( Test-Path -Path $ODFToolkitZIPPath )
-	{
-		Remove-Item -Path $ODFToolkitZIPPath -Force `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	Import-Module -Name PowerShellForGitHub | Out-Null;
-
-	Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-		-SessionOnly;
-	Get-GitHubRelease -OwnerName 'tdf' -RepositoryName 'ODFToolkit' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	| Get-GitHubReleaseAsset `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	| Where-Object { ( $_.Name -match '^ODFToolkit-.*-bin\.zip$' ) } `
-	| Get-GitHubReleaseAsset -Path $ODFToolkitZIPPath `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	| Expand-Archive -DestinationPath $ODFToolkitPath -Force `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-	Get-ChildItem -LiteralPath $ODFToolkitPath -Filter 'ODFValidator-*.jar' -File `
-	| Copy-Item -Destination $ODFValidatorJarPath -Force `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-};
 
 #endregion
 
@@ -585,7 +506,7 @@ task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
 #region тестирование собранных шаблонов и файлов
 
-task Test Prepare-ODFValidator, Build, {
+task Test Build, {
 	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
 };
 
