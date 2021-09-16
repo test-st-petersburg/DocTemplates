@@ -1,4 +1,4 @@
-Rule 'Git.Repo.Files' -Type 'PSRule.Data.RepositoryInfo' {
+Rule 'Git.Repo.Files' {
 	Recommend '.gitattributes file must be exists'
 	$Assert.FilePath($TargetObject, 'FullName', @( '.gitattributes' ));
 }
