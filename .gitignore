@@ -9,4 +9,4 @@ tmp
 src/template/**/mimetype
 src/template/**/Thumbnails
 tools/packages
-tools/docs/ODFValidator
+tests/java/dependency

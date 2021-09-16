@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: "adopt"
-          java-version: "8"
+          java-version: "11"
           check-latest: true
 
       - name: Install required PowerShell and NuGet modules
@@ -45,10 +45,7 @@ jobs:
       - name: Install ODFValidator
         shell: powershell
         run: |
-          Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build -Task Prepare-ODFValidator `
-            -GitHubToken ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force ) `
-            -Verbose;
+          ./tests/Prepare-ODFValidator.ps1;
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10
