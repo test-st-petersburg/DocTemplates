@@ -11,12 +11,13 @@
 			<groupId>org.odftoolkit</groupId>
 			<artifactId>odfvalidator</artifactId>
 			<version>1.0.0-BETA1</version>
-			<type>war</type>
+			<type>jar</type>
+			<classifier>jar-with-dependencies</classifier>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<directory>tools</directory>
+		<directory>./java</directory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
