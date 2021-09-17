@@ -24,6 +24,12 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## [2.8.18]
+
+### Исправлено
+
+- исправлены ошибки тестов PS-Rule
+
 ## [2.8.17]
 
 ### Изменено
@@ -787,7 +793,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...HEAD
+[2.8.18]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...2.8.18
 [2.8.17]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...2.8.17
 [2.8.16]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...2.8.16
 [2.8.15]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.14...2.8.15
