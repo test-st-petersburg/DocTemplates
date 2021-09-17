@@ -2,7 +2,7 @@
 
 <#
 	.SYNOPSIS
-		Удаляет мусур в content.xml файлах open office документов
+		Удаляет мусор в content.xml файлах open office документов
 #>
 
 #Requires -Version 5.0

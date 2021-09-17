@@ -46,5 +46,7 @@ jobs:
       - name: Run PSRule analysis
         uses: Microsoft/ps-rule@main
         with:
-          modules: PSRule.Rules.GitHub, PSRule.Rules.MSFT.OSS
-          prerelease: true
+          # TODO: enable PSRule.Rules.GitHub after it is released
+          # modules: PSRule.Rules.GitHub, PSRule.Rules.MSFT.OSS
+          # prerelease: true
+          prerelease: false
