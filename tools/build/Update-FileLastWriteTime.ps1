@@ -6,27 +6,39 @@
 	.Synopsis
 		Creates a new file or updates the modified date of an existing file.
 		See 'touch'.
-
-	.Parameter Path
-		The path of the file to create or update.
 #>
-[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
+[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true, DefaultParameterSetName = 'Path' )]
 Param(
-	[Parameter( Mandatory = $True, Position = 1 )]
-	[System.String] $Path
+	[Parameter( Mandatory = $True, Position = 1, ParameterSetName = 'Path' )]
+	[System.String[]] $Path,
+
+	[Parameter( Mandatory = $True, ParameterSetName = 'LiteralPath' )]
+	[System.String[]] $LiteralPath
 )
 
-if ( -not [System.Management.Automation.WildcardPattern]::ContainsWildcardCharacters( $Path ) ) {
-	if ( -not ( Test-Path -Path $Path ) ) {
-		New-Item -ItemType File -Path $Path `
+if ( $PSCmdlet.ParameterSetName -eq 'Path' )
+{
+	$parameters = $PSCmdlet.MyInvocation.BoundParameters;
+	$null = $parameters.Remove( 'Path' );
+	$Path | ForEach-Object {
+		$FilePath = ( Resolve-Path -Path $_ ).Path;
+		. $PSCmdlet.MyInvocation.MyCommand -LiteralPath $FilePath @parameters;
+	};
+}
+elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )
+{
+	foreach ( $FilePath in $LiteralPath )
+	{
+		if ( -not ( Test-Path -LiteralPath $FilePath ) )
+		{
+			$null = New-Item -ItemType File -Path $FilePath `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true );
+		};
+		$null = Set-ItemProperty -LiteralPath $FilePath -Name LastWriteTime -Value ( Get-Date ) `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-			-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-		| Out-Null;
+			-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true );
 	};
 };
-Set-ItemProperty -Path $Path -Name LastWriteTime -Value ( Get-Date ) `
-	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-	-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true ) `
-| Out-Null;
