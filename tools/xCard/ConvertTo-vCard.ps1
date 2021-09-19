@@ -69,38 +69,30 @@ begin
 	$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xsd/xCard.xsd' );
 	$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 
-	Push-Location -Path $PSScriptRoot;
-	try
+	$saxProcessor = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTProcessor.ps1' ) `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+
+	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
+	$saxCompiler = $saxProcessor.NewXsltCompiler();
+
+	$TransformerNamespace = 'http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard';
+	if ( $Compatibility -eq 'Android' )
 	{
-		$saxProcessor = .\..\xslt\Get-XSLTProcessor.ps1 `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
-		$saxCompiler = $saxProcessor.NewXsltCompiler();
-
-		$TransformerNamespace = 'http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard';
-		if ( $Compatibility -eq 'Android' )
-		{
-			$saxCompiler.SetParameter(
-				( [Saxon.Api.QName]::new( $TransformerNamespace, 'max-android-compatibility' ) ),
-				( [Saxon.Api.XdmAtomicValue]::new( $true ) )
-			);
-		};
 		$saxCompiler.SetParameter(
-			( [Saxon.Api.QName]::new( $TransformerNamespace, 'minimize' ) ),
-			( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
+			( [Saxon.Api.QName]::new( $TransformerNamespace, 'max-android-compatibility' ) ),
+			( [Saxon.Api.XdmAtomicValue]::new( $true ) )
 		);
-
-		$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
-			-saxCompiler $saxCompiler `
-			-Path 'xslt\ConvertTo-vCard.xslt' `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	}
-	finally
-	{
-		Pop-Location;
 	};
+	$saxCompiler.SetParameter(
+		( [Saxon.Api.QName]::new( $TransformerNamespace, 'minimize' ) ),
+		( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
+	);
+
+	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTExecutable.ps1' ) `
+		-saxCompiler $saxCompiler `
+		-Path 'xslt\ConvertTo-vCard.xslt' `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 }
 process
 {

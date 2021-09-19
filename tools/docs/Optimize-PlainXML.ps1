@@ -19,21 +19,19 @@ begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
-		-PackagePath `
-		'xslt/system/uri.xslt', `
-		'xslt/system/fix-saxon.xslt', `
-		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
-		'xslt/optimizer/OOOptimizer.xslt', `
-		'xslt/OODocumentProcessor/oo-writer.xslt', `
-		'xslt/OODocumentProcessor/oo-macrolib.xslt', `
-		'xslt/OODocumentProcessor/oo-merger.xslt', `
-		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
-		'xslt/OODocumentProcessor/oo-document.xslt' `
+	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTExecutable.ps1' ) `
+		-PackagePath ( `
+			'xslt/system/uri.xslt', `
+			'xslt/system/fix-saxon.xslt', `
+			'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+			'xslt/optimizer/OOOptimizer.xslt', `
+			'xslt/OODocumentProcessor/oo-writer.xslt', `
+			'xslt/OODocumentProcessor/oo-macrolib.xslt', `
+			'xslt/OODocumentProcessor/oo-merger.xslt', `
+			'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
+			'xslt/OODocumentProcessor/oo-document.xslt' ) `
 		-Path 'xslt/Transform-PlainXML.xslt' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	Pop-Location;
 }
 process
 {
