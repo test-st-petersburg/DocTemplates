@@ -122,8 +122,8 @@ try
 	if ( $null -eq $saxCompiler )
 	{
 		$saxProcessor = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\Get-XSLTProcessor.ps1' -Resolve ) `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 		$saxCompiler = $saxProcessor.NewXsltCompiler();
@@ -175,7 +175,7 @@ try
 				);
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
 				{
 					$saxCompiler.ImportPackage( $saxPackage );
@@ -185,7 +185,7 @@ try
 			{
 				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				throw;
 			};
 		};
@@ -206,13 +206,13 @@ try
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
 			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 		}
 		catch
 		{
 			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 			throw;
 		};
 		return $saxExecutable;

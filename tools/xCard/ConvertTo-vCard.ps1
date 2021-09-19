@@ -70,8 +70,8 @@ begin
 	$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 
 	$saxProcessor = & $PSScriptRoot/../xslt/Get-XSLTProcessor.ps1 `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 	$saxCompiler = $saxProcessor.NewXsltCompiler();
@@ -92,7 +92,7 @@ begin
 	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTExecutable.ps1' ) `
 		-saxCompiler $saxCompiler `
 		-Path 'xslt\ConvertTo-vCard.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {

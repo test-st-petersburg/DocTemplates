@@ -72,5 +72,5 @@ $null = $parameters.Remove( 'Destination' );
 
 & $PSScriptRoot/ConvertTo-vCard.ps1 @parameters `
 | Out-File -LiteralPath $Destination -Encoding utf8 `
-	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+	-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );

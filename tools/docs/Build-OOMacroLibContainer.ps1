@@ -50,7 +50,7 @@ begin
 			'xslt/OODocumentProcessor/oo-writer.xslt', `
 			'xslt/OODocumentProcessor/oo-macrolib.xslt' ) `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
@@ -87,12 +87,12 @@ process
 					Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
 				};
 				Remove-Item -LiteralPath $DestinationContainerPath -Recurse -Force `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 			};
 			New-Item -Path $DestinationContainerPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 			| Out-Null;
 
 			$saxTransform = $saxExecutable.Load30();

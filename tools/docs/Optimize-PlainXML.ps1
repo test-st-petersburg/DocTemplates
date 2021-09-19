@@ -31,7 +31,7 @@ begin
 			'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 			'xslt/OODocumentProcessor/oo-document.xslt' ) `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
@@ -70,14 +70,14 @@ process
 			Write-Verbose 'Transformation done';
 
 			Get-ChildItem -Path $FormatterTempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		}
 		finally
 		{
 			Remove-Item -Path $FormatterTempXMLFolder -Recurse `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 
 	};

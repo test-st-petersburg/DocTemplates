@@ -37,7 +37,7 @@ begin
 			'xslt/OODocumentProcessor/oo-writer.xslt', `
 			'xslt/OODocumentProcessor/oo-macrolib.xslt' ) `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
@@ -57,12 +57,12 @@ process
 				Write-Error -Message "Destination library path ""$DestinationLibraryPath"" exists.";
 			};
 			Remove-Item -Path $DestinationLibraryPath -Recurse -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 		New-Item -Path $DestinationLibraryPath -ItemType Directory `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 		| Out-Null;
 
 		$saxTransform = $saxExecutable.Load30();
@@ -91,3 +91,4 @@ process
 		Write-Verbose "Macros library $LibraryName is ready in ""$DestinationLibraryPath"".";
 	};
 };
+

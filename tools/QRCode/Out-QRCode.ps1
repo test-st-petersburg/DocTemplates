@@ -37,13 +37,13 @@ begin
 	$QRCoderPackage = Get-Package -Name 'QRCoder' `
 		-ProviderName NuGet `
 		-SkipDependencies `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	$LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
 		-ChildPath 'lib\net40\QRCoder.dll';
 	Add-Type -Path $LibPath `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 	[QRCoder.QRCodeGenerator] $QRGenerator = [QRCoder.QRCodeGenerator]::new();
 }

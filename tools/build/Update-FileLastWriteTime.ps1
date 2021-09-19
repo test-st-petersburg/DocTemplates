@@ -32,13 +32,13 @@ elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )
 		if ( -not ( Test-Path -LiteralPath $FilePath ) )
 		{
 			$null = New-Item -ItemType File -Path $FilePath `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
+				-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters['WhatIf'] -eq $true );
 		};
 		$null = Set-ItemProperty -LiteralPath $FilePath -Name LastWriteTime -Value ( Get-Date ) `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
-			-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters.WhatIf.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
+			-WhatIf:( $PSCmdlet.MyInvocation.BoundParameters['WhatIf'] -eq $true );
 	};
 };

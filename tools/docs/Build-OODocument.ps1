@@ -53,7 +53,7 @@ begin
 			'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
 			'xslt/OODocumentProcessor/oo-document.xslt' ) `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
@@ -68,8 +68,8 @@ process
 		if ( -not ( Test-Path -Path $DestinationPath ) )
 		{
 			New-Item -Path $DestinationPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 			| Out-Null;
 		};
 		#endregion
@@ -85,15 +85,15 @@ process
 				Write-Error -Message "Preprocessed XML files path ""$PreprocessedXMLPath"" exists.";
 			};
 			Remove-Item -Path $PreprocessedXMLPath -Recurse -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 		# TODO: workaround for https://saxonica.plan.io/issues/4644
 		'', 'Basic', 'Configurations2'  `
 		| ForEach-Object {
 			$null = New-Item -Path ( Join-Path -Path $PreprocessedXMLPath -ChildPath $_ ) -ItemType Directory -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 
 		$saxTransform = $saxExecutable.Load30();
@@ -140,8 +140,8 @@ process
 						'preprocess' )
 				);
 				Get-ChildItem -Path $TempXMLPath | Copy-Item -Destination $PreprocessedXMLPath -Recurse -Force `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 				Write-Verbose 'Preprocessing done';
 				Get-ChildItem -Path $TempXMLFolder | Remove-Item -Recurse -Force;
 			};
@@ -166,21 +166,21 @@ process
 					$null = New-Item -Path $DestinationBinFileDirectory -ItemType Directory -Force;
 				};
 				Copy-Item -LiteralPath $SourceBinFilePath -Destination $DestinationBinFilePath -Force `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 			};
 			if ( Test-Path -Path $BinaryFilesManifest )
 			{
 				Remove-Item -Path $BinaryFilesManifest `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 			};
 
 			#endregion
 
 			Get-ChildItem -Path $PreprocessedXMLPath | Copy-Item -Destination $TempXMLPath -Recurse `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 			#region удаление форматирования из XML файлов
 
@@ -231,28 +231,28 @@ process
 					-Filter 'mimetype' `
 					-Format Zip `
 					-CompressionLevel None `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 				Get-ChildItem -Path $TempXMLPath -File -Recurse `
 					-Exclude 'mimetype' `
 				| Compress-7Zip -ArchiveFileName $TempZIPFileName -Append `
 					-Format Zip `
 					-CompressionLevel Normal -CompressionMethod Deflate `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 				Move-Item -Path $TempZIPFileName `
 					-Destination ( Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $Path -Leaf ) ) `
-					-Force:( $PSCmdlet.MyInvocation.BoundParameters.Force.IsPresent -eq $true ) `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+					-Force:( $PSCmdlet.MyInvocation.BoundParameters['Force'] -eq $true ) `
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 			}
 			finally
 			{
 				if ( Test-Path -Path $TempZIPFileName )
 				{
 					Remove-Item -Path $TempZIPFileName `
-						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-						-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+						-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 				};
 			};
 
@@ -262,8 +262,8 @@ process
 		finally
 		{
 			Remove-Item -Path $TempXMLPath -Recurse `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 
 	};

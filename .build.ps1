@@ -268,8 +268,8 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile | & $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	$OOOptimizeTaskName = "Optimize-$documentName";
@@ -281,11 +281,11 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
 		$localOOXMLFolder | & $OptimizePlainXMLPath `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	$OOUnpackAndOptimizeTaskName = "UnpackAndOptimize-$documentName";
@@ -346,8 +346,8 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 
 		$SourceLibFolder | & $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	$BuildLibContainerTaskName = "BuildLibContainer-$LibName";
@@ -379,8 +379,8 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 
 		& $BuildOOMacroLibContainerPath -LiteralPath $LibFolder -Destination $LibContainerPath -Force `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 };
 
@@ -420,14 +420,14 @@ foreach ( $SourceURIFile in $SourceURIsFiles )
 		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
 		{
 			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 			| Out-Null;
 		};
 
 		$SourceURL | & $OutQRCodePath -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 };
@@ -466,15 +466,15 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		if ( -not ( Test-Path -Path $DestinationVCardPath ) )
 		{
 			New-Item -Path $DestinationVCardPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 			| Out-Null;
 		};
 
 		& $OutVCardPath -LiteralPath $SourceXCardFile -Destination $vCardFile `
 			-Compatibility 'Android' -Minimize `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	task $BuildTaskName `
@@ -489,15 +489,15 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
 		{
 			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 			| Out-Null;
 		};
 
 		Get-Content -LiteralPath $vCardFile -Raw `
 		| & $OutQRCodePath -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 };
 
@@ -542,19 +542,19 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 		if ( Test-Path -Path $marker )
 		{
 			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	task $BuildTaskName `
@@ -595,19 +595,19 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 		if ( Test-Path -Path $marker )
 		{
 			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
 		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
 			-Version $Version `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	task $BuildTaskName `
