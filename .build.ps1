@@ -239,6 +239,9 @@ param(
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
+$BuildParameters = $PSBoundParameters;
+
+[System.String] $RepoRootPath = ( Get-Location ).Path;
 [System.String] $MarkerFileName = '.dirstate';
 
 #region задачи распаковки и оптимизации .ott файлов в XML
@@ -315,80 +318,39 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
+	Invoke-Build Clean -File .\src\basic\MacroLibs.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationLibrariesPath $DestinationLibrariesPath `
+		-DestinationLibContainersPath $DestinationLibContainersPath `
+		-SourceLibrariesPath $SourceLibrariesPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
 #region сборка библиотек макросов
 
-$BuildLibrariesTasks = @();
-$BuildLibContainersTasks = @();
-foreach ( $sourceLibFolder in $SourceLibrariesFolder )
-{
-	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
-	$BuildTaskName = "BuildLib-$LibName";
-	$BuildLibrariesTasks += $BuildTaskName;
-	$prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-	$target = Join-Path -Path $DestinationLibrariesPath -ChildPath $LibName;
-	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
-	$targetFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
-	);
-	$targetFiles = @( $scriptsLibFile ) + $targetFiles;
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs $targetFiles `
-	{
-		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
-
-		$SourceLibFolder | & $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
-
-	$BuildLibContainerTaskName = "BuildLibContainer-$LibName";
-	$BuildLibContainersTasks += $BuildLibContainerTaskName;
-	# $prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-
-	$targetContainer = Join-Path -Path $DestinationLibContainersPath -ChildPath $LibName;
-	$targetContainerBasic = Join-Path -Path $targetContainer -ChildPath 'Basic';
-	$targetContainerScriptsFile = Join-Path -Path $targetContainerBasic -ChildPath 'script-lc.xml';
-	$targetContainerBasicLib = Join-Path -Path $targetContainerBasic -ChildPath $LibName;
-	$targetContainerScriptsLibFile = Join-Path -Path $targetContainerBasicLib -ChildPath 'script-lb.xml';
-	$targetContainerFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
-	);
-	$targetContainerMeta = Join-Path -Path $targetContainer -ChildPath 'META-INF';
-	$targetContainerManifest = Join-Path -Path $targetContainerMeta -ChildPath 'manifest.xml';
-
-	task $BuildLibContainerTaskName `
-		-Inputs $targetFiles `
-		-Outputs ( ( $targetContainerManifest, $targetContainerScriptsLibFile, $targetContainerScriptsFile ) `
-			+ $targetContainerFiles	) `
-		-Job $BuildTaskName, `
-	{
-		$LibFolder = ( Split-Path -Path $Inputs[0] -Parent );
-		$LibContainerMeta = $Outputs[0];
-		$LibContainerPath = ( Split-Path -Path ( Split-Path -Path $LibContainerMeta -Parent ) -Parent );
-
-		& $BuildOOMacroLibContainerPath -LiteralPath $LibFolder -Destination $LibContainerPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
+# Synopsis: Создаёт библиотеки макросов Open Office
+task BuildLibs {
+	Invoke-Build BuildLibs -File .\src\basic\MacroLibs.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationLibrariesPath $DestinationLibrariesPath `
+		-DestinationLibContainersPath $DestinationLibContainersPath `
+		-SourceLibrariesPath $SourceLibrariesPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 };
 
-# Synopsis: Создаёт библиотеки макросов Open Office
-task BuildLibs $BuildLibrariesTasks;
-
 # Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
-task BuildLibContainers $BuildLibContainersTasks;
+task BuildLibContainers {
+	Invoke-Build BuildLibContainers -File .\src\basic\MacroLibs.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationLibrariesPath $DestinationLibrariesPath `
+		-DestinationLibContainersPath $DestinationLibContainersPath `
+		-SourceLibrariesPath $SourceLibrariesPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+};
 
 #endregion
 

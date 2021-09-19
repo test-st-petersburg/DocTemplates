@@ -20,6 +20,11 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+### Изменено
+
+- выделены сценарии сборки библиотек и их контейнеров
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+
 ### Исправлено
 
 - fix XSLT.resources.xsltPackages paths

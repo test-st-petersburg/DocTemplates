@@ -8,29 +8,23 @@
 
 #Requires -Version 5.0
 
-[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true, DefaultParameterSetName = 'Path' )]
+[CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
-	# пути к папкам с исходными файлами библиотек (возможны символы подстановки)
-	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true, ParameterSetName = 'Path' )]
-	[System.String[]]
-	$Path,
-
-	# пути к папкам с исходными файлами библиотек
-	[Parameter( Mandatory = $true, ParameterSetName = 'LiteralPath' )]
-	[System.String[]]
+	# пути к папке с исходными файлами библиотек
+	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
+	[Alias( 'Path' )]
+	[System.String]
 	$LiteralPath,
 
 	# путь к контейнеру библиотеки
-	# (непосредственно к контейнеру библиотеки, либо к каталогу, в котором будет создан контейнер, если использован ключ Container)
 	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
 	$Destination,
 
-	# Destination указывает путь непосредственно к контейнеру библиотеки без указания этого ключа
-	# либо к каталогу, в котором будет создан контейнер, если использован ключ
-	[Parameter()]
-	[Switch]
-	$Container,
+	# имя библиотеки
+	[Parameter( Mandatory = $true, Position = 2, ValueFromPipeline = $false )]
+	[System.String]
+	$Name,
 
 	# перезаписать существующие каталоги и файлы
 	[Parameter()]
@@ -41,6 +35,8 @@ param(
 begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
+	Set-StrictMode -Version Latest;
 
 	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
 		-PackagePath ( `
@@ -56,72 +52,54 @@ process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	if ( $PSCmdlet.ParameterSetName -eq 'Path' )
-	{
-		$LiteralPath = @( $Path | Resolve-Path | Select-Object -ExpandProperty Path );
-	}
-	[bool] $DestinationIsContainer = $Container;
-	if ( $LiteralPath.Count -gt 1 )
-	{
-		$DestinationIsContainer = $true;
-	};
-	foreach ( $sourceLiteralPath in $LiteralPath )
-	{
-		$LibraryName = Split-Path -Path $sourceLiteralPath -Leaf;
+	Set-StrictMode -Version Latest;
 
-		if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) )
+	$LibraryName = $Name;
+
+	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) )
+	{
+		$DestinationContainerPath = $Destination;
+		if ( Test-Path -Path $DestinationContainerPath )
 		{
-			if ( $DestinationIsContainer )
+			if ( -not $Force )
 			{
-				$DestinationContainerPath = Join-Path -Path $Destination -ChildPath $LibraryName;
-			}
-			else
-			{
-				$DestinationContainerPath = $Destination;
+				Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
 			};
-
-			if ( Test-Path -Path $DestinationContainerPath )
-			{
-				if ( -not $Force )
-				{
-					Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
-				};
-				Remove-Item -LiteralPath $DestinationContainerPath -Recurse -Force `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-			};
-			New-Item -Path $DestinationContainerPath -ItemType Directory `
+			Remove-Item -LiteralPath $DestinationContainerPath -Recurse -Force `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
-			| Out-Null;
-
-			$saxTransform = $saxExecutable.Load30();
-			$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
-
-			# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-			[System.Uri] $BaseUri = ( [System.Uri] ( $sourceLiteralPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
-			Write-Verbose "Source base URI: $( $BaseUri )";
-
-			# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-			[System.Uri] $BaseOutputURI = ( [System.Uri] ( $DestinationContainerPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
-			$saxTransform.BaseOutputURI = $BaseOutputURI;
-			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
-
-			$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
-			$Params.Add(
-				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'source-directory' ),
-				[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
-			);
-			$saxTransform.SetInitialTemplateParameters( $Params, $false );
-
-			$null = $saxTransform.CallTemplate(
-				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
-					'build-macro-library-container' )
-			);
-
-			Write-Verbose "Macros library $LibraryName container is ready in ""$DestinationContainerPath"".";
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
+		New-Item -Path $DestinationContainerPath -ItemType Directory `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
+		| Out-Null;
+
+		$saxTransform = $saxExecutable.Load30();
+		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
+
+		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+		[System.Uri] $BaseUri = ( [System.Uri] ( $LiteralPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		Write-Verbose "Source base URI: $( $BaseUri )";
+
+		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
+		[System.Uri] $BaseOutputURI = ( [System.Uri] ( $DestinationContainerPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		$saxTransform.BaseOutputURI = $BaseOutputURI;
+		Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
+
+		$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
+		$Params.Add(
+			[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				'source-directory' ),
+			[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+		);
+		$saxTransform.SetInitialTemplateParameters( $Params, $false );
+
+		$null = $saxTransform.CallTemplate(
+			[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+				'build-macro-library-container' )
+		);
+
+		Write-Verbose "Macros library $LibraryName container is ready in ""$DestinationContainerPath"".";
 	};
 
 };

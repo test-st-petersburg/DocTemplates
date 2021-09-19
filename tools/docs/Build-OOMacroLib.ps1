@@ -10,14 +10,20 @@
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
 	# путь к папке с исходными файлами
-	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true )]
+	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
+	[Alias( 'Path' )]
 	[System.String]
-	$Path,
+	$LiteralPath,
 
 	# путь к папке, в которой будет создана библиотека макросов Open Office
 	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
-	$DestinationPath,
+	$Destination,
+
+	# имя библиотеки
+	[Parameter( Mandatory = $true, Position = 2, ValueFromPipeline = $false )]
+	[System.String]
+	$Name,
 
 	# перезаписать существующие каталоги и файлы
 	[Parameter()]
@@ -28,6 +34,8 @@ param(
 begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+
+	Set-StrictMode -Version Latest;
 
 	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
 		-PackagePath ( `
@@ -43,12 +51,14 @@ process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$LibraryName = Split-Path -Path $Path -Leaf;
+	Set-StrictMode -Version Latest;
+
+	$LibraryName = $Name;
 
 	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library from source directory" ) )
 	{
 
-		$DestinationLibraryPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
+		$DestinationLibraryPath = $Destination;
 
 		if ( Test-Path -Path $DestinationLibraryPath )
 		{
@@ -67,7 +77,7 @@ process
 
 		$saxTransform = $saxExecutable.Load30();
 
-		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
+		[System.String] $BaseUri = ( [System.Uri] ( $LiteralPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		$saxTransform.BaseOutputURI = (
@@ -80,6 +90,10 @@ process
 			[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 				'source-directory' ),
 			[Saxon.Api.XdmAtomicValue]::new( $BaseUri )
+		);
+		$Params.Add(
+			[Saxon.Api.QName]::new( 'http://openoffice.org/2000/library', 'name' ),
+			[Saxon.Api.XdmAtomicValue]::new( $LibraryName )
 		);
 		$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
