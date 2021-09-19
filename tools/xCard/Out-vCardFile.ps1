@@ -70,7 +70,7 @@ $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 $parameters = $PSCmdlet.MyInvocation.BoundParameters;
 $null = $parameters.Remove( 'Destination' );
 
-. ( Join-Path -Path $PSScriptRoot -ChildPath '.\ConvertTo-vCard.ps1' ) @parameters `
+& $PSScriptRoot/ConvertTo-vCard.ps1 @parameters `
 | Out-File -LiteralPath $Destination -Encoding utf8 `
 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );

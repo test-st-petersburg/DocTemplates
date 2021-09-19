@@ -19,7 +19,7 @@ begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTExecutable.ps1' ) `
+	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
 		-PackagePath ( `
 			'xslt/system/uri.xslt', `
 			'xslt/system/fix-saxon.xslt', `

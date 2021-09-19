@@ -69,7 +69,7 @@ begin
 	$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xsd/xCard.xsd' );
 	$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 
-	$saxProcessor = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTProcessor.ps1' ) `
+	$saxProcessor = & $PSScriptRoot/../xslt/Get-XSLTProcessor.ps1 `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 
