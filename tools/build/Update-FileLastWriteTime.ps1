@@ -22,7 +22,7 @@ if ( $PSCmdlet.ParameterSetName -eq 'Path' )
 	$null = $parameters.Remove( 'Path' );
 	$Path | ForEach-Object {
 		$FilePath = ( Resolve-Path -Path $_ ).Path;
-		. $PSCmdlet.MyInvocation.MyCommand -LiteralPath $FilePath @parameters;
+		& $PSCmdlet.MyInvocation.MyCommand -LiteralPath $FilePath @parameters;
 	};
 }
 elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )

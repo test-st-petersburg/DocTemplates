@@ -103,7 +103,7 @@ process
 		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
 		$null = $parameters.Remove( 'Path' );
 		$Path | Resolve-Path | Select-Object -ExpandProperty Path | ForEach-Object {
-			. $PSCmdlet.MyInvocation.MyCommand -LiteralPath $_ @parameters;
+			& $PSCmdlet.MyInvocation.MyCommand -LiteralPath $_ @parameters;
 		};
 	}
 	elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )
@@ -112,7 +112,7 @@ process
 		$null = $parameters.Remove( 'LiteralPath' );
 		$xCard = [System.Xml.XmlDocument]::new();
 		$xCard.Load( $LiteralPath );
-		. $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
+		& $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
 	}
 	elseif ( $PSCmdlet.ParameterSetName -eq 'Xml' )
 	{

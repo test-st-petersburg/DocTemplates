@@ -35,7 +35,7 @@ BeforeAll {
 }
 
 BeforeAll {
-	. $PSScriptRoot/../Prepare-ODFValidator.ps1;
+	& $PSScriptRoot/../Prepare-ODFValidator.ps1;
 	[System.String] $ODFValidatorPath = ( Join-Path -Path $PSScriptRoot -ChildPath '../java/dependency' );
 	[System.String] $ODFValidatorJarPath = ( Get-ChildItem -LiteralPath $ODFValidatorPath -Filter 'ODFValidator-*.jar' -File )[0].FullName;
 }

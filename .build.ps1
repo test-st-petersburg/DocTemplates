@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.0
+#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 #Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
@@ -265,7 +265,7 @@ foreach ( $OOFile in $DestinationTemplateFile )
 
 	task $OOUnpackTaskName -Inputs @( $OOFile ) -Outputs @( $marker ) -Job $OORemoveSourcesTaskName, {
 		$localOOFile = $Inputs[0];
-		$localOOFile | . $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
+		$localOOFile | & $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
@@ -279,11 +279,11 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
-		$localOOXMLFolder | . $OptimizePlainXMLPath `
+		$localOOXMLFolder | & $OptimizePlainXMLPath `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -LiteralPath $marker `
+		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -344,7 +344,7 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 	{
 		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
 
-		$SourceLibFolder | . $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
+		$SourceLibFolder | & $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -423,7 +423,7 @@ foreach ( $SourceURIFile in $SourceURIsFiles )
 			| Out-Null;
 		};
 
-		$SourceURL | . $OutQRCodePath -FilePath $DestinationQRCodeFile `
+		$SourceURL | & $OutQRCodePath -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -469,7 +469,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 			| Out-Null;
 		};
 
-		. $OutVCardPath -LiteralPath $SourceXCardFile -Destination $vCardFile `
+		& $OutVCardPath -LiteralPath $SourceXCardFile -Destination $vCardFile `
 			-Compatibility 'Android' -Minimize `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
@@ -493,7 +493,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		};
 
 		Get-Content -LiteralPath $vCardFile -Raw `
-		| . $OutQRCodePath -FilePath $DestinationQRCodeFile `
+		| & $OutQRCodePath -FilePath $DestinationQRCodeFile `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -544,13 +544,13 @@ foreach ( $documentXMLFolder in $SourceTemplatesFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
+		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
 			-TempPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -LiteralPath $marker `
+		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
@@ -597,13 +597,13 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 		};
 		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
+		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
 			-TempPath $PreprocessedDocumentsPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -LiteralPath $marker `
+		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
 	};
