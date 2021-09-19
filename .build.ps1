@@ -1,4 +1,4 @@
-#Requires -Version 5.0
+﻿#Requires -Version 5.0
 #Requires -Modules InvokeBuild
 #Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
@@ -373,9 +373,11 @@ foreach ( $sourceLibFolder in $SourceLibrariesFolder )
 			+ $targetContainerFiles	) `
 		-Job $BuildTaskName, `
 	{
-		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
+		$LibFolder = ( Split-Path -Path $Inputs[0] -Parent );
+		$LibContainerMeta = $Outputs[0];
+		$LibContainerPath = ( Split-Path -Path ( Split-Path -Path $LibContainerMeta -Parent ) -Parent );
 
-		$LibFolder | . $BuildOOMacroLibContainerPath -DestinationPath $DestinationLibContainersPath -Force `
+		& $BuildOOMacroLibContainerPath -LiteralPath $LibFolder -Destination $LibContainerPath -Force `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
