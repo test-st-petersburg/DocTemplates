@@ -74,9 +74,11 @@
 		<xsl:accept component="function" names="fix:doc" visibility="private"/>
 	</xsl:use-package>
 
-	<xsl:param name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select="true()"/>
-	<xsl:param name="p:embed-linked-libraries" as="xs:boolean" static="yes" select="true()"/>
-	<xsl:param name="p:embed-linked-templates" as="xs:boolean" static="yes" select="true()"/>
+	<xsl:param name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select=" true() "/>
+	<xsl:param name="p:embed-linked-libraries" as="xs:boolean" static="yes" select=" true() "/>
+	<xsl:param name="p:embed-linked-templates" as="xs:boolean" static="yes" select=" true() "/>
+
+	<xsl:param name="p:linked-libraries-uri" as="xs:anyURI" static="no" select=" xs:anyURI( iri-to-uri( '../../../output/basic/' ) ) "/>
 
 	<?region препроцессирование документа ?>
 
@@ -280,12 +282,11 @@
 	>
 		<xsl:assert test="exists( @library:name )" select=" 'Library name must be specified.' "/>
 		<xsl:variable name="library:name" as="xs:string" select=" @library:name "/>
-		<!-- TODO: путь к собранным библиотекам макросов вынести в константы, а лучше - в параметры -->
 		<xsl:variable name="xlink:href" as="xs:anyURI" select="
 			if ( exists( @xlink:href ) )
 				then @xlink:href
 				else resolve-uri(
-					'../../../output/basic/' || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
+					$p:linked-libraries-uri || iri-to-uri( $library:name ) || '/' || $p:basic-script-lib-uri,
 					base-uri()
 				)
 		"/>
