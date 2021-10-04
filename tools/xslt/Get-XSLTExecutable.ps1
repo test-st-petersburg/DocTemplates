@@ -49,13 +49,13 @@ Function Write-CompilerWarningAndErrors
 	[int] $ErrorsCount = 0;
 	foreach ( $Error in $ErrorList )
 	{
-		if ( $Error.ModuleUri.LocalPath.Length -eq 0 )
+		if ( $Error.ModuleUri )
 		{
-			[System.Uri] $ModuleUriAux = $ModuleUri;
+			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
 		}
 		else
 		{
-			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
+			[System.Uri] $ModuleUriAux = $ModuleUri;
 		};
 		if ( $Error.isWarning )
 		{
