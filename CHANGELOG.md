@@ -26,6 +26,8 @@
   [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
 - выделены сценарии сборки QR кодов для URI
   [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки QR кодов для xCard/vCard
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
 
 ### Исправлено
 

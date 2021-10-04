@@ -111,13 +111,6 @@ param(
 			Join-Path -Path $SourcePath -ChildPath 'QRCodes\URIs'
 		) ),
 
-	# пути к .url файлам для генерации QR кодов
-	[System.String[]]
-	$SourceURIsFiles = ( property SourceURIsFiles @(
-			$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -File -Filter '*.url' | Select-Object -ExpandProperty FullName
-		) ),
-
 	# путь к временной папке со сгенерированными изображениями QR кодов
 	[System.String]
 	$DestinationQRCodesPath = ( property DestinationQRCodesPath (
@@ -136,11 +129,10 @@ param(
 			Join-Path -Path $SourcePath -ChildPath 'QRCodes\xCards'
 		) ),
 
-	# пути к .url файлам для генерации QR кодов
-	[System.String[]]
-	$SourceXCardsFiles = ( property SourceXCardsFiles @(
-			$SourceXCardPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -File -Filter '*.xml' | Select-Object -ExpandProperty FullName
+	# путь к временной папке со сгенерированными изображениями QR кодов для URI
+	[System.String]
+	$DestinationQRCodesVCardPath = ( property DestinationQRCodesVCardPath (
+			Join-Path -Path $DestinationQRCodesPath -ChildPath 'vCards'
 		) ),
 
 	# путь к временной папке со сгенерированными vCard
@@ -187,18 +179,6 @@ param(
 	[System.String]
 	$BuildOODocumentPath = ( property BuildOODocumentPath (
 			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OODocument.ps1'
-		) ),
-
-	# путь к папке с инструментами для документов
-	[System.String]
-	$vCardToolsPath = ( property vCardToolsPath (
-			Join-Path -Path $ToolsPath -ChildPath 'xCard'
-		) ),
-
-	# путь к инструменту подготовки QR кодов
-	[System.String]
-	$OutVCardPath = ( property OutVCardPath (
-			Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1'
 		) ),
 
 	# состояние окна Open Office при открытии документа
@@ -313,6 +293,13 @@ task Clean {
 		-SourceQRCodesURIPath $SourceURIsPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	Invoke-Build Clean -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationQRCodesVCardPath $DestinationQRCodesVCardPath `
+		-DestinationVCardPath $DestinationVCardPath `
+		-SourceQRCodesXCardPath $SourceXCardPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
@@ -354,67 +341,27 @@ task BuildUriQRCodes {
 # 	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
 # 	-Job $JobBuildUriQRCode;
 
-$BuildVCardQRCodesTasks = @();
-foreach ( $SourceXCardFile in $SourceXCardsFiles )
-{
-	$cardName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceXCardFile );
-	$QRCodeName = "$cardName.png";
-	$BuildTaskName = "Build-$QRCodeName";
-	$BuildVCardQRCodesTasks += $BuildTaskName;
-	$prerequisites = $SourceXCardFile;
-	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $QRCodeName;
-	$vCardName = "$cardName.vcf";
-	$BuildVCardTaskName = "Build-$vCardName";
-	$vCardTarget = Join-Path -Path $DestinationVCardPath -ChildPath $vCardName;
-
-	task $BuildVCardTaskName `
-		-Inputs $prerequisites `
-		-Outputs $vCardTarget `
-	{
-		$vCardFile = $Outputs;
-		$SourceXCardFile = $Inputs[0];
-
-		Write-Verbose "Generate vCard `"$vCardFile`" from xCard `"$SourceXCardFile`"";
-		if ( -not ( Test-Path -Path $DestinationVCardPath ) )
-		{
-			New-Item -Path $DestinationVCardPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
-			| Out-Null;
-		};
-
-		& $OutVCardPath -LiteralPath $SourceXCardFile -Destination $vCardFile `
-			-Compatibility 'Android' -Minimize `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $vCardTarget `
-		-Outputs $target `
-		-Jobs $BuildVCardTaskName,
-	{
-		$DestinationQRCodeFile = $Outputs;
-		$vCardFile = $Inputs[0];
-
-		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from vCard `"$vCardFile`"";
-		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
-		{
-			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
-			| Out-Null;
-		};
-
-		Get-Content -LiteralPath $vCardFile -Raw `
-		| & $OutQRCodePath -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
+# Synopsis: Создаёт vCard из xCard
+task BuildVCards {
+	Invoke-Build BuildVCards -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationQRCodesVCardPath $DestinationQRCodesVCardPath `
+		-DestinationVCardPath $DestinationVCardPath `
+		-SourceQRCodesXCardPath $SourceXCardPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
-task BuildVCardQRCodes $BuildVCardQRCodesTasks;
+task BuildVCardQRCodes {
+	Invoke-Build BuildVCardQRCodes -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationQRCodesVCardPath $DestinationQRCodesVCardPath `
+		-DestinationVCardPath $DestinationVCardPath `
+		-SourceQRCodesXCardPath $SourceXCardPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+};
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
