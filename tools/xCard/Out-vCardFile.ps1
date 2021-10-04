@@ -65,6 +65,7 @@ Param(
 	$Minimize
 )
 
+Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSCmdlet.MyInvocation.BoundParameters;

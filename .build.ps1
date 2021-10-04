@@ -124,6 +124,12 @@ param(
 			Join-Path -Path $TempPath -ChildPath 'QRCodes'
 		) ),
 
+	# путь к временной папке со сгенерированными изображениями QR кодов для URI
+	[System.String]
+	$DestinationQRCodesURIPath = ( property DestinationQRCodesURIPath (
+			Join-Path -Path $DestinationQRCodesPath -ChildPath 'URIs'
+		) ),
+
 	# путь к папке с xCard .xml файлами для генерации QR кодов
 	[System.String]
 	$SourceXCardPath = ( property SourceXCardPath (
@@ -181,30 +187,6 @@ param(
 	[System.String]
 	$BuildOODocumentPath = ( property BuildOODocumentPath (
 			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OODocument.ps1'
-		) ),
-
-	# путь к инструменту сборки библиотек макрокоманд
-	[System.String]
-	$BuildOOMacroLibPath = ( property BuildOOMacroLibPath (
-			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLib.ps1'
-		) ),
-
-	# путь к инструменту сборки контейнеров библиотек макрокоманд
-	[System.String]
-	$BuildOOMacroLibContainerPath = ( property BuildOOMacroLibContainerPath (
-			Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
-		) ),
-
-	# путь к папке с инструментами для документов
-	[System.String]
-	$QRCodeToolsPath = ( property QRCodeToolsPath (
-			Join-Path -Path $ToolsPath -ChildPath 'QRCode'
-		) ),
-
-	# путь к инструменту подготовки QR кодов
-	[System.String]
-	$OutQRCodePath = ( property OutQRCodePath (
-			Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1'
 		) ),
 
 	# путь к папке с инструментами для документов
@@ -325,10 +307,14 @@ task Clean {
 		-SourceLibrariesPath $SourceLibrariesPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	Invoke-Build Clean -File .\src\QRCodes\URIs\QRCodes.URI.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationQRCodesURIPath $DestinationQRCodesURIPath `
+		-SourceQRCodesURIPath $SourceURIsPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
-
-#region сборка библиотек макросов
 
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs {
@@ -352,57 +338,21 @@ task BuildLibContainers {
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 };
 
-#endregion
-
-#region генерация QR кодов
-
-$BuildUriQRCodesTasks = @();
-foreach ( $SourceURIFile in $SourceURIsFiles )
-{
-	$UriName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceURIFile );
-	$UriQRCodeName = "$UriName.png";
-	$BuildTaskName = "BuildLib-$UriQRCodeName";
-	$BuildUriQRCodesTasks += $BuildTaskName;
-	$prerequisites = $SourceURIFile;
-	$target = Join-Path -Path $DestinationQRCodesPath -ChildPath $UriQRCodeName;
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs $target `
-	{
-		$DestinationQRCodeFile = $Outputs;
-		$SourceUriFile = $Inputs[0];
-
-		Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceUriFile`"";
-		$SourceURL = Get-Content -LiteralPath $SourceUriFile `
-		| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
-		| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
-		Write-Verbose "Source URL `"$SourceURL`"";
-
-		if ( -not ( Test-Path -Path $DestinationQRCodesPath ) )
-		{
-			New-Item -Path $DestinationQRCodesPath -ItemType Directory `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
-			| Out-Null;
-		};
-
-		$SourceURL | & $OutQRCodePath -FilePath $DestinationQRCodeFile `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
-
+# Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
+task BuildUriQRCodes {
+	Invoke-Build BuildUriQRCodes -File .\src\QRCodes\URIs\QRCodes.URI.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationQRCodesURIPath $DestinationQRCodesURIPath `
+		-SourceQRCodesURIPath $SourceURIsPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 };
 
 # TODO: временно. Найти другое решение для размещения QR кодов в документах
-task 'Build-org-site-in-ott.png' `
-	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
-	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
-	-Job $JobBuildUriQRCode;
-
-# Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
-# task BuildUriQRCodes @( $BuildUriQRCodesTasks, 'Build-org-site-in-ott.png' );
-task BuildUriQRCodes $BuildUriQRCodesTasks;
+# task 'Build-org-site-in-ott.png' `
+# 	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
+# 	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
+# 	-Job $JobBuildUriQRCode;
 
 $BuildVCardQRCodesTasks = @();
 foreach ( $SourceXCardFile in $SourceXCardsFiles )
@@ -468,8 +418,6 @@ task BuildVCardQRCodes $BuildVCardQRCodesTasks;
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
-
-#endregion
 
 #region сборка шаблонов
 

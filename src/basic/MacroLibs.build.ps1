@@ -8,7 +8,7 @@ param(
 	[System.String[]]
 	$Tasks,
 
-	# путь к папке с генерируемыми файлами
+	# путь к корневой папке репозитория
 	[System.String]
 	$RepoRootPath = ( . {
 			if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )

@@ -63,6 +63,7 @@ Param(
 
 begin
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[System.Xml.Schema.XmlSchemaSet] $Schemas = [System.Xml.Schema.XmlSchemaSet]::new();
@@ -89,13 +90,14 @@ begin
 		( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
 	);
 
-	$saxExecutable = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\..\xslt\Get-XSLTExecutable.ps1' ) `
+	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
 		-saxCompiler $saxCompiler `
-		-Path 'xslt\ConvertTo-vCard.xslt' `
+		-Path 'xslt/ConvertTo-vCard.xslt' `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	if ( $PSCmdlet.ParameterSetName -eq 'Path' )
@@ -111,6 +113,7 @@ process
 		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
 		$null = $parameters.Remove( 'LiteralPath' );
 		$xCard = [System.Xml.XmlDocument]::new();
+		Write-Verbose "Преобразование xCard файла '$LiteralPath' в vCard.";
 		$xCard.Load( $LiteralPath );
 		& $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
 	}
