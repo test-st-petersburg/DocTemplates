@@ -32,6 +32,7 @@ Param(
 
 begin
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$QRCoderPackage = Get-Package -Name 'QRCoder' `
@@ -49,6 +50,7 @@ begin
 }
 process
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode( $Input,
@@ -60,15 +62,7 @@ process
 	$QRCode = [QRCoder.PngByteQRCode]::new( $QRCodeData );
 	$ImageData = $QRCode.GetGraphic( $Width );
 
-	[System.String] $FullFilePath;
-	if ( [System.IO.Path]::IsPathRooted( $FilePath ) )
-	{
-		$FullFilePath = $FilePath;
-	}
-	else
-	{
-		$FullFilePath = Join-Path -Path ( ( Get-Location -PSProvider FileSystem ).Path ) -ChildPath $FilePath;
-	};
+	[System.String] $FullFilePath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( $FilePath );
 	if ( $PSCmdlet.ShouldProcess( $FullFilePath, 'Write QRCode to file' ) )
 	{
 		[System.IO.File]::WriteAllBytes( $FullFilePath, $ImageData );
