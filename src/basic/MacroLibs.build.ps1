@@ -6,41 +6,13 @@
 param(
 	[Parameter( Position = 0 )]
 	[System.String[]]
-	$Tasks,
-
-	# путь к корневой папке репозитория
-	[System.String]
-	$RepoRootPath = ( . {
-			if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
-			{
-				( Resolve-Path -Path "$PSScriptRoot/../.." ).Path
-			}
-			else
-			{
-				( Resolve-Path -Path "$( ( Get-Location ).Path )/../.." ).Path
-			};
-		}
-	),
-
-	# путь к папке с библиотеками макросов
-	[System.String]
-	$DestinationLibrariesPath = 'output/basic',
-
-	# путь к папке с контейнерами библиотек макросов
-	[System.String]
-	$DestinationLibContainersPath = 'tmp/basic',
-
-	# путь к папке с исходными файлами библиотек макросов
-	[System.String]
-	$SourceLibrariesPath = 'src/basic'
+	$Tasks
 )
 
 Set-StrictMode -Version Latest;
-
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSBoundParameters;
-$parameters['RepoRootPath'] = $RepoRootPath;
 
 if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
 {
@@ -48,10 +20,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-if ( -not [System.IO.Path]::IsPathRooted( $SourceLibrariesPath ) )
-{
-	$SourceLibrariesPath = ( Join-Path -Path $RepoRootPath -ChildPath $SourceLibrariesPath -Resolve );
-};
+. $PSScriptRoot/../common.build.shared.ps1
 
 [System.String[]] $BuildScripts = @(
 	$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |

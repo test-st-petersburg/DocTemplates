@@ -13,32 +13,14 @@ if ( -not ( Test-Path variable:TemplateName ) -or ( [System.String]::IsNullOrEmp
 	$TemplateName = Split-Path -Path $TemplateDir -Leaf;
 };
 
-if ( -not [System.IO.Path]::IsPathRooted( $DestinationTemplatesPath ) )
-{
-	$DestinationTemplatesPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$DestinationTemplatesPath" );
-};
-[System.String] $DestinationTemplatePath = ( Join-Path -Path $DestinationTemplatesPath -ChildPath $TemplateName );
-
-if ( -not [System.IO.Path]::IsPathRooted( $PreprocessedTemplatesPath ) )
-{
-	$PreprocessedTemplatesPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$PreprocessedTemplatesPath" );
-};
-[System.String] $PreprocessedTemplatePath = ( Join-Path -Path $PreprocessedTemplatesPath -ChildPath $TemplateName );
-
-if ( -not [System.IO.Path]::IsPathRooted( $SourceTemplatesPath ) )
-{
-	$SourceTemplatesPath = ( Join-Path -Path $RepoRootPath -ChildPath $SourceTemplatesPath -Resolve );
-};
-[System.String] $SourceTemplatePath = ( Join-Path -Path $TemplateDir -ChildPath 'src' -Resolve );
-
-if ( -not [System.IO.Path]::IsPathRooted( $LibrariesPath ) )
-{
-	$LibrariesPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$LibrariesPath" );
-};
-
 . $PSScriptRoot/../common.build.shared.ps1
 
-$prerequisites = @( Get-ChildItem -Path $SourceTemplatePath -File -Recurse -Exclude $MarkerFileName );
+[System.String] $DestinationTemplatePath = ( Join-Path -Path $DestinationTemplatesPath -ChildPath $TemplateName );
+[System.String] $PreprocessedTemplatePath = ( Join-Path -Path $PreprocessedTemplatesPath -ChildPath $TemplateName );
+[System.String] $SourceTemplatePath = ( Join-Path -Path $TemplateDir -ChildPath 'src' -Resolve );
+
+
+$sources = @( Get-ChildItem -Path $SourceTemplatePath -File -Recurse -Exclude $MarkerFileName );
 $marker = Join-Path -Path $SourceTemplatePath -ChildPath $MarkerFileName;
 $targetFiles = @( $DestinationTemplatePath, $marker );
 
@@ -54,7 +36,7 @@ $JobBuildTemplate = {
 	};
 	& $BuildOODocumentPath -LiteralPath $sourcePath -Destination $destFile -Force `
 		-PreprocessedPath $PreprocessedTemplatePath `
-		-LibrariesPath $LibrariesPath `
+		-LibrariesPath $DestinationLibrariesPath `
 		-Version $Version `
 		-WarningAction Continue `
 		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `

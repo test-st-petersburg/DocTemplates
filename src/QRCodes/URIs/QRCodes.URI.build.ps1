@@ -6,36 +6,13 @@
 param(
 	[Parameter( Position = 0 )]
 	[System.String[]]
-	$Tasks,
-
-	# путь к корневой папке репозитория
-	[System.String]
-	$RepoRootPath = ( . {
-			if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
-			{
-				( Resolve-Path -Path "$PSScriptRoot/../../.." ).Path
-			}
-			else
-			{
-				( Resolve-Path -Path "$( ( Get-Location ).Path )/../../.." ).Path
-			};
-		}
-	),
-
-	# путь к папке с QR кодами для URI
-	[System.String]
-	$DestinationQRCodesURIPath = 'tmp/QRCodes/URIs',
-
-	# путь к папке с исходными файлами для генерации QR кодов с URI
-	[System.String]
-	$SourceQRCodesURIPath = 'src/QRCodes/URIs'
+	$Tasks
 )
 
 Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSBoundParameters;
-$parameters['RepoRootPath'] = $RepoRootPath;
 
 if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
 {
@@ -43,26 +20,14 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-if ( -not [System.IO.Path]::IsPathRooted( $DestinationQRCodesURIPath ) )
-{
-	$DestinationQRCodesURIPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$DestinationQRCodesURIPath" );
-};
-
-if ( -not [System.IO.Path]::IsPathRooted( $SourceQRCodesURIPath ) )
-{
-	$SourceQRCodesURIPath = ( Join-Path -Path $RepoRootPath -ChildPath $SourceQRCodesURIPath -Resolve );
-};
-
-[System.String] $ToolsPath = ( Resolve-Path -Path $RepoRootPath/tools ).Path;
-[System.String] $QRCodeToolsPath = ( Resolve-Path -Path $ToolsPath/QRCode ).Path;
-[System.String] $OutQRCodePath = ( Resolve-Path -Path $QRCodeToolsPath/Out-QRCode.ps1 ).Path;
+. $PSScriptRoot/../../common.build.shared.ps1
 
 [System.String[]] $SourceURIsFiles = @(
-	$SourceQRCodesURIPath | Where-Object { Test-Path -Path $_ } |
+	$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
 	Get-ChildItem -File -Filter '*.url' | Select-Object -ExpandProperty FullName
 );
 
-# Synopsis: Удаляет каталоги с временными файлами, собранными библиотеками макрокоманд
+# Synopsis: Удаляет каталоги с временными файлами, подготовленными изображениями QR кодов
 task Clean {
 	Remove-BuildItem $DestinationQRCodesURIPath;
 };
@@ -75,12 +40,12 @@ foreach ( $SourceURIFile in $SourceURIsFiles )
 	$UriName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceURIFile );
 	$UriQRCodeName = "$UriName.png";
 	$BuildTaskName = "Build-$UriQRCodeName";
-	$prerequisites = $SourceURIFile;
+	$sources = $SourceURIFile;
 	$target = Join-Path -Path $DestinationQRCodesURIPath -ChildPath $UriQRCodeName;
 
 	task $BuildTaskName `
 		-Before BuildUriQRCodes `
-		-Inputs $prerequisites `
+		-Inputs $sources `
 		-Outputs $target `
 	{
 		$DestinationQRCodeFile = $Outputs;

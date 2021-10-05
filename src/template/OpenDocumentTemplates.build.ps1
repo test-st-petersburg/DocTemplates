@@ -7,48 +7,13 @@
 param(
 	[Parameter( Position = 0 )]
 	[System.String[]]
-	$Tasks,
-
-	# путь к корневой папке репозитория
-	[System.String]
-	$RepoRootPath = ( . {
-			if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
-			{
-				( Resolve-Path -Path "$PSScriptRoot/../.." ).Path
-			}
-			else
-			{
-				( Resolve-Path -Path "$( ( Get-Location ).Path )/../.." ).Path
-			};
-		}
-	),
-
-	# путь к папке с шаблонами документов
-	[System.String]
-	$DestinationTemplatesPath = 'output/template',
-
-	# путь к папке с препроцессированными файлами шаблонов документов
-	[System.String]
-	$PreprocessedTemplatesPath = 'tmp/template',
-
-	# путь к папке с исходными файлами шаблонов документов
-	[System.String]
-	$SourceTemplatesPath = 'src/template',
-
-	# путь к папке с библиотеками макросов (для внедрения в шаблоны)
-	[System.String]
-	$LibrariesPath = 'output/basic',
-
-	# версия шаблонов и документов
-	[System.String]
-	$Version
+	$Tasks
 )
 
 Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSBoundParameters;
-$parameters['RepoRootPath'] = $RepoRootPath;
 
 if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
 {
@@ -56,10 +21,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-if ( -not [System.IO.Path]::IsPathRooted( $SourceTemplatesPath ) )
-{
-	$SourceTemplatesPath = ( Join-Path -Path $RepoRootPath -ChildPath $SourceTemplatesPath -Resolve );
-};
+. $PSScriptRoot/../common.build.shared.ps1
 
 [System.String[]] $BuildScripts = @(
 	$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
@@ -68,7 +30,7 @@ if ( -not [System.IO.Path]::IsPathRooted( $SourceTemplatesPath ) )
 	Select-Object -ExpandProperty FullName
 );
 
-# Synopsis: Удаляет каталоги с временными файлами, собранными библиотеками макрокоманд
+# Synopsis: Удаляет каталоги с временными файлами, собранными шаблонами документов
 task Clean {
 	foreach ( $BuildScript in $BuildScripts )
 	{
@@ -92,7 +54,5 @@ task BuildAndOpenTemplates {
 		Invoke-Build -Task BuildAndOpenTemplate -File $BuildScript @parameters;
 	};
 };
-
-# TODO: добавить вызов тестов и перенести их в каталоги рядом с build сценариями
 
 task . BuildTemplates;

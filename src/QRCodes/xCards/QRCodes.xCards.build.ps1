@@ -6,40 +6,13 @@
 param(
 	[Parameter( Position = 0 )]
 	[System.String[]]
-	$Tasks,
-
-	# путь к корневой папке репозитория
-	[System.String]
-	$RepoRootPath = ( . {
-			if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
-			{
-				( Resolve-Path -Path "$PSScriptRoot/../../.." ).Path
-			}
-			else
-			{
-				( Resolve-Path -Path "$( ( Get-Location ).Path )/../../.." ).Path
-			};
-		}
-	),
-
-	# путь к папке с QR кодами, содержащими генерируемые визитные карты vCard
-	[System.String]
-	$DestinationQRCodesVCardPath = 'tmp/QRCodes/vCards',
-
-	# путь к папке с файлами vCard
-	[System.String]
-	$DestinationVCardPath = 'tmp/vCards',
-
-	# путь к папке с исходными файлами визитных карт xCard v4
-	[System.String]
-	$SourceQRCodesXCardPath = 'src/QRCodes/xCards'
+	$Tasks
 )
 
 Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSBoundParameters;
-$parameters['RepoRootPath'] = $RepoRootPath;
 
 if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
 {
@@ -47,33 +20,14 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-if ( -not [System.IO.Path]::IsPathRooted( $DestinationVCardPath ) )
-{
-	$DestinationVCardPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$DestinationVCardPath" );
-};
-
-if ( -not [System.IO.Path]::IsPathRooted( $DestinationQRCodesVCardPath ) )
-{
-	$DestinationQRCodesVCardPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( "$RepoRootPath/$DestinationQRCodesVCardPath" );
-};
-
-if ( -not [System.IO.Path]::IsPathRooted( $SourceQRCodesXCardPath ) )
-{
-	$SourceQRCodesXCardPath = ( Join-Path -Path $RepoRootPath -ChildPath $SourceQRCodesXCardPath -Resolve );
-};
-
-[System.String] $ToolsPath = ( Resolve-Path -Path $RepoRootPath/tools ).Path;
-[System.String] $QRCodeToolsPath = ( Resolve-Path -Path $ToolsPath/QRCode ).Path;
-[System.String] $OutQRCodePath = ( Resolve-Path -Path $QRCodeToolsPath/Out-QRCode.ps1 ).Path;
-[System.String] $vCardToolsPath = ( Resolve-Path -Path $ToolsPath/xCard ).Path;
-[System.String] $OutVCardPath = ( Resolve-Path -Path $vCardToolsPath/Out-vCardFile.ps1 ).Path;
+. $PSScriptRoot/../../common.build.shared.ps1
 
 [System.String[]] $SourceXCardsFiles = @(
-	$SourceQRCodesXCardPath | Where-Object { Test-Path -Path $_ } |
+	$SourceXCardPath | Where-Object { Test-Path -Path $_ } |
 	Get-ChildItem -File -Filter '*.xml' | Select-Object -ExpandProperty FullName
 );
 
-# Synopsis: Удаляет каталоги с временными файлами, собранными библиотеками макрокоманд
+# Synopsis: Удаляет каталоги с временными файлами, подготовленными .vcf и изображениями QR кодов
 task Clean {
 	Remove-BuildItem $DestinationVCardPath, $DestinationQRCodesVCardPath;
 };
@@ -89,7 +43,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 	$cardName = [System.IO.Path]::GetFileNameWithoutExtension( $SourceXCardFile );
 	$QRCodeName = "$cardName.png";
 	$BuildTaskName = "Build-$QRCodeName";
-	$prerequisites = $SourceXCardFile;
+	$sources = $SourceXCardFile;
 	$target = Join-Path -Path $DestinationQRCodesVCardPath -ChildPath $QRCodeName;
 	$vCardName = "$cardName.vcf";
 	$BuildVCardTaskName = "Build-$vCardName";
@@ -97,7 +51,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 
 	task $BuildVCardTaskName `
 		-Before BuildVCards `
-		-Inputs $prerequisites `
+		-Inputs $sources `
 		-Outputs $vCardTarget `
 	{
 		$vCardFile = $Outputs;

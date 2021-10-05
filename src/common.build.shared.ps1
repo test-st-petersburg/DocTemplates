@@ -8,14 +8,51 @@ Set-StrictMode -Version Latest;
 
 if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmpty( $RepoRootPath ) ) )
 {
-	[System.String] $RepoRootPath =	( Resolve-Path -Path $PSScriptRoot/../.. ).Path;
+	[System.String] $RepoRootPath =	( Resolve-Path -Path $PSScriptRoot/.. ).Path;
 };
 
-[System.String] $ToolsPath = ( Resolve-Path -Path $RepoRootPath/tools ).Path;
-[System.String] $BuildToolsPath = ( Resolve-Path -Path $ToolsPath/build ).Path;
-[System.String] $UpdateFileLastWriteTimePath = ( Resolve-Path -Path $BuildToolsPath/Update-FileLastWriteTime.ps1 ).Path;
-[System.String] $DocsToolsPath = ( Resolve-Path -Path $ToolsPath/docs ).Path;
-[System.String] $BuildOODocumentPath = ( Resolve-Path -Path $DocsToolsPath/Build-OODocument.ps1 ).Path;
+
+[System.String] $SourcePath = ( Join-Path -Path $RepoRootPath -ChildPath 'src' -Resolve );
+[System.String] $SourceURIsPath = ( Join-Path -Path $SourcePath -ChildPath 'QRCodes/URIs' -Resolve );
+[System.String] $SourceXCardPath = ( Join-Path -Path $SourcePath -ChildPath 'QRCodes/xCards' -Resolve );
+[System.String] $SourceLibrariesPath = ( Join-Path -Path $SourcePath -ChildPath 'basic' -Resolve );
+[System.String] $SourceTemplatesPath = ( Join-Path -Path $SourcePath -ChildPath 'template' -Resolve );
+[System.String] $SourceDocumentsPath = ( Join-Path -Path $SourcePath -ChildPath 'doc' -Resolve );
+
+[System.String] $TempPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tmp' );
+[System.String] $DestinationVCardPath = ( Join-Path -Path $TempPath -ChildPath 'vCards' );
+[System.String] $DestinationQRCodesPath = ( Join-Path -Path $TempPath -ChildPath 'QRCodes' );
+[System.String] $DestinationQRCodesURIPath = ( Join-Path -Path $DestinationQRCodesPath -ChildPath 'URIs' );
+[System.String] $DestinationQRCodesVCardPath = ( Join-Path -Path $DestinationQRCodesPath -ChildPath 'vCards' );
+[System.String] $DestinationLibContainersPath = ( Join-Path -Path $TempPath -ChildPath 'basic' );
+[System.String] $PreprocessedTemplatesPath = ( Join-Path -Path $TempPath -ChildPath 'template' );
+[System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
+
+[System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
+[System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
+[System.String] $DestinationTemplatesPath = ( Join-Path -Path $DestinationPath -ChildPath 'template' );
+[System.String] $DestinationDocumentsPath = ( Join-Path -Path $DestinationPath -ChildPath 'doc' );
+
+[System.String] $TemplatesFilter = '*.ott';
+[System.String] $DocumentsFilter = '*.odt';
+
+
+[System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
+
+[System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
+[System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
+
+[System.String] $DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' -Resolve );
+[System.String] $BuildOOMacroLibPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLib.ps1' -Resolve );
+[System.String] $BuildOOMacroLibContainerPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1' -Resolve );
+[System.String] $BuildOODocumentPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OODocument.ps1' -Resolve );
+[System.String] $ConvertToPlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'ConvertTo-PlainXML.ps1' -Resolve );
+[System.String] $OptimizePlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Optimize-PlainXML.ps1' -Resolve );
+[System.String] $QRCodeToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'QRCode' -Resolve );
+[System.String] $OutQRCodePath = ( Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1' -Resolve );
+
+[System.String] $vCardToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xCard' -Resolve );
+[System.String] $OutVCardPath = ( Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1' -Resolve );
 
 
 # состояние окна приложения при открытии документа
@@ -29,6 +66,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 # 7  Open the application with a minimized window. The active window remains active.
 # 10 Open the application with its window in the default state specified by the application.
 [System.Int16] $WindowState = 10;
+
+[System.String] $Version = ( gitversion /output json /showvariable SemVer );
 
 $JobOpenFile = {
 	$filePath = $Outputs[0];
