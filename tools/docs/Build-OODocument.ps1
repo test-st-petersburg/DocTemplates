@@ -11,20 +11,28 @@
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
 	# путь к папке с xml файлами
-	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true )]
+	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
+	[Alias( 'Path' )]
 	[System.String]
-	$Path,
+	$LiteralPath,
 
 	# путь к папке, в которой будет создан файл Open Office
 	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
-	$DestinationPath,
+	$Destination,
 
 	# путь к папке, в которой будет каталог с препроцессированными XML файлами
 	# перед сборкой документа либо шаблона
 	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
+	[ValidateNotNullOrEmpty()]
 	[System.String]
-	$TempPath = [System.IO.Path]::GetTempPath(),
+	$PreprocessedPath,
+
+	# путь к папке с библиотеками макросов (для внедрения в шаблоны)
+	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
+	[ValidateNotNullOrEmpty()]
+	[System.String]
+	$LibrariesPath,
 
 	# версия файла (для указания в свойствах файла Open Office)
 	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
@@ -39,6 +47,7 @@ param(
 
 begin
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
@@ -57,14 +66,16 @@ begin
 }
 process
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	[System.String]	$FileName = ( Split-Path -Path $Path -Leaf );
+	[System.String]	$FileName = ( Split-Path -Path $Destination -Leaf );
 
-	if ( $PSCmdlet.ShouldProcess( $Path, "Create Open Office document from plain XML directory" ) )
+	if ( $PSCmdlet.ShouldProcess( $LiteralPath, "Create Open Office document from plain XML directory" ) )
 	{
 
 		#region создание каталога назначения
+		[System.String] $DestinationPath = ( Split-Path -Path $Destination -Parent );
 		if ( -not ( Test-Path -Path $DestinationPath ) )
 		{
 			New-Item -Path $DestinationPath -ItemType Directory `
@@ -76,7 +87,16 @@ process
 
 		#region подготовка препроцессирования
 
-		$PreprocessedXMLPath = Join-Path -Path $TempPath -ChildPath $FileName;
+		if ( $PSCmdlet.MyInvocation.BoundParameters.ContainsKey( 'PreprocessedPath' ) )
+		{
+			[System.String] $PreprocessedXMLPath = $PreprocessedPath;
+		}
+		else
+		{
+			[System.String] $PreprocessedXMLPath = Join-Path `
+				-Path ( Join-Path -Path ( [System.IO.Path]::GetTempPath() ) -ChildPath ( [System.IO.Path]::GetRandomFileName() ) ) `
+				-ChildPath $FileName;
+		};
 
 		if ( Test-Path -Path $PreprocessedXMLPath )
 		{
@@ -98,7 +118,7 @@ process
 
 		$saxTransform = $saxExecutable.Load30();
 
-		[System.String] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
+		[System.String] $BaseUri = ( [System.Uri] ( $LiteralPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		#endregion
@@ -117,6 +137,19 @@ process
 			).AbsoluteUri.ToString().Replace(' ', '%20');
 			Write-Verbose "Destination base URI: $( $saxTransform.BaseOutputURI )";
 
+			$StylesheetParams = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
+			if ( $LibrariesPath )
+			{
+				[System.String] $LibrariesUri = ( [System.Uri] ( $LibrariesPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
+				Write-Verbose "Used libraries URI: $( $LibrariesUri )";
+				$StylesheetParams.Add(
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+						'linked-libraries-uri' ),
+					[Saxon.Api.XdmAtomicValue]::new( [System.Uri] ( $LibrariesUri ) )
+				);
+			};
+			$saxTransform.SetStylesheetParameters( $StylesheetParams );
+
 			$Params = [System.Collections.Generic.Dictionary[[Saxon.Api.QName], [Saxon.Api.XdmValue]]]::new();
 			$Params.Add(
 				[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
@@ -133,7 +166,7 @@ process
 			};
 			$saxTransform.SetInitialTemplateParameters( $Params, $false );
 
-			if ( $PSCmdlet.ShouldProcess( $Path, "Preprocess Open Office XML" ) )
+			if ( $PSCmdlet.ShouldProcess( $LiteralPath, "Preprocess Open Office XML" ) )
 			{
 				$null = $saxTransform.CallTemplate(
 					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
@@ -153,9 +186,7 @@ process
 			[System.String] $BinaryFilesManifest = Join-Path -Path $PreprocessedXMLPath -ChildPath 'META-INF/manifest.binary.xml';
 			Select-Xml -LiteralPath $BinaryFilesManifest `
 				-XPath 'manifest:manifest/manifest:file-entry' `
-				-Namespace @{ `
-					'manifest' = 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0';
-			} `
+				-Namespace @{ 'manifest' = 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'; } `
 			| Select-Object -ExpandProperty Node `
 			| ForEach-Object {
 				[System.String] $SourceBinFilePath = ( Join-Path -Path ( ( [System.Uri]( $_.base ) ).LocalPath ) -ChildPath ( $_.'full-path' ) );
@@ -241,7 +272,7 @@ process
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 				Move-Item -Path $TempZIPFileName `
-					-Destination ( Join-Path -Path $DestinationPath -ChildPath ( Split-Path -Path $Path -Leaf ) ) `
+					-Destination $Destination `
 					-Force:( $PSCmdlet.MyInvocation.BoundParameters['Force'] -eq $true ) `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
@@ -250,9 +281,7 @@ process
 			{
 				if ( Test-Path -Path $TempZIPFileName )
 				{
-					Remove-Item -Path $TempZIPFileName `
-						-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-						-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+					Remove-Item -Path $TempZIPFileName;
 				};
 			};
 
@@ -261,9 +290,7 @@ process
 		}
 		finally
 		{
-			Remove-Item -Path $TempXMLPath -Recurse `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+			Remove-Item -Path $TempXMLPath -Recurse;
 		};
 
 	};

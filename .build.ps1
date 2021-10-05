@@ -194,7 +194,7 @@ param(
 	[System.Int16]
 	$OOWindowState = ( property OOWindowState 10 ),
 
-	# версия шаблонов и файлов
+	# версия шаблонов и документов
 	[System.String]
 	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
 )
@@ -300,6 +300,13 @@ task Clean {
 		-SourceQRCodesXCardPath $SourceXCardPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	Invoke-Build Clean -File .\src\template\OpenDocumentTemplates.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationTemplatesPath $DestinationTemplatesPath `
+		-PreprocessedTemplatesPath $PreprocessedTemplatesPath `
+		-SourceTemplatesPath $SourceTemplatesPath `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
@@ -380,56 +387,31 @@ $JobOpenFile = {
 	};
 };
 
-$BuildTemplatesTasks = @();
-$BuildAndOpenTemplatesTasks = @();
-foreach ( $documentXMLFolder in $SourceTemplatesFolder )
-{
-	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentName";
-	$BuildTemplatesTasks += $BuildTaskName;
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
-	$BuildAndOpenTemplatesTasks += $BuildAndOpenTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationTemplatesPath -ChildPath $documentName;
-	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
-
-	$JobBuildTemplate = {
-		$localDestinationFile = $Outputs[0];
-		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker )
-		{
-			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-		};
-		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
-			-TempPath $PreprocessedTemplatesPath `
-			-Version $Version `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate;
-
-	task $BuildAndOpenTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate, $JobOpenFile;
+# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
+task BuildTemplates {
+	Invoke-Build BuildTemplates -File .\src\template\OpenDocumentTemplates.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationTemplatesPath $DestinationTemplatesPath `
+		-PreprocessedTemplatesPath $PreprocessedTemplatesPath `
+		-SourceTemplatesPath $SourceTemplatesPath `
+		-LibrariesPath $DestinationLibrariesPath `
+		-Version $Version `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task BuildTemplates $BuildTemplatesTasks;
-
 # Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpenTemplates $BuildAndOpenTemplatesTasks;
+task BuildAndOpenTemplates {
+	Invoke-Build BuildAndOpenTemplates -File .\src\template\OpenDocumentTemplates.build.ps1 `
+		-RepoRootPath $RepoRootPath `
+		-DestinationTemplatesPath $DestinationTemplatesPath `
+		-PreprocessedTemplatesPath $PreprocessedTemplatesPath `
+		-SourceTemplatesPath $SourceTemplatesPath `
+		-LibrariesPath $DestinationLibrariesPath `
+		-Version $Version `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+};
 
 #endregion
 
@@ -445,19 +427,21 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
 	$target = Join-Path -Path $DestinationDocumentsPath -ChildPath $documentName;
 	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
+	$PreprocessedDocumentPath = Join-Path -Path $PreprocessedDocumentsPath -ChildPath $documentName;
 
 	$JobBuildDocument = {
-		$localDestinationFile = $Outputs[0];
+		$destFile = $Outputs[0];
 		$marker = $Outputs[1];
+		$sourcePath = ( $Inputs | Get-Item | Where-Object -FilterScript { $_.Name -eq 'manifest.xml' } )[0].Directory.FullName | Split-Path -Parent;
 		if ( Test-Path -Path $marker )
 		{
 			Remove-Item -Path $marker `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
-		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | & $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
-			-TempPath $PreprocessedDocumentsPath `
+		& $BuildOODocumentPath -LiteralPath $sourcePath -Destination $destFile -Force `
+			-PreprocessedPath $PreprocessedDocumentPath `
+			-LibrariesPath "$RepoRootPath/output/basic" `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
