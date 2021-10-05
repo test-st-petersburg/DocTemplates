@@ -64,7 +64,7 @@ if ( -not [System.IO.Path]::IsPathRooted( $SourceLibrariesPath ) )
 task Clean {
 	foreach ( $BuildScript in $BuildScripts )
 	{
-		Invoke-Build -Task Clean -File $BuildScript;
+		Invoke-Build -Task Clean -File $BuildScript @parameters;
 	};
 	Remove-BuildItem $DestinationLibrariesPath, $DestinationLibContainersPath;
 };
@@ -73,7 +73,7 @@ task Clean {
 task BuildLibs {
 	foreach ( $BuildScript in $BuildScripts )
 	{
-		Invoke-Build -Task BuildLib -File $BuildScript;
+		Invoke-Build -Task BuildLib -File $BuildScript @parameters;
 	};
 };
 
@@ -81,7 +81,7 @@ task BuildLibs {
 task BuildLibContainers {
 	foreach ( $BuildScript in $BuildScripts )
 	{
-		Invoke-Build -Task BuildLibContainer -File $BuildScript;
+		Invoke-Build -Task BuildLibContainer -File $BuildScript @parameters;
 	};
 };
 
