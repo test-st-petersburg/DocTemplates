@@ -67,6 +67,52 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 # 10 Open the application with its window in the default state specified by the application.
 [System.Int16] $WindowState = 10;
 
+
+Function Get-BuildScript
+{
+	[CmdletBinding( DefaultParameterSetName = 'Path' )]
+	[OutputType( [System.String[]] )]
+	Param(
+		# путь к каталогу, в дочерних каталогах которого будет выполнен поиск скриптов сборки
+		[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $True, ParameterSetName = 'Path', ValueFromPipelineByPropertyName = $true )]
+		[ValidateNotNullOrEmpty()]
+		[SupportsWildcards()]
+		[System.String[]]
+		$Path,
+
+		# путь к каталогу, в дочерних каталогах которого будет выполнен поиск скриптов сборки (без символов подстановки)
+		[Parameter( Mandatory = $True, Position = 0, ParameterSetName = 'LiteralPath', ValueFromPipelineByPropertyName = $true )]
+		[Alias('PSPath')]
+		[ValidateNotNullOrEmpty()]
+		[System.String[]]
+		$LiteralPath,
+
+		# фильтр для поиска сценариев сборки
+		[Parameter( Mandatory = $False )]
+		[System.String]
+		$Filter = '*.build.ps1'
+	)
+
+	switch ( $PSCmdlet.ParameterSetName )
+	{
+		'Path'
+		{
+			$parameters = $PSBoundParameters;
+			$null = $parameters.Remove( 'Path' );
+			$Path | Resolve-Path | ForEach-Object { & $MyInvocation.MyCommand.Name -LiteralPath $_ @parameters };
+		}
+		'LiteralPath'
+		{
+			return @(
+				$LiteralPath | Where-Object { Test-Path -Path $_ } |
+				Get-ChildItem -Directory |
+				Get-ChildItem -File -Filter $Filter |
+				Select-Object -ExpandProperty FullName
+			);
+		}
+	}
+}
+
 [System.String] $Version = ( gitversion /output json /showvariable SemVer );
 
 $JobOpenFile = {

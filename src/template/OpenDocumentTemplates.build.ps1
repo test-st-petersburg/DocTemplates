@@ -23,12 +23,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-[System.String[]] $BuildScripts = @(
-	$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
-	Get-ChildItem -Directory |
-	Get-ChildItem -File -Filter '*.build.ps1' |
-	Select-Object -ExpandProperty FullName
-);
+[System.String[]] $BuildScripts = Get-BuildScript -Path $SourceTemplatesPath;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными шаблонами документов
 task Clean {

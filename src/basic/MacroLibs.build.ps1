@@ -22,12 +22,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-[System.String[]] $BuildScripts = @(
-	$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
-	Get-ChildItem -Directory |
-	Get-ChildItem -File -Filter '*.build.ps1' |
-	Select-Object -ExpandProperty FullName
-);
+[System.String[]] $BuildScripts = Get-BuildScript -Path $SourceLibrariesPath;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными библиотеками макрокоманд
 task Clean {
