@@ -99,7 +99,7 @@ Function Get-BuildScript
 		{
 			$parameters = $PSBoundParameters;
 			$null = $parameters.Remove( 'Path' );
-			$Path | Resolve-Path | ForEach-Object { & $MyInvocation.MyCommand.Name -LiteralPath $_ @parameters };
+			$Path | Resolve-Path | ForEach-Object { & $PSCmdlet.MyInvocation.MyCommand -LiteralPath ( $_.Path ) @parameters };
 		}
 		'LiteralPath'
 		{

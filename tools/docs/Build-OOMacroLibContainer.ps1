@@ -13,6 +13,8 @@ param(
 	# пути к папке с исходными файлами библиотек
 	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
 	[Alias( 'Path' )]
+	[Alias( 'PSPath' )]
+	[ValidateNotNullOrEmpty()]
 	[System.String]
 	$LiteralPath,
 

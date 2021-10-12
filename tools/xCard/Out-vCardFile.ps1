@@ -37,12 +37,18 @@ Param(
 	$xCard,
 
 	# xCard filenames
-	[Parameter( ParameterSetName = 'Path', Mandatory = $True, Position = 0 )]
-	[System.String[]] $Path,
+	[Parameter( Mandatory = $true, Position = 0, ParameterSetName = 'Path' )]
+	[ValidateNotNullOrEmpty()]
+	[SupportsWildcards()]
+	[System.String[]]
+	$Path,
 
 	# xCard single filename
-	[Parameter( ParameterSetName = 'LiteralPath', Mandatory = $true, ValueFromPipeline = $true, Position = 0 )]
-	[System.String] $LiteralPath,
+	[Parameter( Mandatory = $True, Position = 0, ParameterSetName = 'LiteralPath' )]
+	[Alias('PSPath')]
+	[ValidateNotNullOrEmpty()]
+	[System.String]
+	$LiteralPath,
 
 	# vcf file filename
 	[Parameter( Mandatory = $true, Position = 1 )]

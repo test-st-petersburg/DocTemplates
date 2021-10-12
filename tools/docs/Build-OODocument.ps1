@@ -13,6 +13,8 @@ param(
 	# путь к папке с xml файлами
 	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
 	[Alias( 'Path' )]
+	[Alias( 'PSPath' )]
+	[ValidateNotNullOrEmpty()]
 	[System.String]
 	$LiteralPath,
 
