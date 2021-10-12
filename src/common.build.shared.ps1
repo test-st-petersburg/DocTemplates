@@ -113,6 +113,86 @@ Function Get-BuildScript
 	}
 }
 
+Function Get-BuildScriptTag
+{
+	[CmdletBinding()]
+	[OutputType( [System.String] )]
+	Param(
+		# путь к сценарию сборки
+		[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $True )]
+		[Alias('PSPath')]
+		[Alias('Path')]
+		[ValidateNotNullOrEmpty()]
+		[System.String]
+		$LiteralPath
+	)
+
+	Split-Path -Path ( Split-Path -Path $LiteralPath -Parent ) -Leaf;
+}
+
+Function New-BuildSubTask
+{
+	[CmdletBinding( DefaultParameterSetName = 'Path' )]
+	[OutputType()]
+	Param(
+		# задача сборки, которая будет создана, и при выполнении которой будут выполнены те же задачи для указанных сценариев сборки
+		[Parameter( Mandatory = $True, Position = 0, ValueFromPipeline = $True )]
+		[System.String[]]
+		$Tasks,
+
+		# путь к каталогу, в дочерних каталогах которого будет выполнен поиск скриптов сборки
+		[Parameter( Mandatory = $True, Position = 1, ParameterSetName = 'Path' )]
+		[ValidateNotNullOrEmpty()]
+		[SupportsWildcards()]
+		[System.String[]]
+		$Path,
+
+		# путь к каталогу, в дочерних каталогах которого будет выполнен поиск скриптов сборки (без символов подстановки)
+		[Parameter( Mandatory = $True, ParameterSetName = 'LiteralPath' )]
+		[Alias('PSPath')]
+		[ValidateNotNullOrEmpty()]
+		[System.String[]]
+		$LiteralPath,
+
+		# фильтр для поиска сценариев сборки
+		[Parameter( Mandatory = $False, ParameterSetName = 'Path' )]
+		[Parameter( Mandatory = $False, ParameterSetName = 'LiteralPath' )]
+		[System.String]
+		$Filter = '*.build.ps1',
+
+		# пути к сценариям сборки
+		[Parameter( Mandatory = $True, ParameterSetName = 'BuildScripts' )]
+		[ValidateNotNullOrEmpty()]
+		[System.String[]]
+		$BuildScripts
+	)
+
+	switch ( $PSCmdlet.ParameterSetName )
+	{
+		'BuildScripts'
+		{
+			foreach ( $Task in $Tasks )
+			{
+				task -Name $Task;
+
+				foreach ( $BuildScript in $BuildScripts )
+				{
+					task -Name "$Task-$( Get-BuildScriptTag $BuildScript )" `
+						-Before $Task `
+						-Jobs ( [ScriptBlock]::Create( "Invoke-Build -Task '$Task' -File '$BuildScript' @PSBoundParameters;" ) );
+				};
+			};
+		}
+		default
+		{
+			$parameters = $PSBoundParameters;
+			$null = $parameters.Remove( 'Tasks' );
+			& $PSCmdlet.MyInvocation.MyCommand -Tasks $Tasks -BuildScripts ( Get-BuildScript @parameters );
+		}
+	}
+}
+
+
 [System.String] $Version = ( gitversion /output json /showvariable SemVer );
 
 $JobOpenFile = {

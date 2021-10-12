@@ -23,31 +23,12 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-[System.String[]] $BuildScripts = Get-BuildScript -Path $SourceTemplatesPath;
+New-BuildSubTask -Tasks Clean, BuildTemplate, BuildAndOpenTemplate -Path $SourceTemplatesPath;
 
-# Synopsis: Удаляет каталоги с временными файлами, собранными шаблонами документов
 task Clean {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task Clean -File $BuildScript @parameters;
-	};
 	Remove-BuildItem $DestinationTemplatesPath, $PreprocessedTemplatesPath;
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task BuildTemplates {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task BuildTemplate -File $BuildScript @parameters;
-	};
-};
-
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpenTemplates {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task BuildAndOpenTemplate -File $BuildScript @parameters;
-	};
-};
-
+task BuildTemplates BuildTemplate;
+task BuildAndOpenTemplates BuildAndOpenTemplate;
 task . BuildTemplates;

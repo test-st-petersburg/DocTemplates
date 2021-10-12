@@ -22,31 +22,12 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-[System.String[]] $BuildScripts = Get-BuildScript -Path $SourceLibrariesPath;
+New-BuildSubTask -Tasks Clean, BuildLib, BuildLibContainer -Path $SourceLibrariesPath;
 
-# Synopsis: Удаляет каталоги с временными файлами, собранными библиотеками макрокоманд
 task Clean {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task Clean -File $BuildScript @parameters;
-	};
 	Remove-BuildItem $DestinationLibrariesPath, $DestinationLibContainersPath;
 };
 
-# Synopsis: Создаёт библиотеки макросов Open Office
-task BuildLibs {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task BuildLib -File $BuildScript @parameters;
-	};
-};
-
-# Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
-task BuildLibContainers {
-	foreach ( $BuildScript in $BuildScripts )
-	{
-		Invoke-Build -Task BuildLibContainer -File $BuildScript @parameters;
-	};
-};
-
+task BuildLibs BuildLib;
+task BuildLibContainers BuildLibContainer;
 task . BuildLibs, BuildLibContainers;
