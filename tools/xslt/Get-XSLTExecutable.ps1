@@ -32,7 +32,7 @@ Param(
 
 )
 
-Function Write-CompilerWarningAndErrors
+Function Write-CompilerWarningAndError
 {
 	[CmdletBinding()]
 	Param(
@@ -158,7 +158,7 @@ try
 				$saxPackage = $saxCompiler.CompilePackage(
 					( [System.IO.FileStream]::new( $XSLTPackagePath, 'Open' ) )
 				);
-				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
@@ -168,7 +168,7 @@ try
 			}
 			catch
 			{
-				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 				throw;
@@ -182,13 +182,13 @@ try
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
-			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 		}
 		catch
 		{
-			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
 			throw;

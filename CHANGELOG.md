@@ -24,6 +24,14 @@
 
 - fix XSLT.resources.xsltPackages paths
 
+## [2.8.19]
+
+### Исправлено
+
+- устранено замечание по качеству кода:
+  "The cmdlet 'Write-CompilerWarningAndErrors' uses a plural noun.
+  A singular noun should be used instead".
+
 ## [2.8.18]
 
 ### Исправлено
@@ -793,7 +801,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...HEAD
+[2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19
 [2.8.18]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...2.8.18
 [2.8.17]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...2.8.17
 [2.8.16]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.15...2.8.16
