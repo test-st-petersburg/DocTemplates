@@ -36,6 +36,12 @@ param(
 	[System.String]
 	$LibrariesPath,
 
+	# путь к папке с шаблонами (для внедрения в документы)
+	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
+	[ValidateNotNullOrEmpty()]
+	[System.String]
+	$TemplatesPath,
+
 	# версия файла (для указания в свойствах файла Open Office)
 	[Parameter( Mandatory = $false, ValueFromPipeline = $false )]
 	[System.String]
@@ -143,11 +149,21 @@ process
 			if ( $LibrariesPath )
 			{
 				[System.String] $LibrariesUri = ( [System.Uri] ( $LibrariesPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
-				Write-Verbose "Used libraries URI: $( $LibrariesUri )";
+				Write-Verbose "Used libraries URI: $LibrariesUri";
 				$StylesheetParams.Add(
 					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
 						'linked-libraries-uri' ),
 					[Saxon.Api.XdmAtomicValue]::new( [System.Uri] ( $LibrariesUri ) )
+				);
+			};
+			if ( $TemplatesPath )
+			{
+				[System.String] $TemplatesUri = ( [System.Uri] ( $TemplatesPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri.ToString().Replace(' ', '%20');
+				Write-Verbose "Templates URI: $TemplatesUri";
+				$StylesheetParams.Add(
+					[Saxon.Api.QName]::new( 'http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor',
+						'linked-templates-uri' ),
+					[Saxon.Api.XdmAtomicValue]::new( [System.Uri] ( $TemplatesUri ) )
 				);
 			};
 			$saxTransform.SetStylesheetParameters( $StylesheetParams );

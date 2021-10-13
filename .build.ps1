@@ -23,6 +23,7 @@ $parameters = $PSBoundParameters;
 
 [System.String[]] $SourceDocumentsFolder = @(
 	$SourceDocumentsPath | Where-Object { Test-Path -Path $_ } |
+	Get-ChildItem -Directory |
 	Get-ChildItem -Directory -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
 );
 
@@ -160,27 +161,50 @@ $BuildDocsTasks = @();
 $BuildAndOpenDocsTasks = @();
 foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 {
+	Push-Location -LiteralPath $SourceDocumentsPath;
+	try
+	{
+		[System.String] $documentRelativePath = ( Resolve-Path -LiteralPath $documentXMLFolder -Relative );
+	}
+	finally
+	{
+		Pop-Location;
+	};
+	[System.String] $documentTag = $documentRelativePath;
+
 	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentName";
+	$BuildTaskName = "Build-$documentTag";
 	$BuildDocsTasks += $BuildTaskName;
 	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationDocumentsPath -ChildPath $documentName;
+	$target = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+		( Join-Path -Path $DestinationDocumentsPath -ChildPath $documentRelativePath ) );
 	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
 
 	$JobBuildDocument = {
 		$destFile = $Outputs[0];
-		$documentName = ( Split-Path -Path $destFile -Leaf );
 		$marker = $Outputs[1];
 		$sourcePath = ( $Inputs | Get-Item | Where-Object -FilterScript { $_.Name -eq 'manifest.xml' } )[0].Directory.FullName | Split-Path -Parent;
+		Push-Location -LiteralPath $SourceDocumentsPath;
+		try
+		{
+			[System.String] $documentRelativePath = ( Resolve-Path -LiteralPath $sourcePath -Relative );
+		}
+		finally
+		{
+			Pop-Location;
+		};
 		if ( Test-Path -Path $marker )
 		{
 			Remove-Item -Path $marker `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
+		$PreprocessedDocumentPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+			( Join-Path -Path $PreprocessedDocumentsPath -ChildPath $documentRelativePath ) );
 		& $BuildOODocumentPath -LiteralPath $sourcePath -Destination $destFile -Force `
-			-PreprocessedPath ( Join-Path -Path $PreprocessedDocumentsPath -ChildPath $documentName ) `
+			-PreprocessedPath $PreprocessedDocumentPath `
 			-LibrariesPath $DestinationLibrariesPath `
+			-TemplatesPath $PreprocessedTemplatesPath `
 			-Version $Version `
 			-WarningAction Continue `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
@@ -195,7 +219,7 @@ foreach ( $documentXMLFolder in $SourceDocumentsFolder )
 		-Outputs @( $target, $marker ) `
 		-Job BuildTemplates, $JobBuildDocument;
 
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
+	$BuildAndOpenTaskName = "BuildAndOpen-$documentTag";
 	$BuildAndOpenDocsTasks += $BuildAndOpenTaskName;
 
 	task $BuildAndOpenTaskName `

@@ -79,6 +79,7 @@
 	<xsl:param name="p:embed-linked-templates" as="xs:boolean" static="yes" select=" true() "/>
 
 	<xsl:param name="p:linked-libraries-uri" as="xs:anyURI" static="no" select=" xs:anyURI( iri-to-uri( '../../../output/basic/' ) ) "/>
+	<xsl:param name="p:linked-templates-uri" as="xs:anyURI" static="no" select=" xs:anyURI( iri-to-uri( '../../../tmp/template/' ) ) "/>
 
 	<?region препроцессирование документа ?>
 
@@ -317,12 +318,11 @@
 		 match=" meta:template "
 	>
 		<xsl:assert test="exists( @xlink:title )" select=" 'Template name must be specified.' "/>
-		<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
 		<!-- TODO: расширение шаблона документа .ott вынести в константы -->
 		<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
 		<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
 		<xsl:variable name="xlink:href" as="xs:anyURI" select=" resolve-uri(
-			'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/',
+			$p:linked-templates-uri || iri-to-uri( @xlink:title ) || '.ott' || '/',
 			base-uri()
 		) "/>
 		<xsl:call-template name="p:merge-document-files">
@@ -341,9 +341,8 @@
 			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
 			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
 			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
-			<xsl:attribute name="xlink:href" select=" '../template/' || iri-to-uri( @xlink:title ) || '.ott' "/>
+			<xsl:attribute name="xlink:href" select=" '../../template/' || iri-to-uri( @xlink:title ) || '.ott' "/>
 			<xsl:attribute name="xlink:actuate" select=" 'onRequest' "/>
-			<!-- TODO: путь к препроцессированным шаблонам вынести в константы, а лучше - в параметры -->
 			<!-- TODO: расширение шаблона документа .ott вынести в константы -->
 			<!-- TODO: реализовать определение расширения имени шаблона документа исходя из типа документа (.ott подходит только для .odt) -->
 			<!-- TODO: или же использовать @xlink:href, а точнее - только имя файла из него -->
@@ -351,7 +350,7 @@
 				format-dateTime(
 					adjust-dateTime-to-timezone(
 						xs:dateTime( fix:doc( resolve-uri(
-							'../../../tmp/template/' || iri-to-uri( @xlink:title ) || '.ott' || '/meta.xml',
+							$p:linked-templates-uri || iri-to-uri( @xlink:title ) || '.ott' || '/meta.xml',
 							base-uri()
 						) )/office:document-meta/office:meta/dc:date ),
 						xs:dayTimeDuration( 'PT0H' )

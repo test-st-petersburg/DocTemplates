@@ -30,6 +30,9 @@
   [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
 - выделены сценарии шаблонов документов
   [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены отдельные папки для объединения нескольких генерируемых файлов
+  документов
+  [#132](https://github.com/test-st-petersburg/DocTemplates/issues/132)
 
 ### Исправлено
 
