@@ -26,8 +26,13 @@ task Clean {
 	Remove-BuildItem $DestinationLibraryPath, $DestinationLibContainerPath;
 };
 
-task BuildLib -Inputs $sources -Outputs $targetFiles -Job $BuildLibScript;
+macrolib BuildLib -LibName $LibName `
+	-LiteralPath $SourceLibraryPath -Destination $DestinationLibraryPath `
+	-Inputs $sources -Outputs $targetFiles;
 
-task BuildLibContainer -Inputs $targetFiles -Outputs $targetContainerFiles -Job BuildLib, $BuildLibContainerScript;
+macrolibContainer BuildLibContainer -LibName $LibName `
+	-LibPath $DestinationLibraryPath -Destination $DestinationLibContainerPath `
+	-Inputs $targetFiles -Outputs $targetContainerFiles `
+	-Jobs BuildLib;
 
 task . BuildLib, BuildLibContainer;

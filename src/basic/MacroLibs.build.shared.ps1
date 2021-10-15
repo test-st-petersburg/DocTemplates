@@ -42,22 +42,118 @@ $targetContainerFiles = ( $targetContainerManifest, $targetContainerScriptsLibFi
 );
 
 
-$BuildLibScript = {
-	$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
+Set-Alias macrolib Add-BuildMacroLibTask;
 
-	& $BuildOOMacroLibPath -Path $SourceLibFolder -Destination $DestinationLibraryPath -Name $LibName -Force `
-		-WarningAction Continue `
-		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
-		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
-};
+function Add-BuildMacroLibTask
+(
+	[Parameter( Mandatory = $true, Position = 0 )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $Name,
 
-$BuildLibContainerScript = {
-	$LibFolder = ( Split-Path -Path $Inputs[0] -Parent );
-	$LibContainerMeta = $Outputs[0];
-	$LibContainerPath = ( Split-Path -Path ( Split-Path -Path $LibContainerMeta -Parent ) -Parent );
+	[Parameter( Mandatory = $true )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $LibName,
 
-	& $BuildOOMacroLibContainerPath -LiteralPath $LibFolder -Destination $LibContainerPath -Name $LibName -Force `
-		-WarningAction Continue `
-		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
-		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
-};
+	[Parameter( Mandatory = $True )]
+	[Alias('PSPath')]
+	[Alias('Path')]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $LiteralPath,
+
+	[Parameter( Mandatory = $true )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $Destination,
+
+	[Parameter( Mandatory = $true, Position = 1 )]
+	$Inputs,
+
+	[Parameter( Mandatory = $true, Position = 2 )]
+	$Outputs,
+
+	[System.Object[]] $Jobs = @(),
+
+	[System.String[]] $After,
+
+	[System.String[]] $Before,
+
+	$If = -9,
+
+	$Done,
+
+	$Source = $MyInvocation
+)
+{
+	task -Name $Name -Source $Source -Inputs $Inputs -Outputs $Outputs `
+		-If $If -Done $Done -Before $Before -After $After `
+		-Data @{ LibName = $LibName; SourceLibFolder = $LiteralPath; Destination = $Destination; } `
+		-Jobs ( $Jobs + `
+		{
+			& $BuildOOMacroLibPath `
+				-Path $Task.Data.SourceLibFolder `
+				-Destination $Task.Data.Destination `
+				-Name $Task.Data.LibName `
+				-Force `
+				-WarningAction Continue `
+				-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+				-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+		} )
+}
+
+
+Set-Alias macrolibContainer Add-BuildMacroLibContainerTask;
+
+function Add-BuildMacroLibContainerTask
+(
+	[Parameter( Mandatory = $true, Position = 0 )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $Name,
+
+	[Parameter( Mandatory = $true )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $LibName,
+
+	[Parameter( Mandatory = $True )]
+	[Alias('PSPath')]
+	[Alias('Path')]
+	[Alias('LibPath')]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $LiteralPath,
+
+	[Parameter( Mandatory = $true )]
+	[ValidateNotNullOrEmpty()]
+	[System.String] $Destination,
+
+	[Parameter( Mandatory = $true, Position = 1 )]
+	$Inputs,
+
+	[Parameter( Mandatory = $true, Position = 2 )]
+	$Outputs,
+
+	[System.Object[]] $Jobs = @(),
+
+	[System.String[]] $After,
+
+	[System.String[]] $Before,
+
+	$If = -9,
+
+	$Done,
+
+	$Source = $MyInvocation
+)
+{
+	task -Name $Name -Source $Source -Inputs $Inputs -Outputs $Outputs `
+		-If $If -Done $Done -Before $Before -After $After `
+		-Data @{ LibName = $LibName; LibFolder = $LiteralPath; Destination = $Destination; } `
+		-Jobs ( $Jobs + `
+		{
+			& $BuildOOMacroLibContainerPath `
+				-LiteralPath $Task.Data.LibFolder `
+				-Destination $Task.Data.Destination `
+				-Name $Task.Data.LibName `
+				-Force `
+				-WarningAction Continue `
+				-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+				-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+		} )
+}
