@@ -104,131 +104,61 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
-	Invoke-Build Clean -File .\src\basic\MacroLibs.build.ps1 @parameters;
-	Invoke-Build Clean -File .\src\QRCodes\URIs\QRCodes.URI.build.ps1 @parameters;
-	Invoke-Build Clean -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 @parameters;
-	Invoke-Build Clean -File .\src\template\OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs {
-	Invoke-Build BuildLibs -File .\src\basic\MacroLibs.build.ps1 @parameters;
+	Invoke-Build BuildLibs -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
 task BuildLibContainers {
-	Invoke-Build BuildLibContainers -File .\src\basic\MacroLibs.build.ps1 @parameters;
+	Invoke-Build BuildLibContainers -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
 task BuildUriQRCodes {
-	Invoke-Build BuildUriQRCodes -File .\src\QRCodes\URIs\QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build BuildUriQRCodes -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт vCard из xCard
 task BuildVCards {
-	Invoke-Build BuildVCards -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build BuildVCards -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
 task BuildVCardQRCodes {
-	Invoke-Build BuildVCardQRCodes -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build BuildVCardQRCodes -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
 task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
+# Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build)
 task BuildTemplates {
-	Invoke-Build BuildTemplates -File .\src\template\OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build BuildTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
+# Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build) и открывает их
 task BuildAndOpenTemplates {
-	Invoke-Build BuildAndOpenTemplates -File .\src\template\OpenDocumentTemplates.build.ps1 @parameters;
-};
-
-#region сборка документов
-
-$BuildDocsTasks = @();
-$BuildAndOpenDocsTasks = @();
-foreach ( $documentXMLFolder in $SourceDocumentsFolder )
-{
-	Push-Location -LiteralPath $SourceDocumentsPath;
-	try
-	{
-		[System.String] $documentRelativePath = ( Resolve-Path -LiteralPath $documentXMLFolder -Relative );
-	}
-	finally
-	{
-		Pop-Location;
-	};
-	[System.String] $documentTag = $documentRelativePath;
-
-	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentTag";
-	$BuildDocsTasks += $BuildTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
-		( Join-Path -Path $DestinationDocumentsPath -ChildPath $documentRelativePath ) );
-	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
-
-	$JobBuildDocument = {
-		$destFile = $Outputs[0];
-		$marker = $Outputs[1];
-		$sourcePath = ( $Inputs | Get-Item | Where-Object -FilterScript { $_.Name -eq 'manifest.xml' } )[0].Directory.FullName | Split-Path -Parent;
-		Push-Location -LiteralPath $SourceDocumentsPath;
-		try
-		{
-			[System.String] $documentRelativePath = ( Resolve-Path -LiteralPath $sourcePath -Relative );
-		}
-		finally
-		{
-			Pop-Location;
-		};
-		if ( Test-Path -Path $marker )
-		{
-			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-		};
-		$PreprocessedDocumentPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
-			( Join-Path -Path $PreprocessedDocumentsPath -ChildPath $documentRelativePath ) );
-		& $BuildOODocumentPath -LiteralPath $sourcePath -Destination $destFile -Force `
-			-PreprocessedPath $PreprocessedDocumentPath `
-			-LibrariesPath $DestinationLibrariesPath `
-			-TemplatesPath $PreprocessedTemplatesPath `
-			-Version $Version `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildTemplates, $JobBuildDocument;
-
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentTag";
-	$BuildAndOpenDocsTasks += $BuildAndOpenTaskName;
-
-	task $BuildAndOpenTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildTemplates, $JobBuildDocument, $JobOpenFile;
+	Invoke-Build BuildAndOpenTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
-task BuildDocs $BuildDocsTasks;
+task BuildDocs {
+	Invoke-Build BuildDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+}; ;
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build) и открывает их
-task BuildAndOpenDocs $BuildAndOpenDocsTasks;
-
-#endregion
+task BuildAndOpenDocs {
+	Invoke-Build BuildAndOpenDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+};
 
 task Build BuildTemplates, BuildDocs;
 

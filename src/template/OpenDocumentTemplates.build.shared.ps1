@@ -73,7 +73,7 @@ function Add-BuildOpenDocumentTemplateTask
 	$Source = $MyInvocation
 )
 {
-	$taskParams = @{ SourceTemplateFolder = $LiteralPath };
+	$taskParams = @{ SourceTemplatePath = $LiteralPath };
 	if ( $PSBoundParameters.Keys.Contains( 'PreprocessedPath' ) )
 	{
 		$null = $taskParams.Add( 'PreprocessedTemplatePath', $PreprocessedPath );
@@ -91,7 +91,7 @@ function Add-BuildOpenDocumentTemplateTask
 	$taskJobs += `
 	{
 		$destFile = $Outputs[0];
-		& $BuildOODocumentPath -LiteralPath $Task.Data.SourceTemplateFolder -Destination $destFile -Force `
+		& $BuildOODocumentPath -LiteralPath $Task.Data.SourceTemplatePath -Destination $destFile -Force `
 			-PreprocessedPath $Task.Data.PreprocessedTemplatePath `
 			-LibrariesPath $Task.Data.LibrariesPath  `
 			-Version $Task.Data.Version `
