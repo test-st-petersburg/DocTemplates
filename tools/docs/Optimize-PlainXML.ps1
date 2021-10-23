@@ -19,21 +19,19 @@ begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
-		-PackagePath `
-		'xslt/system/uri.xslt', `
-		'xslt/system/fix-saxon.xslt', `
-		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
-		'xslt/optimizer/OOOptimizer.xslt', `
-		'xslt/OODocumentProcessor/oo-writer.xslt', `
-		'xslt/OODocumentProcessor/oo-macrolib.xslt', `
-		'xslt/OODocumentProcessor/oo-merger.xslt', `
-		'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
-		'xslt/OODocumentProcessor/oo-document.xslt' `
+	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
+		-PackagePath ( `
+			'xslt/system/uri.xslt', `
+			'xslt/system/fix-saxon.xslt', `
+			'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+			'xslt/optimizer/OOOptimizer.xslt', `
+			'xslt/OODocumentProcessor/oo-writer.xslt', `
+			'xslt/OODocumentProcessor/oo-macrolib.xslt', `
+			'xslt/OODocumentProcessor/oo-merger.xslt', `
+			'xslt/OODocumentProcessor/oo-preprocessor.xslt', `
+			'xslt/OODocumentProcessor/oo-document.xslt' ) `
 		-Path 'xslt/Transform-PlainXML.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	Pop-Location;
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
@@ -72,14 +70,14 @@ process
 			Write-Verbose 'Transformation done';
 
 			Get-ChildItem -Path $FormatterTempXMLFolder | Copy-Item -Destination $Path -Recurse -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		}
 		finally
 		{
 			Remove-Item -Path $FormatterTempXMLFolder -Recurse `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 
 	};

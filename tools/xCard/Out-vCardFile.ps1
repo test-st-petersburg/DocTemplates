@@ -37,12 +37,18 @@ Param(
 	$xCard,
 
 	# xCard filenames
-	[Parameter( ParameterSetName = 'Path', Mandatory = $True, Position = 0 )]
-	[System.String[]] $Path,
+	[Parameter( Mandatory = $true, Position = 0, ParameterSetName = 'Path' )]
+	[ValidateNotNullOrEmpty()]
+	[SupportsWildcards()]
+	[System.String[]]
+	$Path,
 
 	# xCard single filename
-	[Parameter( ParameterSetName = 'LiteralPath', Mandatory = $true, ValueFromPipeline = $true, Position = 0 )]
-	[System.String] $LiteralPath,
+	[Parameter( Mandatory = $True, Position = 0, ParameterSetName = 'LiteralPath' )]
+	[Alias('PSPath')]
+	[ValidateNotNullOrEmpty()]
+	[System.String]
+	$LiteralPath,
 
 	# vcf file filename
 	[Parameter( Mandatory = $true, Position = 1 )]
@@ -65,20 +71,13 @@ Param(
 	$Minimize
 )
 
+Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 $parameters = $PSCmdlet.MyInvocation.BoundParameters;
 $null = $parameters.Remove( 'Destination' );
 
-Push-Location -Path $PSScriptRoot;
-try
-{
-	.\ConvertTo-vCard.ps1 @parameters `
-	| Out-File -LiteralPath $Destination -Encoding utf8 `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-}
-finally
-{
-	Pop-Location;
-};
+& $PSScriptRoot/ConvertTo-vCard.ps1 @parameters `
+| Out-File -LiteralPath $Destination -Encoding utf8 `
+	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+	-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );

@@ -37,12 +37,18 @@ Param(
 	$xCard,
 
 	# xCard filenames
-	[Parameter( ParameterSetName = 'Path', Mandatory = $True, Position = 0 )]
-	[System.String[]] $Path,
+	[Parameter( Mandatory = $true, Position = 0, ParameterSetName = 'Path' )]
+	[ValidateNotNullOrEmpty()]
+	[SupportsWildcards()]
+	[System.String[]]
+	$Path,
 
 	# xCard single filename
-	[Parameter( ParameterSetName = 'LiteralPath', Mandatory = $true, ValueFromPipeline = $true, Position = 0 )]
-	[System.String] $LiteralPath,
+	[Parameter( Mandatory = $True, Position = 0, ParameterSetName = 'LiteralPath' )]
+	[Alias('PSPath')]
+	[ValidateNotNullOrEmpty()]
+	[System.String]
+	$LiteralPath,
 
 	# Версия формата vCard
 	[Parameter( Mandatory = $False )]
@@ -63,47 +69,41 @@ Param(
 
 begin
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[System.Xml.Schema.XmlSchemaSet] $Schemas = [System.Xml.Schema.XmlSchemaSet]::new();
 	$xCardSchemaPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'xsd/xCard.xsd' );
 	$Schemas.Add( 'urn:ietf:params:xml:ns:vcard-4.0', $xCardSchemaPath ) | Out-Null;
 
-	Push-Location -Path $PSScriptRoot;
-	try
+	$saxProcessor = & $PSScriptRoot/../xslt/Get-XSLTProcessor.ps1 `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+
+	Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
+	$saxCompiler = $saxProcessor.NewXsltCompiler();
+
+	$TransformerNamespace = 'http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard';
+	if ( $Compatibility -eq 'Android' )
 	{
-		$saxProcessor = .\..\xslt\Get-XSLTProcessor.ps1 `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-
-		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
-		$saxCompiler = $saxProcessor.NewXsltCompiler();
-
-		$TransformerNamespace = 'http://github.com/test-st-petersburg/DocTemplates/tools/xCard/xslt/xCard-to-vCard';
-		if ( $Compatibility -eq 'Android' )
-		{
-			$saxCompiler.SetParameter(
-				( [Saxon.Api.QName]::new( $TransformerNamespace, 'max-android-compatibility' ) ),
-				( [Saxon.Api.XdmAtomicValue]::new( $true ) )
-			);
-		};
 		$saxCompiler.SetParameter(
-			( [Saxon.Api.QName]::new( $TransformerNamespace, 'minimize' ) ),
-			( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
+			( [Saxon.Api.QName]::new( $TransformerNamespace, 'max-android-compatibility' ) ),
+			( [Saxon.Api.XdmAtomicValue]::new( $true ) )
 		);
-
-		$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
-			-saxCompiler $saxCompiler `
-			-Path 'xslt\ConvertTo-vCard.xslt' `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	}
-	finally
-	{
-		Pop-Location;
 	};
+	$saxCompiler.SetParameter(
+		( [Saxon.Api.QName]::new( $TransformerNamespace, 'minimize' ) ),
+		( [Saxon.Api.XdmAtomicValue]::new( $Minimize ) )
+	);
+
+	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
+		-saxCompiler $saxCompiler `
+		-Path 'xslt/ConvertTo-vCard.xslt' `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	if ( $PSCmdlet.ParameterSetName -eq 'Path' )
@@ -111,7 +111,7 @@ process
 		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
 		$null = $parameters.Remove( 'Path' );
 		$Path | Resolve-Path | Select-Object -ExpandProperty Path | ForEach-Object {
-			. $PSCmdlet.MyInvocation.MyCommand -LiteralPath $_ @parameters;
+			& $PSCmdlet.MyInvocation.MyCommand -LiteralPath $_ @parameters;
 		};
 	}
 	elseif ( $PSCmdlet.ParameterSetName -eq 'LiteralPath' )
@@ -119,8 +119,9 @@ process
 		$parameters = $PSCmdlet.MyInvocation.BoundParameters;
 		$null = $parameters.Remove( 'LiteralPath' );
 		$xCard = [System.Xml.XmlDocument]::new();
+		Write-Verbose "Преобразование xCard файла '$LiteralPath' в vCard.";
 		$xCard.Load( $LiteralPath );
-		. $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
+		& $PSCmdlet.MyInvocation.MyCommand -xCard $xCard @parameters;
 	}
 	elseif ( $PSCmdlet.ParameterSetName -eq 'Xml' )
 	{

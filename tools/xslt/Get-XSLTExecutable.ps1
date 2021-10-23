@@ -49,13 +49,13 @@ Function Write-CompilerWarningAndError
 	[int] $ErrorsCount = 0;
 	foreach ( $Error in $ErrorList )
 	{
-		if ( $Error.ModuleUri.LocalPath.Length -eq 0 )
+		if ( $Error.ModuleUri )
 		{
-			[System.Uri] $ModuleUriAux = $ModuleUri;
+			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
 		}
 		else
 		{
-			[System.Uri] $ModuleUriAux = $Error.ModuleUri;
+			[System.Uri] $ModuleUriAux = $ModuleUri;
 		};
 		if ( $Error.isWarning )
 		{
@@ -121,17 +121,9 @@ try
 
 	if ( $null -eq $saxCompiler )
 	{
-		Push-Location -Path $PSScriptRoot;
-		try
-		{
-			$saxProcessor = .\Get-XSLTProcessor.ps1 `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		}
-		finally
-		{
-			Pop-Location;
-		};
+		$saxProcessor = . ( Join-Path -Path $PSScriptRoot -ChildPath '.\Get-XSLTProcessor.ps1' -Resolve ) `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 		Write-Verbose 'Создание SAX XSLT 3.0 компилятора.';
 		$saxCompiler = $saxProcessor.NewXsltCompiler();
@@ -139,9 +131,24 @@ try
 
 	$saxProcessor = $saxCompiler.Processor;
 
+	[System.String] $DataRoot = ( Get-Location ).Path;
+	[System.String] $CallingScriptRoot = ( @( Get-PSCallStack )[0].InvocationInfo.PSScriptRoot );
+	if ( -not [System.String]::IsNullOrEmpty( $CallingScriptRoot ) )
+	{
+		$DataRoot = $CallingScriptRoot;
+	};
+
 	if ( $PSCmdlet.MyInvocation.BoundParameters.ContainsKey('DtdPath') )
 	{
-		$XmlResolverWithCachedDTD = [OOXmlResolver]::new( ( ( Resolve-Path -Path $DtdPath ).Path ) );
+		if ( [System.IO.Path]::IsPathRooted( $DtdPath ) )
+		{
+			[System.String] $DtdFullPath = $DtdPath;
+		}
+		else
+		{
+			[System.String] $DtdFullPath = ( Join-Path -Path $DataRoot -ChildPath $DtdPath -Resolve );
+		};
+		$XmlResolverWithCachedDTD = [OOXmlResolver]::new( $DtdFullPath );
 		$saxProcessor.XmlResolver = $XmlResolverWithCachedDTD;
 	};
 	$saxProcessor.SetProperty( 'http://saxon.sf.net/feature/ignoreSAXSourceParser', 'true' );
@@ -149,7 +156,15 @@ try
 
 	foreach ( $Package in $PackagePath )
 	{
-		$XSLTPackagePath = ( Resolve-Path -Path $Package ).Path;
+		if ( [System.IO.Path]::IsPathRooted( $Package ) )
+		{
+			[System.String] $XSLTPackagePath = $Package;
+		}
+		else
+		{
+			[System.String] $XSLTPackagePath = ( Join-Path -Path $DataRoot -ChildPath $Package -Resolve );
+		};
+
 		if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Compile XSLT package' ) )
 		{
 			try
@@ -160,7 +175,7 @@ try
 				);
 				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
 				{
 					$saxCompiler.ImportPackage( $saxPackage );
@@ -170,13 +185,20 @@ try
 			{
 				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
-					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				throw;
 			};
 		};
 	};
 
-	$LiteralPath = ( Resolve-Path -Path $Path ).Path;
+	if ( [System.IO.Path]::IsPathRooted( $Path ) )
+	{
+		[System.String] $LiteralPath = $Path;
+	}
+	else
+	{
+		[System.String] $LiteralPath = ( Join-Path -Path $DataRoot -ChildPath $Path -Resolve );
+	};
 	if ( $PSCmdlet.ShouldProcess( $LiteralPath, 'Компиляция XSLT преобразования' ) )
 	{
 		try
@@ -184,13 +206,13 @@ try
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
 			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 		}
 		catch
 		{
 			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 			throw;
 		};
 		return $saxExecutable;

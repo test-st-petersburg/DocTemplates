@@ -32,23 +32,25 @@ Param(
 
 begin
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	$QRCoderPackage = Get-Package -Name 'QRCoder' `
 		-ProviderName NuGet `
 		-SkipDependencies `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	$LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
 		-ChildPath 'lib\net40\QRCoder.dll';
 	Add-Type -Path $LibPath `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 
 	[QRCoder.QRCodeGenerator] $QRGenerator = [QRCoder.QRCodeGenerator]::new();
 }
 process
 {
+	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
 	[QRCoder.QRCodeData] $QRCodeData = $QRGenerator.CreateQrCode( $Input,
@@ -60,15 +62,7 @@ process
 	$QRCode = [QRCoder.PngByteQRCode]::new( $QRCodeData );
 	$ImageData = $QRCode.GetGraphic( $Width );
 
-	[System.String] $FullFilePath;
-	if ( [System.IO.Path]::IsPathRooted( $FilePath ) )
-	{
-		$FullFilePath = $FilePath;
-	}
-	else
-	{
-		$FullFilePath = Join-Path -Path ( ( Get-Location -PSProvider FileSystem ).Path ) -ChildPath $FilePath;
-	};
+	[System.String] $FullFilePath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( $FilePath );
 	if ( $PSCmdlet.ShouldProcess( $FullFilePath, 'Write QRCode to file' ) )
 	{
 		[System.IO.File]::WriteAllBytes( $FullFilePath, $ImageData );

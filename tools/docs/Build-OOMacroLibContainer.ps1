@@ -10,15 +10,23 @@
 
 [CmdletBinding( ConfirmImpact = 'Low', SupportsShouldProcess = $true )]
 param(
-	# путь к папке библиотеки
-	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $true )]
+	# пути к папке с исходными файлами библиотек
+	[Parameter( Mandatory = $true, Position = 0, ValueFromPipeline = $false )]
+	[Alias( 'Path' )]
+	[Alias( 'PSPath' )]
+	[ValidateNotNullOrEmpty()]
 	[System.String]
-	$Path,
+	$LiteralPath,
 
-	# путь к папке, в которой будет создан контейнер библиотеки
+	# путь к контейнеру библиотеки
 	[Parameter( Mandatory = $true, Position = 1, ValueFromPipeline = $false )]
 	[System.String]
-	$DestinationPath,
+	$Destination,
+
+	# имя библиотеки
+	[Parameter( Mandatory = $true, Position = 2, ValueFromPipeline = $false )]
+	[System.String]
+	$Name,
 
 	# перезаписать существующие каталоги и файлы
 	[Parameter()]
@@ -30,49 +38,49 @@ begin
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	Push-Location -Path $PSScriptRoot;
-	$saxExecutable = .\..\xslt\Get-XSLTExecutable.ps1 `
-		-PackagePath `
-		'xslt/system/uri.xslt', `
-		'xslt/system/fix-saxon.xslt', `
-		'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
-		'xslt/OODocumentProcessor/oo-writer.xslt', `
-		'xslt/OODocumentProcessor/oo-macrolib.xslt' `
+	Set-StrictMode -Version Latest;
+
+	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
+		-PackagePath ( `
+			'xslt/system/uri.xslt', `
+			'xslt/system/fix-saxon.xslt', `
+			'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
+			'xslt/OODocumentProcessor/oo-writer.xslt', `
+			'xslt/OODocumentProcessor/oo-macrolib.xslt' ) `
 		-Path 'xslt/Build-OOMacroLib.xslt' `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true );
-	Pop-Location;
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 }
 process
 {
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$LibraryName = Split-Path -Path $Path -Leaf;
+	Set-StrictMode -Version Latest;
+
+	$LibraryName = $Name;
 
 	if ( $PSCmdlet.ShouldProcess( $LibraryName, "Create Open Office macro library container from library directory" ) )
 	{
-
-		$DestinationContainerPath = Join-Path -Path $DestinationPath -ChildPath $LibraryName;
-
+		$DestinationContainerPath = $Destination;
 		if ( Test-Path -Path $DestinationContainerPath )
 		{
 			if ( -not $Force )
 			{
 				Write-Error -Message "Destination container path ""$DestinationContainerPath"" exists.";
 			};
-			Remove-Item -Path $DestinationContainerPath -Recurse -Force `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			Remove-Item -LiteralPath $DestinationContainerPath -Recurse -Force `
+				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+				-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 		};
 		New-Item -Path $DestinationContainerPath -ItemType Directory `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true ) `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true ) `
 		| Out-Null;
 
 		$saxTransform = $saxExecutable.Load30();
 		$saxTransform.SchemaValidationMode = [Saxon.Api.SchemaValidationMode]::None;
 
 		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
-		[System.Uri] $BaseUri = ( [System.Uri] ( $Path + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
+		[System.Uri] $BaseUri = ( [System.Uri] ( $LiteralPath + [System.IO.Path]::DirectorySeparatorChar ) ).AbsoluteUri;
 		Write-Verbose "Source base URI: $( $BaseUri )";
 
 		# TODO: Решить проблему с использованием [System.Uri]::EscapeUriString
@@ -95,4 +103,5 @@ process
 
 		Write-Verbose "Macros library $LibraryName container is ready in ""$DestinationContainerPath"".";
 	};
+
 };

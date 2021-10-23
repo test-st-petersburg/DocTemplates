@@ -20,6 +20,22 @@
 - добавлена конвертация xCard в vCard версии 4.0
   [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
 
+### Изменено
+
+- выделены сценарии сборки библиотек и их контейнеров
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки QR кодов для URI
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки QR кодов для xCard/vCard
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки шаблонов документов
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены отдельные папки для объединения нескольких генерируемых файлов
+  документов
+  [#132](https://github.com/test-st-petersburg/DocTemplates/issues/132)
+- выделены сценарии сборки документов
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+
 ### Исправлено
 
 - fix XSLT.resources.xsltPackages paths
