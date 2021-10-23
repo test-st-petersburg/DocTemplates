@@ -30,6 +30,17 @@ task BuildLib-TestStPetersburg {
 	Invoke-Build BuildLib -File $SourceLibrariesPath/TestStPetersburg/TestStPetersburg.build.ps1 @parameters;
 };
 
+task Build-rustest.spb.ru.png {
+	Invoke-Build Build-rustest.spb.ru.png -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+};
+
+task rustest.spb.ru.png `
+	-Inputs @( "$DestinationQRCodesURIPath/rustest.spb.ru.png" ) `
+	-Outputs @( "$SourceTemplatePath/Pictures/1000000000000025000000257FD278A9E707D95C.png" ) `
+	-Jobs Build-rustest.spb.ru.png, {
+	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force;
+};
+
 openDocumentTemplate BuildTemplate `
 	-LiteralPath $SourceTemplatePath `
 	-PreprocessedPath $PreprocessedTemplatePath `
@@ -37,7 +48,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-TestStPetersburg;
+	-Jobs BuildLib-TestStPetersburg, rustest.spb.ru.png;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -47,6 +58,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-TestStPetersburg;
+	-Jobs BuildLib-TestStPetersburg, rustest.spb.ru.png;
 
 task . BuildTemplate;

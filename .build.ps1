@@ -126,12 +126,6 @@ task BuildUriQRCodes {
 	Invoke-Build BuildUriQRCodes -File .\src\QRCodes\URIs\QRCodes.URI.build.ps1 @parameters;
 };
 
-# TODO: временно. Найти другое решение для размещения QR кодов в документах
-# task 'Build-org-site-in-ott.png' `
-# 	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
-# 	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
-# 	-Job $JobBuildUriQRCode;
-
 # Synopsis: Создаёт vCard из xCard
 task BuildVCards {
 	Invoke-Build BuildVCards -File .\src\QRCodes\xCards\QRCodes.xCards.build.ps1 @parameters;
