@@ -30,14 +30,23 @@ task BuildLib-TestStPetersburg {
 	Invoke-Build BuildLib -File $SourceLibrariesPath/TestStPetersburg/TestStPetersburg.build.ps1 @parameters;
 };
 
-task BuildTemplate `
+openDocumentTemplate BuildTemplate `
+	-LiteralPath $SourceTemplatePath `
+	-PreprocessedPath $PreprocessedTemplatePath `
+	-LibrariesPath $DestinationLibrariesPath `
+	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Job BuildLib-TestStPetersburg, $JobBuildTemplate;
+	-Jobs BuildLib-TestStPetersburg;
 
-task BuildAndOpenTemplate `
+openDocumentTemplate BuildAndOpenTemplate `
+	-OpenAfterBuild `
+	-LiteralPath $SourceTemplatePath `
+	-PreprocessedPath $PreprocessedTemplatePath `
+	-LibrariesPath $DestinationLibrariesPath `
+	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Job BuildLib-TestStPetersburg, $JobBuildTemplate, $JobOpenFile;
+	-Jobs BuildLib-TestStPetersburg;
 
 task . BuildTemplate;
