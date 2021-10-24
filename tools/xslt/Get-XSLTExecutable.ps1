@@ -32,7 +32,7 @@ Param(
 
 )
 
-Function Write-CompilerWarningAndError
+Function Write-CompilerWarningAndErrors
 {
 	[CmdletBinding()]
 	Param(
@@ -173,7 +173,7 @@ try
 				$saxPackage = $saxCompiler.CompilePackage(
 					( [System.IO.FileStream]::new( $XSLTPackagePath, 'Open' ) )
 				);
-				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
@@ -183,10 +183,10 @@ try
 			}
 			catch
 			{
-				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
-				throw;
+				$PScmdlet.ThrowTerminatingError();
 			};
 		};
 	};
@@ -204,16 +204,16 @@ try
 		try
 		{
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
-			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 		}
 		catch
 		{
-			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndErrors -ErrorList ( $saxCompiler.ErrorList ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
-			throw;
+			$PScmdlet.ThrowTerminatingError();
 		};
 		return $saxExecutable;
 	};
@@ -221,5 +221,5 @@ try
 catch
 {
 	Write-Error -ErrorRecord $_;
-	throw;
+	$PScmdlet.ThrowTerminatingError();
 };
