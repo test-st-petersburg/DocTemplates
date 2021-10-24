@@ -121,6 +121,8 @@ task distclean clean, {
 	Remove-BuildItem $NuGetToolsPath;
 };
 
+task maintainer-clean distclean;
+
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs {
 	Invoke-Build BuildLibs -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
@@ -178,4 +180,8 @@ task Test Build, {
 	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
 };
 
-task . Test;
+task check Test;
+
+task all Build;
+
+task . all;
