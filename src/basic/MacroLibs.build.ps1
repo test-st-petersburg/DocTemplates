@@ -30,7 +30,7 @@ task clean {
 
 task distclean clean;
 
-task pre-build nuget;
+task pre-build nuget, XSLT-tools;
 
 task BuildLibs BuildLib;
 task BuildLibContainers BuildLibContainer;

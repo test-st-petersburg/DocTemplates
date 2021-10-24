@@ -32,6 +32,8 @@ task clean {
 	Remove-BuildItem $DestinationVCardPath, $DestinationQRCodesVCardPath;
 };
 
+task pre-build nuget, QRCodes-tools, XSLT-tools;
+
 # Synopsis: Создаёт vCard из xCard
 task BuildVCards;
 
@@ -53,6 +55,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		-Before BuildVCards `
 		-Inputs $sources `
 		-Outputs $vCardTarget `
+		-Jobs XSLT-tools,
 	{
 		$vCardFile = $Outputs;
 		$SourceXCardFile = $Inputs[0];

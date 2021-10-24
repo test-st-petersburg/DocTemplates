@@ -118,7 +118,7 @@ task distclean clean, {
 	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
-	Remove-BuildItem $NuGetToolsPath;
+	Remove-BuildItem $NuGetToolsPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
 };
 
 task maintainer-clean distclean;

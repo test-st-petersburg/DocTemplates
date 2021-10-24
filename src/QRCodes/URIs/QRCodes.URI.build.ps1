@@ -32,6 +32,8 @@ task clean {
 	Remove-BuildItem $DestinationQRCodesURIPath;
 };
 
+task pre-build nuget, QRCodes-tools;
+
 # Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
 task BuildUriQRCodes;
 

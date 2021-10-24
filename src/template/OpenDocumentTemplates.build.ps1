@@ -31,7 +31,7 @@ task clean {
 
 task distclean clean;
 
-task pre-build nuget;
+task pre-build nuget, XSLT-tools;
 
 task BuildTemplates BuildTemplate;
 task BuildAndOpenTemplates BuildAndOpenTemplate;

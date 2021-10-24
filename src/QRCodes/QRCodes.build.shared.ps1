@@ -10,8 +10,6 @@ task distclean clean, {
 	Remove-BuildItem "$QRCodeToolsPath/packages";
 };
 
-task pre-build nuget, QRCodes-tools;
-
 [System.String] $QRCodePackagesConfig = Join-Path -Path $QRCodeToolsPath -ChildPath 'packages.config';
 [System.String] $OutputLibFiles = @(
 	Select-Xml -LiteralPath $QRCodePackagesConfig `

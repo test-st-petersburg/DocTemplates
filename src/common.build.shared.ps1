@@ -1,4 +1,4 @@
-# Copyright © 2020 Sergei S. Betke
+﻿# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -37,6 +37,9 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $DocumentsFilter = '*.odt';
 
 
+[System.String] $TestsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tests' -Resolve );
+
+
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
 
 [System.String] $NuGetToolsPath = ( Join-Path -Path $ToolsPath -ChildPath '.nuget' );
@@ -44,6 +47,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
+
+[System.String] $XSLTToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xslt' -Resolve );
 
 [System.String] $DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' -Resolve );
 [System.String] $BuildOOMacroLibPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLib.ps1' -Resolve );
@@ -212,8 +217,7 @@ $JobOpenFile = {
 
 
 task nuget `
-	-Inputs @( $MyInvocation.MyCommand.Path ) `
-	-Outputs $NuGetPath `
+	-If { -not ( Test-Path -Path $NuGetPath ) } `
 	-Jobs {
 	if ( -not ( Test-Path -Path $NuGetToolsPath ) )
 	{
@@ -228,3 +232,19 @@ task nuget `
 		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
 };
 
+
+[System.String] $XSLTPackagesConfig = Join-Path -Path $XSLTToolsPath -ChildPath 'packages.config';
+[System.String] $XSLTLibFilePath = (
+	Select-Xml -LiteralPath $XSLTPackagesConfig `
+		-XPath 'packages/package[ @id = "Saxon-HE" ]' |
+	Select-Object -ExpandProperty Node -First 1 |
+	ForEach-Object {
+		"$XSLTToolsPath/packages/$( $_.id ).$( $_.version )/lib/$( $_.targetFramework )/saxon*api*.dll";
+	}
+);
+
+task XSLT-tools `
+	-If { -not ( Test-Path -Path $XSLTLibFilePath ) } `
+	-Jobs nuget, {
+	. $NugetPath restore $XSLTPackagesConfig -PackagesDirectory "$XSLTToolsPath/packages";
+};

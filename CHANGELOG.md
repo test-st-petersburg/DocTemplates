@@ -25,6 +25,9 @@
   [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
 - переименованы задачи сборки в целях соответствия
   [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- сборка для XSLT 3.0 Saxon HE устанавливается с помощью NuGet CLI и
+  packages.config
+  [#161](https://github.com/test-st-petersburg/DocTemplates/issues/161)
 
 ## [2.9.1]
 
