@@ -76,12 +76,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: doc-templates
-          path: "${{ github.workspace }}/output/template/*.ott"
+          path: ${{ github.workspace }}/output/template/*.ott
           if-no-files-found: warn
 
-      - name: Upload .odt files
+      - name: Upload documents
         uses: actions/upload-artifact@v2
         with:
           name: docs
-          path: "${{ github.workspace }}/output/doc/*.odt"
+          path: |
+            ${{ github.workspace }}/output/doc/
+            !${{ github.workspace }}/output/doc/*/.dirstate
           if-no-files-found: warn
