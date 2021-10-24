@@ -14,6 +14,8 @@
 
 - исправлена ошибка при сборке на GitHub (убран параметр Version для build.ps1)
   (GitHub action 'Release to GihHub')
+- устранено замечание по качеству кода Update-FileLastWriteTime.ps1:
+  "Command accepts pipeline input but has not defined a process block".
 
 ## [2.9.0]
 
