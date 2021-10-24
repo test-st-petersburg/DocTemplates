@@ -18,7 +18,9 @@ param(
 	[System.String[]]
 	$DestinationDocFile = @(
 		$DestinationDocumentsPath | Where-Object { Test-Path -Path $_ } |
-		Get-ChildItem -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
+		Get-ChildItem -Directory |
+		Get-ChildItem -Filter $DocumentsFilter |
+		Select-Object -ExpandProperty FullName
 	),
 
 	# путь к папке с инструментами для сборки
