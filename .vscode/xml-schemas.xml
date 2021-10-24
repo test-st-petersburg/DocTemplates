@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+	<uri name="urn:ietf:params:xml:ns:vcard-4.0" uri="../tools/xCard/xsd/xCard.xsd" />
+</catalog>

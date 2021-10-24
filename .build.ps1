@@ -2,201 +2,35 @@
 #Requires -Modules InvokeBuild
 #Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
-param(
-	# путь к папке с генерируемыми файлами
-	[System.String]
-	$DestinationPath = ( property DestinationPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'output' ) ),
+param()
 
-	# путь к папке с .ott файлами
-	[System.String]
-	$DestinationTemplatesPath = ( property DestinationTemplatesPath (
-			Join-Path -Path $DestinationPath -ChildPath 'template'
-		) ),
-
-	# имя .ott шаблона
-	[System.String]
-	$TemplatesFilter = ( property TemplatesFilter '*.ott' ),
-
-	# путь к .ott файлу
-	[System.String[]]
-	$DestinationTemplateFile = ( property DestinationTemplateFile @(
-			$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
-		) ),
-
-	# путь к папке с .odt файлами
-	[System.String]
-	$DestinationDocumentsPath = ( property DestinationDocumentsPath (
-			Join-Path -Path $DestinationPath -ChildPath 'doc'
-		) ),
-
-	# имя .odt шаблона
-	[System.String]
-	$DocumentsFilter = ( property DocumentsFilter '*.odt' ),
-
-	# путь к папке с библиотеками макросов
-	[System.String]
-	$DestinationLibrariesPath = ( property DestinationLibrariesPath (
-			Join-Path -Path $DestinationPath -ChildPath 'basic'
-		) ),
-
-	# путь к папке с генерируемыми файлами, используемыми только для выполнения других задач
-	[System.String]
-	$TempPath = ( property TempPath ( Join-Path -Path ( ( Get-Location ).Path ) -ChildPath 'tmp' ) ),
-
-	# путь к папке с контейнерами библиотек макросов
-	[System.String]
-	$DestinationLibContainersPath = ( property DestinationLibContainersPath (
-			Join-Path -Path $TempPath -ChildPath 'basic'
-		) ),
-
-	# путь к папке временного хранения препроцессированных XML файлов перед сборкой документов и шаблонов
-	[System.String]
-	$PreprocessedTemplatesPath = ( property PreprocessedTemplatesPath (
-			Join-Path -Path $TempPath -ChildPath 'template'
-		) ),
-
-	# путь к папке временного хранения препроцессированных XML файлов перед сборкой документов и шаблонов
-	[System.String]
-	$PreprocessedDocumentsPath = ( property PreprocessedDocumentsPath (
-			Join-Path -Path $TempPath -ChildPath 'doc'
-		) ),
-
-	# путь к папке с исходными файлами
-	[System.String]
-	$SourcePath = ( property SourcePath ( ( Resolve-Path -Path '.\src' ).Path ) ),
-
-	# путь к папке с xml папками .ott файлов
-	[System.String]
-	$SourceTemplatesPath = ( property SourceTemplatesPath (
-			Join-Path -Path $SourcePath -ChildPath 'template'
-		) ),
-
-	# пути к папкам с xml файлами .ott файлов
-	[System.String[]]
-	$SourceTemplatesFolder = ( property SourceTemplatesFolder @(
-			$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
-		) ),
-
-	# путь к папке с xml папками .odt файлов
-	[System.String]
-	$SourceDocumentsPath = ( property SourceDocumentsPath (
-			Join-Path -Path $SourcePath -ChildPath 'doc'
-		) ),
-
-	# пути к папкам с xml файлами .odt файлов
-	[System.String[]]
-	$SourceDocumentsFolder = ( property SourceDocumentsFolder @(
-			$SourceDocumentsPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
-		) ),
-
-	# путь к папке с исходными файлами библиотек макросов
-	[System.String]
-	$SourceLibrariesPath = ( property SourceLibrariesPath (
-			Join-Path -Path $SourcePath -ChildPath 'basic'
-		) ),
-
-	# пути к папкам с "исходными" файлами библиотек макросов
-	[System.String[]]
-	$SourceLibrariesFolder = ( property SourceLibrariesFolder @(
-			$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
-		) ),
-
-	# путь к папке с .url файлами для генерации QR кодов
-	[System.String]
-	$SourceURIsPath = ( property SourceURIsPath (
-			Join-Path -Path $SourcePath -ChildPath 'QRCodes\URIs'
-		) ),
-
-	# пути к .url файлам для генерации QR кодов
-	[System.String[]]
-	$SourceURIsFiles = ( property SourceURIsFiles @(
-			$SourceURIsPath | Where-Object { Test-Path -Path $_ } |
-			Get-ChildItem -Directory -Filter '.url' | Select-Object -ExpandProperty FullName
-		) ),
-
-	# путь к папке с инструментами для сборки
-	[System.String]
-	$ToolsPath = ( property ToolsPath ( ( Resolve-Path -Path '.\tools' ).Path ) ),
-
-	# путь к папке со вспомогательными инструментами
-	[System.String]
-	$BuildToolsPath = ( property BuildToolsPath (
-			Join-Path -Path $ToolsPath -ChildPath 'build'
-		) ),
-
-	# путь к инструменту аналогу touch
-	[System.String]
-	$UpdateFileLastWriteTimePath = ( property UpdateFileLastWriteTimePath (
-			Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1'
-		) ),
-
-	# путь к папке с инструментами для документов
-	[System.String]
-	$DocsToolsPath = ( property DocsToolsPath (
-			Join-Path -Path $ToolsPath -ChildPath 'docs'
-		) ),
-
-	# путь к инструменту распаковки документов в XML
-	[System.String]
-	$ConvertToPlainXMLPath = ( property ConvertToPlainXMLPath (
-			Join-Path -Path $ToolsPath -ChildPath 'ConvertTo-PlainXML.ps1'
-		) ),
-
-	# путь к инструменту оптимизации XML файлов документов
-	[System.String]
-	$OptimizePlainXMLPath = ( property OptimizePlainXMLPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Optimize-PlainXML.ps1'
-		) ),
-
-	# путь к инструменту оптимизации XML файлов документов
-	[System.String]
-	$BuildOODocumentPath = ( property BuildOODocumentPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OODocument.ps1'
-		) ),
-
-	# путь к инструменту сборки библиотек макрокоманд
-	[System.String]
-	$BuildOOMacroLibPath = ( property BuildOOMacroLibPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLib.ps1'
-		) ),
-
-	# путь к инструменту сборки контейнеров библиотек макрокоманд
-	[System.String]
-	$BuildOOMacroLibContainerPath = ( property BuildOOMacroLibContainerPath (
-			Join-Path -Path $ToolsPath -ChildPath 'Build-OOMacroLibContainer.ps1'
-		) ),
-
-	# путь к инструменту подготовки QR кодов
-	[System.String]
-	$OutQRCodePath = ( property OutQRCodePath (
-			Join-Path -Path $ToolsPath -ChildPath 'Out-QRCode.ps1'
-		) ),
-
-	# состояние окна Open Office при открытии документа
-	# https://docs.microsoft.com/en-us/windows/win32/shell/shell-shellexecute
-	# 0  Open the application with a hidden window.
-	# 1  Open the application with a normal window. If the window is minimized or maximized, the system restores it to its original size and position.
-	# 2  Open the application with a minimized window.
-	# 3  Open the application with a maximized window.
-	# 4  Open the application with its window at its most recent size and position. The active window remains active.
-	# 5  Open the application with its window at its current size and position.
-	# 7  Open the application with a minimized window. The active window remains active.
-	# 10 Open the application with its window in the default state specified by the application.
-	[System.Int16]
-	$OOWindowState = ( property OOWindowState 10 ),
-
-	# версия шаблонов и файлов
-	[System.String]
-	$Version = ( property Version ( gitversion /output json /showvariable SemVer ) )
-)
-
+Set-StrictMode -Version Latest;
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-[System.String] $MarkerFileName = '.dirstate';
+$parameters = $PSBoundParameters;
+
+. $PSScriptRoot/src/common.build.shared.ps1
+
+[System.String[]] $DestinationTemplateFile = @(
+	$DestinationTemplatesPath | Where-Object { Test-Path -Path $_ } |
+	Get-ChildItem -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+);
+
+[System.String[]] $SourceTemplatesFolder = @(
+	$SourceTemplatesPath | Where-Object { Test-Path -Path $_ } |
+	Get-ChildItem -Directory -Filter $TemplatesFilter | Select-Object -ExpandProperty FullName
+);
+
+[System.String[]] $SourceDocumentsFolder = @(
+	$SourceDocumentsPath | Where-Object { Test-Path -Path $_ } |
+	Get-ChildItem -Directory |
+	Get-ChildItem -Directory -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
+);
+
+[System.String[]] $SourceLibrariesFolder = @(
+	$SourceLibrariesPath | Where-Object { Test-Path -Path $_ } |
+	Get-ChildItem -Directory | Select-Object -ExpandProperty FullName
+);
 
 #region задачи распаковки и оптимизации .ott файлов в XML
 
@@ -222,11 +56,11 @@ foreach ( $OOFile in $DestinationTemplateFile )
 
 	task $OOUnpackTaskName -Inputs @( $OOFile ) -Outputs @( $marker ) -Job $OORemoveSourcesTaskName, {
 		$localOOFile = $Inputs[0];
-		$localOOFile | . $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
+		$localOOFile | & $ConvertToPlainXMLPath -DestinationPath $SourceTemplatesPath `
 			-Indented `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	$OOOptimizeTaskName = "Optimize-$documentName";
@@ -236,13 +70,13 @@ foreach ( $OOFile in $DestinationTemplateFile )
 		$localOOFile = $Inputs[0];
 		$documentName = $( Split-Path -Path ( $localOOFile ) -Leaf );
 		$localOOXMLFolder = Join-Path -Path $SourceTemplatesPath -ChildPath $documentName;
-		$localOOXMLFolder | . $OptimizePlainXMLPath `
+		$localOOXMLFolder | & $OptimizePlainXMLPath `
 			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -Path $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+		& $UpdateFileLastWriteTimePath -LiteralPath $marker `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};
 
 	$OOUnpackAndOptimizeTaskName = "UnpackAndOptimize-$documentName";
@@ -268,250 +102,71 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 
 #endregion
 
-#region задачи сборки шаблонов, документов, библиотек макросов
-
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task Clean {
+	Invoke-Build Clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build Clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-#region сборка библиотек макросов
-
-$BuildLibrariesTasks = @();
-$BuildLibContainersTasks = @();
-foreach ( $sourceLibFolder in $SourceLibrariesFolder )
-{
-	$LibName = Split-Path -Path ( $sourceLibFolder ) -Leaf;
-	$BuildTaskName = "BuildLib-$LibName";
-	$BuildLibrariesTasks += $BuildTaskName;
-	$prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-	$target = Join-Path -Path $DestinationLibrariesPath -ChildPath $LibName;
-	$scriptsLibFile = Join-Path -Path $target -ChildPath 'script.xlb';
-	$targetFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xba' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $target ) }
-	);
-	$targetFiles = @( $scriptsLibFile ) + $targetFiles;
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs $targetFiles `
-	{
-		$SourceLibFolder = Split-Path -Path $Inputs[0] -Parent;
-
-		$SourceLibFolder | . $BuildOOMacroLibPath -DestinationPath $DestinationLibrariesPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	$BuildLibContainerTaskName = "BuildLibContainer-$LibName";
-	$BuildLibContainersTasks += $BuildLibContainerTaskName;
-	# $prerequisites = @( Get-ChildItem -Path $sourceLibFolder -File -Recurse );
-
-	$targetContainer = Join-Path -Path $DestinationLibContainersPath -ChildPath $LibName;
-	$targetContainerBasic = Join-Path -Path $targetContainer -ChildPath 'Basic';
-	$targetContainerScriptsFile = Join-Path -Path $targetContainerBasic -ChildPath 'script-lc.xml';
-	$targetContainerBasicLib = Join-Path -Path $targetContainerBasic -ChildPath $LibName;
-	$targetContainerScriptsLibFile = Join-Path -Path $targetContainerBasicLib -ChildPath 'script-lb.xml';
-	$targetContainerFiles = @(
-		$prerequisites | Where-Object { $_.Extension -eq '.bas' } `
-		| ForEach-Object { [System.IO.Path]::ChangeExtension( $_.FullName, '.xml' ) } `
-		| ForEach-Object { $_.Replace( $sourceLibFolder, $targetContainerBasicLib ) }
-	);
-	$targetContainerMeta = Join-Path -Path $targetContainer -ChildPath 'META-INF';
-	$targetContainerManifest = Join-Path -Path $targetContainerMeta -ChildPath 'manifest.xml';
-
-	task $BuildLibContainerTaskName `
-		-Inputs $targetFiles `
-		-Outputs ( ( $targetContainerManifest, $targetContainerScriptsLibFile, $targetContainerScriptsFile ) `
-			+ $targetContainerFiles	) `
-		-Job $BuildTaskName, `
-	{
-		$LibFolder = Split-Path -Path $Inputs[0] -Parent;
-
-		$LibFolder | . $BuildOOMacroLibContainerPath -DestinationPath $DestinationLibContainersPath -Force `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-};
-
 # Synopsis: Создаёт библиотеки макросов Open Office
-task BuildLibs $BuildLibrariesTasks;
+task BuildLibs {
+	Invoke-Build BuildLibs -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+};
 
 # Synopsis: Создаёт контейнеры библиотек макросов Open Office для последующей интеграции в шаблоны и документы
-task BuildLibContainers $BuildLibContainersTasks;
-
-#endregion
-
-#region генерация QR кодов
-
-$JobBuildUriQRCode = {
-	$DestinationQRCodeFile = $Outputs[0];
-	$SourceURLFile = $Inputs[0];
-
-	Write-Verbose "Generate QR code file `"$DestinationQRCodeFile`" from `"$SourceURLFile`"";
-	$SourceURL = Get-Content -LiteralPath $SourceURLFile `
-	| Select-String -Pattern '(?<=^URL=\s*).*?(\s*)$'  -AllMatches `
-	| Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[0].Value };
-	Write-Verbose "Source URL `"$SourceURL`"";
-
-	$SourceURL | . $OutQRCodePath -FilePath $DestinationQRCodeFile `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
+task BuildLibContainers {
+	Invoke-Build BuildLibContainers -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
 };
-
-task 'Build-org-site.png' `
-	-Inputs @( ( Join-Path -Path $SourceURIsPath -ChildPath 'org-site.url' ) ) `
-	-Outputs @( ( Join-Path -Path $SourceTemplatesPath -ChildPath 'ОРД ФБУ Тест-С.-Петербург v2.ott\Pictures\1000000000000025000000257FD278A9E707D95C.png' ) ) `
-	-Job $JobBuildUriQRCode;
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
-task BuildURIsQRCodes 'Build-org-site.png';
+task BuildUriQRCodes {
+	Invoke-Build BuildUriQRCodes -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+};
+
+# Synopsis: Создаёт vCard из xCard
+task BuildVCards {
+	Invoke-Build BuildVCards -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+};
+
+# Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
+task BuildVCardQRCodes {
+	Invoke-Build BuildVCardQRCodes -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+};
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
-task BuildQRCodes BuildURIsQRCodes;
+task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
-#endregion
-
-#region сборка шаблонов
-
-$JobOpenFile = {
-	$localDestinationFile = $Outputs[0];
-	$Shell = New-Object -Com 'Shell.Application';
-	$localDestinationFile | Get-Item | ForEach-Object {
-		$verb = 'open';
-		if ( $PSCmdlet.ShouldProcess( $_.FullName, $verb ) )
-		{
-			$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $OOWindowState );
-		};
-	};
+# Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build)
+task BuildTemplates {
+	Invoke-Build BuildTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
-$BuildTemplatesTasks = @();
-$BuildAndOpenTemplatesTasks = @();
-foreach ( $documentXMLFolder in $SourceTemplatesFolder )
-{
-	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentName";
-	$BuildTemplatesTasks += $BuildTaskName;
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
-	$BuildAndOpenTemplatesTasks += $BuildAndOpenTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationTemplatesPath -ChildPath $documentName;
-	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
-
-	$JobBuildTemplate = {
-		$localDestinationFile = $Outputs[0];
-		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker )
-		{
-			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		};
-		$localXMLFolder = @( Join-Path -Path $SourceTemplatesPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationTemplatesPath -Force `
-			-TempPath $PreprocessedTemplatesPath `
-			-Version $Version `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -Path $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate;
-
-	task $BuildAndOpenTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildLibs, BuildQRCodes, $JobBuildTemplate, $JobOpenFile;
-};
-
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build)
-task BuildTemplates $BuildTemplatesTasks;
-
-# Synopsis: Создаёт Open Office файлы из папки с XML файлами (build) и открывает их
-task BuildAndOpenTemplates $BuildAndOpenTemplatesTasks;
-
-#endregion
-
-#region сборка документов
-
-$BuildDocsTasks = @();
-$BuildAndOpenDocsTasks = @();
-foreach ( $documentXMLFolder in $SourceDocumentsFolder )
-{
-	$documentName = $( Split-Path -Path ( $DocumentXMLFolder ) -Leaf );
-	$BuildTaskName = "Build-$documentName";
-	$BuildDocsTasks += $BuildTaskName;
-	$prerequisites = @( Get-ChildItem -Path $documentXMLFolder -File -Recurse -Exclude $MarkerFileName );
-	$target = Join-Path -Path $DestinationDocumentsPath -ChildPath $documentName;
-	$marker = Join-Path -Path $documentXMLFolder -ChildPath $MarkerFileName;
-
-	$JobBuildDocument = {
-		$localDestinationFile = $Outputs[0];
-		$marker = $Outputs[1];
-		if ( Test-Path -Path $marker )
-		{
-			Remove-Item -Path $marker `
-				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-				-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		};
-		$localXMLFolder = @( Join-Path -Path $SourceDocumentsPath -ChildPath ( Split-Path -Path $localDestinationFile -Leaf ) );
-		$localXMLFolder | . $BuildOODocumentPath -DestinationPath $DestinationDocumentsPath -Force `
-			-TempPath $PreprocessedDocumentsPath `
-			-Version $Version `
-			-WarningAction Continue `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-		. $UpdateFileLastWriteTimePath -Path $marker `
-			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters.Verbose.IsPresent -eq $true ) `
-			-Debug:( $PSCmdlet.MyInvocation.BoundParameters.Debug.IsPresent -eq $true );
-	};
-
-	task $BuildTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildTemplates, $JobBuildDocument;
-
-	$BuildAndOpenTaskName = "BuildAndOpen-$documentName";
-	$BuildAndOpenDocsTasks += $BuildAndOpenTaskName;
-
-	task $BuildAndOpenTaskName `
-		-Inputs $prerequisites `
-		-Outputs @( $target, $marker ) `
-		-Job BuildTemplates, $JobBuildDocument, $JobOpenFile;
+# Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build) и открывает их
+task BuildAndOpenTemplates {
+	Invoke-Build BuildAndOpenTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
-task BuildDocs $BuildDocsTasks;
+task BuildDocs {
+	Invoke-Build BuildDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+}; ;
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build) и открывает их
-task BuildAndOpenDocs $BuildAndOpenDocsTasks;
-
-#endregion
+task BuildAndOpenDocs {
+	Invoke-Build BuildAndOpenDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+};
 
 task Build BuildTemplates, BuildDocs;
 
 task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
-#region тестирование собранных шаблонов и файлов
-
+# Synopsis: тестирование собранных шаблонов и файлов
 task Test Build, {
 	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
 };
 
-#endregion
-
 task . Test;
-
-#endregion

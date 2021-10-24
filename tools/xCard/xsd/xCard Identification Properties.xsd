@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-fn">
+		<xsd:sequence>
+			<xsd:element name="fn" type="xcard:parametrized-value-text-with-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the formatted text corresponding to the name of
+						the object the vCard represents.
+
+						**Special notes**:  This property is based on the semantics of the X.520
+						Common Name attribute [CCITT.X520.1988].
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-n">
+		<xsd:sequence>
+			<xsd:element name="n">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the components of the name of the object the
+						vCard represents.
+
+						**Special notes**: The structured property value corresponds, in
+						sequence, to the Family Names (also known as surnames), Given
+						Names, Additional Names, Honorific Prefixes, and Honorific
+						Suffixes.
+						This property is based on the semantics of the X.520 individual
+						name attributes [CCITT.X520.1988].
+						The property SHOULD be present
+						in the vCard object when the name of the object the vCard
+						represents follows the X.520 model.
+
+						**Examples**:
+								N:Public;John;Quinlan;Mr.;Esq.
+								N:Stevenson;John;Philip,Paul;Dr.;Jr.,M.D.,A.C.P.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="parameters" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="xcard:parameters-type">
+										<xsd:sequence>
+											<!-- TODO: порядок параметров не важен -->
+											<xsd:group ref="xcard:param-altid"/>
+											<xsd:group ref="xcard:param-pid"/>
+											<xsd:group ref="xcard:param-pref"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="surname" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									To specify the Family Names (also known as surnames).
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="given" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									To specify the Given Names.
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="additional" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									To specify the Additional Names.
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="prefix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									To specify the Honorific Prefixes.
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="suffix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									To specify the Honorific Suffixes.
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.2 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-nickname">
+		<xsd:sequence>
+			<xsd:element name="nickname" type="xcard:parametrized-value-text-list-with-language">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the text corresponding to the nickname of the
+						object the vCard represents.
+
+						Special note:  The nickname is the descriptive name given instead of
+						or in addition to the one belonging to the object the vCard
+						represents.  It can also be used to specify a familiar form of a
+						proper name specified by the FN or N properties.
+
+						**Examples**:
+								NICKNAME:Robbie
+								NICKNAME:Jim,Jimmie
+								NICKNAME;TYPE=work:Boss
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.3 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-photo">
+		<xsd:sequence>
+			<xsd:element name="photo" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify an image or photograph information that
+						annotates some aspect of the object the vCard represents.
+
+						**Examples**:
+							PHOTO:http://www.example.com/pub/photos/jqpublic.gif
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.4 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-bday">
+		<xsd:sequence>
+			<xsd:element name="bday" type="xcard:parametrized-value-date-or-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the birth date of the object the vCard
+						represents.
+
+						**Examples**:
+								BDAY:19960415
+								BDAY:--0415
+								BDAY;19531015T231000Z
+								BDAY;VALUE=text:circa 1800
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.5 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-anniversary">
+		<xsd:sequence>
+			<xsd:element name="anniversary" type="xcard:parametrized-value-date-or-text">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  The date of marriage, or equivalent, of the object the
+						vCard represents.
+
+						**Examples**:
+								ANNIVERSARY:19960415
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.6 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-gender">
+		<xsd:sequence>
+			<xsd:element name="gender">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify the components of the sex and gender identity of
+						the object the vCard represents.
+
+						**Special notes**:  The components correspond, in sequence, to the sex
+							(biological), and gender identity.  Each component is optional.
+
+						Sex component:  A single letter.  M stands for "male", F stands
+						for "female", O stands for "other", N stands for "none or not
+						applicable", U stands for "unknown".
+
+						Gender identity component:  Free-form text.
+
+						**Examples**:
+							GENDER:M
+							GENDER:F
+							GENDER:M;Fellow
+							GENDER:F;grrrl
+							GENDER:O;intersex
+							GENDER:;it's complicated
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.7 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sex" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									Sex (biological) component:  A single letter.  M stands for "male", F stands
+									for "female", O stands for "other", N stands for "none or not
+									applicable", U stands for "unknown".
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.7 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="M">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en">
+												male
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="F">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en">
+												female
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="O">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en">
+												other
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="N">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en">
+												none or not applicable
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="U">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="en">
+												unknown
+											</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="identity" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+									Gender identity component:  Free-form text.
+
+									[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.2.7 "vCard Format Specification")
+									[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

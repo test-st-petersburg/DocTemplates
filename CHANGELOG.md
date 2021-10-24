@@ -1,7 +1,5 @@
 # Журнал изменений
 
-Любые изменения в этот проект должны быть документированы в этом файле.
-
 Формат этого файла базируется на рекомендациях
 [Keep a Changelog](https://keepachangelog.com/ru/1.0.0/).
 
@@ -9,6 +7,43 @@
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html).
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+## [2.9.0]
+
+### Добавлено
+
+- добавлен дополнительный этап обработки в XSLT при подготовке для Android
+  [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
+- добавлена в XML схему (XSD) для визитных карт (xCard)
+  поддержка `X-GROUP-MEMBERSHIP`
+  [#126](https://github.com/test-st-petersburg/DocTemplates/issues/126)
+- добавлена XML схема (XSD) для визитных карт (xCard)
+  [#117](https://github.com/test-st-petersburg/DocTemplates/issues/117)
+- добавлена конвертация xCard в vCard версии 4.0
+  [#118](https://github.com/test-st-petersburg/DocTemplates/issues/118)
+
+### Изменено
+
+- выделены сценарии сборки библиотек и их контейнеров
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки QR кодов для URI
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки QR кодов для xCard/vCard
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены сценарии сборки шаблонов документов
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- выделены отдельные папки для объединения нескольких генерируемых файлов
+  документов
+  [#132](https://github.com/test-st-petersburg/DocTemplates/issues/132)
+- выделены сценарии сборки документов
+  [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- сборка для обработки QR кодов устанавливается с помощью NuGet CLI и
+  packages.config
+  [#167](https://github.com/test-st-petersburg/DocTemplates/issues/167)
+
+### Исправлено
+
+- fix XSLT.resources.xsltPackages paths
 
 ## [2.8.19]
 
@@ -787,7 +822,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...HEAD
+[2.9.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...2.9.0
 [2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19
 [2.8.18]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...2.8.18
 [2.8.17]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...2.8.17

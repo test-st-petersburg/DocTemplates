@@ -18,7 +18,9 @@ param(
 	[System.String[]]
 	$DestinationDocFile = @(
 		$DestinationDocumentsPath | Where-Object { Test-Path -Path $_ } |
-		Get-ChildItem -Filter $DocumentsFilter | Select-Object -ExpandProperty FullName
+		Get-ChildItem -Directory |
+		Get-ChildItem -Filter $DocumentsFilter |
+		Select-Object -ExpandProperty FullName
 	),
 
 	# путь к папке с инструментами для сборки
@@ -35,7 +37,7 @@ BeforeAll {
 }
 
 BeforeAll {
-	. $PSScriptRoot/../Prepare-ODFValidator.ps1;
+	& $PSScriptRoot/../Prepare-ODFValidator.ps1;
 	[System.String] $ODFValidatorPath = ( Join-Path -Path $PSScriptRoot -ChildPath '../java/dependency' );
 	[System.String] $ODFValidatorJarPath = ( Get-ChildItem -LiteralPath $ODFValidatorPath -Filter 'ODFValidator-*.jar' -File )[0].FullName;
 }

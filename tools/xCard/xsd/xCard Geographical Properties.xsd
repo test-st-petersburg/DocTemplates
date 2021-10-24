@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xcard="urn:ietf:params:xml:ns:vcard-4.0"
+	targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+	elementFormDefault="qualified"
+>
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en" source="https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters">
+			[RFC 6351](http://tools.ietf.org/html/rfc6351 "xCard: vCard XML Representation")
+			[RFC 6350](http://tools.ietf.org/html/rfc6350 "vCard Format Specification")
+			[vCard Elements in IANA Registries](https://www.iana.org/assignments/vcard-elements/vcard-elements.xhtml#parameters)
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:include schemaLocation="xCard Parametrized Value Data Types.xsd"/>
+
+	<xsd:group name="property-tz">
+		<xsd:sequence>
+			<xsd:element name="tz">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify information related to the time zone of the
+						object the vCard represents.
+
+						**Special notes**:  It is expected that names from the public-domain
+						Olson database [TZ-DB] will be used, but this is not a
+						restriction.  See also [IANA-TZ].
+
+						Note that utc-offset values SHOULD NOT be used because the UTC
+						offset varies with time -- not just because of the usual daylight
+						saving time shifts that occur in may regions, but often entire
+						regions will "re-base" their overall offset.  The actual offset
+						may be +/- 1 hour (or perhaps a little more) than the one given.
+
+						**Examples**:
+							TZ:Raleigh/North America
+							TZ;VALUE=utc-offset:-0500
+								; Note: utc-offset format is NOT RECOMMENDED.
+
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.5.1 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="parameters" type="xcard:parameters-type-with-mediatype-type" minOccurs="0"/>
+						<xsd:choice>
+							<xsd:group ref="xcard:value-text-content"/>
+							<xsd:group ref="xcard:value-uri-content"/>
+							<xsd:group ref="xcard:value-utc-offset-content"/>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+				<!-- TODO: Возможно, придётся переделать choice на assert. Но для этого придётся дождаться поддержки XSD 1.1
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="parameters" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:group ref="xcard:param-altid"/>
+										<xsd:group ref="xcard:param-pid"/>
+										<xsd:group ref="xcard:param-pref"/>
+										<xsd:group ref="xcard:param-type"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:group ref="xcard:value-text-content"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="parameters" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:group ref="xcard:param-altid"/>
+										<xsd:group ref="xcard:param-pid"/>
+										<xsd:group ref="xcard:param-pref"/>
+										<xsd:group ref="xcard:param-type"/>
+										<xsd:group ref="xcard:param-mediatype"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:group ref="xcard:value-uri-content"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="parameters" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:group ref="xcard:param-altid"/>
+										<xsd:group ref="xcard:param-pid"/>
+										<xsd:group ref="xcard:param-pref"/>
+										<xsd:group ref="xcard:param-type"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:group ref="xcard:value-utc-offset-content"/>
+						</xsd:sequence>
+					</xsd:choice>
+				</xsd:complexType>
+				-->
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:group name="property-geo">
+		<xsd:sequence>
+			<xsd:element name="geo" type="xcard:parametrized-value-uri-with-type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en" source="https://tools.ietf.org/html/rfc6351#appendix-A">
+						**Purpose**:  To specify information related to the global positioning of
+						the object the vCard represents.
+
+						**Special notes**:  The "geo" URI scheme [RFC5870] is particularly well
+							suited for this property, but other schemes MAY be used.
+
+						**Examples**:
+							GEO:geo:37.386013,-122.082932
+
+						[RFC 5870](https://tools.ietf.org/html/rfc5870)
+						[RFC 6350](https://tools.ietf.org/html/rfc6350#section-6.5.2 "vCard Format Specification")
+						[RFC 6351](https://tools.ietf.org/html/rfc6351#appendix-A "xCard: vCard XML Representation, Appendix A. Relax NG Schema")
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

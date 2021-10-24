@@ -63,7 +63,7 @@ jobs:
         run: |
           Import-Module -Name InvokeBuild | Out-Null;
           Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
-          Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}' -Verbose;
+          Invoke-Build -Task Build -Verbose;
 
       - name: Validate .ott and .odt files
         shell: powershell

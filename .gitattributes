@@ -1,6 +1,7 @@
 *.ttf  binary
 
 *.xml  text  merge=text diff=text eol=lf
+*.xsd  text  merge=text diff=text eol=lf
 *.xsl  text  merge=text diff=text eol=lf
 *.md   text  merge=text diff=text eol=crlf
 
@@ -11,3 +12,5 @@
 *.bas  text  merge=text diff=text eol=lf
 
 *.{xba,xdl,xlb,xlc}  text  merge=text diff=text eol=lf
+
+*.json text  merge=json diff=text eol=crlf

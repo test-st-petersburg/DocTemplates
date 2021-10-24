@@ -139,6 +139,11 @@
 			"label": "Build Open Office macro libraries containers",
 			"group": "build",
 			"command": "Invoke-Build -Task BuildLibContainers -Verbose"
+		},
+		{
+			"label": "Build QR codes",
+			"group": "build",
+			"command": "Invoke-Build -Task BuildQRCodes -Verbose"
 		}
 	]
 }

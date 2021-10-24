@@ -18,6 +18,16 @@
 		"files.trimTrailingWhitespace": false,
 		"files.insertFinalNewline": false
 	},
+	"xmlComplete.schemaMapping": [
+		{
+			"xmlns": "urn:ietf:params:xml:ns:vcard-4.0",
+			"xsdUri": "tools/xCard/xsd/xCard.xsd",
+			"strict": true
+		}
+	],
+	"xml.catalogs": [
+		".vscode/xml-schemas.xml"
+	],
 	"[xslt]": {
 		"editor.defaultFormatter": "deltaxml.xslt-xpath",
 		"editor.formatOnSave": false,
@@ -38,52 +48,52 @@
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/system/fix-saxon.xslt"
+			"path": "tools/docs/xslt/system/fix-saxon.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/system/uri.xslt"
+			"path": "tools/docs/xslt/system/uri.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt",
 			"version": "1.5.0",
-			"path": "tools/xslt/formatter/basic.xslt"
+			"path": "tools/docs/xslt/formatter/basic.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt",
 			"version": "1.5.0",
-			"path": "tools/xslt/formatter/OO.xslt"
+			"path": "tools/docs/xslt/formatter/OO.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-document.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/OODocumentProcessor/oo-document.xslt"
+			"path": "tools/docs/xslt/OODocumentProcessor/oo-document.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/OODocumentProcessor/oo-macrolib.xslt"
+			"path": "tools/docs/xslt/OODocumentProcessor/oo-macrolib.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-merger.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/OODocumentProcessor/oo-merger.xslt"
+			"path": "tools/docs/xslt/OODocumentProcessor/oo-merger.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-preprocessor.xslt",
 			"version": "2.3.0",
-			"path": "tools/xslt/OODocumentProcessor/oo-preprocessor.xslt"
+			"path": "tools/docs/xslt/OODocumentProcessor/oo-preprocessor.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt",
 			"version": "1.5.0",
-			"path": "tools/xslt/OODocumentProcessor/oo-writer.xslt"
+			"path": "tools/docs/xslt/OODocumentProcessor/oo-writer.xslt"
 		},
 		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt",
 			"version": "1.5.0",
-			"path": "tools/xslt/optimizer/OOOptimizer.xslt"
+			"path": "tools/docs/xslt/optimizer/OOOptimizer.xslt"
 		}
 	],
 	"[powershell]": {
@@ -109,6 +119,7 @@
 	"powershell.codeFormatting.ignoreOneLineBlock": false,
 	"powershell.codeFormatting.preset": "Custom",
 	"typescript.tsc.autoDetect": "off",
+	"xml.validation.resolveExternalEntities": true,
 	"grunt.autoDetect": "off",
 	"jake.autoDetect": "off",
 	"gulp.autoDetect": "off",
@@ -123,6 +134,8 @@
 	"conventionalCommits.scopes": [
 		"ott",
 		"odt",
+		"qrcode",
+		"vcard",
 		"design",
 		"vscode",
 		"git",
@@ -134,5 +147,8 @@
 		"readme"
 	],
 	"conventionalCommits.showEditor": false,
-	"licenser.author": "Sergei S. Betke"
+	"licenser.license": "AL2",
+	"licenser.author": "Sergei S. Betke",
+	"licenser.projectName": "Шаблоны документов ФБУ \"Тест-С.-Петербург\"",
+	"licenser.useSingleLineStyle": true
 }

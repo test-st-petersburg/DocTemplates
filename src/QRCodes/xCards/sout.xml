@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcards
+	xmlns="urn:ietf:params:xml:ns:vcard-4.0"
+	xmlns:android="https://github.com/test-st-petersburg/DocTemplates/xCard/Android"
+>
+	<vcard>
+		<kind><text>org</text></kind>
+		<fn>
+			<parameters>
+				<language><language-tag>ru-RU</language-tag></language>
+			</parameters>
+			<text>СОУТ</text>
+		</fn>
+		<adr>
+			<parameters>
+				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
+				<language><language-tag>ru-RU</language-tag></language>
+				<geo><uri>geo:58.545932,31.237971</uri></geo>
+			</parameters>
+			<street>пр-кт Александра Корсунова, д.32</street>
+			<locality>Великий Новгород</locality>
+			<region>Новгородская область</region>
+			<code>173024</code>
+			<country>Россия</country>
+		</adr>
+		<tel>
+			<parameters>
+				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
+				<type>
+					<text>work</text>
+					<text>voice</text>
+				</type>
+			</parameters>
+			<uri>tel:+7-(8162)-60-77-47</uri>
+		</tel>
+		<!-- <tel>
+			<parameters>
+				<pid><text>3</text></pid>
+				<pref><integer>10</integer></pref>
+				<type>
+					<text>work</text>
+					<text>voice</text>
+				</type>
+			</parameters>
+			<uri>tel:+7-(8162)-60-77-27</uri>
+		</tel> -->
+		<tel>
+			<parameters>
+				<pid><text>2</text></pid>
+				<pref><integer>90</integer></pref>
+				<type>
+					<text>work</text>
+					<text>fax</text>
+				</type>
+			</parameters>
+			<uri>tel:+7-(8162)-60-77-27;ext=9999</uri>
+		</tel>
+		<email>
+			<parameters>
+				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
+			</parameters>
+			<text>sout@csm.nov.ru</text>
+		</email>
+		<lang><language-tag>ru-RU</language-tag></lang>
+		<tz><text>Europe/Moscow</text></tz>
+		<geo>
+			<uri>geo:58.545932,31.237971</uri>
+		</geo>
+		<logo>
+			<parameters>
+				<pid><text>1</text></pid>
+			</parameters>
+			<!-- <uri>https://s.gravatar.com/avatar/faddf9873a2c883845418fb3001749af?s=80</uri> -->
+			<uri>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAABXAQMAAAAOKyToAAAABlBMVEX///8AgMj7/gG3AAABh0lEQVQ4y9XTsU7DMBAG4LOM5AXJL1CRV2Bkoq/CI3TsgJRIvFg2lj4CgzfWsGWwfOT3XZImB1LFhgfb/XI+30ku/TbuLN3/G4qXZfsiS+BLy4NuhY58YR7rtuEei2NQ1q9JgkGlEkuCphLrgVGCQTWJ1wQslJBDyCkhSZScXmlEWqGglCUtI1gJn1uhRgl7XY4zdeSUEPzBtTC/p0RhPZ/vuRYWhRzmA24ZqVkog+K0tEIeJx5QcSHmT6WeDnV1zO+ggIIONcEbc1AiELVTSKm/Ipp71i6yUp4itNfxijp6jKgWVEsk7ukU0JPSIOTR+UI4eEZn3YZOhGaUklLLReiodJ52eUsZd8/U40aXKfKwkqsUOG3IM3nuF0KuiRzThlwhKrRPT6+WnhZKEw0guiJ0XIS0R3kLWwqgbiW8hRtolLfAeaY4Ee8pWyp7wmSp2xHel6W0If1X6lip7AjXJUs6hpnaK9JxtNRYijeRt+RWqjNsoa+FWkuNpWDJW6IfKFpyhv42vgG6VM8/YZIeVQAAAABJRU5ErkJggg==</uri>
+		</logo>
+		<org>
+			<parameters>
+				<language><language-tag>ru-RU</language-tag></language>
+				<sort-as>
+					<text>Тест-С.-Петербург</text>
+					<text>Новгородский филиал</text>
+				</sort-as>
+			</parameters>
+			<text>ФБУ "Тест-С.-Петербург"</text>
+			<text>Новгородский филиал</text>
+			<text>Сектор СОУТ</text>
+		</org>
+		<categories>
+			<text>СОУТ</text>
+		</categories>
+		<note>
+			<parameters>
+				<language><language-tag>ru-RU</language-tag></language>
+			</parameters>
+			<text>Специальная оценка условий труда, оценка профессиональных рисков, производственный контроль</text>
+		</note>
+		<rev>
+			<timestamp>20210530T004800Z</timestamp>
+		</rev>
+		<uid>
+			<uri>urn:uuid:de538d9b-ca10-4ae6-928c-e379d76147ee</uri>
+		</uid>
+		<url>
+			<parameters>
+				<pid><text>1</text></pid>
+				<pref><integer>1</integer></pref>
+				<type><text>work</text></type>
+			</parameters>
+			<uri>http://rustest.spb.ru/do/sout</uri>
+		</url>
+	</vcard>
+</vcards>
