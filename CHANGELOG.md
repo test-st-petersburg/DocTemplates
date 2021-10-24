@@ -19,6 +19,8 @@
 - устранено замечание по качеству кода:
   "The cmdlet 'Write-CompilerWarningAndErrors' uses a plural noun.
   A singular noun should be used instead".
+- устранено замечание по качеству кода Out-vCardFile.ps1:
+  "Command accepts pipeline input but has not defined a process block".
 
 ## [2.9.0]
 
