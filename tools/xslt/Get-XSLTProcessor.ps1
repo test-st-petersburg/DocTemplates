@@ -34,5 +34,5 @@ try
 catch
 {
 	Write-Error -ErrorRecord $_;
-	throw;
+	$PScmdlet.ThrowTerminatingError();
 };
