@@ -8,6 +8,13 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.2]
+
+### Изменено
+
+- переименованы задачи сборки в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+
 ## [2.9.1]
 
 ### Исправлено
@@ -836,7 +843,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.2...HEAD
+[2.9.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...2.9.2
 [2.9.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...2.9.1
 [2.9.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...2.9.0
 [2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19

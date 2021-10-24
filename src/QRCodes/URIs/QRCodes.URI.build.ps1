@@ -28,7 +28,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 );
 
 # Synopsis: Удаляет каталоги с временными файлами, подготовленными изображениями QR кодов
-task Clean {
+task clean {
 	Remove-BuildItem $DestinationQRCodesURIPath;
 };
 

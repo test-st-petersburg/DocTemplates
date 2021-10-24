@@ -61,7 +61,7 @@
 		},
 		{
 			"label": "Clean",
-			"command": "Invoke-Build -Task Clean"
+			"command": "Invoke-Build -Task clean"
 		},
 		{
 			"label": "Remove sources",

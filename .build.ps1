@@ -103,12 +103,12 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 #endregion
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
-task Clean {
-	Invoke-Build Clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+task clean {
+	Invoke-Build clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 

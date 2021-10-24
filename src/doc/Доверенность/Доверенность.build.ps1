@@ -22,7 +22,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../Documents.build.shared.ps1
 
-task Clean {
+task clean {
 	Remove-BuildItem $DestinationDocumentPath, $PreprocessedDocumentPath;
 };
 
