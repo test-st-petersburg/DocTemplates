@@ -43,7 +43,6 @@ begin
 	$saxExecutable = & $PSScriptRoot/../xslt/Get-XSLTExecutable.ps1 `
 		-PackagePath ( `
 			'xslt/system/uri.xslt', `
-			'xslt/system/fix-saxon.xslt', `
 			'xslt/formatter/basic.xslt', 'xslt/formatter/OO.xslt', `
 			'xslt/OODocumentProcessor/oo-writer.xslt', `
 			'xslt/OODocumentProcessor/oo-macrolib.xslt' ) `

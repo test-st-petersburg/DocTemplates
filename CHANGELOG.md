@@ -8,6 +8,12 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+### Изменено
+
+- версия Saxon HE обновлена до 10.6.0
+  [#170](https://github.com/test-st-petersburg/DocTemplates/pull/170)
+- убран fix-saxon.xslt
+
 ## [2.9.3]
 
 ### Добавлено
