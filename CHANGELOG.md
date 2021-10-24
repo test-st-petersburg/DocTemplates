@@ -35,6 +35,9 @@
   [#132](https://github.com/test-st-petersburg/DocTemplates/issues/132)
 - выделены сценарии сборки документов
   [#133](https://github.com/test-st-petersburg/DocTemplates/issues/133)
+- сборка для обработки QR кодов устанавливается с помощью NuGet CLI и
+  packages.config
+  [#167](https://github.com/test-st-petersburg/DocTemplates/issues/167)
 
 ### Исправлено
 

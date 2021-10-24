@@ -9,4 +9,3 @@ tmp
 src/template/**/mimetype
 src/template/**/Thumbnails
 tools/packages
-tests/java/dependency

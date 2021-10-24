@@ -35,13 +35,24 @@ begin
 	Set-StrictMode -Version Latest;
 	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-	$QRCoderPackage = Get-Package -Name 'QRCoder' `
-		-ProviderName NuGet `
-		-SkipDependencies `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
-	$LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
-		-ChildPath 'lib\net40\QRCoder.dll';
+	# $QRCoderPackage = Get-Package -Name 'QRCoder' `
+	# 	-ProviderName NuGet `
+	# 	-SkipDependencies `
+	# 	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+	# 	-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	# $LibPath = Join-Path -Path ( Split-Path -Path ( $QRCoderPackage.Source ) -Parent ) `
+	# 	-ChildPath 'lib\net40\QRCoder.dll';
+
+	[System.String] $LibPath = (
+		Select-Xml -LiteralPath "$PSScriptRoot/packages.config" `
+			-XPath 'packages/package[ @id = "QRCoder" ]' |
+		Select-Object -ExpandProperty Node -First 1 |
+		ForEach-Object {
+			"$PSScriptRoot/packages/$( $_.id ).$( $_.version )/lib/$( $_.targetFramework )/$( $_.id ).dll"
+		} |
+		Resolve-Path
+	).Path;
+
 	Add-Type -Path $LibPath `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
