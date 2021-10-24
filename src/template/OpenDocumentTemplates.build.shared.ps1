@@ -87,7 +87,7 @@ function Add-BuildOpenDocumentTemplateTask
 		$null = $taskParams.Add( 'Version', $Version );
 	};
 
-	$taskJobs = $Jobs;
+	$taskJobs = @( 'XSLT-tools' ) + $Jobs;
 	$taskJobs += `
 	{
 		$destFile = $Outputs[0];

@@ -37,10 +37,18 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $DocumentsFilter = '*.odt';
 
 
+[System.String] $TestsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tests' -Resolve );
+
+
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
+
+[System.String] $NuGetToolsPath = ( Join-Path -Path $ToolsPath -ChildPath '.nuget' );
+[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
+
+[System.String] $XSLTToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xslt' -Resolve );
 
 [System.String] $DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' -Resolve );
 [System.String] $BuildOOMacroLibPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OOMacroLib.ps1' -Resolve );
@@ -205,4 +213,38 @@ $JobOpenFile = {
 			$Shell.ShellExecute( $_.FullName, $null, $_.Directory.FullName, $verb, $WindowState );
 		};
 	};
+};
+
+
+task nuget `
+	-If { -not ( Test-Path -Path $NuGetPath ) } `
+	-Jobs {
+	if ( -not ( Test-Path -Path $NuGetToolsPath ) )
+	{
+		New-Item -Path $NuGetToolsPath -ItemType Directory `
+			-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+			-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+		| Out-Null;
+	};
+	$NuGetURI = 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe';
+	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
+		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+};
+
+
+[System.String] $XSLTPackagesConfig = Join-Path -Path $XSLTToolsPath -ChildPath 'packages.config';
+[System.String] $XSLTLibFilePath = (
+	Select-Xml -LiteralPath $XSLTPackagesConfig `
+		-XPath 'packages/package[ @id = "Saxon-HE" ]' |
+	Select-Object -ExpandProperty Node -First 1 |
+	ForEach-Object {
+		"$XSLTToolsPath/packages/$( $_.id ).$( $_.version )/lib/$( $_.targetFramework )/saxon*api*.dll";
+	}
+);
+
+task XSLT-tools `
+	-If { -not ( Test-Path -Path $XSLTLibFilePath ) } `
+	-Jobs nuget, {
+	. $NugetPath restore $XSLTPackagesConfig -PackagesDirectory "$XSLTToolsPath/packages";
 };

@@ -103,13 +103,32 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 #endregion
 
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
-task Clean {
-	Invoke-Build Clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
-	Invoke-Build Clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+task clean {
+	Invoke-Build clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
+};
+
+task distclean clean, {
+	Invoke-Build distclean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+	Remove-BuildItem $NuGetToolsPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
+};
+
+task maintainer-clean distclean;
+
+task pre-build nuget, {
+	Invoke-Build pre-build -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт библиотеки макросов Open Office
@@ -169,4 +188,8 @@ task Test Build, {
 	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
 };
 
-task . Test;
+task check Test;
+
+task all Build;
+
+task . all;

@@ -8,6 +8,32 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.2]
+
+### Исправлено
+
+- исправлена ошибка загрузки артефактов doc при сборке на GitHub
+  (GitHub action 'Build ant test')
+
+### Изменено
+
+- добавлена задача сборки 'pre-build' в целях установки необходимых инструментов
+  для сборки
+- выделена задача для установки nuget
+- добавлена задача сборки 'distclean' в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- добавлена задача сборки 'maintainer-clean' в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- добавлена задача сборки 'check' в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- добавлена задача сборки 'all' в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- переименованы задачи сборки в целях соответствия
+  [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
+- сборка для XSLT 3.0 Saxon HE устанавливается с помощью NuGet CLI и
+  packages.config
+  [#161](https://github.com/test-st-petersburg/DocTemplates/issues/161)
+
 ## [2.9.1]
 
 ### Исправлено
@@ -836,7 +862,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.2...HEAD
+[2.9.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...2.9.2
 [2.9.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...2.9.1
 [2.9.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...2.9.0
 [2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19

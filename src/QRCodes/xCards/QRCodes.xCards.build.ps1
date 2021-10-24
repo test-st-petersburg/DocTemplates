@@ -28,9 +28,11 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 );
 
 # Synopsis: Удаляет каталоги с временными файлами, подготовленными .vcf и изображениями QR кодов
-task Clean {
+task clean {
 	Remove-BuildItem $DestinationVCardPath, $DestinationQRCodesVCardPath;
 };
+
+task pre-build nuget, QRCodes-tools, XSLT-tools;
 
 # Synopsis: Создаёт vCard из xCard
 task BuildVCards;
@@ -53,6 +55,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		-Before BuildVCards `
 		-Inputs $sources `
 		-Outputs $vCardTarget `
+		-Jobs XSLT-tools,
 	{
 		$vCardFile = $Outputs;
 		$SourceXCardFile = $Inputs[0];

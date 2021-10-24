@@ -87,21 +87,21 @@ configuration xITGODTDevWindowsPC
 			Module_Name = 'Pester'
 		}
 
-		PackageManagement SaxonHE
-		{
-			Ensure = 'Present'
-			Name = 'Saxon-HE'
-			Source = 'NuGet'
-			MinimumVersion = '9.8'
-			MaximumVersion = '9.8.999'
-		}
+		# PackageManagement SaxonHE
+		# {
+		# 	Ensure = 'Present'
+		# 	Name = 'Saxon-HE'
+		# 	Source = 'NuGet'
+		# 	MinimumVersion = '9.8'
+		# 	MaximumVersion = '9.8.999'
+		# }
 
-		PackageManagement QRCoder
-		{
-			Ensure = 'Present'
-			Name = 'QRCoder'
-			Source = 'NuGet'
-		}
+		# PackageManagement QRCoder
+		# {
+		# 	Ensure = 'Present'
+		# 	Name = 'QRCoder'
+		# 	Source = 'NuGet'
+		# }
 
 	}
 }
