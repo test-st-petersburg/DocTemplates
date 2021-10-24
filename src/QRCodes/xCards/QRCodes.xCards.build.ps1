@@ -20,7 +20,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-. $PSScriptRoot/../../common.build.shared.ps1
+. $PSScriptRoot/../QRCodes.build.shared.ps1
 
 [System.String[]] $SourceXCardsFiles = @(
 	$SourceXCardPath | Where-Object { Test-Path -Path $_ } |
@@ -76,7 +76,7 @@ foreach ( $SourceXCardFile in $SourceXCardsFiles )
 		-Before BuildVCardQRCodes `
 		-Inputs $vCardTarget `
 		-Outputs $target `
-		-Jobs $BuildVCardTaskName,
+		-Jobs $BuildVCardTaskName, QRCodes-tools,
 	{
 		$DestinationQRCodeFile = $Outputs;
 		$vCardFile = $Inputs[0];
