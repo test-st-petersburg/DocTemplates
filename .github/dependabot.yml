@@ -1,6 +1,45 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: "/"
+    target-branch: master
+    directory: /
     schedule:
-      interval: daily
+      interval: weekly
+    commit-message:
+      prefix: "ci(deps)"
+    labels:
+      - dependencies
+      - build
+
+  - package-ecosystem: maven
+    target-branch: master
+    directory: /tests/
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(deps)"
+    labels:
+      - dependencies
+      - tests
+
+  - package-ecosystem: nuget
+    target-branch: develop
+    directory: /tools/QRCode/
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(deps)"
+    labels:
+      - dependencies
+      - build
+
+  - package-ecosystem: nuget
+    target-branch: develop
+    directory: /tools/xslt/
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(deps)"
+    labels:
+      - dependencies
+      - build
