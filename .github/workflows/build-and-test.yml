@@ -41,7 +41,7 @@ jobs:
           Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet -Verbose | Out-Null;
           Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build QRCodes-tools -File ./src/QRCodes/QRCodes.build.shared.ps1
+          Invoke-Build pre-build;
 
       - name: Install ODFValidator
         shell: powershell
@@ -76,12 +76,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: doc-templates
-          path: "${{ github.workspace }}/output/template/*.ott"
+          path: ${{ github.workspace }}/output/template/*.ott
           if-no-files-found: warn
 
-      - name: Upload .odt files
+      - name: Upload documents
         uses: actions/upload-artifact@v2
         with:
           name: docs
-          path: "${{ github.workspace }}/output/doc/*.odt"
+          path: |
+            ${{ github.workspace }}/output/doc/
+            !${{ github.workspace }}/output/doc/*/.dirstate
           if-no-files-found: warn

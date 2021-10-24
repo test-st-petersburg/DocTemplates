@@ -86,7 +86,7 @@ function Add-BuildMacroLibTask
 	task -Name $Name -Source $Source -Inputs $Inputs -Outputs $Outputs `
 		-If $If -Done $Done -Before $Before -After $After `
 		-Data @{ LibName = $LibName; SourceLibFolder = $LiteralPath; Destination = $Destination; } `
-		-Jobs ( $Jobs + `
+		-Jobs ( @( 'XSLT-tools' ) + $Jobs + `
 		{
 			& $BuildOOMacroLibPath `
 				-Path $Task.Data.SourceLibFolder `
@@ -145,7 +145,7 @@ function Add-BuildMacroLibContainerTask
 	task -Name $Name -Source $Source -Inputs $Inputs -Outputs $Outputs `
 		-If $If -Done $Done -Before $Before -After $After `
 		-Data @{ LibName = $LibName; LibFolder = $LiteralPath; Destination = $Destination; } `
-		-Jobs ( $Jobs + `
+		-Jobs ( @( 'XSLT-tools' ) + $Jobs + `
 		{
 			& $BuildOOMacroLibContainerPath `
 				-LiteralPath $Task.Data.LibFolder `

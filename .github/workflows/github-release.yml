@@ -41,7 +41,7 @@ jobs:
           Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet | Out-Null;
           Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build QRCodes-tools -File ./src/QRCodes/QRCodes.build.shared.ps1
+          Invoke-Build pre-build;
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10

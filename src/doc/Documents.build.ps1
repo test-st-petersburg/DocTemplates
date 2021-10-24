@@ -23,11 +23,15 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-New-BuildSubTask -Tasks Clean, BuildDoc, BuildAndOpenDoc -Path $SourceDocumentsPath;
+New-BuildSubTask -Tasks clean, BuildDoc, BuildAndOpenDoc -Path $SourceDocumentsPath;
 
-task Clean {
+task clean {
 	Remove-BuildItem $DestinationDocumentsPath, $PreprocessedDocumentsPath;
 };
+
+task distclean clean;
+
+task pre-build nuget, XSLT-tools;
 
 task BuildDocs BuildDoc;
 task BuildAndOpenDocs BuildAndOpenDoc;
