@@ -8,6 +8,20 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.1]
+
+### Исправлено
+
+- исправлена ошибка при сборке на GitHub (убран параметр Version для build.ps1)
+  (GitHub action 'Release to GihHub')
+- устранено замечание по качеству кода Update-FileLastWriteTime.ps1:
+  "Command accepts pipeline input but has not defined a process block".
+- устранено замечание по качеству кода:
+  "The cmdlet 'Write-CompilerWarningAndErrors' uses a plural noun.
+  A singular noun should be used instead".
+- устранено замечание по качеству кода Out-vCardFile.ps1:
+  "Command accepts pipeline input but has not defined a process block".
+
 ## [2.9.0]
 
 ### Добавлено
@@ -822,7 +836,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...HEAD
+[2.9.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...2.9.1
 [2.9.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...2.9.0
 [2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19
 [2.8.18]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...2.8.18
