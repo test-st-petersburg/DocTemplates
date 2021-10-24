@@ -123,6 +123,14 @@ task distclean clean, {
 
 task maintainer-clean distclean;
 
+task pre-build nuget, {
+	Invoke-Build pre-build -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build pre-build -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+};
+
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs {
 	Invoke-Build BuildLibs -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;

@@ -30,6 +30,8 @@ task clean {
 
 task distclean clean;
 
+task pre-build nuget;
+
 task BuildLibs BuildLib;
 task BuildLibContainers BuildLibContainer;
 task . BuildLibs, BuildLibContainers;

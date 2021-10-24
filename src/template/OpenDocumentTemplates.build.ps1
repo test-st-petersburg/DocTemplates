@@ -31,6 +31,8 @@ task clean {
 
 task distclean clean;
 
+task pre-build nuget;
+
 task BuildTemplates BuildTemplate;
 task BuildAndOpenTemplates BuildAndOpenTemplate;
 task . BuildTemplates;

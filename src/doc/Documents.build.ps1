@@ -31,6 +31,8 @@ task clean {
 
 task distclean clean;
 
+task pre-build nuget;
+
 task BuildDocs BuildDoc;
 task BuildAndOpenDocs BuildAndOpenDoc;
 task . BuildDocs;
