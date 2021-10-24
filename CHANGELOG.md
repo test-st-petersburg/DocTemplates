@@ -12,6 +12,7 @@
 
 ### Изменено
 
+- выделена задача для установки nuget
 - переименованы задачи сборки в целях соответствия
   [стандартным целям make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html)
 

@@ -1,4 +1,4 @@
-﻿# Copyright © 2020 Sergei S. Betke
+# Copyright © 2020 Sergei S. Betke
 
 #Requires -Version 5.0
 
@@ -38,6 +38,9 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 
 
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
+
+[System.String] $NuGetToolsPath = ( Join-Path -Path $ToolsPath -ChildPath '.nuget' );
+[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
@@ -206,3 +209,22 @@ $JobOpenFile = {
 		};
 	};
 };
+
+
+task nuget `
+	-Inputs @( $MyInvocation.MyCommand.Path ) `
+	-Outputs $NuGetPath `
+	-Jobs {
+	if ( -not ( Test-Path -Path $NuGetToolsPath ) )
+	{
+		New-Item -Path $NuGetToolsPath -ItemType Directory `
+			-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+			-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+		| Out-Null;
+	};
+	$NuGetURI = 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe';
+	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
+		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+};
+
