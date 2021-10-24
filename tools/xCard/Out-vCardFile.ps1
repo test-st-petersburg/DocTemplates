@@ -40,7 +40,7 @@ Param(
 	[Parameter( Mandatory = $true, Position = 0, ParameterSetName = 'Path' )]
 	[ValidateNotNullOrEmpty()]
 	[SupportsWildcards()]
-	[System.String[]]
+	[System.String]
 	$Path,
 
 	# xCard single filename
@@ -70,14 +70,16 @@ Param(
 	[switch]
 	$Minimize
 )
+process
+{
+	Set-StrictMode -Version Latest;
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-Set-StrictMode -Version Latest;
-$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
+	$parameters = $PSCmdlet.MyInvocation.BoundParameters;
+	$null = $parameters.Remove( 'Destination' );
 
-$parameters = $PSCmdlet.MyInvocation.BoundParameters;
-$null = $parameters.Remove( 'Destination' );
-
-& $PSScriptRoot/ConvertTo-vCard.ps1 @parameters `
-| Out-File -LiteralPath $Destination -Encoding utf8 `
-	-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
-	-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	& $PSScriptRoot/ConvertTo-vCard.ps1 @parameters `
+	| Out-File -LiteralPath $Destination -Encoding utf8 `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+		-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+}
