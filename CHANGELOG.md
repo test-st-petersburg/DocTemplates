@@ -8,6 +8,8 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.0]
+
 ### Добавлено
 
 - добавлен дополнительный этап обработки в XSLT при подготовке для Android
@@ -820,7 +822,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...HEAD
+[2.9.0]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.19...2.9.0
 [2.8.19]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.18...2.8.19
 [2.8.18]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.17...2.8.18
 [2.8.17]: https://github.com/test-st-petersburg/DocTemplates/compare/2.8.16...2.8.17
