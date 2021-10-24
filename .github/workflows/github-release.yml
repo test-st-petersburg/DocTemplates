@@ -40,7 +40,8 @@ jobs:
           Install-Module -Name PowerShellForGitHub | Out-Null;
           Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
           Install-Package -Name 'Saxon-HE' -MinimumVersion '9.8' -MaximumVersion '9.8.999' -ProviderName NuGet | Out-Null;
-          Install-Package -Name 'QRCoder' -ProviderName NuGet -SkipDependencies | Out-Null;
+          Import-Module -Name InvokeBuild | Out-Null;
+          Invoke-Build QRCodes-tools -File ./src/QRCodes/QRCodes.build.shared.ps1
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10
@@ -58,7 +59,8 @@ jobs:
         shell: powershell
         run: |
           Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build -Task Build -Version '${{ steps.gitversion.outputs.semVer }}';
+          Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
+          Invoke-Build -Task Build;
           $assetsContainerPath = 'tmp/templatesAndDocs.zip';
           Compress-Archive -Path 'output' -DestinationPath $assetsContainerPath -Verbose;
           echo "::set-output name=assetsContainerPath::$assetsContainerPath"
