@@ -112,6 +112,15 @@ task clean {
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
+task distclean clean, {
+	Invoke-Build distclean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
+	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
+	Remove-BuildItem $NuGetToolsPath;
+};
+
 # Synopsis: Создаёт библиотеки макросов Open Office
 task BuildLibs {
 	Invoke-Build BuildLibs -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;

@@ -6,6 +6,10 @@ Set-StrictMode -Version Latest;
 
 . $PSScriptRoot/../common.build.shared.ps1
 
+task distclean clean, {
+	Remove-BuildItem "$QRCodeToolsPath/packages";
+};
+
 [System.String] $QRCodePackagesConfig = Join-Path -Path $QRCodeToolsPath -ChildPath 'packages.config';
 [System.String] $OutputLibFiles = @(
 	Select-Xml -LiteralPath $QRCodePackagesConfig `

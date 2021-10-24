@@ -29,6 +29,8 @@ task clean {
 	Remove-BuildItem $DestinationDocumentsPath, $PreprocessedDocumentsPath;
 };
 
+task distclean clean;
+
 task BuildDocs BuildDoc;
 task BuildAndOpenDocs BuildAndOpenDoc;
 task . BuildDocs;

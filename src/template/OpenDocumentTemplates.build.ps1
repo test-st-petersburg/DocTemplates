@@ -29,6 +29,8 @@ task clean {
 	Remove-BuildItem $DestinationTemplatesPath, $PreprocessedTemplatesPath;
 };
 
+task distclean clean;
+
 task BuildTemplates BuildTemplate;
 task BuildAndOpenTemplates BuildAndOpenTemplate;
 task . BuildTemplates;

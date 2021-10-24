@@ -28,6 +28,8 @@ task clean {
 	Remove-BuildItem $DestinationLibrariesPath, $DestinationLibContainersPath;
 };
 
+task distclean clean;
+
 task BuildLibs BuildLib;
 task BuildLibContainers BuildLibContainer;
 task . BuildLibs, BuildLibContainers;
