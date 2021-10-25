@@ -135,8 +135,7 @@ process
 		$xCardStream.Position = 0;
 
 		$vCardStreamWriter = [System.IO.StringWriter]::new();
-		$vCardSerializer = [Saxon.Api.Serializer]::new();
-		$vCardSerializer.SetOutputWriter( $vCardStreamWriter );
+		$vCardSerializer = $saxProcessor.NewSerializer( $vCardStreamWriter );
 
 		$saxTransform.ApplyTemplates( $xCardStream, $vCardSerializer );
 
