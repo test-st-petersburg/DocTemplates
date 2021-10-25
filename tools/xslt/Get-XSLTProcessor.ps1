@@ -45,5 +45,5 @@ try
 catch
 {
 	Write-Error -ErrorRecord $_;
-	$PScmdlet.ThrowTerminatingError();
+	$PScmdlet.ThrowTerminatingError( $_ );
 };

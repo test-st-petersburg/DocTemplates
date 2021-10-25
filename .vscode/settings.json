@@ -46,11 +46,6 @@
 	"xml.validation.noGrammar": "ignore",
 	"XSLT.resources.xsltPackages": [
 		{
-			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt",
-			"version": "2.3.0",
-			"path": "tools/docs/xslt/system/fix-saxon.xslt"
-		},
-		{
 			"name": "http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt",
 			"version": "2.3.0",
 			"path": "tools/docs/xslt/system/uri.xslt"

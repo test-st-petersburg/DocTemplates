@@ -47,6 +47,7 @@ Function Write-CompilerWarningAndError
 	)
 
 	[int] $ErrorsCount = 0;
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue;
 	foreach ( $Error in $ErrorList )
 	{
 		if ( $Error.ModuleUri )
@@ -62,7 +63,7 @@ Function Write-CompilerWarningAndError
 			Write-Warning `
 				-Message @"
 
-$($Error.Message)
+WARNING: $($Error.Message)
 $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
 "@;
 		}
@@ -74,10 +75,10 @@ $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber
 
 ERROR: $($Error.Message)
 $( $ModuleUriAux.LocalPath ):$($Error.LineNumber) знак:$($Error.ColumnNumber)
-"@ `
-				-ErrorAction Continue;
+"@;
 		};
 	};
+	$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 	if ( $ErrorsCount )
 	{
 		Write-Error -Message "Compiler errors total: $ErrorsCount";
@@ -170,23 +171,32 @@ try
 			try
 			{
 				$saxCompiler.BaseUri = $XSLTPackagePath;
+				$saxCompiler.SetErrorList( [System.Collections.Generic.List[ [Saxon.Api.XmlProcessingError] ]]::new() );
 				$saxPackage = $saxCompiler.CompilePackage(
 					( [System.IO.FileStream]::new( $XSLTPackagePath, 'Open' ) )
 				);
-				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.GetErrorList() ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 				if ( $PSCmdlet.ShouldProcess( $XSLTPackagePath, 'Import XSLT package' ) )
 				{
+					$saxCompiler.SetErrorList( [System.Collections.Generic.List[ [Saxon.Api.XmlProcessingError] ]]::new() );
 					$saxCompiler.ImportPackage( $saxPackage );
 				};
 			}
 			catch
 			{
-				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+				Write-CompilerWarningAndError -ErrorList ( $saxCompiler.GetErrorList() ) `
 					-ModuleUri $XSLTPackagePath `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
-				$PScmdlet.ThrowTerminatingError();
+				$PSCmdlet.ThrowTerminatingError(
+					[System.Management.Automation.ErrorRecord]::new(
+						[Exception]::new( "Compiler error on $XSLTPackagePath." ),
+						'XSLTCompilationError',
+						[System.Management.Automation.ErrorCategory]::SyntaxError,
+						$saxCompiler.ErrorList
+					)
+				);
 			};
 		};
 	};
@@ -203,17 +213,25 @@ try
 	{
 		try
 		{
+			$saxCompiler.SetErrorList( [System.Collections.Generic.List[ [Saxon.Api.XmlProcessingError] ]]::new() );
 			$saxExecutable = $saxCompiler.Compile( $LiteralPath );
-			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.GetErrorList() ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 		}
 		catch
 		{
-			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.ErrorList ) `
+			Write-CompilerWarningAndError -ErrorList ( $saxCompiler.GetErrorList() ) `
 				-ModuleUri $LiteralPath `
 				-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
-			$PScmdlet.ThrowTerminatingError();
+			$PSCmdlet.ThrowTerminatingError(
+				[System.Management.Automation.ErrorRecord]::new(
+					[Exception]::new( "Compiler error on $LiteralPath." ),
+					'XSLTCompilationError',
+					[System.Management.Automation.ErrorCategory]::SyntaxError,
+					$saxCompiler.ErrorList
+				)
+			);
 		};
 		return $saxExecutable;
 	};
@@ -221,5 +239,5 @@ try
 catch
 {
 	Write-Error -ErrorRecord $_;
-	$PScmdlet.ThrowTerminatingError();
+	$PScmdlet.ThrowTerminatingError( $_ );
 };
