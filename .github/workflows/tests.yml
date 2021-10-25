@@ -1,9 +1,9 @@
-name: Build and test
+name: Tests
 
 on:
   push:
     paths:
-      - .github/workflows/build-and-test.yml
+      - .github/workflows/tests.yml
       - src/**
       - tools/**
       - tests/**
@@ -11,7 +11,7 @@ on:
 
   pull_request:
     paths:
-      - .github/workflows/build-and-test.yml
+      - .github/workflows/tests.yml
       - src/**
       - tools/**
       - tests/**
@@ -19,7 +19,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Tests
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -67,11 +67,13 @@ jobs:
           Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
           Invoke-Build -Task Build -Verbose;
 
-      - name: Validate .ott and .odt files
-        shell: powershell
-        run: |
-          Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build -Task Test -Verbose;
+      - name: Validate documents and templates
+        uses: zyborg/pester-tests-report@v1
+        with:
+          include_paths: tests
+          report_title: Результаты тестирования
+          tests_fail_step: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload .ott files
         uses: actions/upload-artifact@v2

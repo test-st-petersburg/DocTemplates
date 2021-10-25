@@ -120,7 +120,8 @@
         "wagoid",
         "xcard",
         "xforms",
-        "xlink"
+        "xlink",
+        "zyborg"
     ],
     "ignoreRegExpList": [
         "эскалаци(я|и|ю|ей)",
