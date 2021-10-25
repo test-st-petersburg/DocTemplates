@@ -46,7 +46,21 @@ Describe 'Open Documents' {
 
 	Describe '<Name>' -ForEach @(
 		$DestinationDocFile | Get-Item |
-		ForEach-Object { @{ Name = $_.Name; FullName = $_.FullName } }
+		ForEach-Object {
+			Push-Location -LiteralPath $DestinationDocumentsPath;
+			try
+			{
+				[System.String] $DocumentRelativePath = ( Resolve-Path -LiteralPath ( $_.FullName ) -Relative );
+			}
+			finally
+			{
+				Pop-Location;
+			};
+			@{
+				Name = $DocumentRelativePath;
+				FullName = $_.FullName;
+			};
+		}
 	) {
 		It 'is valid (by ODFValidator)' -Tag 'ODFValidator' {
 			# chcp 866 > $null;
