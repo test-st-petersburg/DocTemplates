@@ -1,6 +1,5 @@
 ﻿#Requires -Version 5.0
 #Requires -Modules InvokeBuild
-#Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
 
 param()
 
@@ -118,7 +117,7 @@ task distclean clean, {
 	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
-	Remove-BuildItem $NuGetToolsPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
+	Remove-BuildItem $NuGetPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
 };
 
 task maintainer-clean distclean;

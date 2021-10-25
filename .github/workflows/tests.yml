@@ -37,12 +37,12 @@ jobs:
         shell: powershell
         run: |
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-          Install-Module -Name InvokeBuild -Verbose | Out-Null;
-          Install-Module -Name 7Zip4Powershell -Verbose | Out-Null;
-          Install-Module -Name PowerShellForGitHub -Verbose | Out-Null;
-          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force -Verbose | Out-Null;
-          Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build pre-build -Verbose;
+          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
+          Install-Module -Name PSDepend | Out-Null;
+          Import-Module -Name PSDepend | Out-Null;
+          Invoke-PSDepend -Recurse:$true -Confirm:$false -Verbose;
+          # Import-Module -Name InvokeBuild | Out-Null;
+          # Invoke-Build pre-build -Verbose;
 
       - name: Install ODFValidator
         shell: powershell
