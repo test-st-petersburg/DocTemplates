@@ -70,10 +70,6 @@
 		<xsl:accept component="template" names="oom:get-macro-library-container" visibility="final"/>
 	</xsl:use-package>
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/fix-saxon.xslt" package-version="2.3">
-		<xsl:accept component="function" names="fix:doc" visibility="private"/>
-	</xsl:use-package>
-
 	<xsl:param name="p:comment-preprocessing-results" as="xs:boolean" static="yes" select=" true() "/>
 	<xsl:param name="p:embed-linked-libraries" as="xs:boolean" static="yes" select=" true() "/>
 	<xsl:param name="p:embed-linked-templates" as="xs:boolean" static="yes" select=" true() "/>
@@ -349,7 +345,7 @@
 			<xsl:attribute name="meta:date" select="
 				format-dateTime(
 					adjust-dateTime-to-timezone(
-						xs:dateTime( fix:doc( resolve-uri(
+						xs:dateTime( doc( resolve-uri(
 							$p:linked-templates-uri || iri-to-uri( @xlink:title ) || '.ott' || '/meta.xml',
 							base-uri()
 						) )/office:document-meta/office:meta/dc:date ),

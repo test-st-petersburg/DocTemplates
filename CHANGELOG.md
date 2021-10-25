@@ -8,6 +8,14 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.4]
+
+### Изменено
+
+- версия Saxon HE обновлена до 10.6.0
+  [#170](https://github.com/test-st-petersburg/DocTemplates/pull/170)
+- убран fix-saxon.xslt
+
 ## [2.9.3]
 
 ### Добавлено
@@ -869,7 +877,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.3...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.4...HEAD
+[2.9.4]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.2...2.9.3
 [2.9.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...2.9.2
 [2.9.1]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.0...2.9.1

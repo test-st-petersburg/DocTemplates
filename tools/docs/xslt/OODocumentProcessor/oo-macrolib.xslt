@@ -37,7 +37,7 @@ REM  *****  BASIC  *****
 	</xsl:param>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt" package-version="2.3">
-		<xsl:accept component="function" names="u:get-parent-directory-name u:get-file-name-without-extension u:make-relative-uri" visibility="private"/>
+		<xsl:accept component="function" names="u:get-parent-directory-name#1 u:get-file-name-without-extension#1 u:make-relative-uri#2" visibility="private"/>
 	</xsl:use-package>
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt" package-version="1.5">
