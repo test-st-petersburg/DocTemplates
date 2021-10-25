@@ -35,12 +35,12 @@ jobs:
         shell: powershell
         run: |
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-          Install-Module -Name InvokeBuild | Out-Null;
-          Install-Module -Name 7Zip4Powershell | Out-Null;
-          Install-Module -Name PowerShellForGitHub | Out-Null;
           Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
-          Import-Module -Name InvokeBuild | Out-Null;
-          Invoke-Build pre-build -Verbose;
+          Install-Module -Name PSDepend | Out-Null;
+          Import-Module -Name PSDepend | Out-Null;
+          Invoke-PSDepend -Recurse:$true -Confirm:$false -Verbose;
+          # Import-Module -Name InvokeBuild | Out-Null;
+          # Invoke-Build pre-build -Verbose;
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10
