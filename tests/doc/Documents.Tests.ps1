@@ -1,5 +1,5 @@
 ﻿#Requires -Version 5.0
-#Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.2.0' }
+#Requires -Modules @{ ModuleName='Pester'; ModuleVersion='5.3.0' }
 
 param(
 	# путь к папке с генерируемыми файлами
