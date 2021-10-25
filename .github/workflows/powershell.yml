@@ -42,6 +42,7 @@ jobs:
         with:
           # Check https://github.com/microsoft/psscriptanalyzer-action for more info about the options.
           includeDefaultRules: true
+          excludeRule: '"PSUseDeclaredVarsMoreThanAssignments", "PSReviewUnusedParameter"'
           severity: '"Error", "Warning"'
           path: .\
           ignorePattern: "install"

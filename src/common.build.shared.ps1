@@ -100,23 +100,25 @@ Function Get-BuildScript
 		[System.String]
 		$Filter = '*.build.ps1'
 	)
-
-	switch ( $PSCmdlet.ParameterSetName )
+	process
 	{
-		'Path'
+		switch ( $PSCmdlet.ParameterSetName )
 		{
-			$parameters = $PSBoundParameters;
-			$null = $parameters.Remove( 'Path' );
-			$Path | Resolve-Path | ForEach-Object { & $PSCmdlet.MyInvocation.MyCommand -LiteralPath ( $_.Path ) @parameters };
-		}
-		'LiteralPath'
-		{
-			return @(
-				$LiteralPath | Where-Object { Test-Path -Path $_ } |
-				Get-ChildItem -Directory |
-				Get-ChildItem -File -Filter $Filter |
-				Select-Object -ExpandProperty FullName
-			);
+			'Path'
+			{
+				$parameters = $PSBoundParameters;
+				$null = $parameters.Remove( 'Path' );
+				$Path | Resolve-Path | ForEach-Object { & $PSCmdlet.MyInvocation.MyCommand -LiteralPath ( $_.Path ) @parameters };
+			}
+			'LiteralPath'
+			{
+				return @(
+					$LiteralPath | Where-Object { Test-Path -Path $_ } |
+					Get-ChildItem -Directory |
+					Get-ChildItem -File -Filter $Filter |
+					Select-Object -ExpandProperty FullName
+				);
+			}
 		}
 	}
 }
@@ -138,7 +140,7 @@ Function Get-BuildScriptTag
 	Split-Path -Path ( Split-Path -Path $LiteralPath -Parent ) -Leaf;
 }
 
-Function New-BuildSubTask
+Function Add-BuildSubTask
 {
 	[CmdletBinding( DefaultParameterSetName = 'Path' )]
 	[OutputType()]
@@ -174,28 +176,30 @@ Function New-BuildSubTask
 		[System.String[]]
 		$BuildScripts
 	)
-
-	switch ( $PSCmdlet.ParameterSetName )
+	process
 	{
-		'BuildScripts'
+		switch ( $PSCmdlet.ParameterSetName )
 		{
-			foreach ( $Task in $Tasks )
+			'BuildScripts'
 			{
-				task -Name $Task;
-
-				foreach ( $BuildScript in $BuildScripts )
+				foreach ( $Task in $Tasks )
 				{
-					task -Name "$Task-$( Get-BuildScriptTag $BuildScript )" `
-						-Before $Task `
-						-Jobs ( [ScriptBlock]::Create( "Invoke-Build -Task '$Task' -File '$BuildScript' @PSBoundParameters;" ) );
+					task -Name $Task;
+
+					foreach ( $BuildScript in $BuildScripts )
+					{
+						task -Name "$Task-$( Get-BuildScriptTag $BuildScript )" `
+							-Before $Task `
+							-Jobs ( [ScriptBlock]::Create( "Invoke-Build -Task '$Task' -File '$BuildScript' @PSBoundParameters;" ) );
+					};
 				};
-			};
-		}
-		default
-		{
-			$parameters = $PSBoundParameters;
-			$null = $parameters.Remove( 'Tasks' );
-			& $PSCmdlet.MyInvocation.MyCommand -Tasks $Tasks -BuildScripts ( Get-BuildScript @parameters );
+			}
+			default
+			{
+				$parameters = $PSBoundParameters;
+				$null = $parameters.Remove( 'Tasks' );
+				& $PSCmdlet.MyInvocation.MyCommand -Tasks $Tasks -BuildScripts ( Get-BuildScript @parameters );
+			}
 		}
 	}
 }

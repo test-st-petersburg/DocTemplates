@@ -22,7 +22,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 
 . $PSScriptRoot/../common.build.shared.ps1
 
-New-BuildSubTask -Tasks clean, BuildLib, BuildLibContainer -Path $SourceLibrariesPath;
+Add-BuildSubTask -Tasks clean, BuildLib, BuildLibContainer -Path $SourceLibrariesPath;
 
 task clean {
 	Remove-BuildItem $DestinationLibrariesPath, $DestinationLibContainersPath;

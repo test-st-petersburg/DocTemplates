@@ -8,6 +8,12 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.7]
+
+### Исправлено
+
+- устранены замечания по качеству кода (build сценариев)
+
 ## [2.9.6]
 
 ### Изменено
@@ -894,7 +900,9 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.5...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.7...HEAD
+[2.9.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.6...2.9.7
+[2.9.6]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.5...2.9.6
 [2.9.5]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.4...2.9.5
 [2.9.4]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.2...2.9.3
