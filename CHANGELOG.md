@@ -8,6 +8,16 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.5]
+
+### Добавлено
+
+- публикация результатов тестирования на GitHub (в комментариях к запуску workflow)
+
+### Изменено
+
+- расширена проверка PowerShell сценариев (сценарии сборки, тестирования)
+
 ## [2.9.4]
 
 ### Изменено
@@ -877,7 +887,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.4...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.5...HEAD
+[2.9.5]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.4...2.9.5
 [2.9.4]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.2...2.9.3
 [2.9.2]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.1...2.9.2
