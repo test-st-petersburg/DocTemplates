@@ -136,8 +136,10 @@ Function Get-BuildScriptTag
 		[System.String]
 		$LiteralPath
 	)
-
-	Split-Path -Path ( Split-Path -Path $LiteralPath -Parent ) -Leaf;
+	process
+	{
+		Split-Path -Path ( Split-Path -Path $LiteralPath -Parent ) -Leaf;
+	}
 }
 
 Function Add-BuildSubTask
