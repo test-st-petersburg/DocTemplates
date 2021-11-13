@@ -9,7 +9,7 @@
 
 	'XSLT-nuget-packages' = @{
 		DependencyType = 'Command';
-		Source = '. "$DependencyPath\..\nuget.exe" restore "$DependencyPath/packages.config" -PackagesDirectory "$DependencyPath/packages";';
+		Source = '. "$DependencyPath\..\nuget.exe" restore "$DependencyPath/packages.config" -PackagesDirectory "$DependencyPath/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive;';
 		DependsOn = 'nuget';
 	};
 }

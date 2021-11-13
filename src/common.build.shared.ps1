@@ -229,6 +229,7 @@ task nuget `
 	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
 		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
 		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+	. $NuGetPath sources add -Name 'nuget.org' -Source 'https://api.nuget.org/v3/index.json';
 };
 
 

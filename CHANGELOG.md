@@ -8,6 +8,14 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.8]
+
+### Исправлено
+
+- устранены ошибки при восстановлении nuget пакетов
+  при отсутствии конфигурации nuget
+  [#176](https://github.com/test-st-petersburg/DocTemplates/issues/176)
+
 ## [2.9.7]
 
 ### Исправлено
@@ -900,7 +908,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.7...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.8...HEAD
+[2.9.8]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.7...2.9.8
 [2.9.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.6...2.9.7
 [2.9.6]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.5...2.9.6
 [2.9.5]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.4...2.9.5
