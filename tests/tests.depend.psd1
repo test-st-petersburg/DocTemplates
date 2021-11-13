@@ -7,10 +7,15 @@
 		Target = 'CurrentUser';
 	};
 
+	# JRE = @{
+	# 	DependencyType = 'chocolatey';
+	# 	Name = 'OpenJDK';
+	# };
+
 	# maven = @{
 	# 	DependencyType = 'chocolatey';
 	# 	Name = 'maven';
-	# 	Target = 'CurrentUser';
+	#	DependsOn = 'JRE';
 	# };
 
 	ODFValidator = @{
