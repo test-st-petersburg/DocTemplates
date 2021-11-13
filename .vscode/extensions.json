@@ -2,8 +2,10 @@
 	// See http://go.microsoft.com/fwlink/?LinkId=827846
 	// for the documentation about the extensions.json format
 	"recommendations": [
+		"github.vscode-pull-request-github",
 		"cschleiden.vscode-github-actions",
 		"gimenete.github-linker",
+		"pod212.vscode-github-projects",
 		"jasonnutter.vscode-codeowners",
 		"ymotongpoo.licenser",
 		"eamodio.gitlens",
@@ -16,6 +18,7 @@
 		"gruntfuggly.todo-tree",
 		"heaths.vscode-guid",
 		"timonwong.shellcheck",
+		"yzhang.markdown-all-in-one",
 		"davidanson.vscode-markdownlint",
 		"bierner.markdown-preview-github-styles",
 		"streetsidesoftware.code-spell-checker",
@@ -31,6 +34,8 @@
 		"raffazizzi.sxml",
 		"russillglover.rnc",
 		"tomoki1207.pdf",
-		"pspester.pester-test"
+		"pspester.pester-test",
+		"ms-vscode.powershell",
+		"usernamehw.errorlens"
 	]
 }
