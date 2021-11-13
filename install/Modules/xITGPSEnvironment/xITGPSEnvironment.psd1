@@ -1,83 +1,83 @@
 ﻿@{
 
 	# Файл модуля скрипта или двоичного модуля, связанный с данным манифестом
-	RootModule             = 'xITGPSEnvironment.schema.psm1'
+	RootModule = 'xITGPSEnvironment.schema.psm1'
 
 	# Номер версии данного модуля.
-	ModuleVersion          = '0.9.0'
+	ModuleVersion = '0.9.0'
 
 	# Уникальный идентификатор данного модуля
-	GUID                   = '9c5c2a9e-ecc0-4cb7-b131-d45c9205f2e5'
+	GUID = '9c5c2a9e-ecc0-4cb7-b131-d45c9205f2e5'
 
 	# Автор данного модуля
-	Author                 = 'Sergey S. Betke'
+	Author = 'Sergey S. Betke'
 
 	# Компания, создавшая данный модуль, или его поставщик
-	CompanyName            = 'Тест-С.-Петербург'
+	CompanyName = 'Тест-С.-Петербург'
 
 	# Заявление об авторских правах на модуль
-	Copyright              = '(c) 2019 Sergey S. Betke'
+	Copyright = '(c) 2019 Sergey S. Betke'
 
 	# Описание функций данного модуля
-	Description            = @'
+	Description = @'
 	Конфигурация необходимых модулей PowerShell и их источников для сети учреждения.
 '@
 
 	# Минимальный номер версии обработчика Windows PowerShell, необходимой для работы данного модуля
-	PowerShellVersion      = '5.0'
+	PowerShellVersion = '5.0'
 
 	# Имя узла Windows PowerShell, необходимого для работы данного модуля
-	PowerShellHostName     = ''
+	PowerShellHostName = ''
 
 	# Минимальный номер версии узла Windows PowerShell, необходимой для работы данного модуля
-	PowerShellHostVersion  = ''
+	PowerShellHostVersion = ''
 
 	# Минимальный номер версии компонента .NET Framework, необходимой для данного модуля
 	DotNetFrameworkVersion = ''
 
 	# Минимальный номер версии среды CLR (общеязыковой среды выполнения), необходимой для работы данного модуля
-	CLRVersion             = ''
+	CLRVersion = ''
 
 	# Архитектура процессора (нет, X86, AMD64, IA64), необходимая для работы модуля
-	ProcessorArchitecture  = ''
+	ProcessorArchitecture = ''
 
 	# Модули, которые необходимо импортировать в глобальную среду перед импортированием данного модуля
-	RequiredModules        = @(
-		@{ModuleName = 'PSDesiredStateConfiguration'; ModuleVersion = '1.0'},
-		@{ModuleName = 'PackageManagement'; ModuleVersion = '1.3.1'}
+	RequiredModules = @(
+		@{ModuleName = 'PSDesiredStateConfiguration'; ModuleVersion = '1.0' },
+		@{ModuleName = 'PackageManagement'; ModuleVersion = '1.3.1' }
 	)
 
 	# Сборки, которые должны быть загружены перед импортированием данного модуля
-	RequiredAssemblies     = @()
+	RequiredAssemblies = @()
 
 	# Файлы скрипта (.ps1), которые запускаются в среде вызывающей стороны перед импортированием данного модуля
-	ScriptsToProcess       = @()
+	ScriptsToProcess = @()
 
 	# Файлы типа (.ps1xml), которые загружаются при импорте данного модуля
-	TypesToProcess         = @()
+	TypesToProcess = @()
 
 	# Файлы формата (PS1XML-файлы), которые загружаются при импорте данного модуля
-	FormatsToProcess       = @()
+	FormatsToProcess = @()
 
 	# Модули для импортирования в модуль, указанный в параметре ModuleToProcess, в качестве вложенных модулей
-	NestedModules          = @()
+	NestedModules = @()
 
 	# Функции для экспорта из данного модуля
-	FunctionsToExport      = '*'
+	FunctionsToExport = '*'
 
 	# Командлеты для экспорта из данного модуля
-	CmdletsToExport        = '*'
+	CmdletsToExport = '*'
 
 	# Переменные для экспорта из данного модуля
-	VariablesToExport      = '*'
+	VariablesToExport = '*'
 
 	# Псевдонимы для экспорта из данного модуля
-	AliasesToExport        = '*'
+	AliasesToExport = '*'
 
 	# Список всех модулей, входящих в пакет данного модуля
-	ModuleList             = @()
+	ModuleList = @()
 
 	# Список всех файлов, входящих в пакет данного модуля
-	FileList               = 'xITGPSEnvironment.schema.psm1', 'xITGPSEnvironment.psm1'
+	FileList = 'xITGPSEnvironment.schema.psm1', 'xITGPSEnvironment.psm1'
 
 }
