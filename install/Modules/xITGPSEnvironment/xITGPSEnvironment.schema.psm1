@@ -10,7 +10,7 @@
 	Import-DscResource -ModuleName PowerShellModule -Name PSModuleResource
 
 	Node $ComputerName
- {
+	{
 
 		<#
 		PackageManagementSource PSGallery
@@ -23,55 +23,68 @@
 		}
 		#>
 
-		PSModuleResource xPowerShellExecutionPolicy {
+		PSModuleResource xPowerShellExecutionPolicy
+		{
 			Module_Name = 'xPowerShellExecutionPolicy'
 		}
 
-		PSModuleResource InvokeBuild {
+		PSModuleResource InvokeBuild
+		{
 			Module_Name = 'InvokeBuild'
 		}
 
-		PSModuleResource Plaster {
+		PSModuleResource Plaster
+		{
 			Module_Name = 'Plaster'
 		}
 
-		PSModuleResource PSScriptAnalyzer {
+		PSModuleResource PSScriptAnalyzer
+		{
 			Module_Name = 'PSScriptAnalyzer'
 		}
 
-		PSModuleResource Pester {
+		PSModuleResource Pester
+		{
 			Module_Name = 'Pester'
 		}
 
-		PSModuleResource platyPS {
+		PSModuleResource platyPS
+		{
 			Module_Name = 'platyPS'
 		}
 
-		PSModuleResource cChoco {
+		PSModuleResource cChoco
+		{
 			Module_Name = 'cChoco'
 		}
 
-		PSModuleResource vscode {
+		PSModuleResource vscode
+		{
 			Module_Name = 'vscode'
 		}
 
-		PSModuleResource xWinRM {
+		PSModuleResource xWinRM
+		{
 			Module_Name = 'xWinRM'
 		}
 
-		PSModuleResource xComputerManagement {
+		PSModuleResource xComputerManagement
+		{
 			Module_Name = 'xComputerManagement'
 		}
 
-		PSModuleResource ComputerManagement {
+		PSModuleResource ComputerManagement
+		{
 			Module_Name = 'ComputerManagementDsc'
 		}
 
-		PSModuleResource xPendingReboot {
+		PSModuleResource xPendingReboot
+		{
 			Module_Name = 'xPendingReboot'
 		}
 
-		PSModuleResource xDownloadFile {
+		PSModuleResource xDownloadFile
+		{
 			Module_Name = 'xDownloadFile'
 		}
 
