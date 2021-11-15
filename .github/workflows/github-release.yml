@@ -43,13 +43,13 @@ jobs:
           # Invoke-Build pre-build -Verbose;
 
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.10
+        uses: gittools/actions/gitversion/setup@v0.9.11
         with:
           versionSpec: "5.x"
 
       - name: Determine Version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.10
+        uses: gittools/actions/gitversion/execute@v0.9.11
         with:
           useConfigFile: true
 
