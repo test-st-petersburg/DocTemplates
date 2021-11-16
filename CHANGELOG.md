@@ -8,6 +8,13 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+## [2.9.9]
+
+### Изменено
+
+- изменены описания GitHub Actions и добавлены к ним свойства
+  (по примеру https://github.com/actions/starter-workflows)
+
 ## [2.9.8]
 
 ### Исправлено
@@ -908,7 +915,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.8...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.9...HEAD
+[2.9.9]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.8...2.9.9
 [2.9.8]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.7...2.9.8
 [2.9.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.6...2.9.7
 [2.9.6]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.5...2.9.6
