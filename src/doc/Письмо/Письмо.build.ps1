@@ -30,6 +30,17 @@ task 'ОРД ФБУ Тест-С.-Петербург v2.ott' {
 	Invoke-Build BuildTemplate -File "$SourceTemplatesPath/ОРД ФБУ Тест-С.-Петербург v2.ott/ОРД.build.ps1" @parameters;
 };
 
+task 'Build-test-spb-nov-branch.vcf' {
+	Invoke-Build 'Build-test-spb-nov-branch.vcf' -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+};
+
+task 'test-spb-nov-branch.vcf' `
+	-Inputs @( "$DestinationVCardPath/test-spb-nov-branch.vcf" ) `
+	-Outputs @( "$DestinationDocumentPath/test-spb-nov-branch.vcf" ) `
+	-Jobs 'Build-test-spb-nov-branch.vcf', {
+	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force;
+};
+
 openDocument 'BuildDoc-Письмо.odt' `
 	-LiteralPath "$SourceDocumentPath/Письмо.odt" `
 	-PreprocessedPath "$PreprocessedDocumentPath/Письмо.odt" `
@@ -38,7 +49,7 @@ openDocument 'BuildDoc-Письмо.odt' `
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Письмо.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Письмо.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott';
+	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott', 'test-spb-nov-branch.vcf';
 
 openDocument 'BuildAndOpenDoc-Письмо.odt' `
 	-OpenAfterBuild `
@@ -49,7 +60,7 @@ openDocument 'BuildAndOpenDoc-Письмо.odt' `
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Письмо.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Письмо.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott';
+	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott', 'test-spb-nov-branch.vcf';
 
 task BuildDoc 'BuildDoc-Письмо.odt';
 

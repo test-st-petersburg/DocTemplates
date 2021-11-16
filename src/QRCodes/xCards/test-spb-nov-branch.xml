@@ -80,15 +80,13 @@
 		</org>
 		<categories>
 			<text>Метрология</text>
-			<text>СОУТ</text>
-			<text>Сертификация</text>
 		</categories>
 		<android:x-group-membership><text>PREDEFINED_HUAWEI_GROUP_CCARD</text></android:x-group-membership>
 		<note>
 			<parameters>
 				<language><language-tag>ru-RU</language-tag></language>
 			</parameters>
-			<text>Поверка и калибровка СИ, аттестация испытательного оборудования, сертификация, СОУТ, оценка профессиональных рисков, производственный контроль</text>
+			<text>Поверка и калибровка СИ, аттестация испытательного оборудования</text>
 		</note>
 		<rev>
 			<timestamp>20210523T014800Z</timestamp>
